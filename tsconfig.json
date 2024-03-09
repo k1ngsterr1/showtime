@@ -5,6 +5,7 @@
     "jsxImportSource": "react",
     "types": ["node"]
   },
+  "baseUrl": "./",
   "paths": {
     "@shared/*": ["src/shared/*"],
     "@widgets/*": ["src/widgets/*"],
