@@ -3,8 +3,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ["Montserrat", "sans-serif"],
-        secondary: ["Playfair Display", "serif"],
+        neo: ["Neo Sans Cyr"],
+        killbill: ["Keetano Katana KillBill"],
+        katana: ["Keetano Katana"],
+        neolight: ["Neo Sans Cyr Light"],
       },
       colors: {
         primary: {

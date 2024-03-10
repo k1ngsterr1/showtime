@@ -1,0 +1,17 @@
+---
+import styles from "./styles.module.scss";
+
+interface Props {
+   text: string;
+  margin?: string;
+  bigTextType: string | "secondary" | "about--card" | "services--card";
+}
+
+const { text, margin, bigTextType, ...rest } = Astro.props;
+
+ const BigTextClass = `${styles.bigtext} ${
+    styles[`bigtext--${bigTextType}`]
+  } ${margin ? margin : ""}`;
+---
+
+ <span class={BigTextClass}>{text}</span>
