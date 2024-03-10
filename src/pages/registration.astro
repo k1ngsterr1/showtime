@@ -1,24 +1,22 @@
 ---
 import Input from "../shared/ui/Input/index.astro";
 import styles from "../pages/styles/Registration/styles.module.scss"
+import Layout from "../layouts/Layout.astro";
 ---
 
 
 
-<!doctype html>
-<html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
+<Layout>
+	<section class={styles.registration}>
+        <div class={styles.registration__content}>
+
         <Input 
   placeholder="Имя"
   inputType="default"
 />
-	</body>
-</html>
+</div>
+	</section>
+</Layout>
 
 
 
