@@ -1,0 +1,17 @@
+.mini_text {
+  @apply font-neo;
+  @apply text-primary-light;
+  font-size: clamp(8px, 0.83328vw, 32px);
+  font-weight: 400;
+
+  .link_text {
+    @apply font-neo;
+    @apply text-primary-red;
+    font-size: clamp(8px, 0.83328vw, 32px);
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      @apply text-primary-hovered;
+    }
+  }
+}

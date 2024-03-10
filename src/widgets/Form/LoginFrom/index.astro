@@ -7,7 +7,6 @@ import MiniText from "@shared/ui/MiniText/index.astro";
 
 // import Logo from "../../../assets/logo/logo.svg";
 
-
 import styles from "../styles/styles.module.scss";
 ---
 
@@ -17,7 +16,7 @@ import styles from "../styles/styles.module.scss";
       <!-- <Image src={Logo} alt="Logo" /> -->
     </div>
     <BigText
-      text="Добро пожаловать"
+      text="Войдите в аккаунт"
       margin="mt-8"
       bigTextType="form"
       {...Astro.props}
@@ -31,24 +30,10 @@ import styles from "../styles/styles.module.scss";
     />
     <form class={styles.registration__form}>
       <Input
-        placeholder="Имя"
-        inputType="default"
-        type="text"
-        {...Astro.props}
-      />
-      <Input
         placeholder="Электронная почта"
         inputType="default"
         margin="mt-4"
         type="email"
-        {...Astro.props}
-      />
-      <Input
-        placeholder="Подтвердите пароль"
-        inputType="default"
-        margin="mt-4"
-        inputType="password"
-        type="password"
         {...Astro.props}
       />
           <Input
@@ -60,7 +45,7 @@ import styles from "../styles/styles.module.scss";
         {...Astro.props}
       />
       <Button
-        text="Создать аккаунт"
+        text="Войти"
         buttonType="filled"
         type="submit"
         margin="mt-8"
@@ -68,9 +53,9 @@ import styles from "../styles/styles.module.scss";
       />
     </form>
     <MiniText
-      href="login"
-      text="Уже есть аккаунт? "
-      linktext=" Войти"
+      href="registration"
+      text="Еще нет аккунта? "
+      linktext=" Создать"
     />
   </div>
 </section>

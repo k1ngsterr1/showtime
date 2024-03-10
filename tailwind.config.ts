@@ -15,6 +15,7 @@ module.exports = {
           dark: "#232323",
           red: " #BF2316",
           light: "#F0E7BE",
+          hovered: "#af1306",
         },
       },
     },
