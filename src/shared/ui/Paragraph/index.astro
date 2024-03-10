@@ -1,0 +1,21 @@
+---
+import styles from "./styles.module.scss";
+
+interface Props {
+  text: string ;
+  margin?: string;
+  width?: string;
+  paragraphType: "red" | "white";
+}
+
+const {text, margin, width, paragraphType, ...rest} =  Astro.props;
+
+ const paragraphClass = `${styles.paragraph} ${
+    styles[`paragraph--${paragraphType}`]
+  } ${margin ? margin : ""} ${width}`;
+
+---
+
+ <p class={paragraphClass} >
+      {text}
+    </p>

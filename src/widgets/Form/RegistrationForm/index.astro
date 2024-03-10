@@ -1,0 +1,43 @@
+---
+import Button from "../../../shared/ui/Buttons/index.astro";
+import BigText from "../../../shared/ui/BigText/index.astro";
+import Paragraph from "../../../shared/ui/Paragraph/index.astro";
+import Input from "../../../shared/ui/Input/index.astro";
+
+import Logo from "../../../assets/logo/logo.svg";
+
+import styles from "../RegistrationForm/styles.module.scss";
+
+---
+
+
+<section class={styles.registration}>
+      <div class={styles.registration__content}>
+        <div class={styles.registration__logo}>
+            <Logo/>
+        </div>
+        <BigText text="Добро пожаловать" margin="mt-8" bigTextType="form"/>
+        <Paragraph paragraphType="white" text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "/>
+        <form class={styles.registration__form}>
+             <Input 
+                  placeholder="Имя"
+                  inputType="default"
+              />
+               <Input 
+                  placeholder="Электронная почта"
+                  inputType="default"
+              />
+          <Button
+            text="Зарегистрироваться"
+            buttonType="filled"
+            margin="mt-8"
+          />
+        </form>
+        <!-- <MiniText
+          margin="mt-2"
+          href="login"
+          text="Уже есть аккаунт? "
+          linktext="Войти"
+        /> -->
+      </div>
+</section>

@@ -18,3 +18,10 @@
   font-weight: 700;
   font-size: clamp(24px, 2.49984vw, 96px);
 }
+
+.bigtext--from {
+  @apply font-killbill;
+  @apply text-primary-red-text;
+  font-weight: 700;
+  font-size: clamp(30px, 3.1248vw, 120px);
+}
