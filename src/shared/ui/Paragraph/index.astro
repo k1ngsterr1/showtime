@@ -16,6 +16,6 @@ const {text, margin, width, paragraphType, ...rest} =  Astro.props;
 
 ---
 
- <p class={paragraphClass} >
-      {text}
-    </p>
+<p class={paragraphClass} style={{ width: width }}> 
+  {text}
+</p>

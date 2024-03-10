@@ -1,17 +1,13 @@
   ---
   import Input from "../shared/ui/Input/index.astro";
-  import styles from "../pages/styles/Registration/styles.module.scss";
+  import RegistrationForm from "../widgets/Form/RegistrationForm/index.astro";
+
   import Layout from "../layouts/Layout.astro";
+
+  import "../pages/styles/Registration/styles.scss";
   ---
 
   <Layout title="Registration">
-      <section class={styles.registration}>
-          <div class={styles.registration__content}>
-              <Input 
-                  placeholder="Имя"
-                  inputType="default"
-              />
-          </div>
-      </section>
+    <RegistrationForm/>
   </Layout>
 
