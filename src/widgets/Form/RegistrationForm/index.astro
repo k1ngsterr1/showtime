@@ -16,9 +16,9 @@ import styles from "../RegistrationForm/styles.module.scss";
     <BigText text="Добро пожаловать" margin="mt-8" bigTextType="form" {...Astro.props} />
     <Paragraph paragraphType="white" margin="mt-8" width="42%" text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. " {...Astro.props} />
     <form class={styles.registration__form}>
-      <Input placeholder="Имя" inputType="default" {...Astro.props} />
-      <Input placeholder="Электронная почта" inputType="default" {...Astro.props} />
-      <Button text="Зарегистрироваться" buttonType="filled" margin="mt-8" {...Astro.props} />
+      <Input placeholder="Имя" inputType="default" type="text"   {...Astro.props} />
+      <Input placeholder="Электронная почта" inputType="default" margin="mt-4" type="email" {...Astro.props} />
+      <Button text="Зарегистрироваться" buttonType="filled" type="submit" margin="mt-8"  {...Astro.props} />
     </form>
     <!-- <MiniText
       margin="mt-2"

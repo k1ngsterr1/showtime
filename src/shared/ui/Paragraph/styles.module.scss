@@ -1,5 +1,5 @@
 .paragraph--red {
-  @apply text-primary-red-text;
+  @apply text-primary-red;
   @apply font-neo;
   font-size: clamp(9px, 0.93744vw, 36px);
   font-weight: 400;
@@ -8,7 +8,7 @@
 }
 
 .paragraph--white {
-  @apply text-primary-white-text;
+  @apply text-primary-light;
   @apply font-neolight;
   font-size: clamp(9px, 0.93744vw, 36px);
   font-weight: 400;

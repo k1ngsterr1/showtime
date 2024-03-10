@@ -1,13 +1,15 @@
 ---
+import  { type HTMLInputTypeAttribute, type InputHTMLAttributes } from "react";
 import styles from "./styles.module.scss";
 
-export interface Props {
+export interface Props  {
     margin?: string;
     inputType: string | "default";
-    placeholder?: string;
+    placeholder: string;
+    type: string;
 }
 
-const { margin, inputType, ...rest } = Astro.props;
+const { margin, inputType, type,  ...rest } = Astro.props;
 
 const inputClass = `${styles.input} ${styles[`input--${inputType}`]} ${margin ? margin : ""}`;
 ---

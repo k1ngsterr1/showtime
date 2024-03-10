@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Keetano Katana KillBill";
   src: url(..//../assets/fonts/bill/keetano_katana_killbill.ttf);
@@ -21,6 +25,11 @@
   src: url(..//../assets/fonts/Neo/NeoSansCyr-Italic.ttf),
     url(..//../assets/fonts/Neo/NeoSansCyr-Medium.ttf),
     url(..//../assets/fonts/Neo/NeoSansCyr-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Neo Sans Cyr Regular";
+  src: url(..//../assets/fonts/Neo/NeoSansCyr-Regular.ttf);
 }
 
 @tailwind base;

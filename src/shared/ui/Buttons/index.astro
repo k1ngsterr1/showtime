@@ -4,9 +4,10 @@ interface Props {
   buttonType: "filled" | "outline" | "transparent";
   text: string;
   margin?: string;
+  type: string;
 }
 
-const { text, margin, buttonType, ...rest } = Astro.props;
+const { text, margin, buttonType, type, ...rest } = Astro.props;
 
 const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ""}`;
 ---

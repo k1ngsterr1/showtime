@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         neo: ["Neo Sans Cyr"],
+        neoregular: ["Neo Sans Cyr Regular"],
         killbill: ["Keetano Katana KillBill"],
         katana: ["Keetano Katana"],
         neolight: ["Neo Sans Cyr Light"],
@@ -11,9 +12,9 @@ module.exports = {
       },
       colors: {
         primary: {
-          darken: "#232323",
-          "red-text": " #BF2316",
-          "white-text": "#F0E7BE",
+          dark: "#232323",
+          red: " #BF2316",
+          light: "#F0E7BE",
         },
       },
     },
