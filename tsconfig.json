@@ -3,16 +3,16 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": ["node"]
-  },
-  "baseUrl": "./",
-  "paths": {
-    "@shared/*": ["src/shared/*"],
-    "@widgets/*": ["src/widgets/*"],
-    "@entities/*": ["src/entities/*"],
-    "@features/*": ["src/features/*"],
-    "@pages/*": ["src/pages/*"],
-    "@assets/*": ["src/assets/*"],
-    "@redux/*": ["src/redux/*"]
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@scripts/*": ["src/scripts/*"],
+      "@shared/*": ["src/shared/*"],
+      "@widgets/*": ["src/widgets/*"],
+      "@entities/*": ["src/entities/*"],
+      "@features/*": ["src/features/*"],
+      "@pages/*": ["src/pages/*"],
+      "@assets/*": ["src/assets/*"]
+    }
   }
 }
