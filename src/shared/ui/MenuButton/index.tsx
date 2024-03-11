@@ -1,8 +1,10 @@
 import React from "react";
 
+import styles from "./styles.module.scss";
+
 export const MenuButton = () => {
   return (
-    <div className="cursor-pointer">
+    <div className={styles.menu_button}>
       <svg
         width="48"
         height="48"
