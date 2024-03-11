@@ -17,12 +17,15 @@
 }
 
 .icon {
-  position: absolute;
+  position: absolute !important;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-  @apply text-primary-light;
-  @apply text-2xl;
-  @apply right-4;
+  bottom: 0;
+  z-index: 1000;
   @apply bottom-4;
+  @apply right-4;
+  @apply text-primary-light;
 }
 
 .input--default::placeholder {
