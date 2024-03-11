@@ -1,0 +1,24 @@
+---
+import BigText from "@shared/ui/BigText/index.astro";
+import Separator from "@shared/ui/Separator/index.astro";
+import Paragraph from "@shared/ui/Paragraph/index.astro";
+
+import styles from "./styles.module.scss";
+---
+
+<section class={styles.about_screen}>
+  <div class={styles.about_screen__container}>
+    <div class={styles.about_screen__container__upper}>
+      <Separator textRight="Showtime" margin="mt-8" />
+      <div class="flex flex-col items-end">
+        <BigText text="О нас" bigTextType="secondary" />
+        <Paragraph
+          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
+          align="text-right"
+          width="40%"
+          paragraphType="red"
+        />
+      </div>
+    </div>
+  </div>
+</section>

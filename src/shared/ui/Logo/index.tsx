@@ -8,8 +8,8 @@ const Logo: React.FC<LogoProps> = ({ margin }) => {
   return (
     <div className={`${margin} `}>
       <svg
-        width="220"
-        height="100"
+        width="clamp(110px,11.457600000000001vw,440px)"
+        height="clamp(50px,5.208vw,200px)"
         viewBox="0 0 542 196"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
