@@ -9,10 +9,12 @@ interface Props {
 }
 
 const {margin, href, text, linktext} = Astro.props;
+
+const MiniTextClass = `${styles.mini_text}  ${margin ? margin : ""}`;
 ---
 
 
- <div class={styles.mini_text} style={{ margin }}>
+ <div class={MiniTextClass} style={{ margin }}>
       <span>{text} </span>
       <a href={href} class={styles.link_text}>
         {linktext}
