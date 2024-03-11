@@ -1,11 +1,11 @@
 ---
-import Header from "../features/Header/index.astro";
+import { Header } from "@features/Header/index";
 
 import Layout from "../layouts/Layout.astro";
 
-import "../pages/styles/Home/styles.scss";
+import "@pages/styles/home/styles.scss";
 ---
 
 <Layout title="Home">
-   <Header />
+  <Header client:load />
 </Layout>
