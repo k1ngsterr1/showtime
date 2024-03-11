@@ -1,6 +1,6 @@
 import Link from "react-scroll";
-import Logo from "@shared/ui/Logo";
-import { MenuButton } from "@shared/ui/MenuButton";
+import Logo from "@shared/ui/Icons/Logo";
+import { MenuButton } from "@shared/ui/Icons/MenuButton";
 
 import styles from "./styles.module.scss";
 import LinkText from "@shared/ui/LinkText";
