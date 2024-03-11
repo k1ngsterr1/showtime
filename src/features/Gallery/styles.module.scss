@@ -5,7 +5,22 @@
 }
 
 .swiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: auto;
   border: 2px solid red;
+}
+
+.gallery-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.previous,
+.next {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }

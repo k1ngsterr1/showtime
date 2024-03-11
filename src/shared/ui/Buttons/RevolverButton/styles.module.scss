@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: clamp(125px, 13.02vw, 500px);
+  height: clamp(27.5px, 2.8644000000000003vw, 110px);
+  font-size: clamp(10px, 1.0416vw, 40px);
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.gallery {
+  @extend .button;
+  border: none;
+  transition: all 0.3s ease;
+  @apply bg-primary-red;
+
+  &:hover {
+    background-color: #af1306;
+  }
+}
