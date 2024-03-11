@@ -1,12 +1,12 @@
 function togglePasswordVisibility(
   inputSelector: string,
-  toggleSelector: string
+  toggleSelector: string,
 ) {
   const passwordInput = document.querySelector(
-    inputSelector
+    inputSelector,
   ) as HTMLInputElement | null;
   const toggleButton = document.querySelector(
-    toggleSelector
+    toggleSelector,
   ) as HTMLElement | null;
 
   if (!passwordInput || !toggleButton) return;
