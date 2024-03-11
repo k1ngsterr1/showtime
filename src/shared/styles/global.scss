@@ -53,3 +53,14 @@ h1 {
   font-weight: 400;
   word-wrap: break-word;
 }
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  @apply text-primary-red;
+  @apply font-killbill;
+  font-size: clamp(60px, 6.2496vw, 240px);
+}

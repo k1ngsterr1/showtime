@@ -1,7 +1,30 @@
 ---
 import styles from "./styles.module.scss";
+import BigText from "@shared/ui/BigText/index.astro";
+import Paragraph from "@shared/ui/Paragraph/index.astro";
+import { servicesVersion } from "typescript";
+
+interface Props {
+  number: string;
+  image: string;
+  heading: string;
+  paragraph: string;
+  price: string;
+}
+
+const { number, image, heading, paragraph, price } = Astro.props;
 ---
 
-<div class=""></div>
+<div class={styles.service_card}>
+  <div class="flex flex-col items-start p-4">
+    <div class="flex items-center justify-between">
+      <img src={image} alt={heading} class={styles.service_card__icon} />
+      <span class={styles.service_card__number}>{number}</span>
+    </div>
+    <BigText text={heading} bigTextType="services--card" />
+    <Paragraph text={paragraph} margin="mt-4" paragraphType="white" />
+    <span class={styles.service_card__price}>{price}</span>
+  </div>
 
-<style></style>
+  <style></style>
+</div>
