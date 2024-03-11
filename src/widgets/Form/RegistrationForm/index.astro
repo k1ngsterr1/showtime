@@ -1,5 +1,6 @@
 ---
-import { PasswordInput } from "@shared/ui/Inputs/PasswordInput/PasswordInput";
+import  PasswordInput  from "@shared/ui/Inputs/PasswordInput/index";
+import { Image } from "astro:assets";
 import Button from "../../../shared/ui/Buttons/index.astro";
 import BigText from "../../../shared/ui/BigText/index.astro";
 import Paragraph from "../../../shared/ui/Paragraph/index.astro";
@@ -7,6 +8,9 @@ import DefaultInput from "@shared/ui/Inputs/DefaultInput/index.astro";
 import MiniText from "@shared/ui/MiniText/index.astro";
 
 import styles from "../styles/styles.module.scss";
+
+import Logo from "@assets/logo/logo.svg";
+
 ---
 
 <section class={styles.registration}>
@@ -41,15 +45,13 @@ import styles from "../styles/styles.module.scss";
         type="email"
         {...Astro.props}
       />
-      <PasswordInput   placeholder="Пароль"
-        inputType="default"
+      <PasswordInput  
+        placeholder="Пароль"
         margin="mt-4"
-        inputType="password"
         type="password"/>
-          <PasswordInput   placeholder="Пароль"
-        inputType="default"
+      <PasswordInput
+        placeholder="Пароль"
         margin="mt-4"
-        inputType="password"
         type="password"/>
       <Button
         text="Создать аккаунт"
@@ -60,6 +62,7 @@ import styles from "../styles/styles.module.scss";
       />
     </form>
     <MiniText
+        margin="mt-10"
       href="login"
       text="Уже есть аккаунт? "
       linktext=" Войти"
