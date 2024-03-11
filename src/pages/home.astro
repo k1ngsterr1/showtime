@@ -1,7 +1,8 @@
 ---
 import { Header } from "@features/Header/index";
+import { LinkButton } from "@shared/ui/LinkButton/index";
 import Paragraph from "@shared/ui/Paragraph/index.astro";
-
+import Button from "@shared/ui/Buttons/index.astro";
 import Layout from "../layouts/Layout.astro";
 
 import styles from "./styles/home/styles.module.scss";
@@ -15,7 +16,22 @@ import styles from "./styles/home/styles.module.scss";
         MAFIA CLUB <br />
         <span class="text-primary-light font-katana">SHOWTIME ALMATY</span>
       </h1>
-      <div class={styles.main__container__paragraphs}></div>
+      <div class={styles.main__container__paragraphs}>
+        <Paragraph
+          paragraphType="white"
+          width="20%"
+          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+        />
+        <Paragraph
+          paragraphType="white"
+          width="20%"
+          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+        />
+      </div>
+      <div class={styles.main__container__buttons}>
+        <LinkButton to="main" buttonType="filled" text="Войти" />
+        <LinkButton to="main" buttonType="transparent" text="Подробнее" />
+      </div>
     </div>
   </main>
 </Layout>
