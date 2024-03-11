@@ -1,0 +1,19 @@
+.container {
+  width: 86.6%;
+  @apply mt-8;
+  &__heading {
+  }
+  &__counter {
+    display: flex;
+    width: 55%;
+    @apply mt-4;
+    &__items {
+      &__int {
+        @apply font-killbill text-primary-red mt-4;
+        font-size: clamp(60px, 6.2496vw, 240px);
+        font-weight: 400;
+        word-wrap: break-word;
+      }
+    }
+  }
+}

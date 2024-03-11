@@ -6,3 +6,8 @@
   background-repeat: no-repeat;
   box-shadow: 16px 16px 0px 0px #bf2316;
 }
+.white {
+  @extend .card;
+  background-image: none;
+  @apply bg-primary-light text-primary-dark;
+}

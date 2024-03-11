@@ -1,0 +1,23 @@
+---
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import AboutCards from '@entities/AboutCard/index.astro'
+
+import styles from './styles.module.scss'
+import '@shared/styles/global.scss'
+---
+
+
+<section class={styles.container}>
+    <div class='w-[86.6%] m-auto'>
+    <div class={styles.container__heading}>
+        <h2 class="text-primary-red">Наши цели</h2>
+        <Paragraph paragraphType='red' align='text-right' width='35%' text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."/>
+    </div>
+    <div class='flex justify-between w-full mt-12 mb-9'>
+    <AboutCards bigText='Lorem Ipsum' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.' bigTextType="about--card" cardType='white'/>
+    <AboutCards bigText='Lorem Ipsum' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.' bigTextType="about--card" cardType='white'/>
+    <AboutCards bigText='Lorem Ipsum' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.' bigTextType="about--card" cardType='white'/>
+    <AboutCards bigText='Lorem Ipsum' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.' bigTextType="about--card" cardType='white'/>
+    </div>
+    </div>
+</section>

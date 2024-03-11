@@ -1,11 +1,17 @@
 ---
-import Header from '../features/Header/index.astro'
+import{ Header } from '@features/Header/index'
 
 import Layout from '../layouts/Layout.astro'
+import Main from '@widgets/Screens/AboutPage/Main/main.astro'
+import Goals from '@widgets/Screens/AboutPage/Goals/index.astro'
 
-import '../'
+import styles from '@pages/styles/About/styles.module.scss'
 ---
 
 <Layout title="About">
-  <Header />
+    <div class={styles.main}>
+        <Header client:load/>
+        <Main />
+    </div>
+    <Goals/>
 </Layout>

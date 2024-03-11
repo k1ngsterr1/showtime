@@ -1,0 +1,26 @@
+---
+import styles from './styles.module.scss'
+import '@shared/styles/global.scss'
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+---
+
+<section class={styles.container}>
+    <div class={styles.container__heading}>
+        <h1 class="text-primary-red">О компании</h1>
+        <Paragraph paragraphType='red' width='25%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.'  />
+    </div>
+    <div class={styles.container__counter}>
+        <div class={styles.container__counter__items}>
+            <span class={styles.container__counter__items__int}>
+                100+
+            </span>
+            <Paragraph paragraphType='white' width='65%' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'/>
+        </div>
+         <div class={styles.container__counter__items}>
+            <span class={styles.container__counter__items__int}>
+                100+
+            </span>
+            <Paragraph  paragraphType='white' width='65%' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'/>
+        </div>
+    </div>
+</section>
