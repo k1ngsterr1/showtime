@@ -1,8 +1,21 @@
 .header {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  &__items {
-    width: 100%;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 86.6%;
+  }
+
+  &__content_links {
+    display: flex;
+    justify-content: space-around;
+    gap: clamp(12.5px, 1.302vw, 50px);
+    padding-top: clamp(15px, 1.5624vw, 60px);
+    padding-bottom: clamp(15px, 1.5624vw, 60px);
   }
 }

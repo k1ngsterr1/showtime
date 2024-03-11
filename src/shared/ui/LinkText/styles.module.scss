@@ -1,0 +1,11 @@
+.linktext {
+  @apply font-neo;
+  @apply text-primary-light;
+  font-size: clamp(11px, 1.1457600000000001vw, 44px);
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    @apply text-primary-red;
+  }
+}

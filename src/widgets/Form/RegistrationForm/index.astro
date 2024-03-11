@@ -2,7 +2,8 @@
 import Button from "../../../shared/ui/Buttons/index.astro";
 import BigText from "../../../shared/ui/BigText/index.astro";
 import Paragraph from "../../../shared/ui/Paragraph/index.astro";
-import Input from "../../../shared/ui/Input/index.astro";
+import PasswordInput from "../../../shared/ui/Inputs/PasswordInput/index.astro";
+import DefaultInput from "@shared/ui/Inputs/DefaultInput/index.astro";
 import MiniText from "@shared/ui/MiniText/index.astro";
 
 // import Logo from "../../../assets/logo/logo.svg";
@@ -17,7 +18,7 @@ import styles from "../styles/styles.module.scss";
       <!-- <Image src={Logo} alt="Logo" /> -->
     </div>
     <BigText
-      text="Добро пожаловать"
+      text="Пройдите регистрацию"
       margin="mt-8"
       bigTextType="form"
       {...Astro.props}
@@ -30,29 +31,29 @@ import styles from "../styles/styles.module.scss";
       {...Astro.props}
     />
     <form class={styles.registration__form}>
-      <Input
+      <DefaultInput
         placeholder="Имя"
         inputType="default"
         type="text"
         {...Astro.props}
       />
-      <Input
+      <DefaultInput
         placeholder="Электронная почта"
         inputType="default"
         margin="mt-4"
         type="email"
         {...Astro.props}
       />
-      <Input
-        placeholder="Подтвердите пароль"
+       <PasswordInput
+        placeholder="Пароль"
         inputType="default"
         margin="mt-4"
         inputType="password"
         type="password"
         {...Astro.props}
       />
-          <Input
-        placeholder="Пароль"
+      <PasswordInput
+        placeholder="Подтвердите пароль"
         inputType="default"
         margin="mt-4"
         inputType="password"

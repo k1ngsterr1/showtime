@@ -1,4 +1,4 @@
-function togglePasswordVisiblity(
+function togglePasswordVisibility(
   inputSelector: string,
   toggleSelector: string
 ) {
@@ -9,12 +9,10 @@ function togglePasswordVisiblity(
     toggleSelector
   ) as HTMLElement | null;
 
-  console.log("kek");
-
   if (!passwordInput || !toggleButton) return;
 
   toggleButton?.addEventListener("click", function () {
-    if (passwordInput.type === "passwowrd") {
+    if (passwordInput.type === "password") {
       passwordInput.type = "text";
       this.classList.add("mdi-eye-off");
       this.classList.remove("mdi-eye");
@@ -27,5 +25,5 @@ function togglePasswordVisiblity(
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  togglePasswordVisiblity("#password-input", "#toggle-icon");
+  togglePasswordVisibility("#password-input", "#toggle-icon");
 });
