@@ -3,19 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @apply mt-8;
 
   &__content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: 86.6%;
-  }
-
-  &__content_links {
     display: flex;
-    justify-content: space-around;
-    gap: clamp(12.5px, 1.302vw, 50px);
-    padding-top: clamp(15px, 1.5624vw, 60px);
-    padding-bottom: clamp(15px, 1.5624vw, 60px);
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+
+    &__links {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12.5px, 1.302vw, 50px);
+    }
   }
 }
