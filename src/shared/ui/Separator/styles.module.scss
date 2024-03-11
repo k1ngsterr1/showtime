@@ -1,0 +1,26 @@
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__line {
+    width: 2px;
+    height: clamp(125px, 13.02vw, 500px);
+    @apply bg-primary-red;
+  }
+
+  &__text_right {
+    font-size: clamp(10px, 1.0416vw, 40px);
+    rotate: 90deg;
+
+    @apply font-katana;
+    @apply text-primary-red;
+  }
+
+  &__text_left {
+    font-size: clamp(10px, 1.0416vw, 40px);
+    rotate: 90deg;
+    @apply font-katana;
+    @apply text-primary-red;
+  }
+}

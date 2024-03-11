@@ -1,0 +1,38 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../../assets/Main/backround_main.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__container {
+    width: 86.6%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @apply mt-8;
+
+    &__heading {
+      font-size: clamp(75px, 7.812vw, 300px);
+      @apply font-killbill;
+      @apply text-primary-red;
+    }
+
+    &__paragraphs {
+      display: flex;
+      align-items: center;
+      @apply gap-8;
+    }
+
+    &__buttons {
+      display: flex;
+      align-items: center;
+      @apply gap-8;
+      @apply mt-8;
+    }
+  }
+}

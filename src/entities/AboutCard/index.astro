@@ -1,0 +1,21 @@
+---
+import styles from "./styles.module.scss";
+import BigText from "@shared/ui/BigText/index.astro";
+import Paragraph from "@shared/ui/Paragraph/index.astro";
+import { Hat } from "@shared/ui/Icons/Hat/index";
+
+interface Props {
+  bigText: string;
+  paragraph: string;
+}
+
+const { paragraph, bigText } = Astro.props;
+---
+
+<div class={styles.card}>
+  <div class="p-8">
+    <Hat />
+    <BigText text={bigText} bigTextType="about--card" />
+    <Paragraph text={paragraph} paragraphType="white" margin="mt-3" />
+  </div>
+</div>

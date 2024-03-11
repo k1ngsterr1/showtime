@@ -1,11 +1,16 @@
 ---
-import Header from "../features/Header/index.astro";
-
+import { Header } from "@features/Header/index";
+import HomeScreen from "@widgets/Screens/HomePage/Main/index.astro";
+import AboutScreen from "@widgets/Screens/HomePage/About/index.astro";
 import Layout from "../layouts/Layout.astro";
 
-import "../pages/styles/Home/styles.scss";
+import "../pages/styles/home/styles.scss";
 ---
 
 <Layout title="Home">
-  <Header />
+  <main class={styles.main}>
+    <Header client:load />
+    <HomeScreen />
+  </main>
+  <AboutScreen />
 </Layout>
