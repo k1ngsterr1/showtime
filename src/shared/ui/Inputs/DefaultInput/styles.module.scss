@@ -16,17 +16,17 @@
   @extend .input--default;
 }
 
-.icon {
-  position: absolute !important;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  bottom: 0;
-  z-index: 1000;
-  @apply bottom-4;
-  @apply right-4;
-  @apply text-primary-light;
-}
+// .icon {
+//   position: absolute !important;
+//   width: 24px;
+//   height: 24px;
+//   cursor: pointer;
+//   bottom: 0;
+//   z-index: 1000;
+//   @apply bottom-4;
+//   @apply right-4;
+//   @apply text-primary-light;
+// }
 
 .input--default::placeholder {
   font-size: clamp(9px, 0.93744vw, 36px);
