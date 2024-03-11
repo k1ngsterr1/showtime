@@ -1,6 +1,6 @@
 .bigtext--secondary {
   font-weight: 700;
-  @apply bg-primary-red;
+  @apply text-primary-red;
   @apply font-killbill;
   font-size: clamp(60px, 6.2496vw, 240px);
 }

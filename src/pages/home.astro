@@ -1,7 +1,7 @@
 ---
 import { Header } from "@features/Header/index";
-import Paragraph from "@shared/ui/Paragraph/index.astro";
-
+import HomeScreen from "@widgets/Screens/HomePage/Main/index.astro";
+import AboutScreen from "@widgets/Screens/HomePage/About/index.astro";
 import Layout from "../layouts/Layout.astro";
 
 import styles from "./styles/home/styles.module.scss";
@@ -10,12 +10,7 @@ import styles from "./styles/home/styles.module.scss";
 <Layout title="Home">
   <main class={styles.main}>
     <Header client:load />
-    <div class={styles.main__container}>
-      <h1 class={styles.main__container__heading}>
-        MAFIA CLUB <br />
-        <span class="text-primary-light font-katana">SHOWTIME ALMATY</span>
-      </h1>
-      <div class={styles.main__container__paragraphs}></div>
-    </div>
+    <HomeScreen />
   </main>
+  <AboutScreen />
 </Layout>

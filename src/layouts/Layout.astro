@@ -10,13 +10,12 @@ const { title } = Astro.props;
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="Zhopa Chileeeeen" content="Zhopa Chileeeeen" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <slot />
   </body>
 </html>

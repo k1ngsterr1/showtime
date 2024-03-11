@@ -25,6 +25,14 @@
     &__paragraphs {
       display: flex;
       align-items: center;
+      @apply gap-8;
+    }
+
+    &__buttons {
+      display: flex;
+      align-items: center;
+      @apply gap-8;
+      @apply mt-8;
     }
   }
 }
