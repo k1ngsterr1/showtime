@@ -1,9 +1,11 @@
 ---
-import BigText from "@shared/ui/BigText/index.astro";
 import Separator from "@shared/ui/Separator/index.astro";
+import AboutCard from "@entities/AboutCard/index.astro";
+import Button from "@shared/ui/Buttons/index.astro";
 import Paragraph from "@shared/ui/Paragraph/index.astro";
 
 import styles from "./styles.module.scss";
+import "@shared/styles/global.scss";
 ---
 
 <section class={styles.about_screen}>
@@ -11,14 +13,34 @@ import styles from "./styles.module.scss";
     <div class={styles.about_screen__container__upper}>
       <Separator textRight="Showtime" margin="mt-8" />
       <div class="flex flex-col items-end">
-        <BigText text="О нас" bigTextType="secondary" />
+        <h2>О нас</h2>
         <Paragraph
           text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
           align="text-right"
           width="40%"
+          margin="mt-4"
           paragraphType="red"
         />
       </div>
     </div>
+    <div class="flex items-center justify-between mt-16">
+      <AboutCard
+        bigText="Lorem Ipsum"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+      <AboutCard
+        bigText="Lorem Ipsum"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+      <AboutCard
+        bigText="Lorem Ipsum"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+      <AboutCard
+        bigText="Lorem Ipsum"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+    </div>
+    <Button text="Подробнее" buttonType="transparent" margin="m-auto mt-16" />
   </div>
 </section>
