@@ -3,6 +3,8 @@ import { Header } from "@features/Header/index";
 import HomeScreen from "@widgets/Screens/HomePage/Main/index.astro";
 import AboutScreen from "@widgets/Screens/HomePage/About/index.astro";
 import Layout from "../layouts/Layout.astro";
+import Gallery from "../features/Gallery/index"
+
 
 import styles from "./styles/home/styles.module.scss";
 ---
@@ -11,6 +13,7 @@ import styles from "./styles/home/styles.module.scss";
   <main class={styles.main}>
     <Header client:load />
     <HomeScreen />
+    <Gallery />
   </main>
   <AboutScreen />
 </Layout>

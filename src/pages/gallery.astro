@@ -1,0 +1,13 @@
+---
+// import LoginForm from "../widgets/Form/LoginFrom/index.astro";
+
+import GalleryCustom from '@features/Gallery/index.tsx'
+
+import Layout from "../layouts/Layout.astro";
+
+// import "../pages/styles/Registration/styles.scss";
+---
+
+<Layout title="Gallery">
+   <GalleryCustom client:load />
+</Layout>
