@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import styles from "./styles.module.scss";
+import styles from "../PasswordInput/styles.module.scss";
 
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,10 @@ interface PasswordInputProps
   margin?: string;
 }
 
-const PasswordInput: React.FC<PasswordInputProps> = ({ margin, ...rest }) => {
+const PasswordInputProp: React.FC<PasswordInputProps> = ({
+  margin,
+  ...rest
+}) => {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -37,4 +40,4 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ margin, ...rest }) => {
   );
 };
 
-export default PasswordInput;
+export default PasswordInputProp;

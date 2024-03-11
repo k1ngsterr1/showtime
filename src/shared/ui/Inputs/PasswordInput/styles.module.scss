@@ -27,13 +27,13 @@
   }
 
   .show_password {
-    // position: absolute;
-    // right: clamp(8px, 0.83328vw, 32px);
-    // bottom: clamp(5.85px, 0.609336vw, 23.4px);
+    position: absolute;
+    right: clamp(8px, 0.83328vw, 32px);
+    bottom: clamp(5.85px, 0.609336vw, 23.4px);
     @apply text-primary-light;
     font-size: clamp(9px, 0.93744vw, 36px);
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s;
     &:hover {
       @apply text-primary-red;
     }
