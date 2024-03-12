@@ -7,11 +7,26 @@ interface CounterProps {
   duration: number;
   end: number;
   text: string;
+  paragraphText: string;
+  margin?: string;
+  align?: string;
+  width?: string;
 }
 
-export const Counter: React.FC<CounterProps> = ({ duration, end, text }) => {
+export const Counter: React.FC<CounterProps> = ({
+  margin,
+  paragraphText,
+  align,
+  width,
+  duration,
+  end,
+  text,
+}) => {
   const countUpRef = useRef(null);
   const [startCount, setStartCount] = useState(false);
+  const paragraphClass = `${styles.paragraph} ${
+    styles[`${styles.paragraph}`]
+  } ${margin ? margin : ""} ${width} ${align}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,21 +51,26 @@ export const Counter: React.FC<CounterProps> = ({ duration, end, text }) => {
   }, []);
 
   return (
-    <div className={`${styles.counter_container}`} ref={countUpRef}>
-      {startCount ? (
-        <>
-          <CountUp
-            className={styles.counter_container__counter}
-            end={end}
-            duration={duration}
-          />
-          <span className={`ml-3 ${styles.counter_container__counter}`}>
-            {text}
-          </span>
-        </>
-      ) : (
-        <span className={styles.counter_container__counter}>0</span>
-      )}
-    </div>
+    <>
+      <div className={`${styles.counter_container}`} ref={countUpRef}>
+        {startCount ? (
+          <>
+            <CountUp
+              className={styles.counter_container__counter}
+              end={end}
+              duration={duration}
+            />
+            <span className={`ml-3 ${styles.counter_container__counter}`}>
+              {text}
+            </span>
+          </>
+        ) : (
+          <span className={styles.counter_container__counter}>0</span>
+        )}
+      </div>
+      <p className={paragraphClass} style={{ width: width }}>
+        {paragraphText}
+      </p>
+    </>
   );
 };

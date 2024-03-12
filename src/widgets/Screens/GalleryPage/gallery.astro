@@ -3,7 +3,6 @@ import Paragraph from "../../../shared/ui/Paragraph/index.astro";
 import {Counter} from "../../../shared/ui/Counter/index";
 import {Cursor} from "../../../shared/ui/Cursor/index";
 import {GalleryCustom}from "../../../features/Gallery/index";
-import { RevolverButton } from "@shared/ui/Buttons/RevolverButton";
 
 import Layout from "../../../layouts/Layout.astro";
 
@@ -13,7 +12,7 @@ import women from "@assets/Gallery/women.webp";
 import womenjar from "@assets/Gallery/womenjar.webp";
 import womenkatana from "@assets/Gallery/womenkatana.webp";
 
-const photos = [men, womanman, women, womenjar, womenkatana]
+const photos = [men, womanman,  womenjar]
 
 import styles from "./styles.module.scss";
 import "../../../shared/styles/global.scss";
@@ -24,9 +23,8 @@ import "../../../shared/styles/global.scss";
       <Cursor client:load/>
     <div class={styles.gallery__content_text}>
       <h2 class="text-primary-red">Галерея</h2>
-        <Paragraph text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore." paragraphType="white" align="left" width="60%" margin="mt-8"/>
-         <Counter duration={1} end={100} text="+"/ client:load>
-        <Paragraph text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut." paragraphType="white" width="100%"/>
+        <Paragraph text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore." paragraphType="white" align="left" width="75%" margin="mt-8"/>
+         <Counter paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut." width="50%" margin="mt-8" duration={1} end={100} text="+"/ client:load>
       </div>
         <div class={styles.gallery__content_photos}>
           <GalleryCustom photos={photos} client:load />

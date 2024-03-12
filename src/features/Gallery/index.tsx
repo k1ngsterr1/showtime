@@ -35,24 +35,21 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   return (
     <div className={styles.container}>
       <div className={styles.gallery_nav}>
-        {/* <div className={styles.gallery_btn_left}> */}
         <RevolverButton
           buttonType="gallery"
           direction="left"
           onClick={handlePrev}
         ></RevolverButton>
-        {/* </div> */}
-        {/* <div className={styles.gallery_btn_right}> */}
         <RevolverButton
           buttonType="gallery"
           direction="right"
           onClick={handleNext}
         ></RevolverButton>
-        {/* </div> */}
       </div>
       <Swiper
         className={styles.swiper}
         modules={[Navigation]}
+        loop
         spaceBetween={50}
         slidesPerView={1}
         navigation={false}
