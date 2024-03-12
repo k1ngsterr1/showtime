@@ -1,0 +1,30 @@
+.gallery {
+  @apply mt-24;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #232323;
+
+  &__content {
+    width: 86.6%;
+    display: flex;
+    flex-direction: row;
+    @apply mt-20;
+
+    &_text {
+      width: 86.6%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_photos {
+      display: flex;
+      align-self: flex-end;
+      justify-content: flex-end;
+      width: 847px;
+      overflow-y: hidden;
+    }
+  }
+}

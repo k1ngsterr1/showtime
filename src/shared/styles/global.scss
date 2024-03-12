@@ -53,6 +53,7 @@ h1 {
   font-size: clamp(75px, 7.812vw, 300px);
   font-weight: 400;
   word-wrap: break-word;
+  overflow-y: hidden;
 }
 
 h2,
@@ -62,4 +63,9 @@ h5,
 h6 {
   font-size: clamp(60px, 6.2496vw, 240px);
   @apply font-killbill;
+  overflow-y: hidden;
+}
+
+img {
+  overflow-y: hidden;
 }

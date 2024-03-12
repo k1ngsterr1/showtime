@@ -17,7 +17,7 @@ interface IGalleryProps {
   photos: any[];
 }
 
-const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
+export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
   const handlePrev = () => {
@@ -77,5 +77,3 @@ const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
     </div>
   );
 };
-
-export default GalleryCustom;
