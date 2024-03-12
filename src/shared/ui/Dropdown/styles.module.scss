@@ -1,0 +1,18 @@
+.dropdown {
+  width: clamp(100px, 10.416vw, 400px);
+  position: absolute;
+  z-index: 100;
+  @apply bg-primary-light;
+
+  &__items {
+    overflow-y: auto;
+    transition: 0.3s all;
+    @apply text-base;
+    @apply p-2;
+    @apply bg-primary-light;
+    &:hover {
+      @apply bg-primary-red;
+      @apply text-primary-light;
+    }
+  }
+}

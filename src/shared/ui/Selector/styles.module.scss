@@ -1,8 +1,19 @@
 .selector {
-  width: clamp(150px, 15.624vw, 600px);
+  position: relative;
+  width: clamp(175px, 18.228vw, 700px);
   height: clamp(27.5px, 2.8644000000000003vw, 110px);
-  border: 1px solid;
   font-size: clamp(9px, 0.93744vw, 36px);
+  overflow-y: hidden;
+  border: red;
   @apply text-primary-red;
   @apply border-primary-red;
+  @apply mt-8;
+}
+
+.icon {
+  position: absolute;
+  top: clamp(8px, 0.83328vw, 32px);
+  right: clamp(8px, 0.83328vw, 32px);
+  font-size: clamp(8px, 0.83328vw, 32px);
+  z-index: 10;
 }

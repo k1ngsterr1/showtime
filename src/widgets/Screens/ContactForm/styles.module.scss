@@ -14,5 +14,15 @@
     height: auto;
     display: flex;
     flex-direction: column;
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+
+      &__link {
+        @apply text-xl;
+        @apply text-primary-red;
+      }
+    }
   }
 }

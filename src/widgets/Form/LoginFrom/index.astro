@@ -2,7 +2,7 @@
 import Button from "../../../shared/ui/Buttons/DefaultButton/index.astro";
 import BigText from "../../../shared/ui/BigText/index.astro";
 import Paragraph from "../../../shared/ui/Paragraph/index.astro";
-import DefaultInput from "../../../shared/ui/Inputs/DefaultInput/index.astro";
+import DefaultInput from "../../../shared/ui/Inputs/DefaultInput";
 import PasswordInput from "../../../shared/ui/Inputs/PasswordInput/index";
 import MiniText from "@shared/ui/MiniText/index.astro";
 
@@ -37,7 +37,7 @@ import styles from "../styles/styles.module.scss";
         type="email"
         {...Astro.props}
       />
-        <PasswordInput
+      <PasswordInput
         placeholder="Пароль"
         margin="mt-4"
         type="password"
@@ -52,7 +52,7 @@ import styles from "../styles/styles.module.scss";
       />
     </form>
     <MiniText
-    margin="mt-10"
+      margin="mt-10"
       href="registration"
       text="Еще нет аккунта? "
       linktext=" Создать"
