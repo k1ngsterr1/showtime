@@ -4,8 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid;
+  overflow-y: hidden;
+  border: 3px solid;
   @apply p-4;
   @apply border-primary-red;
   @apply rounded-full;
+
+  &__icon {
+    width: 150px;
+    height: 150px;
+  }
 }

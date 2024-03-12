@@ -33,6 +33,16 @@
         }
       }
 
+      &__contact {
+        font-size: clamp(10px, 1.0416vw, 40px);
+        transition: 0.3s all;
+        @apply text-primary-light;
+        @apply font-neoregular;
+        &:hover {
+          @apply text-primary-red;
+        }
+      }
+
       &__icon {
         transition: 0.3s all;
         @apply text-5xl;

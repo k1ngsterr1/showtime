@@ -51,6 +51,25 @@ export const Menu = () => {
                 className={styles.menu__container__inner__icon}
               />
             </div>
+            <div className="flex flex-col items-start">
+              <a
+                href="tel:+77017812956"
+                className={`${styles.menu__container__inner__contact} mt-8`}
+              >
+                +7 701 781 29 56
+              </a>
+              <span
+                className={`${styles.menu__container__inner__contact} mt-4`}
+              >
+                ул.Маметова 54, 4 этаж
+              </span>
+              <span
+                className={`${styles.menu__container__inner__contact} mt-4`}
+              >
+                Время работы: с 08:00 до 17:00 <br /> Выходные: суббота,
+                воскресенье
+              </span>
+            </div>
           </div>
           <div className="flex flex-col items-start">
             <a href="" className={styles.menu__container__inner__link}>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar } from "@shared/ui/Avatar";
+
 import styles from "./styles.module.scss";
 
 interface IUserTab {

@@ -1,9 +1,12 @@
 .user_tab {
   display: flex;
   align-items: center;
+  overflow-y: hidden;
 
   &__name {
-    font-size: clamp(12px, 1.24992vw, 48px);
+    font-size: clamp(16px, 1.66656vw, 64px);
     @apply text-primary-red;
+    @apply font-neoregular;
+    @apply ml-4;
   }
 }
