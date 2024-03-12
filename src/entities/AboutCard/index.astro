@@ -8,12 +8,13 @@ interface Props {
   bigText: string;
   paragraph: string;
   cardType: 'dark' | "white" 
+  bigTextType?: string;
 } 
 
 const { paragraph, bigText, cardType } = Astro.props;
 const cardClass = `${styles.card} ${styles[cardType]}`
+const bigTextType = cardType === 'dark' ? 'about--card' : 'red';
 const paragraphType = cardType === 'dark' ? 'white' : 'dark';
-const bigTextType = cardType === 'dark' ? 'white' : 'red';
 ---
 
 <div class={cardClass}>

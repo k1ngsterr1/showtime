@@ -1,14 +1,15 @@
 ---
-import styles from './styles.module.scss'
-import '@shared/styles/global.scss'
-import ReviewCard from '../../../../entities/ReviewCard/index.astro'
+import SwiperReview from '@shared/ui/Swiper/index';
+import { reviews } from '@shared/ui/Swiper/index';
+import styles from './styles.module.scss';
+import '@shared/styles/global.scss';
 ---
 
 <section class="bg-primary-dark">
-    <div class="w-[86.6%] m-auto">
-        <h3 class="text-primary-red">Отзывы</h3>
+    <div class="w-full m-auto">
+        <h3 class="text-primary-red mt-12">Отзывы</h3>
     </div>
-    <div class="flex justify-between w-[100%]">
-        <ReviewCard/>
+    <div class='flex justify-evenly gap-10 items-center mt-16 w-[86.6%] m-auto'>
+        <SwiperReview reviews={reviews} client:load/>
     </div>
 </section>
