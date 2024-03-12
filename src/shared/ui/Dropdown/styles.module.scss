@@ -1,8 +1,9 @@
 .dropdown {
-  width: clamp(100px, 10.416vw, 400px);
+  width: clamp(175px, 18.228vw, 700px);
+  max-height: 150px;
   position: absolute;
-  z-index: 100;
-  @apply bg-primary-light;
+  z-index: 1000;
+  @apply bg-primary-dark;
 
   &__items {
     overflow-y: auto;

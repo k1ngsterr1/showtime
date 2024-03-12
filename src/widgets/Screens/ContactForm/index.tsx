@@ -25,8 +25,14 @@ export const Form = () => {
               placeholder="Продукт"
               selectedValue={selectedRole}
               onChange={setSelectedRole}
-              items={["Вечерняя Игра", "Утреняя игра"]}
+              items={[
+                "Вечерняя Игра",
+                "Вечерняя Игра",
+                "Вечерняя Игра",
+                "Вечерняя Игра",
+              ]}
             />
+
             <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
           </div>
           <div className="flex flex-col">

@@ -27,7 +27,9 @@ export const Selector = <T extends string | number>({
   const { selectedItem, setSelectedItem } = useSelector<T>(initialValue!);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleOptionClick = (selectedOption: any) => {
     setSelectedItem(selectedOption);
@@ -37,8 +39,11 @@ export const Selector = <T extends string | number>({
   };
 
   return (
-    <div className={`${styles.selector} ${className || ""}`.trim()}>
-      <div onClick={toggleDropdown} className={styles.inputWrapper}>
+    <>
+      <div
+        className={`${styles.selector} ${className || ""}`.trim()}
+        onClick={toggleDropdown}
+      >
         <Input
           type="text"
           placeholder={placeholder}
@@ -50,13 +55,16 @@ export const Selector = <T extends string | number>({
           className={styles.icon}
         />
       </div>
-      {isOpen && (
-        <Dropdown
-          items={items}
-          className={styles.selector__dropdown}
-          setOption={handleOptionClick}
-        />
-      )}
-    </div>
+      <div />
+      <div className="w-full h-full  relativeborder-2 bg-red-400">
+        {isOpen && (
+          <Dropdown
+            items={items}
+            className={styles.dropdown}
+            setOption={handleOptionClick}
+          />
+        )}
+      </div>
+    </>
   );
 };
