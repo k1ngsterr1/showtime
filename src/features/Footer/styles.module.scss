@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @apply bg-primary-dark;
+
+  &__content {
+    width: 86.6%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @apply mt-4;
+
+    &__navigation {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      @apply gap-0;
+    }
+  }
+
+  &__link {
+    font-size: clamp(10px, 1.0416vw, 40px);
+    @apply font-neoregular;
+    @apply text-primary-red;
+  }
+}

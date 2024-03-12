@@ -10,30 +10,36 @@ export const Form = () => {
   return (
     <section className={styles.form_screen}>
       <div className={styles.form_screen__container}>
-        <h6 className="text-primary-red">Контакты</h6>
+        <h6 className="text-primary-red m-auto">Контакты</h6>
         <div className="w-[80%] flex justify-between items-center"></div>
         <form className={styles.form_screen__container__form}>
-          <div className="flex flex-col items-start">
-            <Input type="text" inputType="default-red" placeholder="Ваше имя" />
-            <Input
-              type="phone"
-              inputType="default-red"
-              placeholder="Номер телефона"
-              margin="mt-8"
-            />
-            <Selector
-              placeholder="Продукт"
-              selectedValue={selectedRole}
-              onChange={setSelectedRole}
-              items={[
-                "Вечерняя Игра",
-                "Вечерняя Игра",
-                "Вечерняя Игра",
-                "Вечерняя Игра",
-              ]}
-            />
-
-            <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
+          <div className="flex justify-between items-start">
+            <div className="flex flex-col items-start">
+              <Input
+                type="text"
+                inputType="default-red"
+                placeholder="Ваше имя"
+              />
+              <Input
+                type="phone"
+                inputType="default-red"
+                placeholder="Номер телефона"
+                margin="mt-8"
+              />
+              <Selector
+                placeholder="Продукт"
+                selectedValue={selectedRole}
+                onChange={setSelectedRole}
+                items={[
+                  "Вечерняя Игра",
+                  "Вечерняя Игра",
+                  "Вечерняя Игра",
+                  "Вечерняя Игра",
+                ]}
+              />
+              <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
+            </div>
+            {/* <YandexMap /> */}
           </div>
           <div className="flex flex-col">
             <a

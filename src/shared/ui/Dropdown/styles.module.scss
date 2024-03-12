@@ -1,6 +1,6 @@
 .dropdown {
   width: clamp(175px, 18.228vw, 700px);
-  max-height: 150px;
+  max-height: clamp(75px, 7.812vw, 300px);
   position: absolute;
   z-index: 1000;
   @apply bg-primary-dark;

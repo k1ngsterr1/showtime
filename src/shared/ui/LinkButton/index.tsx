@@ -8,6 +8,7 @@ interface ButtonProps {
   text: string;
   margin?: string;
   to: string;
+  href?: string;
 }
 
 export const LinkButton: React.FC<ButtonProps> = ({
@@ -15,11 +16,12 @@ export const LinkButton: React.FC<ButtonProps> = ({
   text,
   margin,
   to,
+  href,
 }) => {
   const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ""}`;
 
   return (
-    <Link className={buttonClass} to={to}>
+    <Link className={buttonClass} to={to} href={href} smooth>
       {text}
     </Link>
   );
