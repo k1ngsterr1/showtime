@@ -1,6 +1,5 @@
 ---
 import PasswordInput from "@shared/ui/Inputs/PasswordInput/index";
-import { Image } from "astro:assets";
 import Button from "../../../shared/ui/Buttons/DefaultButton/index.astro";
 import BigText from "../../../shared/ui/BigText/index.astro";
 import Paragraph from "../../../shared/ui/Paragraph/index.astro";
@@ -35,6 +34,7 @@ import Logo from "@assets/logo/logo.svg";
         placeholder="Имя"
         inputType="default"
         type="text"
+        client:load
         {...Astro.props}
       />
       <Input
@@ -42,13 +42,20 @@ import Logo from "@assets/logo/logo.svg";
         inputType="default"
         margin="mt-4"
         type="email"
+        client:load
         {...Astro.props}
       />
-      <PasswordInput placeholder="Пароль" margin="mt-4" type="password" />
+      <PasswordInput
+        placeholder="Пароль"
+        margin="mt-4"
+        type="password"
+        client:load
+      />
       <PasswordInput
         placeholder="Подтвердите пароль"
         margin="mt-4"
         type="password"
+        client:load
       />
       <Button
         text="Создать аккаунт"
