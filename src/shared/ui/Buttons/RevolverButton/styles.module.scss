@@ -1,5 +1,4 @@
 .button {
-  // position: absolute;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -11,10 +10,6 @@
   font-weight: 100;
 }
 
-.button--left {
-  rotate: -180deg;
-}
-
 .gallery {
   @extend .button;
   border: none;
@@ -23,5 +18,8 @@
 
   &:hover {
     background-color: #af1306;
+  }
+  .gallery--right {
+    rotate: -180deg;
   }
 }

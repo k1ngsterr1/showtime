@@ -33,23 +33,22 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   };
 
   return (
-    <div className="container">
-      <div
-      // className="pc-gallery"
-      // style={{ marginBottom: "clamp(64px,6.66624vw,256px)" }}
-      >
-        <div className="gallery-nav">
-          <RevolverButton
-            buttonType="gallery"
-            direction="previous"
-            onClick={handlePrev}
-          ></RevolverButton>
-          <RevolverButton
-            buttonType="gallery"
-            direction="next"
-            onClick={handleNext}
-          ></RevolverButton>
-        </div>
+    <div className={styles.container}>
+      <div className={styles.gallery_nav}>
+        {/* <div className={styles.gallery_btn_left}> */}
+        <RevolverButton
+          buttonType="gallery"
+          direction="left"
+          onClick={handlePrev}
+        ></RevolverButton>
+        {/* </div> */}
+        {/* <div className={styles.gallery_btn_right}> */}
+        <RevolverButton
+          buttonType="gallery"
+          direction="right"
+          onClick={handleNext}
+        ></RevolverButton>
+        {/* </div> */}
       </div>
       <Swiper
         className={styles.swiper}
@@ -66,11 +65,7 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
       >
         {photos.map((photo: ImageMetadata, index: number) => (
           <SwiperSlide key={index}>
-            <img
-              src={photo.src}
-              className={styles.photo}
-              alt={`Slide ${index + 1}`}
-            />
+            <img src={photo.src} alt={`Slide ${index + 1}`} />
           </SwiperSlide>
         ))}
       </Swiper>
