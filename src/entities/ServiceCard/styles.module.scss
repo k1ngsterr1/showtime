@@ -19,3 +19,8 @@
     @apply text-primary-red;
   }
 }
+
+.white {
+  @extend .service_card;
+  @apply bg-primary-light;
+}

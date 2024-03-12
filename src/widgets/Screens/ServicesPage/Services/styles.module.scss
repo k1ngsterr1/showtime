@@ -1,0 +1,21 @@
+.services_screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-position: center center;
+  background-size: cover;
+  @apply bg-primary-dark;
+
+  &__container {
+    width: 86.6%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @apply mt-16;
+    @apply mb-8;
+  }
+}

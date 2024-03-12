@@ -4,7 +4,14 @@ import styles from "./styles.module.scss";
 interface Props {
   text: string;
   margin?: string;
-  bigTextType: string | "secondary" | "about--card" | "services--card" | "from" | 'red';
+  bigTextType:
+    | string
+    | "secondary"
+    | "about--card"
+    | "services--card"
+    | "services--card--red"
+    | "from"
+    | "red";
 }
 
 const { text, margin, bigTextType, ...rest } = Astro.props;
