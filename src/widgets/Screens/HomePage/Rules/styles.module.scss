@@ -4,4 +4,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(../../../../assets/About/image-22.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  @apply bg-primary-dark;
+
+  &__container {
+    width: 86.6%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    @apply mt-16;
+
+    &__upper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }
