@@ -1,4 +1,5 @@
 ---
+import { Cursor } from "@shared/ui/Cursor";
 import LoginForm from "../widgets/Form/LoginFrom/index.astro";
 
 import Layout from "../layouts/Layout.astro";
@@ -7,5 +8,6 @@ import "../pages/styles/registration/styles.scss";
 ---
 
 <Layout title="Login">
+  <Cursor client:load />
   <LoginForm />
 </Layout>
