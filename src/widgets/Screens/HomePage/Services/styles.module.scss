@@ -13,8 +13,11 @@
     width: 86.6%;
     height: auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     @apply mt-16;
+    @apply mb-8;
 
     &__upper {
       display: flex;

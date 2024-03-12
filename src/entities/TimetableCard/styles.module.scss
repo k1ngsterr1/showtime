@@ -16,13 +16,16 @@
   &__separator {
     width: 70%;
     height: 1px;
+    @apply mt-4;
+    @apply border-primary-red;
+    @apply outline-primary-red;
     @apply bg-primary-red;
   }
 
   &__place {
     font-size: clamp(12px, 1.24992vw, 48px);
     @apply font-katana;
-    @apply bg-primary-red;
+    @apply text-primary-red;
     @apply mt-4;
   }
 

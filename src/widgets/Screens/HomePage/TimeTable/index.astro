@@ -5,8 +5,13 @@ import TimetableCard from "@entities/TimetableCard/index.astro";
 
 <section class={styles.timetable_screen}>
   <div class={styles.timetable_screen__container}>
-    <h5 class="text-primary-red">Расписание</h5>
-    <div class="items-center space-evenly"></div>
+    <h5 class="text-primary-red m-auto">Расписание</h5>
+    <div class="flex items-center justify-evenly mt-16">
+      <TimetableCard day="Вторник" place="Smart.point" />
+      <TimetableCard day="Среда" place="Smart.point" />
+      <TimetableCard day="Пятница" place="Smart.point" />
+      <TimetableCard day="Суббота" place="Smart.point" />
+    </div>
   </div>
 </section>
 
