@@ -40,6 +40,18 @@ export const reviews = [
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
   },
+  {
+    time: "09.03.24",
+    name: "Ruslan Drochit",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+  },
+  {
+    time: "09.03.24",
+    name: "Ruslan Drochit",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+  },
 ];
 
 interface SwiperReviewProps {
@@ -55,27 +67,12 @@ export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
     <div>
       <Swiper
         className="contacts__con__swiper"
-        slidesPerView={1}
+        slidesPerView={4}
         spaceBetween={64}
       >
         {reviews.map((review, index) => (
           <SwiperSlide key={index}>
             <div className="flex">
-              <ReviewCard
-                time={review.time}
-                name={review.name}
-                paragraph={review.paragraph}
-              />
-              <ReviewCard
-                time={review.time}
-                name={review.name}
-                paragraph={review.paragraph}
-              />
-              <ReviewCard
-                time={review.time}
-                name={review.name}
-                paragraph={review.paragraph}
-              />
               <ReviewCard
                 time={review.time}
                 name={review.name}

@@ -6,10 +6,12 @@ import '@shared/styles/global.scss';
 ---
 
 <section class="bg-primary-dark">
-    <div class="w-full m-auto">
-        <h3 class="text-primary-red mt-12">Отзывы</h3>
-    </div>
-    <div class='flex justify-evenly gap-10 items-center mt-16 w-[86.6%] m-auto'>
-        <SwiperReview reviews={reviews} client:load/>
+    <div class="w-[86.6%] m-auto">
+        <div class="w-full m-auto">
+            <h3 class="text-primary-red mt-12">Отзывы</h3>
+        </div>
+        <div class='flex justify-evenly gap-10 items-center mt-16 '>
+            <SwiperReview reviews={reviews} client:load/>
+        </div>
     </div>
 </section>

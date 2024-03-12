@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 
-import styles from "../Buttons/styles.module.scss";
+import styles from "../Buttons/DefaultButton/styles.module.scss";
 
 interface ButtonProps {
   buttonType: "filled" | "outline" | "transparent";
