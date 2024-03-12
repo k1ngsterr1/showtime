@@ -6,6 +6,7 @@ export const MenuButton = () => {
   return (
     <div className={styles.menu_button}>
       <svg
+        className="overflow-hidden"
         width="clamp(24px,2.49984vw,96px)"
         height="clamp(24px,2.49984vw,96px)"
         viewBox="0 0 44 44"

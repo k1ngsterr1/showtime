@@ -1,0 +1,41 @@
+.timetable_card {
+  width: clamp(182.5px, 19.0092vw, 730px);
+  height: clamp(285px, 29.6856vw, 1140px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @apply bg-primary-light;
+  @apply p-8;
+
+  &__day {
+    font-size: clamp(24px, 2.49984vw, 96px);
+    @apply font-katana;
+    @apply text-primary-red;
+  }
+
+  &__separator {
+    width: 70%;
+    height: 1px;
+    @apply bg-primary-red;
+  }
+
+  &__place {
+    font-size: clamp(12px, 1.24992vw, 48px);
+    @apply font-katana;
+    @apply bg-primary-red;
+    @apply mt-4;
+  }
+
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @apply bg-primary-red;
+    @apply rounded-full;
+
+    &__price {
+      font-size: clamp(17.5px, 1.8228vw, 70px);
+      @apply text-primary-light;
+    }
+  }
+}

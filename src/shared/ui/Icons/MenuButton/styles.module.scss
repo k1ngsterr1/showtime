@@ -1,5 +1,6 @@
 .menu_button {
   cursor: pointer;
+  overflow-y: hidden !important;
   &:hover {
     animation: spin 2s linear;
   }
@@ -8,16 +9,19 @@
 @-moz-keyframes spin {
   100% {
     -moz-transform: rotate(360deg);
+    overflow-y: hidden !important;
   }
 }
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
+    overflow-y: hidden !important;
   }
 }
 @keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+    overflow-y: hidden !important;
   }
 }
