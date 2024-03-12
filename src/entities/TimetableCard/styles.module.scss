@@ -4,10 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 16px 16px 0px 0px #bf2316;
   @apply bg-primary-light;
   @apply p-8;
 
   &__day {
+    overflow: hidden;
     font-size: clamp(24px, 2.49984vw, 96px);
     @apply font-katana;
     @apply text-primary-red;
@@ -23,6 +26,7 @@
   }
 
   &__place {
+    overflow: hidden;
     font-size: clamp(12px, 1.24992vw, 48px);
     @apply font-katana;
     @apply text-primary-red;
@@ -30,15 +34,27 @@
   }
 
   &__circle {
+    width: clamp(75px, 7.812vw, 300px);
+    height: clamp(85px, 8.8536vw, 340px);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 400px;
+    @apply font-katana;
     @apply bg-primary-red;
-    @apply rounded-full;
+    @apply mt-8;
 
     &__price {
       font-size: clamp(17.5px, 1.8228vw, 70px);
       @apply text-primary-light;
     }
+  }
+
+  &__time {
+    overflow: hidden;
+    font-size: clamp(17.5px, 1.8228vw, 70px);
+    @apply text-primary-dark;
+    @apply font-katana;
+    @apply mt-8;
   }
 }

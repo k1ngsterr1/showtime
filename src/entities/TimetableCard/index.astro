@@ -1,4 +1,5 @@
 ---
+import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 import styles from "./styles.module.scss";
 
 type Props = {
@@ -18,6 +19,8 @@ const { day, place, price, time } = Astro.props;
   <div class={styles.timetable_card__circle}>
     <span class={styles.timetable_card__circle__price}>{price}</span>
   </div>
+  <span class:list={styles.timetable_card__time}>{time}</span>
+  <Button text="Записаться" buttonType="filled" margin="mt-16" />
 </div>
 
 <style></style>
