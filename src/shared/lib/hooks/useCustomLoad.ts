@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 export const useCustomLoad = () => {
-  // References to DOM elements
   const loadRef = useRef(null);
   const imageRef = useRef(null);
   const redDivRef = useRef(null);
@@ -18,7 +17,11 @@ export const useCustomLoad = () => {
       const tl = gsap.timeline({
         defaults: { ease: "none" },
         onComplete: () => {
-          gsap.to(loadRef.current, { autoAlpha: 0 });
+          gsap.to(loadRef.current, {
+            autoAlpha: 0,
+            duration: 0.5,
+            ease: "power1.out",
+          });
         },
       });
 
@@ -36,12 +39,17 @@ export const useCustomLoad = () => {
           duration: 2,
           ease: "linear",
           onStart: () => {
-            gsap.to(textRef.current, { color: "#F0E7BE", duration: 2 });
+            gsap.to(textRef.current, { color: "#F0E7BE", duration: 0.5 });
           },
-          onComplete: () => {},
         },
         0
       );
+
+      tl.to(loadRef.current, {
+        autoAlpha: 0,
+        duration: 0.5,
+        ease: "power1.out",
+      });
 
       return () => {
         tl.kill();

@@ -15,7 +15,6 @@ export const Loader = () => {
         alt="revolver"
       />
       <h1 className={styles.loader__text} ref={textRef}>
-        {" "}
         Showtime Almaty
       </h1>
       <div className={styles.loader__red} ref={redDivRef}></div>
