@@ -8,7 +8,7 @@ export const Form = () => {
   const [selectedRole, setSelectedRole] = useState<string>("");
 
   return (
-    <section className={styles.form_screen}>
+    <section className={styles.form_screen} id="contacts">
       <div className={styles.form_screen__container}>
         <h6 className="text-primary-red m-auto">Контакты</h6>
         <div className="w-[80%] flex justify-between items-center"></div>
