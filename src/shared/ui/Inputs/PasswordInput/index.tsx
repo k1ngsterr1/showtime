@@ -30,9 +30,12 @@ const PasswordInputProp: React.FC<PasswordInputProps> = ({
           className={styles.show_password}
         >
           {visible ? (
-            <FontAwesomeIcon icon={faEye} />
+            <FontAwesomeIcon icon={faEye} className={`${styles.icon} mb-1`} />
           ) : (
-            <FontAwesomeIcon icon={faEyeSlash} />
+            <FontAwesomeIcon
+              icon={faEyeSlash}
+              className={`${styles.icon} mb-1`}
+            />
           )}
         </div>
       </div>
