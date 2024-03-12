@@ -1,5 +1,25 @@
 ---
-
+import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
+import Paragraph from "@shared/ui/Paragraph/index.astro";
+import styles from "./styles.module.scss";
 ---
 
-<div class=""></div>
+<div class={styles.rules_screen}>
+  <div class={styles.rules_screen__container}>
+    <div class={styles.rules_screen__container__upper}>
+      <div class="flex flex-col items-start">
+        <h5 class="text-primary-red">Правила игры</h5>
+        <Paragraph
+          paragraphType="white"
+          width="40%"
+          margin="mt-4"
+          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+        />
+      </div>
+      <div class="flex items-center gap-8">
+        <Button text="Роли" buttonType="transparent" />
+        <Button text="Общие правила" buttonType="transparent" />
+      </div>
+    </div>
+  </div>
+</div>
