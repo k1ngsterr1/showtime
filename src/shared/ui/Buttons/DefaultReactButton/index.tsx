@@ -1,28 +1,26 @@
 import React from "react";
-import { Link } from "react-scroll";
 
-import styles from "../Buttons/DefaultButton/styles.module.scss";
+import styles from "../DefaultButton/styles.module.scss";
 
 interface ButtonProps {
   buttonType: "filled" | "outline" | "transparent";
   text: string;
   margin?: string;
-  to: string;
-  href?: string;
+  type?: string;
+  onClick?: () => void;
 }
 
-export const LinkButton: React.FC<ButtonProps> = ({
+export const ReactButton: React.FC<ButtonProps> = ({
   buttonType,
   text,
   margin,
-  to,
-  href,
+  onClick,
 }) => {
   const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ""}`;
 
   return (
-    <Link className={buttonClass} to={to} href={href} smooth>
+    <button className={buttonClass} onClick={onClick}>
       {text}
-    </Link>
+    </button>
   );
 };

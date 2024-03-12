@@ -1,0 +1,14 @@
+.card {
+  width: clamp(190px, 19.7904vw, 760px);
+  height: clamp(250px, 26.04vw, 1000px);
+  @apply bg-primary-light text-primary-red;
+  font-size: clamp(15px, 1.5624vw, 60px);
+  font-weight: 600;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: 16px 16px 0px 0px #bf2316;
+  &__img {
+    height: 120px;
+    width: 120px;
+  }
+}

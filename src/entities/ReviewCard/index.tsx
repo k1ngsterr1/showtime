@@ -13,8 +13,8 @@ interface Props {
 const ReviewCard: React.FC<Props> = ({ time, name, paragraph }) => (
   <div className={styles.review_card}>
     <div className="flex flex-col items-start p-4">
-      <span>{time}</span>
-      <div className="flex justify-between w-[90%] pt-2">
+      <span className="font-killbill text-lg">{time}</span>
+      <div className="flex justify-between w-[80%] pt-2">
         <RounderHat />
         <span>{name}</span>
       </div>

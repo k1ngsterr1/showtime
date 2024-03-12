@@ -1,0 +1,15 @@
+---
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+
+import illustration from '@assets/About/svg/image 30.svg'
+
+import styles from './style.module.scss'
+---
+
+<section class="flex bg-primary-light">
+        <img src={illustration.src} alt="">
+        <div class="flex flex-col items-center">
+            <span class="font-killbill text-6xl text-primary-red">Подпишитесь на рассылку для вас</span>
+            <Paragraph width='30%' align='text-center' paragraphType='dark' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, '/>
+        </div>
+    </section>

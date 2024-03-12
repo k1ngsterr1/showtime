@@ -14,5 +14,19 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    @apply mt-16;
+    @apply mb-16;
+
+    &__form {
+      width: 60%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+
+      &__link {
+        @apply text-xl;
+        @apply text-primary-red;
+      }
+    }
   }
 }
