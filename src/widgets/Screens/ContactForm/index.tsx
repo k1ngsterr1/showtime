@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
+import YandexMap from "@shared/ui/YandexMap/index";
+
 import styles from "./styles.module.scss";
 
 export const Form = () => {
@@ -39,7 +41,7 @@ export const Form = () => {
               />
               <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
             </div>
-            {/* <YandexMap /> */}
+            <YandexMap />
           </div>
           <div className="flex flex-col">
             <a
