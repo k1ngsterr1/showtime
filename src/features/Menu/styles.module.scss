@@ -1,0 +1,46 @@
+.menu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  background-image: url(../../assets/Main/effect.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  @apply bg-primary-dark;
+
+  &__container {
+    width: 86.6%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__inner {
+      position: relative;
+      width: 71.08433734939759%;
+      height: 100vh !important;
+      display: flex;
+
+      &__link {
+        font-size: clamp(20px, 2.0832vw, 80px);
+        transition: 0.3s all;
+        @apply text-primary-light;
+        @apply font-neoregular;
+        &:hover {
+          @apply text-primary-red;
+        }
+      }
+
+      &__icon {
+        transition: 0.3s all;
+        @apply text-5xl;
+        @apply text-primary-light;
+        &:hover {
+          @apply text-primary-red;
+        }
+      }
+    }
+  }
+}

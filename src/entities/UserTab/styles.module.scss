@@ -1,0 +1,9 @@
+.user_tab {
+  display: flex;
+  align-items: center;
+
+  &__name {
+    font-size: clamp(12px, 1.24992vw, 48px);
+    @apply text-primary-red;
+  }
+}
