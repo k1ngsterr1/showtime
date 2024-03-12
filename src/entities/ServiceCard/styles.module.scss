@@ -1,2 +1,21 @@
 .service_card {
+  position: relative;
+  width: clamp(250px, 26.04vw, 1000px);
+  height: clamp(248.5px, 25.883760000000002vw, 994px);
+  box-shadow: 16px 16px #bf2316;
+  @apply bg-primary-dark;
+
+  &__number {
+    font-size: clamp(24px, 2.49984vw, 96px);
+    @apply font-katana;
+    @apply text-primary-red;
+  }
+
+  &__price {
+    position: absolute;
+    font-size: clamp(16px, 1.66656vw, 64px);
+    @apply bottom-4;
+    @apply font-katana;
+    @apply text-primary-red;
+  }
 }

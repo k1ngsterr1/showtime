@@ -1,0 +1,38 @@
+---
+import styles from "./styles.module.scss";
+import TimetableCard from "@entities/TimetableCard/index.astro";
+---
+
+<section class={styles.timetable_screen}>
+  <div class={styles.timetable_screen__container}>
+    <h5 class="text-primary-red m-auto">Расписание</h5>
+    <div class="flex items-center justify-evenly mt-16">
+      <TimetableCard
+        day="Вторник"
+        place="Smart.point"
+        price="15.000 тг"
+        time="с 19:00 по 00:00"
+      />
+      <TimetableCard
+        day="Среда"
+        place="Smart.point"
+        price="15.000 тг"
+        time="с 19:00 по 00:00"
+      />
+      <TimetableCard
+        day="Пятница"
+        place="Smart.point"
+        price="15.000 тг"
+        time="с 19:00 по 00:00"
+      />
+      <TimetableCard
+        day="Суббота"
+        place="Smart.point"
+        price="15.000 тг"
+        time="с 19:00 по 00:00"
+      />
+    </div>
+  </div>
+</section>
+
+<style></style>

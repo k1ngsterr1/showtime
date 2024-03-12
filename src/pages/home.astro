@@ -1,34 +1,26 @@
 ---
 import { Header } from "@features/Header/index";
+import { Cursor } from "@shared/ui/Cursor/index";
+
 import HomeScreen from "@widgets/Screens/HomePage/Main/index.astro";
 import AboutScreen from "@widgets/Screens/HomePage/About/index.astro";
+import ServicesScreen from "@widgets/Screens/HomePage/Services/index.astro";
+import TimetableScreen from "@widgets/Screens/HomePage/TimeTable/index.astro";
+import { Loader } from "@shared/ui/Loader/index";
 import Layout from "../layouts/Layout.astro";
-
 
 import styles from "./styles/home/styles.module.scss";
+import "@shared/styles/scrollbar.scss";
 ---
 
 <Layout title="Home">
+  <!-- <Loader client:load /> -->
+  <Cursor client:load />
   <main class={styles.main}>
     <Header client:load />
     <HomeScreen />
   </main>
   <AboutScreen />
-</Layout>
-
----
-import { Header } from "@features/Header/index";
-import HomeScreen from "@widgets/Screens/HomePage/Main/index.astro";
-import AboutScreen from "@widgets/Screens/HomePage/About/index.astro";
-import Layout from "../layouts/Layout.astro";
-
-import styles from  "../pages/styles/home/styles.module.scss";
----
-
-<Layout title="Home">
-  <main class={styles.main}>
-    <Header client:load />
-    <HomeScreen />
-  </main>
-  <AboutScreen />
+  <ServicesScreen />
+  <TimetableScreen />
 </Layout>

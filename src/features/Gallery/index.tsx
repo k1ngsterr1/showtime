@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import RevolverButton from "@shared/ui/Buttons/RevolverButton/index.astro";
+import { RevolverButton } from "@shared/ui/Buttons/RevolverButton";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,7 +11,13 @@ import "swiper/css/scrollbar";
 
 import styles from "./styles.module.scss";
 
-const GalleryCustom = ({ photos }) => {
+type Swiper = any;
+
+interface IGalleryProps {
+  photos: any[];
+}
+
+const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
   const handlePrev = () => {
@@ -35,12 +41,12 @@ const GalleryCustom = ({ photos }) => {
         <div className="gallery-nav">
           <RevolverButton
             buttonType="gallery"
-            className="previous"
+            direction="previous"
             onClick={handlePrev}
           ></RevolverButton>
           <RevolverButton
             buttonType="gallery"
-            className="next"
+            direction="next"
             onClick={handleNext}
           ></RevolverButton>
         </div>
@@ -50,15 +56,21 @@ const GalleryCustom = ({ photos }) => {
         modules={[Navigation]}
         spaceBetween={50}
         slidesPerView={1}
-        navigation
+        navigation={false}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSwiper={(swiper: any) => {
+          swiperRef.current = swiper;
+        }}
         onSlideChange={() => console.log("slide change")}
       >
-        {photos.map((photo, index) => (
+        {photos.map((photo: ImageMetadata, index: number) => (
           <SwiperSlide key={index}>
-            <img src={photo.src} alt={`Slide ${index + 1}`} />
+            <img
+              src={photo.src}
+              className={styles.photo}
+              alt={`Slide ${index + 1}`}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

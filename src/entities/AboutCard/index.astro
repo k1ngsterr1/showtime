@@ -7,20 +7,19 @@ import { Hat } from "@shared/ui/Icons/Hat/index";
 interface Props {
   bigText: string;
   paragraph: string;
-  cardType: 'dark' | "white" 
-  bigTextType?: string;
-} 
+  cardType: "dark" | "white";
+}
 
 const { paragraph, bigText, cardType } = Astro.props;
-const cardClass = `${styles.card} ${styles[cardType]}`
-const bigTextType = cardType === 'dark' ? 'about--card' : 'red';
-const paragraphType = cardType === 'dark' ? 'white' : 'dark';
+const cardClass = `${styles.card} ${styles[cardType]}`;
+const paragraphType = cardType === "dark" ? "white" : "dark";
+const bigTextType = cardType === "dark" ? "about--card" : "red";
 ---
 
 <div class={cardClass}>
   <div class="p-8">
     <Hat />
-    <BigText  text={bigText} bigTextType={bigTextType} />
-    <Paragraph text={paragraph} paragraphType={paragraphType}  margin="mt-3" />
+    <BigText text={bigText} bigTextType={bigTextType} />
+    <Paragraph text={paragraph} paragraphType={paragraphType} margin="mt-3" />
   </div>
 </div>

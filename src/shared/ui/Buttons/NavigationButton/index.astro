@@ -1,0 +1,15 @@
+---
+import styles from "../DefaultButton/styles.module.scss";
+
+type Props = {
+  buttonType: "filled" | "outline" | "transparent";
+  href: string;
+  text: string;
+  margin?: string;
+};
+
+const { buttonType, text, href, margin } = Astro.props;
+const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ""}`;
+---
+
+<a href={href} class={buttonClass}>{text}</a>

@@ -1,0 +1,32 @@
+.loader {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @apply bg-primary-dark;
+
+  &__image {
+    z-index: 10;
+    width: clamp(60px, 6.2496vw, 240px);
+    height: clamp(60px, 6.2496vw, 240px);
+  }
+
+  &__text {
+    z-index: 10;
+    font-size: clamp(50px, 5.208vw, 200px);
+    @apply font-killbill;
+    @apply text-primary-red;
+  }
+
+  &__red {
+    position: absolute;
+    width: 100%;
+    @apply bg-primary-red;
+    bottom: 0;
+    z-index: 1;
+  }
+}

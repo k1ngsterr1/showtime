@@ -10,12 +10,17 @@
   align-items: center;
   width: 100%;
   height: auto;
-  border: 2px solid red;
 }
 
 .gallery-nav {
   display: flex;
   justify-content: space-between;
+}
+
+.photo {
+  width: 847px;
+  height: 573;
+  box-shadow: 16px 16px 0px 0px #f0e7be;
 }
 
 .previous,
