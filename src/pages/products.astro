@@ -1,0 +1,16 @@
+---
+import { Cursor } from "@shared/ui/Cursor/index";
+import { Header } from "@features/Header/index";
+import Layout from "../layouts/Layout.astro";
+import Products from '@widgets/Screens/ProductsPage/products.astro'
+
+import styles from '@pages/styles/Products/styles.module.scss'
+---
+
+<Layout title="About">
+  <Cursor client:load />
+  <div class={styles.main}>
+    <Header client:load />
+    <Products/>
+  </div>
+</Layout>

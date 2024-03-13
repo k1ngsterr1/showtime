@@ -41,3 +41,33 @@ import styles from "./style.module.scss";
         </div>
     </div>
 </section>
+<section class=`${"flex bg-primary-light"} ${styles.container_mob}`>
+    <div class="flex flex-col w-[80%] m-auto items-right">
+        <span
+            class="font-killbill pb-4 text-3xl overflow-y-hidden text-primary-red"
+            >Подпишитесь на рассылку для вас</span
+        >
+        <Paragraph
+            width="100%"
+            align="text-left"
+            paragraphType="red"
+            margin="m-auto"
+            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, "
+        />
+            <Input
+                client:load
+                placeholder="Введите вашу почту"
+                inputType="default-red"
+                margin="mt-4"
+                type="email"
+                {...Astro.props}
+            />
+            <Button
+                text="Отправить"
+                buttonType="transparent"
+                type="submit"
+                margin="mt-4"
+                {...Astro.props}
+            />
+        </div>
+</section>

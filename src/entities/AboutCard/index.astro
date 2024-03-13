@@ -2,23 +2,24 @@
 import styles from "./styles.module.scss";
 import BigText from "@shared/ui/BigText/index.astro";
 import Paragraph from "@shared/ui/Paragraph/index.astro";
-import { Hat } from "@shared/ui/Icons/Hat/index";
+import Fedora from '@assets/logo/fedora.svg'
 
 interface Props {
   bigText: string;
   paragraph: string;
   cardType: "dark" | "white";
+  margin?: string;
 }
 
-const { paragraph, bigText, cardType } = Astro.props;
-const cardClass = `${styles.card} ${styles[cardType]}`;
+const { paragraph, bigText, cardType, margin, ...rest } = Astro.props;
+const cardClass = `${styles.card} ${styles[cardType]} ${margin ? margin : ""}`;
 const paragraphType = cardType === "dark" ? "white" : "dark";
 const bigTextType = cardType === "dark" ? "about--card" : "red";
 ---
 
 <div class={cardClass}>
   <div class="p-8">
-    <Hat />
+    <img src={Fedora.src} alt="">
     <BigText text={bigText} bigTextType={bigTextType} />
     <Paragraph text={paragraph} paragraphType={paragraphType} margin="mt-3" />
   </div>

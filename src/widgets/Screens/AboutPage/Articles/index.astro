@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
 ---
 
-<section class="bg-primary-dark">
+<section class={`${"bg-primary-dark"} ${styles.container}`}>
     <div class="w-[86.6%] m-auto">
         <div class="flex flex-col mt-8">
             <h3 class="text-primary-red">Статьи</h3>
@@ -17,4 +17,16 @@ import '@shared/styles/global.scss'
             <PhotoCard time={"23.02.24"} heading="Lorem Ipsum" paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"/>
         </div>
     </div>
+</section>
+
+<section class={`${"bg-primary-dark"} ${styles.container_mob}`}>
+    <div class='flex m-auto items-center flex-col pt-16'>
+        <h5 class="text-primary-red">Статьи</h5>
+        <div class='flex flex-col gap-10 items-center mt-8'>
+            <PhotoCard time={"23.02.24"} heading="Lorem Ipsum" paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"/>
+            <PhotoCard time={"23.02.24"} heading="Lorem Ipsum" paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"/>
+            <PhotoCard time={"23.02.24"} heading="Lorem Ipsum" paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"/>
+        </div>
+        </div>
+    </div>      
 </section>

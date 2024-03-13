@@ -2,6 +2,7 @@
 import LinkText from "@shared/ui/LinkText";
 import styles from "./styles.module.scss";
 import Logo from "@shared/ui/Icons/Logo";
+import logoMob from '@assets/About/svg/logo-mob.svg'
 import { LinkButton } from "@shared/ui/LinkButton/index";
 ---
 
@@ -23,5 +24,23 @@ import { LinkButton } from "@shared/ui/LinkButton/index";
     >showtime@mafia.kz</a
   >
 </footer>
+<footer class={styles.footer_mob}>
+  <div class='flex flex-col items-center'>
+    <img src={logoMob.src} alt="">
+    <nav class='flex flex-col text-center'>
+      <LinkText text="Главная" to="" href="" />
+      <LinkText text="О нас" to="" href="" />
+      <LinkText text="Услуги" to="" href="" />
+      <LinkText text="Расписание" to="" href="" />
+      <LinkText text="Правила" to="" href="" />
+      <LinkText text="Контакты" to="" href="" />
+    </nav>
+    <a href="tel:+77003333826" class={`${styles.link} mt-4`}>+7 (700) 333-38-26</a>
+    <a href="mailto:" class={`${styles.link} mt-2 mb-4`}
+      >showtime@mafia.kz</a
+    >
+    <LinkButton margin="mt-3 mb-8" text="Вверх" buttonType="filled" to="main" client:visible />
+  </div>
+</footer>
 
-<style></style>
+
