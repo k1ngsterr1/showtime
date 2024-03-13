@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
+import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 import styles from "./styles.module.scss";
 
 export const Form = () => {
@@ -11,7 +12,34 @@ export const Form = () => {
     <section className={styles.form_screen} id="contacts">
       <div className={styles.form_screen__container}>
         <h6 className="text-primary-red m-auto">Контакты</h6>
-        <div className="w-[80%] flex justify-between items-center"></div>
+        <div className="w-[80%] flex justify-between items-center">
+          {/* <div className="flex items-center m-auto w-[100%] justify-between"> */}
+          {/* <Button
+            text="Продукция"
+            buttonType="filled"
+            type="submit"
+            margin="mt-8"
+          />
+          <Button
+            text="Заказ"
+            buttonType="transparent"
+            type="submit"
+            margin="mt-8"
+          />
+          <Button
+            text="Запись"
+            buttonType="transparent"
+            type="submit"
+            margin="mt-8"
+          // />
+          <Button
+            text="Задать вопрос"
+            buttonType="transparent"
+            type="submit"
+            margin="mt-8"
+          /> */}
+          {/* </div> */}
+        </div>
         <form className={styles.form_screen__container__form}>
           <div className="flex justify-between items-start">
             <div className="flex flex-col items-start">

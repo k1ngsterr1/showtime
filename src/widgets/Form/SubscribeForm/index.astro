@@ -1,15 +1,43 @@
 ---
-import Paragraph from '@shared/ui/Paragraph/index.astro'
+import Paragraph from "@shared/ui/Paragraph/index.astro";
+import { Input } from "@shared/ui/Inputs/DefaultInput/index";
+import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 
-import illustration from '@assets/About/svg/image 30.svg'
+import illustration from "@assets/About/svg/image 30.svg";
 
-import styles from './style.module.scss'
+import styles from "./style.module.scss";
 ---
 
-<section class="flex bg-primary-light">
-        <img src={illustration.src} alt="">
-        <div class="flex flex-col items-center">
-            <span class="font-killbill text-6xl text-primary-red">Подпишитесь на рассылку для вас</span>
-            <Paragraph width='30%' align='text-center' paragraphType='dark' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, '/>
+<section class=`${"flex bg-primary-light"} ${styles.container}`>
+    <img src={illustration.src} alt="" class={styles.img} />
+    <div class="flex flex-col items-left ml-32">
+        <span
+            class="font-killbill w-[110%] text-5xl overflow-y-hidden text-primary-red mt-14"
+            >Подпишитесь на рассылку для вас</span
+        >
+        <Paragraph
+            width="60%"
+            align="text-left"
+            paragraphType="dark"
+            margin="mt-4"
+            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, "
+        />
+        <div class="flex items-center justify-left gap-10">
+            <Input
+                client:load
+                placeholder="Введите вашу электронную почту"
+                inputType="default-red"
+                margin="mt-4"
+                type="email"
+                {...Astro.props}
+            />
+            <!-- <Button
+                text="Отправить"
+                buttonType="filled"
+                type="submit"
+                margin="mt-8"
+                {...Astro.props}
+            /> -->
         </div>
-    </section>
+    </div>
+</section>

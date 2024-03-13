@@ -1,27 +1,29 @@
 ---
 import { Cursor } from "@shared/ui/Cursor/index";
-import{ Header } from '@features/Header/index'
+import { Header } from "@features/Header/index";
 
-import Layout from '../layouts/Layout.astro'
-import Main from '@widgets/Screens/AboutPage/Main/main.astro'
-import Goals from '@widgets/Screens/AboutPage/Goals/index.astro'
-import Reviews from '@widgets/Screens/AboutPage/Reviews/index.astro'
-import News from '@widgets/Screens/AboutPage/News/index.astro'
-import Articles from '@widgets/Screens/AboutPage/Articles/index.astro'
-import Subscribe from '@widgets/Screens/AboutPage/Subscribe/index.astro'
+import Layout from "../layouts/Layout.astro";
+import Main from "@widgets/Screens/AboutPage/Main/main.astro";
+import Goals from "@widgets/Screens/AboutPage/Goals/index.astro";
+import Reviews from "@widgets/Screens/AboutPage/Reviews/index.astro";
+import News from "@widgets/Screens/AboutPage/News/index.astro";
+import Articles from "@widgets/Screens/AboutPage/Articles/index.astro";
+import Subscribe from "@widgets/Screens/AboutPage/Subscribe/index.astro";
+import Contacts from "@widgets/Screens/AboutPage/Contacts/index.astro";
 
-import styles from '@pages/styles/About/styles.module.scss'
+import styles from "@pages/styles/About/styles.module.scss";
 ---
 
 <Layout title="About">
     <Cursor client:load />
     <div class={styles.main}>
-        <Header client:load/>
+        <Header client:load />
         <Main />
     </div>
-    <Goals/>
-    <Reviews/>
-    <News/>
-    <Articles/>
-    <Subscribe/>
+    <Goals />
+    <Reviews />
+    <News />
+    <Articles />
+    <Subscribe />
+    <!-- <Contacts /> -->
 </Layout>
