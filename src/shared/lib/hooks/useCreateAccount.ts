@@ -1,7 +1,7 @@
 import axios from "axios";
 
 interface IAccountData {
-  name: string;
+  username: string;
   email: string;
   password: string;
   passwordConfirmation: string;
@@ -9,14 +9,14 @@ interface IAccountData {
 
 export async function createAccount(accountData: IAccountData) {
   try {
-    const response = axios.post(
+    const response = await axios.post(
       "https://showtime.up.railway.app/api/auth/register",
       accountData
     );
 
-    console.log("account created successfully");
+    console.log("account created successfully", response.data);
 
-    window.location.href = "/home";
+    window.location.href = "/login";
   } catch (error: unknown) {
     console.error("Failed to create account:", error);
     return null;

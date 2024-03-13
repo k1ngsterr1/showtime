@@ -9,7 +9,7 @@ import styles from "../styles/styles.module.scss";
 
 export const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
     passwordConfirmation: "",
@@ -17,6 +17,8 @@ export const RegistrationForm = () => {
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
+
+    console.log(name, value);
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -26,10 +28,9 @@ export const RegistrationForm = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     try {
+      console.log(formData);
       await createAccount(formData);
-      // If successful, you might want to redirect or update the UI accordingly
     } catch (error) {
-      // Handle the error, maybe show a message to the user
       console.error("Account creation failed:", error);
     }
   };
@@ -47,10 +48,11 @@ export const RegistrationForm = () => {
           <form className={styles.registration__form} onSubmit={handleSubmit}>
             <Input
               placeholder="Имя"
-              name="name"
+              name="username"
               inputType="default"
               type="text"
-              value={formData.name}
+              required
+              value={formData.username}
               onChange={handleInputChange}
             />
             <Input
@@ -59,6 +61,7 @@ export const RegistrationForm = () => {
               inputType="default"
               margin="mt-4"
               type="email"
+              required
               value={formData.email}
               onChange={handleInputChange}
             />
@@ -67,6 +70,7 @@ export const RegistrationForm = () => {
               name="password"
               margin="mt-4"
               type="password"
+              required
               value={formData.password}
               onChange={handleInputChange}
             />
@@ -75,16 +79,19 @@ export const RegistrationForm = () => {
               name="passwordConfirmation"
               margin="mt-4"
               type="password"
+              required
               value={formData.passwordConfirmation}
               onChange={handleInputChange}
             />
+            <ReactButton
+              buttonType="filled"
+              text="Создать аккаунт"
+              type="submit"
+              onClick={() => formData}
+              margin="mt-8"
+            />
           </form>
-          <ReactButton
-            buttonType="filled"
-            text="Создать аккаунт"
-            type="submit"
-            margin="mt-8"
-          />
+
           <span className={styles.registration__mini_text}>
             Уже есть аккаунт?{" "}
             <a href="/login" className="text-primary-red">
