@@ -1,14 +1,35 @@
-const ymaps3Reactify = await ymaps3.import("@yandex/ymaps3-reactify");
-const reactify = ymaps3Reactify.reactify.bindTo(React, ReactDOM);
-const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
-  reactify.module(ymaps3);
+import { useState } from "react";
+import {
+  APIProvider,
+  Map,
+  AdvancedMarker,
+  Pin,
+  InfoWindow,
+} from "@vis.gl/react-google-maps";
 
-<YMap location={{ center: [25.229762, 55.289311], zoom: 9 }} mode="vector">
-  <YMapDefaultSchemeLayer />
-  <YMapDefaultFeaturesLayer />
+export default function Intro() {
+  const position = { lat: 53.54, lng: 10 };
+  const [open, setOpen] = useState(false);
 
-  <YMapMarker
-    coordinates={[25.229762, 55.289311]}
-    draggable={true}
-  ></YMapMarker>
-</YMap>;
+  return (
+    <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
+      <div style={{ height: "100vh", width: "100%" }}>
+        <Map zoom={9} center={position} mapId={process.env.NEXT_PUBLIC_MAP_ID}>
+          <AdvancedMarker position={position} onClick={() => setOpen(true)}>
+            <Pin
+              background={"grey"}
+              borderColor={"green"}
+              glyphColor={"purple"}
+            />
+          </AdvancedMarker>
+
+          {open && (
+            <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
+              <p>I'm in Hamburg</p>
+            </InfoWindow>
+          )}
+        </Map>
+      </div>
+    </APIProvider>
+  );
+}
