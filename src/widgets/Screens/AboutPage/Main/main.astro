@@ -1,7 +1,9 @@
 ---
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import { Counter } from '@shared/ui/Counter'
+
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
-import Paragraph from '@shared/ui/Paragraph/index.astro'
 ---
 
 <section class={styles.container}>
@@ -11,16 +13,10 @@ import Paragraph from '@shared/ui/Paragraph/index.astro'
     </div>
     <div class={styles.container__counter}>
         <div class={styles.container__counter__items}>
-            <span class={styles.container__counter__items__int}>
-                100+
-            </span>
-            <Paragraph paragraphType='white' width='65%' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'/>
+            <Counter paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut." width="50%" margin="mt-8" duration={2} end={100} text="+"/ client:load> 
         </div>
          <div class={styles.container__counter__items}>
-            <span class={styles.container__counter__items__int}>
-                100+
-            </span>
-            <Paragraph  paragraphType='white' width='65%' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'/>
+            <Counter paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut." width="50%" margin="mt-8" duration={2} end={50} text="+"/ client:load> 
         </div>
     </div>
 </section>
