@@ -12,41 +12,45 @@ import { Map } from "@features/Map";
                 placeholder="Ваше имя"
                 inputType="default-red"
                 margin="mt-4"
+                <!--
                 type="name"
-                {...Astro.props}
-            />
-            <Input
-                client:load
-                placeholder="Номер телефона"
-                inputType="default-red"
-                margin="mt-4"
-                type="number"
-                {...Astro.props}
-            />
-            <Input
-                client:load
-                placeholder="Продукт"
-                inputType="default-red"
-                margin="mt-4"
-                type="text"
-                {...Astro.props}
-            />
-            <Button
-                text="Отправить"
-                buttonType="filled"
-                type="submit"
-                margin="mt-8"
-                {...Astro.props}
-            />
-            <a
-                class="text-primary-red mt-4 font-medium text-lg"
-                href="mailto:showtime@mafia.kz">showtime@mafia.kz</a
+                --
             >
-            <a
-                class="text-primary-red mt-1 font-medium text-lg"
-                href="tel:+77003333826">+7 (700) 333-38-26</a
-            >
+                {Astro.props}
+                />
+                <Input
+                    client:load
+                    placeholder="Номер телефона"
+                    inputType="default-red"
+                    margin="mt-4"
+                    type="number"
+                    {...Astro.props}
+                />
+                <Input
+                    client:load
+                    placeholder="Продукт"
+                    inputType="default-red"
+                    margin="mt-4"
+                    type="text"
+                    {...Astro.props}
+                />
+                <Button
+                    text="Отправить"
+                    buttonType="filled"
+                    type="submit"
+                    margin="mt-8"
+                    {...Astro.props}
+                />
+                <a
+                    class="text-primary-red mt-4 font-medium text-lg"
+                    href="mailto:showtime@mafia.kz">showtime@mafia.kz</a
+                >
+                <a
+                    class="text-primary-red mt-1 font-medium text-lg"
+                    href="tel:+77003333826">+7 (700) 333-38-26</a
+                >
+            </Input>
+            <Map />
         </div>
-        <Map />
     </div>
 </section>

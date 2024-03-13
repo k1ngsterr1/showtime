@@ -31,7 +31,7 @@ export const Form = () => {
             buttonType="transparent"
             type="submit"
             margin="mt-8"
-          />
+          // />
           <Button
             text="Задать вопрос"
             buttonType="transparent"
