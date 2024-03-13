@@ -1,7 +1,7 @@
 ---
+import NavigationButton from "@shared/ui/Buttons/NavigationButton/index.astro";
 import Separator from "@shared/ui/Separator/index.astro";
 import AboutCard from "@entities/AboutCard/index.astro";
-import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 import Paragraph from "@shared/ui/Paragraph/index.astro";
 
 import styles from "./styles.module.scss";
@@ -45,6 +45,11 @@ import "@shared/styles/global.scss";
         paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
       />
     </div>
-    <Button text="Подробнее" buttonType="transparent" margin="m-auto mt-16" />
+    <NavigationButton
+      text="Подробнее"
+      href="/about"
+      buttonType="transparent"
+      margin="m-auto mt-16"
+    />
   </div>
 </section>

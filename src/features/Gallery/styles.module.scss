@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,15 +13,13 @@
   height: auto;
 }
 
-.gallery-nav {
+.gallery_nav {
+  width: 90%;
+  top: 300px;
+  position: absolute;
   display: flex;
   justify-content: space-between;
-}
-
-.photo {
-  width: 847px;
-  height: 573;
-  box-shadow: 16px 16px 0px 0px #f0e7be;
+  align-items: center;
 }
 
 .previous,

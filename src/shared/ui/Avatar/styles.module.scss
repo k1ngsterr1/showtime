@@ -1,17 +1,17 @@
 .avatar {
-  width: clamp(37.5px, 3.906vw, 150px);
-  height: clamp(37.5px, 3.906vw, 150px);
+  width: clamp(25px, 2.604vw, 100px);
+  height: clamp(25px, 2.604vw, 100px);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
   border: 3px solid;
-  @apply p-4;
+  transition: 0.3s all;
   @apply border-primary-red;
   @apply rounded-full;
 
   &__icon {
-    width: auto;
-    height: auto;
+    @apply m-2;
+    @apply border-primary-red;
   }
 }

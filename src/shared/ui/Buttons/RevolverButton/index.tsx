@@ -15,7 +15,7 @@ export const RevolverButton: React.FC<Props> = ({
   direction,
   onClick,
 }) => {
-  const buttonClass = `${styles.button} ${styles[direction]} ${styles[buttonType]} ${margin ? margin : ""}`;
+  const buttonClass = `${styles.button} ${styles[buttonType]} ${direction === "right" ? styles["gallery--right"] : ""} ${margin ? styles[margin] : ""}`;
 
   return (
     <button onClick={onClick} className={buttonClass}>
