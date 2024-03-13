@@ -23,7 +23,6 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   const { handleNext, handlePrev } = useCustomSwiper(swiperRef);
 
   return (
-<<<<<<< HEAD
     <div className="container">
       <div
       // className="pc-gallery"
@@ -41,15 +40,6 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
             onClick={handleNext}
           />
         </div>
-=======
-    <div className={styles.container}>
-      <div className={styles.gallery_nav}>
-        <RevolverButton
-          buttonType="gallery"
-          direction="right"
-          onClick={handlePrev}
-        ></RevolverButton>
->>>>>>> 0de9cb8a1b280fe0930ea1538fd396a54f5a9bc1
       </div>
       <Swiper
         className={styles.swiper}

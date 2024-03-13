@@ -2,12 +2,8 @@ import { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
-<<<<<<< HEAD
 import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
-=======
 import GoogleMap from "@shared/ui/GoogleMap/index";
-
->>>>>>> 0de9cb8a1b280fe0930ea1538fd396a54f5a9bc1
 import styles from "./styles.module.scss";
 
 export const Form = () => {
