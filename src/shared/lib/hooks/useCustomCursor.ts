@@ -17,13 +17,12 @@ export const useCustomCursor = (cursorRef: any) => {
 
     const onMouseOver = (e: any) => {
       if (e.target.matches(".hoverable") && cursorRef.current) {
-        console.log("zhopa"),
-          gsap.to(cursorRef.current, {
-            fill: "white",
-            scale: 1.2,
-            duration: 0.3,
-            ease: "power3.out",
-          });
+        gsap.to(cursorRef.current, {
+          fill: "white",
+          scale: 1.2,
+          duration: 0.3,
+          ease: "power3.out",
+        });
       }
     };
 
@@ -31,7 +30,6 @@ export const useCustomCursor = (cursorRef: any) => {
       if (e.target.matches(".hoverable") && cursorRef.current) {
         gsap.to(cursorRef.current, {
           scale: 1,
-
           duration: 0.3,
           ease: "power3.out",
         });

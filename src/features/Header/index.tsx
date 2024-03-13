@@ -1,12 +1,14 @@
 import Link from "react-scroll";
 import Logo from "@shared/ui/Icons/Logo";
 import { MenuButton } from "@shared/ui/Icons/MenuButton";
+import { LanguageButton } from "@shared/ui/LanguageButton";
 
 import styles from "./styles.module.scss";
 import LinkText from "@shared/ui/LinkText";
-import { LanguageButton } from "@shared/ui/LanguageButton";
+import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 
 export const Header = () => {
+  const { onOpen } = useCustomMenu();
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>
@@ -22,7 +24,9 @@ export const Header = () => {
         </nav>
         <div className="flex items-center justify-center gap-8 overflow-hidden">
           <LanguageButton />
-          <MenuButton />
+          <span className="overflow-hidden" onClick={onOpen}>
+            <MenuButton />
+          </span>
         </div>
       </div>
     </header>

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { UserTab } from "@entities/UserTab";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
@@ -5,18 +6,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SearchBar } from "@features/SearchBar";
 import { Line } from "@shared/ui/Line";
 import { links, links_second } from "@shared/lib/content/menuLinks";
+import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 
 import Logo from "@shared/ui/Icons/Logo";
 import styles from "./styles.module.scss";
 
 export const Menu = () => {
+  const { onClose } = useCustomMenu();
   return (
-    <aside className={styles.menu}>
+    <aside className={styles.menu} id="menu">
       <div className={styles.menu__container}>
         <div className="absolute top-8 left-0 overflow-hidden">
           <Logo />
         </div>
-        <div className="absolute top-8 right-0 overflow-hidden">
+        <div
+          className="absolute top-8 right-0 overflow-hidden"
+          onClick={onClose}
+        >
           <MenuButton />
         </div>
         <div className={styles.menu__container__inner}>
