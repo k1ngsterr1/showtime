@@ -11,6 +11,7 @@
   @apply bg-primary-dark;
 
   &__container {
+    position: relative;
     width: 86.6%;
     height: auto;
     display: flex;
@@ -20,8 +21,17 @@
     &__inner {
       position: relative;
       width: 71.08433734939759%;
-      height: 100vh !important;
+      height: 100vh;
       display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-right: 1px solid;
+      border-left: 1px solid;
+      overflow-y: hidden;
+      @apply border-primary-light;
+      @apply pt-32;
+      @apply pl-16;
+      @apply pr-16;
 
       &__link {
         font-size: clamp(20px, 2.0832vw, 80px);

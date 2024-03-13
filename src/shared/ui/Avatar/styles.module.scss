@@ -1,6 +1,6 @@
 .avatar {
-  width: clamp(32px, 3.33312vw, 128px);
-  height: clamp(32px, 3.33312vw, 128px);
+  width: clamp(37.5px, 3.906vw, 150px);
+  height: clamp(37.5px, 3.906vw, 150px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,7 @@
   @apply rounded-full;
 
   &__icon {
-    width: 150px;
-    height: 150px;
+    width: auto;
+    height: auto;
   }
 }

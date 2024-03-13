@@ -1,12 +1,10 @@
 import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { UserTab } from "@entities/UserTab";
-import { Line } from "@shared/ui/Line";
-import {
-  faInstagram,
-  faTiktok,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SearchBar } from "@features/SearchBar";
+import { Line } from "@shared/ui/Line";
+import { links, links_second } from "@shared/lib/content/menuLinks";
 
 import Logo from "@shared/ui/Icons/Logo";
 import styles from "./styles.module.scss";
@@ -15,33 +13,24 @@ export const Menu = () => {
   return (
     <aside className={styles.menu}>
       <div className={styles.menu__container}>
-        <Line position="left-56 top-0" />
-        <Line position="right-56 top-0" />
-        <div className="w-full flex justify-between items-center mt-8 overflow-hidden">
+        <div className="absolute top-8 left-0 overflow-hidden">
           <Logo />
+        </div>
+        <div className="absolute top-8 right-0 overflow-hidden">
           <MenuButton />
         </div>
         <div className={styles.menu__container__inner}>
-          <div className="flex flex-col items-start">
-            <a href="" className={styles.menu__container__inner__link}>
-              Главная
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              О компании
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Продукция
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Услуги
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Правила работы
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Партнеры
-            </a>
-            <div className="flex items-center gap-8 mt-8">
+          <div className="flex flex-col items-start overflow-hidden">
+            {links.map((link, index) => (
+              <a
+                key={index}
+                href={link.path}
+                className={`${styles.menu__container__inner__link} ${index > 0 ? "mt-2" : ""}`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <div className="flex items-center gap-8 mt-8 ">
               <FontAwesomeIcon
                 icon={faInstagram}
                 className={styles.menu__container__inner__icon}
@@ -51,7 +40,7 @@ export const Menu = () => {
                 className={styles.menu__container__inner__icon}
               />
             </div>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start overflow-hidden">
               <a
                 href="tel:+77017812956"
                 className={`${styles.menu__container__inner__contact} mt-8`}
@@ -71,27 +60,20 @@ export const Menu = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col items-start">
-            <a href="" className={styles.menu__container__inner__link}>
-              Вакансии
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Гарантии
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Лицензии
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Наши клиенты
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              История
-            </a>
-            <a href="" className={styles.menu__container__inner__link}>
-              Сотрудники
-            </a>
+          <Line />
+          <div className="flex flex-col items-start overflow-hidden">
+            {links_second.map((link, index) => (
+              <a
+                key={index}
+                href={link.path}
+                className={`${styles.menu__container__inner__link} ${index > 0 ? "mt-2" : ""}`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <UserTab name="Руслан Махматов" margin="mt-8" />
+            <SearchBar />
           </div>
-          <UserTab name="Руслан Махматов" />
         </div>
       </div>
     </aside>
