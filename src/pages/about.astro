@@ -10,27 +10,22 @@ import News from "@widgets/Screens/AboutPage/News/index.astro";
 import Articles from "@widgets/Screens/AboutPage/Articles/index.astro";
 import Subscribe from "@widgets/Screens/AboutPage/Subscribe/index.astro";
 import Contacts from "@widgets/Screens/AboutPage/Contacts/index.astro";
-import Footer from '@features/Footer/index.astro'
+import Footer from "@features/Footer/index.astro";
 
-<<<<<<< HEAD
 import styles from "@pages/styles/About/styles.module.scss";
-=======
-
-import styles from '@pages/styles/About/styles.module.scss'
->>>>>>> 0de9cb8a1b280fe0930ea1538fd396a54f5a9bc1
 ---
 
 <Layout title="About">
-    <Cursor client:load />
-    <div class={styles.main}>
-        <Header client:load />
-        <Main />
-    </div>
-    <Goals />
-    <Reviews />
-    <News />
-    <Articles />
-    <Subscribe />
-    <Contacts />
-    <Footer/>
+  <Cursor client:load />
+  <div class={styles.main}>
+    <Header client:load />
+    <Main />
+  </div>
+  <Goals />
+  <Reviews />
+  <News />
+  <Articles />
+  <Subscribe />
+  <Contacts />
+  <Footer />
 </Layout>
