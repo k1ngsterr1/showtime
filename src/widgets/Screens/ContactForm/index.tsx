@@ -13,7 +13,7 @@ export const Form = () => {
 
   return (
     <>
-      <section className={styles.form_screen_mob} id="contacts">
+      <section className={styles.form_screen_mob} id="contacts_mob">
         <div className={styles.form_screen__container}>
           <h6 className="text-primary-red m-auto">Контакты</h6>
           <div className="flex items-center m-auto flex-col">

@@ -6,7 +6,7 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ margin }) => {
   const handleClick = () => {
-    window.location.href = "/home";
+    window.location.href = "/";
   };
 
   return (
