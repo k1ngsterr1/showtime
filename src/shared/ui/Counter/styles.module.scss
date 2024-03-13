@@ -1,0 +1,32 @@
+.counter_container {
+  @apply font-killbill;
+  display: flex;
+  flex-direction: row;
+  @apply text-primary-red;
+  margin-top: clamp(16px, 1.66656vw, 64px);
+
+  &__counter {
+    font-size: clamp(50px, 5.208vw, 200px);
+    font-style: normal;
+    font-weight: 800;
+    line-height: 141.412%;
+    @apply text-primary-red;
+    overflow-y: hidden;
+  }
+
+  &__text {
+    font-size: clamp(50px, 5.208vw, 200px);
+    font-weight: 800;
+    @apply text-primary-red;
+    overflow-y: hidden;
+  }
+}
+
+.paragraph {
+  @apply text-primary-light;
+  @apply font-neolight;
+  font-size: clamp(9px, 0.93744vw, 36px);
+  font-weight: 400;
+  line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+  overflow-y: hidden;
+}

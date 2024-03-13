@@ -17,12 +17,13 @@ interface IGalleryProps {
   photos: any[];
 }
 
-const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
+export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
   const { handleNext, handlePrev } = useCustomSwiper(swiperRef);
 
   return (
+<<<<<<< HEAD
     <div className="container">
       <div
       // className="pc-gallery"
@@ -40,10 +41,20 @@ const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
             onClick={handleNext}
           />
         </div>
+=======
+    <div className={styles.container}>
+      <div className={styles.gallery_nav}>
+        <RevolverButton
+          buttonType="gallery"
+          direction="right"
+          onClick={handlePrev}
+        ></RevolverButton>
+>>>>>>> 0de9cb8a1b280fe0930ea1538fd396a54f5a9bc1
       </div>
       <Swiper
         className={styles.swiper}
         modules={[Navigation]}
+        loop
         spaceBetween={50}
         slidesPerView={1}
         navigation={false}
@@ -55,16 +66,10 @@ const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
       >
         {photos.map((photo: ImageMetadata, index: number) => (
           <SwiperSlide key={index}>
-            <img
-              src={photo.src}
-              className={styles.photo}
-              alt={`Slide ${index + 1}`}
-            />
+            <img src={photo.src} alt={`Slide ${index + 1}`} />
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
   );
 };
-
-export default GalleryCustom;
