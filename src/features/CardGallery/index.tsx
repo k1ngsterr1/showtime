@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Card } from "@entities/Card";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 
 import "swiper/css";
@@ -22,11 +23,7 @@ export const CardGallery: React.FC<ICardGalleryProps> = ({ photos }) => {
     <Swiper>
       {photos.map((photo: ImageMetadata, index: number) => (
         <SwiperSlide key={index}>
-          <img
-            src={photo.src}
-            // className={styles.photo}
-            alt={`Slide ${index + 1}`}
-          />
+          <Card />
         </SwiperSlide>
       ))}
     </Swiper>
