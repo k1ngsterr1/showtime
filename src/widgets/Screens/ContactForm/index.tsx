@@ -2,10 +2,9 @@ import { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
-import YandexMap from "@shared/ui/YandexMap/index";
+import { Map } from "@shared/ui/Map/index";
 
 import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
-import GoogleMap from "@shared/ui/GoogleMap/index";
 import styles from "./styles.module.scss";
 
 export const Form = () => {
@@ -27,7 +26,7 @@ export const Form = () => {
         </div>
         <form className={styles.form_screen__container__form}>
           <div className="flex justify-between items-start">
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start mt-16">
               <Input
                 type="text"
                 inputType="default-red"
@@ -53,7 +52,7 @@ export const Form = () => {
               />
               <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
             </div>
-            <YandexMap />
+            <Map />
           </div>
           <div className="flex flex-col">
             <a
