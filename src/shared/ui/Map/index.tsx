@@ -5,7 +5,7 @@ export const Map = () => {
     <div style={{ width: "50%" }} className={styles.map}>
       <iframe
         width="100%"
-        height="400"
+        height="320"
         frameBorder="0"
         scrolling="no"
         marginHeight={0}
