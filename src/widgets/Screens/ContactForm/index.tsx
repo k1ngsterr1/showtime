@@ -2,20 +2,16 @@ import { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
-<<<<<<< HEAD
 import GoogleMap from "@shared/ui/GoogleMap/index";
-=======
 import { Map } from "@shared/ui/Map/index";
 
 import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
->>>>>>> 505432e651d7ded727ffc4ef0a5f6f3eda9f3bd0
 import styles from "./styles.module.scss";
 
 export const Form = () => {
   const [selectedRole, setSelectedRole] = useState<string>("");
 
   return (
-<<<<<<< HEAD
     <>
       <section className={styles.form_screen} id="contacts">
         <div className={styles.form_screen__container}>
@@ -103,7 +99,6 @@ export const Form = () => {
               buttonType="transparent"
               margin="mt-8"
             />
-=======
     <section className={styles.form_screen} id="contacts">
       <div className={styles.form_screen__container}>
         <h6 className="text-primary-red m-auto">Контакты</h6>
@@ -146,7 +141,6 @@ export const Form = () => {
               <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
             </div>
             <Map />
->>>>>>> 505432e651d7ded727ffc4ef0a5f6f3eda9f3bd0
           </div>
           <form className={styles.form_screen__container__form}>
             <div className="flex justify-between items-start">
