@@ -14,6 +14,7 @@ export const Input: React.FC<InputProps> = ({
   inputType,
   placeholder,
   type,
+  ...rest
 }) => {
   const inputClass = `${styles.input} ${styles[`input--${inputType}`]} ${margin ? margin : ""}`;
 
@@ -23,6 +24,7 @@ export const Input: React.FC<InputProps> = ({
       type={type}
       placeholder={placeholder}
       required
+      {...rest}
     />
   );
 };

@@ -5,8 +5,12 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ margin }) => {
+  const handleClick = () => {
+    window.location.href = "/home";
+  };
+
   return (
-    <div className={`${margin} `}>
+    <div className={`${margin} `} onClick={handleClick}>
       <svg
         width="clamp(110px,11.457600000000001vw,440px)"
         height="clamp(50px,5.208vw,200px)"

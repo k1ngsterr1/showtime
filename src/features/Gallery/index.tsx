@@ -20,24 +20,16 @@ interface IGalleryProps {
 export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
-  const { handleNext, handlePrev } = useCustomSwiper(swiperRef);
+  const { handlePrev } = useCustomSwiper(swiperRef);
 
   return (
-    <div className="container">
-      <div
-      // className="pc-gallery"
-      // style={{ marginBottom: "clamp(64px,6.66624vw,256px)" }}
-      >
-        <div className="gallery-nav">
+    <div className={styles.container}>
+      <div>
+        <div className={styles.gallery_nav}>
           <RevolverButton
             buttonType="gallery"
-            direction="previous"
+            direction="left"
             onClick={handlePrev}
-          />
-          <RevolverButton
-            buttonType="gallery"
-            direction="next"
-            onClick={handleNext}
           />
         </div>
       </div>

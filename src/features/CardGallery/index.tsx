@@ -1,34 +1,61 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Card, type ICardProps } from "@entities/Card";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
+import { EffectCards } from "swiper/modules";
+import { SelectedBar } from "@shared/ui/SelectedBar";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "swiper/css/effect-cards";
+
+import styles from "../CardGallery/styles.module.scss";
 
 type Swiper = any;
 
 interface ICardGalleryProps {
-  photos: any[];
+  cards: ICardProps[];
 }
 
-export const CardGallery: React.FC<ICardGalleryProps> = ({ photos }) => {
+export const CardGallery: React.FC<ICardGalleryProps> = ({ cards }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
-  const { handleNext, handlePrev } = useCustomSwiper(swiperRef);
-
   return (
-    <Swiper>
-      {photos.map((photo: ImageMetadata, index: number) => (
-        <SwiperSlide key={index}>
-          <img
-            src={photo.src}
-            // className={styles.photo}
-            alt={`Slide ${index + 1}`}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      <Swiper
+        className={styles.swiper}
+        modules={[EffectCards]}
+        effect={"cards"}
+        onSwiper={(swiperInstance) => {
+          swiperRef.current = swiperInstance;
+        }}
+      >
+        {cards.map((card, index) => (
+          <SwiperSlide key={index} className="overflow-hidden">
+            <div className="flex items-center justify-center">
+              <Card
+                name={card.name}
+                paragraph={card.paragraph}
+                iconType={card.iconType.src}
+                icon={card.icon.src}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className={styles.text_container}>
+        <div className="flex items-center gap-8">
+          <span className={styles.text_container__heading}>Заголовок</span>
+          <SelectedBar text="Тип игрока" />
+        </div>
+        <p className={`${styles.text_container__paragraph} w-[40%] mt-4`}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />{" "}
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </>
   );
 };
