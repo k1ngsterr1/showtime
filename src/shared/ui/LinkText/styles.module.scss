@@ -8,3 +8,10 @@
     @apply text-primary-red;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .link {
+    font-size: clamp(11px, 5.140079999999999vw, 44px);
+    @apply mt-3;
+  }
+}

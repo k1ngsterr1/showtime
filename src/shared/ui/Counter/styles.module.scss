@@ -30,3 +30,16 @@
   line-height: clamp(13.52px, 1.4082432vw, 54.08px);
   overflow-y: hidden;
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .counter_container {
+    &__counter {
+      font-size: clamp(30px, 14.0184vw, 120px);
+    }
+  }
+  .paragraph {
+    font-size: clamp(9px, 4.20552vw, 36px);
+    line-height: clamp(12.5px, 5.840999999999999vw, 50px);
+    font-weight: 600;
+  }
+}

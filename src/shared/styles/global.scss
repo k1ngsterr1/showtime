@@ -78,3 +78,23 @@ h6 {
 img {
   overflow-y: hidden;
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  h1 {
+    @apply font-killbill;
+    font-size: clamp(30px, 14.0184vw, 120px);
+    font-weight: 400;
+    word-wrap: break-word;
+    overflow-y: hidden;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: clamp(30px, 14.0184vw, 120px);
+    @apply font-killbill;
+    overflow-y: hidden;
+  }
+}

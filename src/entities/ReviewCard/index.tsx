@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import RounderHat from "@shared/ui/Icons/RounderHat";
 import { Stars } from "@shared/ui/Icons/Stars";
 
-// Интерфейс для пропсов, если вы используете TypeScript
 interface Props {
   paragraph: string;
   time: string;
@@ -20,7 +19,11 @@ const ReviewCard: React.FC<Props> = ({ time, name, paragraph }) => (
       </div>
       <div className="pt-4">
         <Stars />
-        <p className="mt-4 text-primary-dark text-lg">{paragraph}</p>
+        <p
+          className={`${"mt-4 text-primary-dark text-lg"} ${styles.paragraph}`}
+        >
+          {paragraph}
+        </p>
       </div>
     </div>
   </div>

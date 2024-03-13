@@ -36,3 +36,17 @@
     @apply text-primary-light;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .button {
+    @apply font-neoregular;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(125px, 58.41vw, 500px);
+    height: clamp(27.5px, 12.8502vw, 110px);
+    font-size: clamp(10px, 4.6728vw, 40px);
+    font-weight: 100;
+    cursor: none;
+  }
+}
