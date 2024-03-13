@@ -5,6 +5,10 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ margin }) => {
+  const handleClick = () => {
+    window.location.href = "/home";
+  };
+
   return (
     <div className={`${margin} `}>
       <svg
