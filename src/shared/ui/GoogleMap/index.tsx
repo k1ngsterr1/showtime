@@ -5,7 +5,7 @@ const MapContainer = () => {
   const almatyCoordinates = { lat: 43.238949, lng: 76.889709 };
 
   const mapOptions = {
-    zoom: 9,
+    zoom: 5,
     center: almatyCoordinates,
   };
 
@@ -14,7 +14,7 @@ const MapContainer = () => {
       <GoogleMap
         mapContainerStyle={{ height: "400px", width: "100%" }}
         center={almatyCoordinates}
-        zoom={9}
+        zoom={5}
         options={mapOptions}
       >
         <Marker position={almatyCoordinates} />
