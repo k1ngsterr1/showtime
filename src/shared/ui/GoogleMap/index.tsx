@@ -1,35 +1,26 @@
-import { useState } from "react";
-import {
-  APIProvider,
-  Map,
-  AdvancedMarker,
-  Pin,
-  InfoWindow,
-} from "@vis.gl/react-google-maps";
+import React from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
-export default function Intro() {
-  const position = { lat: 53.54, lng: 10 };
-  const [open, setOpen] = useState(false);
+const MapContainer = () => {
+  const almatyCoordinates = { lat: 43.238949, lng: 76.889709 };
+
+  const mapOptions = {
+    zoom: 9,
+    center: almatyCoordinates,
+  };
 
   return (
-    <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
-      <div style={{ height: "100vh", width: "100%" }}>
-        <Map zoom={9} center={position} mapId={process.env.NEXT_PUBLIC_MAP_ID}>
-          <AdvancedMarker position={position} onClick={() => setOpen(true)}>
-            <Pin
-              background={"grey"}
-              borderColor={"green"}
-              glyphColor={"purple"}
-            />
-          </AdvancedMarker>
-
-          {open && (
-            <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
-              <p>I'm in Hamburg</p>
-            </InfoWindow>
-          )}
-        </Map>
-      </div>
-    </APIProvider>
+    <LoadScript googleMapsApiKey="AIzaSyCm8eTtyItGMdGJUfzBDoV3lwr_AdSPpMY">
+      <GoogleMap
+        mapContainerStyle={{ height: "400px", width: "100%" }}
+        center={almatyCoordinates}
+        zoom={9}
+        options={mapOptions}
+      >
+        <Marker position={almatyCoordinates} />
+      </GoogleMap>
+    </LoadScript>
   );
-}
+};
+
+export default MapContainer;
