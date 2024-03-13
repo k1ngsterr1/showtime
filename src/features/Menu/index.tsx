@@ -15,12 +15,13 @@ export const Menu = () => {
   const { onClose } = useCustomMenu();
   return (
     <aside className={styles.menu} id="menu">
+      <Line position="absolute left-0 right-0 ml-auto mr-auto" />
       <div className={styles.menu__container}>
-        <div className="absolute top-8 left-0 overflow-hidden">
+        <div className="absolute top-16 left-0 overflow-hidden">
           <Logo />
         </div>
         <div
-          className="absolute top-8 right-0 overflow-hidden"
+          className="absolute top-16 right-0 overflow-hidden"
           onClick={onClose}
         >
           <MenuButton />
@@ -66,8 +67,7 @@ export const Menu = () => {
               </span>
             </div>
           </div>
-          <Line />
-          <div className="flex flex-col items-start overflow-hidden">
+          <div className="w-[45%] flex flex-col items-start  overflow-hidden">
             {links_second.map((link, index) => (
               <a
                 key={index}

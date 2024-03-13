@@ -1,8 +1,8 @@
 import React from "react";
-import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { RevolverButton } from "@shared/ui/Buttons/RevolverButton";
+import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -20,17 +20,7 @@ interface IGalleryProps {
 const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
+  const { handleNext, handlePrev } = useCustomSwiper(swiperRef);
 
   return (
     <div className="container">
@@ -43,12 +33,12 @@ const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
             buttonType="gallery"
             direction="previous"
             onClick={handlePrev}
-          ></RevolverButton>
+          />
           <RevolverButton
             buttonType="gallery"
             direction="next"
             onClick={handleNext}
-          ></RevolverButton>
+          />
         </div>
       </div>
       <Swiper
@@ -62,7 +52,6 @@ const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
         onSwiper={(swiper: any) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={() => console.log("slide change")}
       >
         {photos.map((photo: ImageMetadata, index: number) => (
           <SwiperSlide key={index}>
