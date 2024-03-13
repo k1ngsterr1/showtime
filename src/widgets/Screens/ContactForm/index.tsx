@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
+import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 import GoogleMap from "@shared/ui/GoogleMap/index";
 import styles from "./styles.module.scss";
 
