@@ -1,0 +1,37 @@
+.search_bar {
+  width: clamp(150px, 15.624vw, 600px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid;
+  @apply gap-4;
+  @apply text-primary-red;
+  @apply border-primary-red;
+  @apply mt-8;
+
+  &__icon {
+    position: absolute;
+    @apply text-2xl;
+    @apply left-5;
+    @apply bottom-3;
+    @apply text-primary-red;
+  }
+
+  &__input {
+    background: transparent;
+    outline: none;
+    border: none;
+    @apply text-2xl;
+    @apply text-primary-red;
+    @apply ml-16;
+    @apply mb-2;
+
+    &:focus {
+      @apply text-primary-light;
+    }
+  }
+
+  ::placeholder {
+    @apply text-primary-red;
+  }
+}

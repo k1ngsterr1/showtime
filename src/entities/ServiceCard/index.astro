@@ -9,22 +9,29 @@ interface Props {
   heading: string;
   paragraph: string;
   price: string;
+  cardType: string | "white";
 }
 
-const { number, image, heading, paragraph, price } = Astro.props;
+const { number, image, heading, paragraph, price, cardType } = Astro.props;
+const serviceClass = `${styles.service_card} ${styles[cardType]}`;
 ---
 
-<div class={styles.service_card}>
+<div class={serviceClass}>
   <div class="flex flex-col space-between p-8">
     <div class="w-full flex items-center justify-between">
       <img src={image} alt={heading} class={styles.service_card__icon} />
       <span class={styles.service_card__number}>{number}</span>
     </div>
-    <BigText text={heading} bigTextType="services--card" />
+    <BigText
+      text={heading}
+      bigTextType={cardType === "white"
+        ? "services--card--red"
+        : "services--card"}
+    />
     <Paragraph
       text={paragraph}
       margin="mt-4"
-      paragraphType="white"
+      paragraphType={cardType === "white" ? "dark" : "white"}
       width="70%"
     />
     <span class={styles.service_card__price}>{price}</span>

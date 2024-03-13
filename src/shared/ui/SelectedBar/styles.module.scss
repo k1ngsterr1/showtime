@@ -1,0 +1,11 @@
+.selected_bar {
+  width: clamp(85.5px, 8.90568vw, 342px);
+  background: rgba(191, 35, 22, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @apply text-primary-light;
+  @apply p-2;
+  @apply font-neoregular;
+  @apply rounded-md;
+}

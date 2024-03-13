@@ -48,6 +48,15 @@ body {
   overflow-x: hidden !important;
 }
 
+.swiper-wrapper {
+  overflow-y: hidden !important;
+}
+
+.swiper-slide-shadow {
+  box-shadow: none;
+  background: none !important;
+}
+
 h1 {
   @apply font-killbill;
   font-size: clamp(75px, 7.812vw, 300px);

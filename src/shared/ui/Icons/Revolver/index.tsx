@@ -6,7 +6,7 @@ interface RevolverProps {
 
 const Revolver: React.FC<RevolverProps> = ({ margin }) => {
   return (
-    <div className={`${margin} `}>
+    <div className={`${margin} overflow-none`}>
       <svg
         width="40"
         height="40"

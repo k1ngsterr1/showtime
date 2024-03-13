@@ -4,16 +4,27 @@ import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
 import YandexMap from "@shared/ui/YandexMap/index";
 
+import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
+import GoogleMap from "@shared/ui/GoogleMap/index";
 import styles from "./styles.module.scss";
 
 export const Form = () => {
   const [selectedRole, setSelectedRole] = useState<string>("");
 
   return (
-    <section className={styles.form_screen}>
+    <section className={styles.form_screen} id="contacts">
       <div className={styles.form_screen__container}>
         <h6 className="text-primary-red m-auto">Контакты</h6>
-        <div className="w-[80%] flex justify-between items-center"></div>
+        <div className="flex items-center m-auto w-[60%] justify-between">
+          <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
+          <ReactButton text="Заказать" buttonType="transparent" margin="mt-8" />
+          <ReactButton text="Запись" buttonType="transparent" margin="mt-8" />
+          <ReactButton
+            text="Задать вопрос"
+            buttonType="transparent"
+            margin="mt-8"
+          />
+        </div>
         <form className={styles.form_screen__container__form}>
           <div className="flex justify-between items-start">
             <div className="flex flex-col items-start">
@@ -21,6 +32,7 @@ export const Form = () => {
                 type="text"
                 inputType="default-red"
                 placeholder="Ваше имя"
+                margin="mt-8"
               />
               <Input
                 type="phone"

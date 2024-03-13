@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  width: clamp(203px, 21.14448vw, 812px);
+  height: clamp(266.5px, 27.75864vw, 1066px);
+  border: 4px solid;
+  background-image: url(../../assets/Main/mafia_shadow.webp);
+  background-position: center center;
+  background-position: cover;
+  @apply p-8;
+  @apply border-primary-red;
+  @apply bg-primary-dark;
+  @apply rounded-lg;
+
+  &__heading {
+    font-size: clamp(32px, 3.33312vw, 128px);
+    @apply text-primary-red;
+    @apply font-killbill;
+  }
+
+  &__paragraph {
+    font-size: clamp(9px, 0.93744vw, 36px);
+    @apply text-primary-light;
+    @apply font-neoregular;
+  }
+
+  &__icon_type {
+    position: absolute;
+    top: 0;
+    right: -10px;
+  }
+}

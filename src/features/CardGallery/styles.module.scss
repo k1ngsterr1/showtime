@@ -1,0 +1,25 @@
+.swiper {
+  position: absolute;
+  overflow: hidden;
+  width: clamp(465px, 48.434400000000004vw, 1860px);
+  height: clamp(276.5px, 28.800240000000002vw, 1106px);
+  overflow: hidden;
+  top: clamp(185px, 19.2696vw, 740px);
+  left: clamp(-135px, -14.0616vw, -540px);
+}
+
+.text_container {
+  position: absolute;
+  right: 0;
+  top: clamp(195px, 20.3112vw, 780px);
+
+  &__heading {
+    font-size: clamp(24px, 2.49984vw, 96px);
+    @apply text-primary-red;
+    @apply font-killbill;
+  }
+
+  &__paragraph {
+    @apply text-primary-light;
+  }
+}

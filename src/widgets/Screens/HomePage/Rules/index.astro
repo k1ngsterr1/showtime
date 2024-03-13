@@ -1,10 +1,19 @@
 ---
 import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 import Paragraph from "@shared/ui/Paragraph/index.astro";
+import { CardGallery } from "@features/CardGallery/index";
 import styles from "./styles.module.scss";
+
+import men from "@assets/Gallery/men.webp";
+import womanman from "@assets/Gallery/womanman.webp";
+import women from "@assets/Gallery/women.webp";
+import womenjar from "@assets/Gallery/womenjar.webp";
+import womenkatana from "@assets/Gallery/womenkatana.webp";
+
+import { cards } from "@shared/lib/content/cardContent";
 ---
 
-<div class={styles.rules_screen}>
+<section class={styles.rules_screen} id="rules">
   <div class={styles.rules_screen__container}>
     <div class={styles.rules_screen__container__upper}>
       <div class="flex flex-col items-start">
@@ -21,5 +30,6 @@ import styles from "./styles.module.scss";
         <Button text="Общие правила" buttonType="transparent" />
       </div>
     </div>
+    <CardGallery cards={cards} client:visible />
   </div>
-</div>
+</section>

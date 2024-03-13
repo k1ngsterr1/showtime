@@ -11,7 +11,7 @@ interface LinkProps {
 
 const LinkText: React.FC<LinkProps> = ({ text, to, href }) => {
   return (
-    <Link className={`${styles.link} hoverable`} to={to} href={href}>
+    <Link className={`${styles.link} hoverable`} to={to} href={href} smooth>
       {text}
     </Link>
   );

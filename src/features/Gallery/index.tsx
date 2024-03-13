@@ -1,8 +1,8 @@
 import React from "react";
-import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { RevolverButton } from "@shared/ui/Buttons/RevolverButton";
+import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -20,26 +20,26 @@ interface IGalleryProps {
 export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
+  const { handleNext, handlePrev } = useCustomSwiper(swiperRef);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.gallery_nav}>
-        <RevolverButton
-          buttonType="gallery"
-          direction="right"
-          onClick={handlePrev}
-        ></RevolverButton>
+    <div className="container">
+      <div
+      // className="pc-gallery"
+      // style={{ marginBottom: "clamp(64px,6.66624vw,256px)" }}
+      >
+        <div className="gallery-nav">
+          <RevolverButton
+            buttonType="gallery"
+            direction="previous"
+            onClick={handlePrev}
+          />
+          <RevolverButton
+            buttonType="gallery"
+            direction="next"
+            onClick={handleNext}
+          />
+        </div>
       </div>
       <Swiper
         className={styles.swiper}
@@ -53,7 +53,6 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
         onSwiper={(swiper: any) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={() => console.log("slide change")}
       >
         {photos.map((photo: ImageMetadata, index: number) => (
           <SwiperSlide key={index}>

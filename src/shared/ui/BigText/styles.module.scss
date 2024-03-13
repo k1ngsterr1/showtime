@@ -26,6 +26,12 @@
   font-size: clamp(24px, 2.49984vw, 96px);
 }
 
+.bigtext--services--card--red {
+  @apply font-katana;
+  @apply text-primary-red;
+  font-weight: 700;
+  font-size: clamp(24px, 2.49984vw, 96px);
+}
 .bigtext--form {
   @apply font-killbill;
   @apply text-primary-red;
