@@ -20,13 +20,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@googlemaps/js-api-loader": "^1.16.6",
-    "@pbe/react-yandex-maps": "^1.2.5",
     "@react-google-maps/api": "^2.19.3",
     "@reduxjs/toolkit": "^2.2.1",
-<<<<<<< HEAD
     "@types/ol": "^7.0.0",
-=======
->>>>>>> 1f4edc52820948d550a8bf75b34d78e68834c56e
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@types/react-scroll": "^1.8.10",
