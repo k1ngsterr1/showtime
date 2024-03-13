@@ -23,7 +23,10 @@
     "@pbe/react-yandex-maps": "^1.2.5",
     "@react-google-maps/api": "^2.19.3",
     "@reduxjs/toolkit": "^2.2.1",
+<<<<<<< HEAD
     "@types/ol": "^7.0.0",
+=======
+>>>>>>> 1f4edc52820948d550a8bf75b34d78e68834c56e
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@types/react-scroll": "^1.8.10",
@@ -32,6 +35,7 @@
     "astro": "^4.4.15",
     "astro-icon": "^1.1.0",
     "autoprefixer": "^10.4.18",
+    "axios": "^1.6.7",
     "gsap": "^3.12.5",
     "install": "^0.13.0",
     "mapbox": "^1.0.0-beta10",

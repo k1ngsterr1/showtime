@@ -1,12 +1,13 @@
 ---
-import RegistrationForm from "../widgets/Form/RegistrationForm/index.astro";
+import { RegistrationForm } from "@widgets/Form/RegistrationForm";
 import { Cursor } from "@shared/ui/Cursor";
 import Layout from "../layouts/Layout.astro";
 
+import "@shared/styles/global.scss";
 import "../pages/styles/registration/styles.scss";
 ---
 
-<Layout title="Registration">
+<Layout title="Регистрация">
   <Cursor client:load />
-  <RegistrationForm />
+  <RegistrationForm client:load />
 </Layout>
