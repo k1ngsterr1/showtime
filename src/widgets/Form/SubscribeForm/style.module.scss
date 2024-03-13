@@ -1,3 +1,22 @@
 .container {
-    width: clamp(611px, 63.641760000000005vw, 2444px);
+  width: clamp(611px, 63.641760000000005vw, 2444px);
+}
+.container_mob {
+  display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .container {
+    display: none;
+  }
+
+  .container_mob {
+    width: clamp(180px, 84.1104vw, 720px);
+    height: clamp(225px, 105.13799999999999vw, 900px);
+    margin: auto;
+    display: flex;
+    background-image: url("../../../assets/About/svg/image 32.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
 }

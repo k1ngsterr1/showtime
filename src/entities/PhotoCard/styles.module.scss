@@ -12,3 +12,11 @@
     width: 120px;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .card {
+    width: clamp(180px, 84.1104vw, 720px);
+    height: clamp(250px, 116.82vw, 1000px);
+    font-size: clamp(15px, 7.0092vw, 60px);
+  }
+}

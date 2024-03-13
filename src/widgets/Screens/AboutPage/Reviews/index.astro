@@ -1,17 +1,28 @@
 ---
 import SwiperReview from '@shared/ui/Swiper/index';
 import { reviews } from '@shared/ui/Swiper/index';
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import ReviewCard from '@entities/ReviewCard';
+
 import styles from './styles.module.scss';
 import '@shared/styles/global.scss';
 ---
 
-<section class="bg-primary-dark">
+<section class={`${"bg-primary-dark"} ${styles.container}`}>
     <div class="w-[86.6%] m-auto">
-        <!-- <div class="w-full m-auto">
-            <h3 class="text-primary-red mt-12">Отзывы</h3>
-        </div> -->
         <div class='flex justify-evenly gap-10 items-center mt-16 '>
             <SwiperReview reviews={reviews} client:load/>
+        </div>
+    </div>
+</section>
+
+<section class={`${"bg-primary-dark"} ${styles.container_mob}`}>
+    <div class='flex items-center flex-col mt-12'>
+        <h3 class="text-primary-red">Отзывы</h3>
+        <Paragraph align='text-center' margin='mt-4' paragraphType='white' width='75%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.' /> 
+        <div class='flex flex-col gap-10 items-center mt-8'>
+           <ReviewCard time='09.12.23' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,' name='Ruslan Pidor'/>
+           <ReviewCard time='09.12.23' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,' name='Mama Moya'/>
         </div>
     </div>
 </section>
