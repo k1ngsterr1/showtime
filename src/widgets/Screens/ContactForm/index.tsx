@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
-import YandexMap from "@shared/ui/YandexMap/index";
+import GoogleMap from "@shared/ui/GoogleMap/index";
 
 import styles from "./styles.module.scss";
 
@@ -41,7 +41,7 @@ export const Form = () => {
               />
               <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
             </div>
-            <YandexMap />
+            <GoogleMap />
           </div>
           <div className="flex flex-col">
             <a
