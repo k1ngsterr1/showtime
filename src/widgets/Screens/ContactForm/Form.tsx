@@ -11,15 +11,9 @@ export const Form = () => {
     <section className={styles.form_screen} id="contacts">
       <div className={styles.form_screen__container}>
         <h6 className="text-primary-red m-auto">Контакты</h6>
-        <div className="flex items-center m-auto w-[60%] justify-between">
-          <ReactButton text="Отправить" buttonType="filled" margin="mt-8" />
-          <ReactButton text="Заказать" buttonType="transparent" margin="mt-8" />
-          <ReactButton text="Запись" buttonType="transparent" margin="mt-8" />
-          <ReactButton
-            text="Задать вопрос"
-            buttonType="transparent"
-            margin="mt-8"
-          />
+        <div className="w-[80%] flex justify-between items-center">
+          {/* <div className="flex items-center m-auto w-[100%] justify-between"> */}
+          {/* </div> */}
         </div>
         <form className={styles.form_screen__container__form}>
           <div className="flex justify-between items-start">
@@ -28,7 +22,6 @@ export const Form = () => {
                 type="text"
                 inputType="default-red"
                 placeholder="Ваше имя"
-                margin="mt-8"
               />
               <Input
                 type="phone"

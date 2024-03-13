@@ -83,19 +83,24 @@ export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
 
   return (
     <div>
-      <div className={`${"flex justify-end "} ${styles.buttons}`}>
+      <div
+        className={`${"flex items-center justify-end mb-12"} ${styles.buttons}`}
+      >
+        <div className="w-full m-auto">
+          <h3 className="text-primary-red ">Отзывы</h3>
+        </div>
         <div className="flex justify-between w-[10%]">
           <RevolverButton
             buttonType="gallery"
             direction="previous"
             onClick={handlePrev}
-          ></RevolverButton>
+          />
           <div className="scale-x-[-1]">
             <RevolverButton
               buttonType="gallery"
               direction="next"
               onClick={handleNext}
-            ></RevolverButton>
+            />
           </div>
         </div>
       </div>
