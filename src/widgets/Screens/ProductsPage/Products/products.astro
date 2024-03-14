@@ -1,0 +1,12 @@
+---
+import { CardSwiper } from '@features/CardSwiper/index'
+import { products } from '@features/CardSwiper/index'
+
+import '@shared/styles/global.scss'
+---
+
+<main class="w-[86.6%]">
+    <div class='flex justify-evenly gap-10 items-center mt-16'>
+            <CardSwiper products={products} client:load/>
+        </div>
+    </main>
