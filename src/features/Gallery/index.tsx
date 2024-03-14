@@ -48,7 +48,11 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
       >
         {photos.map((photo: ImageMetadata, index: number) => (
           <SwiperSlide key={index}>
-            <img src={photo.src} alt={`Slide ${index + 1}`} />
+            <img
+              src={photo.src}
+              alt={`Slide ${index + 1}`}
+              className={styles.photo}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

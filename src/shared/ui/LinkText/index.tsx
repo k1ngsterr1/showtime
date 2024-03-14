@@ -10,8 +10,20 @@ interface LinkProps {
 }
 
 const LinkText: React.FC<LinkProps> = ({ text, to, href }) => {
+  const handleClick = () => {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/";
+    }
+  };
+
   return (
-    <Link className={`${styles.link} hoverable`} to={to} href={href} smooth>
+    <Link
+      className={`${styles.link} hoverable`}
+      to={to}
+      href={href}
+      smooth
+      onClick={handleClick}
+    >
       {text}
     </Link>
   );
