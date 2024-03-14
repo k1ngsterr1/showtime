@@ -1,13 +1,13 @@
 .main {
   @apply bg-primary-dark;
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url(../../../assets/About/image-22.webp);
   background-position: center center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
