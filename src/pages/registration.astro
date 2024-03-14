@@ -6,11 +6,11 @@ import { Loader } from "@shared/ui/Loader/index";
 import Layout from "../layouts/Layout.astro";
 
 import "@shared/styles/global.scss";
-import "../pages/styles/Registration/styles.scss";
+import "../pages/styles/registration/styles.scss";
 ---
 
 <Layout title="Регистрация">
   <Cursor client:load />
-    <Loader client:load />
+  <Loader client:load />
   <RegistrationForm client:load />
 </Layout>

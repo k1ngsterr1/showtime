@@ -24,7 +24,12 @@ import styles from "../../../../pages/styles/home/styles.module.scss";
   </div>
   <div class={styles.main__container__buttons}>
     <LinkButton to="main" href="/login" buttonType="filled" text="Войти" />
-    <LinkButton to="main" buttonType="transparent" text="Подробнее" />
+    <LinkButton
+      to="main"
+      buttonType="transparent"
+      href="/registration"
+      text="Создать аккаунт"
+    />
   </div>
 </div>
 
@@ -35,7 +40,7 @@ import styles from "../../../../pages/styles/home/styles.module.scss";
   </h1>
   <div class={styles.main_mob__container__paragraphs}>
     <Paragraph
-    align="text-center"
+      align="text-center"
       paragraphType="white"
       width="70%"
       text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
@@ -43,6 +48,11 @@ import styles from "../../../../pages/styles/home/styles.module.scss";
   </div>
   <div class={styles.main_mob__container__buttons}>
     <LinkButton to="main" buttonType="filled" margin="mt-8" text="Войти" />
-    <LinkButton to="main" buttonType="transparent" margin="mt-6" text="Подробнее" />
+    <LinkButton
+      to="main"
+      buttonType="transparent"
+      margin="mt-6"
+      text="Подробнее"
+    />
   </div>
 </div>

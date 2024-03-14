@@ -6,11 +6,11 @@ import { Loader } from "@shared/ui/Loader";
 import Layout from "../layouts/Layout.astro";
 
 import "@shared/styles/global.scss";
-import "../pages/styles/Registration/styles.scss";
+import "../pages/styles/registration/styles.scss";
 ---
 
 <Layout title="Войдите в аккаунт">
   <Cursor client:load />
-      <Loader client:load />
+  <Loader client:load />
   <LoginForm client:load />
 </Layout>

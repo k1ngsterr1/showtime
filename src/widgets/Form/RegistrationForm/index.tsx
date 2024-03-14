@@ -18,7 +18,6 @@ export const RegistrationForm = () => {
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
 
-    console.log(name, value);
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,

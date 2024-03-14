@@ -14,8 +14,8 @@ export const Header = () => {
         <div className={styles.header__content}>
           <Logo />
           <nav className={styles.header__content__links}>
-            <LinkText text="Главная" to="main" href="" />
-            <LinkText text="О нас" to="about" href="" />
+            <LinkText text="Главная" to="main" href="/" />
+            <LinkText text="О нас" to="about" href="/" />
             <LinkText text="Услуги" to="services" href="" />
             <LinkText text="Расписание" to="timetable" href="" />
             <LinkText text="Правила" to="rules" href="" />
