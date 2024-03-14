@@ -38,3 +38,9 @@
   font-weight: 700;
   font-size: clamp(30px, 3.1248vw, 120px);
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .bigtext--about--card {
+    font-size: clamp(24px, 11.21472vw, 96px);
+  }
+}
