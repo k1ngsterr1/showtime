@@ -1,0 +1,27 @@
+.card {
+  position: relative;
+  width: clamp(229.5px, 23.90472vw, 918px);
+  height: clamp(224.5px, 23.38392vw, 898px);
+  background-color: #f0e7be;
+  @apply p-8;
+  box-shadow: 16px 16px 0px 0px #bf2316;
+
+  &__number {
+    font-size: clamp(32px, 3.33312vw, 128px);
+    @apply text-primary-red;
+    @apply font-killbill;
+  }
+
+  &__heading {
+    font-size: clamp(32px, 3.33312vw, 128px);
+    @apply text-primary-red;
+    @apply font-killbill;
+  }
+
+  &__paragraph {
+    font-size: clamp(9px, 0.93744vw, 36px);
+    @apply text-primary-dark;
+    @apply font-neoregular;
+    line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+  }
+}
