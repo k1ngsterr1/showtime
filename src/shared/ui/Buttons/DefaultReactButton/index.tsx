@@ -10,7 +10,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const ReactButton: React.FC<ButtonProps> = ({
+const ReactButton: React.FC<ButtonProps> = ({
   buttonType,
   text,
   margin,
@@ -24,3 +24,5 @@ export const ReactButton: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+export default ReactButton;
