@@ -1,0 +1,33 @@
+.shop_tab {
+  display: flex;
+  flex-direction: column;
+  @apply rounded-md;
+  @apply p-4;
+  @apply bg-primary-light;
+
+  &__name {
+    @apply text-3xl;
+    @apply text-primary-red;
+    @apply font-killbill;
+  }
+
+  &__price {
+    @apply text-4xl;
+    @apply text-primary-red;
+    @apply font-killbill;
+  }
+
+  &__paragraph {
+    @apply text-primary-dark;
+    @apply text-xl;
+    @apply font-neoregular;
+  }
+
+  &__button {
+    @apply text-2xl;
+    @apply p-4;
+    @apply bg-primary-red;
+    @apply font-neoregular;
+    @apply text-primary-light;
+  }
+}

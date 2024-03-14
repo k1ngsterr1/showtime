@@ -1,7 +1,6 @@
 .user_screen {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   @apply bg-primary-dark;
 
   &__upper {
@@ -11,6 +10,15 @@
     align-items: center;
     justify-content: space-between;
     @apply mt-16;
+
+    &__cart_icon {
+      transition: 0.3s all;
+      @apply text-4xl;
+      @apply text-primary-red;
+      &:hover {
+        @apply text-red-600;
+      }
+    }
 
     &__icon {
       width: clamp(40px, 4.1664vw, 160px);
@@ -29,7 +37,6 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
-    overflow: hidden;
     @apply mt-16;
   }
 

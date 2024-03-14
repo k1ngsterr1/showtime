@@ -2,6 +2,7 @@
   width: clamp(200px, 20.832vw, 800px);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   align-items: flex-start;
   @apply p-4;
   @apply bg-primary-light;
@@ -9,12 +10,14 @@
   &__upper {
     width: 100%;
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: space-between;
 
     &__date,
     &__time {
       @apply text-2xl;
+      overflow: hidden;
       @apply font-katana;
       @apply text-primary-red;
     }
@@ -22,6 +25,7 @@
 
   &__heading {
     @apply text-4xl;
+    overflow: hidden;
     @apply font-killbill;
     @apply text-primary-red;
     @apply mt-4;
@@ -43,5 +47,9 @@
     @apply underline;
     @apply text-primary-red;
     @apply font-neo;
+    transition: 0.3s all;
+    &:hover {
+      @apply text-red-600;
+    }
   }
 }
