@@ -1,10 +1,10 @@
 import Logo from "@shared/ui/Icons/Logo";
 import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { LanguageButton } from "@shared/ui/LanguageButton";
+import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 
 import styles from "./styles.module.scss";
 import LinkText from "@shared/ui/LinkText";
-import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 
 export const Header = () => {
   const { onOpen } = useCustomMenu();
