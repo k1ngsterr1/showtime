@@ -1,0 +1,29 @@
+.review_card {
+  width: clamp(405px, 42.1848vw, 1620px);
+  height: clamp(189px, 19.68624vw, 756px);
+  @apply bg-primary-light text-primary-red;
+  font-weight: 600;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+span {
+  font-size: clamp(24px, 2.49984vw, 96px);
+  @apply font-killbill;
+  @apply text-primary-red;
+}
+.paragraph {
+  width: 60%;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .review_card {
+    width: clamp(175px, 81.774vw, 700px);
+    height: clamp(180px, 84.1104vw, 720px);
+    font-size: clamp(14px, 6.541919999999999vw, 56px);
+  }
+  .paragraph {
+    font-size: clamp(9px, 4.20552vw, 36px);
+    line-height: clamp(11.5px, 5.37372vw, 46px);
+  }
+}

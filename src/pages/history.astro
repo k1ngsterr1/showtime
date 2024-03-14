@@ -6,20 +6,21 @@ import { Form } from "@widgets/Screens/ContactForm/index";
 import {Menu} from "../features/Menu/index"
 import Layout from "../layouts/Layout.astro";
 import Footer from "@features/Footer/index.astro";
-import PartnersPage from "../widgets/Screens/PartnersPage/index.astro";
+import HistoryPage from "../widgets/Screens/HistoryPage/index.astro";
 
 import "@shared/styles/global.scss";
 import "@shared/styles/scrollbar.scss";
 
-import styles from "./styles/services/styles.module.scss";
+import styles from "./styles/History/styles.module.scss";
 ---
 
-<Layout title="Партнеры">
-  <Menu client:load/>
+<Layout title="История">
+    <Menu client:load/>
+    <Loader client:load/>
   <Cursor client:load />
   <main class={styles.main}>
     <Header client:load />
-    <PartnersPage/>
+    <HistoryPage/>
   </main>
   <Form client:visible />
   <Footer />
