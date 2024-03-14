@@ -14,5 +14,8 @@
 
   &__buttons {
     display: flex;
+    justify-content: space-between;
+    width: 10%;
+    margin-left: auto;
   }
 }
