@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
+import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
+
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import PasswordInput from "@shared/ui/Inputs/PasswordInput/index";
 

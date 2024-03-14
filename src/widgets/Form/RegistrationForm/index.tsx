@@ -1,7 +1,7 @@
 import PasswordInput from "@shared/ui/Inputs/PasswordInput/index";
 import Button from "../../../shared/ui/Buttons/DefaultButton/index.astro";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
-import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
+import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 import { createAccount } from "@shared/lib/hooks/useCreateAccount";
 import { useState } from "react";
 
