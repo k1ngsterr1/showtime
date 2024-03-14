@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
-import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
+import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 import { Selector } from "@shared/ui/Selector";
 import { Map } from "@shared/ui/Map/index";
 import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
