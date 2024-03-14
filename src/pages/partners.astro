@@ -2,11 +2,10 @@
 import { Header } from "@features/Header/index";
 import { Cursor } from "@shared/ui/Cursor/index";
 import { Loader } from "@shared/ui/Loader/index";
-import { Menu } from "@features/Menu";
 import { Form } from "@widgets/Screens/ContactForm/index";
 import Layout from "../layouts/Layout.astro";
 import Footer from "@features/Footer/index.astro";
-import ClientPage from "../widgets/Screens/ClientsPage/index.astro"
+import PartnersPage from "../widgets/Screens/PartnersPage/index.astro";
 
 import "@shared/styles/global.scss";
 import "@shared/styles/scrollbar.scss";
@@ -14,13 +13,11 @@ import "@shared/styles/scrollbar.scss";
 import styles from "./styles/services/styles.module.scss";
 ---
 
-<Layout title="Наши клиенты">
-  <Loader client:load />
+<Layout title="Партнеры">
   <Cursor client:load />
-  <Menu client:load />
   <main class={styles.main}>
     <Header client:load />
-    <ClientPage/>
+    <PartnersPage/>
   </main>
   <Form client:visible />
   <Footer />
