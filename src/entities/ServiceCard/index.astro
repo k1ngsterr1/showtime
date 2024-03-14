@@ -27,13 +27,14 @@ const serviceClass = `${styles.service_card} ${styles[cardType]}`;
       bigTextType={cardType === "white"
         ? "services--card--red"
         : "services--card"}
+        margin="mt-2"
     />
-    <Paragraph
-      text={paragraph}
-      margin="mt-4"
-      paragraphType={cardType === "white" ? "dark" : "white"}
-      width="70%"
-    />
+      <Paragraph
+        text={paragraph}
+        margin="mt-2"
+        paragraphType={cardType === "white" ? "dark" : "white"}
+        width="80%"
+      />
     <span class={styles.service_card__price}>{price}</span>
   </div>
 </div>
