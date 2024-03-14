@@ -101,7 +101,7 @@ export const Form = () => {
                 href="tel:+77003333826"
                 className={`${styles.form_screen__container__form__link} mt-5`}
               >
-                +7 (700) 333-38-26
+                +77003333826
               </a>
             </div>
           </div>
