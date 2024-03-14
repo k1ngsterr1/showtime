@@ -10,11 +10,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { UserAside } from "@features/UserAside";
 import { useCustomShop } from "@shared/lib/hooks/useCustomShop";
+import { useUserData } from "@shared/lib/hooks/useGetUserData";
 
 import styles from "./styles.module.scss";
 
 export const UserScreen = () => {
   const { onOpen } = useCustomMenu();
+  const userData = useUserData();
   const { onShopOpen } = useCustomShop();
 
   const handleGoBack = () => {
@@ -59,8 +61,8 @@ export const UserScreen = () => {
       </div>
       <section className={styles.user_screen__container}>
         <div className="flex flex-col w-[35%] sticky top-0 ">
-          <UserProfile name="Руслан Махматов" rank="мафиози" />
-          <MoneyTab money={1000} />
+          <UserProfile name={userData?.username} rank={userData?.rank} />
+          <MoneyTab money={userData?.money} />
           <HorizontalSeparator />
           <UserStats />
         </div>
