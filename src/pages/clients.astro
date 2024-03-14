@@ -2,6 +2,7 @@
 import { Header } from "@features/Header/index";
 import { Cursor } from "@shared/ui/Cursor/index";
 import { Loader } from "@shared/ui/Loader/index";
+import { Menu } from "@features/Menu";
 import { Form } from "@widgets/Screens/ContactForm/index";
 import Layout from "../layouts/Layout.astro";
 import Footer from "@features/Footer/index.astro";
@@ -13,7 +14,9 @@ import styles from "./styles/services/styles.module.scss";
 ---
 
 <Layout title="Наши клиенты">
+  <Loader client:load />
   <Cursor client:load />
+  <Menu client:load />
   <main class={styles.main}>
     <Header client:load />
   </main>

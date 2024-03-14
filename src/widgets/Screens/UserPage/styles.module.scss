@@ -1,20 +1,49 @@
 .user_screen {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   @apply bg-primary-dark;
 
   &__container {
     width: 86.6%;
     height: auto;
     display: flex;
+    justify-content: space-between;
+    margin: auto;
+    overflow: hidden;
+    flex-direction: column;
+
+    &__upper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @apply mt-16;
+
+      &__icon {
+        width: clamp(40px, 4.1664vw, 160px);
+        height: clamp(40px, 4.1664vw, 160px);
+      }
+
+      &__heading {
+        font-size: clamp(24px, 2.49984vw, 96px);
+        @apply text-primary-light;
+      }
+    }
+  }
+
+  &__column_container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
     flex-direction: column;
   }
 
   &__bg {
-    width: 990px;
+    width: clamp(495px, 51.559200000000004vw, 1980px);
     height: 100%;
     position: absolute;
-    left: -200px;
+    left: clamp(-100px, -10.416vw, -400px);
     z-index: 0;
   }
 }

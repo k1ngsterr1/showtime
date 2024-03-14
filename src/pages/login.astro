@@ -4,11 +4,10 @@ import { LoginForm } from "../widgets/Form/LoginFrom";
 
 import Layout from "../layouts/Layout.astro";
 
-import "../pages/styles/registration/styles.scss";
+import "../pages/styles/Registration/styles.scss";
 ---
 
 <Layout title="Войдите в аккаунт">
   <Cursor client:load />
-  <LoginForm />
+  <LoginForm client:load />
 </Layout>
-../widgets/Form/LoginFrom/index.tsx

@@ -9,8 +9,6 @@ import MiniText from "@shared/ui/MiniText/index.astro";
 
 import styles from "../styles/styles.module.scss";
 
-import React from "react";
-
 export const LoginForm = () => {
   return (
     <>
