@@ -15,7 +15,7 @@ const Card: React.FC<ICardProps> = ({ number, name, paragraph }) => {
       <div className={styles.card__number}>{number}</div>
       <span className={styles.card__heading}>{name}</span>
       <p className={styles.card__paragraph}>{paragraph}</p>
-      <Button buttonType="filled" text="Свзаться" />
+      <Button buttonType="filled" text="Свзаться" margin="mt-8" />
     </div>
   );
 };

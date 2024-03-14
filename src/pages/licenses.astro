@@ -1,0 +1,27 @@
+---
+import { Header } from "@features/Header/index";
+import { Cursor } from "@shared/ui/Cursor/index";
+import { Loader } from "@shared/ui/Loader/index";
+import { Form } from "@widgets/Screens/ContactForm/index";
+import {Menu} from "../features/Menu/index"
+import Layout from "../layouts/Layout.astro";
+import Footer from "@features/Footer/index.astro";
+import LicensesPage from "../widgets/Screens/LicensesPage/index.astro";
+
+import "@shared/styles/global.scss";
+import "@shared/styles/scrollbar.scss";
+
+import styles from "./styles/History/styles.module.scss";
+---
+
+<Layout title="Лицензии">
+    <Menu client:load/>
+    <!-- <Loader client:load/> -->
+  <Cursor client:load />
+  <main class={styles.main}>
+    <Header client:load />
+    <LicensesPage/>
+  </main>
+  <Form client:visible />
+  <Footer />
+</Layout>

@@ -7,16 +7,11 @@
     width: 86.6%;
     margin: auto;
 
-    &__history_cards {
-      @apply mb-24;
-    }
-
-    &_cards {
-      @apply mt-32;
+    &_licenses {
+      @apply mt-24;
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
-      gap: clamp(50px, 5.208vw, 200px);
+      justify-content: space-between;
       @apply mb-32;
     }
   }
