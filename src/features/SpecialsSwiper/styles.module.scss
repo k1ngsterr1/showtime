@@ -1,0 +1,19 @@
+.container {
+  overflow: hidden;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    @apply mb-12;
+  }
+
+  &__heading {
+    margin-left: auto;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: end;
+    width: 10%;
+  }
+}

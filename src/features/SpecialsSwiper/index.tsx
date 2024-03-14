@@ -5,44 +5,44 @@ import { RevolverButton } from "@shared/ui/Buttons/RevolverButton/index";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 import Paragraph from "../../shared/ui/Paragraph/index.astro";
 
-import photo from "@assets/About/card_product.webp";
+import photo from "@assets/About/shlyapa.webp";
 
 import styles from "./styles.module.scss";
 import "swiper/css";
 
-export const products = [
+export const specials = [
   {
     photo: photo,
-    heading: "Набор карт “Мафия”",
+    heading: "Шляпа мафиози",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: "15000 тг",
   },
   {
     photo: photo,
-    heading: "Набор карт “Мафия”",
+    heading: "Шляпа мафиози",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    price: "15000 тг",
+    price: "7000 тг",
   },
   {
     photo: photo,
-    heading: "Набор карт “Мафия”",
+    heading: "Шляпа мафиози",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    price: "15000 тг",
+    price: "7000 тг",
   },
   {
     photo: photo,
-    heading: "Набор карт “Мафия”",
+    heading: "Шляпа мафиози",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    price: "15000 тг",
+    price: "7000 тг",
   },
 ];
 
 interface SwiperProductsProps {
-  products: Array<{
+  specials: Array<{
     photo: ImageMetadata;
     heading: string;
     paragraph: string;
@@ -52,7 +52,7 @@ interface SwiperProductsProps {
 
 type Swiper = any;
 
-export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
+const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
   const { handlePrev, handleNext } = useCustomSwiper(swiperRef);
@@ -60,8 +60,8 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
   return (
     <div className={styles.container}>
       <div className={styles.container__header}>
-        <div className="w-full m-auto">
-          <h3 className="text-primary-red ">Продукция</h3>
+        <div className={styles.container__heading}>
+          <h3 className="text-primary-red m-auto">Акции</h3>
         </div>
         {/* <Paragraph
           paragraphType="white"
@@ -92,13 +92,13 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
           swiperRef.current = swiperInstance;
         }}
       >
-        {products.map((product, index) => (
+        {specials.map((specials, index) => (
           <SwiperSlide key={index}>
             <ProductCard
-              photo={product.photo}
-              heading={product.heading}
-              paragraph={product.paragraph}
-              price={product.price}
+              photo={specials.photo}
+              heading={specials.heading}
+              paragraph={specials.paragraph}
+              price={specials.price}
             />
           </SwiperSlide>
         ))}
@@ -106,3 +106,5 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
     </div>
   );
 };
+
+export default CardSwiper;
