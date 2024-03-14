@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, type ICardProps } from "@entities/Card";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-cards";
 
-import styles from "../CardGallery/styles.module.scss";
+import styles from "./styles.module.scss";
 
 type Swiper = any;
 

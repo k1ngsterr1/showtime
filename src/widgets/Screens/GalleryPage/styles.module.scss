@@ -29,3 +29,26 @@
     }
   }
 }
+
+.gallery_mob {
+  display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .gallery {
+    display: none;
+  }
+
+  .gallery_mob {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    @apply pt-16 pb-16;
+    align-items: center;
+    flex-direction: column;
+    background-color: #232323;
+    &__text {
+      text-align: center;
+    }
+  }
+}

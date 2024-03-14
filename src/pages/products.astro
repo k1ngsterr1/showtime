@@ -1,6 +1,9 @@
 ---
 import { Cursor } from "@shared/ui/Cursor/index";
 import { Header } from "@features/Header/index";
+import { Loader } from "@shared/ui/Loader";
+import { Menu } from "@features/Menu";
+
 import Layout from "../layouts/Layout.astro";
 import ProductsPage from '@widgets/Screens/ProductsPage/Products/products.astro'
 
@@ -9,6 +12,9 @@ import styles from '@pages/styles/Products/styles.module.scss'
 
 <Layout title="Products">
   <Cursor client:load />
+  <Loader client:load />
+  <Cursor client:load />
+  <Menu client:load />
   <div class={styles.main}>
     <Header client:load />
     <ProductsPage/>
