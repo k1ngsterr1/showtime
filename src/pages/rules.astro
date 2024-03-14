@@ -4,10 +4,9 @@ import { Cursor } from "@shared/ui/Cursor/index";
 import { Loader } from "@shared/ui/Loader/index";
 import { Menu } from "@features/Menu";
 import { Form } from "@widgets/Screens/ContactForm/index";
-import {Menu} from "../features/Menu/index"
 import Layout from "../layouts/Layout.astro";
 import Footer from "@features/Footer/index.astro";
-import PartnersPage from "../widgets/Screens/PartnersPage/index.astro";
+import ClientPage from "../widgets/Screens/ClientsPage/index.astro"
 
 import "@shared/styles/global.scss";
 import "@shared/styles/scrollbar.scss";
@@ -15,18 +14,13 @@ import "@shared/styles/scrollbar.scss";
 import styles from "./styles/services/styles.module.scss";
 ---
 
-<Layout title="Партнеры">
-<<<<<<< HEAD
-  <Menu client:load/>
+<Layout title="Правила работы">
+  <Loader client:load />
   <Cursor client:load />
-=======
-   <Cursor client:load />
-    <Loader client:load /> 
-    <Menu client:load />
->>>>>>> c0db1bcd683c83edcd437693f5dc0db4439e3c15
+  <Menu client:load />
   <main class={styles.main}>
     <Header client:load />
-    <PartnersPage/>
+    <ClientPage/>
   </main>
   <Form client:visible />
   <Footer />
