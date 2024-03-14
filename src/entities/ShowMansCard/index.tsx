@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 interface Props {
-  photo: any;
+  photo: ImageMetadata;
   position: string;
   name: string;
 }
@@ -10,8 +10,7 @@ interface Props {
 const ShowMansCard: React.FC<Props> = ({ position, name, photo }) => {
   return (
     <div className={styles.card}>
-      {/* Use photo.src instead of photo */}
-      <img src={photo} alt={name} className={styles.shownmans_picture} />
+      <img src={photo.src} alt={name} className={styles.card_picture} />
       <span className={styles.card__name}>{name}</span>
       <span className={styles.card__position}>{position}</span>
     </div>

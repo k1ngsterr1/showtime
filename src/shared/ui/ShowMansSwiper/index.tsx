@@ -3,54 +3,59 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ShowMansCard from "@entities/ShowMansCard/index";
 import { RevolverButton } from "@shared/ui/Buttons/RevolverButton/index";
+import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 
 import "swiper/css";
 import styles from "./styles.module.scss";
 
-// Убедитесь, что пути к изображениям правильные
 import ShowMan from "../../../assets/ShowMans/showman.webp";
-// Добавьте другие пути для изображений, если есть
-
-export const photos = [ShowMan, ShowMan];
 
 export const showmans = [
   {
+    photo: ShowMan,
     name: "Ruslan Pricol",
     position: "Сотрудник",
   },
   {
+    photo: ShowMan,
     name: "Gaidar Lord",
     position: "Сотрудник",
   },
   {
+    photo: ShowMan,
     name: "Artyom Andre",
     position: "Сотрудник",
   },
   {
+    photo: ShowMan,
     name: "Zain Ihsan",
     position: "Сотрудник",
   },
   {
+    photo: ShowMan,
     name: "Erlan Erlanov",
     position: "Сотрудник",
   },
   {
+    photo: ShowMan,
     name: "Nurmukhamed Pofamet",
     position: "Сотрудник",
   },
   {
+    photo: ShowMan,
     name: "Aslanchik",
     position: "Сотрудник",
   },
   {
+    photo: ShowMan,
     name: "Dauren Pidor",
     position: "Сотрудник",
   },
 ];
 
 interface ShowMansSwiperProps {
-  photos: any[];
   showmans: Array<{
+    photo: ImageMetadata;
     name: string;
     position: string;
   }>;
@@ -58,23 +63,10 @@ interface ShowMansSwiperProps {
 
 type Swiper = any;
 
-const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({
-  photos,
-  showmans,
-}) => {
+const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
+  const { handlePrev, handleNext } = useCustomSwiper(swiperRef);
 
   return (
     <div>
@@ -108,9 +100,8 @@ const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({
         {showmans.map((showman, index) => (
           <SwiperSlide key={index}>
             <div className="flex">
-              {/* Используйте фотографии из массива photos */}
               <ShowMansCard
-                photo={photos[index]}
+                photo={showman.photo}
                 name={showman.name}
                 position={showman.position}
               />
