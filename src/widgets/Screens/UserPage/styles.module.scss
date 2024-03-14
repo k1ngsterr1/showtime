@@ -56,6 +56,26 @@
         @apply font-neoregular;
       }
     }
+
+    &__achievements {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      @apply mt-16;
+
+      &__heading {
+        font-size: clamp(24px, 2.49984vw, 96px);
+        @apply text-primary-red;
+        @apply font-killbill;
+      }
+
+      &__link {
+        @apply text-2xl;
+        @apply underline;
+        @apply text-primary-light;
+        @apply font-neoregular;
+      }
+    }
   }
 
   &__bg {

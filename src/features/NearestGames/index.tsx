@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { RevolverButton } from "@shared/ui/Buttons/RevolverButton";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 import { NearGameCard, type INearGameCard } from "@entities/NearGameCard";
 

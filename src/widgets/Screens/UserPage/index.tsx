@@ -4,9 +4,10 @@ import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { UserProfile } from "@entities/UserProfile";
 import { UserStats } from "@entities/UserStats";
 import { HorizontalSeparator } from "@shared/ui/HorizontalSeparator";
-import { NearGameCard } from "@entities/NearGameCard";
 import { NearestGameSwiper } from "@features/NearestGames";
 import { nearGameCards } from "@shared/lib/content/gamesContent";
+import { AchievementGallery } from "@features/AchievementGallery";
+import { achievements } from "@shared/lib/content/achievementContent";
 
 import styles from "./styles.module.scss";
 
@@ -50,6 +51,26 @@ export const UserScreen = () => {
               </a>
             </div>
             <NearestGameSwiper cards={nearGameCards} />
+          </div>
+          <div className={styles.user_screen__column_container__achievements}>
+            <div className="w-full flex items-center justify-between">
+              <span
+                className={
+                  styles.user_screen__column_container__achievements__heading
+                }
+              >
+                Достижения
+              </span>
+              <a
+                className={
+                  styles.user_screen__column_container__achievements__link
+                }
+                href="/all"
+              >
+                Подробнее
+              </a>
+            </div>
+            <AchievementGallery achievements={achievements} />
           </div>
         </div>
       </section>
