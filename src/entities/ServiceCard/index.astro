@@ -9,7 +9,7 @@ interface Props {
   heading: string;
   paragraph: string;
   price: string;
-  cardType?: string | "white";
+  cardType?: string | "white" | any;
 }
 
 const { number, image, heading, paragraph, price, cardType } = Astro.props;

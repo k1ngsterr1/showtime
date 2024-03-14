@@ -13,7 +13,7 @@ interface Props {
   margin?: string;
 }
 
-const { paragraph, bigText, cardType, margin, ...rest } = Astro.props;
+const { paragraph, bigText, cardType, margin,  } = Astro.props;
 const cardClass = `${styles.card} ${styles[cardType]} ${margin ? margin : ""}`;
 const paragraphType = cardType === "dark" ? "white" : "dark";
 const bigTextType = cardType === "dark" ? "about--card" : "red";
