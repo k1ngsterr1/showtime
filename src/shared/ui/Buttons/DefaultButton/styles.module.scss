@@ -49,4 +49,10 @@
     font-weight: 100;
     cursor: none;
   }
+
+  .filled {
+    @extend .button;
+    width: clamp(125px, 58.41vw, 500px);
+    height: clamp(42.5px, 19.859399999999997vw, 170px);
+  }
 }

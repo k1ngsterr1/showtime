@@ -1,8 +1,10 @@
 ---
-import styles from "./styles.module.scss";
 import BigText from "@shared/ui/BigText/index.astro";
 import Paragraph from "@shared/ui/Paragraph/index.astro";
 import Fedora from '@assets/logo/fedora.svg'
+
+import styles from "./styles.module.scss";
+
 
 interface Props {
   bigText: string;
@@ -11,7 +13,7 @@ interface Props {
   margin?: string;
 }
 
-const { paragraph, bigText, cardType, margin, ...rest } = Astro.props;
+const { paragraph, bigText, cardType, margin,  } = Astro.props;
 const cardClass = `${styles.card} ${styles[cardType]} ${margin ? margin : ""}`;
 const paragraphType = cardType === "dark" ? "white" : "dark";
 const bigTextType = cardType === "dark" ? "about--card" : "red";

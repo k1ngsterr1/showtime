@@ -1,61 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ReviewCard from "@entities/ReviewCard/index";
+import { ReviewCard } from "@entities/ReviewCard/index";
 import { RevolverButton } from "@shared/ui/Buttons/RevolverButton/index";
-
-import "swiper/css";
+import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 import styles from "./styles.module.scss";
 
-export const reviews = [
-  {
-    time: "09.03.24",
-    name: "Ruslan Pricol",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-  {
-    time: "09.03.24",
-    name: "Gaidar Lord",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-  {
-    time: "09.03.24",
-    name: "Artyom Andre",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-  {
-    time: "09.03.24",
-    name: "Zain Ihsan",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-  {
-    time: "09.03.24",
-    name: "Zain Ihsan",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-  {
-    time: "09.03.24",
-    name: "Zain Ihsan",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-  {
-    time: "09.03.24",
-    name: "Zain Ihsan",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-  {
-    time: "09.03.24",
-    name: "Zain Ihsan",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-  },
-];
+import "swiper/css";
 
 interface SwiperReviewProps {
   reviews: Array<{
@@ -70,24 +20,12 @@ type Swiper = any;
 export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
+  const { handlePrev, handleNext } = useCustomSwiper(swiperRef);
 
   return (
     <div>
-      <div
-        className={`${"flex items-center justify-end mb-12"} ${styles.buttons}`}
-      >
-        <div className="w-full m-auto">
+      <div className={styles.reviews_screen}>
+        <div className={styles.reviews_screen__upper}>
           <h3 className="text-primary-red ">Отзывы</h3>
         </div>
         <div className="flex justify-between w-[10%]">

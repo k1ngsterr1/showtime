@@ -53,3 +53,48 @@ import "@shared/styles/global.scss";
     />
   </div>
 </section>
+
+<section class={styles.about_mob_screen} id="about">
+  <div class={styles.about_screen__container}>
+    <div class={styles.about_screen__container__upper}>
+      <div class="flex flex-col items-center">
+        <h2 class="text-primary-red">О нас</h2>
+        <Paragraph
+          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
+          align="text-center"
+          width="80%"
+          margin="mt-4"
+          paragraphType="red"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col gap-10 items-center mt-16">
+      <AboutCard
+        bigText="Lorem Ipsum"
+        cardType="dark"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+      <AboutCard
+        bigText="Lorem Ipsum"
+        cardType="dark"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+      <AboutCard
+        bigText="Lorem Ipsum"
+        cardType="dark"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+      <AboutCard
+        bigText="Lorem Ipsum"
+        cardType="dark"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
+      />
+    </div>
+    <NavigationButton
+      text="Подробнее"
+      href="/about"
+      buttonType="transparent"
+      margin="m-auto mt-16"
+    />
+  </div>
+</section>

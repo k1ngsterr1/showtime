@@ -8,7 +8,6 @@ import Layout from "../../../layouts/Layout.astro";
 
 import men from "@assets/Gallery/men.webp";
 import womanman from "@assets/Gallery/womanman.webp";
-import women from "@assets/Gallery/women.webp";
 import womenjar from "@assets/Gallery/womenjar.webp";
 import womenkatana from "@assets/Gallery/womenkatana.webp";
 
@@ -17,7 +16,7 @@ const photos = [men, womanman,  womenjar]
 import styles from "./styles.module.scss";
 import "../../../shared/styles/global.scss";
 ---
-<Layout title="Gallery">
+
 <div class={styles.gallery}>
   <div class={styles.gallery__content}>
       <Cursor client:load/>
@@ -32,4 +31,11 @@ import "../../../shared/styles/global.scss";
     </div>
   </div>
 </div>
-</Layout>
+<div class={styles.gallery_mob}>
+      <h2 class="text-primary-red">Галерея</h2>
+      <Paragraph text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore." paragraphType="white" align="text-center" width="80%" margin="mt-8"/>
+      <!-- <div class={styles.gallery_mob__content_photos}> -->
+        <!-- <GalleryCustom photos={photos} client:load /> -->
+      <!-- </div> -->
+         <Counter paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut." width="70%" margin="mt-8" duration={1} end={100} align="text-center" text="+"/ client:load>
+</div>

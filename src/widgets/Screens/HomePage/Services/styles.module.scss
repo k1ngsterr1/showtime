@@ -27,3 +27,23 @@
     }
   }
 }
+
+.services_mob_screen {
+  display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .services_screen {
+    display: none;
+  }
+
+  .services_mob_screen {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    background-image: url("../../../../assets/Main/concrete-texture.webp");
+    background-position: center center;
+    background-size: cover;
+    @apply bg-primary-light pb-12;
+  }
+}

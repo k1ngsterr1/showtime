@@ -3,11 +3,12 @@ import BigText from "../../../shared/ui/BigText/index.astro";
 import Paragraph from "../../../shared/ui/Paragraph/index.astro";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import PasswordInput from "@shared/ui/Inputs/PasswordInput/index";
-import MiniText from "@shared/ui/MiniText/index.astro";
+// import MiniText from "@shared/ui/MiniText/index.astro";
 
 // import Logo from "../../../assets/logo/logo.svg";
 
 import styles from "../styles/styles.module.scss";
+import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton";
 
 export const LoginForm = () => {
   return (
@@ -15,13 +16,11 @@ export const LoginForm = () => {
       <section className={styles.registration}>
         <div className={styles.registration__content}>
           <div className={styles.registration__logo}></div>
-          <BigText text="Войдите в аккаунт" margin="mt-8" bigTextType="form" />
-          <Paragraph
-            paragraphType="white"
-            margin="mt-8"
-            width="42%"
-            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-          />
+          <h2 className={styles.registration__heading}>Войдите в аккаунт</h2>
+          <p className={styles.registration__paragraph}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+          </p>
           <form className={styles.registration__form}>
             <Input
               placeholder="Электронная почта"
@@ -30,19 +29,20 @@ export const LoginForm = () => {
               type="email"
             />
             <PasswordInput placeholder="Пароль" margin="mt-4" type="password" />
-            <Button
+            <ReactButton
               text="Войти"
               buttonType="filled"
               type="submit"
               margin="mt-8"
             />
           </form>
-          <MiniText
-            margin="mt-10"
-            href="registration"
-            text="Еще нет аккунта? "
-            linktext=" Создать"
-          />
+          <span className={styles.registration__mini_text}>
+            Еще нет аккаунта?{" "}
+            <a href="/registration" className="text-primary-red">
+              {" "}
+              Создать аккаунт
+            </a>{" "}
+          </span>
         </div>
       </section>
     </>
