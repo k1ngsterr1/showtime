@@ -24,3 +24,21 @@
   @extend .service_card;
   @apply bg-primary-light;
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .service_card {
+    width: clamp(184px, 85.97952vw, 736px);
+    height: clamp(200px, 93.45599999999999vw, 800px);
+    &__icon {
+      width: clamp(37.855px, 17.6888844vw, 151.42px);
+      height: clamp(44.415px, 20.7542412vw, 177.66px);
+    }
+    &__number {
+      font-size: clamp(24px, 11.21472vw, 96px);
+    }
+    &__price {
+      font-size: clamp(12.5px, 5.840999999999999vw, 50px);
+      margin-top: 20px;
+    }
+  }
+}
