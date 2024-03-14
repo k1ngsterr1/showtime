@@ -1,0 +1,22 @@
+.marqueeContainer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee {
+  display: flex;
+  animation: marquee-animation 7s linear infinite;
+}
+
+.item {
+  margin-right: clamp(100px, 10.416vw, 400px);
+}
+
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
