@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { UserTab } from "@entities/UserTab";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";

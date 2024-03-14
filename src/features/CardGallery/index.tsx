@@ -1,7 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, type ICardProps } from "@entities/Card";
-import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
 import { EffectCards } from "swiper/modules";
 import { SelectedBar } from "@shared/ui/SelectedBar";
 

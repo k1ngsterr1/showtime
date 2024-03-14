@@ -1,4 +1,3 @@
-import React from "react";
 import { StatsLine } from "@shared/ui/StatsLine";
 import statsConfig from "@shared/lib/content/statsContent";
 
