@@ -30,6 +30,7 @@
     justify-content: space-between;
     margin: auto;
     overflow: hidden;
+    @apply mt-16;
   }
 
   &__column_container {
