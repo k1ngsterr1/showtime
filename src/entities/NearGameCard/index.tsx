@@ -1,10 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./styles.module.scss";
 
-interface INearGameCard {
+export interface INearGameCard {
   date: string;
   time: string;
   place: string;
@@ -27,11 +27,8 @@ export const NearGameCard: React.FC<INearGameCard> = ({
       </div>
       <span className={styles.card__heading}>{place}</span>
       <address className={styles.card__address}>{address}</address>
-      <div className="flex items-center gap-2">
-        <FontAwesomeIcon
-          icon={faMapLocationDot}
-          className={styles.card__icon}
-        />
+      <div className="flex items-center gap-2 mt-4">
+        <FontAwesomeIcon icon={faMapMarker} className={styles.card__icon} />
         <a className={styles.card__link} href={mapHref}>
           Показать на карте
         </a>

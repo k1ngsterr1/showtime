@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, type ICardProps } from "@entities/Card";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
