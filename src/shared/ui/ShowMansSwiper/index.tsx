@@ -1,4 +1,3 @@
-// ShowMansSwiper.tsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ShowMansCard from "@entities/ShowMansCard/index";
@@ -92,7 +91,7 @@ const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
       <Swiper
         className="contacts__con__swiper"
         slidesPerView={4}
-        spaceBetween={64}
+        spaceBetween={4}
         onSwiper={(swiperInstance) => {
           swiperRef.current = swiperInstance;
         }}

@@ -2,11 +2,20 @@
 import { CardSwiper } from '@features/CardSwiper/index'
 import { products } from '@features/CardSwiper/index'
 
+import SpecialsSwiper from '@features/SpecialsSwiper/index'
+import {specials} from '@features/SpecialsSwiper/index'
+
 import '@shared/styles/global.scss'
+import styles from "./styles.module.scss";
 ---
 
-<main class="w-[86.6%]">
-    <div class='flex justify-evenly gap-10 items-center mt-16'>
+<main class={styles.products}>
+    <div class={styles.products__content}>
+        <div class={styles.products__content_cards}>
+            <div class={styles.products__content_card}>
             <CardSwiper products={products} client:load/>
+            </div>
+            <SpecialsSwiper specials={specials} client:load/>
         </div>
-    </main>
+    </div>
+</main>
