@@ -50,5 +50,11 @@
     background-position: center center;
     background-size: cover;
     @apply bg-primary-light;
+    &__form {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

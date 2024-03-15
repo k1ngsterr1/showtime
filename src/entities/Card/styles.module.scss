@@ -29,3 +29,20 @@
     right: -10px;
   }
 }
+@media (min-width: 375px) and (max-width: 600px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    &__icon {
+      width: clamp(30px, 14.0184vw, 120px);
+      height: clamp(30px, 14.0184vw, 120px);
+    }
+    &__icon_type {
+      width: clamp(40px, 18.6912vw, 160px);
+      height: clamp(40px, 18.6912vw, 160px);
+    }
+    &__heading {
+      font-size: clamp(16px, 7.47648vw, 64px);
+    }
+  }
+}

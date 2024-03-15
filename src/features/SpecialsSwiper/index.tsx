@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { ProductCard } from "@entities/ProductsCard/index";
 import { RevolverButton } from "@shared/ui/Buttons/RevolverButton/index";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
-import Paragraph from "../../shared/ui/Paragraph/index.astro";
 
 import photo from "@assets/About/shlyapa.webp";
 
@@ -60,15 +59,6 @@ const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
   return (
     <div className={styles.container}>
       <div className={styles.container__header}>
-        <div className={styles.container__heading}>
-          <h3 className="text-primary-red m-auto">Акции</h3>
-        </div>
-        {/* <Paragraph
-          paragraphType="white"
-          width="23%"
-          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-          margin="mt-16"
-        /> */}
         <div className={styles.container__buttons}>
           <RevolverButton
             buttonType="gallery"
@@ -83,9 +73,12 @@ const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
             />
           </div>
         </div>
+        <div className={styles.container__heading}>
+          <h3 className="text-primary-red m-auto">Акции</h3>
+        </div>
       </div>
       <Swiper
-        // className="contacts__con__swiper"
+        className="m-auto w-[86.6%]"
         slidesPerView={3}
         spaceBetween={64}
         onSwiper={(swiperInstance) => {

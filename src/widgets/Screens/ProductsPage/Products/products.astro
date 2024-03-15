@@ -1,12 +1,18 @@
 ---
 import { CardSwiper } from '@features/CardSwiper/index'
 import { products } from '@features/CardSwiper/index'
+import { ProductCard } from "@entities/ProductsCard/index";
+import Paragraph from '@shared/ui/Paragraph/index.astro'
 
 import SpecialsSwiper from '@features/SpecialsSwiper/index'
 import {specials} from '@features/SpecialsSwiper/index'
 
 import '@shared/styles/global.scss'
 import styles from "./styles.module.scss";
+
+
+import photo from "@assets/About/card_product.webp";
+import shlyapa from "@assets/About/shlyapa.webp";
 ---
 
 <main class={styles.products}>
@@ -14,6 +20,39 @@ import styles from "./styles.module.scss";
         <div class={styles.products__content_cards}>
             <CardSwiper products={products} client:load/>
             <SpecialsSwiper specials={specials} client:load/>
+        </div>
+    </div>
+</main>
+
+<main class={styles.products_mob}>
+    <div class={styles.products_mob__content}>
+        <h1 class="text-primary-red text-center">Продукция</h1>  
+        <Paragraph align='text-center' paragraphType='white' width='86%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '/>
+        <div class='mt-8'>
+            <ProductCard photo={photo}
+    heading="Шляпа мафиози"
+    paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price="15000 тг"/>
+    <div class="mt-12">
+        <ProductCard  photo={photo} 
+heading="Шляпа мафиози"
+paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+price="15000 тг"/>
+    </div>
+        </div>
+        <h1 class="text-primary-red text-center mt-16">Акции</h1>  
+        <Paragraph align='text-center' paragraphType='white' width='86%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '/>
+        <div class='mt-8'>
+            <ProductCard photo={shlyapa}
+    heading="Шляпа мафиози"
+    paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price="7000 тг"/>
+    <div class="mt-12">
+        <ProductCard  photo={shlyapa} 
+heading="Шляпа мафиози"
+paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+price="7000 тг"/>
+    </div>
         </div>
     </div>
 </main>

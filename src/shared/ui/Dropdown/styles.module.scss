@@ -17,3 +17,10 @@
     }
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .dropdown {
+    width: 76%;
+    left: clamp(26px, 12.14928vw, 104px);
+  }
+}

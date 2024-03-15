@@ -15,3 +15,10 @@
     @apply border-primary-red;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .avatar {
+    width: clamp(25px, 11.681999999999999vw, 100px);
+    height: clamp(25px, 11.681999999999999vw, 100px);
+  }
+}

@@ -1,5 +1,5 @@
 export const links = [
-  { path: "/home", name: "Главная" },
+  { path: "/", name: "Главная" },
   { path: "/about", name: "О компании" },
   { path: "/products", name: "Продукция" },
   { path: "/services", name: "Услуги" },

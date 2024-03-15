@@ -9,3 +9,9 @@
   @apply font-neoregular;
   @apply rounded-md;
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .selected_bar {
+    width: clamp(85.5px, 39.952439999999996vw, 342px);
+  }
+}

@@ -6,6 +6,9 @@ import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 import styles from "./styles.module.scss";
 import LinkText from "@shared/ui/LinkText";
 
+import LogoMob from "@assets/logo/menu_revolver.svg";
+import ShowMob from "@assets/logo/showtime_logo.svg";
+
 export const Header = () => {
   const { onOpen } = useCustomMenu();
   return (
@@ -32,9 +35,9 @@ export const Header = () => {
       </header>
       <header className={styles.header_mob}>
         <div className="flex items-center justify-between w-full mt-8">
-          <Logo />
+          <img src={ShowMob.src} alt="" className={styles.show} />
           <span className="overflow-hidden" onClick={onOpen}>
-            <MenuButton />
+            <img src={LogoMob.src} alt="" className={styles.logo} />
           </span>
         </div>
       </header>

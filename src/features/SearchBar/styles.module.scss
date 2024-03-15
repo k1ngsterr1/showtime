@@ -35,3 +35,16 @@
     @apply text-primary-red;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .search_bar {
+    width: clamp(125px, 58.41vw, 500px);
+    @apply mt-4;
+    &__icon {
+      @apply text-xl;
+    }
+    &__input {
+      @apply text-xl;
+    }
+  }
+}

@@ -53,6 +53,12 @@
   .filled {
     @extend .button;
     width: clamp(125px, 58.41vw, 500px);
-    height: clamp(42.5px, 19.859399999999997vw, 170px);
+    height: clamp(27.5px, 12.8502vw, 110px);
+  }
+
+  .transparent {
+    @extend .button;
+    width: clamp(125px, 58.41vw, 500px);
+    height: clamp(27.5px, 12.8502vw, 110px);
   }
 }
