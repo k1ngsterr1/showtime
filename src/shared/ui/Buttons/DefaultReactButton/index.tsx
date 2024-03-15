@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../DefaultButton/styles.module.scss";
 
 interface ButtonProps {
-  buttonType: "filled" | "outline" | "transparent" ;
+  buttonType: "filled" | "outline" | "transparent";
   text: string;
   margin?: string;
   type?: string;

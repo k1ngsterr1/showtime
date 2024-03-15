@@ -6,6 +6,7 @@ import { SearchBar } from "@features/SearchBar";
 import { Line } from "@shared/ui/Line";
 import { links, links_second } from "@shared/lib/content/menuLinks";
 import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
+import { useUserData } from "@shared/lib/hooks/useGetUserData";
 
 import Logo from "@shared/ui/Icons/Logo";
 
