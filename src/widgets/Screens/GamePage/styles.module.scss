@@ -1,0 +1,13 @@
+.game {
+  width: 86.6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  @apply mt-8;
+
+  &__main_content {
+    width: 45%;
+    margin: auto;
+  }
+}

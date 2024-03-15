@@ -60,9 +60,9 @@ export const UserScreen = () => {
         </div>
       </div>
       <section className={styles.user_screen__container}>
-        <div className="flex flex-col w-[35%] sticky top-0 ">
+        <div className="flex flex-col w-[35%] sticky top-0 z-10 ">
           <UserProfile name={userData?.username} rank={userData?.rank} />
-          <MoneyTab money={userData?.money} />
+          <MoneyTab money={userData?.balance} />
           <HorizontalSeparator />
           <UserStats />
         </div>

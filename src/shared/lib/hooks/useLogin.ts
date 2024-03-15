@@ -19,13 +19,15 @@ export async function loginAccount(loginData: ILoginData) {
       username: data.username,
       email: data.email,
       role: data.role,
+      rank: data.currentRank,
+      balance: data.balance,
     };
 
     localStorage.setItem("userData", JSON.stringify(userData));
     console.log("user:", userData, response);
 
     window.location.href = "/user";
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.log(loginData);
     console.error(
       "Failed to login:",

@@ -1,0 +1,10 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  @apply bg-primary-dark pb-8;
+}
+
+body {
+  cursor: none;
+  @apply bg-primary-dark;
+}
