@@ -1,9 +1,11 @@
 .game_profile {
-  width: 100%;
+  width: clamp(200px, 20.832vw, 800px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-image: url(../../assets/Main/card_bg.webp);
+  background-image: url(../../assets/Main/mafia_shadow.webp);
+  background-size: cover;
+  background-position: center center;
   @apply bg-primary-light;
   @apply rounded-md;
   @apply p-4;
@@ -23,8 +25,33 @@
   &__rank {
     border-radius: 4px;
     background: rgba(191, 35, 22, 0.15);
-    @apply text-lg;
-    @apply text-primary-light;
+    @apply text-base;
+    @apply text-primary-red;
     @apply p-2;
+    @apply font-neoregular;
+    @apply mt-2;
+  }
+
+  &__stats {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @apply rounded-md;
+    @apply mt-8;
+    @apply bg-primary-red;
+
+    &__game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @apply p-4;
+      @apply text-white;
+      @apply font-neoregular;
+
+      &__number {
+        @apply mt-2;
+      }
+    }
   }
 }

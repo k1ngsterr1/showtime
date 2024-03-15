@@ -1,7 +1,8 @@
 .help_card {
-  width: 100%;
+  width: clamp(300px, 31.248vw, 1200px);
   display: flex;
   flex-direction: column;
+  margin: auto;
   align-items: flex-start;
   @apply rounded-md;
   @apply bg-primary-light;

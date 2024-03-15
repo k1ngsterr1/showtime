@@ -1,0 +1,18 @@
+import axios from "axios";
+
+interface ICreateGameProps {
+  gameType: "urban" | "bunker" | "classic";
+  roomName: string;
+  playersQuantity: number;
+}
+
+export async function createRoom(roomData: ICreateGameProps) {
+  try {
+    const response = await axios.post(
+      "https://showtime.up.railway.app/api/rooms/create-room"
+    );
+  } catch (error) {
+    console.error("Failde to create room:", error);
+    return null;
+  }
+}
