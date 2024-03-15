@@ -1,0 +1,30 @@
+.game_profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: url(../../assets/Main/card_bg.webp);
+  @apply bg-primary-light;
+  @apply rounded-md;
+  @apply p-4;
+
+  &__avatar {
+    width: clamp(32px, 3.33312vw, 128px);
+    height: clamp(32px, 3.33312vw, 128px);
+    @apply rounded-full;
+  }
+
+  &__name {
+    @apply text-xl;
+    @apply text-primary-red;
+    @apply font-katana;
+  }
+
+  &__rank {
+    border-radius: 4px;
+    background: rgba(191, 35, 22, 0.15);
+    @apply text-lg;
+    @apply text-primary-light;
+    @apply p-2;
+  }
+}

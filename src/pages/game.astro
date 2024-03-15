@@ -1,0 +1,21 @@
+---
+import { Cursor } from "@shared/ui/Cursor/index";
+import { Header } from "@features/Header/index";
+import { Loader } from "@shared/ui/Loader";
+import { Menu } from "@features/Menu";
+import { GameScreen } from "@widgets/Screens/GamePage/index";
+
+import Layout from "../layouts/Layout.astro";
+import "@shared/styles/global.scss";
+import styles from "@pages/styles/Game/styles.module.scss";
+---
+
+<Layout title="Игры в мафию">
+  <!-- <Loader client:load /> -->
+  <Cursor client:load />
+  <Menu client:load />
+  <main class={styles.main}>
+    <Header client:load />
+    <GameScreen client:load />
+  </main>
+</Layout>
