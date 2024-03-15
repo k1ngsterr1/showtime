@@ -1,6 +1,6 @@
 .panel {
   background-color: #1a1a1a;
-  width: 250px;
+  width: clamp(135px, 14.0616vw, 540px);
   height: 100vh;
 
   &__content {
@@ -10,6 +10,10 @@
 
     &_card {
       @apply mt-32;
+    }
+
+    &_logo {
+      @apply m-6;
     }
   }
 }

@@ -1,22 +1,30 @@
 .panel {
   display: flex;
   margin-top: clamp(10px, 1.0416vw, 40px);
-  border-right: #bf2316;
+  transition: 0.3s ease-in-out;
+  width: 100%;
 
-  &__link {
+  &__url {
     @apply font-neoregular;
     @apply text-primary-light;
     font-size: clamp(12px, 1.24992vw, 48px);
     font-weight: 400;
-    transition: 0.3s ease-in-out;
     @apply ml-4;
-    &:hover {
-      @apply text-primary-red;
-    }
+    @apply font-katana;
   }
+
   &__icon {
-    @apply ml-4;
-    font-size: clamp(17.5px, 1.8228vw, 70px);
+    font-size: clamp(12px, 1.24992vw, 48px);
     @apply text-primary-red;
+    @apply pl-4;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background-color: #bf2316;
+
+    .panel__icon {
+      @apply text-primary-light;
+    }
   }
 }

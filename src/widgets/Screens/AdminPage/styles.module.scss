@@ -1,8 +1,27 @@
 .client {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
 
   &__content {
+    &_header {
+      @apply ml-60;
+      background-color: #1a1a1a;
+      width: 100vw;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+
+      &_heading {
+        @apply p-7;
+        @apply pl-14;
+        @apply font-killbill;
+        @apply text-3xl;
+        @apply text-primary-light;
+      }
+    }
   }
 }

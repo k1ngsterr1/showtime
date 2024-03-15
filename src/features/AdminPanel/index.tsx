@@ -1,5 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AdminCard } from "@entities/AdminCard/index";
 
 import Logo from "@shared/ui/Icons/Logo";
@@ -48,7 +47,9 @@ export const AdminPanel: React.FC<IPanel> = ({ adminpanel }) => {
   return (
     <main className={styles.panel}>
       <div className={styles.panel__content}>
-        <Logo />
+        <div className={styles.panel__content_logo}>
+          <Logo />
+        </div>
         <div className={styles.panel__content_card}>
           {adminpanel.map((item, index) => (
             <AdminCard

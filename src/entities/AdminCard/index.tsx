@@ -10,11 +10,11 @@ interface Props {
 }
 export const AdminCard: React.FC<Props> = ({ icon, tab, href }) => {
   return (
-    <div className={styles.panel}>
-      <FontAwesomeIcon icon={icon} className={styles.panel__icon} />
+    <button className={styles.panel}>
       <a href={href} className={styles.panel__link}>
-        {tab}
+        <FontAwesomeIcon icon={icon} className={styles.panel__icon} />
+        <span className={styles.panel__url}>{tab}</span>
       </a>
-    </div>
+    </button>
   );
 };
