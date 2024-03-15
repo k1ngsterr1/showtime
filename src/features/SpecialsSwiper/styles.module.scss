@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   overflow: hidden;
   &__header {
     display: flex;
@@ -12,8 +13,11 @@
   }
 
   &__buttons {
+    position: absolute;
+    top: clamp(40px, 4.1664vw, 160px);
+    margin-right: auto;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     width: 10%;
   }
 }
