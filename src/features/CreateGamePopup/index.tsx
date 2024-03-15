@@ -1,11 +1,15 @@
 import React from "react";
-
-import styles from "./styles.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { GameTypeTab } from "@entities/GameTypeTab";
+import { GameContent } from "@entities/GameContent";
+import { useGameType } from "@shared/lib/hooks/useSwitchGameType";
+
+import styles from "./styles.module.scss";
 
 export const CreateGamePopup = () => {
+  const { gameType, selectGameType } = useGameType();
+
   return (
     <div className={styles.overlay}>
       <section className={styles.popup}>
@@ -17,21 +21,23 @@ export const CreateGamePopup = () => {
           <div className={styles.popup__tabs}>
             <GameTypeTab
               gameName="Городская мафия"
-              onClick={() => console.log("aaa")}
+              onClick={() => selectGameType("urban")}
               description="Играйте по правилам городской мафии"
             />
             <GameTypeTab
               gameName="Бункер"
-              onClick={() => console.log("aaa")}
+              onClick={() => selectGameType("bunker")}
               description="Играйте по правилам мафии в бункере"
             />
             <GameTypeTab
               gameName="Классическая мафия"
-              onClick={() => console.log("aaa")}
+              onClick={() => selectGameType("classics")}
               description="Играйте по правилам классической мафии"
             />
           </div>
-          <div className={styles.popup__content}></div>
+          <div className={styles.popup__content}>
+            <GameContent gameType={gameType} />
+          </div>
         </div>
       </section>
     </div>

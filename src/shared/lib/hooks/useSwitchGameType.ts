@@ -4,7 +4,8 @@ export const useGameType = () => {
   const [gameType, setGameType] = useState("");
 
   const selectGameType = (type: string) => {
-    setGameType("");
+    setGameType(type);
+    console.log(gameType);
   };
 
   return { gameType, selectGameType };
