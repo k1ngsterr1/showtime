@@ -1,0 +1,11 @@
+.lobby {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @apply mt-8;
+
+  &__heading {
+    @apply text-5xl;
+    @apply text-primary-light;
+  }
+}

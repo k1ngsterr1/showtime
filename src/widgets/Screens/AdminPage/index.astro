@@ -1,0 +1,19 @@
+---
+import {AdminPanel} from '../../../features/AdminPanel/index';
+import {adminpanel} from '../../../features/AdminPanel/index';
+
+import '@shared/styles/global.scss';
+
+import styles from "./styles.module.scss";
+
+---
+
+<main class={styles.client}>
+    <div class={styles.client__content}>
+        <AdminPanel adminpanel={adminpanel} client:load/>
+        <div class={styles.client__content_header}>
+            <span class={styles.client__content_header_heading}>Панель администратора</span>
+            
+        </div>  
+    </div>
+</main>

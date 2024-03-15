@@ -18,7 +18,9 @@ import shlyapa from "@assets/About/shlyapa.webp";
 <main class={styles.products}>
     <div class={styles.products__content}>
         <div class={styles.products__content_cards}>
+            <div class={styles.products__content_card}>
             <CardSwiper products={products} client:load/>
+            </div>
             <SpecialsSwiper specials={specials} client:load/>
         </div>
     </div>

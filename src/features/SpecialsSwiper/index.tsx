@@ -59,19 +59,32 @@ const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
   return (
     <div className={styles.container}>
       <div className={styles.container__header}>
+<<<<<<< HEAD
         <div className={styles.container__buttons}>
+=======
+        <div className={styles.container__heading}>
+          <h3 className="text-primary-red m-auto">Акции</h3>
+        </div>
+      </div>
+      {/* <Paragraph
+          paragraphType="white"
+          width="23%"
+          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+          margin="mt-16"
+        /> */}
+      <div className={styles.container__buttons}>
+        <RevolverButton
+          buttonType="gallery"
+          direction="previous"
+          onClick={handlePrev}
+        />
+        <div className="scale-x-[-1]">
+>>>>>>> 5d853e7c7f81a9bb421ebc9dc713da7ed0893835
           <RevolverButton
             buttonType="gallery"
-            direction="previous"
-            onClick={handlePrev}
+            direction="next"
+            onClick={handleNext}
           />
-          <div className="scale-x-[-1]">
-            <RevolverButton
-              buttonType="gallery"
-              direction="next"
-              onClick={handleNext}
-            />
-          </div>
         </div>
         <div className={styles.container__heading}>
           <h3 className="text-primary-red m-auto">Акции</h3>
