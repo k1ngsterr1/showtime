@@ -14,14 +14,20 @@
       top: 0;
       display: flex;
       flex-direction: row;
+      justify-content: space-around;
 
       &_heading {
+        @apply ml-6;
+        margin-right: auto;
         @apply p-7;
-        @apply pl-14;
         @apply font-killbill;
         @apply text-3xl;
         @apply text-primary-light;
       }
+    }
+
+    &_usertab {
+      @apply mr-80;
     }
   }
 }
