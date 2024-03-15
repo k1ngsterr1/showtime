@@ -1,10 +1,10 @@
 import Logo from "@shared/ui/Icons/Logo";
 import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { LanguageButton } from "@shared/ui/LanguageButton";
+import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 
 import styles from "./styles.module.scss";
 import LinkText from "@shared/ui/LinkText";
-import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 
 export const Header = () => {
   const { onOpen } = useCustomMenu();
@@ -14,8 +14,8 @@ export const Header = () => {
         <div className={styles.header__content}>
           <Logo />
           <nav className={styles.header__content__links}>
-            <LinkText text="Главная" to="main" href="" />
-            <LinkText text="О нас" to="about" href="" />
+            <LinkText text="Главная" to="main" href="/" />
+            <LinkText text="О нас" to="about" href="/" />
             <LinkText text="Услуги" to="services" href="" />
             <LinkText text="Расписание" to="timetable" href="" />
             <LinkText text="Правила" to="rules" href="" />

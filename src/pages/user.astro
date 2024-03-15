@@ -1,17 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from "../layouts/Layout.astro";
 import { Cursor } from "@shared/ui/Cursor";
 import { Loader } from "@shared/ui/Loader/index";
-import { Header } from "@features/Header/index";
+import { Shop } from "@features/Shop/index";
 import { Menu } from "@features/Menu/index";
-import {UserScreen} from '@widgets/Screens/UserPage/index'
+import { UserScreen } from "@widgets/Screens/UserPage/index";
 
 import "@shared/styles/global.scss";
 ---
 
-<Layout title='Страница пользователя'>
-    <Cursor client:load />
-    <Loader client:load /> 
-    <Menu client:load />
-    <UserScreen client:load/>
+<Layout title="Страница пользователя">
+  <Cursor client:load />
+  <!-- <Loader client:load /> -->
+  <Shop client:load />
+  <Menu client:load />
+  <UserScreen client:load />
 </Layout>

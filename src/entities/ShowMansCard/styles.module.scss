@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__name {
+    @apply font-katana;
+    @apply text-primary-red;
+    font-size: clamp(24px, 2.49984vw, 96px);
+    font-weight: 700;
+  }
+
+  &__position {
+    @apply font-katana;
+    color: #f0e7be;
+    font-size: clamp(16px, 1.66656vw, 64px);
+    font-weight: 700;
+  }
+
+  &_picture {
+    @apply mb-3;
+  }
+}

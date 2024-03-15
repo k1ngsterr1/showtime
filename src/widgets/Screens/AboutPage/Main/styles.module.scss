@@ -1,14 +1,29 @@
 .container {
+  position: relative;
   width: 86.6%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
   @apply mt-8;
+
   &__heading {
+    overflow: hidden;
   }
+
   &__counter {
     display: flex;
+    overflow: hidden;
     width: 55%;
     @apply mt-4;
+
     &__items {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+
       &__int {
+        width: 100%;
+        overflow: hidden;
         @apply font-killbill text-primary-red mt-4;
         font-size: clamp(60px, 6.2496vw, 240px);
         font-weight: 400;

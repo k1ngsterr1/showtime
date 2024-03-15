@@ -6,6 +6,8 @@ import { Menu } from "@features/Menu";
 
 import Layout from "../layouts/Layout.astro";
 import ProductsPage from '@widgets/Screens/ProductsPage/Products/products.astro'
+import { Form } from '@widgets/Screens/ContactForm/index'
+import Footer from '@features/Footer/index.astro'
 
 import styles from '@pages/styles/Products/styles.module.scss'
 ---
@@ -18,5 +20,7 @@ import styles from '@pages/styles/Products/styles.module.scss'
   <div class={styles.main}>
     <Header client:load />
     <ProductsPage/>
+    <Form />
+    <Footer/>
   </div>
 </Layout>

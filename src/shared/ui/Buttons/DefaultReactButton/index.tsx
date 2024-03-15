@@ -3,14 +3,14 @@ import React from "react";
 import styles from "../DefaultButton/styles.module.scss";
 
 interface ButtonProps {
-  buttonType: "filled" | "outline" | "transparent";
+  buttonType: "filled" | "outline" | "transparent" ;
   text: string;
   margin?: string;
   type?: string;
   onClick?: () => void;
 }
 
-export const ReactButton: React.FC<ButtonProps> = ({
+const ReactButton: React.FC<ButtonProps> = ({
   buttonType,
   text,
   margin,
@@ -24,3 +24,5 @@ export const ReactButton: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+export default ReactButton;

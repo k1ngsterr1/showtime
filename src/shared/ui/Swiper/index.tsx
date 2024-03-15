@@ -28,7 +28,7 @@ export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
         <div className={styles.reviews_screen__upper}>
           <h3 className="text-primary-red ">Отзывы</h3>
         </div>
-        <div className="flex justify-between w-[10%]">
+        <div className={styles.reviews_screen__buttons}>
           <RevolverButton
             buttonType="gallery"
             direction="previous"

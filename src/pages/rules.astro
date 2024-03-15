@@ -2,11 +2,11 @@
 import { Header } from "@features/Header/index";
 import { Cursor } from "@shared/ui/Cursor/index";
 import { Loader } from "@shared/ui/Loader/index";
-import { Menu } from "@features/Menu";
+import { Menu } from "@features/Menu/index";
 import { Form } from "@widgets/Screens/ContactForm/index";
 import Layout from "../layouts/Layout.astro";
 import Footer from "@features/Footer/index.astro";
-import ClientPage from "../widgets/Screens/ClientsPage/index.astro"
+import RulesPage from "../widgets/Screens/RulesPage/index.astro"
 
 import "@shared/styles/global.scss";
 import "@shared/styles/scrollbar.scss";
@@ -20,7 +20,7 @@ import styles from "./styles/services/styles.module.scss";
   <Menu client:load />
   <main class={styles.main}>
     <Header client:load />
-    <ClientPage/>
+    <RulesPage/>
   </main>
   <Form client:visible />
   <Footer />

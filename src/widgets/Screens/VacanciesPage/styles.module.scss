@@ -1,0 +1,23 @@
+.client {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    width: 86.6%;
+    margin: auto;
+
+    &__history_cards {
+      @apply mb-24;
+    }
+
+    &_cards {
+      @apply mt-32;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: clamp(50px, 5.208vw, 200px);
+      @apply mb-32;
+    }
+  }
+}

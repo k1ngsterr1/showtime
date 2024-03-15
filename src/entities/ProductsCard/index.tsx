@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactButton } from "@shared/ui/Buttons/DefaultReactButton/index";
+import ReactButton from "@shared/ui/Buttons/DefaultReactButton/index";
 
 import styles from "./styles.module.scss";
 

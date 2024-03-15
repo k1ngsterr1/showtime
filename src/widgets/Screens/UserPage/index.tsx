@@ -4,20 +4,36 @@ import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { UserProfile } from "@entities/UserProfile";
 import { UserStats } from "@entities/UserStats";
 import { HorizontalSeparator } from "@shared/ui/HorizontalSeparator";
-import { NearestGameSwiper } from "@features/NearestGames";
-import { nearGameCards } from "@shared/lib/content/gamesContent";
-import { AchievementGallery } from "@features/AchievementGallery";
-import { achievements } from "@shared/lib/content/achievementContent";
+import { MoneyTab } from "@entities/MoneyTab";
+import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { UserAside } from "@features/UserAside";
+import { useCustomShop } from "@shared/lib/hooks/useCustomShop";
+import { useUserData } from "@shared/lib/hooks/useGetUserData";
 
 import styles from "./styles.module.scss";
 
 export const UserScreen = () => {
+  const { onOpen } = useCustomMenu();
+  const userData = useUserData();
+  const { onShopOpen } = useCustomShop();
+
+  const handleGoBack = () => {
+    window.location.href = "/";
+  };
+
+  const handleGoEdit = () => {
+    window.location.href = "/user-edit";
+  };
+
   return (
     <main className={styles.user_screen}>
       <div className="w-full flex flex-col">
         <div className={styles.user_screen__upper}>
           <div className="flex items-center gap-16">
             <img
+              onClick={handleGoBack}
               src={revolver.src}
               className={`${styles.user_screen__upper__icon} scale-x-[-1]`}
               alt="revolver"
@@ -26,53 +42,31 @@ export const UserScreen = () => {
               Личный кабинет
             </h2>
           </div>
-          <MenuButton />
+          <div className="flex items-center gap-8 overflow-hidden">
+            <FontAwesomeIcon
+              icon={faCartPlus}
+              onClick={onShopOpen}
+              className={styles.user_screen__upper__cart_icon}
+            />
+            <div onClick={onOpen} className="overflow-hidden">
+              <MenuButton />
+            </div>
+            <FontAwesomeIcon
+              icon={faEdit}
+              onClick={handleGoEdit}
+              className={styles.user_screen__upper__cart_icon}
+            />
+          </div>
         </div>
       </div>
       <section className={styles.user_screen__container}>
-        <div className="flex flex-col w-[35%]">
-          <UserProfile name="Руслан Махматов" rank="мафиози" />
+        <div className="flex flex-col w-[35%] sticky top-0 ">
+          <UserProfile name={userData?.username} rank={userData?.rank} />
+          <MoneyTab money={userData?.money} />
           <HorizontalSeparator />
           <UserStats />
         </div>
-        <div className={styles.user_screen__column_container}>
-          <div className={styles.user_screen__column_container__games}>
-            <div className="w-full flex items-center justify-between">
-              <span
-                className={styles.user_screen__column_container__games__heading}
-              >
-                Ближайшие игры
-              </span>
-              <a
-                className={styles.user_screen__column_container__games__link}
-                href="/all"
-              >
-                Подробнее
-              </a>
-            </div>
-            <NearestGameSwiper cards={nearGameCards} />
-          </div>
-          <div className={styles.user_screen__column_container__achievements}>
-            <div className="w-full flex items-center justify-between">
-              <span
-                className={
-                  styles.user_screen__column_container__achievements__heading
-                }
-              >
-                Достижения
-              </span>
-              <a
-                className={
-                  styles.user_screen__column_container__achievements__link
-                }
-                href="/all"
-              >
-                Подробнее
-              </a>
-            </div>
-            <AchievementGallery achievements={achievements} />
-          </div>
-        </div>
+        <UserAside />
       </section>
       <img
         src={bgImage.src}

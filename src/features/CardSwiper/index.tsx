@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { ProductCard } from "@entities/ProductsCard/index";
 import { RevolverButton } from "@shared/ui/Buttons/RevolverButton/index";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
+import Paragraph from "../../shared/ui/Paragraph/index.astro";
 
 import photo from "@assets/About/card_product.webp";
 
@@ -62,6 +63,12 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
         <div className="w-full m-auto">
           <h3 className="text-primary-red ">Продукция</h3>
         </div>
+        {/* <Paragraph
+          paragraphType="white"
+          width="23%"
+          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+          margin="mt-16"
+        /> */}
         <div className={styles.container__buttons}>
           <RevolverButton
             buttonType="gallery"
@@ -87,14 +94,12 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
       >
         {products.map((product, index) => (
           <SwiperSlide key={index}>
-            {/* <div className=""> */}
             <ProductCard
               photo={product.photo}
               heading={product.heading}
               paragraph={product.paragraph}
               price={product.price}
             />
-            {/* </div> */}
           </SwiperSlide>
         ))}
       </Swiper>

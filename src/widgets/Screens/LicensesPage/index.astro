@@ -1,0 +1,22 @@
+---
+import Paragraph from '../../../shared/ui/Paragraph/index.astro';
+
+import '@shared/styles/global.scss';
+import styles from "./styles.module.scss";
+
+import License from "../../../assets/Licenses/licensem.webp";
+
+---
+
+<main class={styles.client}>
+    <div class={styles.client__content}>
+    <h1 class="text-primary-red mt-32">Лицензии</h1>
+    <Paragraph paragraphType='white' width='23%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' margin='mt-16'/>
+    <div class={styles.client__content_licenses}>
+        <img src={License.src} alt="license">
+        <img src={License.src} alt="license">
+        <img src={License.src} alt="license">
+    </div>
+    </div>
+ </div>
+</main>
