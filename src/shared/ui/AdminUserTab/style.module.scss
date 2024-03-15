@@ -1,0 +1,33 @@
+.usertab {
+  display: flex;
+  flex-direction: row;
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__text {
+    @apply ml-5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_name {
+      @apply font-katana;
+      @apply text-primary-light;
+      @apply text-2xl;
+      font-weight: 500;
+    }
+
+    &_position {
+      @apply font-katana;
+      @apply text-primary-light;
+      @apply text-lg;
+      text-transform: uppercase;
+    }
+  }
+}

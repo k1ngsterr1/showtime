@@ -1,0 +1,21 @@
+---
+import { Header } from "@features/Header/index";
+import { Cursor } from "@shared/ui/Cursor/index";
+import { Loader } from "@shared/ui/Loader/index";
+
+import Footer from "@features/Footer/index.astro";
+
+import Layout from '../layouts/Layout.astro';
+
+import styles from "./styles/home/styles.module.scss";
+import "@shared/styles/scrollbar.scss";
+---
+
+<Layout title="Events">
+  <!-- <Loader client:load /> -->
+  <Cursor client:load />
+  <main class={styles.main} id="main">
+    <Header client:load />
+  </main>
+  <Footer />
+</Layout>
