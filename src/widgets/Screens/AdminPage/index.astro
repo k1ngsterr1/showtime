@@ -1,0 +1,19 @@
+---
+import Paragraph from '../../../shared/ui/Paragraph/index.astro';
+import HistoryCard from "../../../entities/HistoryCard/index";
+import {AdminPanel} from '../../../features/AdminPanel/index';
+import {adminpanel} from '../../../features/AdminPanel/index';
+
+import '@shared/styles/global.scss';
+
+import styles from "./styles.module.scss";
+
+---
+
+<main class={styles.client}>
+    <div class={styles.client__content}>
+    <div class={styles.client__content__history_cards}>
+        <AdminPanel adminpanel={adminpanel} client:load/>
+    </div>
+ </div>
+</main>
