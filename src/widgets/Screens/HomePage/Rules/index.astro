@@ -2,6 +2,7 @@
 import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 import Paragraph from "@shared/ui/Paragraph/index.astro";
 import { CardGallery } from "@features/CardGallery/index";
+import { CardGalleryMob } from '@features/CardGalleryMob/index'
 import styles from "./styles.module.scss";
 
 // import men from "@assets/Gallery/men.webp";
@@ -38,20 +39,20 @@ import { cards } from "@shared/lib/content/cardContent";
   <div class={styles.rules_mob_screen__container}>
     <div class={styles.rules_mob_screen__container__upper}>
       <div class="flex flex-col items-center">
-        <h5 class="text-primary-red">Правила игры</h5>
+        <h5 class="text-primary-red text-center w-[50%]">Правила игры</h5>
         <Paragraph
           align="text-center"
           paragraphType="white"
-          width="40%"
+          width="60%"
           margin="mt-4"
           text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        />
-      </div>
-      <div class="flex items-center gap-8">
-        <Button text="Роли" buttonType="transparent" />
-        <Button text="Общие правила" buttonType="transparent" />
-      </div>
+          />
+        </div>
+        <div class="flex flex-col items-center gap-6">
+          <Button text="Роли" margin="mt-8" buttonType="transparent" />
+          <Button text="Общие правила" buttonType="transparent" />
+        </div>
+        <CardGalleryMob cards={cards} client:load/>
     </div>
-    <CardGallery cards={cards} client:visible />
-  </div>
+  </div>  
 </section>

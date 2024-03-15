@@ -2,11 +2,9 @@
   width: 100%;
   @apply font-killbill;
   display: flex;
-  flex-direction: column;
   flex-direction: row;
   @apply text-primary-red;
   margin-top: clamp(16px, 1.66656vw, 64px);
-
   &__counter {
     font-size: clamp(50px, 5.208vw, 200px);
     font-style: normal;
@@ -35,6 +33,7 @@
 
 @media (min-width: 375px) and (max-width: 600px) {
   .counter_container {
+    justify-content: center;
     &__counter {
       font-size: clamp(30px, 14.0184vw, 120px);
     }

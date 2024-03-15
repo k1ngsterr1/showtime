@@ -18,9 +18,9 @@ export const ProductCard: React.FC<Props> = ({
   return (
     <div className={styles.card}>
       <img src={photo.src} alt="" />
-      <span className="font-killbill text-2xl">{heading}</span>
-      <span className="text-center text-xs mt-4">{paragraph}</span>
-      <span className="font-killbill text-2xl  mt-4">{price}</span>
+      <span className={styles.card__heading}>{heading}</span>
+      <span className={styles.card__paragraph}>{paragraph}</span>
+      <span className="font-killbill text-2xl mt-4">{price}</span>
       <ReactButton margin="mt-4" text="Купить" buttonType="transparent" />
     </div>
   );

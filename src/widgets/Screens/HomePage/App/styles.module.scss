@@ -26,3 +26,29 @@
     }
   }
 }
+
+.app_mob_screen {
+  display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .app_screen {
+    display: none;
+  }
+
+  .app_mob_screen {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @apply bg-primary-dark pb-16;
+    &__container {
+      &__image {
+        height: clamp(223.5px, 104.43708vw, 894px);
+        @apply mt-8;
+      }
+    }
+  }
+}

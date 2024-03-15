@@ -15,3 +15,11 @@
     @apply ml-4;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .user_tab {
+    &__name {
+      font-size: clamp(11.5px, 5.37372vw, 46px);
+    }
+  }
+}

@@ -7,4 +7,25 @@
   @apply bg-primary-light text-primary-red p-4;
   font-weight: 600;
   box-shadow: 16px 16px 0px 0px #bf2316;
+  &__paragraph {
+    @apply text-center text-center mt-4;
+  }
+  &__heading {
+    @apply font-killbill text-2xl mt-4;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .card {
+    width: 90%;
+    margin: auto;
+    &__paragraph {
+      font-size: clamp(8px, 3.73824vw, 32px);
+      @apply text-center mt-4;
+    }
+    &__heading {
+      font-size: clamp(16px, 7.47648vw, 64px);
+      @apply font-killbill;
+    }
+  }
 }

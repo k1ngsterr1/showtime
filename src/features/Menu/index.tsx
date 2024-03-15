@@ -6,9 +6,8 @@ import { SearchBar } from "@features/SearchBar";
 import { Line } from "@shared/ui/Line";
 import { links, links_second } from "@shared/lib/content/menuLinks";
 import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useUserData } from "@shared/lib/hooks/useGetUserData";
-import { logOut } from "@shared/lib/hooks/useLogout";
+
 import Logo from "@shared/ui/Icons/Logo";
 
 import styles from "./styles.module.scss";
@@ -81,14 +80,7 @@ export const Menu = () => {
                 {link.name}
               </a>
             ))}
-            <div className="flex items-center gap-8">
-              <UserTab name={userData?.username} margin="mt-8" />
-              <FontAwesomeIcon
-                icon={faArrowRightFromBracket}
-                onClick={logOut}
-                className="text-4xl text-primary-red mt-8 transition-all hover:text-primary-light"
-              />
-            </div>
+            <UserTab name="Руслан Махматов" margin="mt-8" />
             <SearchBar />
           </div>
         </div>
