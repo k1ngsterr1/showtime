@@ -1,0 +1,13 @@
+.error_tab {
+  min-width: clamp(125px, 13.02vw, 500px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.2);
+
+  @apply p-4;
+  @apply border-primary-red;
+  @apply mt-16;
+}

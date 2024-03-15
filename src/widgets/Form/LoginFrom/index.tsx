@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, type SyntheticEvent } from "react";
 import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import PasswordInput from "@shared/ui/Inputs/PasswordInput/index";
-
-import styles from "../styles/styles.module.scss";
 import { loginAccount } from "@shared/lib/hooks/useLogin";
 
+import styles from "../styles/styles.module.scss";
+import { ErrorTab } from "@shared/ui/ErrorTab";
+
 export const LoginForm = () => {
+  const [loginError, setLoginError] = useState<any>(null);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,11 +26,15 @@ export const LoginForm = () => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    try {
-      console.log(formData);
-      await loginAccount(formData);
-    } catch (error) {
-      console.error("Account creation failed:", error);
+
+    const error = await loginAccount(formData);
+
+    setLoginError(error);
+
+    if (error) {
+      console.log("Error occurred:", error);
+    } else {
+      console.log("Login successful");
     }
   };
 
@@ -73,6 +79,7 @@ export const LoginForm = () => {
               {" "}
               Создать аккаунт
             </a>{" "}
+            {loginError && <ErrorTab text={loginError} />}
           </span>
         </div>
       </section>
