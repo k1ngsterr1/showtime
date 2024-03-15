@@ -1,0 +1,22 @@
+.panel {
+  display: flex;
+  margin-top: clamp(10px, 1.0416vw, 40px);
+  border-right: #bf2316;
+
+  &__link {
+    @apply font-neoregular;
+    @apply text-primary-light;
+    font-size: clamp(12px, 1.24992vw, 48px);
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+    @apply ml-4;
+    &:hover {
+      @apply text-primary-red;
+    }
+  }
+  &__icon {
+    @apply ml-4;
+    font-size: clamp(17.5px, 1.8228vw, 70px);
+    @apply text-primary-red;
+  }
+}
