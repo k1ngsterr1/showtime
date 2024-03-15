@@ -28,10 +28,19 @@
     width: 60%;
     text-align: left;
     transition: 0.3s all;
-
     @apply mt-2;
     @apply text-base;
     @apply text-primary-dark;
     @apply font-neoregular;
+  }
+}
+
+.activeTabStyle {
+  @apply text-primary-light;
+  @apply bg-primary-red;
+
+  strong,
+  p {
+    @apply text-primary-light;
   }
 }

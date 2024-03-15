@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { GameTypeTab } from "@entities/GameTypeTab";
@@ -22,16 +22,19 @@ export const CreateGamePopup = () => {
             <GameTypeTab
               gameName="Городская мафия"
               onClick={() => selectGameType("urban")}
+              isActive={gameType === "urban"}
               description="Играйте по правилам городской мафии"
             />
             <GameTypeTab
               gameName="Бункер"
               onClick={() => selectGameType("bunker")}
+              isActive={gameType === "bunker"}
               description="Играйте по правилам мафии в бункере"
             />
             <GameTypeTab
               gameName="Классическая мафия"
-              onClick={() => selectGameType("classics")}
+              onClick={() => selectGameType("classic")}
+              isActive={gameType === "classic"}
               description="Играйте по правилам классической мафии"
             />
           </div>
