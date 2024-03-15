@@ -14,7 +14,7 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
     switch (gameType) {
       case "urban":
         return (
-          <div className={styles.urban_content}>
+          <form className={styles.urban_content}>
             <h3 className={styles.urban_content__heading}>
               Режим: "Городская мафия"
             </h3>
@@ -26,6 +26,7 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
               placeholder="Название комнаты"
               inputType="default-red"
               type="text"
+              required
               name="room_name"
               margin="mt-4"
             />
@@ -36,9 +37,10 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
             <ReactButton
               text="Создать комнату"
               buttonType="filled"
+              type="submit"
               margin=" mt-4 w-[92%]"
             />
-          </div>
+          </form>
         );
       case "bunker":
         return (
