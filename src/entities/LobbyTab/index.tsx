@@ -4,14 +4,12 @@ import styles from "./styles.module.scss";
 
 interface ILobbyTabProps {
   name: string;
-  status: string;
   type: string;
   quantity: string;
 }
 
 export const LobbyTab: React.FC<ILobbyTabProps> = ({
   name,
-  status,
   type,
   quantity,
 }) => {
