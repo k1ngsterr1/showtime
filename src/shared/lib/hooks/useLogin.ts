@@ -1,3 +1,4 @@
+import { useState } from "react";
 import axios from "axios";
 
 interface ILoginData {
@@ -24,7 +25,6 @@ export async function loginAccount(loginData: ILoginData) {
     };
 
     localStorage.setItem("userData", JSON.stringify(userData));
-    console.log("user:", userData, response);
 
     window.location.href = "/user";
   } catch (error: any) {
@@ -33,6 +33,6 @@ export async function loginAccount(loginData: ILoginData) {
       "Failed to login:",
       error.response ? error.response.data : error
     );
-    return null;
+    return error.response.data.message;
   }
 }

@@ -1,5 +1,5 @@
 .lobby {
-  width: 100%;
+  width: clamp(325px, 33.852000000000004vw, 1300px);
   display: flex;
   flex-direction: column;
   @apply mt-8;

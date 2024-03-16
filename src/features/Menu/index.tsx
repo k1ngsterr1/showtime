@@ -7,10 +7,12 @@ import { Line } from "@shared/ui/Line";
 import { links, links_second } from "@shared/lib/content/menuLinks";
 import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 import { useUserData } from "@shared/lib/hooks/useGetUserData";
+import { logOut } from "@shared/lib/hooks/useLogout";
 
 import Logo from "@shared/ui/Icons/Logo";
 
 import styles from "./styles.module.scss";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export const Menu = () => {
   const { onClose } = useCustomMenu();
@@ -80,7 +82,17 @@ export const Menu = () => {
                 {link.name}
               </a>
             ))}
-            <UserTab name="Руслан Махматов" margin="mt-8" />
+            {userData && (
+              <div className="flex items-center gap-8">
+                <UserTab name={userData.username} margin="mt-8" />
+                <FontAwesomeIcon
+                  onClick={logOut}
+                  icon={faRightFromBracket}
+                  className="text-primary-red text-4xl mt-8 transition-all hover:text-primary-light"
+                />
+              </div>
+            )}
+
             <SearchBar />
           </div>
         </div>
