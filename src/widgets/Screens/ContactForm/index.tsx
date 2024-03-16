@@ -7,6 +7,7 @@ import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
 import { FormContent } from "@widgets/Screens/SelectedForm/index";
 
 import styles from "./styles.module.scss";
+
 export const Form = () => {
   const [selectedRole, setSelectedRole] = useState<string>("");
   const [formType, setFormType] = useState<string>("");

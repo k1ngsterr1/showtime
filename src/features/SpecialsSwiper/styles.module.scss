@@ -13,15 +13,10 @@
   }
 
   &__buttons {
-    position: absolute;
-    top: clamp(40px, 4.1664vw, 160px);
     margin-right: auto;
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
-    width: 9%;
-=======
-    width: 10%;
->>>>>>> 5d853e7c7f81a9bb421ebc9dc713da7ed0893835
+    align-items: center;
+    width: 100%;
   }
 }

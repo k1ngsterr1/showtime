@@ -43,3 +43,52 @@ export const nearGameCards: NearGameCardData[] = [
     mapHref: "https://maps.example.com/location2",
   },
 ];
+
+import photo from "@assets/logo/fedora.svg";
+import photo2 from "@assets/Events/photo_5451727234810368413_y.webp";
+
+interface ShopCardData {
+  heading: string;
+  photo: ImageMetadata;
+  desc: string;
+  price: string;
+}
+
+export const ShopCards: ShopCardData[] = [
+  {
+    heading: "Смайл Фэйс",
+    desc: "Погрузитесь в мир загадок и интриг с эксклюзивным аксессуаром Смайл Фэйс",
+    price: "9$",
+    photo: photo2,
+  },
+  {
+    heading: "Смайл Фэйс",
+    desc: "Погрузитесь в мир загадок и интриг с эксклюзивным аксессуаром Смайл Фэйс",
+    price: "9$",
+    photo: photo2,
+  },
+  {
+    heading: "Смайл Фэйс",
+    desc: "Погрузитесь в мир загадок и интриг с эксклюзивным аксессуаром Смайл Фэйс",
+    price: "9$",
+    photo: photo2,
+  },
+  {
+    heading: "Смайл Фэйс",
+    desc: "Погрузитесь в мир загадок и интриг с эксклюзивным аксессуаром Смайл Фэйс",
+    price: "9$",
+    photo: photo2,
+  },
+  {
+    heading: "Смайл Фэйс",
+    desc: "Погрузитесь в мир загадок и интриг с эксклюзивным аксессуаром Смайл Фэйс",
+    price: "9$",
+    photo: photo2,
+  },
+  {
+    heading: "Смайл Фэйс",
+    desc: "Погрузитесь в мир загадок и интриг с эксклюзивным аксессуаром Смайл Фэйс",
+    price: "9$",
+    photo: photo2,
+  },
+];

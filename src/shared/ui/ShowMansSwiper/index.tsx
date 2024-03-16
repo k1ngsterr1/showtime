@@ -13,22 +13,22 @@ export const showmans = [
   {
     photo: ShowMan,
     name: "Ruslan Pricol",
-    position: "Сотрудник",
+    position: "Обычный Смертный",
   },
   {
     photo: ShowMan,
     name: "Gaidar Lord",
-    position: "Сотрудник",
+    position: "Хороший Ведущий",
   },
   {
     photo: ShowMan,
     name: "Artyom Andre",
-    position: "Сотрудник",
+    position: "Мафия Алматы",
   },
   {
     photo: ShowMan,
     name: "Zain Ihsan",
-    position: "Сотрудник",
+    position: "Грязнокровка",
   },
   {
     photo: ShowMan,

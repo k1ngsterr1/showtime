@@ -1,6 +1,8 @@
 import { ShopTab } from "@entities/ShopTab";
 import { MenuButton } from "@shared/ui/Icons/MenuButton";
 import { useCustomShop } from "@shared/lib/hooks/useCustomShop";
+import { ShopSwiper } from "@features/ShopSwiper";
+import { ShopCards } from "@shared/lib/content/gamesContent";
 
 import styles from "./styles.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,6 +21,9 @@ export const Shop = () => {
             className={styles.shop__upper__icon}
           />
         </div>
+      </div>
+      <div className="flex ml-32 flex-col w-[86.6%] sticky">
+        <ShopSwiper cards={ShopCards} />
       </div>
       <section className={styles.shop__section}>
         <h2 className={styles.shop__section__heading}>Лучшие акции</h2>
