@@ -22,11 +22,11 @@ import Oleg from "@assets/Admin/oleg.webp";
             <AdminHeader name='Bafomet Nurmukhamed' position='God' photo={Oleg}/>
             <div class={styles.client__main__functional}>
                 <div class={styles.client__main__functional__header}>
-                     <h1 class={styles.client__main__functional__header_heading}>Услуги</h1>
+                     <h1 class={styles.client__main__functional__header_heading}>Заказы</h1>
                     <AddButton buttonType='filled' text='Добавить'/>
                 </div>
                   <div class={styles.client__main__functional__services}>
-                    <!-- <ServiceTable services={services} client:load/> -->
+                    <ServiceTable services={services} client:load/>
                     </div>
         </div>
     </div>

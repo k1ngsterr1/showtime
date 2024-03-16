@@ -1,8 +1,6 @@
 import React from "react";
 import { AdminTableService } from "@entities/AdminEntities/AdminTableService/index";
 
-import styles from "./styles.module.scss";
-
 export const services = [
   {
     id: "s666",
@@ -23,18 +21,16 @@ interface ITable {
 
 export const ServiceTable: React.FC<ITable> = ({ services }) => {
   return (
-    <main className={styles.panel}>
-      <div className={styles.panel__content_card}>
-        {services.map((item, index) => (
-          <AdminTableService
-            key={index}
-            id={item.id}
-            service={item.service}
-            price={item.price}
-            time={item.time}
-          />
-        ))}
-      </div>
-    </main>
+    <>
+      {services.map((item, index) => (
+        <AdminTableService
+          key={index}
+          id={item.id}
+          service={item.service}
+          price={item.price}
+          time={item.time}
+        />
+      ))}
+    </>
   );
 };
