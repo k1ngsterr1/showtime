@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LobbiesBoard } from "@features/LobbiesBoard";
-import { CreateGamePopup } from "@features/CreateGamePopup";
+import { CreateGamePopup } from "@features/CreateGamePopup/index";
 import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 
 import styles from "./styles.module.scss";

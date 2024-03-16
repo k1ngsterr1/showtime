@@ -11,7 +11,9 @@ interface ICreateGamePopupProps {
   onClick: () => void;
 }
 
-export const Город: React.FC<ICreateGamePopupProps> = ({ onClick }) => {
+export const CreateGamePopup: React.FC<ICreateGamePopupProps> = ({
+  onClick,
+}) => {
   const { gameType, selectGameType } = useGameType();
 
   const handleOverlayClick = (e: SyntheticEvent) => {

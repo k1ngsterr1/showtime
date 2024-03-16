@@ -4,4 +4,6 @@ export const players = [
   { name: "Artem Andreev", photo: userPhoto },
   { name: "Artem Andreev", photo: userPhoto },
   { name: "Artem Andreev", photo: userPhoto },
+  { name: "Artem Andreev", photo: userPhoto },
+  { name: "Artem Andreev", photo: userPhoto },
 ];

@@ -26,3 +26,16 @@
     @apply mt-4;
   }
 }
+
+.additional_players {
+  width: clamp(30px, 3.1248vw, 120px);
+  height: clamp(30px, 3.1248vw, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @apply text-primary-light;
+  @apply font-neoregular;
+  @apply bg-primary-red;
+  @apply rounded-full;
+  @apply text-xl;
+}

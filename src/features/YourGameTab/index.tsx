@@ -1,10 +1,9 @@
 import React from "react";
-
 import styles from "./styles.module.scss";
 import { PlayerAvatar } from "@entities/PlayerAvatar";
 
 export interface PlayerItem {
-  photo: ImageMetadata;
+  photo: ImageMetadata; // Assuming ImageMetadata is defined somewhere in your project
   name: string;
 }
 
@@ -21,6 +20,9 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({
   gameName,
   capacity,
 }) => {
+  const displayedPlayers = players.slice(0, 4);
+  const additionalPlayersCount = players.length - displayedPlayers.length;
+
   return (
     <div className={styles.game_tab}>
       <span className={styles.game_tab__text}>{gameName}</span>
@@ -28,9 +30,14 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({
       <span className={styles.game_tab__text}>{capacity}</span>
       <hr className={styles.game_tab__separator} />
       <div className="flex items-center gap-8 mt-4">
-        {players.map((player, index) => (
-          <PlayerAvatar name={player.name} photo={player.photo} />
+        {displayedPlayers.map((player, index) => (
+          <PlayerAvatar key={index} name={player.name} photo={player.photo} />
         ))}
+        {additionalPlayersCount > 0 && (
+          <div className={`${styles.additional_players} hoverable`}>
+            +{additionalPlayersCount}
+          </div>
+        )}
       </div>
     </div>
   );
