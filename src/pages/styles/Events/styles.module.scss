@@ -1,10 +1,11 @@
-.main {
+.container {
   @apply bg-primary-dark;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-position: center center;
+  background-image: url(../../../assets/Events/backround_jar.webp);
+  background-position: top center;
   background-repeat: no-repeat;
   overflow: hidden;
 }

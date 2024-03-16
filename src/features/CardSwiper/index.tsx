@@ -8,6 +8,7 @@ import photo from "@assets/About/card_product.webp";
 
 import styles from "./styles.module.scss";
 import "swiper/css";
+import "swiper/css/navigation";
 
 export const products = [
   {

@@ -1,0 +1,28 @@
+.container {
+  width: 86.6%;
+  height: 45vw;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__heading {
+    @apply text-primary-red text-left;
+    line-height: clamp(70px, 7.2912vw, 280px);
+    @apply mt-16;
+  }
+}
+
+.mans {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @apply bg-primary-dark;
+  &__items {
+    @apply m-auto;
+    @apply overflow-hidden;
+    width: 86.6%;
+  }
+}

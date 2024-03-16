@@ -5,6 +5,7 @@ import { SelectedBar } from "@shared/ui/SelectedBar";
 
 import styles from "./styles.module.scss";
 import "swiper/css";
+import "swiper/css/navigation";
 
 interface CardGalleryProps {
   cards: ICardProps[];

@@ -37,7 +37,12 @@ export const Header = () => {
         <div className="flex items-center justify-between w-full mt-8">
           <img src={ShowMob.src} alt="" className={styles.show} />
           <span className="overflow-hidden" onClick={onOpen}>
-            <img src={LogoMob.src} alt="" className={styles.logo} />
+            <img
+              src={LogoMob.src}
+              alt=""
+              onClick={onOpen}
+              className={styles.logo}
+            />
           </span>
         </div>
       </header>
