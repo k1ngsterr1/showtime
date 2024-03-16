@@ -32,4 +32,7 @@
 }
 .table__content_item:nth-child(4) {
   border-right: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
