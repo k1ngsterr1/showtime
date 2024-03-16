@@ -5,7 +5,6 @@ export const useGameType = () => {
 
   const selectGameType = (type: any) => {
     setGameType(type);
-    console.log(gameType);
   };
 
   return { gameType, selectGameType };

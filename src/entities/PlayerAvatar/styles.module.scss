@@ -1,0 +1,19 @@
+.player_avatar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__name {
+    @apply text-primary-red;
+    @apply text-base;
+    @apply font-neoregular;
+    @apply font-bold;
+    @apply mt-2;
+  }
+
+  &__image {
+    width: clamp(40px, 4.1664vw, 160px);
+    height: clamp(40px, 4.1664vw, 160px);
+    @apply rounded-full;
+  }
+}

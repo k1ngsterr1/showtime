@@ -4,16 +4,29 @@ import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
 import { createRoom } from "@shared/lib/hooks/useCreateGame";
 import styles from "./styles.module.scss";
+import { useUserData } from "@shared/lib/hooks/useGetUserData";
 
 interface IGameContentProps {
   gameType: "urban" | "bunker" | "classic";
 }
 
 export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
+  const userData = useUserData();
+
+  useEffect(() => {
+    if (userData) {
+      setRoomData((prevState) => ({
+        ...prevState,
+        gameType: gameType,
+        creatorId: userData.id,
+      }));
+    }
+  }, [gameType, userData]);
+
   const [roomData, setRoomData] = useState({
     gameType: gameType,
     roomName: "",
-    playersQuantity: 8,
+    capacity: 8,
   });
 
   const handleInputChange = (event: any) => {
@@ -25,17 +38,9 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
     }));
   };
 
-  useEffect(() => {
-    setRoomData((prevState) => ({
-      ...prevState,
-      gameType: gameType,
-    }));
-  }, [gameType]);
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      console.log(roomData);
       await createRoom(roomData);
     } catch (error) {
       console.error("Room creation failed:", error);

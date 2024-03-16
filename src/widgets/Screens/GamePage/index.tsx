@@ -8,10 +8,13 @@ import { useUserData } from "@shared/lib/hooks/useGetUserData";
 import { ErrorScreen } from "../Error";
 
 import styles from "./styles.module.scss";
+import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 
 export const GameScreen = () => {
   const userData = useUserData();
   const { scoreData } = useGetScore();
+
+  console.log(userData);
 
   return (
     <>
@@ -26,15 +29,18 @@ export const GameScreen = () => {
               linkText="Узнать"
               href="/"
             />
-            <div className="flex items-center justify-center mt-8 gap-16 ">
-              <GameProfile
-                totalGames={scoreData.totalGames}
-                totalLoses={scoreData.totalLoses}
-                totalWins={scoreData.totalWins}
-                username={userData.username}
-                currentRank={userData.rank}
-                avatar={photo.src}
-              />
+            <div className="flex items-start justify-center mt-8 gap-16 ">
+              <div className="flex flex-col items-center mt-9">
+                <GameProfile
+                  totalGames={scoreData.totalGames}
+                  totalLoses={scoreData.totalLoses}
+                  totalWins={scoreData.totalWins}
+                  username={userData.username}
+                  currentRank={userData.rank}
+                  balance={userData.balance}
+                  avatar={photo.src}
+                />
+              </div>
               <Lobby />
             </div>
           </div>

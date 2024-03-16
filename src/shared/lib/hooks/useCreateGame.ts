@@ -3,7 +3,8 @@ import axios from "axios";
 interface ICreateGameProps {
   gameType: "urban" | "bunker" | "classic";
   roomName: string;
-  playersQuantity: number;
+  capacity: number;
+  creatorId?: number;
 }
 
 export async function createRoom(roomData: ICreateGameProps) {
