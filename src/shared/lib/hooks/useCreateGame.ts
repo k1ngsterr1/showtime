@@ -16,6 +16,6 @@ export async function createRoom(roomData: ICreateGameProps) {
       "Failde to create room:",
       error.response ? error.response.data : error
     );
-    return error.response.data.meessage;
+    return null;
   }
 }

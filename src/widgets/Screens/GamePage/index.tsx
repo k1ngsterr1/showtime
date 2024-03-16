@@ -20,7 +20,7 @@ export const GameScreen = () => {
 
   return (
     <>
-      {userData === null ? (
+      {userData === null || scoreData === null ? (
         <ErrorScreen />
       ) : (
         <div className={styles.game}>
@@ -33,11 +33,11 @@ export const GameScreen = () => {
             />
             <div className="flex items-center justify-center mt-8 gap-16 ">
               <GameProfile
-                totalGames={scoreData!.totalGames}
-                totalLoses={scoreData!.totalLoses}
-                totalWins={scoreData!.totalWins}
-                username={userData!.username}
-                currentRank={scoreData!.currentRank}
+                totalGames={scoreData.totalGames}
+                totalLoses={scoreData.totalLoses}
+                totalWins={scoreData.totalWins}
+                username={userData.username}
+                currentRank={userData.rank}
                 avatar={photo.src}
               />
               <Lobby />
