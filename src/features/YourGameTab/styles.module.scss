@@ -1,0 +1,28 @@
+.game_tab {
+  width: clamp(325px, 33.852000000000004vw, 1300px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @apply mt-8;
+  @apply p-4;
+  @apply bg-primary-light;
+  @apply rounded-md;
+
+  &__text {
+    @apply text-primary-red;
+    @apply font-neoregular;
+    @apply font-bold;
+    @apply text-4xl;
+  }
+
+  &__type {
+    @apply text-primary-red;
+  }
+
+  &__separator {
+    width: 100%;
+    @apply border-primary-red;
+    @apply outline-primary-red;
+    @apply mt-4;
+  }
+}
