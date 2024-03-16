@@ -8,13 +8,13 @@ import { links, links_second } from "@shared/lib/content/menuLinks";
 import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 import { useUserData } from "@shared/lib/hooks/useGetUserData";
 import { logOut } from "@shared/lib/hooks/useLogout";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 import Logo from "@shared/ui/Icons/Logo";
 
 import LogoMob from "@assets/logo/menu_revolver.svg";
 import ShowMob from "@assets/logo/showtime_logo.svg";
 import styles from "./styles.module.scss";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export const Menu = () => {
   const { onClose } = useCustomMenu();
@@ -87,7 +87,7 @@ export const Menu = () => {
               ))}
               {userData && (
                 <div className="flex items-center gap-8">
-                  {/* <UserTab name={userData.username} margin="mt-8" /> */}
+                  <UserTab name={userData.username} margin="mt-8" />
                   <FontAwesomeIcon
                     onClick={logOut}
                     icon={faRightFromBracket}
