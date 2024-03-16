@@ -1,5 +1,5 @@
 import React from "react";
-import { KebabMenu } from "../KebabMenu/index";
+import { KebabMenu } from "../../../shared/ui/KebabMenu/index";
 
 import styles from "./style.module.scss";
 interface UserTab {

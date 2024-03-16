@@ -1,10 +1,10 @@
 import React from "react";
-import AdminUserTab from "../../shared/ui/AdminUserTab/index";
+import AdminUserTab from "../../../entities/AdminEntities/AdminUserTab/index";
 
 import styles from "./styles.module.scss";
 
-import Oleg from "../../assets/Admin/oleg.webp";
-import Art from "../../assets/Admin/artw.webp";
+import Oleg from "@assets/Admin/oleg.webp";
+import Art from "@assets/Admin/artw.webp";
 
 export const users = [
   {

@@ -1,0 +1,35 @@
+.table {
+  width: 80%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 24px;
+}
+
+.table__header {
+  @apply font-katana;
+  @apply text-primary-light;
+}
+
+.table__header__item {
+  border: 2px solid #bf2316;
+  @apply p-3;
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+}
+
+.table__header__item:nth-child(4) {
+  border-right: none;
+}
+
+.table__content_item {
+  @apply font-katana;
+  @apply text-primary-light;
+  @apply p-3;
+  border: 2px solid #bf2316;
+  border-bottom: none;
+  border-left: none;
+}
+.table__content_item:nth-child(4) {
+  border-right: none;
+}

@@ -1,4 +1,4 @@
-import AdminUserTab from "@shared/ui/AdminUserTab";
+import AdminUserTab from "@entities/AdminEntities/AdminUserTab/index";
 
 import styles from "./styles.module.scss";
 

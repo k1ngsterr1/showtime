@@ -1,5 +1,5 @@
 import React from "react";
-import { AdminCard } from "@entities/AdminCard/index";
+import { AdminCard } from "@entities/AdminEntities/AdminCard/index";
 
 import Logo from "@shared/ui/Icons/Logo";
 
