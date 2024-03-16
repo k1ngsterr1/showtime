@@ -22,7 +22,6 @@ export const KebabMenu = () => {
         />
         {isKebabOpen && (
           <div className={styles.kebab_opened}>
-            <span className="mt-2">Добавить</span>
             <span className="mt-2">Изменить</span>
             <span className="mt-2 mb-2">Удалить</span>
           </div>

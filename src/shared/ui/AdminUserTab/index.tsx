@@ -1,7 +1,7 @@
 import React from "react";
+import { KebabMenu } from "../KebabMenu/index";
 
 import styles from "./style.module.scss";
-
 interface UserTab {
   name: string;
   position: string;
@@ -27,6 +27,7 @@ const AdminUserTab: React.FC<UserTab> = ({
 
   return (
     <div className={userTabClass}>
+      <KebabMenu />
       <div className={styles.usertab__kebab}></div>
       <div className={userPhotoClass}>
         <img src={photo.src} alt="photo" />

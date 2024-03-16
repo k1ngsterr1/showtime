@@ -1,6 +1,5 @@
 import React from "react";
 import AdminUserTab from "../../shared/ui/AdminUserTab/index";
-import KebabMenu from "../../shared/ui/KebabMenu/index";
 
 import styles from "./styles.module.scss";
 
@@ -51,7 +50,6 @@ interface IUsers {
 const TeamCard: React.FC<IUsers> = ({ users }) => {
   return (
     <div className={styles.adminCard}>
-      {/* <KebabMenu /> */}
       {users.map((user, index) => (
         <AdminUserTab
           userTabType="users"
