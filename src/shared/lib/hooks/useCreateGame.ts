@@ -11,8 +11,11 @@ export async function createRoom(roomData: ICreateGameProps) {
     const response = await axios.post(
       "https://showtime.up.railway.app/api/rooms/create-room"
     );
-  } catch (error) {
-    console.error("Failde to create room:", error);
-    return null;
+  } catch (error: any) {
+    console.error(
+      "Failde to create room:",
+      error.response ? error.response.data : error
+    );
+    return error.response.data.meessage;
   }
 }
