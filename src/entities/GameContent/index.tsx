@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 import { useUserData } from "@shared/lib/hooks/useGetUserData";
 
 interface IGameContentProps {
-  gameType: "urban" | "bunker" | "classic";
+  gameType: "Город" | "Бункер" | "Классика";
 }
 
 export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
@@ -49,7 +49,7 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
 
   const renderContent = () => {
     switch (gameType) {
-      case "urban":
+      case "Город":
         return (
           <form className={styles.urban_content} onSubmit={handleSubmit}>
             <h3 className={styles.urban_content__heading}>
@@ -81,7 +81,7 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
             />
           </form>
         );
-      case "bunker":
+      case "Бункер":
         return (
           <div className={styles.urban_content}>
             <h3 className={styles.urban_content__heading}>Режим: "Бункер"</h3>
@@ -107,7 +107,7 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
             />
           </div>
         );
-      case "classic":
+      case "Классика":
         return (
           <div className={styles.urban_content}>
             <h3 className={styles.urban_content__heading}>

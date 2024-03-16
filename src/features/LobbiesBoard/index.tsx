@@ -1,15 +1,17 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { LobbyTab } from "@entities/LobbyTab";
 import { YourGameTab } from "@features/YourGameTab";
 import { players } from "@shared/lib/content/playersContent";
+import { useGetRooms } from "@shared/lib/hooks/useGetRooms";
 
 interface ILobbiesProps {
   lobbies: any[];
 }
 
 export const LobbiesBoard = () => {
+  const rooms = useGetRooms();
+
   return (
     <section className={styles.lobbies}>
       <div className={styles.lobbies__upper_line}>
@@ -19,12 +21,14 @@ export const LobbiesBoard = () => {
       </div>
       <div className={styles.lobbies__tabs}>
         <YourGameTab players={players} gameType="Классическая" />
-        {/* <LobbyTab
-          type="Классическая"
-          name="Мафия"
-          quantity="16/16"
-          status="Онлайн"
-        /> */}
+        {rooms.map((room) => (
+          <LobbyTab
+            key={room.id}
+            name={room.roomName}
+            type={room.gameType}
+            quantity={room.currentPlayers}
+          />
+        ))}
       </div>
     </section>
   );
