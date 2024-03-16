@@ -5,7 +5,7 @@
 
 .marquee {
   display: flex;
-  animation: marquee-animation 7s linear infinite;
+  animation: marquee-animation 3s linear infinite;
 }
 
 .item {
@@ -18,5 +18,14 @@
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .item {
+  }
+  .img {
+    width: 300px;
+    height: 200px;
   }
 }

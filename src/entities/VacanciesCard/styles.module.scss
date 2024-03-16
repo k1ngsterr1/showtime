@@ -25,3 +25,24 @@
     line-height: clamp(13.52px, 1.4082432vw, 54.08px);
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .card {
+    height: clamp(255px, 119.15639999999999vw, 1020px);
+    width: clamp(150px, 70.092vw, 600px);
+    @apply mt-12;
+
+    &__number {
+      font-size: clamp(23px, 10.74744vw, 92px);
+    }
+
+    &__heading {
+      font-size: clamp(25px, 11.681999999999999vw, 100px);
+    }
+
+    &__paragraph {
+      font-size: clamp(8px, 3.73824vw, 32px);
+      line-height: clamp(13px, 6.07464vw, 52px);
+    }
+  }
+}

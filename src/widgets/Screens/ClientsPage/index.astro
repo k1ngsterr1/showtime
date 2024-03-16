@@ -1,15 +1,17 @@
 ---
 import Paragraph from '../../../shared/ui/Paragraph/index.astro';
 import Marquees from "../../../shared/ui/Marquee/index.tsx";
+import MobSlide from '@shared/ui/Marquee/mob'
 
 import '@shared/styles/global.scss';
 import styles from "./styles.module.scss";
 
 import Freedom from "../../../assets/Clients/freedom.svg";
-import Mafia from "@assets/Clients/partners.webp";
+import Mob from '@assets/Card/freedom.svg'
+
 
 const photos = [Freedom,Freedom,Freedom];
-
+const photos2 = [Mob,Mob,Mob];
 ---
 
 <main class={styles.client}>
@@ -20,4 +22,12 @@ const photos = [Freedom,Freedom,Freedom];
     </div>
  </div>
       <Marquees photos={photos} margin="mt-24"/>
+</main>
+
+<main class={styles.client_mob}>
+    <div class={styles.client_mob__content}>
+    <h1 class="text-primary-red mt-16">Наши клиенты</h1>
+    <Paragraph paragraphType='white' width='75%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' margin='m-auto pt-8'/>
+ </div>
+     <MobSlide margin='mt-24'/>
 </main>

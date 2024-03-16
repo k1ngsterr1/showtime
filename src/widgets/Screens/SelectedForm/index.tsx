@@ -19,7 +19,6 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
   const [selectedRole, setSelectedRole] = useState<string>("");
-  // const [selectedShow, setSelectedShow] = useState<string>("");
   const [value, setValue] = useState(new Date());
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -38,12 +37,11 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
         return (
           <div>
             <form className={styles.form_screen_mob__form}>
-              <div className="flex flex-col items-start mt-16">
+              <div className="flex flex-col items-start mt-12">
                 <Input
                   type="text"
                   inputType="default-red"
                   placeholder="Ваше имя"
-                  margin="mt-8"
                 />
                 <Input
                   type="phone"
@@ -62,12 +60,12 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
                     "Вечерняя Игра",
                   ]}
                 />
-                <ReactButton
-                  text="Отправить"
-                  buttonType="filled"
-                  margin="mt-8"
-                />
               </div>
+              <ReactButton
+                text="Отправить"
+                buttonType="filled"
+                margin="mt-8 ml-6"
+              />
             </form>
           </div>
         );
@@ -75,12 +73,11 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
         return (
           <div>
             <form className={styles.form_screen_mob__form}>
-              <div className="flex flex-col items-start mt-16">
+              <div className="flex flex-col items-start mt-12">
                 <Input
                   type="text"
                   inputType="default-red"
                   placeholder="Введите ваше имя"
-                  margin="mt-8"
                 />
                 <Input
                   type="email"
@@ -108,7 +105,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
                 <ReactButton
                   text="Отправить"
                   buttonType="filled"
-                  margin="mt-8"
+                  margin="mt-8 ml-6"
                 />
               </div>
             </form>
@@ -118,12 +115,11 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
         return (
           <div>
             <form className={styles.form_screen_mob__form}>
-              <div className="flex flex-col items-start mt-16">
+              <div className="flex flex-col items-start mt-12">
                 <Input
                   type="text"
                   inputType="default-red"
                   placeholder="Введите ваше имя"
-                  margin="mt-8"
                 />
                 <Input
                   type="email"
@@ -152,7 +148,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
                 <ReactButton
                   text="Отправить"
                   buttonType="filled"
-                  margin="mt-8"
+                  margin="mt-8 ml-6"
                 />
               </div>
             </form>
@@ -162,12 +158,11 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
         return (
           <div>
             <form className={styles.form_screen_mob__form}>
-              <div className="flex flex-col items-start mt-16">
+              <div className="flex flex-col items-start mt-12">
                 <Input
                   type="text"
                   inputType="default-red"
                   placeholder="Введите ваше имя"
-                  margin="mt-8"
                 />
                 <Input
                   type="email"
@@ -184,22 +179,21 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
                 <ReactButton
                   text="Отправить"
                   buttonType="filled"
-                  margin="mt-8"
+                  margin="mt-8 ml-6"
                 />
               </div>
             </form>
           </div>
         );
-      case "show":
+      default:
         return (
           <div>
             <form className={styles.form_screen_mob__form}>
-              <div className="flex flex-col items-start mt-16">
+              <div className="flex flex-col items-start mt-12">
                 <Input
                   type="text"
                   inputType="default-red"
                   placeholder="Ваше имя"
-                  margin="mt-8"
                 />
                 <Input
                   type="phone"
@@ -216,7 +210,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
                 <ReactButton
                   text="Отправить"
                   buttonType="filled"
-                  margin="mt-8"
+                  margin="mt-8 ml-6"
                 />
               </div>
             </form>
