@@ -1,0 +1,30 @@
+body {
+  @apply bg-primary-dark;
+}
+
+.videoRoom {
+  width: 100%;
+  height: 100%;
+  @apply bg-primary-dark;
+  @apply text-primary-dark;
+  padding: 1rem;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .video {
+    width: 100%;
+    height: clamp(200px, 20.832vw, 800px);
+    background-color: #333;
+  }
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+    height: clamp(200px, 20.832vw, 800px); // Set a fixed height
+  }
+}
