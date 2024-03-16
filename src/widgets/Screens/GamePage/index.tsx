@@ -13,11 +13,6 @@ export const GameScreen = () => {
   const userData = useUserData();
   const { scoreData } = useGetScore();
 
-  useEffect(() => {
-    console.log(scoreData);
-    console.log("userData:", userData);
-  });
-
   return (
     <>
       {userData === null || scoreData === null ? (

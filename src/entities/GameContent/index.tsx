@@ -1,20 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, type FormEvent } from "react";
 import { PlayersCounter } from "@entities/PlayersCounter";
 import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
-
-import styles from "./styles.module.scss";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
+import { createRoom } from "@shared/lib/hooks/useCreateGame";
+import styles from "./styles.module.scss";
 
 interface IGameContentProps {
-  gameType: string;
+  gameType: "urban" | "bunker" | "classic";
 }
 
 export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
+  const [roomData, setRoomData] = useState({
+    gameType: gameType,
+    roomName: "",
+    playersQuantity: 8,
+  });
+
+  const handleInputChange = (event: any) => {
+    const { name, value } = event.target;
+
+    setRoomData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  useEffect(() => {
+    setRoomData((prevState) => ({
+      ...prevState,
+      gameType: gameType,
+    }));
+  }, [gameType]);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      console.log(roomData);
+      await createRoom(roomData);
+    } catch (error) {
+      console.error("Room creation failed:", error);
+    }
+  };
+
   const renderContent = () => {
     switch (gameType) {
       case "urban":
         return (
-          <form className={styles.urban_content}>
+          <form className={styles.urban_content} onSubmit={handleSubmit}>
             <h3 className={styles.urban_content__heading}>
               Режим: "Городская мафия"
             </h3>
@@ -27,8 +59,10 @@ export const GameContent: React.FC<IGameContentProps> = ({ gameType }) => {
               inputType="default-red"
               type="text"
               required
-              name="room_name"
+              name="roomName"
               margin="mt-4"
+              value={roomData.roomName}
+              onChange={handleInputChange}
             />
             <div className="w-[90%] flex items-center justify-between mt-4">
               <span className={styles.urban_content__players}>Игроки</span>
