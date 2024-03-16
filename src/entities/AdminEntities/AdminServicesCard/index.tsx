@@ -1,23 +1,35 @@
 import { Input } from "@shared/ui/Inputs/DefaultInput/index";
+import { TextArea } from "@shared/ui/TexrArea";
 import AddButton from "@shared/ui/AddButton";
-import NavigationButton from "@shared/ui/Buttons/NavigationButton/index.astro";
+import LinkButton from "@shared/ui/Buttons/LinkReactButton/index";
 
 import styles from "./styles.module.scss";
 import "@shared/styles/global.scss";
-import { Link } from "react-scroll";
 
-interface ICardProps {}
+interface ICardProps {
+  number: number;
+  href: string;
+}
 
-export const ServiceCard = () => {
+export const ServiceCard: React.FC<ICardProps> = ({ number, href }) => {
   return (
     <>
-      <div className="styles card">
-        <h1>01</h1>
-        <Input inputType="default-red" placeholder="Какой заказ" type="text" />
-        <Input inputType="default" placeholder="текст" type="text" />
+      <div className={styles.card}>
+        <h1 className={styles.card__heading}>{number}</h1>
+        <Input
+          inputType="default-red-big"
+          placeholder="Какой заказ"
+          type="text"
+        />
+        <TextArea placeholder="Текст" margin="mt-8" />
       </div>
-      <AddButton buttonType="filled" text="Добавить" />
-      <NavigationButton buttonType="filled" href="#" text="Смотреть все" />
+      <AddButton buttonType="filled" text="Добавить" margin="mt-12" />
+      <LinkButton
+        buttonType="filled"
+        href={href}
+        text="Смотреть все"
+        margin="mt-6"
+      />
     </>
   );
 };
