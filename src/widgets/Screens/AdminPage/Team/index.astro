@@ -1,8 +1,7 @@
 ---
 import {AdminPanel} from '../../../../features/AdminPanel/index';
 import {adminpanel} from '../../../../features/AdminPanel/index';
-// import AddButton from "../../../../shared/ui/AddButton/index";
-import AdminUserTab from "../../../../shared/ui/AdminUserTab/index"
+import AddButton from "../../../../shared/ui/AddButton/index";
 import AdminTeam from "../../../../features/AdminTeam/index"
 import {users} from "../../../../features/AdminTeam/index";
 import AdminHeader from "../../../../features/AdminHeader/index"
@@ -16,12 +15,19 @@ import Oleg from "../../../../assets/Admin/oleg.webp";
 
 ---
 <main class={styles.client}>
-    <div class={styles.client__content}>
+    <div class={styles.client__left}>
         <AdminPanel adminpanel={adminpanel} client:load/>  
-<AdminHeader/>
-        <div class={styles.client__content_main}>
-            <h1 class={styles.client__content_main_heading}>Управление пользователями</h1>
-            <!-- <AdminTeam users={users} client:load /> -->
+    </div>
+        <div class={styles.client__main}>
+            <AdminHeader name='Bafomet Nurmukhamed' position='God' photo={Oleg}/>
+            <div class={styles.client__main__functional}>
+                <div class={styles.client__main__functional__header}>
+                     <h1 class={styles.client__main__functional__header_heading}>Управление пользователями</h1>
+                    <AddButton buttonType='filled' text='Добавить'/>
+                </div>
+                    <div class={styles.client__main__functional__teammates}>
+                            <AdminTeam users={users} client:load />
+                    </div>
         </div>
     </div>
 </main>

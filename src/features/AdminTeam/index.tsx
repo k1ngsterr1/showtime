@@ -1,9 +1,11 @@
 import React from "react";
 import AdminUserTab from "../../shared/ui/AdminUserTab/index";
+import KebabMenu from "../../shared/ui/KebabMenu/index";
 
 import styles from "./styles.module.scss";
 
 import Oleg from "../../assets/Admin/oleg.webp";
+import Art from "../../assets/Admin/artw.webp";
 
 export const users = [
   {
@@ -19,7 +21,7 @@ export const users = [
   {
     name: "Ergali Gaidarov",
     position: "Povar",
-    photo: Oleg,
+    photo: Art,
   },
   {
     name: "Ergali Gaidarov",
@@ -28,6 +30,11 @@ export const users = [
   },
   {
     name: "Ergali Gaidarov",
+    position: "Povar",
+    photo: Oleg,
+  },
+  {
+    name: "Askar Velikiy",
     position: "Povar",
     photo: Oleg,
   },
@@ -44,8 +51,12 @@ interface IUsers {
 const TeamCard: React.FC<IUsers> = ({ users }) => {
   return (
     <div className={styles.adminCard}>
+      {/* <KebabMenu /> */}
       {users.map((user, index) => (
         <AdminUserTab
+          userTabType="users"
+          userPhotoType="users"
+          userTextType="users"
           key={index}
           name={user.name}
           position={user.position}

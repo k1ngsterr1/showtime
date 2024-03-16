@@ -10,11 +10,9 @@ interface HeaderProps {
 
 const AdminHeader: React.FC<HeaderProps> = ({ name, position, photo }) => {
   return (
-    <div className={styles.client__content_header}>
-      <span className={styles.client__content_header_subheading}>
-        Панель администратора
-      </span>
-      <div className={styles.client__content_usertab}>
+    <div className={styles.header}>
+      <span className={styles.header__subheading}>Панель администратора</span>
+      <div className={styles.header__usertab}>
         <AdminUserTab name={name} position={position} photo={photo} />
       </div>
     </div>
