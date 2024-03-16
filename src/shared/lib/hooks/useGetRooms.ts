@@ -23,7 +23,7 @@ export function useGetRooms() {
 
     fetchRooms();
 
-    const intervalId = setInterval(fetchRooms, 3000);
+    const intervalId = setInterval(fetchRooms, 30000);
 
     return () => {
       isMounted = false;
