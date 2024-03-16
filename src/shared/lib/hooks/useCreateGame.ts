@@ -1,7 +1,7 @@
 import axios from "axios";
 
 interface ICreateGameProps {
-  gameType: "urban" | "bunker" | "classic";
+  gameType: "Город" | "Бункер" | "Классика";
   roomName: string;
   capacity: number;
   creatorId?: number;
