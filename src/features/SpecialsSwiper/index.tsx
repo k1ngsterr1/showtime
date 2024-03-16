@@ -60,7 +60,6 @@ const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
     <div className={styles.container}>
       <div className={styles.container__header}>
         <div className={styles.container__buttons}>
-<<<<<<< HEAD
           <div className="flex justify-between w-[9%] items-center">
             <RevolverButton
               buttonType="gallery"
@@ -75,13 +74,10 @@ const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
               />
             </div>
           </div>
-=======
->>>>>>> 98ed3c06b80e33b7eb365bab9c88dd1b6a1ea7b9
           <div className={styles.container__heading}>
             <h3 className="text-primary-red m-auto">Акции</h3>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
       <Swiper
         className="m-auto w-[86.6%]"
@@ -91,59 +87,19 @@ const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
           swiperRef.current = swiperInstance;
         }}
       >
-        {specials.map((specials, index) => (
+        {specials.map((special, index) => (
           <SwiperSlide key={index}>
             <ProductCard
-              photo={specials.photo}
-              heading={specials.heading}
-              paragraph={specials.paragraph}
-              price={specials.price}
-=======
-        {/* <Paragraph
-          paragraphType="white"
-          width="23%"
-          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-          margin="mt-16"
-        /> */}
-        <div className={styles.container__buttons}>
-          <RevolverButton
-            buttonType="gallery"
-            direction="previous"
-            onClick={handlePrev}
-          />
-          <div className="scale-x-[-1]">
-            <RevolverButton
-              buttonType="gallery"
-              direction="next"
-              onClick={handleNext}
->>>>>>> 98ed3c06b80e33b7eb365bab9c88dd1b6a1ea7b9
+              photo={special.photo}
+              heading={special.heading}
+              paragraph={special.paragraph}
+              price={special.price}
             />
-          </div>
-          <div className={styles.container__heading}>
-            <h3 className="text-primary-red m-auto">Акции</h3>
-          </div>
-        </div>
-        <Swiper
-          className="m-auto w-[86.6%]"
-          slidesPerView={3}
-          spaceBetween={64}
-          onSwiper={(swiperInstance) => {
-            swiperRef.current = swiperInstance;
-          }}
-        >
-          {specials.map((specials, index) => (
-            <SwiperSlide key={index}>
-              <ProductCard
-                photo={specials.photo}
-                heading={specials.heading}
-                paragraph={specials.paragraph}
-                price={specials.price}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
+
 export default CardSwiper;
