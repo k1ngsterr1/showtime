@@ -73,3 +73,45 @@ import styles from "./styles.module.scss";
     </div>
   </section>
 </div>
+
+<div class={styles.services_mob}>
+  <section class={styles.services_mob__container}>
+    <div class="w-[86.6%] m-auto flex flex-col items-center">
+      <h2 class="text-primary-red mt-12">Наши услуги</h2>
+      <Paragraph
+      align="text-center"
+        width="80%"
+        margin="mt-8"
+        paragraphType="white"
+        text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+      />
+    </div>
+    <div class="w-full flex gap-10 items-center flex-col mt-16 mb-16">
+      <ServiceCard
+        cardType="white"
+        image={man_01.src}
+        number="01"
+        heading="Lorem Ipsum"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+        price="15 000 ТГ"
+      />
+      <ServiceCard
+        cardType="white"
+        image={man_02.src}
+        number="01"
+        heading="Lorem Ipsum"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+        price="15 000 ТГ"
+      />
+      <ServiceCard
+        cardType="white"
+        image={man_03.src}
+        number="01"
+        heading="Lorem Ipsum"
+        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+        price="15 000 ТГ"
+      />
+    </div>
+    </div>
+  </section>
+</div>

@@ -8,3 +8,9 @@
     margin: auto;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .client_mob {
+    display: flex;
+  }
+}
