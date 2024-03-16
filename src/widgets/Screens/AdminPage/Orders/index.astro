@@ -1,11 +1,10 @@
 ---
 import {AdminPanel} from '@features/AdminFeatures/AdminPanel/index';
 import {adminpanel} from "@features/AdminFeatures/AdminPanel/index";
-import {ServiceTable} from '@features/AdminFeatures/AdminTable/index';
-import {services} from "@features/AdminFeatures/AdminTable/index";
 import AddButton from "@shared/ui/AddButton/index";
 import AdminHeader from "@features/AdminFeatures/AdminHeader/index";
-
+import { ServiceTable } from '@features/AdminFeatures/AdminTable';
+import {services} from "@features/AdminFeatures/AdminTable/index"
 import '@shared/styles/global.scss';
 
 import styles from "../Team/styles.module.scss";
@@ -27,7 +26,7 @@ import Oleg from "@assets/Admin/oleg.webp";
                 </div>
                   <div class={styles.client__main__functional__orders}>
                     <ServiceTable services={services} client:load/>
-                    </div>
+                </div>
         </div>
     </div>
 </main>

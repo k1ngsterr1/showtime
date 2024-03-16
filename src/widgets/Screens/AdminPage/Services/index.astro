@@ -1,8 +1,7 @@
 ---
 import {AdminPanel} from '@features/AdminFeatures/AdminPanel/index';
 import {adminpanel} from "@features/AdminFeatures/AdminPanel/index";
-import {ServiceTable} from '@features/AdminFeatures/AdminTable/index';
-import {services} from "@features/AdminFeatures/AdminTable/index";
+import {ServiceCard} from "@entities/AdminEntities/AdminServicesCard/index"
 import AddButton from "@shared/ui/AddButton/index";
 import AdminHeader from "@features/AdminFeatures/AdminHeader/index";
 
@@ -23,10 +22,9 @@ import Oleg from "@assets/Admin/oleg.webp";
             <div class={styles.client__main__functional}>
                 <div class={styles.client__main__functional__header}>
                      <h1 class={styles.client__main__functional__header_heading}>Услуги</h1>
-                    <AddButton buttonType='filled' text='Добавить'/>
                 </div>
                   <div class={styles.client__main__functional__services}>
-                    <!-- <ServiceTable services={services} client:load/> -->
+                    <ServiceCard number={1} href="#" client:load/>
                     </div>
         </div>
     </div>
