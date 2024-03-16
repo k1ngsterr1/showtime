@@ -22,6 +22,24 @@
   }
 }
 
+.filled-small {
+  @apply font-neoregular;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(60px, 6.2496vw, 240px);
+  height: clamp(20px, 2.0832vw, 80px);
+  font-size: clamp(8px, 0.83328vw, 32px);
+  cursor: none;
+  @apply text-primary-light;
+  border-radius: clamp(5px, 0.5208vw, 20px);
+  transition: all 0.3s ease;
+  @apply bg-primary-red;
+  &:hover {
+    background-color: #af1306;
+  }
+}
+
 .transparent {
   @extend .button;
   @apply text-primary-red;
