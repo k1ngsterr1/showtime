@@ -1,5 +1,5 @@
 import React from "react";
-
+import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 import styles from "./styles.module.scss";
 
 interface IGameProfileProps {
@@ -9,6 +9,7 @@ interface IGameProfileProps {
   totalGames: number;
   totalWins: number;
   totalLoses: number;
+  balance: number;
 }
 
 export const GameProfile: React.FC<IGameProfileProps> = ({
@@ -18,6 +19,7 @@ export const GameProfile: React.FC<IGameProfileProps> = ({
   totalGames,
   totalWins,
   totalLoses,
+  balance,
 }) => {
   return (
     <div className={styles.game_profile}>
@@ -52,6 +54,14 @@ export const GameProfile: React.FC<IGameProfileProps> = ({
           </span>
         </div>
       </div>
+      <span className="text-primary-red font-neoregular text-2xl mt-8 m-auto ">
+        Ваш баланс: <strong>{balance}$$</strong>
+      </span>
+      <ReactButton
+        text="Пополнить"
+        buttonType="transparent"
+        margin="mt-4 m-auto"
+      />
     </div>
   );
 };

@@ -2,6 +2,8 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 import { LobbyTab } from "@entities/LobbyTab";
+import { YourGameTab } from "@features/YourGameTab";
+import { players } from "@shared/lib/content/playersContent";
 
 interface ILobbiesProps {
   lobbies: any[];
@@ -16,6 +18,7 @@ export const LobbiesBoard = () => {
         <span className={styles.lobbies__upper_line__text}>Кол-во игроков</span>
       </div>
       <div className={styles.lobbies__tabs}>
+        <YourGameTab players={players} gameType="Классическая" />
         {/* <LobbyTab
           type="Классическая"
           name="Мафия"

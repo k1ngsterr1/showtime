@@ -1,13 +1,14 @@
 import PasswordInput from "@shared/ui/Inputs/PasswordInput/index";
-import Button from "../../../shared/ui/Buttons/DefaultButton/index.astro";
 import { Input } from "@shared/ui/Inputs/DefaultInput";
-import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 import { createAccount } from "@shared/lib/hooks/useCreateAccount";
 import { useState } from "react";
+import { ErrorTab } from "@shared/ui/ErrorTab";
+import ReactButton from "@shared/ui/Buttons/DefaultReactButton";
 
 import styles from "../styles/styles.module.scss";
 
 export const RegistrationForm = () => {
+  const [loginError, setLoginError] = useState<any>(null);
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -27,8 +28,9 @@ export const RegistrationForm = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     try {
-      console.log(formData);
-      await createAccount(formData);
+      const error = await createAccount(formData);
+      setLoginError(error);
+      console.log(loginError);
     } catch (error) {
       console.error("Account creation failed:", error);
     }
@@ -90,13 +92,13 @@ export const RegistrationForm = () => {
               margin="mt-8"
             />
           </form>
-
           <span className={styles.registration__mini_text}>
             Уже есть аккаунт?{" "}
             <a href="/login" className="text-primary-red">
               {" "}
               Войти
-            </a>{" "}
+            </a>
+            {loginError && <ErrorTab text={loginError} />}
           </span>
         </div>
       </section>
