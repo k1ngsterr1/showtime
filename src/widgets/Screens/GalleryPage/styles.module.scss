@@ -10,13 +10,14 @@
     width: 86.6%;
     @apply mb-28;
     display: flex;
-    flex-direction: row;
+    align-items: flex-end;
     @apply mt-20;
 
-    &_text {
-      width: 86.6%;
+    &__text {
+      margin: auto;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
     }
 
     &_photos {
