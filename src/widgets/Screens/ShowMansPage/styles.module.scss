@@ -8,3 +8,22 @@
     margin: auto;
   }
 }
+
+.client_mob {
+  display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .client {
+    display: none;
+  }
+
+  .client_mob {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    &__content__history_cards {
+      @apply mt-8;
+    }
+  }
+}

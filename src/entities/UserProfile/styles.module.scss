@@ -28,3 +28,14 @@
     @apply mt-2;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .user_profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 35%;
+    align-items: center;
+    @apply mt-8;
+  }
+}

@@ -38,3 +38,9 @@
     }
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .money_tab {
+    height: clamp(90px, 42.0552vw, 360px);
+  }
+}
