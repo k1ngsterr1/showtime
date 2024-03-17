@@ -1,0 +1,30 @@
+.overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  background: rgba(30, 30, 30, 0.5);
+}
+
+.search_popup {
+  width: clamp(300px, 31.248vw, 1200px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  @apply p-8;
+  @apply rounded-md;
+  @apply bg-primary-dark;
+
+  &__friend {
+    @apply text-primary-red;
+  }
+}

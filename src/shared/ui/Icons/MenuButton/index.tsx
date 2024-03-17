@@ -1,12 +1,16 @@
 import React from "react";
+import { useCustomMenu } from "@shared/lib/hooks/useCustomMenu";
 
 import styles from "./styles.module.scss";
 
 export const MenuButton = () => {
+  const { onClose } = useCustomMenu();
+
   return (
-    <div className={styles.menu_button}>
+    <div className={`${styles.menu_button} z-[100000000]`} onClick={onClose}>
       <svg
-        className="overflow-hidden"
+        onClick={onClose}
+        className="overflow-hidden z-[1000000000000]"
         width="clamp(24px,2.49984vw,96px)"
         height="clamp(24px,2.49984vw,96px)"
         viewBox="0 0 44 44"
