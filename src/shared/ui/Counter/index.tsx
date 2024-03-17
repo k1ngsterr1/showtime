@@ -51,7 +51,7 @@ export const Counter: React.FC<CounterProps> = ({
   }, []);
 
   return (
-    <div className="flex items-start justify-center flex-col">
+    <div className={styles.counter}>
       <div className={`${styles.counter_container}`} ref={countUpRef}>
         {startCount ? (
           <>
