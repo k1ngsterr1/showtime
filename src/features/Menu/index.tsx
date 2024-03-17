@@ -29,7 +29,7 @@ export const Menu = () => {
             <Logo />
           </div>
           <div
-            className="absolute top-16 right-0 overflow-hidden"
+            className="absolute top-16 right-0 !z-[1000000000] overflow-hidden"
             onClick={onClose}
           >
             <MenuButton />
@@ -95,8 +95,7 @@ export const Menu = () => {
                   />
                 </div>
               )}
-
-              <SearchBar />
+              {/* <SearchBar /> */}
             </div>
           </div>
         </div>

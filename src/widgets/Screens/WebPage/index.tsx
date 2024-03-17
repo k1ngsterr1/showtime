@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./VideoRoom.module.scss"; // Make sure to define your styles accordingly
 import AbsoluteTab from "@features/AbsoluteTab/index";
+import { MenuButton } from "@shared/ui/Icons/MenuButton";
 
 const VideoRoom = () => {
   const [stream, setStream] = useState(null);
@@ -43,7 +44,7 @@ const VideoRoom = () => {
             />
           ) : (
             <div key={index} className={styles.loader}>
-              Loading...
+              <MenuButton />
             </div>
           )
         )}

@@ -1,0 +1,28 @@
+.friendItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @apply text-primary-red;
+  @apply gap-8;
+}
+
+.photoUrl {
+  width: clamp(32px, 3.33312vw, 128px);
+  height: clamp(32px, 3.33312vw, 128px);
+  @apply rounded-full;
+}
+
+.friendName {
+  @apply text-primary-red;
+  @apply font-neoregular;
+}
+
+.addButton {
+  width: clamp(75px, 7.812vw, 300px);
+  height: clamp(25px, 2.604vw, 100px);
+  @apply pl-4;
+  @apply pr-4;
+  @apply bg-primary-red;
+  @apply text-primary-light;
+  @apply font-neoregular;
+}

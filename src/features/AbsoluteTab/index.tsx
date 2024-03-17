@@ -17,33 +17,54 @@ const ControlPanel = () => {
 
   return (
     <div className={styles.controlPanel}>
-      <button>
+      <button className="transition-all hover:text-primary-red">
         <FontAwesomeIcon icon={faVideo} />
-        <span>Video on</span>
+        <span>Видео</span>
       </button>
-      <button>
-        <FontAwesomeIcon icon={faMicrophone} />
-        <span>Microphone on</span>
+      <button className="transition-all hover:text-primary-red">
+        <FontAwesomeIcon
+          icon={faMicrophone}
+          className="transition-all hover:text-primary-red"
+        />
+        <span>Микрофон</span>
       </button>
-      <button>
-        <FontAwesomeIcon icon={faRedo} />
-        <span>Refresh camera</span>
+      <button className="transition-all hover:text-primary-red">
+        <FontAwesomeIcon
+          icon={faRedo}
+          className="transition-all hover:text-primary-red"
+        />
+        <span>Перезапустить камеру</span>
       </button>
-      <button>
-        <FontAwesomeIcon icon={faCheck} />
-        <span>Ready</span>
+      <button className="transition-all hover:text-primary-red">
+        <FontAwesomeIcon
+          icon={faCheck}
+          className="transition-all hover:text-primary-red"
+        />
+        <span>Готов</span>
       </button>
-      <button>
-        <FontAwesomeIcon icon={faSignOutAlt} />
-        <span>Leave</span>
+      <button className="transition-all hover:text-primary-red">
+        <FontAwesomeIcon
+          icon={faSignOutAlt}
+          className="transition-all hover:text-primary-red"
+        />
+        <span>Выйти</span>
       </button>
-      <button>
-        <FontAwesomeIcon icon={faEllipsisH} />
-        <span>Show more</span>
+      <button className="transition-all hover:text-primary-red">
+        <FontAwesomeIcon
+          icon={faEllipsisH}
+          className="transition-all hover:text-primary-red"
+        />
+        <span>Больше</span>
       </button>
-      <button>
-        <FontAwesomeIcon icon={faCog} />
-        <span>Settings</span>
+      <button
+        className="transition-all hover:text-primary-red"
+        onClick={() => (window.location.href = "/")}
+      >
+        <FontAwesomeIcon
+          icon={faCog}
+          className="transition-all hover:text-primary-red"
+        />
+        <span>Настройки</span>
       </button>
     </div>
   );
