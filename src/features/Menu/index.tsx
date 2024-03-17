@@ -103,12 +103,12 @@ export const Menu = () => {
       <aside className={styles.menu_mob} id="menu">
         <div className={styles.menu_mob__container}>
           <div
-            className={`${"absolute top-12 left-5 overflow-hidden"} ${styles.show}`}
+            className={`${"absolute top-8 left-5 overflow-hidden"} ${styles.show}`}
           >
             <img src={ShowMob.src} alt="" />
           </div>
           <div
-            className={`${"absolute top-12 right-5 overflow-hidden"} ${styles.logo}`}
+            className={`${"absolute top-8 right-5 overflow-hidden"} ${styles.logo}`}
             onClick={onClose}
           >
             <img src={LogoMob.src} alt="" />
@@ -138,7 +138,7 @@ export const Menu = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <UserTab name="Руслан Махматов" margin="mt-14" />
+            <UserTab name="Руслан Махматов" margin="mt-8" />
             <SearchBar />
 
             <div className="flex items-center gap-8 mt-8 mb-4">

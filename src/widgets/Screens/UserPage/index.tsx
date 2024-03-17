@@ -108,10 +108,10 @@ export const UserScreen = () => {
             </div>
           </div>
           <section className={styles.user_mob_screen__container}>
-            <div className="flex flex-col sticky top-0 z-10 ">
+            <div className="flex flex-col sticky top-0 ">
               <UserProfile name={userData?.username} rank={userData?.rank} />
               <MoneyTab money={userData?.balance} />
-              <UserStats />
+              {/* <UserStats /> */}
             </div>
             <div className="mt-8">
               <UserAside />

@@ -34,7 +34,7 @@ export const Header = () => {
         </div>
       </header>
       <header className={styles.header_mob}>
-        <div className="flex items-center justify-between w-full mt-8">
+        <div className="flex items-center justify-between w-full mt-6">
           <img src={ShowMob.src} alt="" className={styles.show} />
           <span className="overflow-hidden" onClick={onOpen}>
             <img
