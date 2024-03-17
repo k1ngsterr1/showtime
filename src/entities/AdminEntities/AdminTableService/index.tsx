@@ -30,8 +30,8 @@ export const AdminTableService: React.FC<Props> = ({
           <td className={styles.table__content_item}>{id}</td>
           <td className={styles.table__content_item}>{service}</td>
           <td className={styles.table__content_item}>{price}</td>
-          <td className={styles.table__content_item}>{time}</td>
-          <td className={styles.table__content_btn}>
+          <td className={styles.table__content_item}>
+            {time}
             <ButtonMore buttonType="filled-small" text="Детали" />
           </td>
         </tr>
@@ -39,17 +39,8 @@ export const AdminTableService: React.FC<Props> = ({
           <td className={styles.table__content_item}>{id}</td>
           <td className={styles.table__content_item}>{service}</td>
           <td className={styles.table__content_item}>{price}</td>
-          <td className={styles.table__content_item}>{time}</td>
-          <td className={styles.table__content_btn}>
-            <ButtonMore buttonType="filled-small" text="Детали" />
-          </td>{" "}
-        </tr>
-        <tr className={styles.table__content_row}>
-          <td className={styles.table__content_item}>{id}</td>
-          <td className={styles.table__content_item}>{service}</td>
-          <td className={styles.table__content_item}>{price}</td>
-          <td className={styles.table__content_item}>{time}</td>
-          <td className={styles.table__content_btn}>
+          <td className={styles.table__content_item}>
+            {time}
             <ButtonMore buttonType="filled-small" text="Детали" />
           </td>
         </tr>
@@ -57,8 +48,17 @@ export const AdminTableService: React.FC<Props> = ({
           <td className={styles.table__content_item}>{id}</td>
           <td className={styles.table__content_item}>{service}</td>
           <td className={styles.table__content_item}>{price}</td>
-          <td className={styles.table__content_item}>{time}</td>
-          <td className={styles.table__content_btn}>
+          <td className={styles.table__content_item}>
+            {time}
+            <ButtonMore buttonType="filled-small" text="Детали" />
+          </td>
+        </tr>
+        <tr className={styles.table__content_row}>
+          <td className={styles.table__content_item}>{id}</td>
+          <td className={styles.table__content_item}>{service}</td>
+          <td className={styles.table__content_item}>{price}</td>
+          <td className={styles.table__content_item}>
+            {time}
             <ButtonMore buttonType="filled-small" text="Детали" />
           </td>
         </tr>

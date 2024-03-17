@@ -12,3 +12,26 @@
     }
   }
 }
+
+.client_mob {
+  display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .client {
+    display: none;
+  }
+
+  .client_mob {
+    // height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    &__cards {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}

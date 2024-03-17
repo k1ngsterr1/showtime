@@ -37,20 +37,20 @@ export const CreateGamePopup: React.FC<ICreateGamePopupProps> = ({
           <div className={styles.popup__tabs}>
             <GameTypeTab
               gameName="Городская мафия"
-              onClick={() => selectGameType("urban")}
-              isActive={gameType === "urban"}
+              onClick={() => selectGameType("Город")}
+              isActive={gameType === "Город"}
               description="Играйте по правилам городской мафии"
             />
             <GameTypeTab
               gameName="Бункер"
-              onClick={() => selectGameType("bunker")}
-              isActive={gameType === "bunker"}
+              onClick={() => selectGameType("Бункер")}
+              isActive={gameType === "Бункер"}
               description="Играйте по правилам мафии в бункере"
             />
             <GameTypeTab
               gameName="Классическая мафия"
-              onClick={() => selectGameType("classic")}
-              isActive={gameType === "classic"}
+              onClick={() => selectGameType("Классика")}
+              isActive={gameType === "Классика"}
               description="Играйте по правилам классической мафии"
             />
           </div>

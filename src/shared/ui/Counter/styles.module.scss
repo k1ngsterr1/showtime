@@ -1,3 +1,6 @@
+.counter {
+  @apply flex items-start justify-center flex-col;
+}
 .counter_container {
   width: 100%;
   @apply font-killbill;
@@ -32,6 +35,9 @@
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
+  .counter {
+    @apply flex items-center justify-center flex-col;
+  }
   .counter_container {
     justify-content: center;
     &__counter {
