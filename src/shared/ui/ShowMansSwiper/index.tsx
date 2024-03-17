@@ -68,47 +68,71 @@ const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
   const { handlePrev, handleNext } = useCustomSwiper(swiperRef);
 
   return (
-    <div>
-      <div
-        className={`${"flex items-center justify-end mb-12"} ${styles.buttons}`}
-      >
-        <div className="w-full m-auto"></div>
-        <div className="flex justify-between w-[10%]">
-          <RevolverButton
-            buttonType="gallery"
-            direction="previous"
-            onClick={handlePrev}
-          />
-          <div className="scale-x-[-1]">
+    <>
+      <div className={styles.client}>
+        <div
+          className={`${"flex items-center justify-end mb-12"} ${styles.buttons}`}
+        >
+          <div className="w-full m-auto"></div>
+          <div className="flex justify-between w-[10%]">
             <RevolverButton
               buttonType="gallery"
-              direction="next"
-              onClick={handleNext}
+              direction="previous"
+              onClick={handlePrev}
             />
-          </div>
-        </div>
-      </div>
-      <Swiper
-        className="contacts__con__swiper"
-        slidesPerView={4}
-        spaceBetween={4}
-        onSwiper={(swiperInstance) => {
-          swiperRef.current = swiperInstance;
-        }}
-      >
-        {showmans.map((showman, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex">
-              <ShowMansCard
-                photo={showman.photo}
-                name={showman.name}
-                position={showman.position}
+            <div className="scale-x-[-1]">
+              <RevolverButton
+                buttonType="gallery"
+                direction="next"
+                onClick={handleNext}
               />
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          </div>
+        </div>
+        <Swiper
+          className="contacts__con__swiper"
+          slidesPerView={4}
+          spaceBetween={4}
+          onSwiper={(swiperInstance) => {
+            swiperRef.current = swiperInstance;
+          }}
+        >
+          {showmans.map((showman, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex">
+                <ShowMansCard
+                  photo={showman.photo}
+                  name={showman.name}
+                  position={showman.position}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className={styles.client_mob}>
+        <Swiper
+          className="contacts__con__swiper"
+          slidesPerView={1}
+          spaceBetween={4}
+          onSwiper={(swiperInstance) => {
+            swiperRef.current = swiperInstance;
+          }}
+        >
+          {showmans.map((showman, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex">
+                <ShowMansCard
+                  photo={showman.photo}
+                  name={showman.name}
+                  position={showman.position}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </>
   );
 };
 

@@ -22,3 +22,14 @@
     @apply mb-3;
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .card {
+    &__name {
+      font-size: clamp(25px, 11.681999999999999vw, 100px);
+    }
+    &__position {
+      font-size: clamp(14px, 6.541919999999999vw, 56px);
+    }
+  }
+}

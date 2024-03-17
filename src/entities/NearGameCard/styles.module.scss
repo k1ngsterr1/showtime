@@ -53,3 +53,9 @@
     }
   }
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+  .card {
+    width: clamp(150px, 70.092vw, 600px);
+  }
+}

@@ -19,3 +19,13 @@ import styles from "./styles.module.scss";
     </div>
  </div>
 </main>
+
+<main class={styles.client_mob}>
+    <div class={styles.client_mob__content}>
+    <h1 class="text-primary-red text-center mt-16">Ведущие</h1>
+        <Paragraph paragraphType='white' align="text-center" width='75%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' margin='m-auto pt-8'/>
+    <div class={styles.client_mob__content__history_cards}>
+        <ShowMansSwiper showmans={showmans} client:load />
+    </div>
+ </div>
+</main>
