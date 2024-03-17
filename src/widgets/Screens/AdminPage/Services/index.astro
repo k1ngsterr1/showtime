@@ -2,8 +2,8 @@
 import {AdminPanel} from '@features/AdminFeatures/AdminPanel/index';
 import {adminpanel} from "@features/AdminFeatures/AdminPanel/index";
 import {ServiceCard} from "@entities/AdminEntities/AdminServicesCard/index"
-import AddButton from "@shared/ui/AddButton/index";
 import AdminHeader from "@features/AdminFeatures/AdminHeader/index";
+import Paragraph from "@shared/ui/Paragraph/index.astro";
 
 import '@shared/styles/global.scss';
 
@@ -20,11 +20,12 @@ import Oleg from "@assets/Admin/oleg.webp";
         <div class={styles.client__main}>
             <AdminHeader name='Bafomet Nurmukhamed' position='God' photo={Oleg}/>
             <div class={styles.client__main__functional}>
-                <div class={styles.client__main__functional__header}>
+                <div class={styles.client__main__functional__header_service}>
                      <h1 class={styles.client__main__functional__header_heading}>Услуги</h1>
+                     <Paragraph text='Заполните все поля формы чтобы добавить новый отзыв' paragraphType='white'/>
                 </div>
                   <div class={styles.client__main__functional__services}>
-                    <ServiceCard number={1} href="#" client:load/>
+                    <ServiceCard number={1} href="serviceslist" client:load/>
                     </div>
         </div>
     </div>

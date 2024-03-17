@@ -1,0 +1,30 @@
+---
+import Paragraph from "../../../../shared/ui/Paragraph/index.astro"
+import Card from "../../../../entities/AdminEntities/ServicesSwiperCard"
+import {services} from "../../../../entities/AdminEntities/ServicesSwiperCard"
+import  LinkButton  from "@shared/ui/Buttons/LinkReactButton/index";
+
+
+import Logo from "../../../../assets/logo/showtime_logo.svg";
+
+import styles from "./styles.module.scss"
+import '@shared/styles/global.scss';
+
+
+---
+
+
+<main class={styles.services} >
+    <div class={styles.services__content}>
+        <div class={styles.services__content_logo}>
+            <img src={Logo.src} alt="Logo">
+        </div>
+        <h1 class="text-primary-red">Услуги</h1>
+        <!-- <Paragraph text="Заполните все поля формы чтобы добавить новую услугу" paragraphType="white"/> -->
+        <div class={styles.services__content_cards}>
+            <Card services={services}/>
+        </div>
+            <LinkButton buttonType="filled" href="services" text="Назад" margin="mt-8"/>
+        </div>
+    </div>
+</main>

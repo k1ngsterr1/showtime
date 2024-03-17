@@ -31,6 +31,19 @@
         }
       }
 
+      &__header_service {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 64%;
+
+        &_heading {
+          @apply font-killbill;
+          @apply text-4xl;
+          @apply text-primary-light;
+        }
+      }
+
       &__teammates {
         @apply mt-20;
       }
@@ -39,7 +52,7 @@
         @apply mt-20;
       }
       &__services {
-        @apply mt-16;
+        @apply mt-10;
         display: flex;
         justify-content: center;
         align-items: center;

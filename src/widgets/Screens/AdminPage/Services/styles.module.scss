@@ -1,0 +1,29 @@
+.services {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &__content {
+    @apply mt-24;
+    width: 86, 6%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @apply mb-32;
+
+    &_logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: clamp(180px, 18.7488vw, 720px);
+    }
+
+    &_cards {
+      @apply mt-12;
+    }
+  }
+}

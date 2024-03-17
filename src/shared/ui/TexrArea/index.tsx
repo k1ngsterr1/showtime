@@ -12,7 +12,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
   placeholder,
   ...rest
 }) => {
-  const textAreaClass = `${styles.textarea} ${margin ? styles[margin] : ""}`;
+  const textAreaClass = `${styles.textarea} ${margin ? margin : ""}`;
 
   return (
     <textarea className={textAreaClass} placeholder={placeholder} {...rest} />
