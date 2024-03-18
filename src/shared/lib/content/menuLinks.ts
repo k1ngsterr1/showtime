@@ -9,7 +9,7 @@ export const links = [
 
 export const links_second = [
 	{ path: '/vacancies', name: 'Вакансии' },
-	{ path: '/guarantee', name: 'Гарантии' },
+	{ path: '/events', name: 'Ивенты' },
 	{ path: '/licenses', name: 'Лицензии' },
 	{ path: '/clients', name: 'Клиенты' },
 	{ path: '/history', name: 'История' },
