@@ -12,7 +12,7 @@ import Gallery from "@widgets/Screens/GalleryPage/gallery.astro";
 import TimetableScreen from "@widgets/Screens/HomePage/TimeTable/index.astro";
 import RulesScreen from "@widgets/Screens/HomePage/Rules/index.astro";
 import AppScreen from "@widgets/Screens/HomePage/App/index.astro";
-import Rating from '@widgets/Screens/HomePage/Rating/index.astro'
+import Rating from "@widgets/Screens/HomePage/Rating/index.astro";
 import Footer from "@features/Footer/index.astro";
 
 import Layout from "../layouts/Layout.astro";
@@ -22,7 +22,7 @@ import "@shared/styles/scrollbar.scss";
 ---
 
 <Layout title="Home">
-  <Loader client:load />
+  <!-- <Loader client:load /> -->
   <Cursor client:load />
   <Menu client:load />
   <main class={styles.main} id="main">
@@ -35,7 +35,7 @@ import "@shared/styles/scrollbar.scss";
   <TimetableScreen />
   <RulesScreen />
   <AppScreen />
-  <Rating/>
+  <Rating />
   <Form client:visible />
   <Footer />
 </Layout>

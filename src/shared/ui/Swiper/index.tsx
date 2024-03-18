@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { ReviewCard } from "@entities/ReviewCard/index";
 import { RevolverButton } from "@shared/ui/Buttons/RevolverButton/index";
 import { useCustomSwiper } from "@shared/lib/hooks/useCustomSwipes";
-import styles from "./styles.module.scss";
 
+import styles from "./styles.module.scss";
 import "swiper/css";
 
 interface SwiperReviewProps {
@@ -44,9 +44,9 @@ export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
         </div>
       </div>
       <Swiper
-        className="contacts__con__swiper"
-        slidesPerView={4}
+        className={styles.reviews_screen__swiper}
         spaceBetween={64}
+        slidesPerView={6}
         onSwiper={(swiperInstance) => {
           swiperRef.current = swiperInstance;
         }}

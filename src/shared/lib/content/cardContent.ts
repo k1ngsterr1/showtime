@@ -1,7 +1,14 @@
 import mafia_icon from "@assets/Card/rifle_card.svg";
 import fedora from "@assets/logo/fedora.svg";
 
-export const cards = [
+interface RulesCardsData {
+  name: string;
+  paragraph: string;
+  iconType: ImageMetadata;
+  icon: ImageMetadata;
+}
+
+export const RulesCards: RulesCardsData[] = [
   {
     name: "Мафиози",
     paragraph:

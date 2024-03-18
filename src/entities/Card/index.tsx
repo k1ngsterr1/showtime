@@ -5,8 +5,8 @@ import styles from "./styles.module.scss";
 export interface ICardProps {
   name: string;
   paragraph: string;
-  iconType: any;
-  icon: any;
+  iconType: ImageMetadata;
+  icon: ImageMetadata;
 }
 
 export const Card: React.FC<ICardProps> = ({

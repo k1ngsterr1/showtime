@@ -107,8 +107,8 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
         </div>
       </div>
       <Swiper
-        className="m-auto w-[86.6%]"
-        slidesPerView={3}
+        className="ml-20 w-[200%]"
+        slidesPerView={6}
         spaceBetween={64}
         onSwiper={(swiperInstance) => {
           swiperRef.current = swiperInstance;

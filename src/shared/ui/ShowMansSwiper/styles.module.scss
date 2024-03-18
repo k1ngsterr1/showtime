@@ -1,5 +1,9 @@
-.client_mob {
+.swiper_mob {
   display: none;
+}
+
+.contacts__con__swiper {
+  width: 150%;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
@@ -11,5 +15,11 @@
     display: flex;
     width: 90%;
     margin: auto;
+  }
+
+  .swiper_mob {
+    display: flex;
+    width: 600%;
+    @apply mb-12;
   }
 }

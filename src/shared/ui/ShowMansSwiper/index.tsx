@@ -37,7 +37,7 @@ export const showmans = [
   },
   {
     photo: ShowMan,
-    name: "Nurmukhamed Pofamet",
+    name: "Aslanchik",
     position: "Сотрудник",
   },
   {
@@ -90,9 +90,9 @@ const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
           </div>
         </div>
         <Swiper
-          className="contacts__con__swiper"
-          slidesPerView={4}
-          spaceBetween={4}
+          className={styles.contacts__con__swiper}
+          slidesPerView={6}
+          spaceBetween={64}
           onSwiper={(swiperInstance) => {
             swiperRef.current = swiperInstance;
           }}
@@ -110,18 +110,18 @@ const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
           ))}
         </Swiper>
       </div>
-      <div className={styles.client_mob}>
+      <div className=''>
         <Swiper
-          className="contacts__con__swiper"
-          slidesPerView={1}
-          spaceBetween={4}
+          className={styles.swiper_mob}
+          slidesPerView={5}
+          spaceBetween={64}
           onSwiper={(swiperInstance) => {
             swiperRef.current = swiperInstance;
           }}
         >
           {showmans.map((showman, index) => (
             <SwiperSlide key={index}>
-              <div className="flex">
+              <div className="mr-7">
                 <ShowMansCard
                   photo={showman.photo}
                   name={showman.name}

@@ -1,0 +1,10 @@
+.swiper {
+    width: 300%;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+    .swiper {
+        @apply mb-12;
+        width: 400%;
+    }
+}

@@ -38,6 +38,42 @@ export const specials = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: "7000 тг",
   },
+  {
+    photo: photo,
+    heading: "Шляпа мафиози",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: "15000 тг",
+  },
+  {
+    photo: photo,
+    heading: "Шляпа мафиози",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: "7000 тг",
+  },
+  {
+    photo: photo,
+    heading: "Шляпа мафиози",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: "7000 тг",
+  },
+  {
+    photo: photo,
+    heading: "Шляпа мафиози",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: "7000 тг",
+  },
+  {
+    photo: photo,
+    heading: "Шляпа мафиози",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: "7000 тг",
+  },
+
 ];
 
 interface SwiperProductsProps {
@@ -80,8 +116,8 @@ const CardSwiper: React.FC<SwiperProductsProps> = ({ specials }) => {
         </div>
       </div>
       <Swiper
-        className="m-auto w-[86.6%]"
-        slidesPerView={3}
+        className="ml-20 w-[200%]"
+        slidesPerView={6}
         spaceBetween={64}
         onSwiper={(swiperInstance) => {
           swiperRef.current = swiperInstance;

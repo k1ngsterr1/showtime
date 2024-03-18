@@ -111,7 +111,6 @@ export const UserScreen = () => {
             <div className="flex flex-col sticky top-0 ">
               <UserProfile name={userData?.username} rank={userData?.rank} />
               <MoneyTab money={userData?.balance} />
-              {/* <UserStats /> */}
             </div>
             <div className="mt-8">
               <UserAside />

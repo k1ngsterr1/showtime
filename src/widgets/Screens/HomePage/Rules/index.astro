@@ -4,14 +4,7 @@ import Paragraph from "@shared/ui/Paragraph/index.astro";
 import { CardGallery } from "@features/CardGallery/index";
 import { CardGalleryMob } from "@features/CardGalleryMob/index";
 import styles from "./styles.module.scss";
-
-// import men from "@assets/Gallery/men.webp";
-// import womanman from "@assets/Gallery/womanman.webp";
-// import women from "@assets/Gallery/women.webp";
-// import womenjar from "@assets/Gallery/womenjar.webp";
-// import womenkatana from "@assets/Gallery/womenkatana.webp";
-
-import { cards } from "@shared/lib/content/cardContent";
+import { RulesCards } from "@shared/lib/content/cardContent";
 ---
 
 <section class={styles.rules_screen} id="rules">
@@ -31,7 +24,7 @@ import { cards } from "@shared/lib/content/cardContent";
         <Button text="Общие правила" buttonType="transparent" />
       </div>
     </div>
-    <CardGallery cards={cards} client:visible />
+    <CardGallery cards={RulesCards} client:visible />
   </div>
 </section>
 
@@ -52,7 +45,9 @@ import { cards } from "@shared/lib/content/cardContent";
         <Button text="Роли" margin="mt-8" buttonType="transparent" />
         <Button text="Общие правила" buttonType="transparent" />
       </div>
-      <CardGalleryMob cards={cards} client:load />
+      <div class="w-[425%]">
+        <CardGalleryMob cards={RulesCards} client:visible />
+      </div>
     </div>
   </div>
 </section>

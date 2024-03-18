@@ -16,14 +16,15 @@
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .item {
-  }
+
+
   .img {
     width: 300px;
     height: 200px;

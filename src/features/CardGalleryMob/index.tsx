@@ -7,11 +7,12 @@ import styles from "./styles.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 
+type Swiper = any;
+
 interface CardGalleryProps {
   cards: ICardProps[];
 }
 
-type Swiper = any;
 
 export const CardGalleryMob: React.FC<CardGalleryProps> = ({ cards }) => {
   const swiperRef = React.useRef<Swiper | null>(null);
@@ -21,7 +22,7 @@ export const CardGalleryMob: React.FC<CardGalleryProps> = ({ cards }) => {
       <div className="mt-8">
         <Swiper
           className=""
-          slidesPerView={1}
+          slidesPerView={4}
           spaceBetween={32}
           onSwiper={(swiperInstance) => {
             swiperRef.current = swiperInstance;
