@@ -1,25 +1,25 @@
 .container {
-  @apply bg-primary-dark;
-  background-image: url("../../../../assets/About/image-25.webp");
-  background-repeat: no-repeat;
-  &__heading {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-  }
+	@apply bg-primary-dark;
+	background-image: url('../../../../assets/About/image-25.webp');
+	background-repeat: no-repeat;
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
 }
 
 .container_mob {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .container {
-    display: none;
-  }
+	.container {
+		display: none;
+	}
 
-  .container_mob {
-    display: flex;
-    @apply bg-primary-dark;
-  }
+	.container_mob {
+		display: flex;
+		@apply bg-primary-dark;
+	}
 }

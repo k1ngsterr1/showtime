@@ -1,49 +1,49 @@
 .bigtext--secondary {
-  font-weight: 700;
-  @apply text-primary-red;
-  @apply font-killbill;
-  font-size: clamp(60px, 6.2496vw, 240px);
+	font-weight: 700;
+	@apply text-primary-red;
+	@apply font-killbill;
+	font-size: clamp(60px, 6.2496vw, 240px);
 }
 
 .bigtext--about--card {
-  @apply font-katana;
-  @apply text-primary-light;
-  font-weight: 700;
-  font-size: clamp(22.5px, 2.3436vw, 90px);
+	@apply font-katana;
+	@apply text-primary-light;
+	font-weight: 700;
+	font-size: clamp(22.5px, 2.3436vw, 90px);
 }
 
 .bigtext--about--card--red {
-  @apply font-katana;
-  @apply text-primary-red;
-  font-weight: 700;
-  font-size: clamp(22.5px, 2.3436vw, 90px);
+	@apply font-katana;
+	@apply text-primary-red;
+	font-weight: 700;
+	font-size: clamp(22.5px, 2.3436vw, 90px);
 }
 
 .bigtext--services--card {
-  @apply font-katana;
-  @apply text-primary-light;
-  font-weight: 700;
-  font-size: clamp(24px, 2.49984vw, 96px);
+	@apply font-katana;
+	@apply text-primary-light;
+	font-weight: 700;
+	font-size: clamp(24px, 2.49984vw, 96px);
 }
 
 .bigtext--services--card--red {
-  @apply font-katana;
-  @apply text-primary-red;
-  font-weight: 700;
-  font-size: clamp(24px, 2.49984vw, 96px);
+	@apply font-katana;
+	@apply text-primary-red;
+	font-weight: 700;
+	font-size: clamp(24px, 2.49984vw, 96px);
 }
 .bigtext--form {
-  @apply font-killbill;
-  @apply text-primary-red;
-  font-weight: 700;
-  font-size: clamp(30px, 3.1248vw, 120px);
+	@apply font-killbill;
+	@apply text-primary-red;
+	font-weight: 700;
+	font-size: clamp(30px, 3.1248vw, 120px);
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .bigtext--about--card {
-    font-size: clamp(24px, 11.21472vw, 96px);
-  }
-  .bigtext--services--card {
-    font-size: clamp(24px, 11.21472vw, 96px);
-  }
+	.bigtext--about--card {
+		font-size: clamp(24px, 11.21472vw, 96px);
+	}
+	.bigtext--services--card {
+		font-size: clamp(24px, 11.21472vw, 96px);
+	}
 }

@@ -1,13 +1,13 @@
 .container_mob {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .container {
-    display: none;
-  }
+	.container {
+		display: none;
+	}
 
-  .container_mob {
-    display: flex;
-  }
+	.container_mob {
+		display: flex;
+	}
 }

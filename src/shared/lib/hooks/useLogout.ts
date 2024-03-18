@@ -1,4 +1,4 @@
 export async function logOut() {
-  localStorage.removeItem("userData");
-  window.location.href = "/login";
+	localStorage.removeItem('userData')
+	window.location.href = '/login'
 }

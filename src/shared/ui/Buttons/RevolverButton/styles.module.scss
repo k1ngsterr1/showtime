@@ -1,29 +1,29 @@
 .button {
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  width: clamp(32px, 3.33312vw, 128px);
-  height: clamp(32px, 3.33312vw, 128px);
-  font-size: clamp(10px, 1.0416vw, 40px);
-  font-weight: 100;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+	width: clamp(32px, 3.33312vw, 128px);
+	height: clamp(32px, 3.33312vw, 128px);
+	font-size: clamp(10px, 1.0416vw, 40px);
+	font-weight: 100;
 }
 
 .gallery {
-  @extend .button;
-  border: none;
-  transition: all 0.3s ease;
-  @apply bg-primary-red;
+	@extend .button;
+	border: none;
+	transition: all 0.3s ease;
+	@apply bg-primary-red;
 
-  &:hover {
-    background-color: #af1306;
-  }
-  .gallery--right {
-    rotate: -180deg;
-  }
+	&:hover {
+		background-color: #af1306;
+	}
+	.gallery--right {
+		rotate: -180deg;
+	}
 }
 
 .gallery--right {
-  transform: scale(-1, 1);
+	transform: scale(-1, 1);
 }

@@ -1,41 +1,41 @@
 .timetable_screen {
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-image: url("../../../../assets/Main/timetable_bg.webp");
-  background-position: center center;
-  background-size: cover;
-  @apply bg-primary-dark;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-image: url('../../../../assets/Main/timetable_bg.webp');
+	background-position: center center;
+	background-size: cover;
+	@apply bg-primary-dark;
 
-  &__container {
-    width: 86.6%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    @apply mt-16;
-  }
+	&__container {
+		width: 86.6%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		@apply mt-16;
+	}
 }
 
 .timetable_mob_screen {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .timetable_screen {
-    display: none;
-  }
+	.timetable_screen {
+		display: none;
+	}
 
-  .timetable_mob_screen {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-image: url("../../../../assets/Main/timetable_bg.webp");
-    background-position: center center;
-    background-size: cover;
-    @apply bg-primary-dark;
-  }
+	.timetable_mob_screen {
+		width: 100vw;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background-image: url('../../../../assets/Main/timetable_bg.webp');
+		background-position: center center;
+		background-size: cover;
+		@apply bg-primary-dark;
+	}
 }

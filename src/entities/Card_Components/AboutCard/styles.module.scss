@@ -1,0 +1,33 @@
+.card {
+	width: clamp(182.5px, 19.0092vw, 730px);
+	height: clamp(232.5px, 24.217200000000002vw, 930px);
+	background-image: url(../../assets/Main/card_bg.webp);
+	background-position: center center;
+	background-repeat: no-repeat;
+	box-shadow: 16px 16px #bf2316;
+}
+.white {
+	@extend .card;
+	background-image: none;
+	@apply bg-primary-light text-primary-red;
+	@apply font-killbill;
+	font-size: clamp(22.5px, 2.3436vw, 90px);
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.card {
+		width: clamp(175px, 81.774vw, 700px);
+		height: clamp(225px, 105.13799999999999vw, 900px);
+		background-image: url(../../assets/Main/card_bg.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		box-shadow: 16px 16px #bf2316;
+	}
+	.white {
+		@extend .card;
+		background-image: none;
+		@apply bg-primary-light text-primary-red;
+		@apply font-killbill;
+		font-size: clamp(22.5px, 10.5138vw, 90px);
+	}
+}

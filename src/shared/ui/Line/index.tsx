@@ -1,9 +1,9 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface LineProps {
-  position?: string;
+	position?: string
 }
 
 export const Line: React.FC<LineProps> = ({ position }) => {
-  return <span className={`${styles.line} ${position}`} />;
-};
+	return <span className={`${styles.line} ${position}`} />
+}

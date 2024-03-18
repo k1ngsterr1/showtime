@@ -1,21 +1,21 @@
 .lobbies {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 
-  &__upper_line {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    @apply mt-8;
+	&__upper_line {
+		width: 100%;
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@apply mt-8;
 
-    &__text {
-      @apply text-lg;
-      @apply text-primary-light;
-      @apply font-neoregular;
-      @apply gap-4;
-    }
-  }
+		&__text {
+			@apply text-lg;
+			@apply text-primary-light;
+			@apply font-neoregular;
+			@apply gap-4;
+		}
+	}
 }

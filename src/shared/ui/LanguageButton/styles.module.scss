@@ -1,11 +1,11 @@
 .language_button {
-  font-size: clamp(11px, 1.1457600000000001vw, 44px);
-  @apply font-neo;
-  @apply text-primary-red;
+	font-size: clamp(11px, 1.1457600000000001vw, 44px);
+	@apply font-neo;
+	@apply text-primary-red;
 
-  &__chevron {
-    @apply text-lg;
-    @apply ml-3;
-    @apply text-primary-red;
-  }
+	&__chevron {
+		@apply text-lg;
+		@apply ml-3;
+		@apply text-primary-red;
+	}
 }

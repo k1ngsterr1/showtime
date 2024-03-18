@@ -1,17 +1,17 @@
 .link {
-  @apply font-neoregular;
-  @apply text-primary-light;
-  font-size: clamp(11px, 1.1457600000000001vw, 44px);
-  font-weight: 400;
-  transition: 0.3s ease-in-out;
-  &:hover {
-    @apply text-primary-red;
-  }
+	@apply font-neoregular;
+	@apply text-primary-light;
+	font-size: clamp(11px, 1.1457600000000001vw, 44px);
+	font-weight: 400;
+	transition: 0.3s ease-in-out;
+	&:hover {
+		@apply text-primary-red;
+	}
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .link {
-    font-size: clamp(11px, 5.140079999999999vw, 44px);
-    @apply mt-3;
-  }
+	.link {
+		font-size: clamp(11px, 5.140079999999999vw, 44px);
+		@apply mt-3;
+	}
 }

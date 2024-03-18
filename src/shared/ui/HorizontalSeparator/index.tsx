@@ -1,8 +1,8 @@
 export const HorizontalSeparator = () => {
-  return (
-    <div className="flex flex-col items-center w-[50%] mt-12">
-      <span className="text-primary-red text-xl font-neoregular">Showtime</span>
-      <hr className="w-full border-primary-red mt-2" />
-    </div>
-  );
-};
+	return (
+		<div className="mt-12 flex w-[50%] flex-col items-center">
+			<span className="font-neoregular text-xl text-primary-red">Showtime</span>
+			<hr className="mt-2 w-full border-primary-red" />
+		</div>
+	)
+}

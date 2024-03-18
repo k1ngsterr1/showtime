@@ -1,14 +1,14 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  width: clamp(229.5px, 23.90472vw, 918px);
-  height: clamp(224.5px, 23.38392vw, 898px);
-  background-color: #f0e7be;
-  @apply p-8;
-  box-shadow: 16px 16px 0px 0px #bf2316;
+	display: flex;
+	flex-direction: column;
+	width: clamp(229.5px, 23.90472vw, 918px);
+	height: clamp(224.5px, 23.38392vw, 898px);
+	background-color: #f0e7be;
+	@apply p-8;
+	box-shadow: 16px 16px 0px 0px #bf2316;
 
-  &__heading {
-    font-size: clamp(60px, 6.2496vw, 240px);
-    @apply text-primary-red;
-  }
+	&__heading {
+		font-size: clamp(60px, 6.2496vw, 240px);
+		@apply text-primary-red;
+	}
 }

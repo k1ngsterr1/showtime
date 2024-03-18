@@ -1,48 +1,48 @@
 .about_screen {
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-image: url("../../../../assets/Main/concrete-texture.webp");
-  background-position: center center;
-  background-size: cover;
-  @apply bg-primary-light;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-image: url('../../../../assets/Main/concrete-texture.webp');
+	background-position: center center;
+	background-size: cover;
+	@apply bg-primary-light;
 
-  &__container {
-    width: 86.6%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    @apply mt-16;
-    @apply mb-16;
+	&__container {
+		width: 86.6%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		@apply mt-16;
+		@apply mb-16;
 
-    &__upper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
+		&__upper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
 }
 
 .about_mob_screen {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .about_screen {
-    display: none;
-  }
+	.about_screen {
+		display: none;
+	}
 
-  .about_mob_screen {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-image: url("../../../../assets/Main/concrete-texture.webp");
-    background-position: center center;
-    background-size: cover;
-    @apply bg-primary-light;
-  }
+	.about_mob_screen {
+		width: 100vw;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background-image: url('../../../../assets/Main/concrete-texture.webp');
+		background-position: center center;
+		background-size: cover;
+		@apply bg-primary-light;
+	}
 }

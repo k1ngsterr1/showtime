@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
 export const UserEditScreen = () => {
-  return <main>UserEditScreen</main>;
-};
+	return <main>UserEditScreen</main>
+}

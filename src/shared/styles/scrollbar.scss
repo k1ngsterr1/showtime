@@ -1,18 +1,18 @@
 *::-webkit-scrollbar {
-  width: clamp(8px, 0.83328vw, 32px);
+	width: clamp(8px, 0.83328vw, 32px);
 }
 
 *::-webkit-scrollbar-track {
-  background: black; /* color of the tracking area */
+	background: black; /* color of the tracking area */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #bf2316;
-  border-radius: clamp(9px, 0.93744vw, 36px);
-  border: clamp(9px, 0.93744vw, 36px) solid #bf2316;
+	background-color: #bf2316;
+	border-radius: clamp(9px, 0.93744vw, 36px);
+	border: clamp(9px, 0.93744vw, 36px) solid #bf2316;
 }
 
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #bf2316 transparent;
+	scrollbar-width: thin;
+	scrollbar-color: #bf2316 transparent;
 }

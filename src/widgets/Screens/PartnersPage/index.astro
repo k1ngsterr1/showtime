@@ -1,20 +1,23 @@
 ---
-import Paragraph from '../../../shared/ui/Paragraph/index.astro';
-import Marquees from "../../../shared/ui/Marquee/index.tsx";
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import Marquees from '@shared/ui/Marquee/index.tsx'
+import Freedom from '@assets/Clients/freedom.svg'
+import styles from '../ClientsPage/styles.module.scss'
 
-import '@shared/styles/global.scss';
-import styles from "../ClientsPage/styles.module.scss";
+import '@shared/styles/global.scss'
 
-import Freedom from "../../../assets/Clients/freedom.svg";
-
-const photos = [Freedom,Freedom,Freedom];
-
+const photos = [Freedom, Freedom, Freedom]
 ---
 
 <main class={styles.client}>
-    <div class={styles.client__content}>
-    <h1 class="text-primary-red mt-32">Партнеры</h1>
-    <Paragraph paragraphType='white' width='23%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' margin='mt-16'/>
- </div>
-      <Marquees photos={photos} margin="mt-24"/>
+	<div class={styles.client__content}>
+		<h1 class="mt-32 text-primary-red">Партнеры</h1>
+		<Paragraph
+			paragraphType="white"
+			width="23%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			margin="mt-16"
+		/>
+	</div>
+	<Marquees photos={photos} margin="mt-24" />
 </main>

@@ -1,19 +1,19 @@
 .panel {
-  background-color: #1a1a1a;
-  width: clamp(135px, 14.0616vw, 540px);
-  height: 100vh;
+	background-color: #1a1a1a;
+	width: clamp(135px, 14.0616vw, 540px);
+	height: 100vh;
 
-  &__content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+	&__content {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 
-    &_card {
-      @apply mt-32;
-    }
+		&_card {
+			@apply mt-32;
+		}
 
-    &_logo {
-      @apply m-6;
-    }
-  }
+		&_logo {
+			@apply m-6;
+		}
+	}
 }

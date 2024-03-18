@@ -1,24 +1,24 @@
 .avatar {
-  width: clamp(25px, 2.604vw, 100px);
-  height: clamp(25px, 2.604vw, 100px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow-y: hidden;
-  border: 3px solid;
-  transition: 0.3s all;
-  @apply border-primary-red;
-  @apply rounded-full;
+	width: clamp(25px, 2.604vw, 100px);
+	height: clamp(25px, 2.604vw, 100px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow-y: hidden;
+	border: 3px solid;
+	transition: 0.3s all;
+	@apply border-primary-red;
+	@apply rounded-full;
 
-  &__icon {
-    @apply m-2;
-    @apply border-primary-red;
-  }
+	&__icon {
+		@apply m-2;
+		@apply border-primary-red;
+	}
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .avatar {
-    width: clamp(25px, 11.681999999999999vw, 100px);
-    height: clamp(25px, 11.681999999999999vw, 100px);
-  }
+	.avatar {
+		width: clamp(25px, 11.681999999999999vw, 100px);
+		height: clamp(25px, 11.681999999999999vw, 100px);
+	}
 }

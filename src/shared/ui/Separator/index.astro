@@ -1,20 +1,20 @@
 ---
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface Props {
-  textLeft?: string;
-  textRight?: string;
-  margin?: string;
+	textLeft?: string
+	textRight?: string
+	margin?: string
 }
 
-const { textLeft, textRight, margin } = Astro.props;
-const separatorClass = `${styles.separator} ${margin ? margin : ""}`;
+const { textLeft, textRight, margin } = Astro.props
+const separatorClass = `${styles.separator} ${margin ? margin : ''}`
 ---
 
 <div class={separatorClass}>
-  <span class={styles.separator__text_left}>{textLeft}</span>
-  <hr class={styles.separator__line} />
-  <span class={styles.separator__text_right}>{textRight}</span>
+	<span class={styles.separator__text_left}>{textLeft}</span>
+	<hr class={styles.separator__line} />
+	<span class={styles.separator__text_right}>{textRight}</span>
 </div>
 
 <style></style>

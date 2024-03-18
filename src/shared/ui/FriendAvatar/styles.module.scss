@@ -1,10 +1,10 @@
 .friend_avatar {
-  width: clamp(40px, 4.1664vw, 160px);
-  height: clamp(40px, 4.1664vw, 160px);
-  transition: 0.3s all;
-  @apply rounded-full;
-  &:hover {
-    border: 1px solid;
-    @apply border-primary-red;
-  }
+	width: clamp(40px, 4.1664vw, 160px);
+	height: clamp(40px, 4.1664vw, 160px);
+	transition: 0.3s all;
+	@apply rounded-full;
+	&:hover {
+		border: 1px solid;
+		@apply border-primary-red;
+	}
 }

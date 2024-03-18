@@ -1,24 +1,24 @@
 .selector {
-  position: relative;
-  width: clamp(175px, 18.228vw, 700px);
-  height: auto;
-  font-size: clamp(9px, 0.93744vw, 36px);
-  z-index: 10;
-  @apply text-primary-red;
-  @apply border-primary-red;
-  @apply mt-8;
+	position: relative;
+	width: clamp(175px, 18.228vw, 700px);
+	height: auto;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	z-index: 10;
+	@apply text-primary-red;
+	@apply border-primary-red;
+	@apply mt-8;
 }
 
 .icon {
-  position: absolute;
-  top: clamp(8px, 0.83328vw, 32px);
-  right: clamp(8px, 0.83328vw, 32px);
-  font-size: clamp(8px, 0.83328vw, 32px);
-  z-index: 10;
+	position: absolute;
+	top: clamp(8px, 0.83328vw, 32px);
+	right: clamp(8px, 0.83328vw, 32px);
+	font-size: clamp(8px, 0.83328vw, 32px);
+	z-index: 10;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .selector {
-    width: clamp(162.5px, 75.93299999999999vw, 650px);
-  }
+	.selector {
+		width: clamp(162.5px, 75.93299999999999vw, 650px);
+	}
 }

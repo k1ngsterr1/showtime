@@ -1,38 +1,36 @@
 ---
-import Paragraph from "@shared/ui/Paragraph/index.astro";
-import { GalleryCustom } from "@features/Gallery";
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import { GalleryCustom } from '@features/Gallery'
 
-import men from "@assets/Gallery/men.webp";
-import womanman from "@assets/Gallery/womanman.webp";
-import womenjar from "@assets/Gallery/womenjar.webp";
+import men from '@assets/Gallery/men.webp'
+import womanman from '@assets/Gallery/womanman.webp'
+import womenjar from '@assets/Gallery/womenjar.webp'
 
-const photos = [men, womanman,  womenjar]
+const photos = [men, womanman, womenjar]
 
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
 ---
 
 <div class={styles.container}>
-    <div class="flex flex-col items-start m-auto">
-        <h1 class={styles.container__heading}>
-          Наши Ивенты
-        </h1>
-          <Paragraph
-          margin="mt-8"
-            paragraphType="white"
-            align="text-start"
-            width="70%"
-            text="Lorem ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  dolor Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-          />
-          <Paragraph
-          margin="mt-8"
-            paragraphType="white"
-            align="text-start"
-            width="65%"
-            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  incididunt Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  ut labore et dolore magna aliqua. "
-          />
-    </div>
-    <div class="w-[200%]">
-        <GalleryCustom photos={photos} client:load />
-    </div>
-</div>
+	<div class="m-auto flex flex-col items-start">
+		<h1 class={styles.container__heading}>Наши Ивенты</h1>
+		<Paragraph
+			margin="mt-8"
+			paragraphType="white"
+			align="text-start"
+			width="70%"
+			text="Lorem ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  dolor Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+		/>
+		<Paragraph
+			margin="mt-8"
+			paragraphType="white"
+			align="text-start"
+			width="65%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  incididunt Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  ut labore et dolore magna aliqua. "
+		/>
+	</div>
+	<div class="w-[200%]">
+		<GalleryCustom photos={photos} client:load />
+	</div>
+</div>@features/Swipers/Gallery

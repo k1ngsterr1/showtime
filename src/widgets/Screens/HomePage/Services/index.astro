@@ -1,106 +1,96 @@
 ---
-import Separator from "@shared/ui/Separator/index.astro";
-import Paragraph from "@shared/ui/Paragraph/index.astro";
-import ServiceCard from "@entities/ServiceCard/index.astro";
-import Button from "@shared/ui/Buttons/NavigationButton/index.astro";
+import Separator from '@shared/ui/Separator/index.astro'
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import ServiceCard from '@entities/Card_Components/ServiceCard/index.astro'
+import Button from '@shared/ui/Buttons/NavigationButton/index.astro'
 
-import man_01 from "@assets/Main/man_01.png";
-import man_02 from "@assets/Main/man_02.png";
-import man_03 from "@assets/Main/man_03.png";
+import man_01 from '@assets/Main/man_01.png'
+import man_02 from '@assets/Main/man_02.png'
+import man_03 from '@assets/Main/man_03.png'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
-import "@shared/styles/global.scss";
+import '@shared/styles/global.scss'
 ---
 
 <section class={styles.services_screen} id="services">
-  <div class={styles.services_screen__container}>
-    <div class={styles.services_screen__container__upper}>
-      <div class="flex flex-col items-start">
-        <h3 class="text-primary-red">Наши услуги</h3>
-        <Paragraph
-          paragraphType="red"
-          width="42%"
-          margin="mt-4"
-          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        />
-      </div>
-      <Separator textLeft="showtime" />
-    </div>
-    <div class="flex gap-12 justify-evenly mt-16 overflow-hidden">
-      <ServiceCard
-        image={man_01.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        image={man_02.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        image={man_03.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-    </div>
-    <Button
-      text="Подробнее"
-      href="/services"
-      margin="m-auto mt-8"
-      buttonType="transparent"
-    />
-  </div>
+	<div class={styles.services_screen__container}>
+		<div class={styles.services_screen__container__upper}>
+			<div class="flex flex-col items-start">
+				<h3 class="text-primary-red">Наши услуги</h3>
+				<Paragraph
+					paragraphType="red"
+					width="42%"
+					margin="mt-4"
+					text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				/>
+			</div>
+			<Separator textLeft="showtime" />
+		</div>
+		<div class="mt-16 flex justify-evenly gap-12 overflow-hidden">
+			<ServiceCard
+				image={man_01.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				image={man_02.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				image={man_03.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+		</div>
+		<Button text="Подробнее" href="/services" margin="m-auto mt-8" buttonType="transparent" />
+	</div>
 </section>
 
 <section class={styles.services_mob_screen} id="services">
-  <div class={styles.services_mob_screen__container}>
-    <div class={styles.services_mob_screen__container__upper}>
-      <div class="flex flex-col items-center">
-        <h3 class="text-primary-red mt-16">Наши услуги</h3>
-        <Paragraph
-          paragraphType="red"
-          width="75%"
-          margin="mt-4"
-          align="text-center"
-          text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        />
-      </div>
-    </div>
-    <div class="flex gap-12 items-center flex-col mt-16 overflow-hidden">
-      <ServiceCard
-        image={man_01.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        image={man_02.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        image={man_03.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-    </div>
-    <Button
-      text="Подробнее"
-      href="#"
-      margin="m-auto mt-8"
-      buttonType="transparent"
-    />
-  </div>
+	<div class={styles.services_mob_screen__container}>
+		<div class={styles.services_mob_screen__container__upper}>
+			<div class="flex flex-col items-center">
+				<h3 class="mt-16 text-primary-red">Наши услуги</h3>
+				<Paragraph
+					paragraphType="red"
+					width="75%"
+					margin="mt-4"
+					align="text-center"
+					text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				/>
+			</div>
+		</div>
+		<div class="mt-16 flex flex-col items-center gap-12 overflow-hidden">
+			<ServiceCard
+				image={man_01.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				image={man_02.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				image={man_03.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+		</div>
+		<Button text="Подробнее" href="#" margin="m-auto mt-8" buttonType="transparent" />
+	</div>
 </section>

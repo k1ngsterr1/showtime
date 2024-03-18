@@ -1,29 +1,29 @@
 .client {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 
-  &__content {
-    width: 86.6%;
-    margin: auto;
-  }
+	&__content {
+		width: 86.6%;
+		margin: auto;
+	}
 }
 
 .client_mob {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .client {
-    display: none;
-  }
+	.client {
+		display: none;
+	}
 
-  .client_mob {
-    display: flex;
-    width: 90%;
-    margin: auto;
-    &__content__history_cards {
-      @apply mt-8;
-    }
-  }
+	.client_mob {
+		display: flex;
+		width: 90%;
+		margin: auto;
+		&__content__history_cards {
+			@apply mt-8;
+		}
+	}
 }

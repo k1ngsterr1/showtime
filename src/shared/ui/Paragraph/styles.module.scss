@@ -1,49 +1,49 @@
 .paragraph--red {
-  @apply text-primary-red;
-  @apply font-neoregular;
-  font-size: clamp(9px, 0.93744vw, 36px);
-  font-weight: 400;
-  line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+	@apply text-primary-red;
+	@apply font-neoregular;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
 }
 
 .paragraph--white {
-  @apply text-primary-light;
-  @apply font-neolight;
-  font-size: clamp(9px, 0.93744vw, 36px);
-  font-weight: 400;
-  line-height: clamp(13.52px, 1.4082432vw, 54.08px);
-  overflow-y: hidden;
+	@apply text-primary-light;
+	@apply font-neolight;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+	overflow-y: hidden;
 }
 
 .paragraph--dark {
-  @apply text-primary-dark;
-  @apply font-neolight;
-  font-size: clamp(9px, 0.93744vw, 36px);
-  font-weight: 400;
-  line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+	@apply text-primary-dark;
+	@apply font-neolight;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .paragraph--red {
-    @apply text-primary-red;
-    @apply font-neoregular;
-    font-size: clamp(9px, 4.20552vw, 36px);
-    font-weight: 600;
-    line-height: clamp(14px, 6.541919999999999vw, 56px);
-  }
+	.paragraph--red {
+		@apply text-primary-red;
+		@apply font-neoregular;
+		font-size: clamp(9px, 4.20552vw, 36px);
+		font-weight: 600;
+		line-height: clamp(14px, 6.541919999999999vw, 56px);
+	}
 
-  .paragraph--white {
-    @apply text-primary-light;
-    @apply font-neoregular;
-    font-size: clamp(9px, 4.20552vw, 36px);
-    font-weight: 400;
-    line-height: clamp(12.5px, 5.840999999999999vw, 50px);
-  }
-  .paragraph--dark {
-    @apply text-primary-dark;
-    @apply font-neoregular;
-    font-size: clamp(9px, 4.20552vw, 36px);
-    font-weight: 600;
-    line-height: clamp(12.5px, 5.840999999999999vw, 50px);
-  }
+	.paragraph--white {
+		@apply text-primary-light;
+		@apply font-neoregular;
+		font-size: clamp(9px, 4.20552vw, 36px);
+		font-weight: 400;
+		line-height: clamp(12.5px, 5.840999999999999vw, 50px);
+	}
+	.paragraph--dark {
+		@apply text-primary-dark;
+		@apply font-neoregular;
+		font-size: clamp(9px, 4.20552vw, 36px);
+		font-weight: 600;
+		line-height: clamp(12.5px, 5.840999999999999vw, 50px);
+	}
 }

@@ -1,35 +1,41 @@
 ---
-import Paragraph from '../../../shared/ui/Paragraph/index.astro';
-
-import '@shared/styles/global.scss';
-import styles from "./styles.module.scss";
-
-import License from "../../../assets/Licenses/licensem.webp";
-
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import License from '@assets/Licenses/licensem.webp'
+import styles from './styles.module.scss'
+import '@shared/styles/global.scss'
 ---
 
 <main class={styles.client}>
-    <div class={styles.client__content}>
-    <h1 class="text-primary-red mt-32">Лицензии</h1>
-    <Paragraph paragraphType='white' width='23%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' margin='mt-16'/>
-    <div class={styles.client__content_licenses}>
-        <img src={License.src} alt="license">
-        <img src={License.src} alt="license">
-        <img src={License.src} alt="license">
-    </div>
-    </div>
- </div>
+	<div class={styles.client__content}>
+		<h1 class="mt-32 text-primary-red">Лицензии</h1>
+		<Paragraph
+			paragraphType="white"
+			width="23%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			margin="mt-16"
+		/>
+		<div class={styles.client__content_licenses}>
+			<img src={License.src} alt="license" />
+			<img src={License.src} alt="license" />
+			<img src={License.src} alt="license" />
+		</div>
+	</div>
 </main>
 
 <main class={styles.client_mob}>
-    <div class={styles.client_mob__content}>
-    <h1 class="text-primary-red text-center mt-16">Лицензии</h1>
-    <Paragraph paragraphType='white' align='text-center' width='75%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' margin='m-auto pt-8'/>
-    <div class={styles.client_mob__content_licenses}>
-        <img class="mt-12" src={License.src} alt="license">
-        <img class="mt-8" src={License.src} alt="license">
-        <img class="mt-8 mb-12" src={License.src} alt="license">
-    </div>
-    </div>
- </div>
+	<div class={styles.client_mob__content}>
+		<h1 class="mt-16 text-center text-primary-red">Лицензии</h1>
+		<Paragraph
+			paragraphType="white"
+			align="text-center"
+			width="75%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			margin="m-auto pt-8"
+		/>
+		<div class={styles.client_mob__content_licenses}>
+			<img class="mt-12" src={License.src} alt="license" />
+			<img class="mt-8" src={License.src} alt="license" />
+			<img class="mb-12 mt-8" src={License.src} alt="license" />
+		</div>
+	</div>
 </main>

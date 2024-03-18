@@ -1,0 +1,22 @@
+---
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import styles from './styles.module.scss'
+import Img from '@assets/About/image-30.webp'
+
+interface Props {
+	time: string
+	heading: string
+	paragraph: string
+}
+
+const { time, heading, paragraph } = Astro.props
+---
+
+<div class={styles.card}>
+	<img src={Img.src} alt="" />
+	<div class="ml-auto mt-3 flex w-[95%] flex-col">
+		<span class="font-killbill">{time}</span>
+		<span class="font-killbill">{heading}</span>
+		<Paragraph paragraphType="dark" margin="mt-4" text={paragraph} />
+	</div>
+</div>

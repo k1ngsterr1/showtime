@@ -1,59 +1,49 @@
 ---
-import { LinkButton } from "@shared/ui/LinkButton/index";
-import Paragraph from "@shared/ui/Paragraph/index.astro";
+import { LinkButton } from '@shared/ui/LinkButton/index'
+import Paragraph from '@shared/ui/Paragraph/index.astro'
 
-import Button from "@shared/ui/Buttons/DefaultButton/index.astro";
-import styles from "../../../../pages/styles/home/styles.module.scss";
+import Button from '@shared/ui/Buttons/DefaultButton/index.astro'
+import styles from '../../../../pages/styles/home/styles.module.scss'
 ---
 
 <div class={styles.main__container}>
-  <h1 class={styles.main__container__heading}>
-    MAFIA CLUB <br />
-    <span class="text-primary-light font-katana">SHOWTIME ALMATY</span>
-  </h1>
-  <div class={styles.main__container__paragraphs}>
-    <Paragraph
-      paragraphType="white"
-      width="20%"
-      text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-    />
-    <Paragraph
-      paragraphType="white"
-      width="20%"
-      text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-    />
-  </div>
-  <div class={styles.main__container__buttons}>
-    <LinkButton to="main" href="/login" buttonType="filled" text="Войти" />
-    <LinkButton
-      to="main"
-      buttonType="transparent"
-      href="/registration"
-      text="Создать аккаунт"
-    />
-  </div>
+	<h1 class={styles.main__container__heading}>
+		MAFIA CLUB <br />
+		<span class="font-katana text-primary-light">SHOWTIME ALMATY</span>
+	</h1>
+	<div class={styles.main__container__paragraphs}>
+		<Paragraph
+			paragraphType="white"
+			width="20%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+		/>
+		<Paragraph
+			paragraphType="white"
+			width="20%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+		/>
+	</div>
+	<div class={styles.main__container__buttons}>
+		<LinkButton to="main" href="/login" buttonType="filled" text="Войти" />
+		<LinkButton to="main" buttonType="transparent" href="/registration" text="Создать аккаунт" />
+	</div>
 </div>
 
 <div class={styles.main_mob__container}>
-  <h1 class={styles.main_mob__container__heading}>
-    MAFIA CLUB <br />
-    <span class="text-primary-light w-[70%] font-katana">SHOWTIME ALMATY</span>
-  </h1>
-  <div class={styles.main_mob__container__paragraphs}>
-    <Paragraph
-      align="text-center"
-      paragraphType="white"
-      width="70%"
-      text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-    />
-  </div>
-  <div class={styles.main_mob__container__buttons}>
-    <LinkButton to="main" buttonType="filled" margin="mt-8" text="Войти" />
-    <LinkButton
-      to="main"
-      buttonType="transparent"
-      margin="mt-6"
-      text="Подробнее"
-    />
-  </div>
+	<h1 class={styles.main_mob__container__heading}>
+		MAFIA CLUB <br />
+		<span class="w-[70%] font-katana text-primary-light">SHOWTIME ALMATY</span>
+	</h1>
+	<div class={styles.main_mob__container__paragraphs}>
+		<Paragraph
+			align="text-center"
+			paragraphType="white"
+			width="70%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+		/>
+	</div>
+	<div class={styles.main_mob__container__buttons}>
+		<LinkButton to="main" buttonType="filled" margin="mt-8" text="Войти" />
+		<LinkButton to="main" buttonType="transparent" margin="mt-6" text="Подробнее" />
+	</div>
 </div>

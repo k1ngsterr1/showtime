@@ -1,22 +1,21 @@
 ---
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface Props {
-  margin?: string;
-  href: string;
-  text: string;
-  linktext: string;
+	margin?: string
+	href: string
+	text: string
+	linktext: string
 }
 
-const {margin, href, text, linktext} = Astro.props;
+const { margin, href, text, linktext } = Astro.props
 
-const MiniTextClass = `${styles.mini_text}  ${margin ? margin : ""}`;
+const MiniTextClass = `${styles.mini_text}  ${margin ? margin : ''}`
 ---
 
-
- <div class={MiniTextClass} style={{ margin }}>
-      <span>{text} </span>
-      <a href={href} class={styles.link_text}>
-        {linktext}
-      </a>
+<div class={MiniTextClass} style={{ margin }}>
+	<span>{text} </span>
+	<a href={href} class={styles.link_text}>
+		{linktext}
+	</a>
 </div>

@@ -1,31 +1,31 @@
 .marqueeContainer {
-  overflow: hidden;
-  width: 100%;
+	overflow: hidden;
+	width: 100%;
 }
 
 .marquee {
-  display: flex;
-  animation: marquee-animation 3s linear infinite;
+	display: flex;
+	animation: marquee-animation 3s linear infinite;
 }
 
 .item {
-  margin-right: clamp(100px, 10.416vw, 400px);
+	margin-right: clamp(100px, 10.416vw, 400px);
 }
 
 @keyframes marquee-animation {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .item {
-  }
-  .img {
-    width: 300px;
-    height: 200px;
-  }
+	.item {
+	}
+	.img {
+		width: 300px;
+		height: 200px;
+	}
 }

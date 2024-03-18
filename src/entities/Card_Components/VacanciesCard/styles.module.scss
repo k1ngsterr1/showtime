@@ -1,0 +1,48 @@
+.card {
+	position: relative;
+	width: clamp(235px, 24.4776vw, 940px);
+	height: clamp(248.5px, 25.883760000000002vw, 994px);
+	background-color: #f0e7be;
+	@apply p-8;
+	box-shadow: 16px 16px 0px 0px #bf2316;
+
+	&__number {
+		font-size: clamp(32px, 3.33312vw, 128px);
+		@apply text-primary-red;
+		@apply font-killbill;
+	}
+
+	&__heading {
+		font-size: clamp(32px, 3.33312vw, 128px);
+		@apply text-primary-red;
+		@apply font-killbill;
+	}
+
+	&__paragraph {
+		font-size: clamp(9px, 0.93744vw, 36px);
+		@apply text-primary-dark;
+		@apply font-neoregular;
+		line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+	}
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.card {
+		height: clamp(255px, 119.15639999999999vw, 1020px);
+		width: clamp(150px, 70.092vw, 600px);
+		@apply mt-12;
+
+		&__number {
+			font-size: clamp(23px, 10.74744vw, 92px);
+		}
+
+		&__heading {
+			font-size: clamp(25px, 11.681999999999999vw, 100px);
+		}
+
+		&__paragraph {
+			font-size: clamp(8px, 3.73824vw, 32px);
+			line-height: clamp(13px, 6.07464vw, 52px);
+		}
+	}
+}

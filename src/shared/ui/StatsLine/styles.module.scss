@@ -1,10 +1,10 @@
 .line {
-  width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @apply text-xl;
-  @apply gap-8;
-  @apply font-neoregular;
-  @apply text-primary-light;
+	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@apply text-xl;
+	@apply gap-8;
+	@apply font-neoregular;
+	@apply text-primary-light;
 }

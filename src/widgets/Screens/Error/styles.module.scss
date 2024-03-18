@@ -1,22 +1,22 @@
 .error {
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 
-  &__heading {
-    @apply text-9xl;
-    @apply text-primary-red;
-    @apply font-killbill;
-  }
+	&__heading {
+		@apply text-9xl;
+		@apply text-primary-red;
+		@apply font-killbill;
+	}
 
-  &__paragraph {
-    @apply mt-8;
-    @apply text-primary-light;
-    @apply text-xl;
-    @apply font-neoregular;
-  }
+	&__paragraph {
+		@apply mt-8;
+		@apply text-primary-light;
+		@apply text-xl;
+		@apply font-neoregular;
+	}
 }
