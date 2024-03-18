@@ -1,8 +1,3 @@
-import React from 'react'
-import Card from './card'
-
-import index from './index.module.scss'
-
 export const services = [
 	{
 		number: '01',
@@ -41,20 +36,3 @@ export const services = [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 	}
 ]
-
-const CardList: React.FC = () => {
-	return (
-		<div className={index.card}>
-			{services.map((service, index) => (
-				<Card
-					key={index}
-					number={service.number}
-					name={service.name}
-					paragraph={service.paragraph}
-				/>
-			))}
-		</div>
-	)
-}
-
-export default CardList

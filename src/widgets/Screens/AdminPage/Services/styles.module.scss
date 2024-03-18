@@ -23,7 +23,18 @@
 		}
 
 		&_cards {
+			display: flex;
+			flex-direction: column;
 			@apply mt-12;
+		}
+
+		&_card {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 60px;
 		}
 	}
 }

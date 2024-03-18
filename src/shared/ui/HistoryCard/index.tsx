@@ -82,11 +82,9 @@ export const SwiperHistory: React.FC<SwiperHistoryProps> = ({ history }) => {
 		}
 	}
 
-<<<<<<< HEAD
 	return (
 		<div>
 			<div className={`${'mb-12 flex items-center justify-end'} ${styles.buttons}`}>
-				<div className="m-auto w-full"></div>
 				<div className="flex w-[10%] justify-between">
 					<RevolverButton buttonType="gallery" direction="previous" onClick={handlePrev} />
 					<div className="scale-x-[-1]">
@@ -113,51 +111,5 @@ export const SwiperHistory: React.FC<SwiperHistoryProps> = ({ history }) => {
 		</div>
 	)
 }
-=======
-  return (
-    <div>
-      <div
-        className={`${"flex items-center justify-end mb-12"} ${styles.buttons}`}
-      >
-        <div className="w-full m-auto"></div>
-        <div className="flex justify-between w-[10%]">
-          <RevolverButton
-            buttonType="gallery"
-            direction="previous"
-            onClick={handlePrev}
-          />
-          <div className="scale-x-[-1]">
-            <RevolverButton
-              buttonType="gallery"
-              direction="next"
-              onClick={handleNext}
-            />
-          </div>
-        </div>
-      </div>
-      <Swiper
-        className={styles.swiper}
-        slidesPerView={6}
-        spaceBetween={64}
-        onSwiper={(swiperInstance) => {
-          swiperRef.current = swiperInstance;
-        }}
-      >
-        {history.map((history, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex">
-              <HistoryCard
-                name={history.name}
-                data={history.data}
-                paragraph={history.paragraph}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  );
-};
->>>>>>> 3da3e236a5ae2058d1e4058c453c77b8c9a5d08c
 
 export default SwiperHistory

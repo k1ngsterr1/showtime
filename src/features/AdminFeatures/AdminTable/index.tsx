@@ -14,7 +14,7 @@ interface ITable {
 	services: Array<{
 		id: string
 		service: string
-		price: number
+		price: string
 		time: string
 	}>
 }

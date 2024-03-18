@@ -8,7 +8,7 @@ interface ICardProps {
 	paragraph: string
 }
 
-const Card: React.FC<ICardProps> = ({ number, name, paragraph }) => {
+export const Card: React.FC<ICardProps> = ({ number, name, paragraph }) => {
 	return (
 		<>
 			<div className={styles.card}>
@@ -20,5 +20,3 @@ const Card: React.FC<ICardProps> = ({ number, name, paragraph }) => {
 		</>
 	)
 }
-
-export default Card

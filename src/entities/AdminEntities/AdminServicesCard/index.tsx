@@ -7,7 +7,7 @@ import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
 
 interface ICardProps {
-	number: number
+	number: string
 	href: string
 }
 

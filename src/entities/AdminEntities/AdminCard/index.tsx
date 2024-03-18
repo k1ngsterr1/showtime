@@ -2,9 +2,10 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import styles from './styles.module.scss'
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
 interface Props {
-	icon: any
+	icon: IconDefinition
 	tab: string
 	href: string
 }
