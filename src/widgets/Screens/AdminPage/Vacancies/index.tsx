@@ -1,6 +1,6 @@
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
-import { ServiceCard } from '@entities/AdminEntities/AdminServicesCard/index'
+import { ServiceCard } from '@entities/AdminEntities/AdminServicesCard'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 
@@ -10,7 +10,7 @@ import styles from '../Team/styles.module.scss'
 
 import Oleg from '@assets/Admin/oleg.webp'
 
-export const Services = () => {
+export const Vacancie = () => {
 	return (
 		<main className={styles.client}>
 			<div className={styles.client__left}>
@@ -20,15 +20,15 @@ export const Services = () => {
 				<AdminHeader name="Bafomet Nurmukhamed" position="God" photo={Oleg} />
 				<div className={styles.client__main__functional}>
 					<div className={styles.client__main__functional__header_service}>
-						<h1 className={styles.client__main__functional__header_heading}>Услуги</h1>
+						<h1 className={styles.client__main__functional__header_heading}>Вакансии</h1>
 						<ParagraphReact
-							text="Заполните все поля формы чтобы добавить новую услугу"
+							text="Заполните все поля формы чтобы добавить новую вакансию"
 							paragraphType="white"
 							margin="mt-2"
 						/>
 					</div>
-					<div className={styles.client__main__functional__services}>
-						<ServiceCard number="01" placeholder="Какая услуга" href="serviceslist" />
+					<div className={styles.client__main__functional__vacancies}>
+						<ServiceCard number="01" placeholder="Кого ищем" href="vacancieslist" />
 					</div>
 				</div>
 			</div>

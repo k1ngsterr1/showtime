@@ -9,14 +9,15 @@ import '@shared/styles/global.scss'
 interface ICardProps {
 	number: string
 	href: string
+	placeholder: string
 }
 
-export const ServiceCard: React.FC<ICardProps> = ({ number, href }) => {
+export const ServiceCard: React.FC<ICardProps> = ({ number, href, placeholder }) => {
 	return (
 		<>
 			<div className={styles.card}>
 				<h1 className={styles.card__heading}>{number}</h1>
-				<Input inputType="default-red-big" placeholder="Какой заказ" type="text" />
+				<Input inputType="default-red-big" placeholder={placeholder} type="text" />
 				<TextArea placeholder="Текст" margin="mt-8" />
 			</div>
 			<AddButton buttonType="filled" text="Добавить" margin="mt-12" />

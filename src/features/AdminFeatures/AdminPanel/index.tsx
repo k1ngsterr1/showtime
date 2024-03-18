@@ -9,7 +9,8 @@ import {
 	faUser,
 	faCartShopping,
 	faFileLines,
-	faSignOutAlt
+	faSignOutAlt,
+	faBriefcase
 } from '@fortawesome/free-solid-svg-icons'
 
 export const adminpanel = [
@@ -27,6 +28,11 @@ export const adminpanel = [
 		icon: faFileLines,
 		tab: 'Заказы',
 		href: 'orders'
+	},
+	{
+		icon: faBriefcase,
+		tab: 'Вакансии',
+		href: 'vacancies'
 	},
 	{
 		icon: faSignOutAlt,
