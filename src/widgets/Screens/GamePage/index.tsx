@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import photo from '@assets/logo/fedora.svg'
 import { HelpCard } from '@entities/Card_Components/HelpCard'
-import { GameProfile } from '@entities/GameProfile'
+import { GameProfile } from '@entities/Game_Components/GameProfile'
 import { Lobby } from '@features/Lobby'
 import { useGetScore } from '@shared/lib/hooks/useGetScore'
 import { useUserData } from '@shared/lib/hooks/useGetUserData'

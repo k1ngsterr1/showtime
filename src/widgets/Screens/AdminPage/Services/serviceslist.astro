@@ -1,5 +1,4 @@
 ---
-import Paragraph from '@shared/ui/Paragraph/index.astro'
 import Card from '@entities/AdminEntities/ServicesSwiperCard'
 import { services } from '@entities/AdminEntities/ServicesSwiperCard'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
@@ -16,7 +15,6 @@ import '@shared/styles/global.scss'
 			<img src={Logo.src} alt="Logo" />
 		</div>
 		<h1 class="text-primary-red">Услуги</h1>
-		<!-- <Paragraph text="Заполните все поля формы чтобы добавить новую услугу" paragraphType="white"/> -->
 		<div class={styles.services__content_cards}>
 			<Card services={services} />
 		</div>

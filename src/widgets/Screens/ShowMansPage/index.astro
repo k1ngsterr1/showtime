@@ -1,8 +1,7 @@
 ---
-<<<<<<< HEAD
 import Paragraph from '@shared/ui/Paragraph/index.astro'
-import ShowMansSwiper from '@shared/ui/ShowMansSwiper/index'
-import { showmans } from '@shared/ui/ShowMansSwiper/index'
+import {ShowMansSwiper} from '@features/Swiper_Components/ShowMansSwiper/index'
+import { showmans } from '@features/Swiper_Components/ShowMansSwiper/index'
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
 ---
@@ -36,45 +35,4 @@ import '@shared/styles/global.scss'
 			<ShowMansSwiper showmans={showmans} client:load />
 		</div>
 	</div>
-=======
-import Paragraph from "../../../shared/ui/Paragraph/index.astro";
-
-import ShowMansSwiper from "../../../shared/ui/ShowMansSwiper/index";
-import { showmans } from "../../../shared/ui/ShowMansSwiper/index";
-
-import "@shared/styles/global.scss";
-
-import styles from "./styles.module.scss";
----
-
-<main class={styles.client}>
-    <div class={styles.client__content}>
-        <h1 class="text-primary-red mt-32">Ведущие</h1>
-        <Paragraph
-            paragraphType="white"
-            width="23%"
-            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-            margin="mt-16"
-        />
-        <div class="mb-16">
-            <ShowMansSwiper showmans={showmans} client:load />
-        </div>
-    </div>
-</main>
-
-<main class={styles.client_mob}>
-    <div class={styles.client_mob__content}>
-        <h1 class="text-primary-red text-center mt-16">Ведущие</h1>
-        <Paragraph
-            paragraphType="white"
-            align="text-center"
-            width="75%"
-            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-            margin="m-auto pt-8"
-        />
-        <div class={styles.client_mob__content__history_cards}>
-            <ShowMansSwiper showmans={showmans} client:load />
-        </div>
-    </div>
->>>>>>> 3da3e236a5ae2058d1e4058c453c77b8c9a5d08c
-</main>
+@features/Swiper_Components/ShowMansSwiper/index@features/Swiper_Components/ShowMansSwiper/index

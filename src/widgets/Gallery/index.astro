@@ -1,6 +1,6 @@
 ---
 import Paragraph from '../../shared/ui/Paragraph/index.astro'
-import Gallery from '../../features/Gallery/index'
+import {Gallery} from "@features/Swiper_Components/Gallery/index";
 
 import styles from '../styles/styles.module.scss'
 
@@ -16,4 +16,3 @@ const photos = [men, womanman, women, womenjar, womenkatana]
 <div class="Container">
 	<Gallery photos={photos} client:load />
 </div>
-../../features/Swipers/Gallery/index
