@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import Marquees from '@shared/ui/Marquee/index.tsx'
 import Freedom from '@assets/Clients/freedom.svg'
@@ -20,4 +21,42 @@ const photos = [Freedom, Freedom, Freedom]
 		/>
 	</div>
 	<Marquees photos={photos} margin="mt-24" />
+=======
+import Paragraph from "../../../shared/ui/Paragraph/index.astro";
+import Marquees from "../../../shared/ui/Marquee/index.tsx";
+import MobSlide from "@shared/ui/Marquee/mob";
+
+import "@shared/styles/global.scss";
+import styles from "../ClientsPage/styles.module.scss";
+
+import Freedom from "../../../assets/Clients/freedom.svg";
+
+const photos = [Freedom, Freedom, Freedom];
+---
+
+<main class={styles.partners}>
+    <div class={styles.partners__content}>
+        <h1 class="text-primary-red mt-32">Партнеры</h1>
+        <Paragraph
+            paragraphType="white"
+            width="23%"
+            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+            margin="mt-16"
+        />
+    </div>
+    <Marquees photos={photos} margin="mt-24" />
+</main>
+
+<main class={styles.partners_mob}>
+    <div class={styles.partners_mob__content}>
+        <h1 class="text-primary-red mt-16">Наши клиенты</h1>
+        <Paragraph
+            paragraphType="white"
+            width="75%"
+            text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+            margin="m-auto pt-8"
+        />
+    </div>
+    <MobSlide margin="mt-32" />
+>>>>>>> 3da3e236a5ae2058d1e4058c453c77b8c9a5d08c
 </main>
