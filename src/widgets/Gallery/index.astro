@@ -1,18 +1,18 @@
 ---
-import Paragraph from "../../shared/ui/Paragraph/index.astro";
-import Gallery from "../../features/Gallery/index";
+import Paragraph from '../../shared/ui/Paragraph/index.astro'
+import {Gallery} from "@features/Swiper_Components/Gallery/index";
 
-import styles from "../styles/styles.module.scss";
+import styles from '../styles/styles.module.scss'
 
-import men from "../../assets/Gallery/men.webp";
-import womanman from "../../assets/Gallery/womanman.webp";
-import women from "../../assets/Gallery/women.webp";
-import womenjar from "../../assets/Gallery/womenjar.webp";
-import womenkatana from "../../assets/Gallery/womenkatana.webp";
+import men from '../../assets/Gallery/men.webp'
+import womanman from '../../assets/Gallery/womanman.webp'
+import women from '../../assets/Gallery/women.webp'
+import womenjar from '../../assets/Gallery/womenjar.webp'
+import womenkatana from '../../assets/Gallery/womenkatana.webp'
 
-const photos = [men, womanman, women, womenjar, womenkatana];
+const photos = [men, womanman, women, womenjar, womenkatana]
 ---
 
 <div class="Container">
-  <Gallery photos={photos} client:load />
+	<Gallery photos={photos} client:load />
 </div>

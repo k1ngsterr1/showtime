@@ -1,26 +1,26 @@
 .header {
-  // margin: auto;
-  width: 85vw;
-  display: flex;
-  flex-direction: column;
-  background-color: #1a1a1a;
-  height: clamp(65px, 6.7704vw, 260px);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+	// margin: auto;
+	width: 85vw;
+	display: flex;
+	flex-direction: column;
+	background-color: #1a1a1a;
+	height: clamp(65px, 6.7704vw, 260px);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 
-  &__subheading {
-    @apply ml-6;
-    padding: clamp(21.5px, 2.23944vw, 86px);
-    margin-right: auto;
-    @apply font-killbill;
-    @apply text-3xl;
-    @apply text-primary-light;
-  }
+	&__subheading {
+		@apply ml-6;
+		padding: clamp(21.5px, 2.23944vw, 86px);
+		margin-right: auto;
+		@apply font-killbill;
+		@apply text-3xl;
+		@apply text-primary-light;
+	}
 
-  &__usertab {
-    @apply mr-10;
-    @apply p-4;
-    overflow: hidden;
-  }
+	&__usertab {
+		@apply mr-10;
+		@apply p-4;
+		overflow: hidden;
+	}
 }

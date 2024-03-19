@@ -1,117 +1,115 @@
 ---
-import Paragraph from "@shared/ui/Paragraph/index.astro";
-import ServiceCard from "@entities/ServiceCard/index.astro";
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import ServiceCard from '@entities/Card_Components/ServiceCard/index.astro'
+import styles from './styles.module.scss'
 
-import man_01 from "@assets/Main/man_01.png";
-import man_02 from "@assets/Main/man_02.png";
-import man_03 from "@assets/Main/man_03.png";
-
-import styles from "./styles.module.scss";
+import man_01 from '@assets/Main/man_01.png'
+import man_02 from '@assets/Main/man_02.png'
+import man_03 from '@assets/Main/man_03.png'
 ---
 
 <div class={styles.services_screen}>
-  <section class={styles.services_screen__container}>
-    <div class="w-full flex flex-col items-start">
-      <h2 class="text-primary-red">Услуги</h2>
-      <Paragraph
-        width="25%"
-        paragraphType="white"
-        text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-      />
-    </div>
-    <div class="w-full flex items-center justify-between mt-16">
-      <ServiceCard
-        cardType="white"
-        image={man_01.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        cardType="white"
-        image={man_02.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        cardType="white"
-        image={man_03.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-    </div>
-    <div class="w-full flex items-center justify-between mt-16 mb-16">
-      <ServiceCard
-        cardType="white"
-        image={man_01.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        cardType="white"
-        image={man_02.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        cardType="white"
-        image={man_03.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-    </div>
-  </section>
+	<section class={styles.services_screen__container}>
+		<div class="flex w-full flex-col items-start">
+			<h2 class="text-primary-red">Услуги</h2>
+			<Paragraph
+				width="25%"
+				paragraphType="white"
+				text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+		</div>
+		<div class="mt-16 flex w-full items-center justify-between">
+			<ServiceCard
+				cardType="white"
+				image={man_01.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				cardType="white"
+				image={man_02.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				cardType="white"
+				image={man_03.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+		</div>
+		<div class="mb-16 mt-16 flex w-full items-center justify-between">
+			<ServiceCard
+				cardType="white"
+				image={man_01.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				cardType="white"
+				image={man_02.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				cardType="white"
+				image={man_03.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+		</div>
+	</section>
 </div>
 
 <div class={styles.services_mob}>
-  <section class={styles.services_mob__container}>
-    <div class="w-[86.6%] m-auto flex flex-col items-center">
-      <h2 class="text-primary-red mt-12">Наши услуги</h2>
-      <Paragraph
-      align="text-center"
-        width="80%"
-        margin="mt-8"
-        paragraphType="white"
-        text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-      />
-    </div>
-    <div class="w-full flex gap-10 items-center flex-col mt-16 mb-16">
-      <ServiceCard
-        cardType="white"
-        image={man_01.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        cardType="white"
-        image={man_02.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-      <ServiceCard
-        cardType="white"
-        image={man_03.src}
-        number="01"
-        heading="Lorem Ipsum"
-        paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-        price="15 000 ТГ"
-      />
-    </div>
-    </div>
-  </section>
+	<section class={styles.services_mob__container}>
+		<div class="m-auto flex w-[86.6%] flex-col items-center">
+			<h2 class="mt-12 text-primary-red">Наши услуги</h2>
+			<Paragraph
+				align="text-center"
+				width="80%"
+				margin="mt-8"
+				paragraphType="white"
+				text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+		</div>
+		<div class="mb-16 mt-16 flex w-full flex-col items-center gap-10">
+			<ServiceCard
+				cardType="white"
+				image={man_01.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				cardType="white"
+				image={man_02.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+			<ServiceCard
+				cardType="white"
+				image={man_03.src}
+				number="01"
+				heading="Lorem Ipsum"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				price="15 000 ТГ"
+			/>
+		</div>
+	</section>
 </div>

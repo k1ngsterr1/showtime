@@ -1,19 +1,19 @@
 .map {
-  @apply mt-24;
-  @apply ml-14;
+	@apply mt-24;
+	@apply ml-14;
 }
 
 .map_mob {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .map {
-    display: none;
-  }
+	.map {
+		display: none;
+	}
 
-  .map_mob {
-    display: flex;
-    @apply mt-8 ml-0;
-  }
+	.map_mob {
+		display: flex;
+		@apply ml-0 mt-8;
+	}
 }

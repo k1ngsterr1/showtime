@@ -1,16 +1,16 @@
 ---
-import { Cursor } from "@shared/ui/Cursor";
-import { LoginForm } from "../widgets/Form/LoginFrom";
-import { Loader } from "@shared/ui/Loader";
+import { Cursor } from '@shared/ui/Cursor'
+import { LoginForm } from '../widgets/Form/LoginFrom'
+import { Loader } from '@shared/ui/Loader'
 
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro'
 
-import "@shared/styles/global.scss";
-import "../pages/styles/registration/styles.scss";
+import '@shared/styles/global.scss'
+import '../pages/styles/registration/styles.scss'
 ---
 
 <Layout title="Войдите в аккаунт">
-  <Cursor client:load />
-  <Loader client:load />
-  <LoginForm client:load />
+	<Cursor client:load />
+	<Loader client:load />
+	<LoginForm client:load />
 </Layout>

@@ -1,0 +1,46 @@
+.money_tab {
+	height: clamp(90px, 9.3744vw, 360px);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	z-index: 10;
+	overflow: hidden;
+	@apply p-4;
+	@apply rounded-md;
+	@apply mt-8;
+	@apply bg-primary-light;
+
+	&__heading {
+		overflow: hidden;
+		@apply text-primary-red;
+		@apply text-3xl;
+		@apply font-killbill;
+	}
+
+	&__balance {
+		overflow: hidden;
+		@apply text-5xl;
+		@apply text-primary-red;
+		@apply font-katana;
+		@apply mt-4;
+	}
+
+	&__link {
+		@apply text-primary-red;
+		@apply text-xl;
+		@apply font-neoregular;
+		@apply mt-4;
+		@apply underline;
+		transition: 0.3s all;
+		cursor: none;
+		&:hover {
+			@apply text-red-500;
+		}
+	}
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.money_tab {
+		height: clamp(90px, 42.0552vw, 360px);
+	}
+}

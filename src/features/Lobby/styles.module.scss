@@ -1,11 +1,11 @@
 .lobby {
-  width: clamp(325px, 33.852000000000004vw, 1300px);
-  display: flex;
-  flex-direction: column;
-  @apply mt-8;
+	width: clamp(325px, 33.852000000000004vw, 1300px);
+	display: flex;
+	flex-direction: column;
+	@apply mt-8;
 
-  &__heading {
-    @apply text-5xl;
-    @apply text-primary-light;
-  }
+	&__heading {
+		@apply text-5xl;
+		@apply text-primary-light;
+	}
 }

@@ -1,16 +1,16 @@
 ---
-import { RegistrationForm } from "@widgets/Form/RegistrationForm/index";
-import { Cursor } from "@shared/ui/Cursor";
-import { Loader } from "@shared/ui/Loader/index";
+import { RegistrationForm } from '@widgets/Form/RegistrationForm/index'
+import { Cursor } from '@shared/ui/Cursor'
+import { Loader } from '@shared/ui/Loader/index'
 
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro'
 
-import "@shared/styles/global.scss";
-import "../pages/styles/registration/styles.scss";
+import '@shared/styles/global.scss'
+import '../pages/styles/registration/styles.scss'
 ---
 
 <Layout title="Регистрация">
-  <Cursor client:load />
-  <Loader client:load />
-  <RegistrationForm client:load />
+	<Cursor client:load />
+	<Loader client:load />
+	<RegistrationForm client:load />
 </Layout>

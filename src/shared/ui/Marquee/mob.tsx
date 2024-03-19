@@ -1,22 +1,22 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React from 'react'
+import styles from './styles.module.scss'
 
-import Mob from "@assets/Card/freedom.svg";
+import Mob from '@assets/Card/freedom.svg'
 
 interface Props {
-  margin?: string;
+	margin?: string
 }
 
 const MobSlide: React.FC<Props> = ({ margin }) => {
-  const MarqueeClass = `${styles.marquee} ${margin ? margin : ""}`;
+	const MarqueeClass = `${styles.marquee} ${margin ? margin : ''}`
 
-  return (
-    <div className={MarqueeClass}>
-      <div className={styles.item}>
-        <img className={styles.img} src={Mob.src} alt="" />
-      </div>
-    </div>
-  );
-};
+	return (
+		<div className={MarqueeClass}>
+			<div className={styles.item}>
+				<img className={styles.img} src={Mob.src} alt="" />
+			</div>
+		</div>
+	)
+}
 
-export default MobSlide;
+export default MobSlide

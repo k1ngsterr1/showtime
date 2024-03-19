@@ -1,31 +1,31 @@
 .panel {
-  @apply p-2;
-  display: flex;
-  margin-top: clamp(10px, 1.0416vw, 40px);
-  transition: 0.3s ease-in-out;
-  width: 100%;
+	@apply p-2;
+	display: flex;
+	margin-top: clamp(10px, 1.0416vw, 40px);
+	transition: 0.3s ease-in-out;
+	width: 100%;
 
-  &__url {
-    @apply font-neoregular;
-    @apply text-primary-light;
-    font-size: clamp(12px, 1.24992vw, 48px);
-    font-weight: 400;
-    @apply ml-4;
-    @apply font-katana;
-  }
+	&__url {
+		@apply font-neoregular;
+		@apply text-primary-light;
+		font-size: clamp(12px, 1.24992vw, 48px);
+		font-weight: 400;
+		@apply ml-4;
+		@apply font-katana;
+	}
 
-  &__icon {
-    font-size: clamp(12px, 1.24992vw, 48px);
-    @apply text-primary-red;
-    @apply pl-4;
-    transition: color 0.3s ease-in-out;
-  }
+	&__icon {
+		font-size: clamp(12px, 1.24992vw, 48px);
+		@apply text-primary-red;
+		@apply pl-4;
+		transition: color 0.3s ease-in-out;
+	}
 
-  &:hover {
-    background-color: #bf2316;
+	&:hover {
+		background-color: #bf2316;
 
-    .panel__icon {
-      @apply text-primary-light;
-    }
-  }
+		.panel__icon {
+			@apply text-primary-light;
+		}
+	}
 }

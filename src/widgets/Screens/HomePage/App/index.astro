@@ -1,66 +1,48 @@
 ---
-import Paragraph from "@shared/ui/Paragraph/index.astro";
-import Button from "@shared/ui/Buttons/NavigationButton/index.astro";
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import Button from '@shared/ui/Buttons/NavigationButton/index.astro'
 
-import iphone from "@assets/Main/iphone.webp";
+import iphone from '@assets/Main/iphone.webp'
 import iphoneMob from '@assets/Main/Nothing-Phone-2.webp'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 ---
 
 <section class={styles.app_screen}>
-  <div class={styles.app_screen__container}>
-    <div class="flex flex-col items-start">
-      <h6 class="text-primary-red">IOS & Android</h6>
-      <Paragraph
-        width="50%"
-        paragraphType="white"
-        margin="mt-8"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
-      />
-      <Paragraph
-        width="50%"
-        paragraphType="white"
-        margin="mt-8"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
-      />
-      <Button
-        text="Подробнее"
-        buttonType="transparent"
-        margin="mt-8"
-        href="/ios"
-      />
-    </div>
-    <img
-      src={iphone.src}
-      class={styles.app_screen__container__image}
-      alt="iphone"
-    />
-  </div>
+	<div class={styles.app_screen__container}>
+		<div class="flex flex-col items-start">
+			<h6 class="text-primary-red">IOS & Android</h6>
+			<Paragraph
+				width="50%"
+				paragraphType="white"
+				margin="mt-8"
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+			/>
+			<Paragraph
+				width="50%"
+				paragraphType="white"
+				margin="mt-8"
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+			/>
+			<Button text="Подробнее" buttonType="transparent" margin="mt-8" href="/ios" />
+		</div>
+		<img src={iphone.src} class={styles.app_screen__container__image} alt="iphone" />
+	</div>
 </section>
 
 <section class={styles.app_mob_screen}>
-  <div class={styles.app_mob_screen__container}>
-    <div class="flex flex-col items-center mt-16">
-      <h6 class="text-primary-red">IOS & Android</h6>
-      <Paragraph
-        width="80%"
-        paragraphType="white"
-        margin="mt-8"
-        align="text-center"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
-      />
-      <img
-      src={iphoneMob.src}
-      class={styles.app_mob_screen__container__image}
-      alt="iphone"
-    />
-      <Button
-        text="О нас"
-        buttonType="transparent"
-        margin=""
-        href="/ios"
-      />
-    </div>
-  </div>
+	<div class={styles.app_mob_screen__container}>
+		<div class="mt-16 flex flex-col items-center">
+			<h6 class="text-primary-red">IOS & Android</h6>
+			<Paragraph
+				width="80%"
+				paragraphType="white"
+				margin="mt-8"
+				align="text-center"
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+			/>
+			<img src={iphoneMob.src} class={styles.app_mob_screen__container__image} alt="iphone" />
+			<Button text="О нас" buttonType="transparent" margin="" href="/ios" />
+		</div>
+	</div>
 </section>

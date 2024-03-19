@@ -1,0 +1,122 @@
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { ProductCard } from '@entities/Card_Components/ProductsCard/index'
+import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
+import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
+
+import photo from '@assets/About/card_product.webp'
+
+import styles from './styles.module.scss'
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+export const products = [
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	},
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	},
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	},
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	},
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	},
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	},
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	},
+	{
+		photo: photo,
+		heading: 'Набор карт “Мафия”',
+		paragraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		price: '15000 тг'
+	}
+]
+
+interface SwiperProductsProps {
+	products: Array<{
+		photo: ImageMetadata
+		heading: string
+		paragraph: string
+		price: string
+	}>
+}
+
+type Swiper = any
+
+export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
+	const swiperRef = React.useRef<Swiper | null>(null)
+
+	const { handlePrev, handleNext } = useCustomSwiper(swiperRef)
+
+	return (
+		<div className={styles.container}>
+			<div className={styles.container__header}>
+				<div className="m-auto w-full">
+					<h3 className="text-primary-red ">Продукция</h3>
+				</div>
+				<div className={styles.container__buttons}>
+					<RevolverButton buttonType="gallery" direction="previous" onClick={handlePrev} />
+					<div className="scale-x-[-1]">
+						<RevolverButton buttonType="gallery" direction="next" onClick={handleNext} />
+					</div>
+				</div>
+			</div>
+			<Swiper
+				className="m-auto w-[86.6%]"
+				slidesPerView={3}
+				spaceBetween={64}
+				onSwiper={(swiperInstance) => {
+					swiperRef.current = swiperInstance
+				}}
+			>
+				{products.map((product, index) => (
+					<SwiperSlide key={index}>
+						<ProductCard
+							photo={product.photo}
+							heading={product.heading}
+							paragraph={product.paragraph}
+							price={product.price}
+						/>
+					</SwiperSlide>
+				))}
+			</Swiper>
+		</div>
+	)
+}

@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
 export const BalanceScreen = () => {
-  return <div>BalanceScreen</div>;
-};
+	return <div>BalanceScreen</div>
+}

@@ -1,82 +1,82 @@
 .button {
-  @apply font-neoregular;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(125px, 13.02vw, 500px);
-  height: clamp(27.5px, 2.8644000000000003vw, 110px);
-  font-size: clamp(10px, 1.0416vw, 40px);
-  font-weight: 100;
-  cursor: none;
+	@apply font-neoregular;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: clamp(125px, 13.02vw, 500px);
+	height: clamp(27.5px, 2.8644000000000003vw, 110px);
+	font-size: clamp(10px, 1.0416vw, 40px);
+	font-weight: 100;
+	cursor: none;
 }
 
 .filled {
-  @extend .button;
-  @apply text-primary-light;
-  border: none;
-  transition: all 0.3s ease;
-  @apply bg-primary-red;
+	@extend .button;
+	@apply text-primary-light;
+	border: none;
+	transition: all 0.3s ease;
+	@apply bg-primary-red;
 
-  &:hover {
-    background-color: #af1306;
-  }
+	&:hover {
+		background-color: #af1306;
+	}
 }
 
 .filled-small {
-  @apply font-neoregular;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(60px, 6.2496vw, 240px);
-  height: clamp(20px, 2.0832vw, 80px);
-  font-size: clamp(8px, 0.83328vw, 32px);
-  cursor: none;
-  @apply text-primary-light;
-  border-radius: clamp(5px, 0.5208vw, 20px);
-  transition: all 0.3s ease;
-  @apply bg-primary-red;
-  &:hover {
-    background-color: #af1306;
-  }
+	@apply font-neoregular;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: clamp(60px, 6.2496vw, 240px);
+	height: clamp(20px, 2.0832vw, 80px);
+	font-size: clamp(8px, 0.83328vw, 32px);
+	cursor: none;
+	@apply text-primary-light;
+	border-radius: clamp(5px, 0.5208vw, 20px);
+	transition: all 0.3s ease;
+	@apply bg-primary-red;
+	&:hover {
+		background-color: #af1306;
+	}
 }
 
 .transparent {
-  @extend .button;
-  @apply text-primary-red;
-  background-color: transparent;
-  border: 2px solid;
-  transition: 0.5s;
-  @apply border-primary-red;
+	@extend .button;
+	@apply text-primary-red;
+	background-color: transparent;
+	border: 2px solid;
+	transition: 0.5s;
+	@apply border-primary-red;
 
-  &:hover,
-  &:focus {
-    box-shadow: inset 250px 0 0 0 #bf2316;
-    @apply text-primary-light;
-  }
+	&:hover,
+	&:focus {
+		box-shadow: inset 250px 0 0 0 #bf2316;
+		@apply text-primary-light;
+	}
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .button {
-    @apply font-neoregular;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: clamp(125px, 58.41vw, 500px);
-    height: clamp(27.5px, 12.8502vw, 110px);
-    font-size: clamp(10px, 4.6728vw, 40px);
-    font-weight: 100;
-    cursor: none;
-  }
+	.button {
+		@apply font-neoregular;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: clamp(125px, 58.41vw, 500px);
+		height: clamp(27.5px, 12.8502vw, 110px);
+		font-size: clamp(10px, 4.6728vw, 40px);
+		font-weight: 100;
+		cursor: none;
+	}
 
-  .filled {
-    @extend .button;
-    width: clamp(125px, 58.41vw, 500px);
-    height: clamp(27.5px, 12.8502vw, 110px);
-  }
+	.filled {
+		@extend .button;
+		width: clamp(125px, 58.41vw, 500px);
+		height: clamp(27.5px, 12.8502vw, 110px);
+	}
 
-  .transparent {
-    @extend .button;
-    width: clamp(125px, 58.41vw, 500px);
-    height: clamp(27.5px, 12.8502vw, 110px);
-  }
+	.transparent {
+		@extend .button;
+		width: clamp(125px, 58.41vw, 500px);
+		height: clamp(27.5px, 12.8502vw, 110px);
+	}
 }

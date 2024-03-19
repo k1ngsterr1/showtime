@@ -1,19 +1,29 @@
 ---
-import Paragraph from "@shared/ui/Paragraph/index.astro";
-import { RatingTab } from '@entities/RatingTab/index'
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import { RatingTab } from '@entities/Tab_Components/RatingTab/index'
 
 import '@shared/styles/global.scss'
 import styles from './styles.module.scss'
 ---
 
 <section class={styles.rating_screen} id="timetable">
-    <h6 class="text-primary-red m-auto">Рейтинг</h6>
-    <Paragraph text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit," align="text-center" paragraphType="white" width="25%"/>
-    <RatingTab/>
+	<h6 class="m-auto text-primary-red">Рейтинг</h6>
+	<Paragraph
+		text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
+		align="text-center"
+		paragraphType="white"
+		width="25%"
+	/>
+	<RatingTab />
 </section>
 
 <section class={styles.rating_mob_screen} id="timetable">
-    <h6 class="text-primary-red m-auto">Рейтинг</h6>
-    <Paragraph text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit," align="text-center" paragraphType="white" width="75%"/>
-    <RatingTab/>
+	<h6 class="m-auto text-primary-red">Рейтинг</h6>
+	<Paragraph
+		text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
+		align="text-center"
+		paragraphType="white"
+		width="75%"
+	/>
+	<RatingTab />
 </section>

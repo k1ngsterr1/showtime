@@ -1,35 +1,80 @@
 ---
-import Paragraph from '../../../shared/ui/Paragraph/index.astro';
-import RulesCard from "../../../entities/RulesCard/index";
-
-import '@shared/styles/global.scss';
-import styles from "./styles.module.scss";
-
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import RulesCard from '@entities/Card_Components/RulesCard/index'
+import styles from './styles.module.scss'
+import '@shared/styles/global.scss'
 ---
 
 <main class={styles.client}>
-    <div class={styles.client__content}>
-    <h1 class="text-primary-red mt-32">Правила работы</h1>
-    <Paragraph paragraphType='white' width='23%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' margin='mt-16'/>
-    <div class={styles.client__content_cards}>
-        <RulesCard number="01" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-        <RulesCard number="02" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-        <RulesCard number="03" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-        <RulesCard number="04" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-        <RulesCard number="05" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-        <RulesCard number="06" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-    </div>
- </div>
+	<div class={styles.client__content}>
+		<h1 class="mt-32 text-primary-red">Правила работы</h1>
+		<Paragraph
+			paragraphType="white"
+			width="23%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			margin="mt-16"
+		/>
+		<div class={styles.client__content_cards}>
+			<RulesCard
+				number="01"
+				name="Lorem"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+			<RulesCard
+				number="02"
+				name="Lorem"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+			<RulesCard
+				number="03"
+				name="Lorem"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+			<RulesCard
+				number="04"
+				name="Lorem"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+			<RulesCard
+				number="05"
+				name="Lorem"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+			<RulesCard
+				number="06"
+				name="Lorem"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+		</div>
+	</div>
 </main>
 
 <main class={styles.client_mob}>
-    <div class={styles.client_mob__content}>
-    <h1 class="text-primary-red text-center mt-16">Правила работы</h1>
-    <Paragraph paragraphType='white' width='75%' text='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' align='text-center' margin='m-auto pt-8'/>
-    </div>
-    <div class={styles.client_mob__content_cards}>
-        <RulesCard number="01" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-        <RulesCard number="02" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
-        <RulesCard number="03" name='Lorem' paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. ' />
- </div>
+	<div class={styles.client_mob__content}>
+		<h1 class="mt-16 text-center text-primary-red">Правила работы</h1>
+		<Paragraph
+			paragraphType="white"
+			width="75%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			align="text-center"
+			margin="m-auto pt-8"
+		/>
+	</div>
+	<div class={styles.client_mob__content_cards}>
+		<RulesCard
+			number="01"
+			name="Lorem"
+			paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+		/>
+		<RulesCard
+			number="02"
+			name="Lorem"
+			paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+		/>
+		<RulesCard
+			number="03"
+			name="Lorem"
+			paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+		/>
+	</div>
 </main>

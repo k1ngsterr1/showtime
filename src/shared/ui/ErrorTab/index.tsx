@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface ErrorTabProps {
-  text: string;
+	text: string
 }
 
 export const ErrorTab: React.FC<ErrorTabProps> = ({ text }) => {
-  return <div className={styles.error_tab}>{text}</div>;
-};
+	return <div className={styles.error_tab}>{text}</div>
+}

@@ -1,48 +1,48 @@
 .container {
-  position: relative;
-  width: 86.6%;
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  @apply mt-8;
+	position: relative;
+	width: 86.6%;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	@apply mt-8;
 
-  &__heading {
-    overflow: hidden;
-  }
+	&__heading {
+		overflow: hidden;
+	}
 
-  &__counter {
-    display: flex;
-    overflow: hidden;
-    width: 55%;
-    @apply mt-4;
+	&__counter {
+		display: flex;
+		overflow: hidden;
+		width: 55%;
+		@apply mt-4;
 
-    &__items {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
+		&__items {
+			width: 100%;
+			overflow: hidden;
+			display: flex;
 
-      &__int {
-        width: 100%;
-        overflow: hidden;
-        @apply font-killbill text-primary-red mt-4;
-        font-size: clamp(60px, 6.2496vw, 240px);
-        font-weight: 400;
-        word-wrap: break-word;
-      }
-    }
-  }
+			&__int {
+				width: 100%;
+				overflow: hidden;
+				@apply mt-4 font-killbill text-primary-red;
+				font-size: clamp(60px, 6.2496vw, 240px);
+				font-weight: 400;
+				word-wrap: break-word;
+			}
+		}
+	}
 }
 
 .container_mob {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  .container {
-    display: none;
-  }
+	.container {
+		display: none;
+	}
 
-  .container_mob {
-    display: flex;
-  }
+	.container_mob {
+		display: flex;
+	}
 }

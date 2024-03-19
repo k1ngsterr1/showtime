@@ -1,0 +1,15 @@
+.text_container {
+	position: absolute;
+	right: 0;
+	top: clamp(195px, 20.3112vw, 780px);
+
+	&__heading {
+		font-size: clamp(27px, 12.61656vw, 108px);
+		@apply text-primary-red;
+		@apply font-killbill;
+	}
+
+	&__paragraph {
+		@apply text-primary-light;
+	}
+}

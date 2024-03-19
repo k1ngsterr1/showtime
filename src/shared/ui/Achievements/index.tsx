@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react'
 
 export interface IAchievementsProps {
-  image: ImageMetadata;
+	image: ImageMetadata
 }
 
 export const Achievement: React.FC<IAchievementsProps> = ({ image }) => {
-  return (
-    <>
-      <img src={image.src} alt="achievment" />
-    </>
-  );
-};
+	return (
+		<>
+			<img src={image.src} alt="achievment" />
+		</>
+	)
+}

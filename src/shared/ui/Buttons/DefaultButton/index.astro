@@ -1,18 +1,18 @@
 ---
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface Props {
-  buttonType: "filled" | "outline" | "transparent";
-  text: string;
-  margin?: string;
-  type?: string;
+	buttonType: 'filled' | 'outline' | 'transparent'
+	text: string
+	margin?: string
+	type?: string
 }
 
-const { text, margin, buttonType, type, ...rest } = Astro.props;
+const { text, margin, buttonType, type, ...rest } = Astro.props
 
-const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ""}`;
+const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ''}`
 ---
 
 <button class={buttonClass} {...rest}>
-  {text}
+	{text}
 </button>

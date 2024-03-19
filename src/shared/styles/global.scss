@@ -1,35 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-  font-family: "Keetano Katana KillBill";
-  src: url(..//../assets/fonts/bill/keetano_katana_killbill.ttf);
+	font-family: 'Keetano Katana KillBill';
+	src: url(..//../assets/fonts/bill/keetano_katana_killbill.ttf);
 }
 
 @font-face {
-  font-family: "Keetano Katana";
-  src: url(..//../assets/fonts/bill/keetano_katana.ttf);
+	font-family: 'Keetano Katana';
+	src: url(..//../assets/fonts/bill/keetano_katana.ttf);
 }
 
 @font-face {
-  font-family: "Neo Sans Cyr Light";
-  src: url(..//../assets/fonts/Neo/NeoSansCyr-Light.ttf),
-    url(..//../assets/fonts/Neo/NeoSansCyr-LightItalic.ttf);
+	font-family: 'Neo Sans Cyr Light';
+	src: url(..//../assets/fonts/Neo/NeoSansCyr-Light.ttf),
+		url(..//../assets/fonts/Neo/NeoSansCyr-LightItalic.ttf);
 }
 
 @font-face {
-  font-family: "Neo Sans Cyr";
-  src: url(..//../assets/fonts/Neo/NeoSansCyr-Italic.ttf),
-    url(..//../assets/fonts/Neo/NeoSansCyr-Medium.ttf),
-    url(..//../assets/fonts/Neo/NeoSansCyr-Regular.ttf);
+	font-family: 'Neo Sans Cyr';
+	src: url(..//../assets/fonts/Neo/NeoSansCyr-Italic.ttf),
+		url(..//../assets/fonts/Neo/NeoSansCyr-Medium.ttf),
+		url(..//../assets/fonts/Neo/NeoSansCyr-Regular.ttf);
 }
 
 @font-face {
-  font-family: "Neo Sans Cyr Regular";
-  src: url(..//../assets/fonts/Neo/NeoSansCyr-Regular.ttf);
+	font-family: 'Neo Sans Cyr Regular';
+	src: url(..//../assets/fonts/Neo/NeoSansCyr-Regular.ttf);
 }
 
 @tailwind base;
@@ -37,32 +37,32 @@
 @tailwind utilities;
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  overflow-x: hidden !important;
-  cursor: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	overflow-x: hidden !important;
+	cursor: none;
 }
 
 body {
-  overflow-x: hidden !important;
+	overflow-x: hidden !important;
 }
 
 .swiper-wrapper {
-  overflow-y: hidden !important;
+	overflow-y: hidden !important;
 }
 
 .swiper-slide-shadow {
-  box-shadow: none;
-  background: none !important;
+	box-shadow: none;
+	background: none !important;
 }
 
 h1 {
-  @apply font-killbill;
-  font-size: clamp(75px, 7.812vw, 300px);
-  font-weight: 400;
-  word-wrap: break-word;
-  overflow-y: hidden;
+	@apply font-killbill;
+	font-size: clamp(75px, 7.812vw, 300px);
+	font-weight: 400;
+	word-wrap: break-word;
+	overflow-y: hidden;
 }
 
 h2,
@@ -70,31 +70,31 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: clamp(60px, 6.2496vw, 240px);
-  @apply font-killbill;
-  overflow-y: hidden;
+	font-size: clamp(60px, 6.2496vw, 240px);
+	@apply font-killbill;
+	overflow-y: hidden;
 }
 
 img {
-  overflow-y: hidden;
+	overflow-y: hidden;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-  h1 {
-    @apply font-killbill;
-    font-size: clamp(30px, 14.0184vw, 120px);
-    font-weight: 400;
-    word-wrap: break-word;
-    overflow-y: hidden;
-  }
+	h1 {
+		@apply font-killbill;
+		font-size: clamp(30px, 14.0184vw, 120px);
+		font-weight: 400;
+		word-wrap: break-word;
+		overflow-y: hidden;
+	}
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: clamp(30px, 14.0184vw, 120px);
-    @apply font-killbill;
-    overflow-y: hidden;
-  }
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: clamp(30px, 14.0184vw, 120px);
+		@apply font-killbill;
+		overflow-y: hidden;
+	}
 }

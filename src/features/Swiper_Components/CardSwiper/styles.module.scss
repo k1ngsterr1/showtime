@@ -1,0 +1,14 @@
+.container {
+	overflow: hidden;
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		@apply mb-12;
+	}
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		width: 10.8%;
+	}
+}

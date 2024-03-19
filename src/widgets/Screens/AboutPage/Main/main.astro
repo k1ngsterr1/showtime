@@ -1,78 +1,78 @@
 ---
-import Paragraph from "@shared/ui/Paragraph/index.astro";
-import { Counter } from "@shared/ui/Counter";
-import { GalleryCustom } from "@features/Gallery/index";
-import men from "@assets/Gallery/men.webp";
-import womanman from "@assets/Gallery/womanman.webp";
-import womenjar from "@assets/Gallery/womenjar.webp";
+import Paragraph from '@shared/ui/Paragraph/index.astro'
+import { Counter } from '@shared/ui/Counter'
+import { GalleryCustom } from '@features/Swiper_Components/Gallery'
+import men from '@assets/Gallery/men.webp'
+import womanman from '@assets/Gallery/womanman.webp'
+import womenjar from '@assets/Gallery/womenjar.webp'
 
-import styles from "./styles.module.scss";
-import "@shared/styles/global.scss";
+import styles from './styles.module.scss'
+import '@shared/styles/global.scss'
 
-const photos = [men, womanman, womenjar];
+const photos = [men, womanman, womenjar]
 ---
 
 <section class={styles.container}>
-  <div class="w-fullflex flex-col items-star overflow-hidden">
-    <div class={styles.container__heading}>
-      <h1 class="text-primary-red">О компании</h1>
-      <Paragraph
-        paragraphType="red"
-        width="25%"
-        text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-      />
-    </div>
-    <div class={styles.container__counter}>
-      <div class={styles.container__counter__items}>
-        <Counter
-          paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."
-          width="100%"
-          margin="mt-8"
-          duration={2}
-          end={100}
-          text="+"
-          client:load
-        />
-        <div class={styles.container__counter__items}>
-          <Counter
-            paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."
-            width="100%"
-            margin="mt-8"
-            duration={2}
-            end={50}
-            text="+"
-            client:load
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- <div class="border-2 ">
+	<div class="w-fullflex items-star flex-col overflow-hidden">
+		<div class={styles.container__heading}>
+			<h1 class="text-primary-red">О компании</h1>
+			<Paragraph
+				paragraphType="red"
+				width="25%"
+				text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
+			/>
+		</div>
+		<div class={styles.container__counter}>
+			<div class={styles.container__counter__items}>
+				<Counter
+					paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."
+					width="100%"
+					margin="mt-8"
+					duration={2}
+					end={100}
+					text="+"
+					client:load
+				/>
+				<div class={styles.container__counter__items}>
+					<Counter
+						paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."
+						width="100%"
+						margin="mt-8"
+						duration={2}
+						end={50}
+						text="+"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="border-2 ">
     <GalleryCustom photos={photos} client:load />
   </div> -->
 </section>
 
 <section class={styles.container_mob}>
-  <div class="flex items-center flex-col mt-12">
-    <h1 class="text-primary-red">О компании</h1>
-    <Paragraph
-      align="text-center"
-      margin="mt-4"
-      paragraphType="red"
-      width="75%"
-      text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-    />
-    <Counter
-      align="text-center"
-      paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."
-      width="60%"
-      margin="mt-4"
-      duration={2}
-      end={100}
-      text="+"
-      client:load
-    >
-      <GalleryCustom photos={photos} client:load />
-    </Counter>
-  </div>
+	<div class="mt-12 flex flex-col items-center">
+		<h1 class="text-primary-red">О компании</h1>
+		<Paragraph
+			align="text-center"
+			margin="mt-4"
+			paragraphType="red"
+			width="75%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
+		/>
+		<Counter
+			align="text-center"
+			paragraphText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."
+			width="60%"
+			margin="mt-4"
+			duration={2}
+			end={100}
+			text="+"
+			client:load
+		>
+			<GalleryCustom photos={photos} client:load />
+		</Counter>
+	</div>
 </section>

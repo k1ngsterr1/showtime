@@ -1,25 +1,24 @@
 ---
-import SubscribeForm from "@widgets/Form/SubscribeForm/index.astro";
+import SubscribeForm from '@widgets/Form/SubscribeForm/index.astro'
 
 import styles from './styles.module.scss'
-import "@shared/styles/global.scss";
+import '@shared/styles/global.scss'
 ---
 
-<section class={`${"bg-primary-dark pb-16"} ${styles.container}`}>
-<div class="w-[86.6%] m-auto">
-    <div class="mt-16">
-        <h5 class="text-primary-red text-center">Подписка</h5>
-    </div>
-    <div class="flex justify-center items-center">
-        <SubscribeForm />
-    </div>
-</div>
+<section class={`${'bg-primary-dark pb-16'} ${styles.container}`}>
+	<div class="m-auto w-[86.6%]">
+		<div class="mt-16">
+			<h5 class="text-center text-primary-red">Подписка</h5>
+		</div>
+		<div class="flex items-center justify-center">
+			<SubscribeForm />
+		</div>
+	</div>
 </section>
 
-<section class={`${"bg-primary-dark"} ${styles.container_mob}`}>
-    <div class='flex m-auto items-center flex-col pt-16'>
-        <h6 class="text-primary-red mb-4">Подписка</h6>
-        <div class="pb-16"><SubscribeForm /></div>
-        </div>
-    </div>      
+<section class={`${'bg-primary-dark'} ${styles.container_mob}`}>
+	<div class="m-auto flex flex-col items-center pt-16">
+		<h6 class="mb-4 text-primary-red">Подписка</h6>
+		<div class="pb-16"><SubscribeForm /></div>
+	</div>
 </section>

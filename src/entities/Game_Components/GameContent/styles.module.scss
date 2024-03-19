@@ -1,0 +1,80 @@
+.urban_content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	&__heading {
+		@apply text-2xl;
+		@apply text-primary-red;
+		@apply font-katana;
+	}
+
+	&__players {
+		@apply font-neoregular;
+	}
+
+	&__counter {
+		position: relative;
+		width: clamp(75px, 7.812vw, 300px);
+		height: clamp(24px, 2.49984vw, 96px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		@apply p-4;
+		@apply rounded-md;
+		@apply bg-primary-red;
+		@apply text-primary-light;
+		@apply mt-4;
+
+		&__increment {
+			cursor: none;
+			position: absolute;
+			overflow: hidden;
+			@apply top-1;
+			@apply left-2;
+			@apply text-3xl;
+			@apply text-primary-light;
+		}
+
+		&__decrement {
+			cursor: none;
+			position: absolute;
+			overflow: hidden;
+			@apply top-0;
+			@apply right-2;
+			@apply text-4xl;
+			@apply text-primary-light;
+		}
+
+		&__input {
+			width: 50%;
+			height: 100%;
+			text-align: center;
+			background-color: transparent;
+			border: none;
+			outline: none;
+			@apply text-xl;
+			@apply text-primary-light;
+			@apply font-katana;
+		}
+	}
+
+	&__paragraph {
+		width: 90%;
+		@apply mt-4;
+		@apply text-primary-dark;
+		@apply font-neoregular;
+	}
+}
+
+input[type='number'] {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}

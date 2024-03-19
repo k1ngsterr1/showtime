@@ -1,40 +1,37 @@
 ---
-import Paragraph from '../../../shared/ui/Paragraph/index.astro';
-import HistoryCard from "../../../entities/HistoryCard/index";
-import SwiperHistory from '../../../shared/ui/HistoryCard/index';
-import HistoryCard from "@entities/HistoryCard/index";
-import {history} from '../../../shared/ui/HistoryCard/index';
+import Paragraph from '../../../shared/ui/Paragraph/index.astro'
+import HistoryCard from '@entities/Card_Components/HistoryCard/index'
+import SwiperHistory from '../../../shared/ui/HistoryCard/index'
+import { history } from '../../../shared/ui/HistoryCard/index'
 
-import '@shared/styles/global.scss';
+import '@shared/styles/global.scss'
 
-import styles from "../ClientsPage/styles.module.scss";
-
-
+import styles from '../ClientsPage/styles.module.scss'
 ---
 
 <main class={styles.client}>
-    <div class={styles.client__content}>
-    <h1 class="text-primary-red mt-32">История</h1>
-    <div class={styles.client__content__history_cards}>
-        <SwiperHistory  history={history} client:load/>
-    </div>
- </div>
+	<div class={styles.client__content}>
+		<h1 class="mt-32 text-primary-red">История</h1>
+		<div class={styles.client__content__history_cards}>
+			<SwiperHistory history={history} client:load />
+		</div>
+	</div>
 </main>
 
 <main class={styles.client_mob}>
-    <div class={styles.client_mob__content}>
-    <h1 class="text-primary-red mt-16">История</h1>
-    <div class={styles.client_mob__cards}>
-        <HistoryCard
-            name='Ruslan Pricol'
-            data='2020'
-            paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-        />
-        <HistoryCard
-            name='Ruslan Pricol'
-            data='2020'
-            paragraph='Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-        />
-    </div>
- </div>
+	<div class={styles.client_mob__content}>
+		<h1 class="mt-16 text-primary-red">История</h1>
+		<div class={styles.client_mob__cards}>
+			<HistoryCard
+				name="Ruslan Pricol"
+				data="2020"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+			<HistoryCard
+				name="Ruslan Pricol"
+				data="2020"
+				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			/>
+		</div>
+	</div>
 </main>
