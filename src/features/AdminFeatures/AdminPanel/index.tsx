@@ -10,6 +10,10 @@ import {
 	faCartShopping,
 	faFileLines,
 	faSignOutAlt,
+	faCalendarDays,
+	faShop,
+	faPerson,
+	faCommentDots,
 	faBriefcase
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -33,6 +37,26 @@ export const adminpanel = [
 		icon: faBriefcase,
 		tab: 'Вакансии',
 		href: 'vacancies'
+	},
+	{
+		icon: faCalendarDays,
+		tab: 'Расписание',
+		href: 'schedule'
+	},
+	{
+		icon: faPerson,
+		tab: 'Ведущие',
+		href: 'showmans'
+	},
+	{
+		icon: faShop,
+		tab: 'Продукты',
+		href: 'products'
+	},
+	{
+		icon: faCommentDots,
+		tab: 'Отзывы',
+		href: 'reviews'
 	},
 	{
 		icon: faSignOutAlt,
