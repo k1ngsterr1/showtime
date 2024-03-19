@@ -1,5 +1,6 @@
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
+import { ScheduleCard } from '@entities/Card_Components/ScheduleCard/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 
@@ -26,7 +27,9 @@ export const Schedule = () => {
 							margin="mt-2"
 						/>
 					</div>
-					<div className={styles.client__main__functional__schedule}></div>
+					<div className={styles.client__main__functional__schedule}>
+						<ScheduleCard time="12" name="as" adress="ac" />
+					</div>
 				</div>
 			</div>
 		</main>
