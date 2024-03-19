@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 import { PlayerAvatar } from '@entities/Game_Components/PlayerAvatar'
 
 export interface PlayerItem {
-	photo: ImageMetadata // Assuming ImageMetadata is defined somewhere in your project
+	photo: ImageMetadata
 	name: string
 }
 
