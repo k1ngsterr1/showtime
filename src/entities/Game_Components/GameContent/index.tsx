@@ -1,5 +1,5 @@
 import React, { useEffect, useState, type FormEvent } from 'react'
-import { PlayersCounter } from '@entities/PlayersCounter'
+import { PlayersCounter } from '@entities/Game_Components/PlayersCounter'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import { Input } from '@shared/ui/Inputs/DefaultInput'
 import { createRoom } from '@shared/lib/hooks/useCreateGame'

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import styles from './VideoRoom.module.scss' // Make sure to define your styles accordingly
-import AbsoluteTab from '@features/Tab_Components/AbsoluteTab/index'
+import styles from './VideoRoom.module.scss'
+import AbsoluteTab from '@entities/Tab_Components/AbsoluteTab'
 import { MenuButton } from '@shared/ui/Icons/MenuButton'
 
 const VideoRoom = () => {

@@ -1,8 +1,8 @@
 import React, { useState, type SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
-import { GameTypeTab } from '@entities/GameTypeTab'
-import { GameContent } from '@entities/GameContent'
+import { GameTypeTab } from '@entities/Game_Components/GameTypeTab'
+import { GameContent } from '@entities/Game_Components/GameContent'
 import { useGameType } from '@shared/lib/hooks/useSwitchGameType'
 
 import styles from './styles.module.scss'

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
-import { LobbyTab } from '@entities/LobbyTab'
-import { YourGameTab } from '@features/Tab_Components/YourGameTab'
+import { LobbyTab } from '@entities/Tab_Components/LobbyTab'
+import { YourGameTab } from '@entities/Tab_Components/YourGameTab'
 import { players } from '@shared/lib/content/playersContent'
 import { useGetRooms } from '@shared/lib/hooks/useGetRooms'
 

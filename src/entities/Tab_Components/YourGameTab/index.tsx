@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { PlayerAvatar } from '@entities/PlayerAvatar'
+import { PlayerAvatar } from '@entities/Game_Components/PlayerAvatar'
 
 export interface PlayerItem {
 	photo: ImageMetadata // Assuming ImageMetadata is defined somewhere in your project

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from '@entities/GameContent/styles.module.scss'
+import styles from '@entities/Game_Components/GameContent/styles.module.scss'
 
 export const PlayersCounter = () => {
 	const [playerCount, setPlayerCount] = useState(8)
