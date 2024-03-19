@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Input } from '@shared/ui/Inputs/DefaultInput'
 import Calendar from 'react-calendar'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 
-interface CalendarComponentProps {
-	value: Date
-	onChange: (date: Date) => void
-}
-
-const CalendarComponent: React.FC<CalendarComponentProps> = ({ value, onChange }) => {
+const CalendarComponent = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
+	const [date, setDate] = useState<string | number | Date>(new Date())
 
 	const toggleDate = () => {
 		setIsOpen(!isOpen)
+	}
+
+	const handleDateChange = (date: Date) => {
+		setDate(date)
 	}
 
 	return (
@@ -23,10 +23,10 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ value, onChange }
 				inputType="default-red"
 				placeholder="Выберите дату"
 				margin="mt-8"
-				value={format(value, 'dd MMM yyyy', { locale: ru })}
+				value={format(date, 'dd MMM yyyy', { locale: ru })}
 			/>
 			<div className="absolute w-[80%]">
-				{isOpen && <Calendar onChange={onChange} value={value} />}
+				{isOpen && <Calendar onChange={handleDateChange} value={date} />}
 			</div>
 		</div>
 	)

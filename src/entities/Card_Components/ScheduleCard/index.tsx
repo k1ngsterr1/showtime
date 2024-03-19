@@ -14,20 +14,14 @@ interface ICardProps {
 }
 
 export const ScheduleCard: React.FC<ICardProps> = ({ adress, name, time }) => {
-	const [selectedDate, setSelectedDate] = useState(new Date())
-
-	const handleDateChange = (date: Date) => {
-		setSelectedDate(date)
-	}
-
 	return (
 		<>
 			<div className={styles.card}>
-				<CalendarComponent value={selectedDate} onChange={handleDateChange} />{' '}
+				<CalendarComponent />
 				<Input placeholder={time} inputType="default-red-big" type="text" />
 				<Input inputType="default-red-big" placeholder={name} type="text" />
 				<TextArea placeholder={adress} margin="mt-8" />
-				<a href="https://www.google.com/maps/@43.2570368,76.906496,12z?entry=ttu">
+				<a href="https://www.google.com/maps/@43.2570368,76.906496,12z?entry=ttu" target="_blank">
 					<FontAwesomeIcon icon={faLocationDot} />
 					Укажите место на карте
 				</a>
