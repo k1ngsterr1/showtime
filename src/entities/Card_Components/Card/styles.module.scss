@@ -29,20 +29,30 @@
 		right: -10px;
 	}
 }
+
 @media (min-width: 375px) and (max-width: 600px) {
 	.card {
 		display: flex;
 		flex-direction: column;
+		height: clamp(175px, 81.774vw, 700px);
+		width: clamp(125px, 58.41vw, 500px);
+
 		&__icon {
 			width: clamp(30px, 14.0184vw, 120px);
 			height: clamp(30px, 14.0184vw, 120px);
 		}
+
 		&__icon_type {
 			width: clamp(40px, 18.6912vw, 160px);
 			height: clamp(40px, 18.6912vw, 160px);
 		}
+
 		&__heading {
 			font-size: clamp(16px, 7.47648vw, 64px);
+		}
+
+		&__paragraph {
+			font-size: clamp(7px, 3.2709599999999996vw, 28px);
 		}
 	}
 }

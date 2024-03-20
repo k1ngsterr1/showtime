@@ -4,6 +4,7 @@ import { Card, type ICardProps } from '@entities/Card_Components/Card'
 import { SelectedBar } from '@shared/ui/SelectedBar'
 
 import styles from './styles.module.scss'
+import { EffectCards } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
@@ -15,16 +16,20 @@ type Swiper = any
 
 export const CardGalleryMob: React.FC<CardGalleryProps> = ({ cards }) => {
 	const swiperRef = React.useRef<Swiper | null>(null)
+	const [activeCardIndex, setActiveCardIndex] = React.useState(0);
 
 	return (
 		<div>
 			<div className="mt-8">
 				<Swiper
-					className=""
-					slidesPerView={1}
-					spaceBetween={32}
+					className={styles.swiper}
+					modules={[EffectCards]}
+					effect={'cards'}
 					onSwiper={(swiperInstance) => {
-						swiperRef.current = swiperInstance
+						swiperRef.current = swiperInstance;
+					}}
+					onSlideChange={(swiper) => {
+						setActiveCardIndex(swiper.activeIndex);
 					}}
 				>
 					{cards.map((card, index) => (
@@ -42,13 +47,10 @@ export const CardGalleryMob: React.FC<CardGalleryProps> = ({ cards }) => {
 				</Swiper>
 			</div>
 			<div className="mt-8 flex flex-col items-center">
-				<span className={styles.text_container__heading}>Заголовок</span>
+				<span className={styles.text_container__heading}>{cards[activeCardIndex].name}</span>
 				<SelectedBar text="Тип игрока" />
 				<p className={`${styles.text_container__paragraph} mt-6 w-[75%] text-center`}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. <br /> <br />
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua.
+					{cards[activeCardIndex].paragraph}
 				</p>
 			</div>
 		</div>
