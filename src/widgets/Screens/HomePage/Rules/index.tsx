@@ -1,0 +1,72 @@
+import React, { useState } from 'react';
+import ReactButton from '@shared/ui/Buttons/DefaultReactButton';
+import Paragraph from '@shared/ui/Paragraph/index.astro';
+import { CardGallery } from '@features/Swiper_Components/CardGallery/index';
+import { CardGalleryMob } from '@features/Swiper_Components/CardGalleryMob/index';
+import { cards } from '@shared/lib/content/cardContent';
+import { RulesContent } from '@widgets/Screens/SelectedRules/index'
+
+import styles from './styles.module.scss';
+
+interface Card {
+	name: string;
+	paragraph: string;
+	iconType: string;
+	icon: string;
+}
+
+interface RulesScreenProps {
+	cards: Card[];
+}
+
+const RulesScreen: React.FC<RulesScreenProps> = () => {
+	const [rulesType, setRulesType] = useState<string>('')
+	return (
+		<>
+			<section className={styles.rules_screen} id="rules">
+				<div className={styles.rules_screen__container}>
+					<div className={styles.rules_screen__container__upper}>
+						<div className="flex flex-col items-start">
+							<h5 className="text-primary-red">Правила игры</h5>
+							<Paragraph
+								paragraphType="white"
+								width="40%"
+								margin="mt-4"
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+							/>
+						</div>
+						<div className="flex items-center gap-8">
+							<ReactButton type='' text="Роли" buttonType="transparent" onClick={() => setRulesType('roles')} />
+							<ReactButton text="Общие правила" buttonType="transparent" onClick={() => setRulesType('rules')} />
+						</div>
+					</div>
+					<RulesContent cards={cards} rulesType={rulesType} />
+				</div>
+			</section>
+
+			<section className={styles.rules_mob_screen} id="rules">
+				<div className={styles.rules_mob_screen__container}>
+					<div className={styles.rules_mob_screen__container__upper}>
+						<div className="flex flex-col items-center">
+							<h5 className="w-[50%] text-center text-primary-red">Правила игры</h5>
+							<Paragraph
+								align="text-center"
+								paragraphType="white"
+								width="60%"
+								margin="mt-4"
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+							/>
+						</div>
+						<div className="flex flex-col items-center gap-6">
+							<ReactButton text="Роли" margin="mt-8" buttonType="transparent" />
+							<ReactButton text="Общие правила" buttonType="transparent" />
+						</div>
+						<CardGalleryMob cards={cards} />
+					</div>
+				</div>
+			</section>
+		</>
+	);
+};
+
+export default RulesScreen;
