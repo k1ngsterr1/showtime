@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import ReactButton from '@shared/ui/Buttons/DefaultReactButton';
-import Paragraph from '@shared/ui/Paragraph/index.astro';
-import { CardGallery } from '@features/Swiper_Components/CardGallery/index';
-import { CardGalleryMob } from '@features/Swiper_Components/CardGalleryMob/index';
-import { cards } from '@shared/lib/content/cardContent';
+import React, { useState } from 'react'
+import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
+import ParagraphReact from '@shared/ui/ParagraphReact/index'
+// import Paragraph from '@shared/ui/Paragraph/index.astro'
+import { CardGallery } from '@features/Swiper_Components/CardGallery/index'
+import { CardGalleryMob } from '@features/Swiper_Components/CardGalleryMob/index'
+import { cards } from '@shared/lib/content/cardContent'
 import { RulesContent } from '@widgets/Screens/SelectedRules/index'
 
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
 
 interface Card {
-	name: string;
-	paragraph: string;
-	iconType: string;
-	icon: string;
+	name: string
+	paragraph: string
+	iconType: string
+	icon: string
 }
 
 interface RulesScreenProps {
-	cards: Card[];
+	cards: Card[]
 }
 
 const RulesScreen: React.FC<RulesScreenProps> = () => {
@@ -28,7 +29,7 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 					<div className={styles.rules_screen__container__upper}>
 						<div className="flex flex-col items-start">
 							<h5 className="text-primary-red">Правила игры</h5>
-							<Paragraph
+							<ParagraphReact
 								paragraphType="white"
 								width="40%"
 								margin="mt-4"
@@ -36,8 +37,17 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 							/>
 						</div>
 						<div className="flex items-center gap-8">
-							<ReactButton type='' text="Роли" buttonType="transparent" onClick={() => setRulesType('roles')} />
-							<ReactButton text="Общие правила" buttonType="transparent" onClick={() => setRulesType('rules')} />
+							<ReactButton
+								type=""
+								text="Роли"
+								buttonType="transparent"
+								onClick={() => setRulesType('roles')}
+							/>
+							<ReactButton
+								text="Общие правила"
+								buttonType="transparent"
+								onClick={() => setRulesType('rules')}
+							/>
 						</div>
 					</div>
 					<RulesContent cards={cards} rulesType={rulesType} />
@@ -49,7 +59,7 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 					<div className={styles.rules_mob_screen__container__upper}>
 						<div className="flex flex-col items-center">
 							<h5 className="w-[50%] text-center text-primary-red">Правила игры</h5>
-							<Paragraph
+							<ParagraphReact
 								align="text-center"
 								paragraphType="white"
 								width="60%"
@@ -66,7 +76,7 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 				</div>
 			</section>
 		</>
-	);
-};
+	)
+}
 
-export default RulesScreen;
+export default RulesScreen
