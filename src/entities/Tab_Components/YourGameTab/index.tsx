@@ -1,25 +1,22 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { PlayerAvatar } from '@entities/Game_Components/PlayerAvatar'
+import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 
 export interface PlayerItem {
 	photo: ImageMetadata
 	name: string
+	id: number
 }
 
 interface YourGameTabProps {
-	players: PlayerItem[]
 	gameType: string
 	gameName: string
 	capacity: number
 }
 
-export const YourGameTab: React.FC<YourGameTabProps> = ({
-	players,
-	gameType,
-	gameName,
-	capacity
-}) => {
+export const YourGameTab: React.FC<YourGameTabProps> = ({ gameType, gameName, capacity }) => {
+	const players = useConnectPlayer()
 	const displayedPlayers = players.slice(0, 4)
 	const additionalPlayersCount = players.length - displayedPlayers.length
 
@@ -30,7 +27,7 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({
 			<span className={styles.game_tab__text}>{capacity}</span>
 			<hr className={styles.game_tab__separator} />
 			<div className="mt-4 flex items-center gap-8">
-				{displayedPlayers.map((player, index) => (
+				{players.map((player, index) => (
 					<PlayerAvatar key={index} name={player.name} photo={player.photo} />
 				))}
 				{additionalPlayersCount > 0 && (

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import photo from '@assets/logo/fedora.svg'
 import { HelpCard } from '@entities/Card_Components/HelpCard'
 import { GameProfile } from '@entities/Game_Components/GameProfile'
 import { Lobby } from '@features/Lobby'
 import { useGetScore } from '@shared/lib/hooks/useGetScore'
 import { useUserData } from '@shared/lib/hooks/useGetUserData'
 import { ErrorScreen } from '../Error'
+import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 
+import photo from '@assets/logo/fedora.svg'
 import styles from './styles.module.scss'
-import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 
 export const GameScreen = () => {
 	const userData = useUserData()
