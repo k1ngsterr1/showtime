@@ -3,7 +3,7 @@ import React from 'react'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	margin?: string
-	inputType: string | 'default' | 'default-red' | 'default-red-big' | 'textarea'
+	inputType: string | 'default' | 'default-red' | 'default-red-big' | 'textarea' | 'calendar'
 	placeholder?: string
 	type: string
 }

@@ -20,7 +20,7 @@ const CalendarComponent = () => {
 		<div className="" onClick={toggleDate}>
 			<Input
 				type="onlyread"
-				inputType="default-red"
+				inputType="calendar"
 				placeholder="Выберите дату"
 				margin="mt-8"
 				value={format(date, 'dd MMM yyyy', { locale: ru })}
