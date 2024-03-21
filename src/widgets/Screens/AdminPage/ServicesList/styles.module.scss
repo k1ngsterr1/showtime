@@ -36,5 +36,13 @@
 			flex-wrap: wrap;
 			gap: 60px;
 		}
+		&_schedulecard {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 90px;
+		}
 	}
 }

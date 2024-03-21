@@ -3,8 +3,6 @@ import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import { TextArea } from '@shared/ui/TexrArea/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import AddButton from '@shared/ui/AddButton'
-import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import CalendarComponent from '@features/Calendar/index'
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
@@ -30,7 +28,7 @@ export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time, href }
 				</div>
 				<Input inputType="default-red-big" type="text" placeholder={name} margin="mt-12" />
 				<TextArea textareaType="schedule" placeholder={address} margin="mt-8" />
-				<div className=" flex items-center overflow-hidden text-2xl">
+				<div className=" mb-2 flex items-center overflow-hidden text-2xl">
 					<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
 					<a
 						className={styles.card__link}

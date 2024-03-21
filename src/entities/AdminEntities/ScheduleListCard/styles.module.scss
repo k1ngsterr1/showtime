@@ -1,0 +1,71 @@
+.card {
+	width: clamp(300px, 31.248vw, 1200px);
+	height: clamp(200px, 20.832vw, 800px);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	align-items: flex-start;
+	@apply p-4;
+	box-shadow: 16px 16px 0px 0px #bf2316;
+	@apply bg-primary-light;
+
+	&__upper {
+		width: 95%;
+		display: flex;
+		overflow: hidden;
+		align-items: center;
+		justify-content: space-between;
+		@apply mt-6;
+
+		&__date,
+		&__time {
+			font-size: clamp(15px, 1.5624vw, 60px);
+			text-align: left;
+			background-color: transparent;
+			outline: none;
+			@apply pl-4;
+			@apply text-primary-red;
+			@apply font-katana;
+		}
+	}
+
+	&__heading {
+		overflow: hidden;
+		font-size: clamp(24px, 2.49984vw, 96px);
+		text-align: left;
+		background-color: transparent;
+		outline: none;
+		@apply pl-4;
+		@apply text-primary-red;
+		@apply font-katana;
+		@apply mt-6;
+	}
+
+	&__address {
+		font-size: clamp(15px, 1.5624vw, 60px);
+		overflow: hidden;
+		text-align: left;
+		background-color: transparent;
+		outline: none;
+		@apply pl-4;
+		@apply text-primary-red;
+		@apply font-neoregular;
+		@apply mt-4;
+	}
+
+	&__icon {
+		@apply text-primary-red;
+		@apply text-3xl;
+		@apply p-4;
+	}
+
+	&__link {
+		@apply underline;
+		@apply text-primary-red;
+		@apply font-neo;
+		transition: 0.3s all;
+		&:hover {
+			@apply text-red-600;
+		}
+	}
+}

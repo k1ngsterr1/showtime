@@ -1,4 +1,4 @@
-import { ScheduleCard } from '@entities/Card_Components/ScheduleCard'
+import { ScheduleListCard } from '@entities/AdminEntities/ScheduleListCard/index'
 import { schedule } from '@shared/lib/content/scheduleListContent'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 
@@ -16,12 +16,13 @@ export const ScheduleList = () => {
 				</div>
 				<h1 className="text-primary-red">Расписание</h1>
 				<div className={styles.services__content_cards}>
-					<div className={styles.services__content_card}>
+					<div className={styles.services__content_schedulecard}>
 						{schedule.map((schedule) => (
-							<ScheduleCardList
+							<ScheduleListCard
 								time={schedule.time}
-								name={schedule.name}
+								place={schedule.name}
 								address={schedule.address}
+								date={schedule.date}
 							/>
 						))}
 					</div>
