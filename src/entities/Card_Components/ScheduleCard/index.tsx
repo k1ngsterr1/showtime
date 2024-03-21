@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import { TextArea } from '@shared/ui/TexrArea/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,22 +10,32 @@ import '@shared/styles/global.scss'
 interface ICardProps {
 	time: string
 	name: string
-	adress: string
+	address: string
 }
 
-export const ScheduleCard: React.FC<ICardProps> = ({ adress, name, time }) => {
+export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time }) => {
 	return (
-		<>
-			<div className={styles.card}>
-				<CalendarComponent />
-				{/* <Input placeholder={time} inputType="default-red-big" type="text" /> */}
-				{/* <Input inputType="default-red-big" placeholder={name} type="text" />
-				<TextArea placeholder={adress} margin="mt-8" />
-				<a href="https://www.google.com/maps/@43.2570368,76.906496,12z?entry=ttu" target="_blank">
-					<FontAwesomeIcon icon={faLocationDot} />
-					Укажите место на карте
-				</a> */}
+		<div className={styles.card}>
+			<div className={styles.card__upper}>
+				<span className={styles.card__upper__date}>
+					<CalendarComponent />
+				</span>
+				<span className={styles.card__upper_time}>
+					<Input type="text" inputType="default-red-small" placeholder={time} />
+				</span>
 			</div>
-		</>
+			<Input inputType="default-red-big" type="text" placeholder={name} margin="mt-12" />
+			<TextArea textareaType="schedule" placeholder={address} margin="mt-8" />
+			<div className=" flex items-center overflow-hidden text-2xl">
+				<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
+				<a
+					className={styles.card__link}
+					href="https://www.google.com/maps/@43.2570368,76.906496,12z?entry=ttu"
+					target="_blank"
+				>
+					Укажите место на карте
+				</a>
+			</div>
+		</div>
 	)
 }

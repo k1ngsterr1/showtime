@@ -1,17 +1,55 @@
 .card {
+	width: clamp(300px, 31.248vw, 1200px);
+	height: clamp(200px, 20.832vw, 800px);
 	display: flex;
 	flex-direction: column;
-	width: clamp(279.5px, 29.11272vw, 1118px);
-	height: clamp(174.5px, 18.17592vw, 698px);
-	background-color: #f0e7be;
-	@apply p-8;
-	box-shadow: 16px 16px 0px 0px #bf2316;
 	overflow: hidden;
-	// &__heading {
-	// 	font-size: clamp(60px, 6.2496vw, 240px);
-	// 	@apply text-primary-red;
-	// }
+	align-items: flex-start;
+	@apply p-4;
+	box-shadow: 16px 16px 0px 0px #bf2316;
+	@apply bg-primary-light;
 
-	&__date {
+	&__upper {
+		width: 140%;
+		display: flex;
+		overflow: hidden;
+		align-items: center;
+		justify-content: space-between;
+
+		&_time {
+			@apply mt-2;
+		}
+	}
+
+	&__heading {
+		@apply text-4xl;
+		overflow: hidden;
+		@apply font-killbill;
+		@apply text-primary-red;
+		@apply mt-4;
+	}
+
+	&__address {
+		@apply text-2xl;
+		@apply mt-4;
+		@apply font-neoregular;
+		@apply text-primary-red;
+	}
+
+	&__icon {
+		@apply text-primary-red;
+		@apply text-4xl;
+		@apply p-4;
+	}
+
+	&__link {
+		overflow: hidden;
+		@apply underline;
+		@apply text-primary-red;
+		@apply font-neo;
+		transition: 0.3s all;
+		&:hover {
+			@apply text-red-600;
+		}
 	}
 }

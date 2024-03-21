@@ -18,7 +18,7 @@ export const ServiceCard: React.FC<ICardProps> = ({ number, href, placeholder })
 			<div className={styles.card}>
 				<h1 className={styles.card__heading}>{number}</h1>
 				<Input inputType="default-red-big" placeholder={placeholder} type="text" />
-				<TextArea placeholder="Текст" margin="mt-8" />
+				<TextArea placeholder="Текст" textareaType="vacancie" margin="mt-8" />
 			</div>
 			<AddButton buttonType="filled" text="Добавить" margin="mt-12" />
 			<LinkButton buttonType="filled" href={href} text="Смотреть все" margin="mt-6" />
