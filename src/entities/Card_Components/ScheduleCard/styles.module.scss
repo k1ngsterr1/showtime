@@ -1,14 +1,17 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	width: clamp(229.5px, 23.90472vw, 918px);
-	height: clamp(224.5px, 23.38392vw, 898px);
+	width: clamp(279.5px, 29.11272vw, 1118px);
+	height: clamp(174.5px, 18.17592vw, 698px);
 	background-color: #f0e7be;
 	@apply p-8;
 	box-shadow: 16px 16px 0px 0px #bf2316;
+	overflow: hidden;
+	// &__heading {
+	// 	font-size: clamp(60px, 6.2496vw, 240px);
+	// 	@apply text-primary-red;
+	// }
 
-	&__heading {
-		font-size: clamp(60px, 6.2496vw, 240px);
-		@apply text-primary-red;
+	&__date {
 	}
 }
