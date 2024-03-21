@@ -1,14 +1,17 @@
 import mafia_icon from '@assets/Card/rifle_card.svg'
 import fedora from '@assets/logo/fedora.svg'
+import type Card from '@entities/Card_Components/RulesCard'
 
-interface RulesCardsData {
+
+
+interface Card {
 	name: string
 	paragraph: string
 	iconType: ImageMetadata
 	icon: ImageMetadata
 }
 
-export const cards = [
+export const cards: Card[] = [
 	{
 		name: 'Мафиози',
 		paragraph:
@@ -40,7 +43,7 @@ export const cards = [
 	{
 		name: 'Путана',
 		paragraph:
-			'Выбирает игрока каждую ночь, которого блокирует, лишая его возможности выполнять ночные действия. Это может включать в себя как блокировку действий мафии, так и предотвращение лечения от доктора.',
+			'Выбирает игрока ночью, блокируя его действия до утра. Может остановить как мафию, так и доктора.',
 		iconType: mafia_icon,
 		icon: fedora
 	},
@@ -68,43 +71,3 @@ export const cards = [
 
 ]
 
-export const RulesCards: RulesCardsData[] = [
-	{
-		name: 'Мафиози',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ',
-		iconType: mafia_icon,
-		icon: fedora
-	},
-	{
-		name: 'Lorem',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ',
-		iconType: mafia_icon,
-		icon: fedora
-	},
-	{
-		name: 'Lorem',
-
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ',
-		iconType: mafia_icon,
-		icon: fedora
-	},
-	{
-		name: 'Lorem',
-
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ',
-		iconType: mafia_icon,
-		icon: fedora
-	},
-	{
-		name: 'Lorem',
-
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ',
-		iconType: mafia_icon,
-		icon: fedora
-	}
-]
