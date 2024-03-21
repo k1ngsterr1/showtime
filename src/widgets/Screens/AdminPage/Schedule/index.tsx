@@ -28,7 +28,7 @@ export const Schedule = () => {
 						/>
 					</div>
 					<div className={styles.client__main__functional__schedule}>
-						<ScheduleCard time="Время" name="Название места" address="Адресс" />
+						<ScheduleCard time="Время" name="Название места" address="Адресс" href="schedulelist" />
 					</div>
 				</div>
 			</div>

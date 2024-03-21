@@ -3,6 +3,7 @@ import { Input } from '@shared/ui/Inputs/DefaultInput'
 import Calendar from 'react-calendar'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
+import 'react-calendar/dist/Calendar.css'
 
 const CalendarComponent = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -20,7 +21,7 @@ const CalendarComponent = () => {
 		<div className="" onClick={toggleDate}>
 			<Input
 				type="onlyread"
-				inputType="calendar"
+				inputType="default-red-small"
 				placeholder="Выберите дату"
 				margin="mt-8"
 				value={format(date, 'dd MMM yyyy', { locale: ru })}
