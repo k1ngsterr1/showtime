@@ -10,13 +10,13 @@ export const useConnectPlayer = () => {
 			path: '/sockets/'
 		})
 
-		socket.on('playerJoined', (player: PlayerItem) => {
-			setPlayers((prevPlayers) => [...prevPlayers, player])
-		})
+		// socket.on('playerJoined', (player: PlayerItem) => {
+		// 	setPlayers((prevPlayers) => [...prevPlayers, player])
+		// })
 
-		socket.on('playerLeft', (playerId: string) => {
-			setPlayers((prevPlayers) => prevPlayers.filter((player) => player.id !== playerId))
-		})
+		// socket.on('playerLeft', (playerId: string) => {
+		// 	setPlayers((prevPlayers) => prevPlayers.filter((player) => player.id !== playerId))
+		// })
 
 		return () => {
 			socket.disconnect()
