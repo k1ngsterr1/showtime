@@ -32,7 +32,7 @@ export const UserAside = () => {
 						</div>
 						<AchievementGallery achievements={achievements} />
 					</div>
-					<div className={styles.user_screen__column_container__achievements}>
+					{/* <div className={styles.user_screen__column_container__achievements}>
 						<div className="flex w-full items-center justify-between">
 							<span className={styles.user_screen__column_container__achievements__heading}>
 								Друзья
@@ -41,7 +41,7 @@ export const UserAside = () => {
 								Все
 							</a>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</section>
 			<section>

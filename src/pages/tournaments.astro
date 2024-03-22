@@ -6,7 +6,7 @@ import { Form } from '@widgets/Screens/ContactForm/index'
 import { Menu } from '../features/Menu/index'
 import Layout from '../layouts/Layout.astro'
 import Footer from '@features/Footer/index.astro'
-import LicensesPage from '../widgets/Screens/LicensesPage/index.astro'
+import TournamentsPage from '@widgets/Screens/TournamentsPage/index.astro'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -20,7 +20,7 @@ import styles from './styles/History/styles.module.scss'
 	<Cursor client:load />
 	<main class={styles.main}>
 		<Header client:load />
-		<LicensesPage />
+		<TournamentsPage />
 	</main>
 	<Form client:visible />
 	<Footer />
