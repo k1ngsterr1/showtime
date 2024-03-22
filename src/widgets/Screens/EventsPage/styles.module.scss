@@ -11,6 +11,12 @@
 		line-height: clamp(70px, 7.2912vw, 280px);
 		@apply mt-16;
 	}
+
+	&__photo {
+		margin: 0 16px 16px 0;
+		width: 200%;
+		box-shadow: 16px 16px 0px 0px #f0e7be;
+	}
 }
 
 .mans {

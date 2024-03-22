@@ -1,0 +1,19 @@
+.client {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px; /* Расстояние между кнопками и слайдером */
+}
+
+.swiper {
+	width: 100%;
+}
+
+.slide {
+	/* Можно добавить стилизацию для слайдов, если нужно */
+}
