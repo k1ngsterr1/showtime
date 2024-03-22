@@ -8,3 +8,12 @@
 	background-repeat: no-repeat;
 	overflow: hidden;
 }
+
+.rating_screen {
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-size: cover;
+	@apply bg-primary-dark pb-16;
+}

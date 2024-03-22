@@ -1,6 +1,7 @@
 ---
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import { RatingTab } from '@entities/Tab_Components/RatingTab/index'
+import DefaultButton from '@shared/ui/Buttons/LinkReactButton/index'
 
 import '@shared/styles/global.scss'
 import styles from './styles.module.scss'
@@ -15,6 +16,13 @@ import styles from './styles.module.scss'
 		width="25%"
 	/>
 	<RatingTab />
+	<DefaultButton
+		buttonType="filled"
+		text="Подробнее"
+		href="ratinglist"
+		margin="mt-14"
+		client:load
+	/>
 </section>
 
 <section class={styles.rating_mob_screen} id="timetable">

@@ -8,11 +8,10 @@ interface Props {
 	image: any
 	heading: string
 	paragraph: string
-	price: string
 	cardType?: string | 'white' | any
 }
 
-const { number, image, heading, paragraph, price, cardType } = Astro.props
+const { number, image, heading, paragraph, cardType } = Astro.props
 const serviceClass = `${styles.service_card} ${styles[cardType]}`
 ---
 
@@ -33,6 +32,5 @@ const serviceClass = `${styles.service_card} ${styles[cardType]}`
 			paragraphType={cardType === 'white' ? 'dark' : 'white'}
 			width="80%"
 		/>
-		<span class={styles.service_card__price}>{price}</span>
 	</div>
 </div>
