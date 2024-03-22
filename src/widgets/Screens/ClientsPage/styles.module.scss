@@ -14,15 +14,14 @@
 }
 
 .partners {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 
-  &__content {
-    width: 90%;
-    margin: auto;
-
-  }
+	&__content {
+		width: 90%;
+		margin: auto;
+	}
 }
 
 .client_mob {
@@ -30,7 +29,7 @@
 }
 
 .partners_mob {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
@@ -38,7 +37,6 @@
 		display: none;
 	}
 
-<<<<<<< HEAD
 	.client_mob {
 		// height: 90dvh;
 		display: flex;
@@ -52,40 +50,37 @@
 		}
 	}
 }
-=======
-  .partners {
-    display: none;
-  }
-
-  .partners_mob {
-    display: flex;
-  }
-
-  .client_mob {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 90%;
-
-    &__cards {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-  }
-
-  .partners_mob {
-    height: 90dvh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 90%;
-
-    &__cards {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-  }
+.partners {
+	display: none;
 }
->>>>>>> 3da3e236a5ae2058d1e4058c453c77b8c9a5d08c
+
+.partners_mob {
+	display: flex;
+}
+
+.client_mob {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 90%;
+
+	&__cards {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+
+.partners_mob {
+	height: 90dvh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 90%;
+
+	&__cards {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+}

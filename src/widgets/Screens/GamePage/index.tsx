@@ -23,7 +23,7 @@ export const GameScreen = () => {
 					<div className={styles.game__main_content}>
 						<HelpCard
 							text="Узнайте главные правила игры в мафию за 5 минут"
-							paragraph="В разделе «правила», который мы составили для новых игроков"
+							paragraph="В разделе «Правила игры», который мы составили для новых игроков"
 							linkText="Узнать"
 							href="/"
 						/>

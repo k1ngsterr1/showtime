@@ -4,6 +4,7 @@
 }
 
 .marquee {
+	@apply mt-24;
 	display: flex;
 	animation: marquee-animation 3s linear infinite;
 }
@@ -13,7 +14,6 @@
 }
 
 @keyframes marquee-animation {
-<<<<<<< HEAD
 	0% {
 		transform: translateX(100%);
 	}
@@ -30,22 +30,9 @@
 		height: 200px;
 	}
 }
-=======
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 @media (min-width: 375px) and (max-width: 600px) {
-
-
-  .img {
-    width: 300px;
-    height: 200px;
-  }
+	.img {
+		width: 300px;
+		height: 200px;
+	}
 }
->>>>>>> 3da3e236a5ae2058d1e4058c453c77b8c9a5d08c

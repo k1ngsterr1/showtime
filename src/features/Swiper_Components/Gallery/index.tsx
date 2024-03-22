@@ -35,7 +35,7 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
 				loop
 				spaceBetween={50}
 				slidesPerView={1}
-				navigation={true}
+				navigation={false}
 				pagination={{ clickable: true }}
 				scrollbar={{ draggable: true }}
 				onSwiper={(swiper: any) => {

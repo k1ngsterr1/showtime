@@ -57,13 +57,10 @@ export const Menu = () => {
 									href="tel:+77017812956"
 									className={`${styles.menu__container__inner__contact} mt-8`}
 								>
-									+7 701 781 29 56
+									+7 747 179 49 39
 								</a>
 								<span className={`${styles.menu__container__inner__contact} mt-4`}>
-									ул.Маметова 54, 4 этаж
-								</span>
-								<span className={`${styles.menu__container__inner__contact} mt-4`}>
-									Время работы: с 08:00 до 17:00 <br /> Выходные: суббота, воскресенье
+									Байзакова 280
 								</span>
 							</div>
 						</div>
