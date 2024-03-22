@@ -25,7 +25,7 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
 	return (
 		<div className={styles.container}>
 			<div>
-				<div className={styles.galslery_nav}>
+				<div className={styles.gallery_nav}>
 					<RevolverButton buttonType="gallery" direction="left" onClick={handlePrev} />
 				</div>
 			</div>

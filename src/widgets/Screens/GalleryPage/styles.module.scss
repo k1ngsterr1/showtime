@@ -7,6 +7,7 @@
 	background-color: #232323;
 
 	&__content {
+		flex-direction: row;
 		width: 86.6%;
 		@apply mb-28;
 		display: flex;
@@ -20,11 +21,11 @@
 			align-items: flex-start;
 		}
 
-		&_photos {
+		&__photos {
 			display: flex;
 			align-self: flex-end;
 			justify-content: flex-end;
-			margin: 0 10px 10px 0;
+			margin: 0 16px 16px 0;
 			width: 2000px;
 			box-shadow: 16px 16px 0px 0px #f0e7be;
 		}
