@@ -2,7 +2,6 @@
 import Separator from '@shared/ui/Separator/index.astro'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import ServiceCard from '@entities/Card_Components/ServiceCard/index.astro'
-import Button from '@shared/ui/Buttons/NavigationButton/index.astro'
 
 import man_01 from '@assets/Main/man_01.png'
 import man_02 from '@assets/Main/man_02.png'
@@ -17,7 +16,7 @@ import '@shared/styles/global.scss'
 	<div class={styles.services_screen__container}>
 		<div class={styles.services_screen__container__upper}>
 			<div class="flex flex-col items-start">
-				<h3 class="text-primary-red">Наши услуги</h3>
+				<h3 class="text-primary-red">Наши мероприятия</h3>
 				<Paragraph
 					paragraphType="red"
 					width="42%"
@@ -31,23 +30,22 @@ import '@shared/styles/global.scss'
 			<ServiceCard
 				image={man_01.src}
 				number="01"
-				heading="Городская мафия"
+				heading="Копоратив"
 				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 			/>
 			<ServiceCard
 				image={man_02.src}
 				number="02"
-				heading="Классическая мафия"
+				heading="Тимбмлдинг"
 				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 			/>
 			<ServiceCard
 				image={man_03.src}
 				number="01"
-				heading="Бункер мафия"
+				heading="Выездной ведущий"
 				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 			/>
 		</div>
-		<Button text="Подробнее" href="/services" margin="m-auto mt-8" buttonType="transparent" />
 	</div>
 </section>
 
@@ -55,7 +53,7 @@ import '@shared/styles/global.scss'
 	<div class={styles.services_mob_screen__container}>
 		<div class={styles.services_mob_screen__container__upper}>
 			<div class="flex flex-col items-center">
-				<h3 class="mt-16 text-primary-red">Наши услуги</h3>
+				<h3 class="mt-16 text-primary-red">Наши мероприятия</h3>
 				<Paragraph
 					paragraphType="red"
 					width="75%"
@@ -69,22 +67,21 @@ import '@shared/styles/global.scss'
 			<ServiceCard
 				image={man_01.src}
 				number="01"
-				heading="Городская мафия"
+				heading="Корпоратив"
 				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 			/>
 			<ServiceCard
 				image={man_02.src}
 				number="01"
-				heading="Классическая мафия"
+				heading="Тимбмлдинг"
 				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 			/>
 			<ServiceCard
 				image={man_03.src}
 				number="01"
-				heading="Бункер мафия"
+				heading="Выездной ведущий"
 				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 			/>
 		</div>
-		<Button text="Подробнее" href="#" margin="m-auto mt-8" buttonType="transparent" />
 	</div>
 </section>
