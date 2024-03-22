@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
-// import Paragraph from '@shared/ui/Paragraph/index.astro'
-import { CardGallery } from '@features/Swiper_Components/CardGallery/index'
 import { CardGalleryMob } from '@features/Swiper_Components/CardGalleryMob/index'
 import { cards } from '@shared/lib/content/cardContent'
 import { RulesContent } from '@widgets/Screens/SelectedRules/index'
@@ -24,7 +22,7 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 	const [rulesType, setRulesType] = useState<string>('')
 	return (
 		<>
-			<section className={styles.rules_screen} id="rules">
+			<section className={styles.rules_screen} id="rulesgame">
 				<div className={styles.rules_screen__container}>
 					<div className={styles.rules_screen__container__upper}>
 						<div className="flex flex-col items-start">
