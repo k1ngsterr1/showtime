@@ -25,7 +25,7 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
 	return (
 		<div className={styles.container}>
 			<div>
-				<div className={styles.gallery_nav}>
+				<div className={styles.galslery_nav}>
 					<RevolverButton buttonType="gallery" direction="left" onClick={handlePrev} />
 				</div>
 			</div>
@@ -35,7 +35,7 @@ export const GalleryCustom: React.FC<IGalleryProps> = ({ photos }) => {
 				loop
 				spaceBetween={50}
 				slidesPerView={1}
-				navigation={false}
+				navigation={true}
 				pagination={{ clickable: true }}
 				scrollbar={{ draggable: true }}
 				onSwiper={(swiper: any) => {
