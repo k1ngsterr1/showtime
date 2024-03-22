@@ -89,7 +89,7 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
 		<div className={styles.container}>
 			<div className={styles.container__header}>
 				<div className="m-auto w-full">
-					<h3 className="text-primary-red ">Продукция</h3>
+					<h3 className="text-primary-red ">Онлайн магазин</h3>
 				</div>
 				<div className={styles.container__buttons}>
 					<RevolverButton buttonType="gallery" direction="previous" onClick={handlePrev} />

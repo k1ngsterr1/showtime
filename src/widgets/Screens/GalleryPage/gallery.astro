@@ -4,12 +4,9 @@ import { Counter } from '../../../shared/ui/Counter/index'
 import { Cursor } from '../../../shared/ui/Cursor/index'
 import { GalleryCustom } from '@features/Swiper_Components/Gallery/index'
 
-import Layout from '../../../layouts/Layout.astro'
-
 import men from '@assets/Gallery/men.webp'
 import womanman from '@assets/Gallery/womanman.webp'
 import womenjar from '@assets/Gallery/womenjar.webp'
-import womenkatana from '@assets/Gallery/womenkatana.webp'
 
 const photos = [men, womanman, womenjar]
 
@@ -21,7 +18,7 @@ import '../../../shared/styles/global.scss'
 	<div class={styles.gallery__content}>
 		<Cursor client:load />
 		<div class={styles.gallery__content__text}>
-			<h2 class="text-primary-red">Галерея</h2>
+			<h2 class="text-primary-red">Вечер игр</h2>
 			<Paragraph
 				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
 				paragraphType="white"

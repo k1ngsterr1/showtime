@@ -10,7 +10,7 @@ export const Loader = () => {
 		<div className={styles.loader} ref={loadRef}>
 			<img src={revolver_ammo.src} ref={imageRef} className={styles.loader__image} alt="revolver" />
 			<h1 className={styles.loader__text} ref={textRef}>
-				Showtime Almaty
+				Showtime
 			</h1>
 			<div className={styles.loader__red} ref={redDivRef}></div>
 		</div>
