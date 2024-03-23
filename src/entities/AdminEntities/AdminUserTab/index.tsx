@@ -1,5 +1,5 @@
 import React from 'react'
-import AnimatedKebabMenu from '../../../shared/ui/KebabMenu/index'
+// import KebabMenu from '@shared/ui/KebabMenu/index'
 
 import styles from './style.module.scss'
 interface UserTab {
@@ -27,7 +27,9 @@ const AdminUserTab: React.FC<UserTab> = ({
 
 	return (
 		<div className={userTabClass}>
-			{/* <AnimatedKebabMenu /> */}
+			<div className={styles.kebab}>
+				{/* <KebabMenu /> Здесь используется компонент KebabMenu */}
+			</div>
 			<div className={styles.usertab__kebab}></div>
 			<div className={userPhotoClass}>
 				<img src={photo.src} alt="photo" />

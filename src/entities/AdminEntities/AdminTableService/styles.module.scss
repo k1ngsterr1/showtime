@@ -36,3 +36,9 @@
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+.table__content_buttons {
+	display: flex;
+	flex-direction: row;
+	gap: clamp(20px, 2.0832vw, 80px);
+}

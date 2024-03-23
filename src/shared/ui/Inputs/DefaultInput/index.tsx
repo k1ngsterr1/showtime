@@ -11,6 +11,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 		| 'textarea'
 		| 'calendar'
 		| 'default-red-small'
+		| 'default-red-medium'
 	placeholder?: string
 	type: string
 }
