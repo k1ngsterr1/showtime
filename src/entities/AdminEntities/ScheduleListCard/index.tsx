@@ -8,7 +8,6 @@ export interface IScheduleListCard {
 	time: string
 	place: string
 	address: string
-	mapHref: string
 }
 
 export const ScheduleListCard: React.FC<IScheduleListCard> = ({ date, time, place, address }) => {

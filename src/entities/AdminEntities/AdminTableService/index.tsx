@@ -1,15 +1,28 @@
 import React from 'react'
+import { useState } from 'react'
 import ButtonMore from '@shared/ui/Buttons/DefaultReactButton/index'
+import { DetailsPopup } from '@features/Popup_Components/OrdersDetailsPopup/index'
+import { services } from '@shared/lib/content/orderContent'
 
 import styles from './styles.module.scss'
 
 interface Props {
 	id: string
 	service: string
-	price: number
+	price: string
 	time: string
 }
-export const AdminTableService: React.FC<Props> = ({ id, service, price, time }) => {
+export const AdminTableService: React.FC<Props> = () => {
+	const [isPopupOpen, setPopupOpen] = useState(false)
+
+	const handleClick = () => {
+		setPopupOpen(true)
+	}
+
+	const handleClose = () => {
+		setPopupOpen(false)
+	}
+
 	return (
 		<table className={styles.table}>
 			<thead className={styles.table__header}>
@@ -21,42 +34,21 @@ export const AdminTableService: React.FC<Props> = ({ id, service, price, time })
 				</tr>
 			</thead>
 			<tbody className={styles.table__content}>
-				<tr className={styles.table__content_row}>
-					<td className={styles.table__content_item}>{id}</td>
-					<td className={styles.table__content_item}>{service}</td>
-					<td className={styles.table__content_item}>{price}</td>
-					<td className={styles.table__content_item}>
-						{time}
-						<ButtonMore buttonType="filled-small" text="Детали" />
-					</td>
-				</tr>
-				<tr className={styles.table__content_row}>
-					<td className={styles.table__content_item}>{id}</td>
-					<td className={styles.table__content_item}>{service}</td>
-					<td className={styles.table__content_item}>{price}</td>
-					<td className={styles.table__content_item}>
-						{time}
-						<ButtonMore buttonType="filled-small" text="Детали" />
-					</td>
-				</tr>
-				<tr className={styles.table__content_row}>
-					<td className={styles.table__content_item}>{id}</td>
-					<td className={styles.table__content_item}>{service}</td>
-					<td className={styles.table__content_item}>{price}</td>
-					<td className={styles.table__content_item}>
-						{time}
-						<ButtonMore buttonType="filled-small" text="Детали" />
-					</td>
-				</tr>
-				<tr className={styles.table__content_row}>
-					<td className={styles.table__content_item}>{id}</td>
-					<td className={styles.table__content_item}>{service}</td>
-					<td className={styles.table__content_item}>{price}</td>
-					<td className={styles.table__content_item}>
-						{time}
-						<ButtonMore buttonType="filled-small" text="Детали" />
-					</td>
-				</tr>
+				{services.map((service, index) => (
+					<tr key={index} className={styles.table__content_row}>
+						<td className={styles.table__content_item}>{service.id}</td>
+						<td className={styles.table__content_item}>{service.service}</td>
+						<td className={styles.table__content_item}>{service.price}</td>
+						<td className={styles.table__content_item}>
+							{service.time}
+							<div className={styles.table__content_buttons}>
+								<ButtonMore buttonType="filled-small" text="Подробнее" onClick={handleClick} />
+								{isPopupOpen && <DetailsPopup onClick={handleClose} />}
+								<ButtonMore buttonType="filled-small" text="Удалить" />
+							</div>
+						</td>
+					</tr>
+				))}
 			</tbody>
 		</table>
 	)

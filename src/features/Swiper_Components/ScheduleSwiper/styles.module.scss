@@ -12,9 +12,11 @@
 }
 
 .swiper {
-	width: 100%;
+	// width: 100%;
+	position: relative;
+	@apply mt-8;
 }
 
 .slide {
-	/* Можно добавить стилизацию для слайдов, если нужно */
+	width: auto !important;
 }
