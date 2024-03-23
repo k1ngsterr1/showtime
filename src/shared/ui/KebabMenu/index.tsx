@@ -1,28 +1,42 @@
 import React, { useState } from 'react'
+import './styles.scss'
 
-import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+const AnimatedKebabMenu: React.FC = () => {
+	const [isActive, setIsActive] = useState(false)
 
-import styles from './styles.module.scss'
-
-export const KebabMenu = () => {
-	const [isKebabOpen, setKebabOpen] = useState(false)
-
-	const handleOpenMenu = () => {
-		setKebabOpen(!isKebabOpen)
+	const toggleMenu = () => {
+		setIsActive(!isActive)
 	}
 
 	return (
-		<>
-			<button className={styles.button_kebab} onClick={handleOpenMenu}>
-				<FontAwesomeIcon icon={faEllipsisVertical} className={styles.kebab_menu} size="xl" />
-				{isKebabOpen && (
-					<div className={styles.kebab_opened}>
-						<span className="mt-2">Изменить</span>
-						<span className="mb-2 mt-2">Удалить</span>
-					</div>
-				)}
-			</button>
-		</>
+		<div>
+			<ul className="nav">
+				<div className={`kebab ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
+					<figure></figure>
+					<figure className="middle"></figure>
+					<p className={`cross ${isActive ? 'active' : ''}`}>x</p>
+					<figure></figure>
+					<ul className={`dropdown ${isActive ? 'active' : ''}`}>
+						<li>
+							<a href="http://www.g.com">Art</a>
+						</li>
+						<li>
+							<a href="http://www.g.com">Coding</a>
+						</li>
+						<li>
+							<a href="http://www.g.com">Design</a>
+						</li>
+						<li>
+							<a href="http://www.g.com">Web Development</a>
+						</li>
+					</ul>
+				</div>
+			</ul>
+			<a className="follow" href="https://twitter.com/mildrenben" target="_blank">
+				<i className="fa fa-twitter"></i>Follow Me
+			</a>
+		</div>
 	)
 }
+
+export default AnimatedKebabMenu

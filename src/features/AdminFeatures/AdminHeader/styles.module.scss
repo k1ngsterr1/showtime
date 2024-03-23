@@ -1,6 +1,5 @@
 .header {
-	// margin: auto;
-	width: 85vw;
+	width: 90vw;
 	display: flex;
 	flex-direction: column;
 	background-color: #1a1a1a;
@@ -10,6 +9,8 @@
 	justify-content: space-around;
 
 	&__subheading {
+		text-align: center;
+		overflow: hidden;
 		@apply ml-6;
 		padding: clamp(21.5px, 2.23944vw, 86px);
 		margin-right: auto;
@@ -19,8 +20,8 @@
 	}
 
 	&__usertab {
-		@apply mr-10;
-		@apply p-4;
+		@apply mr-28;
+		@apply p-5;
 		overflow: hidden;
 	}
 }

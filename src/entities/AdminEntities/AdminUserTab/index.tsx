@@ -1,5 +1,5 @@
 import React from 'react'
-import { KebabMenu } from '../../../shared/ui/KebabMenu/index'
+import AnimatedKebabMenu from '../../../shared/ui/KebabMenu/index'
 
 import styles from './style.module.scss'
 interface UserTab {
@@ -7,9 +7,9 @@ interface UserTab {
 	position: string
 	margin?: string
 	photo: ImageMetadata
-	userTabType: string | 'users'
-	userPhotoType: string | 'users'
-	userTextType: string | 'users'
+	userTabType?: string | 'users'
+	userPhotoType?: string | 'users'
+	userTextType?: string | 'users'
 }
 
 const AdminUserTab: React.FC<UserTab> = ({
@@ -27,7 +27,7 @@ const AdminUserTab: React.FC<UserTab> = ({
 
 	return (
 		<div className={userTabClass}>
-			<KebabMenu />
+			{/* <AnimatedKebabMenu /> */}
 			<div className={styles.usertab__kebab}></div>
 			<div className={userPhotoClass}>
 				<img src={photo.src} alt="photo" />
