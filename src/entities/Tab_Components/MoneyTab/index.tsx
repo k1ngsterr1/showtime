@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 
 import styles from './styles.module.scss'
 

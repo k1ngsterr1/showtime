@@ -1,5 +1,5 @@
 import React from 'react'
-import type { PlayerItem } from '@features/Tab_Components/YourGameTab'
+import type { PlayerItem } from '@entities/Tab_Components/YourGameTab'
 
 import styles from './styles.module.scss'
 

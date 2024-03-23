@@ -1,4 +1,3 @@
-import React from 'react'
 import { RatingHeader } from '@shared/ui/RatingHeader'
 
 import styles from './styles.module.scss'

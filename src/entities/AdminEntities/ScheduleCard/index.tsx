@@ -14,7 +14,7 @@ interface ICardProps {
 	href: string
 }
 
-export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time, href }) => {
+export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time }) => {
 	return (
 		<>
 			<div className={styles.card}>
