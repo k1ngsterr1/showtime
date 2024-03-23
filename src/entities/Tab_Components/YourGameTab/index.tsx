@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.scss'
 import { PlayerAvatar } from '@entities/Game_Components/PlayerAvatar'
 import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
@@ -16,7 +16,8 @@ interface YourGameTabProps {
 }
 
 export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName }) => {
-	const players = useConnectPlayer()
+	const { players, joinRoom, leaveRoom } = useConnectPlayer()
+	let currentPlayers = players.length
 	const displayedPlayers = players.slice(0, 4)
 	const additionalPlayersCount = players.length - displayedPlayers.length
 
@@ -27,7 +28,7 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName }) => {
 					<span className={styles.game_tab__text}>{gameName}</span>
 					<span className={styles.game_tab__type}>Классическая</span>
 				</div>
-				<span className={styles.game_tab__text}>10</span>
+				<span className={styles.game_tab__text}> {currentPlayers} / 10</span>
 			</div>
 			<hr className={styles.game_tab__separator} />
 			<div className="mt-4 flex items-center gap-8">
