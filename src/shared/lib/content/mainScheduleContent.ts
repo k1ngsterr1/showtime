@@ -6,25 +6,25 @@ export const cards = [
 		time: 'с 20:00 по 02:00'
 	},
 	{
-		day: 'Вторник',
+		day: 'Среда',
 		place: 'Smart.point',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
-		day: 'Вторник',
+		day: 'Четверг',
 		place: 'Smart.point',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
-		day: 'Вторник',
+		day: 'Пятница',
 		place: 'Smart.point',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
-		day: 'Вторник',
+		day: 'Суббота',
 		place: 'Smart.point',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'

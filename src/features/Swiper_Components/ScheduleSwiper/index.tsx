@@ -23,11 +23,12 @@ export const TimeSwiper: React.FC<IShowProps> = ({ cards }) => {
 	return (
 		<>
 			<div className={styles.client}>
-				<div className={`${styles.buttons}  flex items-center justify-end`}>
-					<RevolverButton buttonType="gallery" direction="next" onClick={handleNext} />
-					<div className="w-full"></div>
-					<div className="flex w-[10%] scale-x-[-1] justify-end">
+				<div className={`${styles.buttons} flex w-[20%]`}>
+					<div className="mb-8 flex w-[50%]">
 						<RevolverButton buttonType="gallery" direction="previous" onClick={handlePrev} />
+					</div>
+					<div className="scale-x-[-1]">
+						<RevolverButton buttonType="gallery" direction="next" onClick={handleNext} />
 					</div>
 				</div>
 				<Swiper
