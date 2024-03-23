@@ -9,9 +9,10 @@ import styles from './styles.module.scss'
 
 interface ICreateGamePopupProps {
 	onClick: () => void
+	popupState: boolean
 }
 
-export const CreateGamePopup: React.FC<ICreateGamePopupProps> = ({ onClick }) => {
+export const CreateGamePopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState }) => {
 	const { gameType, selectGameType } = useGameType()
 
 	const handleOverlayClick = (e: SyntheticEvent) => {
@@ -29,18 +30,6 @@ export const CreateGamePopup: React.FC<ICreateGamePopupProps> = ({ onClick }) =>
 				</div>
 				<div className="flex w-full justify-between">
 					<div className={styles.popup__tabs}>
-						<GameTypeTab
-							gameName="Городская мафия"
-							onClick={() => selectGameType('Город')}
-							isActive={gameType === 'Город'}
-							description="Играйте по правилам городской мафии"
-						/>
-						<GameTypeTab
-							gameName="Бункер"
-							onClick={() => selectGameType('Бункер')}
-							isActive={gameType === 'Бункер'}
-							description="Играйте по правилам мафии в бункере"
-						/>
 						<GameTypeTab
 							gameName="Классическая мафия"
 							onClick={() => selectGameType('Классика')}

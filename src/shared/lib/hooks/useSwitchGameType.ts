@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 export const useGameType = () => {
-	const [gameType, setGameType] = useState<any>('')
+	const [gameType, setGameType] = useState<string>('Классика')
 
-	const selectGameType = (type: any) => {
+	const selectGameType = (type: string) => {
 		setGameType(type)
 	}
 
