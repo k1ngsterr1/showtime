@@ -19,6 +19,13 @@
 			flex-direction: column;
 			@apply p-12;
 
+			&__showmans {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+
 			&__orders {
 				@apply mt-14;
 			}

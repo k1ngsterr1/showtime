@@ -20,6 +20,13 @@
 			@apply mt-4;
 		}
 	}
+	&__down {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 142%;
+	}
 
 	&__heading {
 		@apply text-4xl;

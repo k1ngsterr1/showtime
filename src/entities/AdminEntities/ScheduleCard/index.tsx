@@ -12,9 +12,10 @@ interface ICardProps {
 	name: string
 	address: string
 	href: string
+	price: string
 }
 
-export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time }) => {
+export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time, price }) => {
 	return (
 		<>
 			<div className={styles.card}>
@@ -28,15 +29,24 @@ export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time }) => {
 				</div>
 				<Input inputType="default-red-big" type="text" placeholder={name} margin="mt-12" />
 				<TextArea textareaType="schedule" placeholder={address} margin="mt-8" />
-				<div className=" mb-2 flex items-center overflow-hidden text-2xl">
-					<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
-					<a
-						className={styles.card__link}
-						href="https://www.google.com/maps/@43.2570368,76.906496,12z?entry=ttu"
-						target="_blank"
-					>
-						Укажите место на карте
-					</a>
+				<div className={styles.card__down}>
+					<div className=" mb-2 flex items-center overflow-hidden text-2xl">
+						<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
+						<a
+							className={styles.card__link}
+							href="https://www.google.com/maps/@43.2570368,76.906496,12z?entry=ttu"
+							target="_blank"
+						>
+							<Input
+								placeholder="Укажите место на карте"
+								inputType="default-red-medium"
+								type="text"
+							/>
+						</a>
+					</div>
+					<div>
+						<Input type="text" inputType="default-red-small" placeholder={price} />
+					</div>
 				</div>
 			</div>
 		</>

@@ -12,6 +12,15 @@
 	@apply font-neo;
 }
 
+.input--default-white {
+	@apply text-primary-light;
+	font-size: clamp(16px, 1.66656vw, 64px);
+	background-color: transparent;
+	outline: none;
+	@apply font-katana;
+	text-align: center;
+}
+
 .input--default-red-medium {
 	font-size: clamp(12px, 1.24992vw, 48px);
 	width: clamp(175px, 18.228vw, 700px);
@@ -76,6 +85,15 @@
 	@apply font-katana;
 }
 
+.input--product {
+	font-size: clamp(16px, 1.66656vw, 64px);
+	text-align: center;
+	background-color: transparent;
+	outline: none;
+	@apply text-primary-red;
+	@apply font-katana;
+}
+
 .input--password {
 	@extend .input--default;
 }
@@ -92,6 +110,18 @@
 	@apply text-primary-light;
 }
 
+.input--default-white::placeholder {
+	@apply text-primary-light;
+	font-size: clamp(16px, 1.66656vw, 64px);
+	@apply font-katana;
+}
+
+.input--product-desc::placeholder {
+	@apply font-neo;
+	font-size: clamp(8px, 0.83328vw, 32px);
+	@apply text-primary-red;
+	text-align: center;
+}
 .input--default::placeholder {
 	font-size: clamp(9px, 0.93744vw, 36px);
 	@apply font-neoregular;
@@ -114,6 +144,12 @@
 	font-size: clamp(12px, 1.24992vw, 48px);
 	@apply font-neoregular;
 	@apply text-primary-red;
+}
+
+.input--product::placeholder {
+	font-size: clamp(16px, 1.66656vw, 64px);
+	@apply text-primary-red;
+	@apply font-katana;
 }
 
 .input--default-red-small::placeholder {
