@@ -31,3 +31,17 @@
 		@apply mb-12;
 	}
 }
+
+.client {
+	@apply mb-28;
+}
+
+.slide {
+	width: auto !important;
+}
+
+.swiper {
+	// width: 100%;
+	position: relative;
+	@apply mb-8;
+}
