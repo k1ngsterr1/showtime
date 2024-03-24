@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 import { io } from 'socket.io-client'
 import type { PlayerItem } from '@entities/Tab_Components/YourGameTab/index'
 
@@ -6,12 +7,26 @@ export const useConnectPlayer = () => {
 	const [players, setPlayers] = useState<PlayerItem[]>([])
 	const socket = io('http://localhost:4000', { path: '/sockets/' })
 
-	const joinRoom = (roomId: string, player: any) => {
-		socket.emit('joinRoom', { roomId, player })
+	const joinRoom = async (roomId: string, userId: any) => {
+		try {
+			console.log(`player ${userId} is joining ${roomId} room`)
+			const response = await axios.post(
+				`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`
+			)
+			console.log(response)
+			socket.emit('joinRoom', { roomId, userId })
+		} catch (error) {
+			console.error('Error with connecting to the room')
+		}
 	}
 
-	const leaveRoom = (roomId: string, playerId: string) => {
-		socket.emit('leaveRoom', { roomId, playerId })
+	const leaveRoom = async (roomId: string, userId: any) => {
+		try {
+			await axios.post(`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`)
+			socket.emit('leaveRoom', { roomId, userId })
+		} catch (error) {
+			console.error('Error with leaving the room')
+		}
 	}
 
 	useEffect(() => {

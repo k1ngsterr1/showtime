@@ -1,4 +1,3 @@
-import { createRoom } from '@shared/lib/hooks/useCreateGame'
 import axios from 'axios'
 import io from 'socket.io-client'
 import { useState, useEffect } from 'react'

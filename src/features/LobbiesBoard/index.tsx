@@ -3,11 +3,13 @@ import { LobbyTab } from '@entities/Tab_Components/LobbyTab'
 import { YourGameTab } from '@entities/Tab_Components/YourGameTab'
 import { useGetRooms } from '@shared/lib/hooks/useGetRooms'
 import { useCheckUserRoom } from '@shared/lib/hooks/useCheckUserRoom'
+import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 
 import styles from './styles.module.scss'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
+	const { joinRoom } = useConnectPlayer()
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const { roomData } = useCheckUserRoom(userData.id)
 
@@ -31,6 +33,7 @@ export const LobbiesBoard = () => {
 					.filter((room) => room.creatorId !== userData.id)
 					.map((room) => (
 						<LobbyTab
+							onClick={() => joinRoom(room.id, userData.id)}
 							key={room.id}
 							name={room.roomName}
 							type={room.gameType}
