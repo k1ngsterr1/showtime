@@ -12,11 +12,15 @@ export interface PlayerItem {
 interface YourGameTabProps {
 	// gameType: string
 	gameName: string
+	userId: string | number
+	key: string
+	players: any[]
 	// capacity: number
 }
 
-export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName }) => {
-	const { players, joinRoom, leaveRoom } = useConnectPlayer()
+export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, key, userId, players }) => {
+	// const { players, joinRoom, leaveRoom } = useConnectPlayer()
+	console.log('players:', players)
 	let currentPlayers = players.length
 	const displayedPlayers = players.slice(0, 4)
 	const additionalPlayersCount = players.length - displayedPlayers.length
@@ -32,9 +36,9 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName }) => {
 			</div>
 			<hr className={styles.game_tab__separator} />
 			<div className="mt-4 flex items-center gap-8">
-				{players.map((player, index) => (
+				{/* {players.map((player, index) => (
 					<PlayerAvatar key={index} name={player.name} photo={player.photo} />
-				))}
+				))} */}
 				{additionalPlayersCount > 0 && (
 					<div className={`${styles.additional_players} hoverable`}>+{additionalPlayersCount}</div>
 				)}

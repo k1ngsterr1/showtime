@@ -6,7 +6,7 @@ export const useConnectPlayer = () => {
 	const [players, setPlayers] = useState<PlayerItem[]>([])
 	const socket = io('http://localhost:4000', { path: '/sockets/' })
 
-	const joinRoom = (roomId: string, player) => {
+	const joinRoom = (roomId: string, player: any) => {
 		socket.emit('joinRoom', { roomId, player })
 	}
 

@@ -11,11 +11,6 @@ export const LobbiesBoard = () => {
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const { roomData } = useCheckUserRoom(userData.id)
 
-	// useEffect(() => {
-	// 	const foundUserRoom = rooms.find((room) => room.creatorId === userData.id)
-	// 	setUserRoom(foundUserRoom)
-	// }, [rooms, userData.id])
-
 	return (
 		<section className={styles.lobbies}>
 			<div className={styles.lobbies__upper_line}>
@@ -24,19 +19,14 @@ export const LobbiesBoard = () => {
 				<span className={styles.lobbies__upper_line__text}>Кол-во игроков</span>
 			</div>
 			<div className={styles.lobbies__tabs}>
-				{/* {rooms.map((room) =>
-					room.creatorId === userData.id ? (
-						<YourGameTab gameName={room.roomName} key={room.id} />
-					) : (
-						<LobbyTab
-							key={room.id}
-							name={room.roomName}
-							type={room.gameType}
-							quantity={room.currentPlayers}
-						/>
-					)
-				)} */}
-				{userRoom && <YourGameTab gameName={userRoom.roomName} key={userRoom.id} />}
+				{userRoom && (
+					<YourGameTab
+						gameName={userRoom.roomName}
+						key={userRoom.id}
+						userId={userData.id}
+						players={userRoom.users}
+					/>
+				)}
 				{rooms
 					.filter((room) => room.creatorId !== userData.id)
 					.map((room) => (
@@ -47,17 +37,6 @@ export const LobbiesBoard = () => {
 							quantity={room.currentPlayers}
 						/>
 					))}
-				{/* {userRoom && <YourGameTab gameName={userRoom.roomName} />}
-				{rooms
-					.filter((room) => room.creatorId !== userData.id)
-					.map((room) => (
-						<LobbyTab
-							key={room.id}
-							name={room.roomName}
-							type={room.gameType}
-							quantity={room.currentPlayers}
-						/>
-					))} */}
 			</div>
 		</section>
 	)
