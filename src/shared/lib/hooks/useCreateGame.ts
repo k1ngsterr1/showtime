@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { useEffect } from 'react'
 import { io } from 'socket.io-client'
 
 interface ICreateGameProps {
