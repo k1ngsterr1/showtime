@@ -11,7 +11,7 @@ interface ICreateGamePopupProps {
 	text: string
 }
 
-export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState, text }) => {
+export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState }) => {
 	const handleOverlayClick = (e: SyntheticEvent) => {
 		if (e.target === e.currentTarget) {
 			onClick()
@@ -25,7 +25,7 @@ export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupSt
 					<h1 className={styles.popup__heading}>Подробнее</h1>
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
-				<Paragraph margin="mt-12" paragraphType="red" text={text} />
+				<Paragraph margin="mt-12" paragraphType="red" text="husland" />
 			</section>
 		</div>
 	)

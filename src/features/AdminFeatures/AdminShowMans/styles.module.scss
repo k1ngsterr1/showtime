@@ -1,0 +1,27 @@
+.container {
+	@apply mt-12;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__upload {
+		@apply gap-4;
+		border: 2px solid #bf2316;
+		width: 392px;
+		height: 361px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		&_fedora {
+			width: 150px;
+		}
+	}
+}
+
+.previewImage {
+	width: 392px;
+	height: 361px;
+}
