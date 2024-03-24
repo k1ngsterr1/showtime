@@ -4,6 +4,7 @@ import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import Fedora from '@assets/logo/fedora.svg'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import { TextArea } from '@shared/ui/TexrArea'
+import ReactButton from '@shared/ui/Buttons/DefaultReactButton/index'
 
 const AdminProducts: React.FC = () => {
 	const { previewUrl, handleFileChange } = useFileUpload()
@@ -31,7 +32,8 @@ const AdminProducts: React.FC = () => {
 				)}
 				<Input inputType="product" type="text" placeholder="Название продукта" margin="mt-8" />
 				<TextArea placeholder="Описание продкута" textareaType="product-desc" margin="mt-4" />
-				<Input inputType="product" type="text" placeholder="Цена" margin="mt-8" />
+				<Input inputType="product" type="text" placeholder="Цена" margin="mt-5" />
+				<ReactButton margin="mt-4" text="Купить" buttonType="transparent" />
 			</div>
 		</div>
 	)

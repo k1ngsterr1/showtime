@@ -32,8 +32,13 @@ export const Products = () => {
 					<div className={styles.client__main__functional__showmans}>
 						<AdminProducts />
 						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Добавить" />
-							<LinkButton buttonType="filled" href="showmanslist" text="Смотреть все" />
+							<AddButton buttonType="filled" text="Добавить" margin="mt-4" />
+							<LinkButton
+								buttonType="filled"
+								href="productslist"
+								text="Смотреть все"
+								margin="mt-4"
+							/>
 						</div>
 					</div>
 				</div>
