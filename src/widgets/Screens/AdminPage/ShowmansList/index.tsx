@@ -1,4 +1,3 @@
-import React from 'react'
 import ShowMansCard from '@entities/Card_Components/ShowMansCard/index'
 import { showmans } from '@features/Swiper_Components/ShowMansSwiper/index'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'

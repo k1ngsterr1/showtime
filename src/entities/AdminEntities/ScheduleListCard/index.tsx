@@ -8,9 +8,16 @@ export interface IScheduleListCard {
 	time: string
 	place: string
 	address: string
+	price: string
 }
 
-export const ScheduleListCard: React.FC<IScheduleListCard> = ({ date, time, place, address }) => {
+export const ScheduleListCard: React.FC<IScheduleListCard> = ({
+	date,
+	time,
+	place,
+	address,
+	price
+}) => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.card__upper}>
@@ -19,9 +26,14 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({ date, time, plac
 			</div>
 			<span className={styles.card__heading}>{place}</span>
 			<address className={styles.card__address}>{address}</address>
-			<div className="mt-20 flex items-center overflow-hidden text-2xl">
-				<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
-				<a className={styles.card__link}>Укажите место на карте</a>
+			<div className={styles.card__down}>
+				<div className="">
+					<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
+					<a className={styles.card__link}>Укажите место на карте</a>
+				</div>
+				<div>
+					<span className={styles.card__down__price}>{price}</span>
+				</div>
 			</div>
 		</div>
 	)
