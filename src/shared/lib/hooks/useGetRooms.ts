@@ -1,9 +1,11 @@
+import { createRoom } from '@shared/lib/hooks/useCreateGame'
 import axios from 'axios'
 import io from 'socket.io-client'
 import { useState, useEffect } from 'react'
 
-export function useGetRooms() {
+export function useGetRooms(userId: number) {
 	const [rooms, setRooms] = useState([])
+	const [userRoom, setUserRoom] = useState()
 
 	const socket = io('http://localhost:4000', { path: '/sockets/' })
 
@@ -15,6 +17,8 @@ export function useGetRooms() {
 				const response = await axios.get('https://showtime.up.railway.app/api/rooms/get-rooms')
 				if (isMounted) {
 					setRooms(response.data.rooms)
+					const foundUserRoom = response.data.rooms.find((room) => room.creatorId === userId)
+					setUserRoom(foundUserRoom)
 				}
 			} catch (error) {
 				console.error('There was an error fetching the rooms:', error)
@@ -28,11 +32,18 @@ export function useGetRooms() {
 		})
 
 		socket.on('roomCreated', (newRoom) => {
-			console.log('ROOM CREATED!!!')
-			setRooms((prevRooms) => [...prevRooms, newRoom])
+			console.log('ROOM CREATED!!!', newRoom.room)
+			if (newRoom.room.creatorId === userId) {
+				console.log('USER ROOM IS HERE', newRoom)
+				setUserRoom(newRoom.room)
+				console.log(userRoom)
+			} else {
+				setRooms((prevRooms) => [...prevRooms, newRoom])
+			}
 		})
 
 		socket.on('roomUpdated', (updatedRoom) => {
+			console.log('room updated!')
 			setRooms((prevRooms) =>
 				prevRooms.map((room) => (room.id === updatedRoom.id ? updatedRoom : room))
 			)
@@ -45,5 +56,5 @@ export function useGetRooms() {
 		}
 	}, [])
 
-	return rooms
+	return { rooms, userRoom }
 }
