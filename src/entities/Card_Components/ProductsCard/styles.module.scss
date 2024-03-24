@@ -4,6 +4,7 @@
 	align-items: center;
 	width: clamp(175px, 18.228vw, 700px);
 	height: auto;
+	margin: 0px 16px;
 	@apply bg-primary-light p-4 text-primary-red;
 	font-weight: 600;
 	box-shadow: 16px 16px 0px 0px #bf2316;

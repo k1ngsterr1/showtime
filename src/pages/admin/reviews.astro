@@ -1,8 +1,7 @@
 ---
 import { Cursor } from '@shared/ui/Cursor/index'
-import { Loader } from '@shared/ui/Loader/index'
 import Layout from '../../layouts/Layout.astro'
-import { ShowmansList } from '@widgets/Screens/AdminPage/ShowmansList'
+import { Reviews } from '@widgets/Screens/AdminPage/Reviews'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -10,9 +9,9 @@ import '@shared/styles/scrollbar.scss'
 import styles from '../styles/History/styles.module.scss'
 ---
 
-<Layout title="Список ведущих">
+<Layout title="Отзывы">
 	<Cursor client:load />
 	<main class={styles.main}>
-		<ShowmansList client:load />
+		<Reviews client:load />
 	</main>
 </Layout>

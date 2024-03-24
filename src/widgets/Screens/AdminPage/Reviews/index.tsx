@@ -12,7 +12,7 @@ import styles from '../Team/styles.module.scss'
 
 import Oleg from '@assets/Admin/oleg.webp'
 
-export const Products = () => {
+export const Reviews = () => {
 	return (
 		<main className={styles.client}>
 			<div className={styles.client__left}>
@@ -22,20 +22,19 @@ export const Products = () => {
 				<AdminHeader name="Bafomet Nurmukhamed" position="God" photo={Oleg} />
 				<div className={styles.client__main__functional}>
 					<div className={styles.client__main__functional__header_service}>
-						<h1 className={styles.client__main__functional__header_heading}>Продукты</h1>
+						<h1 className={styles.client__main__functional__header_heading}>Отзывы</h1>
 						<ParagraphReact
-							text="Заполните все поля формы чтобы добавить новый продукт"
+							text="Заполните все поля формы чтобы добавить новый отзыв"
 							paragraphType="white"
 							margin="mt-2"
 						/>
 					</div>
 					<div className={styles.client__main__functional__showmans}>
-						<AdminProducts />
 						<div className={styles.client__main__functional__buttons}>
 							<AddButton buttonType="filled" text="Добавить" margin="mt-4" />
 							<LinkButton
 								buttonType="filled"
-								href="productslist"
+								href="reviewslist"
 								text="Смотреть все"
 								margin="mt-4"
 							/>
