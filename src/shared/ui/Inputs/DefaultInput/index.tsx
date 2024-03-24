@@ -12,6 +12,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 		| 'calendar'
 		| 'default-red-small'
 		| 'default-red-medium'
+		| 'default-white'
 	placeholder?: string
 	type: string
 }

@@ -12,6 +12,15 @@
 	@apply font-neo;
 }
 
+.input--default-white {
+	@apply text-primary-light;
+	font-size: clamp(16px, 1.66656vw, 64px);
+	background-color: transparent;
+	outline: none;
+	@apply font-katana;
+	text-align: center;
+}
+
 .input--default-red-medium {
 	font-size: clamp(12px, 1.24992vw, 48px);
 	width: clamp(175px, 18.228vw, 700px);
@@ -90,6 +99,12 @@
 	@apply bottom-4;
 	@apply right-4;
 	@apply text-primary-light;
+}
+
+.input--default-white::placeholder {
+	@apply text-primary-light;
+	font-size: clamp(16px, 1.66656vw, 64px);
+	@apply font-katana;
 }
 
 .input--default::placeholder {

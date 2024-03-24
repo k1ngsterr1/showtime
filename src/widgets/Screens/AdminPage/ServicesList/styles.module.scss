@@ -1,3 +1,10 @@
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 .services {
 	width: 100%;
 	display: flex;

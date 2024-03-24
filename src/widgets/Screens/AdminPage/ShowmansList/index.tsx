@@ -1,6 +1,8 @@
-import { ShowMansSwiper } from '@features/Swiper_Components/ShowMansSwiper/index'
+import React from 'react'
+import ShowMansCard from '@entities/Card_Components/ShowMansCard/index'
 import { showmans } from '@features/Swiper_Components/ShowMansSwiper/index'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
+import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
@@ -17,10 +19,19 @@ export const ShowmansList = () => {
 				<h1 className="text-primary-red">Ведущие</h1>
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_card}>
-						<ShowMansSwiper showmans={showmans} />
+						{showmans.map((showman) => (
+							<div className={`${styles.card} mt-12`}>
+								<ShowMansCard
+									photo={showman.photo}
+									name={showman.name}
+									position={showman.position}
+								/>
+								<Buttons buttonType="filled" text="Удалить" margin="mt-4" />
+							</div>
+						))}
 					</div>
 				</div>
-				<LinkButton buttonType="filled" href="showmans" text="Назад" margin="mt-8" />
+				<LinkButton buttonType="filled" href="showmans" text="Назад" margin="mt-16" />
 			</div>
 		</main>
 	)
