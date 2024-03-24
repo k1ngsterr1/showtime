@@ -13,6 +13,9 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 		| 'default-red-small'
 		| 'default-red-medium'
 		| 'default-white'
+		| 'product'
+		| 'product-desc'
+
 	placeholder?: string
 	type: string
 }

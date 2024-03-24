@@ -4,6 +4,7 @@ import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
+import AdminProducts from '@features/AdminFeatures/AdminProducts/index'
 
 import '@shared/styles/global.scss'
 
@@ -11,7 +12,7 @@ import styles from '../Team/styles.module.scss'
 
 import Oleg from '@assets/Admin/oleg.webp'
 
-export const ShowMans = () => {
+export const Products = () => {
 	return (
 		<main className={styles.client}>
 			<div className={styles.client__left}>
@@ -21,14 +22,15 @@ export const ShowMans = () => {
 				<AdminHeader name="Bafomet Nurmukhamed" position="God" photo={Oleg} />
 				<div className={styles.client__main__functional}>
 					<div className={styles.client__main__functional__header_service}>
-						<h1 className={styles.client__main__functional__header_heading}>Ведущие</h1>
+						<h1 className={styles.client__main__functional__header_heading}>Продукты</h1>
 						<ParagraphReact
-							text="Заполните все поля формы чтобы добавить нового ведущего"
+							text="Заполните все поля формы чтобы добавить новый продукт"
 							paragraphType="white"
 							margin="mt-2"
 						/>
 					</div>
 					<div className={styles.client__main__functional__showmans}>
+						<AdminProducts />
 						<div className={styles.client__main__functional__buttons}>
 							<AddButton buttonType="filled" text="Добавить" />
 							<LinkButton buttonType="filled" href="showmanslist" text="Смотреть все" />
