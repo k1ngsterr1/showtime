@@ -1,0 +1,17 @@
+---
+import { Cursor } from '@shared/ui/Cursor/index'
+import Layout from '../../layouts/Layout.astro'
+import { Reviews } from '@widgets/Screens/AdminPage/Reviews'
+
+import '@shared/styles/global.scss'
+import '@shared/styles/scrollbar.scss'
+
+import styles from '../styles/History/styles.module.scss'
+---
+
+<Layout title="Отзывы">
+	<Cursor client:load />
+	<main class={styles.main}>
+		<Reviews client:load />
+	</main>
+</Layout>
