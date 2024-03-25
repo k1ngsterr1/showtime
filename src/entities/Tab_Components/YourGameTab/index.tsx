@@ -31,7 +31,7 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, key, userId,
 					<span className={styles.game_tab__text}>{gameName}</span>
 					<span className={styles.game_tab__type}>Классическая</span>
 				</div>
-				<span className={styles.game_tab__text}> {currentPlayers} / 10</span>
+				<span className={styles.game_tab__text}> {currentPlayers} / 11</span>
 			</div>
 			<hr className={styles.game_tab__separator} />
 			<div className="mt-4 flex items-center gap-8">
