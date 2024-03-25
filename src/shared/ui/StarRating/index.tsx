@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons' // Import the star icon
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './styles.module.scss'
 
-export default function StarRating({}) {
+interface StarRatingProps {}
+
+const StarRating: React.FC<StarRatingProps> = () => {
 	const stars = Array(5).fill(0)
 
-	const [currentItem, setCurrentItem] = useState()
+	const [currentItem, setCurrentItem] = useState<number | null>(null)
 
 	return (
 		<div className={styles.star}>
@@ -23,3 +25,5 @@ export default function StarRating({}) {
 		</div>
 	)
 }
+
+export default StarRating
