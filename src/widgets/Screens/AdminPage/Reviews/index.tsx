@@ -4,7 +4,7 @@ import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
-import AdminProducts from '@features/AdminFeatures/AdminProducts/index'
+import { ReviewCard } from '@features/AdminFeatures/AdminReview/index'
 
 import '@shared/styles/global.scss'
 
@@ -29,7 +29,8 @@ export const Reviews = () => {
 							margin="mt-2"
 						/>
 					</div>
-					<div className={styles.client__main__functional__showmans}>
+					<div className={`${styles.client__main__functional__showmans} mt-12`}>
+						<ReviewCard name="Имя клиента" />
 						<div className={styles.client__main__functional__buttons}>
 							<AddButton buttonType="filled" text="Добавить" margin="mt-4" />
 							<LinkButton

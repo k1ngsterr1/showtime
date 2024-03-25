@@ -1,42 +1,36 @@
 import React from 'react'
-import styles from './styles.module.scss'
-import useFileUpload from '@shared/lib/hooks/useFileUpload'
-import Fedora from '@assets/logo/fedora.svg'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
-import { TextArea } from '@shared/ui/TexrArea'
-import ReactButton from '@shared/ui/Buttons/DefaultReactButton/index'
+import { TextArea } from '@shared/ui/TexrArea/index'
+import CalendarComponent from '@features/Calendar/reviewcalendar'
+import StarRating from '@shared/ui/StarRating'
 
-const AdminProducts: React.FC = () => {
-	const { previewUrl, handleFileChange } = useFileUpload()
+import Fedora from '@assets/logo/fedora.svg'
 
-	return (
-		<div className={styles.container}>
-			<div className={styles.container__content}>
-				{previewUrl ? (
-					<img src={previewUrl} alt="Preview" className={styles.container__content__previewImage} />
-				) : (
-					<label htmlFor="file-upload" className={styles.container__content__upload}>
-						<img
-							src={Fedora.src}
-							alt="Fedora"
-							className={styles.container__content__upload_fedora}
-						/>
-						<p className="font-neoregular text-xl text-primary-red">Добавить фото</p>
-						<input
-							id="file-upload"
-							type="file"
-							style={{ display: 'none' }}
-							onChange={handleFileChange}
-						/>
-					</label>
-				)}
-				<Input inputType="product" type="text" placeholder="Название продукта" margin="mt-8" />
-				<TextArea placeholder="Описание продкута" textareaType="product-desc" margin="mt-4" />
-				<Input inputType="product" type="text" placeholder="Цена" margin="mt-5" />
-				<ReactButton margin="mt-4" text="Купить" buttonType="transparent" />
-			</div>
-		</div>
-	)
+import styles from './styles.module.scss'
+import '@shared/styles/global.scss'
+
+interface ICardProps {
+	name: string
 }
 
-export default AdminProducts
+export const ReviewCard: React.FC<ICardProps> = ({ name }) => {
+	return (
+		<>
+			<div className={styles.card}>
+				<CalendarComponent />
+				<div className={`${styles.card__client} mt-4`}>
+					<div className={styles.card__client_circle}>
+						<img src={Fedora.src} alt="Fedora" className={styles.card__client_fedora} />
+					</div>
+					<Input inputType="neo-medium" type="text" placeholder={name} />
+				</div>
+				<div className="mt-2">
+					<StarRating />
+				</div>
+				<div className={styles.card__review}>
+					<TextArea textareaType="review" placeholder="Текст отзыва" />
+				</div>
+			</div>
+		</>
+	)
+}

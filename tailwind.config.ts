@@ -8,7 +8,8 @@ module.exports = {
 				killbill: ['Keetano Katana KillBill'],
 				katana: ['Keetano Katana'],
 				neolight: ['Neo Sans Cyr Light'],
-				montserrat: ['Montserrat', 'sans-serif']
+				montserrat: ['Montserrat', 'sans-serif'],
+				neomedium: ['Neo Sans Cyr Medium']
 			},
 			colors: {
 				primary: {

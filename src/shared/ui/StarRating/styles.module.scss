@@ -1,0 +1,10 @@
+.star {
+	display: flex;
+	flex-direction: row;
+	@apply pl-2;
+	@apply mt-2;
+}
+
+.stars {
+	font-size: 24px;
+}
