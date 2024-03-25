@@ -18,6 +18,26 @@
 	word-wrap: break-word;
 }
 
+.textarea--review {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	line-height: 27.04px;
+	@apply font-neolight;
+	overflow: hidden;
+	width: 307px;
+	height: 146px;
+	@apply p-2;
+	@apply text-primary-dark;
+	background-color: transparent;
+	outline: none;
+}
+
+.textarea--review::placeholder {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	@apply font-neolight;
+	@apply text-primary-dark;
+}
+
 .textarea--schedule {
 	font-size: clamp(15px, 1.5624vw, 60px);
 	overflow: hidden;
