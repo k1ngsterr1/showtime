@@ -4,6 +4,7 @@
 	height: clamp(248.5px, 25.883760000000002vw, 994px);
 	box-shadow: 16px 16px #bf2316;
 	@apply bg-primary-dark;
+	margin: 0px 16px 16px;
 
 	&__number {
 		font-size: clamp(24px, 2.49984vw, 96px);

@@ -4,6 +4,7 @@
 	height: clamp(224.5px, 23.38392vw, 898px);
 	background-color: #f0e7be;
 	@apply p-8;
+	margin-bottom: 16px;
 	box-shadow: 16px 16px 0px 0px #bf2316;
 
 	&__number {

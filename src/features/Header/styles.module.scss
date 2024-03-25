@@ -5,6 +5,11 @@
 	align-items: center;
 	@apply mt-8;
 
+	&__logo {
+		width: clamp(110px, 11.457600000000001vw, 440px);
+		height: clamp(50px, 5.208vw, 200px);
+	}
+
 	&__content {
 		width: 86.6%;
 		display: flex;

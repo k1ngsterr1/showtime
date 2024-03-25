@@ -12,6 +12,23 @@
 	@apply font-neo;
 }
 
+.input--neo-medium {
+	@apply font-neomedium;
+	@apply text-primary-red;
+	font-size: 24px;
+	background-color: transparent;
+	font-weight: 400;
+	outline: none;
+}
+
+.input--calendar-small {
+	@apply font-katana;
+	@apply text-primary-red;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	background-color: transparent;
+	outline: none;
+}
+
 .input--default-white {
 	@apply text-primary-light;
 	font-size: clamp(16px, 1.66656vw, 64px);
@@ -108,6 +125,18 @@
 	@apply bottom-4;
 	@apply right-4;
 	@apply text-primary-light;
+}
+
+.input--calendar-small::placeholder {
+	@apply font-katana;
+	@apply text-primary-red;
+	font-size: clamp(9px, 0.93744vw, 36px);
+}
+
+.input--neo-medium::placeholder {
+	@apply font-neomedium;
+	@apply text-primary-red;
+	font-size: 24px;
 }
 
 .input--default-white::placeholder {

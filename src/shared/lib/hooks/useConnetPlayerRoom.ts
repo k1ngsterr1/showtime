@@ -13,8 +13,7 @@ export const useConnectPlayer = () => {
 			const response = await axios.post(
 				`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`
 			)
-			console.log(response)
-			socket.emit('joinRoom', { roomId, userId })
+			socket.emit('joinRoom', { roomId: roomId, userId: userId })
 		} catch (error) {
 			console.error('Error with connecting to the room')
 		}
@@ -30,7 +29,8 @@ export const useConnectPlayer = () => {
 	}
 
 	useEffect(() => {
-		socket.on('playerJoined', (player: PlayerItem) => {
+		socket.on('joinRoom', (player: PlayerItem) => {
+			console.log('newPlayer:', player)
 			setPlayers((prevPlayers) => [...prevPlayers, player])
 		})
 

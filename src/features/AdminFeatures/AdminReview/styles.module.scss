@@ -1,0 +1,46 @@
+.card {
+	width: clamp(175.5px, 18.28008vw, 702px);
+	height: clamp(179px, 18.64464vw, 716px);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	align-items: flex-start;
+	@apply pl-4;
+	box-shadow: 16px 16px 0px 0px #bf2316;
+	@apply bg-primary-light;
+
+	&__client {
+		display: flex;
+		flex-direction: row;
+		@apply gap-4;
+
+		&_circle {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 52px;
+			height: 52px;
+			border: 2px solid #bf2316;
+			border-radius: 50%;
+		}
+
+		&_fedora {
+			width: 27.4px;
+		}
+	}
+
+	&__review {
+		overflow: hidden;
+		@apply ml-1;
+		@apply mt-4;
+		width: 309px;
+		height: 147px;
+		border: 2px solid #bf2316;
+	}
+
+	&__icon {
+		@apply text-primary-red;
+		@apply text-4xl;
+		@apply p-4;
+	}
+}

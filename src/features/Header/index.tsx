@@ -1,4 +1,4 @@
-import Logo from '@shared/ui/Icons/Logo'
+import Logo from '@assets/logo/showtime_logo.svg'
 import { MenuButton } from '@shared/ui/Icons/MenuButton'
 import { LanguageButton } from '@shared/ui/LanguageButton'
 import { useCustomMenu } from '@shared/lib/hooks/useCustomMenu'
@@ -15,7 +15,7 @@ export const Header = () => {
 		<>
 			<header className={styles.header}>
 				<div className={styles.header__content}>
-					<Logo />
+					<img src={Logo.src} alt="Logo" className={styles.header__logo} />
 					<nav className={styles.header__content__links}>
 						<LinkText text="Главная" to="main" href="/" />
 						<LinkText text="О нас" to="about" href="/" />

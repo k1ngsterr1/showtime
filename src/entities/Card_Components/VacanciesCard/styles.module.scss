@@ -5,6 +5,7 @@
 	background-color: #f0e7be;
 	@apply p-8;
 	box-shadow: 16px 16px 0px 0px #bf2316;
+	margin: 0px 0px 16px;
 
 	&__number {
 		font-size: clamp(32px, 3.33312vw, 128px);
