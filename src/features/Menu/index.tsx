@@ -10,7 +10,7 @@ import { useUserData } from '@shared/lib/hooks/useGetUserData'
 import { logOut } from '@shared/lib/hooks/useLogout'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
-import Logo from '@shared/ui/Icons/Logo'
+import Logo from '@assets/logo/showtime_logo.svg'
 
 import LogoMob from '@assets/logo/menu_revolver.svg'
 import ShowMob from '@assets/logo/showtime_logo.svg'
@@ -26,7 +26,7 @@ export const Menu = () => {
 				<Line position="absolute left-0 right-0 ml-auto mr-auto" />
 				<div className={styles.menu__container}>
 					<div className="absolute left-0 top-16 overflow-hidden">
-						<Logo />
+						<img src={Logo.src} alt="Logo" className={styles.menu__logo} />
 					</div>
 					<div
 						className="absolute right-0 top-16 !z-[1000000000] overflow-hidden"

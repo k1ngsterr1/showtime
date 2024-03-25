@@ -2,6 +2,7 @@
 import { Header } from '@features/Header/index'
 import { Cursor } from '@shared/ui/Cursor/index'
 import { Loader } from '@shared/ui/Loader/index'
+import { Menu } from '@features/Menu/index'
 
 import Footer from '@features/Footer/index.astro'
 import EventsPage from '@widgets/Screens/EventsPage/index.astro'
@@ -19,6 +20,7 @@ import '@shared/styles/scrollbar.scss'
 <Layout title="Ивенты">
 	<Loader client:load />
 	<Cursor client:load />
+	<Menu client:load />
 	<main class={styles.container} id="main">
 		<Header client:load />
 		<EventsPage />

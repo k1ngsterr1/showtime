@@ -1,7 +1,7 @@
 import React from 'react'
 import { AdminCard } from '@entities/AdminEntities/AdminCard/index'
 
-import Logo from '@shared/ui/Icons/Logo'
+import Logo from '@assets/logo/showtime_logo.svg'
 
 import styles from './styles.module.scss'
 
@@ -78,7 +78,7 @@ export const AdminPanel: React.FC<IPanel> = ({ adminpanel }) => {
 		<main className={styles.panel}>
 			<div className={styles.panel__content}>
 				<div className={styles.panel__content_logo}>
-					<Logo />
+					<img src={Logo.src} alt="Logo" />
 				</div>
 				<div className={styles.panel__content_card}>
 					{adminpanel.map((item, index) => (
