@@ -21,8 +21,11 @@ interface YourGameTabProps {
 export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, key, userId, players }) => {
 	// const { players, joinRoom, leaveRoom } = useConnectPlayer()
 	let currentPlayers = players.length
+	// const simplifiedPlayers = players.map((player) => player.dataValues)
 	const displayedPlayers = players.slice(0, 4)
 	const additionalPlayersCount = players.length - displayedPlayers.length
+
+	console.log('players looks like this:', players)
 
 	return (
 		<div className={styles.game_tab}>

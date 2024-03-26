@@ -13,6 +13,8 @@ export const LobbiesBoard = () => {
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const { roomData } = useCheckUserRoom(userData.id)
 
+	console.log('userRoom looks like this:', userRoom)
+
 	return (
 		<section className={styles.lobbies}>
 			<div className={styles.lobbies__upper_line}>
@@ -33,7 +35,7 @@ export const LobbiesBoard = () => {
 					.filter((room) => room.creatorId !== userData.id)
 					.map((room) => (
 						<LobbyTab
-							onClick={() => joinRoom(room.id, userData.id)}
+							onClick={() => joinRoom(room.id, userData.id, userData)}
 							key={room.id}
 							name={room.roomName}
 							type={room.gameType}

@@ -6,7 +6,7 @@ export function useGetRooms(userId: number) {
 	const [rooms, setRooms] = useState([])
 	const [userRoom, setUserRoom] = useState()
 
-	const socket = io('http://localhost:4000', {
+	const socket = io('https://showtime.up.railway.app', {
 		transports: ['polling', 'websocket'],
 		path: '/sockets/',
 		reconnectionAttempts: 5,
@@ -25,7 +25,7 @@ export function useGetRooms(userId: number) {
 					setRooms(response.data.rooms)
 					const foundUserRoom = response.data.rooms.find((room) => room.creatorId === userId)
 					setUserRoom(foundUserRoom)
-					console.log(response.data.rooms)
+					console.log('here is created room:', response.data)
 				}
 			} catch (error) {
 				console.error('There was an error fetching the rooms:', error)
