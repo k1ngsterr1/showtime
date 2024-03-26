@@ -19,6 +19,14 @@
 			flex-direction: column;
 			@apply p-12;
 
+			&__news {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				@apply mt-10;
+			}
+
 			&__showmans {
 				display: flex;
 				justify-content: center;
@@ -53,7 +61,7 @@
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
-				width: 64%;
+				width: 65%;
 
 				&_heading {
 					@apply font-killbill;

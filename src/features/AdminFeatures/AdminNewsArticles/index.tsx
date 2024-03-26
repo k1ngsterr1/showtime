@@ -1,24 +1,37 @@
-import React from 'react'
-import styles from './styles.module.scss'
-import Img from '@assets/About/image-30.webp'
-import Calendar from '@features/Calendar/reviewcalendar'
+import useFileUpload from '@shared/lib/hooks/useFileUpload'
+import CalendarComponent from '@features/Calendar/reviewcalendar'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import { TextArea } from '@shared/ui/TexrArea'
 
-interface Props {
-	time: string
-	heading: string
-	paragraph: string
-}
+import styles from './styles.module.scss'
 
-export const NewsArticleCard: React.FC<Props> = ({ paragraph }) => {
+import Fedora from '@assets/logo/fedora.svg'
+
+export const NewsArticleCard = () => {
+	const { previewUrl, handleFileChange } = useFileUpload()
+
 	return (
 		<div className={styles.card}>
-			<img src={Img.src} alt="" />
-			<div className="ml-auto mt-3 flex w-[95%] flex-col">
-				<Calendar />
-				<Input inputType="newsheading" type="text" placeholder="Заголовoк" />
-				<TextArea textareaType="articles" placeholder="Текст" />
+			<div className={styles.card__content}>
+				{previewUrl ? (
+					<img src={previewUrl} alt="Preview" className={styles.card__content__previewImage} />
+				) : (
+					<label htmlFor="file-upload" className={styles.card__content__upload}>
+						<img src={Fedora.src} alt="Fedora" className={styles.card__content__upload_fedora} />
+						<p className="font-neoregular text-xl text-primary-red">Добавить фото</p>
+						<input
+							id="file-upload"
+							type="file"
+							style={{ display: 'none' }}
+							onChange={handleFileChange}
+						/>
+					</label>
+				)}
+				<div className="ml-auto flex w-[95%] flex-col">
+					<CalendarComponent />
+					<Input inputType="newsheading" type="text" placeholder="Заголовoк" />
+					<TextArea textareaType="articles" placeholder="Текст" margin="mt-3" />
+				</div>
 			</div>
 		</div>
 	)
