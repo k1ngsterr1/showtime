@@ -29,6 +29,14 @@
 	outline: none;
 }
 
+.input--newsheading {
+	@apply font-katana;
+	@apply text-primary-red;
+	font-size: clamp(16px, 1.66656vw, 64px);
+	background-color: transparent;
+	outline: none;
+}
+
 .input--default-white {
 	@apply text-primary-light;
 	font-size: clamp(16px, 1.66656vw, 64px);
@@ -145,6 +153,11 @@
 	@apply font-katana;
 }
 
+.input--newsheading::placeholder {
+	@apply font-katana;
+	@apply text-primary-red;
+	font-size: clamp(16px, 1.66656vw, 64px);
+}
 .input--product-desc::placeholder {
 	@apply font-neo;
 	font-size: clamp(8px, 0.83328vw, 32px);

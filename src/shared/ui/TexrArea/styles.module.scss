@@ -32,7 +32,26 @@
 	outline: none;
 }
 
+.textarea--articles {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	line-height: 27.04px;
+	@apply font-neolight;
+	overflow: hidden;
+	width: 307px;
+	height: 146px;
+	@apply text-primary-dark;
+	background-color: transparent;
+	outline: none;
+}
+
 .textarea--review::placeholder {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	@apply font-neolight;
+	@apply text-primary-dark;
+}
+
+.textarea--articles::placeholder {
 	font-size: clamp(9px, 0.93744vw, 36px);
 	@apply font-neolight;
 	@apply text-primary-dark;
