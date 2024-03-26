@@ -18,10 +18,10 @@ import styles from './styles/History/styles.module.scss'
 	<Menu client:load />
 	<Loader client:load />
 	<Cursor client:load />
-	<main class={styles.main}>
+	<main class={styles.main} id="tournaments">
 		<Header client:load />
 		<TournamentsPage />
 	</main>
 	<Form client:visible />
-	<Footer />
+	<Footer to="tournaments" />
 </Layout>

@@ -20,7 +20,7 @@ import styles from '@pages/styles/About/styles.module.scss'
 	<Loader client:load />
 	<Cursor client:load />
 	<Menu client:load />
-	<div class={styles.main}>
+	<div class={styles.main} id="about">
 		<Header client:load />
 		<Main />
 	</div>
@@ -29,5 +29,5 @@ import styles from '@pages/styles/About/styles.module.scss'
 	<News />
 	<Subscribe />
 	<Contacts />
-	<Footer />
+	<Footer to="about" />
 </Layout>

@@ -4,6 +4,12 @@ import styles from './styles.module.scss'
 import Logo from '@shared/ui/Icons/Logo'
 import logoMob from '@assets/About/svg/logo-mob.svg'
 import { LinkButton } from '@shared/ui/LinkButton/index'
+
+interface Props {
+	to: string
+}
+
+const { to } = Astro.props
 ---
 
 <footer class={styles.footer}>
@@ -17,7 +23,7 @@ import { LinkButton } from '@shared/ui/LinkButton/index'
 			<LinkText text="Правила" to="rules" href="" />
 			<LinkText text="Контакты" to="contacts" href="" />
 		</nav>
-		<LinkButton text="Вверх" buttonType="filled" to="main" client:visible />
+		<LinkButton text="Вверх" buttonType="filled" to={to} client:visible />
 	</div>
 	<a href="tel:+77003333826" class={styles.footer__link}>+7 (700) 333-38-26</a>
 	<a href="mailto:" class={`${styles.footer__link} mt-2 mb-4`}>showtime@mafia.kz</a>
