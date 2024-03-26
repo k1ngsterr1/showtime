@@ -1,5 +1,6 @@
 .controlPanel {
 	position: fixed;
+	z-index: 1000;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -18,10 +19,6 @@
 		align-items: center;
 		font-size: 0.75rem;
 
-		&:hover {
-			color: #aaa;
-		}
-
 		span {
 			margin-top: 4px;
 		}
@@ -30,4 +27,14 @@
 			font-size: 1.5rem;
 		}
 	}
+}
+
+.videoButton {
+
+	@apply text-primary-red;
+
+}
+
+.videoButtonActive {
+	@apply text-gray-50
 }
