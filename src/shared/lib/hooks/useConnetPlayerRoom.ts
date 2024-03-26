@@ -5,9 +5,14 @@ import type { PlayerItem } from '@entities/Tab_Components/YourGameTab/index'
 
 export const useConnectPlayer = () => {
 	const [players, setPlayers] = useState<PlayerItem[]>([])
-	const socket = io('http://localhost:4000', { path: '/sockets/' })
+	const socket = io('https://showtime.up.railway.app', {
+		transports: ['polling', 'websocket'],
+		path: '/sockets/',
+		reconnectionAttempts: 5,
+		reconnectionDelay: 2000
+	})
 
-	const joinRoom = async (roomId: string, userId: any) => {
+	const joinRoom = async (roomId: string, userId: any, userData: any) => {
 		try {
 			console.log(`player ${userId} is joining ${roomId} room`)
 			const response = await axios.post(
@@ -29,9 +34,9 @@ export const useConnectPlayer = () => {
 	}
 
 	useEffect(() => {
-		socket.on('joinRoom', (player: PlayerItem) => {
-			console.log('newPlayer:', player)
-			setPlayers((prevPlayers) => [...prevPlayers, player])
+		socket.on('roomUsersUpdated', (updatedUser) => {
+			console.log('newPlayer:', updatedUser)
+			setPlayers(updatedUser)
 		})
 
 		socket.on('playerLeft', (playerId: string) => {

@@ -6,10 +6,17 @@ export function useGetRooms(userId: number) {
 	const [rooms, setRooms] = useState([])
 	const [userRoom, setUserRoom] = useState()
 
-	const socket = io('http://localhost:4000', { path: '/sockets/' })
+	const socket = io('http://localhost:4000', {
+		transports: ['polling', 'websocket'],
+		path: '/sockets/',
+		reconnectionAttempts: 5,
+		reconnectionDelay: 2000
+	})
 
 	useEffect(() => {
 		let isMounted = true
+
+		console.log('use effect is fucking working')
 
 		const fetchRooms = async () => {
 			try {
@@ -29,6 +36,10 @@ export function useGetRooms(userId: number) {
 
 		socket.on('connect', () => {
 			console.log('Connected to socket server')
+		})
+
+		socket.on('connect_error', () => {
+			console.log('there was an error with socket connection')
 		})
 
 		socket.on('roomCreated', (newRoom) => {

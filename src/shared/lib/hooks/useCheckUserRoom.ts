@@ -8,7 +8,7 @@ export function useCheckUserRoom(userId: number) {
 	useEffect(() => {
 		const checkUserRoom = async () => {
 			try {
-				const response = await axios.get(`http://localhost:4000/api/rooms/${userId}/room`)
+				const response = await axios.get(`https://showtime.up.railway.app/api/rooms/${userId}/room`)
 
 				if (response.data.room.creatorId === userId) {
 					setHasRoom(true)
