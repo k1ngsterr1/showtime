@@ -14,7 +14,10 @@ import {
 	faShop,
 	faPerson,
 	faCommentDots,
-	faBriefcase
+	faBriefcase,
+	faUsers,
+	faNewspaper,
+	faPenToSquare
 } from '@fortawesome/free-solid-svg-icons'
 
 export const adminpanel = [
@@ -22,6 +25,16 @@ export const adminpanel = [
 		icon: faUser,
 		tab: 'Команда',
 		href: 'team'
+	},
+	{
+		icon: faUsers,
+		tab: 'Пользователи',
+		href: 'users'
+	},
+	{
+		icon: faPerson,
+		tab: 'Ведущие',
+		href: 'showmans'
 	},
 	{
 		icon: faCartShopping,
@@ -39,14 +52,21 @@ export const adminpanel = [
 		href: 'vacancies'
 	},
 	{
+		icon: faNewspaper,
+		tab: 'Новости',
+		href: 'news'
+	},
+
+	{
+		icon: faPenToSquare,
+		tab: 'Статьи',
+		href: 'articles'
+	},
+
+	{
 		icon: faCalendarDays,
 		tab: 'Расписание',
 		href: 'schedule'
-	},
-	{
-		icon: faPerson,
-		tab: 'Ведущие',
-		href: 'showmans'
 	},
 	{
 		icon: faShop,

@@ -1,0 +1,17 @@
+---
+import { Cursor } from '@shared/ui/Cursor/index'
+import Layout from '../../layouts/Layout.astro'
+import { News } from '@widgets/Screens/AdminPage/News'
+
+import '@shared/styles/global.scss'
+import '@shared/styles/scrollbar.scss'
+
+import styles from '../styles/History/styles.module.scss'
+---
+
+<Layout title="Новости">
+	<Cursor client:load />
+	<main class={styles.main}>
+		<News client:load />
+	</main>
+</Layout>

@@ -93,8 +93,8 @@ export const SwiperHistory: React.FC<SwiperHistoryProps> = ({ history }) => {
 				</div>
 			</div>
 			<Swiper
-				className="contacts__con__swiper"
-				slidesPerView={2}
+				className={styles.swiper}
+				slidesPerView={6}
 				spaceBetween={64}
 				onSwiper={(swiperInstance) => {
 					swiperRef.current = swiperInstance
