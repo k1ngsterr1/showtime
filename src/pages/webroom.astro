@@ -1,5 +1,5 @@
 ---
-import VideoRoom from '@widgets/Screens/WebPage'
+import VideoRoom from '@widgets/Screens/WebRoom'
 import Layout from 'src/layouts/Layout.astro'
 import { Cursor } from '@shared/ui/Cursor/index'
 import { Loader } from '@shared/ui/Loader/index'
@@ -8,13 +8,11 @@ import '@shared/styles/scrollbar.scss'
 
 import styles from './styles/services/styles.module.scss'
 
-const roomId = 'some-room-id'
-const user = { name: 'John Doe', id: '123' }
 ---
 
 <Layout title="Игра">
 	<Cursor client:load />
-	<Loader client:load />
+	<!-- <Loader client:load /> -->
 	<main class="h-full w-full bg-primary-dark">
 		<VideoRoom client:load />
 	</main>

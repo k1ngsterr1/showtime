@@ -1,0 +1,44 @@
+body {
+	@apply bg-primary-dark;
+}
+
+.videoRoom {
+	margin: auto;
+	width: 90%;
+	@apply bg-primary-dark;
+	@apply text-primary-dark;
+	@apply mt-2;
+
+	.grid {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.grid_third {
+		@apply mt-4;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.loader {
+		border-radius: 6px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #333;
+		color: #fff;
+		width: clamp(210px, 21.8736vw, 840px);
+		height: clamp(157.5px, 16.4052vw, 630px);
+		&__showman {
+			border-radius: 6px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #333;
+			color: #fff;
+			width: clamp(300px, 31.248vw, 1200px);
+			height: clamp(170px, 17.7072vw, 680px);
+		}
+	}
+}

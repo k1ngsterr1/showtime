@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faVideo,
@@ -8,15 +9,13 @@ import {
 	faEllipsisH,
 	faCog
 } from '@fortawesome/free-solid-svg-icons'
-import styles from './ControlPanel.module.scss' // Make sure to have the appropriate styles
+import styles from './ControlPanel.module.scss'
 
-const ControlPanel = () => {
-	// Here you can manage the state if needed for toggling the icons
-	// For example, you can have a state to track if the video or microphone is enabled
-
+const ControlPanel = ({ toggleCamera }) => {
+	const [isClicked, setisClicked] = useState(false)
 	return (
 		<div className={styles.controlPanel}>
-			<button className="transition-all hover:text-primary-red">
+			<button onClick={toggleCamera} className="">
 				<FontAwesomeIcon icon={faVideo} />
 				<span>Видео</span>
 			</button>
