@@ -5,5 +5,9 @@ import icon from 'astro-icon'
 import mdx from '@astrojs/mdx'
 
 export default defineConfig({
+	devToolbar: {
+		enabled: false
+	},
 	integrations: [react(), tailwind(), icon(), mdx()]
 })
+
