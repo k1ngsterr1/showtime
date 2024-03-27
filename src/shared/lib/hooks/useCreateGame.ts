@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useEffect } from 'react'
+import { socket } from '../socket/socketService'
 import { io } from 'socket.io-client'
 
 interface ICreateGameProps {
@@ -8,13 +8,6 @@ interface ICreateGameProps {
 	capacity: number
 	creatorId?: number
 }
-
-const socket = io('https://showtime.up.railway.app', {
-	path: '/sockets/',
-	transports: ['polling', 'websocket'],
-	reconnectionAttempts: 5,
-	reconnectionDelay: 2000
-})
 
 export async function createRoom(roomData: ICreateGameProps, userId: number) {
 	try {
@@ -33,9 +26,20 @@ export async function createRoom(roomData: ICreateGameProps, userId: number) {
 			console.log('ROOM CREATED!!!')
 		})
 
+		// socket.on('roomUsersUpdated', () => {
+		// 	console.log('ROOM USERS UPDATED ARE WORKING')
+		// })
+
 		socket.emit('joinRoom', { roomId: createdRoomId, userId })
 
-		return response.data
+		return {
+			data: response.data,
+			cleanup: () => {
+				socket.off('connect')
+				socket.off('roomCreated')
+				// socket.off('roomUsersUpdated', handleRoomUsersUpdated);
+			}
+		}
 	} catch (error: any) {
 		console.error('Failde to create room:', error.response ? error.response.data : error)
 		return null
