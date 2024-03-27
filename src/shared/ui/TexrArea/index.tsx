@@ -4,7 +4,14 @@ import styles from './styles.module.scss'
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 	margin?: string
 	placeholder: string
-	textareaType?: string | 'vacancie' | 'schedule' | 'product-desc' | 'review' | 'articles'
+	textareaType?:
+		| string
+		| 'vacancie'
+		| 'schedule'
+		| 'product-desc'
+		| 'review'
+		| 'articles'
+		| 'services'
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({

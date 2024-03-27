@@ -17,6 +17,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 		| 'product-desc'
 		| 'calendar-small'
 		| 'neo-medium'
+		| 'services'
 
 	placeholder?: string
 	type: string
