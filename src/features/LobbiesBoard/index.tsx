@@ -9,9 +9,11 @@ import styles from './styles.module.scss'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
-	const { joinRoom } = useConnectPlayer()
+	const { joinRoom, players } = useConnectPlayer()
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const { roomData } = useCheckUserRoom(userData.id)
+
+	console.log('players:', players)
 
 	return (
 		<section className={styles.lobbies}>
@@ -26,14 +28,14 @@ export const LobbiesBoard = () => {
 						gameName={userRoom.roomName}
 						key={userRoom.id}
 						userId={userData.id}
-						players={userRoom.users}
+						players={players}
 					/>
 				)}
 				{rooms
 					.filter((room) => room.creatorId !== userData.id)
 					.map((room) => (
 						<LobbyTab
-							onClick={() => joinRoom(room.id, userData.id)}
+							onClick={() => joinRoom(room.id, userData.id, userData)}
 							key={room.id}
 							name={room.roomName}
 							type={room.gameType}
