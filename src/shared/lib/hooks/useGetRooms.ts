@@ -1,17 +1,11 @@
 import axios from 'axios'
 import io from 'socket.io-client'
+import { socket } from '../socket/socketService'
 import { useState, useEffect } from 'react'
 
 export function useGetRooms(userId: number) {
 	const [rooms, setRooms] = useState([])
 	const [userRoom, setUserRoom] = useState()
-
-	const socket = io('https://showtime.up.railway.app', {
-		path: '/sockets/',
-		transports: ['polling', 'websocket'],
-		reconnectionAttempts: 5,
-		reconnectionDelay: 2000
-	})
 
 	useEffect(() => {
 		let isMounted = true
