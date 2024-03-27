@@ -15,8 +15,8 @@ const { time, heading, paragraph, img } = Astro.props
 <div class={styles.card}>
 	<img src={img.src} alt="News" />
 	<div class="ml-auto mt-3 flex w-[95%] flex-col">
-		<span class="font-killbill">{time}</span>
-		<span class="font-killbill">{heading}</span>
+		<span class="font-katana text-xl">{time}</span>
+		<span class="mt-2 overflow-hidden font-katana text-4xl">{heading}</span>
 		<Paragraph paragraphType="dark" margin="mt-4" text={paragraph} />
 	</div>
 </div>

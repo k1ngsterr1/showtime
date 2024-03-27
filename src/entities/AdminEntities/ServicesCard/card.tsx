@@ -15,7 +15,7 @@ export const Card: React.FC<ICardProps> = ({ number, name, paragraph }) => {
 				<h1 className={styles.card__number}>{number}</h1>
 				<span className={styles.card__heading}>{name}</span>
 				<p className={styles.card__paragraph}>{paragraph}</p>
-				<Button buttonType="filled" text="Редактировать" margin="mt-8" />
+				<Button buttonType="filled" text="Связаться" margin="mt-8" />
 			</div>
 		</>
 	)

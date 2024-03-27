@@ -1,6 +1,8 @@
+import React from 'react'
 import { Card } from '@entities/AdminEntities/ServicesCard/card'
 import { services } from '@shared/lib/content/servicesListContent'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
+import Buttons from '@shared/ui/Buttons/DefaultReactButton/index' // Added ".index" here
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
@@ -18,7 +20,13 @@ export const VacanciesList = () => {
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_card}>
 						{services.map((service) => (
-							<Card number={service.number} name={service.name} paragraph={service.paragraph} />
+							<div key={service.number}>
+								<Card number={service.number} name={service.name} paragraph={service.paragraph} />
+								<div className="mt-10 flex flex-col items-center justify-center">
+									<Buttons buttonType="filled" text="Редактировать" />
+									<Buttons buttonType="filled" text="Удалить" margin="mt-4" />
+								</div>
+							</div>
 						))}
 					</div>
 				</div>
@@ -27,3 +35,5 @@ export const VacanciesList = () => {
 		</main>
 	)
 }
+
+export default VacanciesList
