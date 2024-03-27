@@ -14,7 +14,7 @@ export const ServicesList = () => {
 				<div className={styles.services__content_logo}>
 					<img src={Logo.src} alt="Logo" />
 				</div>
-				<h1 className="text-primary-red">Услуги</h1>
+				<h1 className="text-primary-red">Список услуг</h1>
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_card}>
 						{services.map((service) => (
