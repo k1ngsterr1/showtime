@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useAbsoluteTab } from '@shared/lib/hooks/useAbsoluteTab'
 import {
 	faVideo,
 	faMicrophone,
@@ -13,25 +14,13 @@ import styles from './ControlPanel.module.scss'
 
 const ControlPanel = ({ toggleCamera }) => {
 
-	const [isActive, setIsActive] = useState(false);
-	const [isActiveMicro, setIsActiveMicro] = useState(false);
-	const [isActiveReady, setIsActiveReady] = useState(false);
+	const { toggleReady,
+		toggleButton,
+		toggleMicrophone,
+		buttonClass,
+		buttonClassMicro,
+		buttonClassReady, } = useAbsoluteTab()
 
-	const toggleReady = () => {
-		setIsActiveReady(!isActiveReady);
-	};
-
-	const toggleButton = () => {
-		setIsActive(!isActive);
-	};
-
-	const toggleMicrophone = () => {
-		setIsActiveMicro(!isActiveMicro);
-	};
-
-	const buttonClass = isActive ? styles.videoButtonActive : styles.videoButton;
-	const buttonClassMicro = isActiveMicro ? styles.videoButtonActive : styles.videoButton;
-	const buttonClassReady = isActiveReady ? styles.videoButtonActive : styles.videoButton;
 	return (
 		<div className={styles.controlPanel}>
 			<button onClick={() => {
