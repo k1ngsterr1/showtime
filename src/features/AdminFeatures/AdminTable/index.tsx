@@ -15,7 +15,8 @@ interface ITable {
 		id: string
 		service: string
 		price: string
-		time: string
+		product: string
+		date: string
 	}>
 }
 
@@ -28,7 +29,8 @@ export const ServiceTable: React.FC<ITable> = ({ services }) => {
 					id={item.id}
 					service={item.service}
 					price={item.price}
-					time={item.time}
+					product={item.product}
+					date={item.date}
 				/>
 			))}
 		</>

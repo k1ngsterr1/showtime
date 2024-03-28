@@ -3,24 +3,28 @@ export const services = [
 		id: '1',
 		service: 'Услуга 1',
 		price: '100',
-		time: 'Почасово'
+		product: 'Продукт',
+		date: '24 февраля'
 	},
 	{
-		id: '2',
-		service: 'Услуга 2',
-		price: '150',
-		time: 'Почасово'
+		id: '1',
+		service: 'Услуга 1',
+		price: '100',
+		product: 'Продукт',
+		date: '24 февраля'
 	},
 	{
-		id: '3',
-		service: 'Услуга 3',
-		price: '200',
-		time: 'Почасово'
+		id: '1',
+		service: 'Услуга 1',
+		price: '100',
+		product: 'Продукт',
+		date: '24 февраля'
 	},
 	{
-		id: '4',
-		service: 'Услуга 4',
-		price: '250',
-		time: 'Почасово'
+		id: '1',
+		service: 'Услуга 1',
+		price: '100',
+		product: 'Продукт',
+		date: '24 февраля'
 	}
 ]
