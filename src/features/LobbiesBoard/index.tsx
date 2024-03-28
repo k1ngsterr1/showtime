@@ -9,8 +9,8 @@ import styles from './styles.module.scss'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
-	const { joinRoom, players } = useConnectPlayer()
 	const { rooms, userRoom } = useGetRooms(userData.id)
+	const { joinRoom, players } = useConnectPlayer(userRoom)
 	const { roomData } = useCheckUserRoom(userData.id)
 
 	console.log('players:', players)
