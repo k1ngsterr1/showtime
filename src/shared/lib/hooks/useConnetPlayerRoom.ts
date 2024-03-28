@@ -23,7 +23,9 @@ export const useConnectPlayer = () => {
 				// `http://localhost:4000/api/rooms/${roomId}/users/${userId}/add`
 			)
 
-			socket.emit('joinRoom', { roomId: roomId, userId: userId })
+			socket.emit('joinRoom', { roomId: roomId, userId: userId }, () => {
+				console.log('joining room here')
+			})
 		} catch (error) {
 			console.error('Error with connecting to the room')
 		}
@@ -43,6 +45,11 @@ export const useConnectPlayer = () => {
 
 		socket.on('connect', () => {
 			console.log('Connected to socket server in useConnectPlayerRoom	')
+		})
+
+		socket.on('join', (roomWithUsers) => {
+			console.log('Updated room with users after joining:', roomWithUsers)
+			updatePlayers(roomWithUsers.users || [])
 		})
 
 		socket.on('roomUsersUpdated', (roomWithUsers) => {
