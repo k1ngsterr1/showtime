@@ -4,12 +4,14 @@ import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
+import UsersCard from '@entities/AdminEntities/AdminUsersCard/index'
 
 import '@shared/styles/global.scss'
 
 import styles from '../Team/styles.module.scss'
 
 import Oleg from '@assets/Admin/oleg.webp'
+import ShowMan from '@assets/ShowMans/showman.webp'
 
 export const Users = () => {
 	return (
@@ -28,10 +30,11 @@ export const Users = () => {
 							margin="mt-2"
 						/>
 					</div>
-					<div className={styles.client__main__functional__showmans}>
+					<div className={styles.client__main__functional__users}>
+						<UsersCard photo={ShowMan} name="Erlan Erlanov" />
 						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Подтвердить" margin="mt-4" />
-							<LinkButton buttonType="filled" href="productslist" text="Отклонить" margin="mt-4" />
+							<AddButton buttonType="filled" text="Подтвердить" />
+							<LinkButton buttonType="filled" href="productslist" text="Отклонить" />
 						</div>
 					</div>
 				</div>
