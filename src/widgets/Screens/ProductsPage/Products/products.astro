@@ -1,8 +1,8 @@
 ---
 import { CardSwiper } from '@features/Swiper_Components/CardSwiper'
-import { products } from '@features/Swiper_Components/CardSwiper/index'
+import { products } from '@shared/lib/content/ShopContents'
 import { ProductCard } from '@entities/Card_Components/ProductsCard/index'
-import { specials } from '@features/Swiper_Components/SpecialsSwiper/index'
+import { specials } from '@shared/lib/content/ShopContents'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import SpecialsSwiper from '@features/Swiper_Components/SpecialsSwiper/index'
 import styles from './styles.module.scss'
@@ -25,7 +25,7 @@ import '@shared/styles/global.scss'
 
 <main class={styles.products_mob}>
 	<div class={styles.products_mob__content}>
-		<h1 class="text-center text-primary-red">Оналайн магазин</h1>
+		<h1 class="text-center text-primary-red">Онлайн магазин</h1>
 		<Paragraph
 			align="text-center"
 			paragraphType="white"
