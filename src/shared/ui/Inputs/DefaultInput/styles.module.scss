@@ -12,6 +12,45 @@
 	@apply font-neo;
 }
 
+.input--teamposition {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-lg;
+	text-transform: uppercase;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
+.input--teamposition::placeholder {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-lg;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
+.input--teamname {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-2xl;
+	font-weight: 500;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
+.input--teamname::placeholder {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-2xl;
+	font-weight: 500;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
 .input--neo-medium {
 	@apply font-neomedium;
 	@apply text-primary-red;

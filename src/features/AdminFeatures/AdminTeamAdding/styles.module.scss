@@ -46,12 +46,25 @@
 	align-items: center;
 	justify-content: center;
 
-	.usertab__photo--users {
+	.upload {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: clamp(40px, 4.1664vw, 160px);
 		height: clamp(40px, 4.1664vw, 160px);
 		border-radius: 50%;
 		overflow: hidden;
+		border: 2px solid #bf2316;
+
+		&__fedora {
+			width: 50%;
+		}
+	}
+
+	.card__content__previewImage {
+		width: clamp(40px, 4.1664vw, 160px);
+		height: clamp(40px, 4.1664vw, 160px);
+		border-radius: 50%;
 	}
 
 	.usertab__text--users {
@@ -59,19 +72,5 @@
 		flex-direction: column;
 		justify-content: center;
 		flex-basis: 60%;
-
-		&_name {
-			@apply font-katana;
-			@apply text-primary-light;
-			@apply text-2xl;
-			font-weight: 500;
-		}
-
-		&_position {
-			@apply font-katana;
-			@apply text-primary-light;
-			@apply text-lg;
-			text-transform: uppercase;
-		}
 	}
 }
