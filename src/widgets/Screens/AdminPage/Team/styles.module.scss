@@ -27,6 +27,14 @@
 				@apply mt-10;
 			}
 
+			&__users {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				@apply mt-12;
+			}
+
 			&__showmans {
 				display: flex;
 				justify-content: center;

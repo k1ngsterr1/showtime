@@ -98,6 +98,24 @@
 	@apply font-neoregular;
 }
 
+.input--services-red-big {
+	font-size: clamp(24px, 2.49984vw, 96px);
+	width: clamp(175px, 18.228vw, 700px);
+	height: clamp(27.5px, 2.8644000000000003vw, 110px);
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+	@apply text-primary-red;
+	@apply font-katana;
+}
+
+.input--services-red-big::placeholder {
+	font-size: clamp(24px, 2.49984vw, 96px);
+	text-align: left;
+	@apply text-primary-red;
+	@apply font-katana;
+}
+
 .input--default-red-big {
 	font-size: clamp(24px, 2.49984vw, 96px);
 	width: clamp(175px, 18.228vw, 700px);

@@ -3,7 +3,6 @@ import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import { ServiceCard } from '@features/AdminFeatures/AdminServices/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
-import { images } from '@shared/lib/content/servicesContent'
 
 import '@shared/styles/global.scss'
 
@@ -29,7 +28,7 @@ export const Services = () => {
 						/>
 					</div>
 					<div className={styles.client__main__functional__services}>
-						<ServiceCard number="01" heading="Erlan" paragraph="Erlanov" images={images} />
+						<ServiceCard number="01" imageIndex={1} />
 					</div>
 				</div>
 			</div>

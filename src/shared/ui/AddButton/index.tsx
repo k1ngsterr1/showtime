@@ -10,13 +10,14 @@ interface ButtonProps {
 	text: string
 	margin?: string
 	type?: string
+	onClick?: () => void
 }
 
-const AddButton: React.FC<ButtonProps> = ({ buttonType, text, margin }) => {
+const AddButton: React.FC<ButtonProps> = ({ buttonType, text, margin, onClick }) => {
 	const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ''}`
 
 	return (
-		<button className={buttonClass}>
+		<button className={buttonClass} onClick={onClick}>
 			<FontAwesomeIcon className={styles.buttonIcon} icon={faCirclePlus} />
 			<span>{text}</span>
 		</button>
