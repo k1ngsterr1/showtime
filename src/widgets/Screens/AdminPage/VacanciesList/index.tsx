@@ -1,8 +1,7 @@
-import React from 'react'
-import { Card } from '@entities/AdminEntities/ServicesCard/card'
+import Card from '@entities/AdminEntities/ServicesCard/card'
 import { services } from '@shared/lib/content/servicesListContent'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
-import Buttons from '@shared/ui/Buttons/DefaultReactButton/index' // Added ".index" here
+import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
@@ -23,7 +22,7 @@ export const VacanciesList = () => {
 							<div key={service.number}>
 								<Card number={service.number} name={service.name} paragraph={service.paragraph} />
 								<div className="mt-10 flex flex-col items-center justify-center">
-									<Buttons buttonType="filled" text="Редактировать" />
+									<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
 									<Buttons buttonType="filled" text="Удалить" margin="mt-4" />
 								</div>
 							</div>

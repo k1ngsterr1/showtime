@@ -1,14 +1,15 @@
 .card {
 	position: relative;
-	width: clamp(235px, 24.4776vw, 940px);
+	width: clamp(259px, 26.97744vw, 1036px);
 	height: clamp(248.5px, 25.883760000000002vw, 994px);
 	background-color: #f0e7be;
-	@apply p-8;
+	@apply pl-7;
 	box-shadow: 16px 16px 0px 0px #bf2316;
 	margin: 0px 0px 16px;
+	overflow: hidden;
 
 	&__number {
-		font-size: clamp(32px, 3.33312vw, 128px);
+		font-size: clamp(60px, 6.2496vw, 240px);
 		@apply text-primary-red;
 		@apply font-killbill;
 	}
@@ -20,10 +21,12 @@
 	}
 
 	&__paragraph {
+		width: 80%;
 		font-size: clamp(9px, 0.93744vw, 36px);
 		@apply text-primary-dark;
 		@apply font-neoregular;
 		line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+		@apply mt-4;
 	}
 }
 
