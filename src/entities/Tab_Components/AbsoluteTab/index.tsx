@@ -31,7 +31,7 @@ const ControlPanel = ({ toggleCamera }) => {
 			<button
 				onClick={() => {
 					toggleButton()
-					toggleCamera(players.id)
+					toggleCamera(15)
 				}}
 			>
 				<FontAwesomeIcon icon={faVideo} className={buttonClass} />
