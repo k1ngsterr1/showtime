@@ -2,11 +2,19 @@ import { Input } from '@shared/ui/Inputs/DefaultInput'
 import { createAccount } from '@shared/lib/hooks/useCreateAccount'
 import { useState } from 'react'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
-// import useFileUpload from '@shared/lib/hooks/useFileUpload'
-
+import { VacanciePopup } from '@features/Popup_Components/VacanciePopup/index'
 import styles from '../styles/styles.module.scss'
 
 export const VcancieForm = () => {
+	const [isPopupOpen, setPopupOpen] = useState(false)
+
+	const handleClick = () => {
+		setPopupOpen(true)
+	}
+
+	const handleClose = () => {
+		setPopupOpen(false)
+	}
 	const [loginError, setLoginError] = useState<any>(null)
 	const [formData, setFormData] = useState({
 		username: '',
@@ -64,7 +72,7 @@ export const VcancieForm = () => {
 							value={formData.phone}
 							onChange={handleInputChange}
 						/>
-						<div className={styles.file}>
+						{/* <div className={styles.file}>
 							<label htmlFor="resume">Прикрепите резюме:</label>
 							<input
 								type="file"
@@ -73,15 +81,16 @@ export const VcancieForm = () => {
 								onChange={handleInputChange}
 								value={formData.file}
 							/>
-						</div>
+						</div> */}
+						<ReactButton
+							buttonType="filled"
+							text="Отправить"
+							type="submit"
+							onClick={handleClick}
+							margin="mt-8"
+						/>
+						{isPopupOpen && <VacanciePopup onClick={handleClose} />}
 					</form>
-					<ReactButton
-						buttonType="filled"
-						text="Отправить"
-						type="submit"
-						onClick={() => formData}
-						margin="mt-8"
-					/>
 				</div>
 			</section>
 		</div>
