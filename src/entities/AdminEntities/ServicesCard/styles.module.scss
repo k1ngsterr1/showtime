@@ -1,37 +1,52 @@
 .card {
-	width: clamp(250px, 26.04vw, 1000px);
-	height: clamp(215px, 22.3944vw, 860px);
-	@apply bg-primary-light text-primary-red;
-	font-weight: 600;
-	background-position: center center;
-	background-repeat: no-repeat;
-	overflow: hidden;
-	margin: 0px 16px 16px;
+	position: relative;
+	width: clamp(259px, 26.97744vw, 1036px);
+	height: clamp(248.5px, 25.883760000000002vw, 994px);
+	background-color: #f0e7be;
+	@apply pl-7;
 	box-shadow: 16px 16px 0px 0px #bf2316;
-	@apply p-7;
-}
+	margin: 0px 16px 16px;
+	overflow: hidden;
 
-.card__number {
-	font-size: clamp(48px, 4.99968vw, 192px);
-}
+	&__number {
+		font-size: clamp(60px, 6.2496vw, 240px);
+		@apply text-primary-red;
+		@apply font-killbill;
+	}
 
-span {
-	font-size: clamp(24px, 2.49984vw, 96px);
-	@apply font-killbill;
-	@apply text-primary-red;
-}
-.card__paragraph {
-	width: 80%;
+	&__heading {
+		font-size: clamp(32px, 3.33312vw, 128px);
+		@apply text-primary-red;
+		@apply font-killbill;
+	}
+
+	&__paragraph {
+		width: 80%;
+		font-size: clamp(9px, 0.93744vw, 36px);
+		@apply text-primary-dark;
+		@apply font-neoregular;
+		line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+		@apply mt-4;
+	}
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-	.review_card {
-		width: clamp(175px, 81.774vw, 700px);
-		height: clamp(180px, 84.1104vw, 720px);
-		font-size: clamp(14px, 6.541919999999999vw, 56px);
-	}
-	.paragraph {
-		font-size: clamp(9px, 4.20552vw, 36px);
-		line-height: clamp(11.5px, 5.37372vw, 46px);
+	.card {
+		height: clamp(255px, 119.15639999999999vw, 1020px);
+		width: clamp(150px, 70.092vw, 600px);
+		@apply mt-12;
+
+		&__number {
+			font-size: clamp(23px, 10.74744vw, 92px);
+		}
+
+		&__heading {
+			font-size: clamp(25px, 11.681999999999999vw, 100px);
+		}
+
+		&__paragraph {
+			font-size: clamp(8px, 3.73824vw, 32px);
+			line-height: clamp(13px, 6.07464vw, 52px);
+		}
 	}
 }

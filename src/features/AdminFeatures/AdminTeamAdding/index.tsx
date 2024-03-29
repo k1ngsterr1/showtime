@@ -1,21 +1,23 @@
 import React from 'react'
+import useFileUpload from '@shared/lib/hooks/useFileUpload'
+import { Input } from '@shared/ui/Inputs/DefaultInput'
 
-import styles from './style.module.scss'
+import Fedora from '@assets/logo/fedora.svg'
+
+import styles from './styles.module.scss'
 interface UserTab {
 	name: string
 	position: string
 	margin?: string
-	photo: ImageMetadata
 	userTabType?: string | 'users'
 	userPhotoType?: string | 'users'
 	userTextType?: string | 'users'
 }
 
-const AdminUserTab: React.FC<UserTab> = ({
+export const AdminTeamAdding: React.FC<UserTab> = ({
 	name,
 	margin,
 	position,
-	photo,
 	userTabType,
 	userPhotoType,
 	userTextType
@@ -23,22 +25,29 @@ const AdminUserTab: React.FC<UserTab> = ({
 	const userTabClass = `${styles.usertab} ${styles[`usertab--${userTabType}`]} ${margin ? margin : ''}`
 	const userPhotoClass = `${styles.usertab__photo} ${styles[`usertab__photo--${userPhotoType}`]} ${margin ? margin : ''}`
 	const userTextClass = `${styles.usertab__text} ${styles[`usertab__text--${userTextType}`]} ${margin ? margin : ''}`
+	const { previewUrl, handleFileChange } = useFileUpload()
 
 	return (
-		<div className={userTabClass}>
-			<div className={styles.kebab}>
-				{/* <KebabMenu /> Здесь используется компонент KebabMenu */}
-			</div>
-			<div className={styles.usertab__kebab}></div>
-			<div className={userPhotoClass}>
-				<img src={photo.src} alt="photo" />
+		<div className={`${userTabClass} mt-8 `}>
+			<div className={styles.card__content}>
+				{previewUrl ? (
+					<img src={previewUrl} alt="Preview" className={styles.card__content__previewImage} />
+				) : (
+					<label htmlFor="file-upload" className={styles.upload}>
+						<img src={Fedora.src} alt="Fedora" className={styles.upload__fedora} />
+						<input
+							id="file-upload"
+							type="file"
+							style={{ display: 'none' }}
+							onChange={handleFileChange}
+						/>
+					</label>
+				)}
 			</div>
 			<div className={userTextClass}>
-				<span className={styles.usertab__text_name}>{name}</span>
-				<span className={styles.usertab__text_position}>{position}</span>
+				<Input inputType="teamname" placeholder={name} type="text" />
+				<Input inputType="teamposition" placeholder={position} type="text" />
 			</div>
 		</div>
 	)
 }
-
-export default AdminUserTab

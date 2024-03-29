@@ -1,11 +1,13 @@
 .card {
-	display: flex;
-	flex-direction: column;
-	width: clamp(229.5px, 23.90472vw, 918px);
-	height: clamp(224.5px, 23.38392vw, 898px);
-	background-color: #f0e7be;
-	@apply p-8;
+	width: 518px;
+	height: 497px;
+	@apply bg-primary-light text-primary-red;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	margin: 0px 16px 16px;
 	box-shadow: 16px 16px 0px 0px #bf2316;
+	@apply pl-7;
 
 	&__heading {
 		font-size: clamp(60px, 6.2496vw, 240px);

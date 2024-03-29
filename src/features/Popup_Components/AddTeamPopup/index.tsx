@@ -1,7 +1,7 @@
 import React, { type SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
-import Paragraph from '@shared/ui/ParagraphReact'
+import { AdminTeamAdding } from '@features/AdminFeatures/AdminTeamAdding/index'
 
 import styles from '../CreateGamePopup/styles.module.scss'
 
@@ -25,7 +25,13 @@ export const AddPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState 
 					<h1 className={styles.popup__heading}>Добавление сотрдуника</h1>
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
-				<Paragraph margin="mt-12" paragraphType="red" text="husland" />
+				<AdminTeamAdding
+					name="Email сотрудника"
+					position="Позиция"
+					userTabType="users"
+					userPhotoType="users"
+					userTextType="users"
+				/>
 			</section>
 		</div>
 	)
