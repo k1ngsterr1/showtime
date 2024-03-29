@@ -16,13 +16,13 @@ export const Form = () => {
 					<h6 className="m-auto text-primary-red">Контакты</h6>
 					<div className="m-auto flex w-[60%] flex-col items-center justify-between">
 						<ReactButton
-							text="Продукция"
+							text="Заказать"
 							buttonType="transparent"
 							margin="mt-8"
 							onClick={() => setFormType('production')}
 						/>
 						<ReactButton
-							text="Заказать"
+							text="Продукция"
 							buttonType="transparent"
 							margin="mt-8"
 							onClick={() => setFormType('delivery')}
@@ -67,13 +67,13 @@ export const Form = () => {
 					<h6 className="m-auto text-primary-red">Контакты</h6>
 					<div className="m-auto flex w-[60%] items-center justify-between">
 						<ReactButton
-							text="Продукция"
+							text="Заказать"
 							buttonType="transparent"
 							margin="mt-8"
 							onClick={() => setFormType('production')}
 						/>
 						<ReactButton
-							text="Заказать"
+							text="Продукция"
 							buttonType="transparent"
 							margin="mt-8"
 							onClick={() => setFormType('delivery')}
