@@ -1,36 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react'
 
-export const useWebRoom = () => {
-    const [showCamera, setShowCamera] = useState(false);
-    const [isCamera2Active, setIsCamera2Active] = useState(false);
-    const [isCamera3Active, setIsCamera3Active] = useState(false);
-    const [isCamera4Active, setIsCamera4Active] = useState(false);
-    const [isCamera5Active, setIsCamera5Active] = useState(false);
-    const [isCamera6Active, setIsCamera6Active] = useState(false);
-    const [isCamera7Active, setIsCamera7Active] = useState(false);
-    const [isCamera8Active, setIsCamera8Active] = useState(false);
-    const [isCamera9Active, setIsCamera9Active] = useState(false);
-    const [isCamera10Active, setIsCamera10Active] = useState(false);
-    const [isCamera11Active, setIsCamera11Active] = useState(false);
+type Player = {
+	id: string | number
+}
 
+const initializeCameraStates = (players: Player[]) => {
+	return players.reduce(
+		(states, player) => {
+			states[player.id] = false
+			return states
+		},
+		{} as Record<string | number, boolean>
+	)
+}
 
-    const toggleCamera = () => {
-        setShowCamera(prevShowCamera => !prevShowCamera);
-    }
+export const useCameraStates = (players: Player[]) => {
+	const [cameraStates, setCameraStates] = useState<Record<string | number, boolean>>(() =>
+		initializeCameraStates(players)
+	)
 
-    return {
-        showCamera,
-        toggleCamera,
-        isCamera2Active,
-        isCamera3Active,
-        isCamera4Active,
-        isCamera5Active,
-        isCamera6Active,
-        isCamera7Active,
-        isCamera8Active,
-        isCamera9Active,
-        isCamera10Active,
-        isCamera11Active,
+	const toggleCamera = (playerId: string | number) => {
+		setCameraStates((prevStates) => {
+			const newState = {
+				...prevStates,
+				[playerId]: !prevStates[playerId]
+			}
+			console.log(`Camera state for player ${playerId}: ${newState[playerId]}`)
+			return newState
+		})
+	}
 
-    };
+	useEffect(() => {
+		console.log('Initializing camera states for players')
+		setCameraStates(initializeCameraStates(players))
+	}, [players])
+
+	return { cameraStates, toggleCamera }
 }

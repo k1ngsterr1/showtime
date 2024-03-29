@@ -7,32 +7,13 @@ import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 import { socket } from '@shared/lib/socket/socketService'
 
 import styles from './styles.module.scss'
+import { players } from '@shared/lib/content/playersContent'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const { joinRoom, players } = useConnectPlayer(userRoom)
-	const { roomData } = useCheckUserRoom(userData.id)
-
-	useEffect(() => {
-		socket.connect()
-
-		socket.on('connect', () => {
-			console.log('Connected to socket server in lobbiesBoard')
-		})
-
-		socket.on('disconnect', (reason) => {
-			console.log('Socket disconnected:', reason)
-		})
-
-		return () => {
-			socket.off('connect')
-			socket.off('disconnect')
-			socket.disconnect()
-		}
-	}, [])
-
-	console.log('players:', players)
+	// const { roomData } = useCheckUserRoom(userData.id)
 
 	return (
 		<section className={styles.lobbies}>
@@ -47,7 +28,7 @@ export const LobbiesBoard = () => {
 						gameName={userRoom.roomName}
 						key={userRoom.id}
 						userId={userData.id}
-						players={userRoom.users}
+						players={players}
 					/>
 				)}
 				{rooms
