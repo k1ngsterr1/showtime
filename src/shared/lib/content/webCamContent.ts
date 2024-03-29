@@ -1,59 +1,123 @@
 export const players = [
 	{
-		number: '1',
-		name: 'Zhopa Suki',
-		id: '1'
-	},
-
-	{
-		number: '2',
-		name: 'Zhopa',
-		id: '2'
-	},
-	{
-		number: '3',
-		name: 'Zhopa Suki',
-		id: '3'
+		id: 15,
+		name: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 1,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '4',
-		name: 'Zhopa Suki',
-		id: '4'
+		id: 153,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 2,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '5',
-		name: 'Zhopa Suki',
-		id: '5'
+		id: 154,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 3,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '6',
-		name: 'Ведузфшывиф',
+		id: 151,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 4,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
+	},
+	{
+		id: 157,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 5,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
+	},
+	{
+		id: 14,
+		username: 'intleg',
+		currentRank: 'Новичок',
 		role: 'showman',
-		id: '6'
+		cameraPlayerNumber: 6,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '7',
-		name: 'Zhopa Suki',
-		id: '7'
+		id: 165,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 7,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '8',
-		name: 'Zhopa Suki',
-		id: '8'
+		id: 115,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 8,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '9',
-		name: 'Zhopa Suki',
-		id: '9'
+		id: 101,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 9,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '10',
-		name: 'Zhopa Suki',
-		id: '10'
+		id: 105,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 10,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	},
 	{
-		number: '11',
-		name: 'Zhopa Suki',
-		id: '11'
+		id: 195,
+		username: 'intleg',
+		currentRank: 'Новичок',
+		role: 'user',
+		cameraPlayerNumber: 11,
+		isVerified: null,
+		gameRole: null,
+		createdAt: '2024-03-26T08:02:25.848Z',
+		updatedAt: '2024-03-26T08:02:25.848Z'
 	}
 ]
