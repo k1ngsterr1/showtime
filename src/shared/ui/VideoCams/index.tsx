@@ -5,6 +5,7 @@ import styles from './styles.module.scss'
 interface VideoProps {
 	number: string
 	name: string
+	id: string
 }
 
 export const VideoCams: React.FC<VideoProps> = ({ number, name }) => {

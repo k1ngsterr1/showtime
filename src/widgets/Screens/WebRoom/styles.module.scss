@@ -1,6 +1,6 @@
-body {
-	@apply bg-primary-dark;
-}
+// body {
+// 	@apply bg-primary-dark;
+// }
 
 .videoRoom {
 	margin: auto;
@@ -8,39 +8,49 @@ body {
 	@apply bg-primary-dark;
 	@apply text-primary-dark;
 	@apply mt-2;
+}
+// 	.grid {
+// 		display: flex;
+// 		justify-content: space-between;
+// 	}
 
-	.grid {
-		display: flex;
-		justify-content: space-between;
-	}
+// 	.grid_third {
+// 		@apply mt-4;
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 	}
 
-	.grid_third {
-		@apply mt-4;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
+.loader {
+	z-index: 1;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #333;
+	color: #fff;
+	width: clamp(210px, 21.8736vw, 840px);
+	height: clamp(157.5px, 16.4052vw, 630px);
+}
+// 		&__showman {
+// 			border-radius: 6px;
+// 			display: flex;
+// 			align-items: center;
+// 			justify-content: center;
+// 			background-color: #333;
+// 			color: #fff;
+// 			width: clamp(300px, 31.248vw, 1200px);
+// 			height: clamp(170px, 17.7072vw, 680px);
+// 		}
+// 	}
+// }
 
-	.loader {
-		z-index: 1;
-		border-radius: 6px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: #333;
-		color: #fff;
-		width: clamp(210px, 21.8736vw, 840px);
-		height: clamp(157.5px, 16.4052vw, 630px);
+.webcam_grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
 
-		&__showman {
-			border-radius: 6px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background-color: #333;
-			color: #fff;
-			width: clamp(300px, 31.248vw, 1200px);
-			height: clamp(170px, 17.7072vw, 680px);
-		}
-	}
+.webcam_grid > :nth-child(4n + 1) {
+	grid-column: span 2;
 }

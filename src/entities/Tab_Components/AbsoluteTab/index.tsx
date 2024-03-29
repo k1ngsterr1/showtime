@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useAbsoluteTab } from '@shared/lib/hooks/useAbsoluteTab'
+import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
+import { players } from '@shared/lib/content/webCamContent'
 import {
 	faVideo,
 	faMicrophone,
@@ -13,27 +15,35 @@ import {
 import styles from './ControlPanel.module.scss'
 
 const ControlPanel = ({ toggleCamera }) => {
-
-	const { toggleReady,
+	const {
+		toggleReady,
 		toggleButton,
 		toggleMicrophone,
 		buttonClass,
 		buttonClassMicro,
-		buttonClassReady, } = useAbsoluteTab()
+		buttonClassReady
+	} = useAbsoluteTab()
+
+	const { cameraStates } = useCameraStates(players)
 
 	return (
 		<div className={styles.controlPanel}>
-			<button onClick={() => {
-				toggleButton();
-				toggleCamera();
-			}}>
+			<button
+				onClick={() => {
+					toggleButton()
+					toggleCamera(players.id)
+				}}
+			>
 				<FontAwesomeIcon icon={faVideo} className={buttonClass} />
+				{cameraStates[players.id]}
 				<span>Видео</span>
 			</button>
 
-			<button onClick={() => {
-				toggleMicrophone();
-			}}>
+			<button
+				onClick={() => {
+					toggleMicrophone()
+				}}
+			>
 				<FontAwesomeIcon icon={faMicrophone} className={buttonClassMicro} />
 				<span>Микрофон</span>
 			</button>
@@ -41,9 +51,11 @@ const ControlPanel = ({ toggleCamera }) => {
 				<FontAwesomeIcon icon={faRedo} className="transition-all hover:text-primary-red" />
 				<span>Перезапустить камеру</span>
 			</button>
-			<button onClick={() => {
-				toggleReady();
-			}}>
+			<button
+				onClick={() => {
+					toggleReady()
+				}}
+			>
 				<FontAwesomeIcon icon={faCheck} className={buttonClassReady} />
 				<span>Готов</span>
 			</button>
