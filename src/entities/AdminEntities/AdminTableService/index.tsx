@@ -42,8 +42,8 @@ export const AdminTableService: React.FC<Props> = () => {
 						<td className={styles.table__content_item}>{service.service}</td>
 						<td className={styles.table__content_item}>{service.price}</td>
 						<td className={styles.table__content_item}>{service.product}</td>
-						<td className={styles.table__content_item}>{service.date}</td>
 						<td className={styles.table__content_item}>
+							{service.date}
 							<div className={styles.table__content_buttons}>
 								<ButtonMore buttonType="filled-small" text="Подробнее" onClick={handleClick} />
 								{isPopupOpen && <DetailsPopup onClick={handleClose} />}

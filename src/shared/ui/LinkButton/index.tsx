@@ -7,7 +7,7 @@ interface ButtonProps {
 	buttonType: 'filled' | 'outline' | 'transparent'
 	text: string
 	margin?: string
-	to: string
+	to?: string
 	href?: string
 }
 
