@@ -55,7 +55,7 @@ export function useGetRooms(userId: number) {
 			socket.off('roomCreated')
 			socket.off('roomUpdated')
 		}
-	}, [])
+	}, [userRoom])
 
 	return { rooms, userRoom }
 }
