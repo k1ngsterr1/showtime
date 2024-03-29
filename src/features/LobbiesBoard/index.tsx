@@ -4,6 +4,7 @@ import { YourGameTab } from '@entities/Tab_Components/YourGameTab'
 import { useGetRooms } from '@shared/lib/hooks/useGetRooms'
 import { useCheckUserRoom } from '@shared/lib/hooks/useCheckUserRoom'
 import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
+import { socket } from '@shared/lib/socket/socketService'
 
 import styles from './styles.module.scss'
 
@@ -12,6 +13,24 @@ export const LobbiesBoard = () => {
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const { joinRoom, players } = useConnectPlayer(userRoom)
 	const { roomData } = useCheckUserRoom(userData.id)
+
+	useEffect(() => {
+		socket.connect()
+
+		socket.on('connect', () => {
+			console.log('Connected to socket server in lobbiesBoard')
+		})
+
+		socket.on('disconnect', (reason) => {
+			console.log('Socket disconnected:', reason)
+		})
+
+		return () => {
+			socket.off('connect')
+			socket.off('disconnect')
+			socket.disconnect()
+		}
+	}, [])
 
 	console.log('players:', players)
 
@@ -28,7 +47,7 @@ export const LobbiesBoard = () => {
 						gameName={userRoom.roomName}
 						key={userRoom.id}
 						userId={userData.id}
-						players={players}
+						players={userRoom.users}
 					/>
 				)}
 				{rooms

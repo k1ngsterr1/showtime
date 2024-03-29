@@ -32,7 +32,7 @@ export const useConnectPlayer = (userRoom: any) => {
 
 	const leaveRoom = async (roomId: string, userId: any) => {
 		try {
-			await axios.post(`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`)
+			await axios.post(`http://localhost:4000/api/rooms/${roomId}/users/${userId}/add`)
 			socket.emit('leaveRoom', { roomId, userId })
 		} catch (error) {
 			console.error('Error with leaving the room')
@@ -72,7 +72,7 @@ export const useConnectPlayer = (userRoom: any) => {
 			socket.off('playerLeft')
 			socket.disconnect()
 		}
-	}, [socket, updatePlayers, userRoom, players])
+	}, [socket])
 
 	return { players, joinRoom, leaveRoom }
 }
