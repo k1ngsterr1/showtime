@@ -1,9 +1,8 @@
-import PasswordInput from '@shared/ui/Inputs/PasswordInput/index'
 import { Input } from '@shared/ui/Inputs/DefaultInput'
 import { createAccount } from '@shared/lib/hooks/useCreateAccount'
 import { useState } from 'react'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
-import FileInput from '@shared/ui/Inputs/FileForm/index'
+// import useFileUpload from '@shared/lib/hooks/useFileUpload'
 
 import styles from '../styles/styles.module.scss'
 
@@ -11,9 +10,8 @@ export const VcancieForm = () => {
 	const [loginError, setLoginError] = useState<any>(null)
 	const [formData, setFormData] = useState({
 		username: '',
-		email: '',
-		password: '',
-		passwordConfirmation: ''
+		phone: '',
+		file: ''
 	})
 
 	const handleInputChange = (e: any) => {
@@ -58,30 +56,32 @@ export const VcancieForm = () => {
 						/>
 						<Input
 							placeholder="Номер телефона"
-							name="number"
+							name="phone"
 							inputType="default"
 							margin="mt-4"
 							type="phone"
 							required
-							value={formData.email}
+							value={formData.phone}
 							onChange={handleInputChange}
 						/>
-						<FileInput
-							placeholder="Ваше резюме"
-							margin="mt-4"
-							id="file-upload"
-							name="file"
-							accept=".pdf,.doc,.docx"
-							onChange={(e) => console.log(e.target.files)}
-						/>
-						<ReactButton
-							buttonType="filled"
-							text="Отправить"
-							type="submit"
-							onClick={() => formData}
-							margin="mt-8"
-						/>
+						<div className={styles.file}>
+							<label htmlFor="resume">Прикрепите резюме:</label>
+							<input
+								type="file"
+								id="resume"
+								accept=".pdf,.doc,.docx,.png,.jpg"
+								onChange={handleInputChange}
+								value={formData.file}
+							/>
+						</div>
 					</form>
+					<ReactButton
+						buttonType="filled"
+						text="Отправить"
+						type="submit"
+						onClick={() => formData}
+						margin="mt-8"
+					/>
 				</div>
 			</section>
 		</div>
