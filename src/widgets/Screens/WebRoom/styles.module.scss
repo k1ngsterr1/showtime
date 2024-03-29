@@ -51,6 +51,24 @@
 	gap: 10px;
 }
 
-.webcam_grid > :nth-child(4n + 1) {
+.showman {
+	border: 2px solid red;
 	grid-column: span 2;
+}
+
+.webcam_grid::before,
+.webcam_grid::after {
+	content: '';
+	width: 0;
+}
+
+/* Adjust for when there are exactly 4 or 7 items */
+@media (max-width: 9999px) {
+	/* Adjust max-width as needed */
+	.webcam_grid:nth-child(4):nth-last-child(1),
+	.webcam_grid:nth-child(4):nth-last-child(1) ~ .webcam_grid,
+	.webcam_grid:nth-child(7):nth-last-child(1),
+	.webcam_grid:nth-child(7):nth-last-child(1) ~ .webcam_grid {
+		grid-column: span 2;
+	}
 }

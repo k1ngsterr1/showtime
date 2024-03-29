@@ -28,6 +28,7 @@ export const players = [
 	{
 		number: '6',
 		name: 'Ведузфшывиф',
+		role: 'showman',
 		id: '6'
 	},
 	{

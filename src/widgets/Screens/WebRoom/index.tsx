@@ -14,18 +14,17 @@ const VideoRoom = () => {
 		<>
 			<div className={styles.videoRoom}>
 				<div className={styles.webcam_grid}>
-					{players.map((player) => (
-						<div key={player.id}>
-							{cameraStates[player.id] ? (
-								<VideoCams name={player.name} number={player.number} />
+					{players.map((player, index) => (
+						<div key={player.id} className={player.role == 'showman' ? styles.showman : ''}>
+							{cameraStates[index] ? (
+								<VideoCams name={player.name} number={player.number} isShowman={player.isShowman} />
 							) : (
-								<div className={styles.loader}>
-									<MenuButton />
-								</div>
+								<div className={styles.loader}>Loading...</div>
 							)}
 						</div>
 					))}
 				</div>
+
 				<AbsoluteTab toggleCamera={toggleCamera} />
 			</div>
 		</>

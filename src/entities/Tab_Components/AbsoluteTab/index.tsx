@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useAbsoluteTab } from '@shared/lib/hooks/useAbsoluteTab'
 import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
 import { players } from '@shared/lib/content/webCamContent'
+
 import {
 	faVideo,
 	faMicrophone,
@@ -12,6 +13,7 @@ import {
 	faEllipsisH,
 	faCog
 } from '@fortawesome/free-solid-svg-icons'
+
 import styles from './ControlPanel.module.scss'
 
 const ControlPanel = ({ toggleCamera }) => {
@@ -31,14 +33,13 @@ const ControlPanel = ({ toggleCamera }) => {
 			<button
 				onClick={() => {
 					toggleButton()
-					toggleCamera(players.id)
+					toggleCamera()
 				}}
 			>
 				<FontAwesomeIcon icon={faVideo} className={buttonClass} />
 				{cameraStates[players.id]}
 				<span>Видео</span>
 			</button>
-
 			<button
 				onClick={() => {
 					toggleMicrophone()
