@@ -1,19 +1,25 @@
-import PasswordInput from '@shared/ui/Inputs/PasswordInput/index'
 import { Input } from '@shared/ui/Inputs/DefaultInput'
 import { createAccount } from '@shared/lib/hooks/useCreateAccount'
 import { useState } from 'react'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
-import FileInput from '@shared/ui/Inputs/FileForm/index'
-
+import { VacanciePopup } from '@features/Popup_Components/VacanciePopup/index'
 import styles from '../styles/styles.module.scss'
 
 export const VcancieForm = () => {
+	const [isPopupOpen, setPopupOpen] = useState(false)
+
+	const handleClick = () => {
+		setPopupOpen(true)
+	}
+
+	const handleClose = () => {
+		setPopupOpen(false)
+	}
 	const [loginError, setLoginError] = useState<any>(null)
 	const [formData, setFormData] = useState({
 		username: '',
-		email: '',
-		password: '',
-		passwordConfirmation: ''
+		phone: '',
+		file: ''
 	})
 
 	const handleInputChange = (e: any) => {
@@ -58,29 +64,32 @@ export const VcancieForm = () => {
 						/>
 						<Input
 							placeholder="Номер телефона"
-							name="number"
+							name="phone"
 							inputType="default"
 							margin="mt-4"
 							type="phone"
 							required
-							value={formData.email}
+							value={formData.phone}
 							onChange={handleInputChange}
 						/>
-						<FileInput
-							placeholder="Ваше резюме"
-							margin="mt-4"
-							id="file-upload"
-							name="file"
-							accept=".pdf,.doc,.docx"
-							onChange={(e) => console.log(e.target.files)}
-						/>
+						{/* <div className={styles.file}>
+							<label htmlFor="resume">Прикрепите резюме:</label>
+							<input
+								type="file"
+								id="resume"
+								accept=".pdf,.doc,.docx,.png,.jpg"
+								onChange={handleInputChange}
+								value={formData.file}
+							/>
+						</div> */}
 						<ReactButton
 							buttonType="filled"
 							text="Отправить"
 							type="submit"
-							onClick={() => formData}
+							onClick={handleClick}
 							margin="mt-8"
 						/>
+						{isPopupOpen && <VacanciePopup onClick={handleClose} />}
 					</form>
 				</div>
 			</section>
