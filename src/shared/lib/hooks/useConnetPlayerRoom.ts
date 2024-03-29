@@ -8,6 +8,7 @@ export const useConnectPlayer = (userRoom: any) => {
 	const [players, setPlayers] = useState<PlayerItem[]>(
 		JSON.parse(localStorage.getItem('players') || '[]')
 	)
+	const [isInGameRoom, setIsInGameRoom] = useState(false)
 
 	const updatePlayers = (newPlayers: PlayerItem[]) => {
 		setPlayers(newPlayers)
@@ -19,12 +20,13 @@ export const useConnectPlayer = (userRoom: any) => {
 		try {
 			console.log(`player ${userId} is joining ${roomId} room`)
 			const response = await axios.post(
-				`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`
+				`http://localhost:4000/api/rooms/${roomId}/users/${userId}/add`
 			)
 
 			socket.emit('joinRoom', { roomId: roomId, userId: userId }, () => {
 				console.log('joining room here')
 			})
+			setIsInGameRoom(true)
 		} catch (error) {
 			console.error('Error with connecting to the room')
 		}
@@ -34,6 +36,7 @@ export const useConnectPlayer = (userRoom: any) => {
 		try {
 			await axios.post(`http://localhost:4000/api/rooms/${roomId}/users/${userId}/add`)
 			socket.emit('leaveRoom', { roomId, userId })
+			setIsInGameRoom(false)
 		} catch (error) {
 			console.error('Error with leaving the room')
 		}
@@ -74,5 +77,5 @@ export const useConnectPlayer = (userRoom: any) => {
 		}
 	}, [socket])
 
-	return { players, joinRoom, leaveRoom }
+	return { players, joinRoom, leaveRoom, isInGameRoom }
 }
