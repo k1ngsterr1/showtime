@@ -6,11 +6,15 @@ interface VideoProps {
 	number: string
 	name: string
 	id: string
+	cameraPlayerNumber: string
+	type?: string
+	videoType: 'default' | 'showman'
 }
 
-export const VideoCams: React.FC<VideoProps> = ({ number, name }) => {
+export const VideoCams: React.FC<VideoProps> = ({ number, name, videoType }) => {
 	const [stream, setStream] = useState(null)
 	const userVideoRef = useRef()
+	const videoClass = `${styles.button} ${styles[videoType]}`
 
 	useEffect(() => {
 		navigator.mediaDevices
@@ -34,7 +38,7 @@ export const VideoCams: React.FC<VideoProps> = ({ number, name }) => {
 		}
 	}, [])
 	return (
-		<div className={styles.video}>
+		<div className={`${styles.video} ${videoClass}`}>
 			<video ref={userVideoRef} autoPlay playsInline muted />
 			<div className={styles.video__container}>
 				<span className={styles.video__number}>{number}</span>

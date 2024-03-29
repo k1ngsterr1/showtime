@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react'
 
 type Player = {
-	id: string | number
+	cameraPlayerNumber: string | number
 }
 
 const initializeCameraStates = (players: Player[]) => {
 	return players.reduce(
 		(states, player) => {
-			states[player.id] = false
+			states[player.cameraPlayerNumber] = false
+			return states
+		},
+		{} as Record<string | number, boolean>
+	)
+}
+const initializeMicrophoneStates = (players: Player[]) => {
+	return players.reduce(
+		(states, player) => {
+			states[player.cameraPlayerNumber] = true
 			return states
 		},
 		{} as Record<string | number, boolean>
@@ -18,22 +27,28 @@ export const useCameraStates = (players: Player[]) => {
 	const [cameraStates, setCameraStates] = useState<Record<string | number, boolean>>(() =>
 		initializeCameraStates(players)
 	)
+	const [microphoneStates, setMicrophoneStates] = useState<Record<string | number, boolean>>(() =>
+		initializeMicrophoneStates(players)
+	)
 
-	const toggleCamera = (playerId: string | number) => {
-		setCameraStates((prevStates) => {
-			const newState = {
-				...prevStates,
-				[playerId]: !prevStates[playerId]
-			}
-			console.log(`Camera state for player ${playerId}: ${newState[playerId]}`)
-			return newState
-		})
+	const toggleCamera = (playerNumber: string | number) => {
+		setCameraStates((prevStates) => ({
+			...prevStates,
+			[playerNumber]: !prevStates[playerNumber]
+		}))
+	}
+
+	const toggleMicrophone = (playerNumber: string | number) => {
+		setMicrophoneStates((prevStates) => ({
+			...prevStates,
+			[playerNumber]: !prevStates[playerNumber]
+		}))
 	}
 
 	useEffect(() => {
-		console.log('Initializing camera states for players')
 		setCameraStates(initializeCameraStates(players))
+		setMicrophoneStates(initializeMicrophoneStates(players))
 	}, [players])
 
-	return { cameraStates, toggleCamera }
+	return { cameraStates, toggleCamera, microphoneStates, toggleMicrophone }
 }

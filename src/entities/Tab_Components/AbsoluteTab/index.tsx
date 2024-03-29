@@ -20,28 +20,29 @@ const ControlPanel = ({ toggleCamera }) => {
 	const {
 		toggleReady,
 		toggleButton,
-		toggleMicrophone,
+		toggleMicrophoneBtn,
 		buttonClass,
 		buttonClassMicro,
 		buttonClassReady
 	} = useAbsoluteTab()
 
-	const { cameraStates } = useCameraStates(players)
+	const { cameraStates, toggleMicrophone } = useCameraStates(players)
 
 	return (
 		<div className={styles.controlPanel}>
 			<button
 				onClick={() => {
 					toggleButton()
-					toggleCamera()
+					toggleCamera(1)
 				}}
 			>
 				<FontAwesomeIcon icon={faVideo} className={buttonClass} />
-				{cameraStates[players.id]}
+				{cameraStates[players.cameraPlayerNumber]}
 				<span>Видео</span>
 			</button>
 			<button
 				onClick={() => {
+					toggleMicrophoneBtn()
 					toggleMicrophone()
 				}}
 			>
