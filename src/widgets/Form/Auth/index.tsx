@@ -23,7 +23,7 @@ export const Auth = () => {
 			<section className={styles.registration}>
 				<div className={styles.registration__content}>
 					<div className={styles.registration__logo}></div>
-					<h2 className={styles.registration__heading}>Пройдите аутнетификацию</h2>
+					<h2 className={styles.registration__heading}>Пройдите аутентификацию</h2>
 					<p className={styles.registration__paragraph}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 						incididunt ut labore et dolore magna aliqua.
@@ -43,15 +43,15 @@ export const Auth = () => {
 								/>
 							</label>
 						)}
+						<ReactButton
+							buttonType="filled"
+							text="Отправить"
+							type="submit"
+							onClick={handleClick}
+							margin="mt-8"
+						/>
+						{isPopupOpen && <BiometryPopup onClick={handleClose} />}
 					</div>
-					<ReactButton
-						buttonType="filled"
-						text="Отправить"
-						type="submit"
-						onClick={handleClick}
-						margin="mt-8"
-					/>
-					{isPopupOpen && <BiometryPopup onClick={handleClose} />}
 				</div>
 			</section>
 		</div>

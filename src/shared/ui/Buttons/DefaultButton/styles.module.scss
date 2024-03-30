@@ -10,6 +10,20 @@
 	cursor: none;
 }
 
+.kebab {
+	width: 100px;
+	height: 40px;
+	background-color: transparent;
+	@apply font-neoregular;
+	@apply text-base;
+	cursor: none;
+	transition: 0.3s all;
+
+	&:hover {
+		@apply text-primary-red;
+	}
+}
+
 .filled {
 	@extend .button;
 	@apply text-primary-light;
