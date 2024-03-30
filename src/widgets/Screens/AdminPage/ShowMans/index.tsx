@@ -33,7 +33,7 @@ export const ShowMans = () => {
 						<PhotoUploadComponent />
 						<div className={styles.client__main__functional__buttons}>
 							<AddButton buttonType="filled" text="Добавить" />
-							<LinkButton buttonType="filled" href="showmanslist" text="Смотреть все" />
+							<LinkButton buttonType="filled" href="showmans-list" text="Смотреть все" />
 						</div>
 					</div>
 				</div>

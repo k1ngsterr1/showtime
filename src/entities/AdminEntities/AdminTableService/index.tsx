@@ -2,18 +2,22 @@ import React from 'react'
 import { useState } from 'react'
 import ButtonMore from '@shared/ui/Buttons/DefaultReactButton/index'
 import { DetailsPopup } from '@features/Popup_Components/OrdersDetailsPopup/index'
-import { services } from '@shared/lib/content/orderContent'
 
 import styles from './styles.module.scss'
 
-interface Props {
+interface Service {
 	id: string
 	service: string
 	price: string
 	product: string
 	date: string
 }
-export const AdminTableService: React.FC<Props> = () => {
+
+interface Props {
+	services: Service[]
+}
+
+export const AdminTableService: React.FC<Props> = ({ services }) => {
 	const [isPopupOpen, setPopupOpen] = useState(false)
 
 	const handleClick = () => {

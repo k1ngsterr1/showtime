@@ -38,7 +38,12 @@ export const Schedule = () => {
 							price="Цена"
 						/>
 						<AddButton buttonType="filled" text="Добавить" margin="mt-12" />
-						<LinkButton buttonType="filled" href="schedulelist" text="Смотреть все" margin="mt-6" />
+						<LinkButton
+							buttonType="filled"
+							href="schedule-list"
+							text="Смотреть все"
+							margin="mt-6"
+						/>
 					</div>
 				</div>
 			</div>
