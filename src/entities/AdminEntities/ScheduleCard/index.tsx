@@ -27,7 +27,13 @@ export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time, price 
 						<Input type="text" inputType="default-red-small" placeholder={time} />
 					</span>
 				</div>
-				<Input inputType="default-red-big" type="text" placeholder={name} margin="mt-12" />
+				<Input
+					inputType="default-red-big"
+					type="text"
+					placeholder={name}
+					margin="mt-12"
+					marginLeft="4"
+				/>
 				<TextArea textareaType="schedule" placeholder={address} margin="mt-8" />
 				<div className={styles.card__down}>
 					<div className=" mb-2 flex items-center overflow-hidden text-2xl">

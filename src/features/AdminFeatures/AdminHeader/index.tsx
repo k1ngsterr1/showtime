@@ -1,4 +1,4 @@
-import AdminUserTab from '@entities/AdminEntities/AdminUserTab/index'
+import AdminHeaderUserTab from '@entities/AdminEntities/AdminHeaderUserTab/index'
 
 import styles from './styles.module.scss'
 
@@ -13,7 +13,7 @@ const AdminHeader: React.FC<HeaderProps> = ({ name, position, photo }) => {
 		<div className={styles.header}>
 			<span className={styles.header__subheading}>Панель администратора</span>
 			<div className={styles.header__usertab}>
-				<AdminUserTab name={name} position={position} photo={photo} />
+				<AdminHeaderUserTab name={name} position={position} photo={photo} />
 			</div>
 		</div>
 	)

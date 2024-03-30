@@ -2,6 +2,7 @@ import styles from './styles.module.scss'
 import React from 'react'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+	marginLeft?: string // New property for marginLeft
 	margin?: string
 	inputType:
 		| string
@@ -25,8 +26,16 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 	type: string
 }
 
-export const Input: React.FC<InputProps> = ({ margin, inputType, placeholder, type, ...rest }) => {
-	const inputClass = `${styles.input} ${styles[`input--${inputType}`]} ${margin ? margin : ''}`
+export const Input: React.FC<InputProps> = ({
+	marginLeft,
+	margin,
+	inputType,
+	placeholder,
+	type,
+	...rest
+}) => {
+	// Constructing className dynamically to include marginLeft
+	const inputClass = `${styles.input} ${styles[`input--${inputType}`]} ${margin ? margin : ''} ${marginLeft ? `ml-${marginLeft}` : ''}`
 
 	return <input className={inputClass} type={type} placeholder={placeholder} required {...rest} />
 }
