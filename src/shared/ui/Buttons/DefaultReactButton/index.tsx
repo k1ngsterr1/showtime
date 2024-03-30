@@ -8,6 +8,7 @@ interface ButtonProps {
 	margin?: string
 	type?: string
 	onClick?: () => void
+	href?: string
 }
 
 const ReactButton: React.FC<ButtonProps> = ({ buttonType, text, margin, onClick }) => {

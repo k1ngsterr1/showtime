@@ -11,7 +11,6 @@ interface ICardProps {
 	time: string
 	name: string
 	address: string
-	href: string
 	price: string
 }
 

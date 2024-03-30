@@ -1,0 +1,16 @@
+---
+import { Auth } from '@widgets/Form/Auth/index'
+import { Cursor } from '@shared/ui/Cursor'
+import { Loader } from '@shared/ui/Loader/index'
+
+import Layout from '../layouts/Layout.astro'
+
+import '@shared/styles/global.scss'
+import '../pages/styles/registration/styles.scss'
+---
+
+<Layout title="Аутентификация">
+	<Cursor client:load />
+	<Loader client:load />
+	<Auth client:load />
+</Layout>
