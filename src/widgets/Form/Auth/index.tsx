@@ -1,16 +1,22 @@
-import PasswordInput from '@shared/ui/Inputs/PasswordInput/index'
-import { Input } from '@shared/ui/Inputs/DefaultInput'
-import { createAccount } from '@shared/lib/hooks/useCreateAccount'
 import { useState } from 'react'
-import { ErrorTab } from '@shared/ui/ErrorTab'
 import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import Fedora from '@assets/logo/fedora.svg'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
+import { BiometryPopup } from '@features/Popup_Components/BiometryPopup'
 
 import styles from '../styles/styles.module.scss'
 
 export const Auth = () => {
+	const [isPopupOpen, setPopupOpen] = useState(false)
 	const { previewUrl, handleFileChange } = useFileUpload()
+
+	const handleClick = () => {
+		setPopupOpen(true)
+	}
+
+	const handleClose = () => {
+		setPopupOpen(false)
+	}
 
 	return (
 		<div>
@@ -38,7 +44,14 @@ export const Auth = () => {
 							</label>
 						)}
 					</div>
-					<ReactButton buttonType="filled" text="Отправить" type="submit" margin="mt-8" />
+					<ReactButton
+						buttonType="filled"
+						text="Отправить"
+						type="submit"
+						onClick={handleClick}
+						margin="mt-8"
+					/>
+					{isPopupOpen && <BiometryPopup onClick={handleClose} />}
 				</div>
 			</section>
 		</div>
