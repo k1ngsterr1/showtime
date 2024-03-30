@@ -8,24 +8,39 @@ import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
 import styles from './styles.module.scss'
 
 const VideoRoom = () => {
-	const { cameraStates, toggleCamera } = useCameraStates(players)
+	const { cameraStates, toggleCamera, microphoneStates, toggleMicrophone } =
+		useCameraStates(players)
 
 	return (
 		<>
 			<div className={styles.videoRoom}>
 				<div className={styles.webcam_grid}>
 					{players.map((player, index) => (
-						<div key={player.id} className={player.role == 'showman' ? styles.showman : ''}>
-							{cameraStates[index] ? (
-								<VideoCams name={player.name} number={player.number} isShowman={player.isShowman} />
+						<div
+							key={player.id}
+							className={`${styles.webcam} ${player.cameraPlayerNumber === 6 ? styles.showman : ''}`}
+						>
+							{cameraStates[player.cameraPlayerNumber] ? (
+								<VideoCams
+									cameraPlayerNumber={player.cameraPlayerNumber}
+									number={player.number}
+									isShowman={player.cameraPlayerNumber === 6}
+									videoType={player.cameraPlayerNumber === 6 ? 'showman' : 'default'}
+								/>
 							) : (
-								<div className={styles.loader}>Loading...</div>
+								<div className={styles.loader}>
+									{player.cameraPlayerNumber === 6 ? (
+										<div className={styles.loader__showman}>Loading kakashki...</div>
+									) : (
+										<div>Loading...</div>
+									)}
+								</div>
 							)}
 						</div>
 					))}
 				</div>
 
-				<AbsoluteTab toggleCamera={toggleCamera} />
+				<AbsoluteTab toggleCamera={toggleCamera} toggleMicrophone={toggleMicrophone} />
 			</div>
 		</>
 	)
