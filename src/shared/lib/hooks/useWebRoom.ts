@@ -50,5 +50,21 @@ export const useCameraStates = (players: Player[]) => {
 		setMicrophoneStates(initializeMicrophoneStates(players))
 	}, [players])
 
-	return { cameraStates, toggleCamera, microphoneStates, toggleMicrophone }
+	const [menuInfo, setMenuInfo] = useState({ isVisible: false, cameraNumber: null })
+
+	const handleCameraClick = (cameraNumber: any) => {
+		if (cameraStates[6]) {
+			setMenuInfo({ isVisible: true, cameraNumber })
+		}
+	}
+
+	return {
+		cameraStates,
+		toggleCamera,
+		microphoneStates,
+		toggleMicrophone,
+		handleCameraClick,
+		menuInfo,
+		setMenuInfo
+	}
 }

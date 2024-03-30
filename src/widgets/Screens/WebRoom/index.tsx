@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import AbsoluteTab from '@entities/Tab_Components/AbsoluteTab'
-import { MenuButton } from '@shared/ui/Icons/MenuButton'
+import React, { useState, useEffect } from 'react'
+import { ControlPanel } from '../SelectedTab/index'
 import { VideoCams } from '@shared/ui/VideoCams/index'
 import { players } from '@shared/lib/content/webCamContent'
 import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
@@ -8,8 +7,26 @@ import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
 import styles from './styles.module.scss'
 
 const VideoRoom = () => {
-	const { cameraStates, toggleCamera, microphoneStates, toggleMicrophone } =
+	const { cameraStates, toggleCamera, toggleMicrophone, menuInfo, setMenuInfo } =
 		useCameraStates(players)
+	const [tabType, setTabType] = useState<string>('')
+
+	useEffect(() => {
+		console.log(`Showman active: ${cameraStates[6]}`)
+		const showmanIsActive = cameraStates[6]
+		if (showmanIsActive) {
+			setTabType('showman')
+		} else {
+			setTabType('default')
+		}
+	}, [cameraStates])
+
+	const handleCameraClick = (cameraNumber: any) => {
+		console.log(`Camera ${cameraNumber} clicked`)
+		if (cameraStates[6]) {
+			setMenuInfo({ isVisible: true, cameraNumber })
+		}
+	}
 
 	return (
 		<>
@@ -26,6 +43,7 @@ const VideoRoom = () => {
 									number={player.number}
 									isShowman={player.cameraPlayerNumber === 6}
 									videoType={player.cameraPlayerNumber === 6 ? 'showman' : 'default'}
+									onCameraClick={handleCameraClick}
 								/>
 							) : (
 								<div className={styles.loader}>
@@ -39,8 +57,12 @@ const VideoRoom = () => {
 						</div>
 					))}
 				</div>
-
-				<AbsoluteTab toggleCamera={toggleCamera} toggleMicrophone={toggleMicrophone} />
+				{menuInfo.isVisible && <div className={styles.menu}>agioparegoiaerpoig</div>}
+				<ControlPanel
+					tabType={tabType}
+					toggleCamera={toggleCamera}
+					toggleMicrophone={toggleMicrophone}
+				/>
 			</div>
 		</>
 	)
