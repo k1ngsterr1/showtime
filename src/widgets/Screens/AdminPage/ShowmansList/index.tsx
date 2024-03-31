@@ -25,6 +25,7 @@ export const ShowmansList = () => {
 									name={showman.name}
 									position={showman.position}
 								/>
+								<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
 								<Buttons buttonType="filled" text="Удалить" margin="mt-4" />
 							</div>
 						))}

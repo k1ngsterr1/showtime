@@ -4,6 +4,7 @@ import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
+import { NewsArticleCard } from '@features/AdminFeatures/AdminNewsArticles'
 
 import '@shared/styles/global.scss'
 
@@ -28,10 +29,16 @@ export const Articles = () => {
 							margin="mt-2"
 						/>
 					</div>
-					<div className={styles.client__main__functional__showmans}>
+					<div className={styles.client__main__functional__news}>
+						<NewsArticleCard />
 						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Подтвердить" margin="mt-4" />
-							<LinkButton buttonType="filled" href="productslist" text="Отклонить" margin="mt-4" />
+							<AddButton buttonType="filled" text="Добавить" margin="mt-3" />
+							<LinkButton
+								buttonType="filled"
+								href="articles-list"
+								text="Смотреть все"
+								margin="mt-3"
+							/>
 						</div>
 					</div>
 				</div>

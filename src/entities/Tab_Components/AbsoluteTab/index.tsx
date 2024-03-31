@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useAbsoluteTab } from '@shared/lib/hooks/useAbsoluteTab'
+import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
+import { players } from '@shared/lib/content/webCamContent'
+
 import {
 	faVideo,
 	faMicrophone,
@@ -9,42 +13,39 @@ import {
 	faEllipsisH,
 	faCog
 } from '@fortawesome/free-solid-svg-icons'
+
 import styles from './ControlPanel.module.scss'
 
 const ControlPanel = ({ toggleCamera }) => {
+	const {
+		toggleReady,
+		toggleButton,
+		toggleMicrophoneBtn,
+		buttonClass,
+		buttonClassMicro,
+		buttonClassReady
+	} = useAbsoluteTab()
 
-	const [isActive, setIsActive] = useState(false);
-	const [isActiveMicro, setIsActiveMicro] = useState(false);
-	const [isActiveReady, setIsActiveReady] = useState(false);
+	const { cameraStates, toggleMicrophone } = useCameraStates(players)
 
-	const toggleReady = () => {
-		setIsActiveReady(!isActiveReady);
-	};
-
-	const toggleButton = () => {
-		setIsActive(!isActive);
-	};
-
-	const toggleMicrophone = () => {
-		setIsActiveMicro(!isActiveMicro);
-	};
-
-	const buttonClass = isActive ? styles.videoButtonActive : styles.videoButton;
-	const buttonClassMicro = isActiveMicro ? styles.videoButtonActive : styles.videoButton;
-	const buttonClassReady = isActiveReady ? styles.videoButtonActive : styles.videoButton;
 	return (
 		<div className={styles.controlPanel}>
-			<button onClick={() => {
-				toggleButton();
-				toggleCamera();
-			}}>
+			<button
+				onClick={() => {
+					toggleButton()
+					toggleCamera(1)
+				}}
+			>
 				<FontAwesomeIcon icon={faVideo} className={buttonClass} />
+				{cameraStates[players.cameraPlayerNumber]}
 				<span>Видео</span>
 			</button>
-
-			<button onClick={() => {
-				toggleMicrophone();
-			}}>
+			<button
+				onClick={() => {
+					toggleMicrophoneBtn()
+					toggleMicrophone()
+				}}
+			>
 				<FontAwesomeIcon icon={faMicrophone} className={buttonClassMicro} />
 				<span>Микрофон</span>
 			</button>
@@ -52,9 +53,11 @@ const ControlPanel = ({ toggleCamera }) => {
 				<FontAwesomeIcon icon={faRedo} className="transition-all hover:text-primary-red" />
 				<span>Перезапустить камеру</span>
 			</button>
-			<button onClick={() => {
-				toggleReady();
-			}}>
+			<button
+				onClick={() => {
+					toggleReady()
+				}}
+			>
 				<FontAwesomeIcon icon={faCheck} className={buttonClassReady} />
 				<span>Готов</span>
 			</button>

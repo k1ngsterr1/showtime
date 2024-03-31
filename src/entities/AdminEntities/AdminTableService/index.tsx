@@ -2,17 +2,22 @@ import React from 'react'
 import { useState } from 'react'
 import ButtonMore from '@shared/ui/Buttons/DefaultReactButton/index'
 import { DetailsPopup } from '@features/Popup_Components/OrdersDetailsPopup/index'
-import { services } from '@shared/lib/content/orderContent'
 
 import styles from './styles.module.scss'
 
-interface Props {
+interface Service {
 	id: string
 	service: string
 	price: string
-	time: string
+	product: string
+	date: string
 }
-export const AdminTableService: React.FC<Props> = () => {
+
+interface Props {
+	services: Service[]
+}
+
+export const AdminTableService: React.FC<Props> = ({ services }) => {
 	const [isPopupOpen, setPopupOpen] = useState(false)
 
 	const handleClick = () => {
@@ -28,9 +33,10 @@ export const AdminTableService: React.FC<Props> = () => {
 			<thead className={styles.table__header}>
 				<tr className={styles.table__header_row}>
 					<th className={styles.table__header__item}>ID</th>
-					<th className={styles.table__header__item}>Услуга </th>
+					<th className={styles.table__header__item}>Услуга</th>
 					<th className={styles.table__header__item}>Цена</th>
-					<th className={styles.table__header__item}>Оплата</th>
+					<th className={styles.table__header__item}>Товар</th>
+					<th className={styles.table__header__item}>Дата</th>
 				</tr>
 			</thead>
 			<tbody className={styles.table__content}>
@@ -39,8 +45,9 @@ export const AdminTableService: React.FC<Props> = () => {
 						<td className={styles.table__content_item}>{service.id}</td>
 						<td className={styles.table__content_item}>{service.service}</td>
 						<td className={styles.table__content_item}>{service.price}</td>
+						<td className={styles.table__content_item}>{service.product}</td>
 						<td className={styles.table__content_item}>
-							{service.time}
+							{service.date}
 							<div className={styles.table__content_buttons}>
 								<ButtonMore buttonType="filled-small" text="Подробнее" onClick={handleClick} />
 								{isPopupOpen && <DetailsPopup onClick={handleClose} />}

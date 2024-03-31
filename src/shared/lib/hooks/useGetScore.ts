@@ -12,7 +12,6 @@ export const useGetScore = () => {
 				if (!userData) return
 
 				const response = await axios.get(`https://showtime.up.railway.app/api/score/${userData.id}`)
-
 				console.log('response from fetchScoreData:', response.data.score)
 
 				setScoreData(response.data.score)

@@ -4,14 +4,16 @@ import { YourGameTab } from '@entities/Tab_Components/YourGameTab'
 import { useGetRooms } from '@shared/lib/hooks/useGetRooms'
 import { useCheckUserRoom } from '@shared/lib/hooks/useCheckUserRoom'
 import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
+import { socket } from '@shared/lib/socket/socketService'
 
 import styles from './styles.module.scss'
+import { players } from '@shared/lib/content/playersContent'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
-	const { joinRoom } = useConnectPlayer()
 	const { rooms, userRoom } = useGetRooms(userData.id)
-	const { roomData } = useCheckUserRoom(userData.id)
+	const { joinRoom, players } = useConnectPlayer(userRoom)
+	// const { roomData } = useCheckUserRoom(userData.id)
 
 	console.log('userRoom looks like this:', userRoom)
 
@@ -28,7 +30,7 @@ export const LobbiesBoard = () => {
 						gameName={userRoom.roomName}
 						key={userRoom.id}
 						userId={userData.id}
-						players={userRoom.users}
+						players={players}
 					/>
 				)}
 				{rooms

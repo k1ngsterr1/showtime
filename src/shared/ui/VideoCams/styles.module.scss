@@ -28,3 +28,16 @@
 		@apply font-killbill;
 	}
 }
+
+.default {
+	@extend .video;
+	width: clamp(210px, 21.8736vw, 840px);
+	height: clamp(157.5px, 16.4052vw, 630px);
+}
+
+.showman {
+	@extend .video;
+	width: clamp(350px, 36.456vw, 1400px);
+	height: clamp(157.5px, 16.4052vw, 630px);
+	@apply ml-14;
+}

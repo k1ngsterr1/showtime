@@ -12,6 +12,45 @@
 	@apply font-neo;
 }
 
+.input--teamposition {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-lg;
+	text-transform: uppercase;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
+.input--teamposition::placeholder {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-lg;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
+.input--teamname {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-2xl;
+	font-weight: 500;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
+.input--teamname::placeholder {
+	@apply font-katana;
+	@apply text-primary-light;
+	@apply text-2xl;
+	font-weight: 500;
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+}
+
 .input--neo-medium {
 	@apply font-neomedium;
 	@apply text-primary-red;
@@ -98,6 +137,24 @@
 	@apply font-neoregular;
 }
 
+.input--services-red-big {
+	font-size: clamp(24px, 2.49984vw, 96px);
+	width: clamp(175px, 18.228vw, 700px);
+	height: clamp(27.5px, 2.8644000000000003vw, 110px);
+	text-align: left;
+	background-color: transparent;
+	outline: none;
+	@apply text-primary-red;
+	@apply font-katana;
+}
+
+.input--services-red-big::placeholder {
+	font-size: clamp(24px, 2.49984vw, 96px);
+	text-align: left;
+	@apply text-primary-red;
+	@apply font-katana;
+}
+
 .input--default-red-big {
 	font-size: clamp(24px, 2.49984vw, 96px);
 	width: clamp(175px, 18.228vw, 700px);
@@ -105,7 +162,6 @@
 	text-align: left;
 	background-color: transparent;
 	outline: none;
-	@apply pl-4;
 	@apply text-primary-red;
 	@apply font-katana;
 }

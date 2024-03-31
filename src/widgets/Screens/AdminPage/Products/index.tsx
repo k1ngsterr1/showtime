@@ -35,7 +35,7 @@ export const Products = () => {
 							<AddButton buttonType="filled" text="Добавить" margin="mt-4" />
 							<LinkButton
 								buttonType="filled"
-								href="productslist"
+								href="products-list"
 								text="Смотреть все"
 								margin="mt-4"
 							/>

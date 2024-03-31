@@ -1,14 +1,33 @@
 .textarea--vacancie {
 	font-size: clamp(9px, 0.93744vw, 36px);
-	width: 100%;
-	height: clamp(27.5px, 2.8644000000000003vw, 110px);
+	width: 350px;
+	height: 100px;
 	text-align: left;
 	background-color: transparent;
 	overflow: hidden;
 	outline: none;
 	color: #232323;
-	@apply pl-4;
 	@apply font-neoregular;
+}
+
+.textarea--services {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	line-height: 27.04px;
+	@apply font-neolight;
+	overflow: hidden;
+	width: 350px;
+	height: 180px;
+	@apply text-primary-dark;
+	background-color: transparent;
+	outline: none;
+}
+
+.textarea--services::placeholder {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	@apply font-neolight;
+	@apply text-primary-dark;
 }
 
 .textarea--vacancie::placeholder {
@@ -38,8 +57,8 @@
 	line-height: 27.04px;
 	@apply font-neolight;
 	overflow: hidden;
-	width: 307px;
-	height: 146px;
+	width: 280px;
+	height: 160px;
 	@apply text-primary-dark;
 	background-color: transparent;
 	outline: none;

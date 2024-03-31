@@ -18,10 +18,10 @@ import styles from './styles/services/styles.module.scss'
 	<Cursor client:load />
 	<Loader client:load />
 	<Menu client:load />
-	<main class={styles.main}>
+	<main class={styles.main} id="services">
 		<Header client:load />
 		<ServicesScreen />
 	</main>
 	<Form client:visible />
-	<Footer />
+	<Footer to="services" />
 </Layout>

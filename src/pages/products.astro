@@ -16,10 +16,10 @@ import styles from '@pages/styles/Products/styles.module.scss'
 	<Cursor client:load />
 	<Loader client:load />
 	<Menu client:load />
-	<div class={styles.main}>
+	<div class={styles.main} id="products">
 		<Header client:load />
 		<ProductsPage />
 		<Form client:load />
-		<Footer />
+		<Footer to="products" />
 	</div>
 </Layout>

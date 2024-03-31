@@ -28,7 +28,8 @@ export const ScheduleList = () => {
 									date={scheduleItem.date}
 									price={scheduleItem.price}
 								/>
-								<Buttons buttonType="filled" text="Удалить" margin="mt-12" />
+								<Buttons buttonType="filled" text="Редактировать" margin="mt-12" />
+								<Buttons buttonType="filled" text="Удалить" margin="mt-4" />
 							</div>
 						))}
 					</div>

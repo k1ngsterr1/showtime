@@ -10,6 +10,20 @@
 	cursor: none;
 }
 
+.kebab {
+	width: 100px;
+	height: 40px;
+	background-color: transparent;
+	@apply font-neoregular;
+	@apply text-base;
+	cursor: none;
+	transition: 0.3s all;
+
+	&:hover {
+		@apply text-primary-red;
+	}
+}
+
 .filled {
 	@extend .button;
 	@apply text-primary-light;
@@ -35,6 +49,26 @@
 	border-radius: clamp(5px, 0.5208vw, 20px);
 	transition: all 0.3s ease;
 	@apply bg-primary-red;
+	&:hover {
+		background-color: #af1306;
+	}
+}
+
+.users {
+	@apply font-neoregular;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: clamp(100px, 10.416vw, 400px);
+	height: clamp(27.5px, 2.8644000000000003vw, 110px);
+	font-size: clamp(10px, 1.0416vw, 40px);
+	font-weight: 100;
+	cursor: none;
+	@apply text-primary-light;
+	border: none;
+	transition: all 0.3s ease;
+	@apply bg-primary-red;
+
 	&:hover {
 		background-color: #af1306;
 	}

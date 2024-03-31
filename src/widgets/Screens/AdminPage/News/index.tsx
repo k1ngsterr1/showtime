@@ -29,11 +29,11 @@ export const News = () => {
 							margin="mt-2"
 						/>
 					</div>
-					<div className={styles.client__main__functional__showmans}>
-						<NewsArticleCard time="hui" heading="hui" paragraph="hui" />
+					<div className={styles.client__main__functional__news}>
+						<NewsArticleCard />
 						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Подтвердить" margin="mt-4" />
-							<LinkButton buttonType="filled" href="productslist" text="Отклонить" margin="mt-4" />N
+							<AddButton buttonType="filled" text="Добавить" margin="mt-3" />
+							<LinkButton buttonType="filled" href="news-list" text="Смотреть все" margin="mt-3" />
 						</div>
 					</div>
 				</div>

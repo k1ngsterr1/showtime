@@ -17,7 +17,7 @@ export const ReviewCard: React.FC<ICardProps> = ({ name }) => {
 	return (
 		<>
 			<div className={styles.card}>
-				<CalendarComponent />
+				<CalendarComponent marginClass="mt-3" />
 				<div className={`${styles.card__client} mt-4`}>
 					<div className={styles.card__client_circle}>
 						<img src={Fedora.src} alt="Fedora" className={styles.card__client_fedora} />

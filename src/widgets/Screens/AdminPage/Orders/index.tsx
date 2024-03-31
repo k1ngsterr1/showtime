@@ -1,11 +1,11 @@
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
-import { ServiceTable } from '@features/AdminFeatures/AdminTable/index'
-import { services } from '@features/AdminFeatures/AdminTable/index'
+import { AdminTableService } from '@entities/AdminEntities/AdminTableService/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
-import '@shared/styles/global.scss'
+import { services } from '@shared/lib/content/orderContent'
 
 import styles from '../Team/styles.module.scss'
+import '@shared/styles/global.scss'
 
 import Oleg from '@assets/Admin/oleg.webp'
 
@@ -22,7 +22,7 @@ export const Orders = () => {
 						<h1 className={styles.client__main__functional__header_heading}>Заказы</h1>
 					</div>
 					<div className={styles.client__main__functional__orders}>
-						<ServiceTable services={services} />
+						<AdminTableService services={services} />
 					</div>
 				</div>
 			</div>

@@ -18,10 +18,10 @@ import styles from './styles/services/styles.module.scss'
 	<Loader client:load />
 	<Cursor client:load />
 	<Menu client:load />
-	<main class={styles.main}>
+	<main class={styles.main} id="rules">
 		<Header client:load />
 		<RulesPage />
 	</main>
 	<Form client:visible />
-	<Footer />
+	<Footer to="rules" />
 </Layout>

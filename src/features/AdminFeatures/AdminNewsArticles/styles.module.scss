@@ -1,4 +1,5 @@
 .card {
+	overflow: hidden;
 	width: clamp(190px, 19.7904vw, 760px);
 	height: clamp(250px, 26.04vw, 1000px);
 	@apply bg-primary-light text-primary-red;
@@ -8,9 +9,30 @@
 	background-repeat: no-repeat;
 	box-shadow: 16px 16px 0px 0px #bf2316;
 	margin: 0px 16px 16px;
-	&__img {
-		height: 120px;
-		width: 120px;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&__upload {
+			@apply gap-4;
+			width: 380px;
+			height: 244px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+			&_fedora {
+				width: 90px;
+			}
+		}
+		&__previewImage {
+			width: 400px;
+			height: 244px;
+		}
 	}
 }
 

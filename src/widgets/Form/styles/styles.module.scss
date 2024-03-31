@@ -1,3 +1,48 @@
+.file {
+	display: flex;
+	flex-direction: column;
+	@apply pl-4;
+	@apply mt-4;
+	justify-content: center;
+	@apply text-primary-light;
+	gap: 10px;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	width: clamp(175px, 18.228vw, 700px);
+	height: 100px;
+	text-align: left;
+	background-color: transparent;
+	border: 2px rgba(191, 35, 22, 0.65) solid;
+	overflow: hidden;
+}
+
+.container {
+	@apply mt-12;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__upload {
+		@apply gap-4;
+		border: 4px solid #bf2316;
+		width: 392px;
+		height: 361px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		&_fedora {
+			width: 150px;
+		}
+	}
+}
+
+.previewImage {
+	width: 392px;
+	height: 361px;
+}
+
 .registration {
 	width: 100%;
 	display: flex;
@@ -45,5 +90,23 @@
 		font-size: clamp(9px, 0.93744vw, 36px);
 		@apply text-primary-light;
 		@apply mt-4;
+	}
+
+	.upload {
+		@apply mt-4;
+		display: flex;
+		justify-content: center;
+		align-items: left;
+		font-size: clamp(9px, 0.93744vw, 36px);
+		width: clamp(175px, 18.228vw, 700px);
+		height: clamp(27.5px, 2.8644000000000003vw, 110px);
+		overflow: hidden;
+		border: 2px solid #bf2316;
+		text-align: left;
+	}
+
+	.card__content__previewImage {
+		width: clamp(40px, 4.1664vw, 160px);
+		height: clamp(40px, 4.1664vw, 160px);
 	}
 }

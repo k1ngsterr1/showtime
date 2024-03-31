@@ -95,7 +95,6 @@ export const RegistrationForm = () => {
 					<span className={styles.registration__mini_text}>
 						Уже есть аккаунт?{' '}
 						<a href="/login" className="text-primary-red">
-							{' '}
 							Войти
 						</a>
 						{loginError && <ErrorTab text={loginError} />}

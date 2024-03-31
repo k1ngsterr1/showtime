@@ -21,7 +21,7 @@ import '@shared/styles/scrollbar.scss'
 	<Loader client:load />
 	<Cursor client:load />
 	<Menu client:load />
-	<main class={styles.container} id="main">
+	<main class={styles.container} id="events">
 		<Header client:load />
 		<EventsPage />
 	</main>
@@ -29,5 +29,5 @@ import '@shared/styles/scrollbar.scss'
 	<ServiceEventBlock />
 	<Reviews />
 	<ShowForm />
-	<Footer />
+	<Footer to="events" />
 </Layout>

@@ -3,71 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { ProductCard } from '@entities/Card_Components/ProductsCard/index'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
+import { products } from '@shared/lib/content/ShopContents'
 
-import photo from '@assets/About/card_product.webp'
 
 import styles from './styles.module.scss'
 import 'swiper/css'
 import 'swiper/css/navigation'
-
-export const products = [
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Набор карт “Мафия”',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	}
-]
 
 interface SwiperProductsProps {
 	products: Array<{
@@ -99,8 +40,8 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
 				</div>
 			</div>
 			<Swiper
-				className="m-auto w-[86.6%]"
-				slidesPerView={3}
+				className="ml-16 w-[200%]"
+				slidesPerView={6}
 				spaceBetween={64}
 				onSwiper={(swiperInstance) => {
 					swiperRef.current = swiperInstance

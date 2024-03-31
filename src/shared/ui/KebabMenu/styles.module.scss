@@ -1,0 +1,29 @@
+.button_kebab {
+	position: absolute;
+	@apply p-3;
+	@apply top-1;
+	@apply right-1;
+	overflow: hidden;
+}
+
+.kebab_menu {
+	transition: 0.3s all;
+	@apply text-primary-red;
+
+	&:hover {
+		@apply text-primary-dark;
+	}
+}
+
+.kebab_opened {
+	@apply mt-2;
+	// position: absolute;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@apply right-4;
+	@apply rounded-md;
+	@apply shadow-md;
+	@apply bg-primary-light;
+}
