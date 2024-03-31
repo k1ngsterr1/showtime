@@ -6,10 +6,16 @@ import styles from '@widgets/Screens/WebRoom/styles.module.scss'
 interface IWebcamGrid {
 	players: any[]
 	cameraStates: any
+	onCameraContextMenu: any
 	handleCameraClick: (cameraNumber: string | number) => void
 }
 
-export const WebcamGrid: React.FC<IWebcamGrid> = ({ players, cameraStates, handleCameraClick }) => {
+export const WebcamGrid: React.FC<IWebcamGrid> = ({
+	players,
+	cameraStates,
+	handleCameraClick,
+	onCameraContextMenu
+}) => {
 	return (
 		<div className={styles.webcam_grid}>
 			{players.map((player) => (
@@ -23,6 +29,7 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({ players, cameraStates, handl
 							number={player.cameraPlayerNumber}
 							videoType={player.cameraPlayerNumber === 6 ? 'showman' : 'default'}
 							onCameraClick={() => handleCameraClick(player.cameraPlayerNumber)}
+							onContextMenu={(e: any) => onCameraContextMenu(e, player.cameraPlayerNumber)}
 						/>
 					) : (
 						<div className={styles.loader}>

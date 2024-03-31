@@ -24,24 +24,35 @@ const VideoRoom = () => {
 		setTabType(showmanIsActive ? 'showman' : 'default')
 	}, [cameraStates])
 
-	const handleContextMenu = (event) => {
+	const handleCameraContextMenu = (event, cameraPlayerNumber) => {
 		event.preventDefault()
+		const bounds = event.target.getBoundingClientRect()
+
 		setContextMenu({
 			isVisible: true,
-			xPos: event.pageX,
-			yPos: event.pageY
+			xPos: event.clientX - bounds.left,
+			yPos: event.clientY - bounds.top,
+			cameraPlayerNumber
 		})
 	}
+
 	const handleCloseMenu = () => {
 		setContextMenu({ ...contextMenu, isVisible: false })
 	}
 
 	return (
 		<>
-			<div className={styles.videoRoom} onContextMenu={handleContextMenu}>
+			<div className={styles.videoRoom} onContextMenu={handleCameraContextMenu}>
 				<TimeTable time="Ночь" />
 				<WebcamGrid players={players} cameraStates={cameraStates} />
-				{contextMenu.isVisible && <ContextMenu onMenuClose={handleCloseMenu} />}
+				{contextMenu.isVisible && (
+					<ContextMenu
+						xPos={contextMenu.xPos}
+						yPos={contextMenu.yPos}
+						onMenuClose={handleCloseMenu}
+						cameraPlayerNumber={contextMenu.cameraPlayerNumber}
+					/>
+				)}
 				<ControlPanel
 					tabType={tabType}
 					toggleCamera={toggleCamera}
