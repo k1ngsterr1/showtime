@@ -10,13 +10,15 @@ export function useGetRooms(userId: number) {
 	useEffect(() => {
 		let isMounted = true
 
-		console.log('use effect is fucking working')
-
 		const fetchRooms = async () => {
 			try {
 				const response = await axios.get('http://localhost:4000/api/rooms/get-rooms')
+
+				console.log(response)
+
 				if (isMounted) {
-					setRooms(response.data.rooms)
+					const filteredRooms = response.data.rooms.filter((room) => room.creatorId !== userData.id)
+					setRooms(filteredRooms)
 					const foundUserRoom = response.data.rooms.find((room) => room.creatorId === userId)
 					setUserRoom(foundUserRoom)
 					console.log('here is created room:', response.data)
