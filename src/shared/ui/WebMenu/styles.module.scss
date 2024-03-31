@@ -1,0 +1,16 @@
+.menu {
+	position: absolute;
+	@apply left-64;
+	@apply top-28;
+	@apply p-3;
+	display: flex;
+	flex-direction: column;
+	@apply bg-primary-dark;
+	&__items {
+		@apply text-primary-light;
+
+		&:hover {
+			@apply text-primary-red;
+		}
+	}
+}

@@ -6,7 +6,7 @@ import styles from '@widgets/Screens/WebRoom/styles.module.scss'
 interface IWebcamGrid {
 	players: any[]
 	cameraStates: any
-	handleCameraClick: () => void
+	handleCameraClick: (cameraNumber: string | number) => void
 }
 
 export const WebcamGrid: React.FC<IWebcamGrid> = ({ players, cameraStates, handleCameraClick }) => {
@@ -22,7 +22,7 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({ players, cameraStates, handl
 							cameraPlayerNumber={player.cameraPlayerNumber}
 							number={player.cameraPlayerNumber}
 							videoType={player.cameraPlayerNumber === 6 ? 'showman' : 'default'}
-							onCameraClick={handleCameraClick}
+							onCameraClick={() => handleCameraClick(player.cameraPlayerNumber)}
 						/>
 					) : (
 						<div className={styles.loader}>
