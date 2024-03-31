@@ -1,6 +1,7 @@
 ---
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import Marquees from '@shared/ui/Marquee/index.tsx'
+import MobMarquees from '@shared/ui/Marquee/mob'
 import Freedom from '@assets/Clients/freedom.svg'
 import styles from '../ClientsPage/styles.module.scss'
 
@@ -22,15 +23,17 @@ const photos = [Freedom, Freedom, Freedom]
 	<Marquees photos={photos} margin="mb-32" />
 </main>
 
-<main class={styles.client}>
+<!-- <main class={styles.client_mob}>
 	<div class={styles.client__content}>
 		<h1 class="mt-32 text-primary-red">Партнеры</h1>
-		<Paragraph
-			paragraphType="white"
-			width="23%"
-			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			margin="mt-8"
-		/>
+		<div class="flex items-center justify-center">
+			<Paragraph
+				paragraphType="white"
+				width="75%"
+				text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				margin="mt-4"
+			/>
+		</div>
 	</div>
-	<Marquees photos={photos} margin="mb-32" />
-</main>
+	<MobMarquees photos={photos} margin="mb-32" />
+</main> -->
