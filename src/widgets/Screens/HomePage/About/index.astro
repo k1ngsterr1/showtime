@@ -3,6 +3,7 @@ import NavigationButton from '@shared/ui/Buttons/NavigationButton/index.astro'
 import Separator from '@shared/ui/Separator/index.astro'
 import AboutCard from '@entities/Card_Components/AboutCard/index.astro'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
+import { cardData } from '@shared/lib/content/aboutContent'
 
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
@@ -14,7 +15,7 @@ import '@shared/styles/global.scss'
 			<div class="flex flex-col items-start">
 				<h2 class="text-primary-red">О нас</h2>
 				<Paragraph
-					text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
+					text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 					align="text-left"
 					width="40%"
 					margin="mt-4"
@@ -24,26 +25,16 @@ import '@shared/styles/global.scss'
 			<Separator textRight="Showtime" margin="mt-8" />
 		</div>
 		<div class="mt-16 flex items-center justify-evenly gap-10">
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
+			{
+				cardData.map((card, index) => (
+					<AboutCard
+						key={index}
+						bigText={card.bigText}
+						cardType={card.cardType}
+						paragraph={card.paragraph}
+					/>
+				))
+			}
 		</div>
 		<NavigationButton
 			text="Подробнее"
@@ -60,7 +51,7 @@ import '@shared/styles/global.scss'
 			<div class="flex flex-col items-center">
 				<h2 class="text-primary-red">О нас</h2>
 				<Paragraph
-					text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
+					text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 					align="text-center"
 					width="80%"
 					margin="mt-4"
@@ -69,26 +60,16 @@ import '@shared/styles/global.scss'
 			</div>
 		</div>
 		<div class="mt-16 flex flex-col items-center gap-10">
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
-			<AboutCard
-				bigText="Lorem Ipsum"
-				cardType="dark"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  "
-			/>
+			{
+				cardData.map((card, index) => (
+					<AboutCard
+						key={index}
+						bigText={card.bigText}
+						cardType={card.cardType}
+						paragraph={card.paragraph}
+					/>
+				))
+			}
 		</div>
 		<NavigationButton
 			text="Подробнее"
