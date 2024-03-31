@@ -14,11 +14,8 @@ export function useGetRooms(userId: number) {
 			try {
 				const response = await axios.get('http://localhost:4000/api/rooms/get-rooms')
 
-				console.log(response)
-
 				if (isMounted) {
-					const filteredRooms = response.data.rooms.filter((room) => room.creatorId !== userData.id)
-					setRooms(filteredRooms)
+					setRooms(response.data.rooms)
 					const foundUserRoom = response.data.rooms.find((room) => room.creatorId === userId)
 					setUserRoom(foundUserRoom)
 					console.log('here is created room:', response.data)
@@ -39,13 +36,12 @@ export function useGetRooms(userId: number) {
 		})
 
 		socket.on('roomCreated', (newRoom) => {
-			console.log('ROOM CREATED!!!', newRoom.room)
 			if (newRoom.room.creatorId === userId) {
 				console.log('USER ROOM IS HERE', newRoom)
 				setUserRoom(newRoom.room)
 				console.log(userRoom)
 			} else {
-				setRooms((prevRooms) => [...prevRooms, newRoom])
+				setRooms((prevRooms) => [...prevRooms, newRoom.room])
 			}
 		})
 
