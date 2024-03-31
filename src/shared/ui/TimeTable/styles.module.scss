@@ -1,0 +1,31 @@
+.time_table {
+	width: clamp(175px, 18.228vw, 700px);
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	overflow-y: hidden;
+	border: 2px solid;
+	@apply bg-primary-dark;
+	@apply border-primary-red;
+	@apply top-16;
+	@apply p-4;
+	@apply rounded-md;
+
+	&__text {
+		overflow-y: hidden;
+		@apply text-primary-red;
+		@apply font-killbill;
+		@apply text-2xl;
+	}
+
+	&__time {
+		overflow-y: hidden;
+		@apply text-primary-light;
+		@apply font-killbill;
+		@apply text-4xl;
+	}
+}
