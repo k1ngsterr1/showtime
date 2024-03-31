@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useAbsoluteTab } from '@shared/lib/hooks/useAbsoluteTab'
 import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
 import { players } from '@shared/lib/content/webCamContent'
-
 import {
 	faVideo,
 	faMicrophone,
@@ -11,20 +10,28 @@ import {
 	faCheck,
 	faSignOutAlt,
 	faEllipsisH,
-	faCog
+	faCog,
+	faSun
 } from '@fortawesome/free-solid-svg-icons'
+import { ControlTabButton } from '@shared/ui/Buttons/ControlTabButton'
 
 import styles from '@entities/Tab_Components/AbsoluteTab/ControlPanel.module.scss'
 
 interface TabContentProps {
 	tabType: string
+	toggleCamera: any
+	toggleMicrophone: any
 }
 
 type ValuePiece = Date | null
 
 type Value = ValuePiece | [ValuePiece, ValuePiece]
 
-export const ControlPanel: React.FC<TabContentProps> = ({ tabType, toggleCamera }) => {
+export const ControlPanel: React.FC<TabContentProps> = ({
+	tabType,
+	toggleCamera,
+	toggleMicrophone
+}) => {
 	const {
 		toggleReady,
 		toggleButton,
@@ -34,123 +41,54 @@ export const ControlPanel: React.FC<TabContentProps> = ({ tabType, toggleCamera 
 		buttonClassReady
 	} = useAbsoluteTab()
 
-	const { cameraStates, toggleMicrophone } = useCameraStates(players)
+	const { cameraStates } = useCameraStates(players)
 
 	const renderContent = () => {
 		switch (tabType) {
 			default:
 				return (
-					<div>
-						<div className={styles.controlPanel}>
-							<button
-								onClick={() => {
-									toggleButton()
-									toggleCamera(1)
-								}}
-							>
-								<FontAwesomeIcon icon={faVideo} className={buttonClass} />
-								{cameraStates[players.cameraPlayerNumber]}
-								<span>Камера</span>
-							</button>
-							<button
-								onClick={() => {
-									toggleMicrophoneBtn()
-									toggleMicrophone()
-								}}
-							>
-								<FontAwesomeIcon icon={faMicrophone} className={buttonClassMicro} />
-								<span>Микрофон</span>
-							</button>
-							<input type="checkbox" id="toggle" className={styles.toggle__checkbox} />
-							<label for="toggle" className={styles.toggle__label}>
-								<span className={styles.toggle__label_background}></span>
-							</label>
-							<div className={styles.background}></div>
-
-							<button
-								onClick={() => {
-									toggleReady()
-								}}
-							>
-								<FontAwesomeIcon icon={faCheck} className={buttonClassReady} />
-								<span>Готов</span>
-							</button>
-							<button>
-								<FontAwesomeIcon
-									icon={faSignOutAlt}
-									className="transition-all hover:text-primary-red"
-								/>
-								<span>Выйти</span>
-							</button>
-							<button>
-								<FontAwesomeIcon
-									icon={faEllipsisH}
-									className="transition-all hover:text-primary-red"
-								/>
-								<span>Больше</span>
-							</button>
-							<button onClick={() => (window.location.href = '/')}>
-								<FontAwesomeIcon icon={faCog} className="transition-all hover:text-primary-red" />
-								<span>Настройки</span>
-							</button>
-						</div>
+					<div className={styles.controlPanel}>
+						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(1)} />
+						<ControlTabButton
+							text="Микрофон"
+							icon={faMicrophone}
+							onClick={() => toggleMicrophone(1)}
+						/>
+						<ControlTabButton
+							text="День / Ночь"
+							icon={faSun}
+							onClick={() => console.log('zhopa')}
+						/>
+						<ControlTabButton
+							text="Выйти"
+							icon={faSignOutAlt}
+							onClick={() => toggleMicrophone(1)}
+						/>
 					</div>
 				)
 			case 'showman':
 				return (
 					<div className={styles.controlPanel}>
-						<button
-							onClick={() => {
-								toggleButton()
-								toggleCamera(1)
-							}}
-						>
-							<FontAwesomeIcon icon={faVideo} className={buttonClass} />
-							{cameraStates[players.cameraPlayerNumber]}
-							<span>Видео</span>
-						</button>
-						<button
-							onClick={() => {
-								toggleMicrophoneBtn()
-								toggleMicrophone()
-							}}
-						>
-							<FontAwesomeIcon icon={faMicrophone} className={buttonClassMicro} />
-							<span>Микрофон</span>
-						</button>
-						<button>
-							<FontAwesomeIcon icon={faRedo} className="transition-all hover:text-primary-red" />
-							<span>Перезапустить камеру</span>
-						</button>
-						<button
-							onClick={() => {
-								toggleReady()
-							}}
-						>
-							<FontAwesomeIcon icon={faCheck} className={buttonClassReady} />
-							<span>Готов</span>
-						</button>
-						<button>
-							<FontAwesomeIcon
-								icon={faSignOutAlt}
-								className="transition-all hover:text-primary-red"
-							/>
-							<span>Выйти</span>
-						</button>
-						<button>
-							<FontAwesomeIcon
-								icon={faEllipsisH}
-								className="transition-all hover:text-primary-red"
-							/>
-							<span>Больше</span>
-						</button>
-						<button onClick={() => (window.location.href = '/')}>
-							<FontAwesomeIcon icon={faCog} className="transition-all hover:text-primary-red" />
-							<span>Настройки</span>
-						</button>
+						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(1)} />
+						<ControlTabButton
+							text="Микрофон"
+							icon={faMicrophone}
+							onClick={() => toggleMicrophone(1)}
+						/>
+						<ControlTabButton
+							text="День / Ночь"
+							icon={faSun}
+							onClick={() => console.log('zhopa')}
+						/>
+						<ControlTabButton
+							text="Выйти"
+							icon={faSignOutAlt}
+							onClick={() => toggleMicrophone(1)}
+						/>
 					</div>
 				)
 		}
 	}
+
 	return <>{renderContent()}</>
 }

@@ -44,6 +44,7 @@ export const VideoCams: React.FC<VideoProps> = ({
 			}
 		}
 	}, [])
+
 	return (
 		<div
 			className={`${styles.video} ${videoClass}`}
