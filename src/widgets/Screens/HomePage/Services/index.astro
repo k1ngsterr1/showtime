@@ -3,10 +3,7 @@ import Separator from '@shared/ui/Separator/index.astro'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import ServiceCard from '@entities/Card_Components/ServiceCard/index.astro'
 import Button from '@shared/ui/Buttons/NavigationButton/index.astro'
-
-import man_01 from '@assets/Main/man_01.png'
-import man_02 from '@assets/Main/man_02.png'
-import man_03 from '@assets/Main/man_03.png'
+import { cardsData } from '@shared/lib/content/servicesMainContent'
 
 import styles from './styles.module.scss'
 
@@ -22,30 +19,22 @@ import '@shared/styles/global.scss'
 					paragraphType="red"
 					width="42%"
 					margin="mt-4"
-					text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+					text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				/>
 			</div>
 			<Separator textLeft="showtime" />
 		</div>
 		<div class="mt-16 flex justify-evenly gap-8 overflow-hidden">
-			<ServiceCard
-				image={man_01.src}
-				number="01"
-				heading="Городская мафия"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
-			<ServiceCard
-				image={man_02.src}
-				number="02"
-				heading="Классическая мафия"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
-			<ServiceCard
-				image={man_03.src}
-				number="01"
-				heading="Бункер мафия"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
+			{
+				cardsData.map((card) => (
+					<ServiceCard
+						image={card.image}
+						number={card.number}
+						heading={card.heading}
+						paragraph={card.paragraph}
+					/>
+				))
+			}
 		</div>
 		<Button text="Подробнее" href="/services" margin="m-auto mt-8" buttonType="transparent" />
 	</div>
@@ -61,29 +50,21 @@ import '@shared/styles/global.scss'
 					width="75%"
 					margin="mt-4"
 					align="text-center"
-					text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+					text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				/>
 			</div>
 		</div>
 		<div class="mt-16 flex flex-col items-center gap-12 overflow-hidden">
-			<ServiceCard
-				image={man_01.src}
-				number="01"
-				heading="Городская мафия"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
-			<ServiceCard
-				image={man_02.src}
-				number="01"
-				heading="Классическая мафия"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
-			<ServiceCard
-				image={man_03.src}
-				number="01"
-				heading="Бункер мафия"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
+			{
+				cardsData.map((card) => (
+					<ServiceCard
+						image={card.image}
+						number={card.number}
+						heading={card.heading}
+						paragraph={card.paragraph}
+					/>
+				))
+			}
 		</div>
 		<Button text="Подробнее" href="#" margin="m-auto mt-8" buttonType="transparent" />
 	</div>
