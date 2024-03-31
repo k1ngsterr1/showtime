@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { Input } from '@shared/ui/Inputs/DefaultInput'
-import { TextArea } from '@shared/ui/TexrArea/index'
-import useChangePicture from '@shared/lib/hooks/useChangePicture'
+import { TextArea } from '@shared/ui/TexrArea' // Ensure correct import path
+import { useChangePicture } from '@shared/lib/hooks/useChangePicture'
 
 interface Props {
 	number: string
@@ -11,13 +11,14 @@ interface Props {
 
 export const ServiceCard: React.FC<Props> = ({ number, cardType }) => {
 	const serviceClass = `${styles.service_card} ${cardType ? styles[cardType] : ''}`
-	const { selectedImage } = useChangePicture()
+	// const { selectedImage } = useChangePicture()
 
 	return (
 		<div className={serviceClass}>
 			<div className="space-between flex flex-col p-8">
 				<div className="flex w-full items-center justify-between">
-					<img src={selectedImage} alt="Image" className={styles.service_card__icon} />
+					{/* Now selectedImage is a string URL */}
+					{/* <img src={selectedImage} alt="Service Icon" className={styles.service_card__icon} /> */}
 					<span className={styles.service_card__number}>{number}</span>
 				</div>
 				<Input

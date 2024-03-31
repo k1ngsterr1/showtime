@@ -2,7 +2,7 @@
 import { Cursor } from '@shared/ui/Cursor'
 import { Loader } from '@shared/ui/Loader/index'
 import Layout from '../../layouts/Layout.astro'
-import {Services} from  '@widgets/Screens/AdminPage/Services/index'
+import { Services } from '@widgets/Screens/AdminPage/Services/index'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -13,6 +13,6 @@ import styles from '../styles/History/styles.module.scss'
 <Layout title="Услуги">
 	<Cursor client:load />
 	<main class={styles.main}>
-		<Services client:load/>
+		<Services client:load />
 	</main>
 </Layout>

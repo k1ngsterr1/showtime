@@ -40,6 +40,7 @@ export const Auth = () => {
 									type="file"
 									style={{ display: 'none' }}
 									onChange={handleFileChange}
+									required
 								/>
 							</label>
 						)}
@@ -49,6 +50,7 @@ export const Auth = () => {
 							type="submit"
 							onClick={handleClick}
 							margin="mt-8"
+							disabled={!previewUrl}
 						/>
 						{isPopupOpen && <BiometryPopup onClick={handleClose} />}
 					</div>

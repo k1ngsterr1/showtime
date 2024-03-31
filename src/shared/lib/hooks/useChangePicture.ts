@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { images } from '@shared/lib/content/servicesContent'
 
-const useChangePicture = (initialIndex = 0) => {
-	const [index, setIndex] = useState(initialIndex)
-	const changePicture = (newIndex) => {
-		setIndex(newIndex % images.length)
+export function useChangePicture(servicesLength = 9) {
+	for (let i = 0; i <= 2; i++) {
+		for (let j = i; j < servicesLength; j += 3) {
+			if (i == 0) {
+				images[0]
+			}
+		}
 	}
-
-	return { selectedImage: images[index], changePicture }
 }
-
-export default useChangePicture

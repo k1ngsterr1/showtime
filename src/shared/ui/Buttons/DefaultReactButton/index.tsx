@@ -9,13 +9,14 @@ interface ButtonProps {
 	type?: string
 	onClick?: () => void
 	href?: string
+	disabled?: boolean
 }
 
-const ReactButton: React.FC<ButtonProps> = ({ buttonType, text, margin, onClick }) => {
+const ReactButton: React.FC<ButtonProps> = ({ buttonType, text, margin, onClick, disabled }) => {
 	const buttonClass = `${styles.button} ${styles[buttonType]} ${margin ? margin : ''}`
 
 	return (
-		<button className={buttonClass} onClick={onClick}>
+		<button className={buttonClass} onClick={onClick} disabled={disabled}>
 			{text}
 		</button>
 	)

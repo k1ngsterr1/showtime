@@ -28,7 +28,7 @@ export const Services = () => {
 						/>
 					</div>
 					<div className={styles.client__main__functional__services}>
-						<ServiceCard number="01" imageIndex={1} />
+						<ServiceCard number="01" />
 					</div>
 				</div>
 			</div>
