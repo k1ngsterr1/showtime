@@ -42,7 +42,7 @@ export async function createRoom(roomData: ICreateGameProps, userId: number) {
 			}
 		}
 	} catch (error: any) {
-		console.error('Failde to create room:', error.response ? error.response.data : error)
+		console.error('Failed to create room:', error.response ? error.response.data : error)
 		return null
 	}
 }

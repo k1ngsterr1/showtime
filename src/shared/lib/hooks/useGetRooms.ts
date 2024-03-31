@@ -19,7 +19,7 @@ export function useGetRooms(userId: number) {
 					setRooms(response.data.rooms)
 					const foundUserRoom = response.data.rooms.find((room) => room.creatorId === userId)
 					setUserRoom(foundUserRoom)
-					console.log(response.data.rooms)
+					console.log('here is created room:', response.data)
 				}
 			} catch (error) {
 				console.error('There was an error fetching the rooms:', error)
@@ -30,6 +30,10 @@ export function useGetRooms(userId: number) {
 
 		socket.on('connect', () => {
 			console.log('Connected to socket server')
+		})
+
+		socket.on('connect_error', () => {
+			console.log('there was an error with socket connection')
 		})
 
 		socket.on('roomCreated', (newRoom) => {

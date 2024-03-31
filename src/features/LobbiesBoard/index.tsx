@@ -15,6 +15,8 @@ export const LobbiesBoard = () => {
 	const { joinRoom, players } = useConnectPlayer(userRoom)
 	// const { roomData } = useCheckUserRoom(userData.id)
 
+	console.log('userRoom looks like this:', userRoom)
+
 	return (
 		<section className={styles.lobbies}>
 			<div className={styles.lobbies__upper_line}>
