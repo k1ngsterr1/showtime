@@ -27,6 +27,7 @@ export const useCameraStates = (players: Player[]) => {
 	const [cameraStates, setCameraStates] = useState<Record<string | number, boolean>>(() =>
 		initializeCameraStates(players)
 	)
+
 	const [microphoneStates, setMicrophoneStates] = useState<Record<string | number, boolean>>(() =>
 		initializeMicrophoneStates(players)
 	)

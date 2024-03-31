@@ -13,9 +13,7 @@ export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const { joinRoom, players } = useConnectPlayer(userRoom)
-	// const { roomData } = useCheckUserRoom(userData.id)
-
-	console.log('userRoom looks like this:', userRoom)
+	// const { roomData } = oom(userData.id)
 
 	return (
 		<section className={styles.lobbies}>
