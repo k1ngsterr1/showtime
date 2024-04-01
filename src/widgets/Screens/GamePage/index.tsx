@@ -8,6 +8,7 @@ import { ErrorScreen } from '../Error'
 import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 
 import photo from '@assets/logo/fedora.svg'
+
 import styles from './styles.module.scss'
 
 export const GameScreen = () => {

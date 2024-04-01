@@ -34,7 +34,6 @@ export const Input: React.FC<InputProps> = ({
 	type,
 	...rest
 }) => {
-	// Constructing className dynamically to include marginLeft
 	const inputClass = `${styles.input} ${styles[`input--${inputType}`]} ${margin ? margin : ''} ${marginLeft ? `ml-${marginLeft}` : ''}`
 
 	return <input className={inputClass} type={type} placeholder={placeholder} required {...rest} />
