@@ -20,7 +20,7 @@ export const useConnectPlayer = (userRoom: any) => {
 		try {
 			console.log(`player ${userId} is joining ${roomId} room`)
 			const response = await axios.post(
-				`http://localhost:4000/api/rooms/${roomId}/users/${userId}/add`
+				`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`
 			)
 
 			socket.emit('joinRoom', { roomId: roomId, userId: userId }, () => {

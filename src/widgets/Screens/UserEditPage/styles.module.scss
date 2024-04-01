@@ -1,0 +1,51 @@
+body {
+	@apply bg-primary-dark;
+}
+
+.user_edit {
+	width: 86.6%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+
+	&__heading {
+		@apply text-primary-red;
+		@apply text-6xl;
+		@apply mt-12;
+	}
+
+	&__icon {
+		width: clamp(40px, 4.1664vw, 160px);
+		height: clamp(40px, 4.1664vw, 160px);
+		@apply mt-8;
+	}
+
+	&__avatar_input,
+	&__avatar {
+		width: clamp(70px, 7.2912vw, 280px);
+		height: clamp(70px, 7.2912vw, 280px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 4px solid;
+		transition: 0.3s all;
+		@apply mt-8;
+		@apply border-primary-red;
+		@apply rounded-full;
+
+		&__icon {
+			transition: 0.3s all;
+			@apply text-5xl;
+			@apply text-primary-red;
+		}
+
+		&:hover &__icon {
+			@apply text-primary-light;
+		}
+
+		&:hover {
+			@apply border-primary-light;
+		}
+	}
+}

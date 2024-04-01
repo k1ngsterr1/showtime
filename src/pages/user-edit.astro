@@ -7,12 +7,13 @@ import { Menu } from '@features/Menu/index'
 import { UserEditScreen } from '@widgets/Screens/UserEditPage/index'
 
 import '@shared/styles/global.scss'
+import { Header } from '@features/Header'
 ---
 
 <Layout title="Страница пользователя">
 	<Cursor client:load />
 	<Loader client:load />
-	<Shop client:load />
 	<Menu client:load />
+	<Header client:load />
 	<UserEditScreen client:load />
 </Layout>

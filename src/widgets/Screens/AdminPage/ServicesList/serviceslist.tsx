@@ -1,4 +1,4 @@
-import { Card } from '@entities/AdminEntities/ServicesCard/card'
+import Card from '@entities/AdminEntities/ServicesCard/card'
 import { services } from '@shared/lib/content/servicesListContent'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 

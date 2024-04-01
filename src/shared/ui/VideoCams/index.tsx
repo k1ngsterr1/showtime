@@ -9,6 +9,7 @@ interface VideoProps {
 	cameraPlayerNumber: string
 	type?: string
 	videoType: 'default' | 'showman'
+	onContextMenu: any
 	onCameraClick: (cameraPlayerNumber: string) => void
 }
 
@@ -16,6 +17,7 @@ export const VideoCams: React.FC<VideoProps> = ({
 	cameraPlayerNumber,
 	number,
 	name,
+	onContextMenu,
 	videoType,
 	onCameraClick
 }) => {
@@ -48,6 +50,7 @@ export const VideoCams: React.FC<VideoProps> = ({
 	return (
 		<div
 			className={`${styles.video} ${videoClass}`}
+			onContextMenu={onContextMenu}
 			onClick={() => onCameraClick(cameraPlayerNumber)}
 		>
 			<video ref={userVideoRef} autoPlay playsInline muted />
