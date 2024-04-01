@@ -8,20 +8,20 @@
 	&__upload {
 		@apply gap-4;
 		border: 4px solid #bf2316;
-		width: 392px;
-		height: 361px;
+		width: clamp(196px, 20.41536vw, 784px);
+		height: clamp(180.5px, 18.80088vw, 722px);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 
 		&_fedora {
-			width: 150px;
+			width: clamp(75px, 7.812vw, 300px);
 		}
 	}
 }
 
 .previewImage {
-	width: 392px;
-	height: 361px;
+	width: clamp(196px, 20.41536vw, 784px);
+	height: clamp(180.5px, 18.80088vw, 722px);
 }

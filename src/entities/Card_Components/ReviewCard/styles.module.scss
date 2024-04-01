@@ -11,8 +11,8 @@
 		overflow: hidden;
 		@apply ml-1.5;
 		@apply mt-4;
-		width: 309px;
-		height: 147px;
+		width: clamp(154.5px, 16.09272vw, 618px);
+		height: clamp(73.5px, 7.65576vw, 294px);
 		border: 2px solid #bf2316;
 	}
 }
@@ -25,7 +25,7 @@
 }
 
 .stars {
-	font-size: 24px;
+	font-size: clamp(12px, 1.24992vw, 48px);
 }
 
 @media (min-width: 375px) and (max-width: 600px) {

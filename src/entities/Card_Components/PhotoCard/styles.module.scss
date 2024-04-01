@@ -9,8 +9,8 @@
 	box-shadow: 16px 16px 0px 0px #bf2316;
 	margin: 0px 16px 16px;
 	&__img {
-		height: 120px;
-		width: 120px;
+		height: clamp(60px, 6.2496vw, 240px);
+		width: clamp(60px, 6.2496vw, 240px);
 	}
 }
 

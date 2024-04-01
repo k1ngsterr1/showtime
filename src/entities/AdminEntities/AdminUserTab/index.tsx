@@ -28,7 +28,9 @@ const AdminUserTab: React.FC<UserTab> = ({
 	return (
 		<>
 			<div className={userTabClass}>
-				<KebabMenu />
+				<div className="">
+					<KebabMenu />
+				</div>
 				<div className={userPhotoClass}>
 					<img src={photo.src} alt="photo" />
 				</div>

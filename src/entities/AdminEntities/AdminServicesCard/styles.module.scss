@@ -1,6 +1,6 @@
 .card {
-	width: 518px;
-	height: 497px;
+	width: clamp(259px, 26.97744vw, 1036px);
+	height: clamp(248.5px, 25.883760000000002vw, 994px);
 	@apply bg-primary-light text-primary-red;
 	background-position: center center;
 	background-repeat: no-repeat;

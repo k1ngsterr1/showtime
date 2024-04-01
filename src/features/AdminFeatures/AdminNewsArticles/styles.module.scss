@@ -18,20 +18,20 @@
 
 		&__upload {
 			@apply gap-4;
-			width: 380px;
-			height: 244px;
+			width: clamp(190px, 19.7904vw, 760px);
+			height: clamp(122px, 12.70752vw, 488px);
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
 
 			&_fedora {
-				width: 90px;
+				width: clamp(45px, 4.6872vw, 180px);
 			}
 		}
 		&__previewImage {
-			width: 400px;
-			height: 244px;
+			width: clamp(200px, 20.832vw, 800px);
+			height: clamp(122px, 12.70752vw, 488px);
 		}
 	}
 }
