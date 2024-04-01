@@ -48,7 +48,7 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 			default:
 				return (
 					<div className={styles.controlPanel}>
-						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(1)} />
+						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(3)} />
 						<ControlTabButton
 							text="Микрофон"
 							icon={faMicrophone}
