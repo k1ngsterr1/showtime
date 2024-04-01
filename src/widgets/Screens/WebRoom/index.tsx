@@ -53,7 +53,7 @@ const VideoRoom = () => {
 						cameraPlayerNumber={contextMenu.cameraPlayerNumber}
 					/>
 				)}
-				<ControslPanel
+				<ControlPanel
 					tabType={tabType}
 					toggleCamera={toggleCamera}
 					toggleMicrophone={toggleMicrophone}
