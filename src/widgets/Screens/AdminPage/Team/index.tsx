@@ -36,7 +36,7 @@ export const Team = () => {
 							Управление сотрудниками
 						</h1>
 						<AddButton buttonType="filled" text="Добавить" onClick={handleClick} />
-						{isPopupOpen && <AddPopup onClick={handleClose} />}
+						{isPopupOpen && <AddPopup onClick={handleClose} popupState />}
 					</div>
 					<div className={styles.client__main__functional__teammates}>
 						<AdminTeam users={users} />

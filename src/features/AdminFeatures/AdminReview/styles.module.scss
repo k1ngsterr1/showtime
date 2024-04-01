@@ -18,14 +18,14 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 52px;
-			height: 52px;
+			width: clamp(26px, 2.70816vw, 104px);
+			height: clamp(26px, 2.70816vw, 104px);
 			border: 2px solid #bf2316;
 			border-radius: 50%;
 		}
 
 		&_fedora {
-			width: 27.4px;
+			width: clamp(13.7px, 1.426992vw, 54.8px);
 		}
 	}
 
@@ -33,8 +33,8 @@
 		overflow: hidden;
 		@apply ml-1;
 		@apply mt-4;
-		width: 309px;
-		height: 147px;
+		width: clamp(154.5px, 16.09272vw, 618px);
+		height: clamp(73.5px, 7.65576vw, 294px);
 		border: 2px solid #bf2316;
 	}
 

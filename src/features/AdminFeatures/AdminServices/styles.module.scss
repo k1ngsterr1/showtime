@@ -14,7 +14,6 @@
 	}
 
 	&__price {
-		// position: absolute;
 		font-size: clamp(16px, 1.66656vw, 64px);
 		@apply mt-12;
 		@apply font-katana;

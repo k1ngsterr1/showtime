@@ -2,7 +2,7 @@
 	width: 100%;
 	border-collapse: collapse;
 	text-align: left;
-	font-size: 24px;
+	font-size: clamp(12px, 1.24992vw, 48px);
 }
 
 .table__header {
