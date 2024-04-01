@@ -10,13 +10,7 @@ import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import PasswordInputProp from '@shared/ui/Inputs/PasswordInput'
 
-interface IUserEditScreen {
-	userPhoto: ImageMetadata
-	name: string
-	email: string
-}
-
-export const UserEditScreen: React.FC<IUserEditScreen> = () => {
+export const UserEditScreen = () => {
 	const { previewUrl, handleFileChange } = useFileUpload()
 
 	return (

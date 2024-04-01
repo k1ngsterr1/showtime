@@ -1,4 +1,4 @@
-ximport React, { useState } from 'react'
+import React, { useState } from 'react'
 import { Input } from '@shared/ui/Inputs/DefaultInput'
 import { Selector } from '@shared/ui/Selector'
 import { format } from 'date-fns'
