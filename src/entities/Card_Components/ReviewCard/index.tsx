@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from './styles.module.scss'
 import RounderHat from '@shared/ui/Icons/RounderHat'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+
+import styles from './styles.module.scss'
 export interface Props {
 	paragraph: string
 	time: string

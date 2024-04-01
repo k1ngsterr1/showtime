@@ -32,3 +32,56 @@
 		width: 86.6%;
 	}
 }
+
+.mans_mob {
+	display: none;
+}
+
+.container_mob {
+	display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.mans {
+		display: none;
+	}
+
+	.mans_mob {
+		display: flex;
+		height: auto;
+		@apply bg-primary-dark;
+		&__items {
+			width: 90%;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			@apply pt-12;
+		}
+		&__slider {
+			@apply mt-16;
+		}
+	}
+
+	.container {
+		display: none;
+	}
+
+	.container_mob {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin: auto;
+		&__items {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__heading {
+			@apply text-primary-red;
+			width: 80%;
+			text-align: center;
+			@apply mt-16;
+			line-height: clamp(35px, 16.354799999999997vw, 140px);
+		}
+	}
+}

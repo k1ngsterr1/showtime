@@ -36,8 +36,8 @@ export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
 				</div>
 			</div>
 			<Swiper
-				className="contacts__con__swiper"
-				slidesPerView={4}
+				className={styles.swiper}
+				slidesPerView={6}
 				spaceBetween={38}
 				onSwiper={(swiperInstance) => {
 					swiperRef.current = swiperInstance

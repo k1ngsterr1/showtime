@@ -1,7 +1,7 @@
 ---
 import Paragraph from '../../../shared/ui/Paragraph/index.astro'
 
-import {ShowMansSwiper} from '@features/Swiper_Components/ShowMansSwiper/index'
+import { ShowMansSwiper } from '@features/Swiper_Components/ShowMansSwiper/index'
 import { showmans } from '@features/Swiper_Components/ShowMansSwiper/index'
 
 import '@shared/styles/global.scss'
@@ -19,6 +19,22 @@ import styles from './styles.module.scss'
 			margin="mt-16"
 		/>
 		<div class={styles.client__content__history_cards}>
+			<ShowMansSwiper showmans={showmans} client:load />
+		</div>
+	</div>
+</main>
+
+<main class={styles.mans_mob}>
+	<div class={styles.mans_mob__items}>
+		<h1 class="m-auto text-primary-red">Ведущие</h1>
+		<Paragraph
+			paragraphType="white"
+			align="text-center"
+			width="75%"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			margin="m-auto pt-8"
+		/>
+		<div class={styles.mans_mob__slider}>
 			<ShowMansSwiper showmans={showmans} client:load />
 		</div>
 	</div>

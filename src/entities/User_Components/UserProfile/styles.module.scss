@@ -32,10 +32,9 @@
 @media (min-width: 375px) and (max-width: 600px) {
 	.user_profile {
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		width: 35%;
-		align-items: center;
+		flex-direction: column;
+		width: 70%;
+		align-items: flex-start;
 		@apply mt-8;
 	}
 }

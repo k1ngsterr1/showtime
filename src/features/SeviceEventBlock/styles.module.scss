@@ -46,4 +46,8 @@
 		background-size: cover;
 		@apply bg-primary-light pb-12;
 	}
+	.heading {
+		text-align: center;
+		@apply text-primary-red;
+	}
 }

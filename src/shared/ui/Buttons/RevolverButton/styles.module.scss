@@ -27,3 +27,10 @@
 .gallery--right {
 	transform: scale(-1, 1);
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.button {
+		width: clamp(22.5px, 10.5138vw, 90px);
+		height: clamp(22.5px, 10.5138vw, 90px);
+	}
+}

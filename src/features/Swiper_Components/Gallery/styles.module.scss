@@ -29,3 +29,15 @@
 	display: flex;
 	align-items: center;
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.container {
+		width: clamp(175px, 81.774vw, 700px);
+		height: clamp(150px, 70.092vw, 600px);
+	}
+
+	.gallery_nav {
+		left: clamp(5px, 2.3364vw, 20px);
+		top: clamp(65px, 30.373199999999997vw, 260px);
+	}
+}

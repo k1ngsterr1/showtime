@@ -7,9 +7,9 @@ export const ShowForm = () => {
 		<>
 			<section className={styles.form} id="contacts_mob">
 				<div className={styles.form__ontainer}>
-					<h6 className="m-auto text-primary-red">Заказать Ведущего</h6>
+					<h6 className={styles.form__heading}>Заказать Ведущего</h6>
 				</div>
-				<div className="flex">
+				<div className={styles.form__items}>
 					<FormContent gameType="show" />
 					<Map />
 				</div>

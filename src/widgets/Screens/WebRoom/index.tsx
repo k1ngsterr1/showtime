@@ -6,15 +6,9 @@ import { WebcamGrid } from '@features/WebcamGrid'
 import { TimeTable } from '@shared/ui/TimeTable'
 
 import styles from './styles.module.scss'
-import ContextMenu from '@shared/ui/WebMenu/index'
 
 const VideoRoom = () => {
 	const { cameraStates, toggleCamera, toggleMicrophone } = useCameraStates(players)
-	const [contextMenu, setContextMenu] = useState({
-		isVisible: false,
-		xPos: 0,
-		yPos: 0
-	})
 
 	const [tabType, setTabType] = useState<string>('')
 
@@ -24,35 +18,11 @@ const VideoRoom = () => {
 		setTabType(showmanIsActive ? 'showman' : 'default')
 	}, [cameraStates])
 
-	const handleCameraContextMenu = (event, cameraPlayerNumber) => {
-		event.preventDefault()
-		const bounds = event.target.getBoundingClientRect()
-
-		setContextMenu({
-			isVisible: true,
-			xPos: event.clientX - bounds.left,
-			yPos: event.clientY - bounds.top,
-			cameraPlayerNumber
-		})
-	}
-
-	const handleCloseMenu = () => {
-		setContextMenu({ ...contextMenu, isVisible: false })
-	}
-
 	return (
 		<>
-			<div className={styles.videoRoom} onContextMenu={handleCameraContextMenu}>
+			<div className={styles.videoRoom}>
 				<TimeTable time="Ночь" />
 				<WebcamGrid players={players} cameraStates={cameraStates} />
-				{contextMenu.isVisible && (
-					<ContextMenu
-						xPos={contextMenu.xPos}
-						yPos={contextMenu.yPos}
-						onMenuClose={handleCloseMenu}
-						cameraPlayerNumber={contextMenu.cameraPlayerNumber}
-					/>
-				)}
 				<ControlPanel
 					tabType={tabType}
 					toggleCamera={toggleCamera}
