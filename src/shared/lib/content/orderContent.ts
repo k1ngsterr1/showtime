@@ -4,27 +4,31 @@ export const services = [
 		service: 'Услуга 1',
 		price: '100',
 		product: 'Продукт',
-		date: '24 февраля'
+		date: '24 февраля',
+		text: 'Ferlo'
 	},
 	{
-		id: '1',
+		id: '2',
 		service: 'Услуга 1',
 		price: '100',
 		product: 'Продукт',
-		date: '24 февраля'
+		date: '24 февраля',
+		text: 'Flech'
 	},
 	{
-		id: '1',
+		id: '3',
 		service: 'Услуга 1',
 		price: '100',
 		product: 'Продукт',
-		date: '24 февраля'
+		date: '24 февраля',
+		text: 'Baidarka'
 	},
 	{
-		id: '1',
-		service: 'Услуга 1',
+		id: '4',
+		service: 'Услуга ',
 		price: '100',
 		product: 'Продукт',
-		date: '24 февраля'
+		date: '24 февраля',
+		text: 'GayDaddySlave'
 	}
 ]

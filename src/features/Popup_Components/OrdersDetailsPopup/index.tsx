@@ -1,4 +1,4 @@
-import React, { type SyntheticEvent } from 'react'
+import React, { useEffect, type SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import Paragraph from '@shared/ui/ParagraphReact'
@@ -11,12 +11,16 @@ interface ICreateGamePopupProps {
 	text: string
 }
 
-export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState }) => {
+export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState, text }) => {
 	const handleOverlayClick = (e: SyntheticEvent) => {
 		if (e.target === e.currentTarget) {
 			onClick()
 		}
 	}
+
+	// useEffect(() => {
+	// 	console.log(text)
+	// })
 
 	return (
 		<div className={styles.overlay} onClick={handleOverlayClick}>
@@ -25,7 +29,8 @@ export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupSt
 					<h1 className={styles.popup__heading}>Подробнее</h1>
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
-				<Paragraph margin="mt-12" paragraphType="red" text="husland" />
+				<p className={styles.red}>{text}</p>
+				{/* <Paragraph margin="mt-12" paragraphType="red" text={text} /> */}
 			</section>
 		</div>
 	)

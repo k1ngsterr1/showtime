@@ -11,6 +11,14 @@
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+.red {
+	@apply mt-12;
+	@apply text-primary-red;
+	@apply font-neoregular;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	font-weight: 400;
+	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+}
 .popup {
 	position: absolute;
 	z-index: 10;

@@ -11,6 +11,7 @@ interface Service {
 	price: string
 	product: string
 	date: string
+	text: string
 }
 
 interface Props {
@@ -50,7 +51,9 @@ export const AdminTableService: React.FC<Props> = ({ services }) => {
 							{service.date}
 							<div className={styles.table__content_buttons}>
 								<ButtonMore buttonType="filled-small" text="Подробнее" onClick={handleClick} />
-								{isPopupOpen && <DetailsPopup onClick={handleClose} />}
+								{isPopupOpen && (
+									<DetailsPopup onClick={handleClose} text={service.text} popupState />
+								)}
 								<ButtonMore buttonType="filled-small" text="Удалить" />
 							</div>
 						</td>
