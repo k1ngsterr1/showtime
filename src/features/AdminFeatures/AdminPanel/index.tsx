@@ -81,7 +81,7 @@ export const adminpanel = [
 	{
 		icon: faSignOutAlt,
 		tab: 'Выйти',
-		href: 'logout'
+		href: '/'
 	}
 ]
 

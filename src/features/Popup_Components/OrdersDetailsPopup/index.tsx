@@ -2,16 +2,25 @@ import React, { useEffect, type SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import Paragraph from '@shared/ui/ParagraphReact'
+import { services } from '@shared/lib/content/orderContent'
 
 import styles from '../CreateGamePopup/styles.module.scss'
+
+interface IService {
+	text: string
+}
 
 interface ICreateGamePopupProps {
 	onClick: () => void
 	popupState: boolean
-	text: string
+	services: IService[]
 }
 
-export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState, text }) => {
+export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({
+	onClick,
+	popupState,
+	services
+}) => {
 	const handleOverlayClick = (e: SyntheticEvent) => {
 		if (e.target === e.currentTarget) {
 			onClick()
@@ -29,8 +38,9 @@ export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupSt
 					<h1 className={styles.popup__heading}>Подробнее</h1>
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
-				<p className={styles.red}>{text}</p>
-				{/* <Paragraph margin="mt-12" paragraphType="red" text={text} /> */}
+				{services.map((service, index) => (
+					<Paragraph key={index} margin="mt-12" paragraphType="red" text={service.text} />
+				))}
 			</section>
 		</div>
 	)

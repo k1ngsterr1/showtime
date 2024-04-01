@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import ButtonMore from '@shared/ui/Buttons/DefaultReactButton/index'
 import { DetailsPopup } from '@features/Popup_Components/OrdersDetailsPopup/index'
 
@@ -20,12 +19,15 @@ interface Props {
 
 export const AdminTableService: React.FC<Props> = ({ services }) => {
 	const [isPopupOpen, setPopupOpen] = useState(false)
+	const [selectedService, setSelectedService] = useState<Service | null>(null)
 
-	const handleClick = () => {
+	const handleClick = (service: Service) => {
+		setSelectedService(service)
 		setPopupOpen(true)
 	}
 
 	const handleClose = () => {
+		setSelectedService(null)
 		setPopupOpen(false)
 	}
 
@@ -50,16 +52,20 @@ export const AdminTableService: React.FC<Props> = ({ services }) => {
 						<td className={styles.table__content_item}>
 							{service.date}
 							<div className={styles.table__content_buttons}>
-								<ButtonMore buttonType="filled-small" text="Подробнее" onClick={handleClick} />
-								{isPopupOpen && (
-									<DetailsPopup onClick={handleClose} text={service.text} popupState />
-								)}
+								<ButtonMore
+									buttonType="filled-small"
+									text="Подробнее"
+									onClick={() => handleClick(service)}
+								/>
 								<ButtonMore buttonType="filled-small" text="Удалить" />
 							</div>
 						</td>
 					</tr>
 				))}
 			</tbody>
+			{isPopupOpen && selectedService && (
+				<DetailsPopup onClick={handleClose} popupState services={[selectedService]} />
+			)}
 		</table>
 	)
 }

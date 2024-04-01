@@ -23,8 +23,20 @@ const PhotoUploadComponent: React.FC = () => {
 					/>
 				</label>
 			)}
-			<Input inputType="default-red-big" type="text" placeholder="Имя сотрудника" margin="mt-4" />
-			<Input inputType="default-white" type="text" placeholder="Подпись" margin="mt-2" />
+			<Input
+				inputType="default-red-big"
+				type="text"
+				placeholder="Имя сотрудника"
+				margin="mt-4"
+				textAlign="center"
+			/>
+			<Input
+				inputType="default-white"
+				type="text"
+				placeholder="Подпись"
+				margin="mt-2"
+				textAlign="center"
+			/>
 		</div>
 	)
 }
