@@ -1,7 +1,7 @@
 ---
 import Paragraph from '@shared/ui/Paragraph/index.astro'
-import License from '@assets/Licenses/licensem.webp'
-import { RatingTab } from '@entities/Tab_Components/RatingTab/index'
+import RatingTab from '@entities/Tab_Components/RatingTab/index'
+import { rating } from '@shared/lib/content/ratingContent'
 
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
@@ -17,7 +17,7 @@ import '@shared/styles/global.scss'
 			margin="mt-16"
 		/>
 		<div class={styles.client__content_tournaments}>
-			<RatingTab />
+			<RatingTab rating={rating} />
 		</div>
 	</div>
 </main>
@@ -32,6 +32,8 @@ import '@shared/styles/global.scss'
 			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 			margin="m-auto pt-8"
 		/>
-		<div class={styles.client_mob__content_licenses}></div>
+		<div class={styles.client__content_tournaments}>
+			<RatingTab rating={rating} />
+		</div>
 	</div>
 </main>

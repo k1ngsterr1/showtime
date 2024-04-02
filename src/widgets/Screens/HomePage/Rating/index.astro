@@ -1,7 +1,8 @@
 ---
 import Paragraph from '@shared/ui/Paragraph/index.astro'
-import { RatingTab } from '@entities/Tab_Components/RatingTab/index'
+import RatingTab from '@entities/Tab_Components/RatingTab/index'
 import DefaultButton from '@shared/ui/Buttons/LinkReactButton/index'
+import { rating } from '@shared/lib/content/ratingContent'
 
 import '@shared/styles/global.scss'
 import styles from './styles.module.scss'
@@ -15,7 +16,7 @@ import styles from './styles.module.scss'
 		paragraphType="white"
 		width="25%"
 	/>
-	<RatingTab />
+	<RatingTab rating={rating} />
 	<DefaultButton
 		buttonType="filled"
 		text="Подробнее"
@@ -33,5 +34,5 @@ import styles from './styles.module.scss'
 		paragraphType="white"
 		width="75%"
 	/>
-	<RatingTab />
+	<RatingTab rating={rating} />
 </section>
