@@ -32,17 +32,6 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 	toggleCamera,
 	toggleMicrophone
 }) => {
-	const {
-		toggleReady,
-		toggleButton,
-		toggleMicrophoneBtn,
-		buttonClass,
-		buttonClassMicro,
-		buttonClassReady
-	} = useAbsoluteTab()
-
-	const { cameraStates } = useCameraStates(players)
-
 	const renderContent = () => {
 		switch (tabType) {
 			default:
@@ -59,11 +48,13 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 							icon={faSun}
 							onClick={() => console.log('zhopa')}
 						/>
-						<ControlTabButton
-							text="Выйти"
-							icon={faSignOutAlt}
-							onClick={() => toggleMicrophone(1)}
-						/>
+						<a href="/game">
+							<ControlTabButton
+								text="Выйти"
+								icon={faSignOutAlt}
+								onClick={() => toggleMicrophone(1)}
+							/>
+						</a>
 					</div>
 				)
 			case 'showman':

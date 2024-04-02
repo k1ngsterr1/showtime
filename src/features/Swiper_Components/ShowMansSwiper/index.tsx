@@ -80,8 +80,8 @@ export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
 					</div>
 				</div>
 				<Swiper
-					slidesPerView={4}
-					spaceBetween={30}
+					slidesPerView={6}
+					spaceBetween={64}
 					className={styles.swiper}
 					onSwiper={(swiperInstance) => {
 						swiperRef.current = swiperInstance
@@ -94,11 +94,11 @@ export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
 					))}
 				</Swiper>
 			</div>
-			{/* <div className={styles.client_mob}>
+			<div className={styles.client_mob}>
 				<Swiper
-					className="contacts__con__swiper"
-					slidesPerView={1}
-					spaceBetween={4}
+					className={styles.swiper_mob}
+					slidesPerView={5}
+					spaceBetween={64}
 					onSwiper={(swiperInstance) => {
 						swiperRef.current = swiperInstance
 					}}
@@ -115,7 +115,7 @@ export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
 						</SwiperSlide>
 					))}
 				</Swiper>
-			</div> */}
+			</div>
 		</>
 	)
 }

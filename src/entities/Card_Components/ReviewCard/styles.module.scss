@@ -28,10 +28,14 @@
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-	.review_card {
-		width: clamp(175px, 81.774vw, 700px);
-		height: clamp(180px, 84.1104vw, 720px);
+	.review {
+		width: clamp(150px, 70.092vw, 600px);
+		height: clamp(190px, 88.7832vw, 760px);
 		font-size: clamp(14px, 6.541919999999999vw, 56px);
+		&__text {
+			width: clamp(130px, 60.746399999999994vw, 520px);
+			height: clamp(75px, 35.046vw, 300px);
+		}
 	}
 	.paragraph {
 		font-size: clamp(9px, 4.20552vw, 36px);

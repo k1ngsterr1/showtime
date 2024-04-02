@@ -1,21 +1,27 @@
-// ContextMenu.js
 import React from 'react'
+import { ControlTabButton } from '@shared/ui/Buttons/ControlTabButton'
+import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
+import { players } from '@shared/lib/content/webCamContent'
+
 import styles from './styles.module.scss'
 
 const ContextMenu = ({ xPos, yPos, onMenuClose }) => {
-	// Calculate the position for the menu
 	const menuStyle = {
 		position: 'absolute',
 		left: `${xPos}px`,
 		top: `${yPos}px`,
-		zIndex: 1000 // Make sure it's on top of other elements
+		zIndex: 1000
 	}
+
+	const { toggleMicrophone } = useCameraStates(players)
 
 	return (
 		<div className={styles.menu} style={menuStyle} onClick={onMenuClose}>
-			<span className={styles.menu__items}>Дать БАН</span>
+			<span className={styles.menu__items}>Дать фол</span>
 			<span className={styles.menu__items}>Выгнать</span>
-			<span className={styles.menu__items}>Отключить Микрофон</span>
+			<span className={styles.menu__items}>
+				<ControlTabButton text="Отключить Микрофон" onClick={() => toggleMicrophone(1)} />
+			</span>
 		</div>
 	)
 }

@@ -9,4 +9,25 @@
 	background-size: cover;
 	@apply bg-primary-light;
 	@apply p-16;
+	&__items {
+		display: flex;
+	}
+	&__heading {
+		@apply text-primary-red;
+		margin: auto;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.form {
+		height: 90%;
+		&__items {
+			display: flex;
+			flex-direction: column;
+		}
+		&__heading {
+			text-align: center;
+			line-height: clamp(42.5px, 19.859399999999997vw, 170px);
+		}
+	}
 }
