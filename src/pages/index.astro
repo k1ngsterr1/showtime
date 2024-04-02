@@ -19,11 +19,10 @@ import Layout from '../layouts/Layout.astro'
 
 import styles from './styles/home/styles.module.scss'
 import '@shared/styles/scrollbar.scss'
-import type { id } from 'date-fns/locale'
 ---
 
 <Layout title="Home">
-	<Loader client:load />
+	<!-- <Loader client:load /> -->
 	<Cursor client:load />
 	<Menu client:load />
 	<main class={styles.main} id="main">

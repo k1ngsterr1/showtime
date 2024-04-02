@@ -20,3 +20,14 @@
 .slide {
 	width: auto !important;
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.client {
+		display: flex;
+		margin-left: clamp(1285px, 600.4548vw, 5140px);
+	}
+
+	.buttons {
+		display: none;
+	}
+}
