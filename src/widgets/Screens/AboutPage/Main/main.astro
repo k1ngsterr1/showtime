@@ -18,7 +18,7 @@ const photos = [men, womanman, womenjar]
 			<h1 class="text-primary-red">О компании</h1>
 			<Paragraph
 				paragraphType="red"
-				width="25%"
+				width="50%"
 				text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
 			/>
 		</div>
@@ -47,13 +47,13 @@ const photos = [men, womanman, womenjar]
 			</div>
 		</div>
 	</div>
-	<!-- <div class="border-2 ">
-    <GalleryCustom photos={photos} client:load />
-  </div> -->
+	<div class={`${styles.gallery} w-[70%] `}>
+		<GalleryCustom photos={photos} client:load />
+	</div>
 </section>
 
 <section class={styles.container_mob}>
-	<div class="mt-12 flex flex-col items-center">
+	<div class="mt-12 flex flex-col items-center justify-center overflow-hidden">
 		<h1 class="text-primary-red">О компании</h1>
 		<Paragraph
 			align="text-center"
@@ -71,8 +71,7 @@ const photos = [men, womanman, womenjar]
 			end={100}
 			text="+"
 			client:load
-		>
-			<GalleryCustom photos={photos} client:load />
-		</Counter>
+		/>
+		<GalleryCustom photos={photos} client:load />
 	</div>
 </section>

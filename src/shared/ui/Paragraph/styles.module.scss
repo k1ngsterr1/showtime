@@ -4,6 +4,7 @@
 	font-size: clamp(9px, 0.93744vw, 36px);
 	font-weight: 400;
 	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+	overflow: hidden;
 }
 
 .paragraph--white {
@@ -13,6 +14,7 @@
 	font-weight: 400;
 	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
 	overflow-y: hidden;
+	overflow: hidden;
 }
 
 .paragraph--dark {
@@ -21,6 +23,7 @@
 	font-size: clamp(9px, 0.93744vw, 36px);
 	font-weight: 400;
 	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
+	overflow: hidden;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
@@ -30,6 +33,7 @@
 		font-size: clamp(9px, 4.20552vw, 36px);
 		font-weight: 600;
 		line-height: clamp(14px, 6.541919999999999vw, 56px);
+		overflow: hidden;
 	}
 
 	.paragraph--white {
@@ -38,6 +42,7 @@
 		font-size: clamp(9px, 4.20552vw, 36px);
 		font-weight: 400;
 		line-height: clamp(12.5px, 5.840999999999999vw, 50px);
+		overflow: hidden;
 	}
 	.paragraph--dark {
 		@apply text-primary-dark;
@@ -45,5 +50,6 @@
 		font-size: clamp(9px, 4.20552vw, 36px);
 		font-weight: 600;
 		line-height: clamp(12.5px, 5.840999999999999vw, 50px);
+		overflow: hidden;
 	}
 }

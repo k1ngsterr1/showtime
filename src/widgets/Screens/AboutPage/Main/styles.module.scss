@@ -4,12 +4,17 @@
 	display: flex;
 	justify-content: space-between;
 	overflow: hidden;
+	justify-content: center;
+	align-items: center;
 	@apply mt-8;
 
 	&__heading {
 		overflow: hidden;
 	}
-
+	.gallery {
+		box-shadow: 16px 16px 0px #f0e7be;
+		margin: 0 16px;
+	}
 	&__counter {
 		display: flex;
 		overflow: hidden;
@@ -44,5 +49,6 @@
 
 	.container_mob {
 		display: flex;
+		overflow: hidden;
 	}
 }

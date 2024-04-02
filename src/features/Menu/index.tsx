@@ -92,13 +92,13 @@ export const Menu = () => {
 			<aside className={styles.menu_mob} id="menu">
 				<div className={styles.menu_mob__container}>
 					<div className={`${'absolute left-5 top-8 overflow-hidden'} ${styles.show}`}>
-						<img src={ShowMob.src} alt="" />
+						<img src={ShowMob.src} alt="Revolver" />
 					</div>
 					<div
 						className={`${'absolute right-5 top-8 overflow-hidden'} ${styles.logo}`}
 						onClick={onClose}
 					>
-						<img src={LogoMob.src} alt="" />
+						<img src={LogoMob.src} alt="Logo" />
 					</div>
 					<div className={styles.menu_mob__container__inner}>
 						<div className={styles.menu_mob__container__inner__items}>
