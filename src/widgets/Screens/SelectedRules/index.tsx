@@ -71,14 +71,34 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 						</div>
 					</div>
 				)
+			case 'cardmob':
+				return <div></div>
 			case 'rulesmob':
-				return <div></div>
-			case 'rolesmob':
-				return <div></div>
+				return (
+					<div className="mt-12">
+						<Paragraph
+							width="80%"
+							margin="m-auto"
+							align="text-center"
+							text="Игра Мафия включает в себя две основные фазы: ночную и дневную.
+
+Ночная фаза:
+
+Мафиози просыпаются и выбирают одного из игроков, которого они хотят убить.
+Затем все спят, и специальные роли (если они есть в игре) выполняют свои действия.
+Дневная фаза:
+
+Игроки просыпаются, и ведущий объявляет, кто был убит мафией.
+Затем все игроки обсуждают, кто мог быть мафией, и голосуют, кого они хотят повесить.
+Игрок с наибольшим количеством голосов уходит из игры."
+							paragraphType={'white'}
+						/>
+					</div>
+				)
 			default:
 				return (
-					<div>
-						<div className="mt-16">
+					<>
+						<div className="mt-8">
 							<Swiper
 								className={styles.swiper}
 								modules={[EffectCards]}
@@ -115,7 +135,44 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 								</p>
 							</div>
 						</div>
-					</div>
+						<div className="mt-8 flex flex-col">
+							<Swiper
+								className={styles.swiper_mob}
+								modules={[EffectCards]}
+								effect={'cards'}
+								onSwiper={(swiperInstance) => {
+									swiperRef.current = swiperInstance
+								}}
+								onSlideChange={(swiper) => {
+									setActiveCardIndex(swiper.activeIndex)
+								}}
+							>
+								{cards.map((card, index) => (
+									<SwiperSlide key={index}>
+										<div className="flex justify-center">
+											<Card
+												name={card.name}
+												paragraph={card.paragraph}
+												iconType={card.iconType.src}
+												icon={card.icon.src}
+											/>
+										</div>
+									</SwiperSlide>
+								))}
+							</Swiper>
+							<div className={styles.text_container_mob}>
+								<div className="mt-8 flex flex-col items-center">
+									<span className={styles.text_container_mob__heading}>
+										{cards[activeCardIndex].name}
+									</span>
+									<SelectedBar text="Тип игрока" />
+									<p className={`${styles.text_container_mob__paragraph} mt-6 w-[75%] text-center`}>
+										{cards[activeCardIndex].paragraph}
+									</p>
+								</div>
+							</div>
+						</div>
+					</>
 				)
 		}
 	}

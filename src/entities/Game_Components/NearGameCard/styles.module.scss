@@ -57,5 +57,11 @@
 @media (min-width: 375px) and (max-width: 600px) {
 	.card {
 		width: clamp(150px, 70.092vw, 600px);
+		&__upper__date {
+			font-size: clamp(9px, 4.20552vw, 36px);
+		}
+		&__upper__time {
+			font-size: clamp(9px, 4.20552vw, 36px);
+		}
 	}
 }

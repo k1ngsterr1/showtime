@@ -33,8 +33,14 @@
 	.user_profile {
 		display: flex;
 		flex-direction: column;
-		width: 70%;
-		align-items: flex-start;
+		align-items: center;
 		@apply mt-8;
+		&__name {
+			font-size: clamp(14px, 6.541919999999999vw, 56px);
+		}
+		&__avatar {
+			width: clamp(40px, 18.6912vw, 160px);
+			height: clamp(40px, 18.6912vw, 160px);
+		}
 	}
 }
