@@ -1,7 +1,7 @@
 .textarea--vacancie {
 	font-size: clamp(9px, 0.93744vw, 36px);
-	width: 350px;
-	height: 100px;
+	width: clamp(175px, 18.228vw, 700px);
+	height: clamp(50px, 5.208vw, 200px);
 	text-align: left;
 	background-color: transparent;
 	overflow: hidden;
@@ -13,11 +13,11 @@
 .textarea--services {
 	font-size: clamp(9px, 0.93744vw, 36px);
 	font-weight: 400;
-	line-height: 27.04px;
+	line-height: clamp(50px, 5.208vw, 200px);
 	@apply font-neolight;
 	overflow: hidden;
-	width: 350px;
-	height: 180px;
+	width: clamp(175px, 18.228vw, 700px);
+	height: clamp(90px, 9.3744vw, 360px);
 	@apply text-primary-dark;
 	background-color: transparent;
 	outline: none;
@@ -40,11 +40,11 @@
 .textarea--review {
 	font-size: clamp(9px, 0.93744vw, 36px);
 	font-weight: 400;
-	line-height: 27.04px;
+	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
 	@apply font-neolight;
 	overflow: hidden;
-	width: 307px;
-	height: 146px;
+	width: clamp(153.5px, 15.98856vw, 614px);
+	height: clamp(73px, 7.60368vw, 292px);
 	@apply p-2;
 	@apply text-primary-dark;
 	background-color: transparent;
@@ -54,11 +54,11 @@
 .textarea--articles {
 	font-size: clamp(9px, 0.93744vw, 36px);
 	font-weight: 400;
-	line-height: 27.04px;
+	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
 	@apply font-neolight;
 	overflow: hidden;
-	width: 280px;
-	height: 160px;
+	width: clamp(140px, 14.5824vw, 560px);
+	height: clamp(80px, 8.3328vw, 320px);
 	@apply text-primary-dark;
 	background-color: transparent;
 	outline: none;
@@ -91,8 +91,8 @@
 
 .textarea--product-desc {
 	overflow: hidden;
-	width: 320px;
-	height: 72px;
+	width: clamp(160px, 16.6656vw, 640px);
+	height: clamp(36px, 3.74976vw, 144px);
 	font-weight: 500;
 	@apply font-neoregular;
 	font-size: clamp(8px, 0.83328vw, 32px);

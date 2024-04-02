@@ -40,7 +40,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 400px;
+		border-radius: clamp(200px, 20.832vw, 800px);
 		@apply font-katana;
 		@apply bg-primary-red;
 		@apply mt-8;

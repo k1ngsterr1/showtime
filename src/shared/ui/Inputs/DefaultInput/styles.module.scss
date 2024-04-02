@@ -54,7 +54,7 @@
 .input--neo-medium {
 	@apply font-neomedium;
 	@apply text-primary-red;
-	font-size: 24px;
+	font-size: clamp(12px, 1.24992vw, 48px);
 	background-color: transparent;
 	font-weight: 400;
 	outline: none;
@@ -181,8 +181,8 @@
 
 .icon {
 	position: absolute !important;
-	width: 24px;
-	height: 24px;
+	width: clamp(12px, 1.24992vw, 48px);
+	height: clamp(12px, 1.24992vw, 48px);
 	cursor: pointer;
 	bottom: 0;
 	z-index: 1000;
@@ -200,7 +200,7 @@
 .input--neo-medium::placeholder {
 	@apply font-neomedium;
 	@apply text-primary-red;
-	font-size: 24px;
+	font-size: clamp(12px, 1.24992vw, 48px);
 }
 
 .input--default-white::placeholder {

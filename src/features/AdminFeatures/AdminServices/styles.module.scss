@@ -39,7 +39,7 @@
 		}
 		&__price {
 			font-size: clamp(12.5px, 5.840999999999999vw, 50px);
-			margin-top: 20px;
+			margin-top: clamp(10px, 1.0416vw, 40px);
 		}
 	}
 }
