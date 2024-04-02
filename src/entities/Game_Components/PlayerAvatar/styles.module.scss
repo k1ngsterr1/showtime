@@ -12,8 +12,11 @@
 	}
 
 	&__image {
-		width: clamp(40px, 4.1664vw, 160px);
-		height: clamp(40px, 4.1664vw, 160px);
+		width: clamp(35px, 3.6456vw, 140px);
+		height: clamp(35px, 3.6456vw, 140px);
+		border: 2px solid;
+		@apply p-3;
+		@apply border-primary-red;
 		@apply rounded-full;
 	}
 }

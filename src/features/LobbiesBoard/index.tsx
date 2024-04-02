@@ -7,13 +7,13 @@ import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 import { socket } from '@shared/lib/socket/socketService'
 
 import styles from './styles.module.scss'
-import { players } from '@shared/lib/content/playersContent'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
 	const { rooms, userRoom } = useGetRooms(userData.id)
-	const { joinRoom, players } = useConnectPlayer(userRoom)
-	// const { roomData } = oom(userData.id)
+	const { joinRoom, players } = useConnectPlayer(userRoom || {}, userRoom?.id)
+
+	console.log(userRoom, userData.id)
 
 	return (
 		<section className={styles.lobbies}>
