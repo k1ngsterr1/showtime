@@ -9,6 +9,7 @@ import styles from '../styles/styles.module.scss'
 
 export const RegistrationForm = () => {
 	const [loginError, setLoginError] = useState<any>(null)
+
 	const [formData, setFormData] = useState({
 		username: '',
 		email: '',
@@ -40,8 +41,7 @@ export const RegistrationForm = () => {
 		<div>
 			<section className={styles.registration}>
 				<div className={styles.registration__content}>
-					<div className={styles.registration__logo}></div>
-					<h2 className={styles.registration__heading}>Пройдите регистрацию</h2>
+					<h1 className={styles.registration__heading}>Пройдите регистрацию</h1>
 					<p className={styles.registration__paragraph}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 						incididunt ut labore et dolore magna aliqua.{' '}

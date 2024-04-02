@@ -71,6 +71,10 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 			setPlayers(players.filter((player) => player.id !== playerId))
 		})
 
+		socket.on('connect_error', () => {
+			console.log('there was an error with socket connection')
+		})
+
 		return () => {
 			socket.off('join')
 			socket.off('roomUsersUpdated')
