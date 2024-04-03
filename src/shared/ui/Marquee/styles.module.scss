@@ -26,13 +26,13 @@
 	.item {
 	}
 	.img {
-		width: 300px;
-		height: 200px;
+		width: clamp(150px, 15.624vw, 600px);
+		height: clamp(100px, 10.416vw, 400px);
 	}
 }
 @media (min-width: 375px) and (max-width: 600px) {
 	.img {
-		width: 300px;
-		height: 200px;
+		width: clamp(150px, 15.624vw, 600px);
+		height: clamp(100px, 10.416vw, 400px);
 	}
 }
