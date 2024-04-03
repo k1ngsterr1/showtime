@@ -13,22 +13,7 @@
 	}
 }
 
-.partners {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-
-	&__content {
-		width: 90%;
-		margin: auto;
-	}
-}
-
 .client_mob {
-	display: none;
-}
-
-.partners_mob {
 	display: none;
 }
 
@@ -42,44 +27,11 @@
 		flex-direction: column;
 		text-align: center;
 		width: 90%;
+
 		&__cards {
 			display: flex;
 			align-items: center;
 			flex-direction: column;
 		}
-	}
-}
-.partners {
-	display: none;
-}
-
-.partners_mob {
-	display: flex;
-}
-
-.client_mob {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 90%;
-
-	&__cards {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-	}
-}
-
-.partners_mob {
-	height: 90dvh;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 90%;
-
-	&__cards {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
 	}
 }
