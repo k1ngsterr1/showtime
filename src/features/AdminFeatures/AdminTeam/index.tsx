@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminUserTab from '../../../entities/AdminEntities/AdminUserTab/index'
+import { AdminUserTab } from '../../../entities/AdminEntities/AdminUserTab/index'
 
 import styles from './styles.module.scss'
 
