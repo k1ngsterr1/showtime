@@ -8,37 +8,6 @@ import styles from './styles.module.scss'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-// export const specials = [
-// 	{
-// 		photo: photo,
-// 		heading: 'Шляпа мафиози',
-// 		paragraph:
-// 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-// 		price: '15000 тг'
-// 	},
-// 	{
-// 		photo: photo,
-// 		heading: 'Шляпа мафиози',
-// 		paragraph:
-// 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-// 		price: '7000 тг'
-// 	},
-// 	{
-// 		photo: photo,
-// 		heading: 'Шляпа мафиози',
-// 		paragraph:
-// 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-// 		price: '7000 тг'
-// 	},
-// 	{
-// 		photo: photo,
-// 		heading: 'Шляпа мафиози',
-// 		paragraph:
-// 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-// 		price: '7000 тг'
-// 	},
-// ]
-
 interface SwiperProductsProps {
 	specials: Array<{
 		photo: ImageMetadata

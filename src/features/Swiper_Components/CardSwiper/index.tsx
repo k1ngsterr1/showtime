@@ -3,8 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { ProductCard } from '@entities/Card_Components/ProductsCard/index'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
-import { products } from '@shared/lib/content/ShopContents'
-
 
 import styles from './styles.module.scss'
 import 'swiper/css'
