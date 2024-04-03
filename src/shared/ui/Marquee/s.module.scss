@@ -1,37 +1,26 @@
-.client {
-	width: 100%;
+@keyframes marquee-animation {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+.marquee {
+	width: 400%;
 	display: flex;
-	flex-direction: column;
-
-	&__content {
-		width: 90%;
-		margin: auto;
-
-		&__history_cards {
-			@apply mb-24;
-		}
-	}
+	flex-direction: row;
+	@apply mt-24;
+	animation: marquee-animation 3.3s linear infinite;
 }
 
-.client_mob {
-	display: none;
-}
+.item {
+	width: 100%;
+	height: 100%;
+	@apply mr-28;
 
-@media (min-width: 375px) and (max-width: 600px) {
-	.client {
-		display: none;
-	}
-
-	.client_mob {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		width: 90%;
-
-		&__cards {
-			display: flex;
-			align-items: center;
-			flex-direction: column;
-		}
+	&__image {
+		width: 100%;
+		height: 100%;
 	}
 }
