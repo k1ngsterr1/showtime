@@ -1,12 +1,10 @@
 import { useState, type SyntheticEvent } from 'react'
-import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
-
 import { Input } from '@shared/ui/Inputs/DefaultInput'
-import PasswordInput from '@shared/ui/Inputs/PasswordInput/index'
 import { loginAccount } from '@shared/lib/hooks/useLogin'
-
-import styles from '../styles/styles.module.scss'
 import { ErrorTab } from '@shared/ui/ErrorTab'
+import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
+import PasswordInput from '@shared/ui/Inputs/PasswordInput/index'
+import styles from '../styles/styles.module.scss'
 
 export const LoginForm = () => {
 	const [loginError, setLoginError] = useState<any>(null)
@@ -43,7 +41,7 @@ export const LoginForm = () => {
 			<section className={styles.registration}>
 				<div className={styles.registration__content}>
 					<div className={styles.registration__logo}></div>
-					<h2 className={styles.registration__heading}>Войдите в аккаунт</h2>
+					<h1 className={styles.registration__heading}>Войдите в аккаунт</h1>
 					<p className={styles.registration__paragraph}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 						incididunt ut labore et dolore magna aliqua.{' '}
@@ -68,12 +66,17 @@ export const LoginForm = () => {
 						/>
 						<ReactButton text="Войти" buttonType="filled" type="submit" margin="mt-8" />
 					</form>
+					<a
+						href="/password-change"
+						className={`mt-4 text-primary-red ${styles.registration__password}`}
+					>
+						Забыли пароль?
+					</a>
 					<span className={styles.registration__mini_text}>
-						Еще нет аккаунта?{' '}
-						<a href="/registration" className="text-primary-red">
-							{' '}
-							Создать аккаунт
-						</a>{' '}
+						Еще нет аккаунта?{''}
+						<a href="/registration" className="ml-2 text-primary-red">
+							{''}Создать аккаунт
+						</a>
 						{loginError && <ErrorTab text={loginError} />}
 					</span>
 				</div>

@@ -4,7 +4,7 @@ import { faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SearchBar } from '@features/SearchBar'
 import { Line } from '@shared/ui/Line'
-import { links, links_second } from '@shared/lib/content/menuLinks'
+import { links, links_second, links_second_mob } from '@shared/lib/content/menuLinks'
 import { useCustomMenu } from '@shared/lib/hooks/useCustomMenu'
 import { useUserData } from '@shared/lib/hooks/useGetUserData'
 import { logOut } from '@shared/lib/hooks/useLogout'
@@ -84,7 +84,6 @@ export const Menu = () => {
 									/>
 								</div>
 							)}
-							{/* <SearchBar /> */}
 						</div>
 					</div>
 				</div>
@@ -112,8 +111,8 @@ export const Menu = () => {
 								</a>
 							))}
 						</div>
-						<div className="mt-16 flex flex-col items-end ">
-							{links_second.map((link, index) => (
+						<div className="mt-6 flex flex-col items-end ">
+							{links_second_mob.map((link, index) => (
 								<a
 									key={index}
 									href={link.path}

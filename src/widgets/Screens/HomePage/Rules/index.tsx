@@ -66,10 +66,19 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 							/>
 						</div>
 						<div className="flex flex-col items-center gap-6">
-							<ReactButton text="Роли" margin="mt-8" buttonType="transparent" />
-							<ReactButton text="Общие правила" buttonType="transparent" />
+							<ReactButton
+								text="Роли"
+								margin="mt-8"
+								buttonType="transparent"
+								onClick={() => setRulesType('rolesmob')}
+							/>
+							<ReactButton
+								text="Общие правила"
+								buttonType="transparent"
+								onClick={() => setRulesType('rulesmob')}
+							/>
 						</div>
-						<CardGalleryMob cards={cards} />
+						<RulesContent cards={cards} rulesType={rulesType} />
 					</div>
 				</div>
 			</section>

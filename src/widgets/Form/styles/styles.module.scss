@@ -5,10 +5,10 @@
 	@apply mt-4;
 	justify-content: center;
 	@apply text-primary-light;
-	gap: 10px;
+	gap: clamp(5px, 0.5208vw, 20px);
 	font-size: clamp(9px, 0.93744vw, 36px);
 	width: clamp(175px, 18.228vw, 700px);
-	height: 100px;
+	height: clamp(50px, 5.208vw, 200px);
 	text-align: left;
 	background-color: transparent;
 	border: 2px rgba(191, 35, 22, 0.65) solid;
@@ -25,22 +25,22 @@
 	&__upload {
 		@apply gap-4;
 		border: 4px solid #bf2316;
-		width: 392px;
-		height: 361px;
+		width: clamp(196px, 20.41536vw, 784px);
+		height: clamp(180.5px, 18.80088vw, 722px);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 
 		&_fedora {
-			width: 150px;
+			width: clamp(75px, 7.812vw, 300px);
 		}
 	}
 }
 
 .previewImage {
-	width: 392px;
-	height: 361px;
+	width: clamp(196px, 20.41536vw, 784px);
+	height: clamp(180.5px, 18.80088vw, 722px);
 }
 
 .registration {
@@ -84,6 +84,10 @@
 		text-align: center;
 		@apply text-primary-light;
 		@apply mt-4;
+	}
+
+	&__password {
+		font-size: clamp(9px, 0.93744vw, 36px);
 	}
 
 	&__mini_text {

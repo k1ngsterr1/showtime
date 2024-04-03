@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './styles.module.scss'
 import { PlayerAvatar } from '@entities/Game_Components/PlayerAvatar'
-import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 
 export interface PlayerItem {
 	photo: ImageMetadata
@@ -10,22 +9,14 @@ export interface PlayerItem {
 }
 
 interface YourGameTabProps {
-	// gameType: string
 	gameName: string
 	userId: string | number
-	key: string
-	players: any[]
-	// capacity: number
+	players: PlayerItem[]
 }
 
-export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, key, userId, players }) => {
-	// const { players, joinRoom, leaveRoom } = useConnectPlayer()
-	let currentPlayers = players.length
-	// const simplifiedPlayers = players.map((player) => player.dataValues)
-	const displayedPlayers = players.slice(0, 4)
+export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, userId, players }) => {
+	const displayedPlayers = players.slice(0, 5)
 	const additionalPlayersCount = players.length - displayedPlayers.length
-
-	console.log('players looks like this:', players)
 
 	return (
 		<div className={styles.game_tab}>
@@ -34,12 +25,12 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, key, userId,
 					<span className={styles.game_tab__text}>{gameName}</span>
 					<span className={styles.game_tab__type}>Классическая</span>
 				</div>
-				<span className={styles.game_tab__text}> {currentPlayers} / 11</span>
+				<span className={styles.game_tab__text}> {players.length} / 11</span>
 			</div>
 			<hr className={styles.game_tab__separator} />
-			<div className="mt-4 flex items-center gap-8">
-				{players.map((player, index) => (
-					<PlayerAvatar key={index} name={player.username} photo={''} />
+			<div className="mt-4 flex items-start gap-8">
+				{displayedPlayers.map((player, index) => (
+					<PlayerAvatar key={player.id} name={player.username} id={index} photo={''} />
 				))}
 				{additionalPlayersCount > 0 && (
 					<div className={`${styles.additional_players} hoverable`}>+{additionalPlayersCount}</div>

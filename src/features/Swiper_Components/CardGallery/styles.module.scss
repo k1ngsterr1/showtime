@@ -10,8 +10,6 @@
 	right: clamp(150px, 70.092vw, 600px);
 }
 
-
-
 .text_container {
 	position: absolute;
 	top: 400px;
@@ -26,5 +24,41 @@
 
 	&__paragraph {
 		@apply text-primary-light;
+	}
+}
+
+.swiper_mob {
+	display: none;
+}
+
+.text_container_mob {
+	display: none;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.swiper {
+		display: none;
+	}
+	.text_container {
+		display: none;
+	}
+	.text_container_mob {
+		display: flex;
+
+		&__heading {
+			font-size: clamp(27px, 12.61656vw, 108px);
+			@apply text-primary-red;
+			@apply font-killbill;
+		}
+
+		&__paragraph {
+			@apply text-primary-light;
+		}
+	}
+
+	.swiper_mob {
+		display: flex;
+		width: 100%;
+		height: 120%;
 	}
 }

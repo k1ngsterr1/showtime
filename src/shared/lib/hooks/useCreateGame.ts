@@ -23,10 +23,6 @@ export async function createRoom(roomData: ICreateGameProps, userId: number) {
 			console.log('ROOM CREATED!!!')
 		})
 
-		// socket.on('roomUsersUpdated', () => {
-		// 	console.log('ROOM USERS UPDATED ARE WORKING')
-		// })
-
 		socket.emit('joinRoom', { roomId: createdRoomId, userId })
 
 		socket.on('disconnect', () => {
@@ -38,7 +34,6 @@ export async function createRoom(roomData: ICreateGameProps, userId: number) {
 			cleanup: () => {
 				socket.off('connect')
 				socket.off('roomCreated')
-				// socket.off('roomUsersUpdated', handleRoomUsersUpdated);
 			}
 		}
 	} catch (error: any) {

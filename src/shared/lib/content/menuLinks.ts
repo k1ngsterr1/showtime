@@ -15,3 +15,11 @@ export const links_second = [
 	{ path: '/history', name: 'История' },
 	{ path: '/showmans', name: 'Ведущие' }
 ]
+
+export const links_second_mob = [
+	{ path: '/vacancies', name: 'Вакансии' },
+	{ path: '/events', name: 'Ивенты' },
+	{ path: '/tournaments', name: 'Турниры' },
+	{ path: '/history', name: 'История' },
+	{ path: '/showmans', name: 'Ведущие' }
+]

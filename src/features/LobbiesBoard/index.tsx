@@ -7,13 +7,20 @@ import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 import { socket } from '@shared/lib/socket/socketService'
 
 import styles from './styles.module.scss'
-import { players } from '@shared/lib/content/playersContent'
+import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
 	const { rooms, userRoom } = useGetRooms(userData.id)
-	const { joinRoom, players } = useConnectPlayer(userRoom)
-	// const { roomData } = oom(userData.id)
+	const { joinRoom, players } = useConnectPlayer(userRoom || {}, userRoom?.id)
+
+	const [showStartGameButton, setShowStartGameButton] = useState(false)
+
+	// Update button visibility based on conditions
+	useEffect(() => {
+		const shouldShowButton = userData.role === 'showman' && userRoom?.currentPlayers === 11
+		setShowStartGameButton(shouldShowButton)
+	}, [userRoom, userData.role])
 
 	return (
 		<section className={styles.lobbies}>
@@ -30,6 +37,9 @@ export const LobbiesBoard = () => {
 						userId={userData.id}
 						players={players}
 					/>
+				)}
+				{showStartGameButton && (
+					<ReactButton text="Запустить игру" buttonType="filled" margin="m-auto mt-4" />
 				)}
 				{rooms
 					.filter((room) => room.creatorId !== userData.id)
