@@ -9,6 +9,7 @@ import { fetchPlayer } from '@shared/lib/hooks/useFetchPlayer'
 
 import styles from './styles.module.scss'
 
+// ! Ошибка когда я передаю сюда roomId!
 const VideoRoom = () => {
 	// const { players, error } = useGetPlayers(roomId)
 
