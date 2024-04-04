@@ -13,9 +13,10 @@ type Swiper = any
 
 interface IShowProps {
 	cards: Props[]
+	slides: number
 }
 
-export const TimeSwiper: React.FC<IShowProps> = ({ cards }) => {
+export const TimeSwiper: React.FC<IShowProps> = ({ cards, slides }) => {
 	const swiperRef = React.useRef<Swiper | null>(null)
 
 	const { handlePrev, handleNext } = useCustomSwiper(swiperRef)
@@ -32,7 +33,7 @@ export const TimeSwiper: React.FC<IShowProps> = ({ cards }) => {
 					</div>
 				</div>
 				<Swiper
-					slidesPerView={4}
+					slidesPerView={slides}
 					spaceBetween={40}
 					className={styles.swiper}
 					onSwiper={(swiperInstance) => {
