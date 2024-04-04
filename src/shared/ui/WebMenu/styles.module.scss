@@ -1,14 +1,16 @@
 .menu {
 	position: absolute;
+	display: flex;
+	flex-direction: column;
+	border-radius: 6px;
+	z-index: 1000000;
 	@apply left-64;
 	@apply top-28;
 	@apply p-3;
-	display: flex;
-	flex-direction: column;
 	@apply bg-primary-dark;
-	border-radius: 6px;
-	z-index: 1000;
+
 	&__items {
+		cursor: pointer;
 		@apply text-white;
 		@apply p-3;
 		border-radius: 6px;

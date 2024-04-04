@@ -27,7 +27,9 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 						<VideoCams
 							cameraPlayerNumber={player.cameraPlayerNumber}
 							number={player.cameraPlayerNumber}
-							videoType={player.cameraPlayerNumber === 6 ? 'showman' : 'default'}
+							videoType={
+								player.cameraPlayerNumber === 6 || player.role === 'showman' ? 'showman' : 'default'
+							}
 							onCameraClick={() => handleCameraClick(player.cameraPlayerNumber)}
 							onContextMenu={(e: any) => onCameraContextMenu(e, player.cameraPlayerNumber)}
 						/>

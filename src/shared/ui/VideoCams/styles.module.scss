@@ -4,22 +4,25 @@
 	overflow: hidden;
 	border-radius: 6px;
 	position: relative;
+	z-index: 10;
+
 	&__container {
 		display: flex;
 	}
+
 	&__number {
 		position: absolute;
-		@apply bottom-2 left-4;
 		font-weight: 600;
 		width: clamp(15px, 1.5624vw, 60px);
 		height: clamp(15px, 1.5624vw, 60px);
-		@apply bg-primary-light;
-		@apply text-primary-dark;
 		border-radius: 100%;
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@apply bg-primary-light;
+		@apply text-primary-dark;
+		@apply bottom-2 left-4;
 	}
 	&__name {
 		position: absolute;

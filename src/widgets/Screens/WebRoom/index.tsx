@@ -4,18 +4,26 @@ import { players } from '@shared/lib/content/webCamContent'
 import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
 import { WebcamGrid } from '@features/WebcamGrid'
 import { TimeTable } from '@shared/ui/TimeTable'
+import { useGetPlayers } from '@shared/lib/hooks/useGetPlayers'
+import { fetchPlayer } from '@shared/lib/hooks/useFetchPlayer'
 
 import styles from './styles.module.scss'
 
 const VideoRoom = () => {
-	const { cameraStates, toggleCamera, toggleMicrophone } = useCameraStates(players)
+	// const { players, error } = useGetPlayers(roomId)
 
+	// console.log('players are here!', players, error)
+
+	const { cameraStates, toggleCamera, toggleMicrophone } = useCameraStates(players)
 	const [tabType, setTabType] = useState<string>('')
 
 	useEffect(() => {
-		console.log(`Showman active: ${cameraStates[6]}`)
-		const showmanIsActive = cameraStates[6]
-		setTabType(showmanIsActive ? 'showman' : 'default')
+		const showman = players.find((player) => player.role === 'showman')
+		console.log(players)
+		const showmanIsActive = showman ? true : false
+		console.log(`Showman active: ${showmanIsActive}`)
+		setTabType(showmanIsActive ? 'showman' : 'user')
+		console.log(tabType)
 	}, [cameraStates])
 
 	return (
