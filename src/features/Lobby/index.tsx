@@ -20,6 +20,7 @@ export const Lobby = () => {
 		<div className={styles.lobby}>
 			<div className="flex items-center justify-between">
 				<h1 className={styles.lobby__heading}>Лобби</h1>
+
 				<ReactButton text="Создать игру" buttonType="transparent" onClick={handleClick} />
 			</div>
 			{isPopupOpen && <CreateGamePopup onClick={handleClose} />}
