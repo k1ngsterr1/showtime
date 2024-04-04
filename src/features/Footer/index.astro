@@ -1,9 +1,9 @@
 ---
 import LinkText from '@shared/ui/LinkText'
 import styles from './styles.module.scss'
-import Logo from '@shared/ui/Icons/Logo'
 import logoMob from '@assets/About/svg/logo-mob.svg'
 import { LinkButton } from '@shared/ui/LinkButton/index'
+import Logo from '@assets/logo/showtime_logo.svg'
 
 interface Props {
 	to: string
@@ -14,7 +14,7 @@ const { to } = Astro.props
 
 <footer class={styles.footer}>
 	<div class={styles.footer__content}>
-		<Logo />
+		<img src={Logo.src} alt="Logo" class={styles.footer__content__logo} />
 		<nav class={styles.footer__content__navigation}>
 			<LinkText text="Главная" to="main" href="" />
 			<LinkText text="О нас" to="about" href="" />
@@ -30,7 +30,7 @@ const { to } = Astro.props
 </footer>
 <footer class={styles.footer_mob}>
 	<div class="flex flex-col items-center">
-		<img src={logoMob.src} alt="" />
+		<img src={logoMob.src} alt="Logo" />
 		<nav class="flex flex-col text-center">
 			<LinkText text="Главная" to="" href="" />
 			<LinkText text="О нас" to="" href="" />

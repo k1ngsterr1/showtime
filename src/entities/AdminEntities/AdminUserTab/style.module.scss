@@ -1,8 +1,44 @@
+.menu {
+	position: absolute;
+	top: clamp(25px, 2.604vw, 100px);
+	right: clamp(5px, 0.5208vw, 20px);
+	@apply bg-primary-light;
+	@apply rounded-md;
+	@apply shadow-md;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu button {
+	padding: clamp(4px, 0.41664vw, 16px) clamp(8px, 0.83328vw, 32px);
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	@apply font-neoregular;
+	@apply text-primary-dark;
+	transition: 0.3s ease-in-out;
+}
+
+button:hover {
+	@apply text-primary-hovered;
+}
+
 .usertab {
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+
+	.kebab-menu {
+		position: absolute;
+		@apply p-3;
+		@apply top-1;
+		@apply right-1;
+		cursor: pointer;
+		color: red;
+	}
 
 	&__photo {
 		width: clamp(45px, 4.6872vw, 180px);

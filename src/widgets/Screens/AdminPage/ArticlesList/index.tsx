@@ -2,45 +2,14 @@ import React from 'react'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import PhotoCard from '@entities/Card_Components/PhotoCard/index'
+import { newsData } from '@shared/lib/content/articlesListContent'
 
 import Logo from '@assets/logo/showtime_logo.svg'
-import photo from '@assets/About/image-30.webp'
 
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
 
-export const newsData = [
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
-	},
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
-	},
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
-	},
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, '
-	}
-]
-
-export const ArticlesList = ({}) => {
+export const ArticlesList = () => {
 	return (
 		<main className={styles.services}>
 			<div className={styles.services__content}>

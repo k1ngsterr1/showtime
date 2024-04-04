@@ -28,7 +28,7 @@ export const RatingHeader: React.FC<RatingHeaderProps> = ({
 			<div className={styles.container}>
 				<p className={styles.container__text}>{name}</p>
 				<div className={styles.container__wins}>
-					<img src={icon} alt="" className={styles.container__cub} />
+					<img src={icon} alt="cup" className={styles.container__cub} />
 					<p>Победы: {wins}</p>
 				</div>
 				<span className={styles.container__none}>Игр: {games}</span>

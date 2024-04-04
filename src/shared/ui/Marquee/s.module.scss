@@ -1,0 +1,26 @@
+@keyframes marquee-animation {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+.marquee {
+	width: 400%;
+	display: flex;
+	flex-direction: row;
+	@apply mt-24;
+	animation: marquee-animation 3.3s linear infinite;
+}
+
+.item {
+	width: 100%;
+	height: 100%;
+	@apply mr-28;
+
+	&__image {
+		width: 100%;
+		height: 100%;
+	}
+}

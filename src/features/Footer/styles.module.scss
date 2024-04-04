@@ -13,6 +13,11 @@
 		align-items: center;
 		@apply mt-4;
 
+		&__logo {
+			width: clamp(110px, 11.457600000000001vw, 440px);
+			height: clamp(50px, 5.208vw, 200px);
+		}
+
 		&__navigation {
 			width: 50%;
 			display: flex;

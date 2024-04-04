@@ -4,6 +4,7 @@ import PhotoCard from '@entities/Card_Components/PhotoCard/index.astro'
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
 import Img from '@assets/About/image-30.webp'
+import { articles } from '@shared/lib/content/newsArticlesContent'
 ---
 
 <section class={`${'bg-primary-dark'} ${styles.container}`}>
@@ -17,24 +18,16 @@ import Img from '@assets/About/image-30.webp'
 			/>
 		</div>
 		<div class="m-auto flex w-full justify-between pt-16">
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
+			{
+				articles.map((article) => (
+					<PhotoCard
+						img={article.img}
+						time={article.time}
+						heading={article.heading}
+						paragraph={article.paragraph}
+					/>
+				))
+			}
 		</div>
 	</div>
 </section>
@@ -43,24 +36,16 @@ import Img from '@assets/About/image-30.webp'
 	<div class="m-auto flex flex-col items-center pt-16">
 		<h5 class="text-primary-red">Статьи</h5>
 		<div class="mt-8 flex flex-col items-center gap-10">
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
+			{
+				articles.map((article) => (
+					<PhotoCard
+						img={article.img}
+						time={article.time}
+						heading={article.heading}
+						paragraph={article.paragraph}
+					/>
+				))
+			}
 		</div>
 	</div>
 </section>

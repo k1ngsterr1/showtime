@@ -2,9 +2,10 @@
 import DefaultButton from '@shared/ui/Buttons/DefaultButton/index.astro'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import PhotoCard from '@entities/Card_Components/PhotoCard/index.astro'
+import { articles } from '@shared/lib/content/newsArticlesContent'
+
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
-import Img from '@assets/About/image-30.webp'
 ---
 
 <section class={`${'bg-primary-dark'} ${styles.container}`}>
@@ -21,24 +22,18 @@ import Img from '@assets/About/image-30.webp'
 			/>
 		</span>
 		<div class="m-auto flex w-full justify-between pt-16">
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
+			{
+				articles.map((article) => (
+					<div>
+						<PhotoCard
+							img={article.img}
+							time={article.time}
+							heading={article.heading}
+							paragraph={article.paragraph}
+						/>
+					</div>
+				))
+			}
 		</div>
 	</div>
 </section>
@@ -47,18 +42,18 @@ import Img from '@assets/About/image-30.webp'
 	<div class="m-auto flex flex-col items-center pt-16">
 		<h4 class="text-primary-red">Новости</h4>
 		<div class="mt-8 flex flex-col items-center gap-10">
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
-			<PhotoCard
-				img={Img}
-				time={'23.02.24'}
-				heading="Lorem Ipsum"
-				paragraph="Lorem Ipsum Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit,"
-			/>
+			{
+				articles.map((article) => (
+					<div>
+						<PhotoCard
+							img={article.img}
+							time={article.time}
+							heading={article.heading}
+							paragraph={article.paragraph}
+						/>
+					</div>
+				))
+			}
 			<DefaultButton margin="mt-4" text="Все новости" buttonType="transparent" />
 		</div>
 	</div>

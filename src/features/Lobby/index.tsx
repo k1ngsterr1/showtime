@@ -23,7 +23,7 @@ export const Lobby = () => {
 
 				<ReactButton text="Создать игру" buttonType="transparent" onClick={handleClick} />
 			</div>
-			{isPopupOpen && <CreateGamePopup onClick={handleClose} />}
+			{isPopupOpen && <CreateGamePopup onClick={handleClose} popupState />}
 			<LobbiesBoard />
 		</div>
 	)

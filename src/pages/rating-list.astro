@@ -5,10 +5,10 @@ import { Loader } from '@shared/ui/Loader/index'
 import { Menu } from '@features/Menu/index'
 import { Form } from '@widgets/Screens/ContactForm/index'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
-import { RatingTab } from '@entities/Tab_Components/RatingTab/index'
+import RatingTab from '@entities/Tab_Components/RatingTab/index'
 import Layout from '../layouts/Layout.astro'
 import Footer from '@features/Footer/index.astro'
-import Rating from '../widgets/Screens/HomePage/Rating/index.astro'
+import { rating } from '@shared/lib/content/ratingContent'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -20,7 +20,7 @@ import styles from './styles/services/styles.module.scss'
 	<Loader client:load />
 	<Cursor client:load />
 	<Menu client:load />
-	<main class={styles.main}>
+	<main class={styles.main} id="rating-list">
 		<Header client:load />
 		<section class={styles.rating_screen} id="timetable">
 			<h6 class="m-auto text-primary-red">Рейтинг</h6>
@@ -30,9 +30,9 @@ import styles from './styles/services/styles.module.scss'
 				paragraphType="white"
 				width="25%"
 			/>
-			<RatingTab />
+			<RatingTab rating={rating} />
 		</section>
 	</main>
 	<Form client:visible />
-	<Footer />
+	<Footer to="rating-list" />
 </Layout>

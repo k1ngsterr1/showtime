@@ -1,7 +1,9 @@
-import React from 'react'
-import { KebabMenu } from '@shared/ui/KebabMenu/index'
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './style.module.scss'
+
 interface UserTab {
 	name: string
 	position: string
@@ -12,7 +14,7 @@ interface UserTab {
 	userTextType?: string | 'users'
 }
 
-const AdminUserTab: React.FC<UserTab> = ({
+export const AdminUserTab: React.FC<UserTab> = ({
 	name,
 	margin,
 	position,
@@ -21,16 +23,27 @@ const AdminUserTab: React.FC<UserTab> = ({
 	userPhotoType,
 	userTextType
 }) => {
+	const [isMenuVisible, setIsMenuVisible] = useState(false)
 	const userTabClass = `${styles.usertab} ${styles[`usertab--${userTabType}`]} ${margin ? margin : ''}`
 	const userPhotoClass = `${styles.usertab__photo} ${styles[`usertab__photo--${userPhotoType}`]} ${margin ? margin : ''}`
 	const userTextClass = `${styles.usertab__text} ${styles[`usertab__text--${userTextType}`]} ${margin ? margin : ''}`
 
+	const toggleMenu = () => {
+		setIsMenuVisible(!isMenuVisible)
+	}
+
 	return (
 		<>
 			<div className={userTabClass}>
-				<div className="">
-					<KebabMenu />
+				<div className={styles['kebab-menu']} onClick={toggleMenu}>
+					<FontAwesomeIcon icon={faEllipsisV} className="text-3xl" />
 				</div>
+				{isMenuVisible && (
+					<div className={styles.menu}>
+						<button className={styles.menu_btn}>Редактировать</button>
+						<button className={styles.menu_btn}>Удалить</button>
+					</div>
+				)}
 				<div className={userPhotoClass}>
 					<img src={photo.src} alt="photo" />
 				</div>
@@ -42,5 +55,3 @@ const AdminUserTab: React.FC<UserTab> = ({
 		</>
 	)
 }
-
-export default AdminUserTab

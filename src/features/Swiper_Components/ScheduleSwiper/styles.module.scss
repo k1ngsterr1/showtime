@@ -24,7 +24,11 @@
 @media (min-width: 375px) and (max-width: 600px) {
 	.client {
 		display: flex;
-		margin-left: clamp(1285px, 600.4548vw, 5140px);
+		margin-left: clamp(1075px, 502.32599999999996vw, 4300px);
+	}
+
+	.swiper {
+		width: 39%;
 	}
 
 	.buttons {

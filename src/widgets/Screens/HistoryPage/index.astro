@@ -12,6 +12,11 @@ import styles from '../ClientsPage/styles.module.scss'
 <main class={styles.client}>
 	<div class={styles.client__content}>
 		<h1 class="mt-32 text-primary-red">История</h1>
+		<Paragraph
+			paragraphType="white"
+			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+			width="22%"
+		/>
 		<div class={styles.client__content__history_cards}>
 			<SwiperHistory history={history} client:load />
 		</div>

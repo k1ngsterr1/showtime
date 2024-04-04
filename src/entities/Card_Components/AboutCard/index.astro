@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 interface Props {
 	bigText: string
 	paragraph: string
-	cardType: 'dark' | 'white'
+	cardType: string | 'dark' | 'white'
 	margin?: string
 }
 
@@ -20,7 +20,7 @@ const bigTextType = cardType === 'dark' ? 'about--card' : 'red'
 
 <div class={cardClass}>
 	<div class="p-8">
-		<img src={Fedora.src} alt="" />
+		<img src={Fedora.src} alt="Fedora" />
 		<BigText text={bigText} bigTextType={bigTextType} />
 		<Paragraph text={paragraph} paragraphType={paragraphType} margin="mt-3" />
 	</div>

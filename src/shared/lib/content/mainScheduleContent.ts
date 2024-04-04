@@ -40,5 +40,53 @@ export const cards = [
 		place: 'Smart.point',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Суббота',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
 	}
 ]

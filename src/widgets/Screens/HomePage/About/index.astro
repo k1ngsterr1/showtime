@@ -26,13 +26,8 @@ import '@shared/styles/global.scss'
 		</div>
 		<div class="mt-16 flex items-center justify-evenly gap-10">
 			{
-				cardData.map((card, index) => (
-					<AboutCard
-						key={index}
-						bigText={card.bigText}
-						cardType={card.cardType}
-						paragraph={card.paragraph}
-					/>
+				cardData.map((card) => (
+					<AboutCard bigText={card.bigText} cardType={card.cardType} paragraph={card.paragraph} />
 				))
 			}
 		</div>
@@ -61,13 +56,8 @@ import '@shared/styles/global.scss'
 		</div>
 		<div class="mt-16 flex flex-col items-center gap-10">
 			{
-				cardData.map((card, index) => (
-					<AboutCard
-						key={index}
-						bigText={card.bigText}
-						cardType={card.cardType}
-						paragraph={card.paragraph}
-					/>
+				cardData.map((card) => (
+					<AboutCard bigText={card.bigText} cardType={card.cardType} paragraph={card.paragraph} />
 				))
 			}
 		</div>

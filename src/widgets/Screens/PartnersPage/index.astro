@@ -2,12 +2,10 @@
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import Marquees from '@shared/ui/Marquee/index.tsx'
 import MobMarquees from '@shared/ui/Marquee/mob'
-import Freedom from '@assets/Clients/freedom.svg'
 import styles from '../ClientsPage/styles.module.scss'
+import { photos } from '@shared/lib/content/partnersContent'
 
 import '@shared/styles/global.scss'
-
-const photos = [Freedom, Freedom, Freedom]
 ---
 
 <main class={styles.client}>
@@ -20,10 +18,10 @@ const photos = [Freedom, Freedom, Freedom]
 			margin="mt-8"
 		/>
 	</div>
-	<Marquees photos={photos} margin="mb-32" />
+	<Marquees photos={photos} margin="mb-32" client:load />
 </main>
 
-<!-- <main class={styles.client_mob}>
+<main class={styles.client_mob}>
 	<div class={styles.client__content}>
 		<h1 class="mt-32 text-primary-red">Партнеры</h1>
 		<div class="flex items-center justify-center">
@@ -35,5 +33,5 @@ const photos = [Freedom, Freedom, Freedom]
 			/>
 		</div>
 	</div>
-	<MobMarquees photos={photos} margin="mb-32" />
-</main> -->
+	<MobMarquees photos={photos} margin="mb-28" client:load />
+</main>

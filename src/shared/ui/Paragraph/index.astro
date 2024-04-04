@@ -9,7 +9,7 @@ interface Props {
 	paragraphType: 'red' | 'white' | 'dark'
 }
 
-const { text, margin, width, align, paragraphType, ...rest } = Astro.props
+const { text, margin, width, align, paragraphType } = Astro.props
 
 const paragraphClass = `${styles.paragraph} ${
 	styles[`paragraph--${paragraphType}`]
