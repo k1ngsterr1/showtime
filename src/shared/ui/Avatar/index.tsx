@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 export const Avatar = () => {
 	return (
 		<div className={styles.avatar}>
-			<img src={hat.src} className={styles.avatar__icon} />
+			<img src={hat.src} className={styles.avatar__icon} alt="Hat" />
 		</div>
 	)
 }
