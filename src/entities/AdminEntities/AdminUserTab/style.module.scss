@@ -1,7 +1,7 @@
 .menu {
 	position: absolute;
-	top: 50px;
-	right: 10px;
+	top: clamp(25px, 2.604vw, 100px);
+	right: clamp(5px, 0.5208vw, 20px);
 	@apply bg-primary-light;
 	@apply rounded-md;
 	@apply shadow-md;
@@ -11,10 +11,17 @@
 }
 
 .menu button {
-	padding: 8px 16px;
+	padding: clamp(4px, 0.41664vw, 16px) clamp(8px, 0.83328vw, 32px);
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	@apply font-neoregular;
+	@apply text-primary-dark;
+	transition: 0.3s ease-in-out;
+}
+
+button:hover {
+	@apply text-primary-hovered;
 }
 
 .usertab {
@@ -25,7 +32,6 @@
 	align-items: center;
 
 	.kebab-menu {
-		font-size: 22px;
 		position: absolute;
 		@apply p-3;
 		@apply top-1;

@@ -36,12 +36,12 @@ export const AdminUserTab: React.FC<UserTab> = ({
 		<>
 			<div className={userTabClass}>
 				<div className={styles['kebab-menu']} onClick={toggleMenu}>
-					<FontAwesomeIcon icon={faEllipsisV} />
+					<FontAwesomeIcon icon={faEllipsisV} className="text-3xl" />
 				</div>
 				{isMenuVisible && (
 					<div className={styles.menu}>
-						<button onClick={() => console.log('Edit clicked')}>Редактировать</button>
-						<button onClick={() => console.log('Delete clicked')}>Удалить</button>
+						<button className={styles.menu_btn}>Редактировать</button>
+						<button className={styles.menu_btn}>Удалить</button>
 					</div>
 				)}
 				<div className={userPhotoClass}>
