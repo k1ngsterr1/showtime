@@ -4,6 +4,7 @@ import styles from './styles.module.scss'
 import logoMob from '@assets/About/svg/logo-mob.svg'
 import { LinkButton } from '@shared/ui/LinkButton/index'
 import Logo from '@assets/logo/showtime_logo.svg'
+import Spark from '@assets/Spark/spark.svg'
 
 interface Props {
 	to: string
@@ -27,6 +28,9 @@ const { to } = Astro.props
 	</div>
 	<a href="tel:+77003333826" class={styles.footer__link}>+7 (700) 333-38-26</a>
 	<a href="mailto:" class={`${styles.footer__link} mt-2 mb-4`}>showtime@mafia.kz</a>
+	<a href="https://sparkstudio.kz/home" target="_blank">
+		<img src={Spark.src} alt="Spark" class="mb-8 mt-8" />
+	</a>
 </footer>
 <footer class={styles.footer_mob}>
 	<div class="flex flex-col items-center">
@@ -42,5 +46,8 @@ const { to } = Astro.props
 		<a href="tel:+77003333826" class={`${styles.link} mt-4`}>+7 (700) 333-38-26</a>
 		<a href="mailto:" class={`${styles.link} mt-2 mb-4`}>showtime@mafia.kz</a>
 		<LinkButton margin="mt-3 mb-8" text="Вверх" buttonType="filled" to="main" client:visible />
+		<a href="https://sparkstudio.kz/home" target="_blank">
+			<img src={Spark.src} alt="Spark" class="mb-8" />
+		</a>
 	</div>
 </footer>
