@@ -48,6 +48,9 @@ export const Menu = () => {
 							<div className="mt-8 flex items-center gap-8 ">
 								<FontAwesomeIcon
 									icon={faInstagram}
+									onClick={() =>
+										window.open('https://www.instagram.com/mafiashowtime.kz/', '_blank')
+									}
 									className={styles.menu__container__inner__icon}
 								/>
 								<FontAwesomeIcon icon={faTiktok} className={styles.menu__container__inner__icon} />

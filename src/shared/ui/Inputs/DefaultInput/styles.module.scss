@@ -214,12 +214,14 @@
 	@apply text-primary-red;
 	font-size: clamp(16px, 1.66656vw, 64px);
 }
+
 .input--product-desc::placeholder {
 	@apply font-neo;
 	font-size: clamp(8px, 0.83328vw, 32px);
 	@apply text-primary-red;
 	text-align: center;
 }
+
 .input--default::placeholder {
 	font-size: clamp(9px, 0.93744vw, 36px);
 	@apply font-neoregular;
@@ -270,12 +272,18 @@
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
-	.input--default-red {
-		font-size: clamp(9px, 4.20552vw, 36px);
+	.input--default-red,
+	.input--default {
+		font-size: clamp(9px, 4.20552vw, 36px) !important;
 		width: clamp(162.5px, 75.93299999999999vw, 650px);
-		height: clamp(27.5px, 2.8644000000000003vw, 110px);
+		height: clamp(25px, 11.681999999999999vw, 100px) !important;
 	}
+
 	.input--default-red::placeholder {
-		font-size: clamp(9px, 4.20552vw, 36px);
+		font-size: clamp(9px, 4.20552vw, 36px) !important;
+	}
+
+	.input--default::placeholder {
+		font-size: clamp(9px, 4.20552vw, 36px) !important;
 	}
 }

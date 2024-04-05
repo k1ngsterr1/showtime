@@ -26,8 +26,14 @@ const { to } = Astro.props
 		</nav>
 		<LinkButton text="Вверх" buttonType="filled" to={to} client:visible />
 	</div>
-	<a href="tel:+77003333826" class={styles.footer__link}>+7 (700) 333-38-26</a>
-	<a href="mailto:" class={`${styles.footer__link} mt-2 mb-4`}>showtime@mafia.kz</a>
+	<a href="tel:+77003333826" class={`${styles.footer__link}  hover:text-primary-light`}
+		>+7 (700) 333-38-26</a
+	>
+	<a
+		href="mailto:showtime@mafia.kz"
+		class={`${styles.footer__link} mt-2 mb-4 transition-all hover:text-primary-light`}
+		>showtime@mafia.kz</a
+	>
 	<a href="https://sparkstudio.kz/home" target="_blank">
 		<img src={Spark.src} alt="Spark" class="mb-8 mt-8" />
 	</a>
@@ -43,8 +49,14 @@ const { to } = Astro.props
 			<LinkText text="Рейтинг" to="rating_mob" href="/" client:load />
 			<LinkText text="Контакты" to="contacts_mob" href="" client:load />
 		</nav>
-		<a href="tel:+77003333826" class={`${styles.link} mt-4`}>+7 (700) 333-38-26</a>
-		<a href="mailto:" class={`${styles.link} mt-2 mb-4`}>showtime@mafia.kz</a>
+		<a href="tel:+77003333826" class={`${styles.link} mt-4 transition-all hover:text-primary-light`}
+			>+7 (700) 333-38-26</a
+		>
+		<a
+			href="mailto:showtime@mafia.kz"
+			class={`${styles.link} mt-2 mb-4 transition-all hover:text-primary-light`}
+			>showtime@mafia.kz</a
+		>
 		<LinkButton margin="mt-3 mb-8" text="Вверх" buttonType="filled" to="main" client:visible />
 		<a href="https://sparkstudio.kz/home" target="_blank">
 			<img src={Spark.src} alt="Spark" class="mb-8" />

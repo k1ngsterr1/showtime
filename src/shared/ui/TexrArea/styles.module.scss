@@ -136,3 +136,14 @@
 	@apply font-neoregular;
 	@apply text-primary-red;
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.textarea--form {
+		width: 100%;
+		min-height: clamp(100px, 46.727999999999994vw, 400px);
+	}
+
+	.textarea--form::placeholder {
+		font-size: clamp(10px, 4.6728vw, 40px);
+	}
+}
