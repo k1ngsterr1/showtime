@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useAbsoluteTab } from '@shared/lib/hooks/useAbsoluteTab'
 import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
@@ -76,6 +76,24 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 							icon={faSignOutAlt}
 							onClick={() => toggleMicrophone(1)}
 						/>
+					</div>
+				)
+			case 'user':
+				return (
+					<div className={styles.controlPanel}>
+						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(3)} />
+						<ControlTabButton
+							text="Микрофон"
+							icon={faMicrophone}
+							onClick={() => toggleMicrophone(1)}
+						/>
+						<a href="/game">
+							<ControlTabButton
+								text="Выйти"
+								icon={faSignOutAlt}
+								onClick={() => toggleMicrophone(1)}
+							/>
+						</a>
 					</div>
 				)
 		}

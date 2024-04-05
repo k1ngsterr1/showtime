@@ -13,6 +13,7 @@ const initializeCameraStates = (players: Player[]) => {
 		{} as Record<string | number, boolean>
 	)
 }
+
 const initializeMicrophoneStates = (players: Player[]) => {
 	return players.reduce(
 		(states, player) => {
@@ -24,6 +25,8 @@ const initializeMicrophoneStates = (players: Player[]) => {
 }
 
 export const useCameraStates = (players: Player[]) => {
+	console.log('use Camera States!', players)
+
 	const [cameraStates, setCameraStates] = useState<Record<string | number, boolean>>(() =>
 		initializeCameraStates(players)
 	)

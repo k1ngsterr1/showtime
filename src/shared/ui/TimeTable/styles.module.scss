@@ -9,6 +9,7 @@
 	margin: auto;
 	overflow-y: hidden;
 	border: 2px solid;
+	z-index: 100;
 	@apply bg-primary-dark;
 	@apply border-primary-red;
 	@apply top-16;

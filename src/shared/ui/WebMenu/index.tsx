@@ -1,16 +1,15 @@
 import React from 'react'
 import { ControlTabButton } from '@shared/ui/Buttons/ControlTabButton'
 import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
-import { players } from '@shared/lib/content/webCamContent'
 
 import styles from './styles.module.scss'
 
-const ContextMenu = ({ xPos, yPos, onMenuClose }) => {
+const ContextMenu = ({ xPos, yPos, onMenuClose, players }) => {
 	const menuStyle = {
 		position: 'absolute',
 		left: `${xPos}px`,
 		top: `${yPos}px`,
-		zIndex: 1000
+		zIndex: 1000000
 	}
 
 	const { toggleMicrophone } = useCameraStates(players)

@@ -12,20 +12,23 @@ const { title, description } = Astro.props
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Showtime Мафия - Играйте в Мафию Онлайн с Друзьями!</title>
-		<meta
-			name="description"
-			content="Присоединяйтесь к захватывающему миру Мафии на Showtime - ведущей онлайн платформе для игры в Мафию. Окунитесь в интригующий мир загадок, стратегии и обмана, где каждая игра становится неповторимым приключением. Играйте с друзьями или заводите новые знакомства, разгадывайте тайны и становитесь мастером стратегии в Showtime. Наш сайт предлагает удобный интерфейс, разнообразие ролей и уникальные игровые сессии, которые подарят вам незабываемые впечатления и море адреналина. Зарегистрируйтесь сегодня и начните свою игру в мафию онлайн!"
-		/>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="robots" content="index,follow" />
+		<link rel="canonical" href="https://samigroup.kz/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<meta name="robots" content="index,follow" />
 		<meta property="og:title" content="Showtime Мафия - Играйте в Мафию Онлайн с Друзьями!" />
 		<meta
 			property="og:description"
 			content="Присоединяйтесь к захватывающему миру Мафии на Showtime - ведущей онлайн платформе для игры в Мафию. Окунитесь в интригующий мир загадок, стратегии и обмана, где каждая игра становится неповторимым приключением. Играйте с друзьями или заводите новые знакомства, разгадывайте тайны и становитесь мастером стратегии в Showtime. Наш сайт предлагает удобный интерфейс, разнообразие ролей и уникальные игровые сессии, которые подарят вам незабываемые впечатления и море адреналина. Зарегистрируйтесь сегодня и начните свою игру в мафию онлайн!"
 		/>
-		<meta property="og:url" content="https://samigroup.kz/" />
-		<meta property="og:type" content="website" />
-	</head>
+		<meta property="og:url" content="https://samigroup.kz/" /><meta
+			property="og:type"
+			content="website"
+		/></head
+	>
 	<body class="overflow-x-hidden">
 		<slot />
 	</body>
