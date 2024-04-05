@@ -2,6 +2,27 @@ body {
 	@apply bg-primary-dark;
 }
 
+@media (min-width: 375px) and (max-width: 600px) {
+	.user_edit {
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: auto;
+
+		&__heading {
+			text-align: center;
+		}
+
+		&__avatar_input {
+			&__icon {
+				width: clamp(16px, 7.47648vw, 64px);
+				height: clamp(16px, 7.47648vw, 64px);
+			}
+		}
+	}
+}
+
 .user_edit {
 	width: 86.6%;
 	display: flex;
