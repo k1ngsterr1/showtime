@@ -28,8 +28,12 @@
 
 	&__link {
 		font-size: clamp(10px, 1.0416vw, 40px);
+		transition: 0.3s all;
 		@apply font-neoregular;
 		@apply text-primary-red;
+		&:hover {
+			@apply text-primary-light;
+		}
 	}
 }
 
