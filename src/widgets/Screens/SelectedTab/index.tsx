@@ -42,18 +42,18 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 						<ControlTabButton
 							text="Камера"
 							icon={faVideo}
-							onClick={() => toggleCamera(player.cameraNumber)}
+							onClick={() => toggleCamera(player.cameraPlayerNumber)}
 						/>
 						<ControlTabButton
 							text="Микрофон"
 							icon={faMicrophone}
-							onClick={() => toggleMicrophone(player.id)}
+							onClick={() => toggleMicrophone(player.cameraPlayerNumber)}
 						/>
 						<a href="/game">
 							<ControlTabButton
 								text="Выйти"
 								icon={faSignOutAlt}
-								onClick={() => toggleMicrophone(1)}
+								onClick={() => toggleMicrophone(player.cameraPlayerNumber)}
 							/>
 						</a>
 					</div>
@@ -85,12 +85,12 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 						<ControlTabButton
 							text="Камера"
 							icon={faVideo}
-							onClick={() => toggleCamera(player.id)}
+							onClick={() => toggleCamera(player.cameraPlayerNumber)}
 						/>
 						<ControlTabButton
 							text="Микрофон"
 							icon={faMicrophone}
-							onClick={() => toggleMicrophone(player.id)}
+							onClick={() => toggleMicrophone(player.cameraPlayerNumber)}
 						/>
 						<a href="/game">
 							<ControlTabButton

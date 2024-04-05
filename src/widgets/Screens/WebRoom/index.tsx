@@ -15,11 +15,8 @@ export default function VideoRoom({ roomId }) {
 
 	useEffect(() => {
 		const showman = players.find((player) => player.role === 'showman')
-		console.log(players)
 		const showmanIsActive = showman ? true : false
-		console.log(`Showman active: ${showmanIsActive}`)
 		setTabType(showmanIsActive ? 'showman' : 'user')
-		console.log(tabType)
 	}, [cameraStates])
 
 	return (
