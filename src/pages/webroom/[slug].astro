@@ -1,10 +1,10 @@
 ---
-import VideoRoom from '@widgets/Screens/WebRoom'
 import Layout from 'src/layouts/Layout.astro'
 import { Cursor } from '@shared/ui/Cursor/index'
 import { URL } from 'url'
-
 import { Loader } from '@shared/ui/Loader/index'
+import VideoRoom from '@widgets/Screens/WebRoom'
+
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
@@ -18,6 +18,6 @@ import styles from './styles/services/styles.module.scss'
 	<Cursor client:load />
 	<!-- <Loader client:load /> -->
 	<main class="h-full w-full bg-primary-dark">
-		<VideoRoom client:load roomId={roomId} />
+		<VideoRoom client:only roomId={roomId} />
 	</main>
 </Layout>

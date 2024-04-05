@@ -33,10 +33,6 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 	toggleMicrophone
 }) => {
 	const renderContent = () => {
-		useEffect(() => {
-			console.log(tabType)
-		})
-
 		switch (tabType) {
 			default:
 				return (

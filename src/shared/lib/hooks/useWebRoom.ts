@@ -5,8 +5,6 @@ type Player = {
 }
 
 const initializeCameraStates = (players: Player[]) => {
-	console.log('players in initialize:', players)
-
 	return players.reduce(
 		(states, player) => {
 			states[player.cameraPlayerNumber] = false
@@ -27,6 +25,8 @@ const initializeMicrophoneStates = (players: Player[]) => {
 }
 
 export const useCameraStates = (players: Player[]) => {
+	console.log('use Camera States!', players)
+
 	const [cameraStates, setCameraStates] = useState<Record<string | number, boolean>>(() =>
 		initializeCameraStates(players)
 	)

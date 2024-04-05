@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { ControlPanel } from '../SelectedTab/index'
-import { players } from '@shared/lib/content/webCamContent'
 import { useCameraStates } from '@shared/lib/hooks/useWebRoom'
 import { WebcamGrid } from '@features/WebcamGrid'
 import { TimeTable } from '@shared/ui/TimeTable'
@@ -9,12 +8,8 @@ import { fetchPlayer } from '@shared/lib/hooks/useFetchPlayer'
 
 import styles from './styles.module.scss'
 
-// ! Ошибка когда я передаю сюда roomId!
-const VideoRoom = () => {
-	// const { players, error } = useGetPlayers(roomId)
-
-	// console.log('players are here!', players, error)
-
+export default function VideoRoom({ roomId }) {
+	const { players, error } = useGetPlayers(roomId)
 	const { cameraStates, toggleCamera, toggleMicrophone } = useCameraStates(players)
 	const [tabType, setTabType] = useState<string>('')
 
@@ -31,7 +26,11 @@ const VideoRoom = () => {
 		<>
 			<div className={styles.videoRoom}>
 				<TimeTable time="Ночь" />
-				<WebcamGrid players={players} cameraStates={cameraStates} />
+				{!players || players.length === 0 ? (
+					<div>Loading</div>
+				) : (
+					<WebcamGrid players={players} cameraStates={cameraStates} />
+				)}
 				<ControlPanel
 					tabType={tabType}
 					toggleCamera={toggleCamera}
@@ -41,5 +40,3 @@ const VideoRoom = () => {
 		</>
 	)
 }
-
-export default VideoRoom
