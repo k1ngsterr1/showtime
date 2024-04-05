@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 
 export function useGetWorkers() {
-	const [workerData, setWorkerData] = useState<any>()
+	const [workersData, setWorkersData] = useState<any>()
 
 	const getWorkers = async (data: any) => {
 		try {
@@ -16,11 +16,11 @@ export function useGetWorkers() {
 				}
 			})
 
-			setWorkerData(response.data)
+			setWorkersData(response.data)
 		} catch (error) {
-			console.error('There was an error with getting the worker data')
+			console.error('There was an error with getting the workers data')
 		}
 	}
 
-	return { getWorkers, workerData }
+	return { getWorkers, workersData }
 }
