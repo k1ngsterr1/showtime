@@ -1,5 +1,3 @@
-import { m } from 'dist/chunks/astro_BuDVUgPa.mjs'
-
 export const cards = [
 	{
 		day: 'Понедельник',

@@ -38,7 +38,7 @@ import styles from '../ClientsPage/styles.module.scss'
 		<div class={styles.client_mob__cards}>
 			{
 				history.map((card) => (
-					<HistoryCard name={card.name} data={card.data} paragraph={card.paragraph} />
+					<HistoryCard name={card.name} data={card.data} paragraph={card.paragraph} client:load />
 				))
 			}
 		</div>
