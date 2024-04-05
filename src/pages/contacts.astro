@@ -16,10 +16,9 @@ import '@shared/styles/global.scss'
 	<Cursor client:load />
 	<Loader client:load />
 	<Menu client:load />
-	<div class={styles.header}>
-		<Header />
+	<div class={styles.header} id="contacts">
+		<Header client:load />
 	</div>
-	<Form />
-	<Footer />
-	<Menu client:load />
+	<Form client:load />
+	<Footer to="contacts" client:load />
 </Layout>
