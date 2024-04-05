@@ -3,37 +3,37 @@ import { m } from 'dist/chunks/astro_BuDVUgPa.mjs'
 export const cards = [
 	{
 		day: 'Понедельник',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Вторник',
-		place: 'Smart.point',
-		price: '5.000 тг',
+		place: '',
+		price: '10.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Среда',
-		place: 'Smart.point',
+		place: 'Онлайн Турнир',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Четверг',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Пятница',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Суббота',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	}
@@ -42,37 +42,37 @@ export const cards = [
 export const cardsMob = [
 	{
 		day: 'Понедельник',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Вторник',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Среда',
-		place: 'Smart.point',
+		рlace: 'Онлайн Турнир',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Четверг',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Пятница',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
 		day: 'Суббота',
-		place: 'Smart.point',
+		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
