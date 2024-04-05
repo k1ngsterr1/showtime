@@ -32,6 +32,7 @@ export default function VideoRoom({ roomId }) {
 					<WebcamGrid players={players} cameraStates={cameraStates} />
 				)}
 				<ControlPanel
+					players={players}
 					tabType={tabType}
 					toggleCamera={toggleCamera}
 					toggleMicrophone={toggleMicrophone}

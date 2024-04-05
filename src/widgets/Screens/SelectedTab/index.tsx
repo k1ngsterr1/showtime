@@ -21,6 +21,7 @@ interface TabContentProps {
 	tabType: string
 	toggleCamera: any
 	toggleMicrophone: any
+	players: any
 }
 
 type ValuePiece = Date | null
@@ -30,23 +31,23 @@ type Value = ValuePiece | [ValuePiece, ValuePiece]
 export const ControlPanel: React.FC<TabContentProps> = ({
 	tabType,
 	toggleCamera,
-	toggleMicrophone
+	toggleMicrophone,
+	players
 }) => {
-	const renderContent = () => {
+	const renderContent = (player) => {
 		switch (tabType) {
 			default:
 				return (
 					<div className={styles.controlPanel}>
-						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(3)} />
+						<ControlTabButton
+							text="Камера"
+							icon={faVideo}
+							onClick={() => toggleCamera(player.cameraNumber)}
+						/>
 						<ControlTabButton
 							text="Микрофон"
 							icon={faMicrophone}
-							onClick={() => toggleMicrophone(1)}
-						/>
-						<ControlTabButton
-							text="День / Ночь"
-							icon={faSun}
-							onClick={() => console.log('zhopa')}
+							onClick={() => toggleMicrophone(player.id)}
 						/>
 						<a href="/game">
 							<ControlTabButton
@@ -60,11 +61,11 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 			case 'showman':
 				return (
 					<div className={styles.controlPanel}>
-						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(1)} />
+						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(3)} />
 						<ControlTabButton
 							text="Микрофон"
 							icon={faMicrophone}
-							onClick={() => toggleMicrophone(1)}
+							onClick={() => toggleMicrophone(3)}
 						/>
 						<ControlTabButton
 							text="День / Ночь"
@@ -81,11 +82,15 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 			case 'user':
 				return (
 					<div className={styles.controlPanel}>
-						<ControlTabButton text="Камера" icon={faVideo} onClick={() => toggleCamera(3)} />
+						<ControlTabButton
+							text="Камера"
+							icon={faVideo}
+							onClick={() => toggleCamera(player.id)}
+						/>
 						<ControlTabButton
 							text="Микрофон"
 							icon={faMicrophone}
-							onClick={() => toggleMicrophone(1)}
+							onClick={() => toggleMicrophone(player.id)}
 						/>
 						<a href="/game">
 							<ControlTabButton
@@ -99,5 +104,5 @@ export const ControlPanel: React.FC<TabContentProps> = ({
 		}
 	}
 
-	return <>{renderContent()}</>
+	return <>{players.map(renderContent)}</>
 }
