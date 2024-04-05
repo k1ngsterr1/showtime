@@ -12,6 +12,7 @@ export function useDeleteTimetable() {
 
 			const response = await axios.patch(
 				'https://showtime.up.railway.app/api/admin/update-timetable',
+				formData,
 				{
 					headers: {
 						'Content-Type': 'multipart/form-data'

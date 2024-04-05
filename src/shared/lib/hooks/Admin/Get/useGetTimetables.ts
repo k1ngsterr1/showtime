@@ -1,10 +1,10 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-export function useGetTimetable() {
-	const [timetableData, setTimetableData] = useState<any>()
+export function useGetTimetables() {
+	const [timetablesData, setTimetablesData] = useState<any>()
 
-	const getTimetable = async (data: any) => {
+	const getTimetables = async (data: any) => {
 		try {
 			const formData = new FormData()
 
@@ -16,11 +16,11 @@ export function useGetTimetable() {
 				}
 			})
 
-			setTimetableData(response.data)
+			setTimetablesData(response.data)
 		} catch (error) {
-			console.error('There was an error with getting timetable')
+			console.error('There was an error with getting timetables')
 		}
 	}
 
-	return { getTimetable, timetableData }
+	return { getTimetables, timetablesData }
 }

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 
 export function useGetProducts() {
-	const [productData, setProductData] = useState<any>()
+	const [productsData, setProductsData] = useState<any>()
 
 	const getProducts = async (data: any) => {
 		try {
@@ -16,11 +16,11 @@ export function useGetProducts() {
 				}
 			})
 
-			setProductData(response.data)
+			setProductsData(response.data)
 		} catch (error) {
-			console.error('There was an error with getting product')
+			console.error('There was an error with getting products')
 		}
 	}
 
-	return { getProducts, productData }
+	return { getProducts, productsData }
 }

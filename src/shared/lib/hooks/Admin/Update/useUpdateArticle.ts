@@ -1,17 +1,17 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-export function useUpdateProduct() {
-	const [productData, setProductData] = useState<any>()
+export function useUpdateArticle() {
+	const [articleData, setArticleData] = useState<any>()
 
-	const updateProduct = async (data: any) => {
+	const updateArticle = async (data: any) => {
 		try {
 			const formData = new FormData()
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch(
-				'https://showtime.up.railway.app/api/admin/update-product',
+				'https://showtime.up.railway.app/api/admin/update-article',
 				formData,
 				{
 					headers: {
@@ -20,11 +20,11 @@ export function useUpdateProduct() {
 				}
 			)
 
-			setProductData(response.data)
+			setArticleData(response.data)
 		} catch (error) {
-			console.error('There was an error with updating product')
+			console.error('There was an error with updating article')
 		}
 	}
 
-	return { updateProduct, productData }
+	return { updateArticle, articleData }
 }
