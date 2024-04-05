@@ -37,6 +37,13 @@ const PhotoUploadComponent: React.FC = () => {
 				margin="mt-2"
 				textAlign="center"
 			/>
+			<Input
+				inputType="default-white"
+				type="text"
+				placeholder="Email"
+				margin="mt-2"
+				textAlign="center"
+			/>
 		</div>
 	)
 }

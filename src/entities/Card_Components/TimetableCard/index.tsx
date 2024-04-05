@@ -31,7 +31,7 @@ const TimetableCard: React.FC<Props> = ({ day, place, price, time }) => {
 			</div>
 			<span className={styles.timetable_card__time}>{time}</span>
 			<Button text="Записаться" buttonType="filled" margin="mt-9" onClick={handleClick} />
-			{isPopupOpen && <SchedulePopup onClick={handleClose} />}
+			{isPopupOpen && <SchedulePopup onClick={handleClose} popupState />}
 		</div>
 	)
 }

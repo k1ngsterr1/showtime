@@ -2,7 +2,7 @@
 import Paragraph from '../../../shared/ui/Paragraph/index.astro'
 import HistoryCard from '@entities/Card_Components/HistoryCard/index'
 import SwiperHistory from '../../../shared/ui/HistoryCard/index'
-import { history } from '../../../shared/ui/HistoryCard/index'
+import { history } from '@shared/lib/content/historyContent'
 
 import '@shared/styles/global.scss'
 
@@ -26,17 +26,21 @@ import styles from '../ClientsPage/styles.module.scss'
 <main class={styles.client_mob}>
 	<div class={styles.client_mob__content}>
 		<h1 class="mt-16 text-primary-red">История</h1>
+		<div class="flex items-center justify-center">
+			<Paragraph
+				paragraphType="white"
+				text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
+				width="75%"
+				align="center"
+				margin="mt-4 mb-4"
+			/>
+		</div>
 		<div class={styles.client_mob__cards}>
-			<HistoryCard
-				name="Ruslan Pricol"
-				data="2020"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
-			<HistoryCard
-				name="Ruslan Pricol"
-				data="2020"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			/>
+			{
+				history.map((card) => (
+					<HistoryCard name={card.name} data={card.data} paragraph={card.paragraph} />
+				))
+			}
 		</div>
 	</div>
 </main>
