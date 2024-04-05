@@ -16,8 +16,6 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 	handleCameraClick,
 	onCameraContextMenu
 }) => {
-	console.log('webcam players:', players)
-
 	return (
 		<div className={styles.webcam_grid}>
 			{players.map((player) => (
