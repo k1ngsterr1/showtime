@@ -141,9 +141,11 @@
 	.textarea--form {
 		width: 100%;
 		min-height: clamp(100px, 46.727999999999994vw, 400px);
+		font-size: clamp(9px, 4.20552vw, 36px);
+		@apply pr-3;
 	}
 
 	.textarea--form::placeholder {
-		font-size: clamp(10px, 4.6728vw, 40px);
+		font-size: clamp(9px, 4.20552vw, 36px);
 	}
 }
