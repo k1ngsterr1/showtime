@@ -34,7 +34,7 @@ export const TimeSwiper: React.FC<IShowProps> = ({ cards, slides }) => {
 				</div>
 				<Swiper
 					slidesPerView={slides}
-					spaceBetween={40}
+					spaceBetween={100}
 					className={styles.swiper}
 					onSwiper={(swiperInstance) => {
 						swiperRef.current = swiperInstance

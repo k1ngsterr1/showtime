@@ -42,7 +42,6 @@ export const SchedulePopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupS
 		<div className={styles.overlay} onClick={handleOverlayClick}>
 			<section className={styles.popup} onClick={(e) => e.stopPropagation()}>
 				<div className="flex w-full items-center justify-end">
-					{/* <h1 className={styles.popup__heading}>Аутнетификация</h1> */}
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
 				<div className="mt-8 flex flex-col items-center justify-center">

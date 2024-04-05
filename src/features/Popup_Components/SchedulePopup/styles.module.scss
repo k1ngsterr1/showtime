@@ -51,3 +51,10 @@
 		@apply ml-8;
 	}
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.popup {
+		width: clamp(200px, 93.45599999999999vw, 800px);
+		height: clamp(300px, 140.184vw, 1200px);
+	}
+}
