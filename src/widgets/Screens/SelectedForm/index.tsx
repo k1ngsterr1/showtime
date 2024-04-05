@@ -8,6 +8,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 
 import styles from '../ContactForm/styles.module.scss'
+import { TextArea } from '@shared/ui/TexrArea'
 
 interface IFormContentProps {
 	gameType: string
@@ -46,11 +47,12 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									margin="mt-8"
 								/>
 								<Selector
-									placeholder="Продукт"
+									placeholder="Услуга"
 									selectedValue={selectedRole}
 									onChange={setSelectedRole}
 									items={['Вечерняя Игра', 'Вечерняя Игра', 'Вечерняя Игра', 'Вечерняя Игра']}
 								/>
+								<TextArea placeholder="Описание" textareaType="form" margin="mt-8" />
 							</div>
 							<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" />
 						</form>

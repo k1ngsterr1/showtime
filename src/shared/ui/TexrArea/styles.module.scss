@@ -10,6 +10,29 @@
 	@apply font-neoregular;
 }
 
+.textarea--form {
+	@apply pt-2;
+	font-size: clamp(9px, 0.93744vw, 36px);
+	width: clamp(145px, 15.103200000000001vw, 580px);
+	height: clamp(50px, 5.208vw, 200px);
+	text-align: left;
+	background-color: transparent;
+	overflow: hidden;
+	outline: none;
+	@apply text-primary-red;
+	@apply font-neoregular;
+	@apply pl-4;
+	border: 2px rgba(191, 35, 22, 0.65) solid;
+	border-left: 2px rgba(191, 35, 22, 0.65) solid;
+	border-right: 2px rgba(191, 35, 22, 0.65) solid;
+}
+
+.textarea--form::placeholder {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	@apply text-primary-red;
+	@apply font-neoregular;
+}
+
 .textarea--services {
 	font-size: clamp(9px, 0.93744vw, 36px);
 	font-weight: 400;

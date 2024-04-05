@@ -2,60 +2,10 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import HistoryCard from '@entities/Card_Components/HistoryCard/index'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
+import { history } from '@shared/lib/content/historyContent'
 
 import 'swiper/css'
 import styles from './styles.module.scss'
-
-export const history = [
-	{
-		name: 'Ruslan Pricol',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	},
-	{
-		name: 'Gaidar Lord',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	},
-	{
-		name: 'Artyom Andre',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	},
-	{
-		name: 'Zain Ihsan',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	},
-	{
-		name: 'Zain Ihsan',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	},
-	{
-		name: 'Zain Ihsan',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	},
-	{
-		name: 'Zain Ihsan',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	},
-	{
-		name: 'Zain Ihsan',
-		data: '2020',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. '
-	}
-]
 
 interface SwiperHistoryProps {
 	history: Array<{
@@ -67,7 +17,7 @@ interface SwiperHistoryProps {
 
 type Swiper = any
 
-export const SwiperHistory: React.FC<SwiperHistoryProps> = ({ history }) => {
+export const SwiperHistory: React.FC<SwiperHistoryProps> = () => {
 	const swiperRef = React.useRef<Swiper | null>(null)
 
 	const handlePrev = () => {
