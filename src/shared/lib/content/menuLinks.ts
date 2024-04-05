@@ -13,7 +13,8 @@ export const links_second = [
 	{ path: '/events', name: 'Ивенты' },
 	{ path: '/tournaments', name: 'Турниры' },
 	{ path: '/history', name: 'История' },
-	{ path: '/showmans', name: 'Ведущие' }
+	{ path: '/showmans', name: 'Ведущие' },
+	{ path: '/contacts', name: 'Контакты' }
 ]
 
 export const links_second_mob = [
@@ -21,5 +22,6 @@ export const links_second_mob = [
 	{ path: '/events', name: 'Ивенты' },
 	{ path: '/tournaments', name: 'Турниры' },
 	{ path: '/history', name: 'История' },
-	{ path: '/showmans', name: 'Ведущие' }
+	{ path: '/showmans', name: 'Ведущие' },
+	{ path: '/contacts', name: 'Контакты' }
 ]

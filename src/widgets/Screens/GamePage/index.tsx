@@ -20,7 +20,7 @@ export const GameScreen = () => {
 			{userData === null || scoreData === null ? (
 				<ErrorScreen />
 			) : (
-				<div className={styles.game}>
+				<div className={styles.game} id="game">
 					<div className={styles.game__main_content}>
 						<HelpCard
 							text="Узнайте главные правила игры в мафию за 5 минут"

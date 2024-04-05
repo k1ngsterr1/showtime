@@ -17,12 +17,12 @@ const { to } = Astro.props
 	<div class={styles.footer__content}>
 		<img src={Logo.src} alt="Logo" class={styles.footer__content__logo} />
 		<nav class={styles.footer__content__navigation}>
-			<LinkText text="Главная" to="main" href="" />
-			<LinkText text="О нас" to="about" href="" />
-			<LinkText text="Услуги" to="services" href="" />
-			<LinkText text="Расписание" to="timetable" href="" />
-			<LinkText text="Правила" to="rules" href="" />
-			<LinkText text="Контакты" to="contacts" href="" />
+			<LinkText text="О нас" to="about" href="" client:load />
+			<LinkText text="Ивенты" to="services" href="" client:load />
+			<LinkText text="Расписание" to="timetable" href="" client:load />
+			<LinkText text="Правила" to="rulesgame" href="" client:load />
+			<LinkText text="Рейтинг" to="rating" href="/" client:load />
+			<LinkText text="Контакты" to="contacts" href="" client:load />
 		</nav>
 		<LinkButton text="Вверх" buttonType="filled" to={to} client:visible />
 	</div>
@@ -36,12 +36,12 @@ const { to } = Astro.props
 	<div class="flex flex-col items-center">
 		<img src={logoMob.src} alt="Logo" />
 		<nav class="flex flex-col text-center">
-			<LinkText text="Главная" to="" href="" />
-			<LinkText text="О нас" to="" href="" />
-			<LinkText text="Услуги" to="" href="" />
-			<LinkText text="Расписание" to="" href="" />
-			<LinkText text="Правила" to="" href="" />
-			<LinkText text="Контакты" to="" href="" />
+			<LinkText text="О нас" to="about_mob" href="" client:load />
+			<LinkText text="Ивенты" to="services_mob" href="" client:load />
+			<LinkText text="Расписание" to="timetable_mob" href="" client:load />
+			<LinkText text="Правила" to="rulesgame_mob" href="" client:load />
+			<LinkText text="Рейтинг" to="rating_mob" href="/" client:load />
+			<LinkText text="Контакты" to="contacts_mob" href="" client:load />
 		</nav>
 		<a href="tel:+77003333826" class={`${styles.link} mt-4`}>+7 (700) 333-38-26</a>
 		<a href="mailto:" class={`${styles.link} mt-2 mb-4`}>showtime@mafia.kz</a>

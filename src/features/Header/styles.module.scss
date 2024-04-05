@@ -21,6 +21,17 @@
 			display: flex;
 			justify-content: center;
 			gap: clamp(12.5px, 1.302vw, 50px);
+
+			&_link {
+				@apply font-neoregular;
+				@apply text-primary-light;
+				font-size: clamp(11px, 1.1457600000000001vw, 44px);
+				font-weight: 400;
+				transition: 0.3s ease-in-out;
+				&:hover {
+					@apply text-primary-red;
+				}
+			}
 		}
 	}
 }

@@ -52,7 +52,7 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 				</div>
 			</section>
 
-			<section className={styles.rules_mob_screen} id="rules">
+			<section className={styles.rules_mob_screen} id="rulesgame_mob">
 				<div className={styles.rules_mob_screen__container}>
 					<div className={styles.rules_mob_screen__container__upper}>
 						<div className="flex flex-col items-center">

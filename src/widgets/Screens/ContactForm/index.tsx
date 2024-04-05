@@ -62,7 +62,7 @@ export const Form = () => {
 					<Map />
 				</div>
 			</section>
-			<section className={styles.form_screen}>
+			<section className={styles.form_screen} id="contacts">
 				<div className={styles.form_screen__container}>
 					<h6 className="m-auto text-primary-red">Контакты</h6>
 					<div className="m-auto flex w-[60%] items-center justify-between">
