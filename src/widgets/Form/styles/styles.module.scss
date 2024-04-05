@@ -123,6 +123,10 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
+		&__password {
+			font-size: clamp(9px, 4.20552vw, 36px);
+		}
 	}
 
 	.registration__heading {
