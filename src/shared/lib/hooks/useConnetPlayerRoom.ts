@@ -5,6 +5,7 @@ import type { PlayerItem } from '@entities/Tab_Components/YourGameTab/index'
 import axios from 'axios'
 
 export const useConnectPlayer = (userRoom: any, roomId?: any) => {
+	const [generalRoomId, setGeneralRoomId] = useState<any>()
 	const [players, setPlayers] = useState<PlayerItem[]>(
 		JSON.parse(localStorage.getItem('players') || '[]')
 	)
@@ -37,6 +38,8 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 			})
 
 			setIsInGameRoom(true)
+			console.log('now your room is:', roomId)
+			localStorage.setItem('roomId', roomId)
 		} catch (error) {
 			console.error('Error with connecting to the room')
 		}
@@ -63,7 +66,8 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 		})
 
 		socket.on('roomUsersUpdated', (roomWithUsers) => {
-			console.log('Updated room with users:', roomWithUsers.users)
+			// console.log(roomWithUsers)
+			// console.log('Updated room with users:', roomWithUsers.users)
 			setPlayers(roomWithUsers.users || [])
 		})
 
@@ -84,5 +88,5 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 		}
 	}, [socket])
 
-	return { players, joinRoom, leaveRoom, isInGameRoom }
+	return { players, joinRoom, leaveRoom, isInGameRoom, generalRoomId }
 }

@@ -1,5 +1,4 @@
 import axios from 'axios'
-import io from 'socket.io-client'
 import { socket } from '../socket/socketService'
 import { useState, useEffect } from 'react'
 
@@ -18,6 +17,7 @@ export function useGetRooms(userId: number) {
 					setRooms(response.data.rooms)
 					const foundUserRoom = response.data.rooms.find((room) => room.creatorId === userId)
 					setUserRoom(foundUserRoom)
+					setRoomId(foundUserRoom.id)
 				}
 			} catch (error) {
 				console.error('There was an error fetching the rooms:', error)
