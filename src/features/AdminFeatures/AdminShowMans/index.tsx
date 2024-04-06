@@ -3,6 +3,8 @@ import styles from './styles.module.scss'
 import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import Fedora from '@assets/logo/fedora.svg'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
+import AddButton from '@shared/ui/AddButton'
+import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 
 const PhotoUploadComponent: React.FC = () => {
 	const { previewUrl, handleFileChange } = useFileUpload()
@@ -45,6 +47,10 @@ const PhotoUploadComponent: React.FC = () => {
 					margin="mt-2"
 					textAlign="center"
 				/>
+				<div className="mt-8 flex flex-row gap-10">
+					<AddButton buttonType="filled" text="Добавить" type="submit" />
+					<LinkButton buttonType="filled" href="showmans-list" text="Смотреть все" />
+				</div>
 			</form>
 		</div>
 	)
