@@ -4,7 +4,7 @@ import { Header } from '@features/Header/index'
 import { Loader } from '@shared/ui/Loader'
 import { Menu } from '@features/Menu'
 
-import Layout from '../layouts/About.astro'
+import Layout from '../layouts/Layout.astro'
 import Main from '@widgets/Screens/AboutPage/Main/main.astro'
 import Goals from '@widgets/Screens/AboutPage/Goals/index.astro'
 import News from '@widgets/Screens/AboutPage/News/index.astro'
@@ -16,7 +16,10 @@ import Footer from '@features/Footer/index.astro'
 import styles from '@pages/styles/About/styles.module.scss'
 ---
 
-<Layout title="About">
+<Layout
+	title="О компании"
+	description="Откройте для себя Showtime - ведущего эксперта в области организации захватывающих корпоративных мероприятий и тимбилдингов с использованием платформы онлайн игры Мафия. Наша компания преобразует классическую игру в инструмент для укрепления командного духа и развития ключевых профессиональных навыков. В Showtime мы гордимся нашим инновационным подходом к ивент-менеджменту, создавая незабываемые впечатления, которые способствуют коммуникации, стратегическому планированию и коллективной работе. Мы предлагаем широкий спектр услуг от виртуальных тимбилдингов до масштабных корпоративных мероприятий, каждое из которых адаптировано под уникальные потребности наших клиентов. Позвольте Showtime стать вашим партнёром в создании незабываемых моментов, укрепляющих командный дух и поддерживающих корпоративную культуру. Присоединяйтесь к нам для организации вашего следующего мероприятия и погрузитесь в мир Мафии, где каждое событие превращается в захватывающее приключение."
+>
 	<Loader client:load />
 	<Cursor client:load />
 	<Menu client:load />
