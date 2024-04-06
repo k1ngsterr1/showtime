@@ -16,6 +16,7 @@ export function useAddShowman() {
 			console.log(token)
 
 			const response = await axios.post('http://localhost:4200/api/admin/add-showman', data, {
+				withCredentials: true,
 				headers: {
 					Authorization: `Bearer ${token}`,
 					'Content-Type': 'multipart/form-data'

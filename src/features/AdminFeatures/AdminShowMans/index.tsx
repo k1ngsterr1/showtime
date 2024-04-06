@@ -43,6 +43,7 @@ const PhotoUploadComponent: React.FC = () => {
 						<input
 							id="file-upload"
 							type="file"
+							name="pictureName"
 							style={{ display: 'none' }}
 							onChange={handleFileChange}
 						/>
