@@ -8,7 +8,9 @@ export function useGetPlayers(roomId: number) {
 	useEffect(() => {
 		const fetchPlayers = async () => {
 			try {
-				const response = await axios.get(`http://localhost:4000/api/rooms/${roomId}/users`)
+				const response = await axios.get(
+					`https://showtime.up.railway.app/api/rooms/${roomId}/users`
+				)
 				setPlayers(response.data.users)
 			} catch (error) {
 				setError('There was an error fetching players')

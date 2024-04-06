@@ -15,7 +15,7 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 		if (!roomId) return
 
 		try {
-			const response = await axios.get(`http://localhost:4000/api/rooms/${roomId}/users`)
+			const response = await axios.get(`https://showtime.up.railway.app/api/rooms/${roomId}/users`)
 			setPlayers(response.data.users)
 		} catch (error) {
 			console.error('There was an error fetching players!')
@@ -29,7 +29,7 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 	const joinRoom = async (roomId: string, userId: any, player: any) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:4000/api/rooms/${roomId}/users/${userId}/add`
+				`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`
 			)
 
 			socket.emit('joinRoom', { roomId: roomId, userId: userId }, () => {
@@ -44,7 +44,7 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 
 	const leaveRoom = async (roomId: string, userId: any) => {
 		try {
-			await axios.post(`http://localhost:4000/api/rooms/${roomId}/users/${userId}/add`)
+			await axios.post(`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`)
 			socket.emit('leaveRoom', { roomId, userId })
 			setIsInGameRoom(false)
 		} catch (error) {

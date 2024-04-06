@@ -11,7 +11,10 @@ interface ICreateGameProps {
 
 export async function createRoom(roomData: ICreateGameProps, userId: number) {
 	try {
-		const response = await axios.post('http://localhost:4000/api/rooms/create-room', roomData)
+		const response = await axios.post(
+			'https://showtime.up.railway.app/api/rooms/create-room',
+			roomData
+		)
 
 		const createdRoomId = response.data.id
 

@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 import { TimeSwiper } from '@features/Swiper_Components/ScheduleSwiper/index'
 import { type Props } from '@entities/Card_Components/TimetableCard'
 
-import { cards } from '@shared/lib/content/mainScheduleContent'
+import { cards, cardsMob } from '@shared/lib/content/mainScheduleContent'
 ---
 
 <section class={styles.timetable_screen} id="timetable">
@@ -19,7 +19,7 @@ import { cards } from '@shared/lib/content/mainScheduleContent'
 	<div class={styles.timetable_mob_screen__container}>
 		<h5 class="mt-8 text-center text-primary-red">Расписание</h5>
 		<div class="mt-16 flex flex-col items-center">
-			<TimeSwiper slides={4} cards={cards} client:load />
+			<TimeSwiper slides={6} cards={cardsMob} client:load />
 		</div>
 	</div>
 </section>
