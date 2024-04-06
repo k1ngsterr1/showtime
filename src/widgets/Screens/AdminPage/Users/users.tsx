@@ -27,7 +27,7 @@ export const Users = () => {
 					<div className={styles.client__main__functional__users}>
 						<UsersCard photo={ShowMan} name="Erlan Erlanov" />
 						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Подтвердить" />
+							<AddButton buttonType="filled" text="Подтвердить" type="submit" />
 							<Button buttonType="users" text="Отклонить" />
 						</div>
 					</div>

@@ -32,7 +32,7 @@ export const News = () => {
 					<div className={styles.client__main__functional__news}>
 						<NewsArticleCard />
 						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Добавить" margin="mt-3" />
+							<AddButton buttonType="filled" text="Добавить" margin="mt-3" type="submit" />
 							<LinkButton buttonType="filled" href="news-list" text="Смотреть все" margin="mt-3" />
 						</div>
 					</div>

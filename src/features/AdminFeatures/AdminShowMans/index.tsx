@@ -9,41 +9,43 @@ const PhotoUploadComponent: React.FC = () => {
 
 	return (
 		<div className={styles.container}>
-			{previewUrl ? (
-				<img src={previewUrl} alt="Preview" className={styles.previewImage} />
-			) : (
-				<label htmlFor="file-upload" className={styles.container__upload}>
-					<img src={Fedora.src} alt="Fedora" className={styles.container__upload_fedora} />
-					<p className="font-neoregular text-xl text-primary-light">Добавить фото</p>
-					<input
-						id="file-upload"
-						type="file"
-						style={{ display: 'none' }}
-						onChange={handleFileChange}
-					/>
-				</label>
-			)}
-			<Input
-				inputType="default-red-big"
-				type="text"
-				placeholder="Имя сотрудника"
-				margin="mt-4"
-				textAlign="center"
-			/>
-			<Input
-				inputType="default-white"
-				type="text"
-				placeholder="Подпись"
-				margin="mt-2"
-				textAlign="center"
-			/>
-			<Input
-				inputType="default-white"
-				type="text"
-				placeholder="Email"
-				margin="mt-2"
-				textAlign="center"
-			/>
+			<form>
+				{previewUrl ? (
+					<img src={previewUrl} alt="Preview" className={styles.previewImage} />
+				) : (
+					<label htmlFor="file-upload" className={styles.container__upload}>
+						<img src={Fedora.src} alt="Fedora" className={styles.container__upload_fedora} />
+						<p className="font-neoregular text-xl text-primary-light">Добавить фото</p>
+						<input
+							id="file-upload"
+							type="file"
+							style={{ display: 'none' }}
+							onChange={handleFileChange}
+						/>
+					</label>
+				)}
+				<Input
+					inputType="default-red-big"
+					type="text"
+					placeholder="Имя сотрудника"
+					margin="mt-4"
+					textAlign="center"
+				/>
+				<Input
+					inputType="default-white"
+					type="text"
+					placeholder="Подпись"
+					margin="mt-2"
+					textAlign="center"
+				/>
+				<Input
+					inputType="default-white"
+					type="text"
+					placeholder="Email"
+					margin="mt-2"
+					textAlign="center"
+				/>
+			</form>
 		</div>
 	)
 }

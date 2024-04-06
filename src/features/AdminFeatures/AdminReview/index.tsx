@@ -17,19 +17,21 @@ export const ReviewCard: React.FC<ICardProps> = ({ name }) => {
 	return (
 		<>
 			<div className={styles.card}>
-				<CalendarComponent marginClass="mt-3" />
-				<div className={`${styles.card__client} mt-4`}>
-					<div className={styles.card__client_circle}>
-						<img src={Fedora.src} alt="Fedora" className={styles.card__client_fedora} />
+				<form>
+					<CalendarComponent marginClass="mt-3" />
+					<div className={`${styles.card__client} mt-4`}>
+						<div className={styles.card__client_circle}>
+							<img src={Fedora.src} alt="Fedora" className={styles.card__client_fedora} />
+						</div>
+						<Input inputType="neo-medium" type="text" placeholder={name} />
 					</div>
-					<Input inputType="neo-medium" type="text" placeholder={name} />
-				</div>
-				<div className="mt-2">
-					<StarRating />
-				</div>
-				<div className={styles.card__review}>
-					<TextArea textareaType="review" placeholder="Текст отзыва" />
-				</div>
+					<div className="mt-2">
+						<StarRating />
+					</div>
+					<div className={styles.card__review}>
+						<TextArea textareaType="review" placeholder="Текст отзыва" />
+					</div>
+				</form>
 			</div>
 		</>
 	)

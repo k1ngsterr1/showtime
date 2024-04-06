@@ -32,7 +32,7 @@ export const Reviews = () => {
 					<div className={`${styles.client__main__functional__showmans} mt-12`}>
 						<ReviewCard name="Имя клиента" />
 						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Добавить" margin="mt-4" />
+							<AddButton buttonType="filled" text="Добавить" margin="mt-4" type="submit" />
 							<LinkButton
 								buttonType="filled"
 								href="reviews-list"
