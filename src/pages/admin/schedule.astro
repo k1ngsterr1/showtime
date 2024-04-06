@@ -7,9 +7,11 @@ import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
 import styles from '../styles/History/styles.module.scss'
+
+import Logo from '@assets/logo/showtime_logo.svg'
 ---
 
-<Layout title="Расписание">
+<Layout title="Расписание" image={Logo}>
 	<Cursor client:load />
 	<main class={styles.main}>
 		<Schedule client:load />
