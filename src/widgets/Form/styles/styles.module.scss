@@ -1,3 +1,20 @@
+.resumeUploadContainer {
+	/* Container styles */
+}
+
+.hidden {
+	display: none;
+}
+
+.uploadButton {
+	/* Style your button with font awesome icon */
+	cursor: pointer;
+}
+
+.resumeStatus {
+	/* Style for the resume status message */
+}
+
 .file {
 	display: flex;
 	flex-direction: column;

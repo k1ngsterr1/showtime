@@ -4,8 +4,22 @@ import { useState } from 'react'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import { VacanciePopup } from '@features/Popup_Components/VacanciePopup/index'
 import styles from '../styles/styles.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 
-export const VcancieForm = () => {
+export const VacancieForm = () => {
+	const [resumeName, setResumeName] = useState('')
+
+	const handleFileChange = (event) => {
+		const file = event.target.files[0]
+		if (file) {
+			setResumeName(file.name)
+			console.log('Selected file:', file.name)
+		} else {
+			console.log('No file selected')
+		}
+	}
+
 	const [isPopupOpen, setPopupOpen] = useState(false)
 
 	const handleClick = () => {
@@ -50,7 +64,7 @@ export const VcancieForm = () => {
 					<h2 className={styles.registration__heading}>Форма для вакансий</h2>
 					<p className={styles.registration__paragraph}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua.{' '}
+						incididunt ut labore et dolore magna aliqua.
 					</p>
 					<form className={styles.registration__form} onSubmit={handleSubmit}>
 						<Input
@@ -72,16 +86,22 @@ export const VcancieForm = () => {
 							value={formData.phone}
 							onChange={handleInputChange}
 						/>
-						{/* <div className={styles.file}>
-							<label htmlFor="resume">Прикрепите резюме:</label>
+						<div className={styles.resumeUploadContainer}>
 							<input
 								type="file"
 								id="resume"
-								accept=".pdf,.doc,.docx,.png,.jpg"
-								onChange={handleInputChange}
-								value={formData.file}
+								name="resume"
+								className={styles.hidden}
+								onChange={handleFileChange}
+								accept=".pdf,.doc,.docx"
 							/>
-						</div> */}
+							<label htmlFor="resume" className={styles.uploadButton}>
+								<FontAwesomeIcon icon={faPaperclip} /> Attach Resume
+							</label>
+							{resumeName && (
+								<div className={styles.resumeStatus}>Your resume is attached: {resumeName}</div>
+							)}
+						</div>
 						<ReactButton
 							buttonType="filled"
 							text="Отправить"
