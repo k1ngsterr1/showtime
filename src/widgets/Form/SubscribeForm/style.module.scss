@@ -11,8 +11,11 @@
 	}
 
 	.container_mob {
+		/* display: flex;
+		justify-content: center;
+		align-items: center; */
 		width: clamp(180px, 84.1104vw, 720px);
-		height: clamp(225px, 105.13799999999999vw, 900px);
+		height: clamp(270px, 126.1656vw, 1080px);
 		margin: auto;
 		display: flex;
 		background-image: url('../../../assets/About/svg/image 32.svg');
