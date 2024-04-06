@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-export function useGetVacancy() {
+export function useGetVacancies() {
 	const [vacanciesData, setVacanciesData] = useState<any>()
 
 	const getVacancies = async (data: any) => {
