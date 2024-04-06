@@ -3,6 +3,9 @@ import { useState } from 'react'
 
 export function useAddShowman() {
 	const [showmanData, setShowmanData] = useState<any>()
+	const userData =
+		typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData')) : null
+	const token = userData ? userData.refresh : ''
 
 	const addShowman = async (data: any) => {
 		try {
@@ -10,16 +13,15 @@ export function useAddShowman() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post(
-				'https://showtime.up.railway.app/api/admin/add-showman',
-				formData,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data'
-					}
+			console.log(token)
+
+			const response = await axios.post('http://localhost:4200/api/admin/add-showman', data, {
+				headers: {
+					Authorization: `Bearer ${token}`,
+					'Content-Type': 'multipart/form-data'
 				}
-			)
-			console.log(response.data)
+			})
+			console.log('here is my data:', data, response.data)
 			setShowmanData(response.data)
 		} catch (error) {
 			console.error('There was an error with adding showman')
