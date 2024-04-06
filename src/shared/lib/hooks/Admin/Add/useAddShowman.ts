@@ -19,7 +19,7 @@ export function useAddShowman() {
 					}
 				}
 			)
-
+			console.log(response.data)
 			setShowmanData(response.data)
 		} catch (error) {
 			console.error('There was an error with adding showman')
