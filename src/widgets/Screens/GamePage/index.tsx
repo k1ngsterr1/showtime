@@ -15,6 +15,8 @@ export const GameScreen = () => {
 	const userData = useUserData()
 	const { scoreData } = useGetScore()
 
+	console.log('trying vercel')
+
 	return (
 		<>
 			{userData === null || scoreData === null ? (
@@ -23,7 +25,7 @@ export const GameScreen = () => {
 				<div className={styles.game} id="game">
 					<div className={styles.game__main_content}>
 						<HelpCard
-							text="Узнайте главные правила игры в мафию за 5 минут"
+							text="Узнайте главные правила игры в мафию за 7 минут"
 							paragraph="В разделе «Правила игры», который мы составили для новых игроков"
 							linkText="Узнать"
 							href="/"

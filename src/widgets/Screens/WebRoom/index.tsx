@@ -14,6 +14,7 @@ export default function VideoRoom({ roomId }) {
 	const [tabType, setTabType] = useState<string>('')
 
 	useEffect(() => {
+		console.log('roomID:', roomId)
 		const showman = players.find((player) => player.role === 'showman')
 		const showmanIsActive = showman ? true : false
 		setTabType(showmanIsActive ? 'showman' : 'user')

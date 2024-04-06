@@ -5,11 +5,11 @@ import { URL } from 'url'
 import { Loader } from '@shared/ui/Loader/index'
 import VideoRoom from '@widgets/Screens/WebRoom'
 
-import '@shared/styles/global.scss'
-import '@shared/styles/scrollbar.scss'
-
 export const prerender = false
 const roomId = Astro.params.slug
+
+import '@shared/styles/global.scss'
+import '@shared/styles/scrollbar.scss'
 
 import styles from './styles/services/styles.module.scss'
 ---
