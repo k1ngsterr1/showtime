@@ -16,8 +16,8 @@ const serviceClass = `${styles.service_card} ${styles[cardType]}`
 ---
 
 <div class={serviceClass}>
-	<div class="space-between flex flex-col p-8">
-		<div class="flex w-full items-center justify-between">
+	<div class="space-between flex flex-col overflow-hidden p-8">
+		<div class="flex w-full items-center justify-between overflow-hidden">
 			<img src={image} alt={heading} class={styles.service_card__icon} />
 			<span class={styles.service_card__number}>{number}</span>
 		</div>
@@ -30,7 +30,7 @@ const serviceClass = `${styles.service_card} ${styles[cardType]}`
 			text={paragraph}
 			margin="mt-2"
 			paragraphType={cardType === 'white' ? 'dark' : 'white'}
-			width="80%"
+			width="100%"
 		/>
 	</div>
 </div>

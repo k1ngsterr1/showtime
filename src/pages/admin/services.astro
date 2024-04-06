@@ -8,9 +8,11 @@ import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
 import styles from '../styles/History/styles.module.scss'
+
+import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Услуги">
+<Layout title="Услуги" image={Logo}>
 	<Cursor client:load />
 	<main class={styles.main}>
 		<Services client:load />

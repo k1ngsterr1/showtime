@@ -6,22 +6,22 @@ export const cardsData = [
 	{
 		image: man_01.src,
 		number: '01',
-		heading: 'Городская мафия',
+		heading: 'Тематические вечера',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Наши вечера не ограничиваются только костюмами - вас ждут захватывающие шоу, увлекательные игры и развлечения, а также возможность выиграть призы и подарки! Погрузитесь в мир интеллектуальных игр и создайте незабываемые воспоминания!'
 	},
 	{
 		image: man_02.src,
 		number: '02',
-		heading: 'Классическая мафия',
+		heading: 'Корпоратив/Тимбилдинг',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Наша команда разработает интересные и увлекательные игры и задания, способствующие укреплению взаимодействия и командного духа'
 	},
 	{
 		image: man_03.src,
 		number: '03',
-		heading: 'Бункер мафия',
+		heading: 'Выездной ведущий',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Наши ведущие подготовит игру, организует процесс и создаст атмосферу, чтобы ваше мероприятие стало запоминающимся и веселым для всех участников.'
 	}
 ]

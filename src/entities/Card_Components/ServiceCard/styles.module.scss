@@ -1,7 +1,7 @@
 .service_card {
 	position: relative;
 	width: clamp(250px, 26.04vw, 1000px);
-	height: clamp(248.5px, 25.883760000000002vw, 994px);
+	height: clamp(325px, 33.852000000000004vw, 1300px);
 	box-shadow: 16px 16px #bf2316;
 	@apply bg-primary-dark;
 	margin: 0px 16px 16px;
@@ -28,7 +28,7 @@
 @media (min-width: 375px) and (max-width: 600px) {
 	.service_card {
 		width: clamp(184px, 85.97952vw, 736px);
-		height: clamp(225px, 105.13799999999999vw, 900px);
+		height: clamp(270px, 126.1656vw, 1080px);
 		&__icon {
 			width: clamp(37.855px, 17.6888844vw, 151.42px);
 			height: clamp(44.415px, 20.7542412vw, 177.66px);

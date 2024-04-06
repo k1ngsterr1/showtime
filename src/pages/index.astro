@@ -19,11 +19,16 @@ import Layout from '../layouts/Layout.astro'
 
 import styles from './styles/home/styles.module.scss'
 import '@shared/styles/scrollbar.scss'
-import type { id } from 'date-fns/locale'
+
+import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Home">
-	<!-- <Loader client:load /> -->
+<Layout
+	title="Главная"
+	image={Logo}
+	description="Добро пожаловать на главную страницу Showtime - вашего виртуального азартного клуба, где каждый может найти что-то по своему вкусу! У нас вы найдете широкий выбор игр, событий и историй, чтобы погрузиться в мир интриги, азарта и веселья. Независимо от того, вы новичок или опытный игрок, у нас есть что-то для вас. Играйте в мафию онлайн с друзьями, присоединяйтесь к нашим ивентам для незабываемых впечатлений, читайте увлекательные истории о мафиозных приключениях и многое другое. Присоединяйтесь к нашему сообществу и окунитесь в мир Showtime уже сегодня!"
+>
+	<Loader client:load />
 	<Cursor client:load />
 	<Menu client:load />
 	<main class={styles.main} id="main">

@@ -12,9 +12,15 @@ import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
 import styles from './styles/services/styles.module.scss'
+
+import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Услуги">
+<Layout
+	title="Услуги"
+	image={Logo}
+	description="Игра в мафию - уникальное предложение для вашего корпоратива или тимбилдинга! Организуйте захватывающие мероприятия с нашей командой профессионалов. Насладитесь атмосферой интриги и стратегических ходов, погрузившись в мир таинственности и развлечений. Проведите незабываемое время с коллегами, раскрывая секреты мафиозного мира и укрепляя командный дух. Корпоративные выездные мафии и тимбилдинги - это идеальный способ сделать ваше мероприятие запоминающимся и продуктивным."
+>
 	<Cursor client:load />
 	<Loader client:load />
 	<Menu client:load />

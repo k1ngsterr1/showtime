@@ -7,9 +7,15 @@ import { Menu } from '@features/Menu/index'
 import { BalanceScreen } from '@widgets/Screens/BalancePage/index'
 
 import '@shared/styles/global.scss'
+
+import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Страница пользователя">
+<Layout
+	title="Пополнение баланса"
+	image={Logo}
+	description="Пополните свой баланс на Showtime и наслаждайтесь безграничным миром азарта и развлечений! У нас простой и безопасный способ пополнения баланса, чтобы вы могли играть в свои любимые игры без прерываний. Просто выберите удобный способ оплаты, следуйте инструкциям на экране и получите мгновенный доступ к вашим средствам. Не упустите шанс выиграть крупные призы и насладиться увлекательными игровыми сессиями - пополните баланс прямо сейчас на Showtime!"
+>
 	<Cursor client:load />
 	<Loader client:load />
 	<Shop client:load />

@@ -1,26 +1,26 @@
 export const cardData = [
 	{
-		bigText: 'Lorem Ipsum',
+		bigText: 'Кто мы?',
 		cardType: 'dark',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Мы - команда талантливых организаторов, разработчиков и артистов, умеющих превратить обычное мероприятие в настоящее приключение. Наша миссия - подарить клиентам незабываемые впечатления и создать атмосферу, где каждый может почувствовать себя героем своего собственного детективного романа.'
 	},
 	{
-		bigText: 'Lorem Ipsum',
+		bigText: 'Наши игры',
 		cardType: 'dark',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Мы разрабатываем уникальные сценарии, которые кажутся вырванными из страниц книг или сцен из кинофильмов. Наши игры сочетают в себе элементы интриги, стратегии, и тонкого чувства атмосферы, чтобы участники могли погрузиться в мир загадок и разгадывать их вместе с нами.'
 	},
 	{
-		bigText: 'Lorem Ipsum',
+		bigText: 'Наш опыт',
 		cardType: 'dark',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'С нашим богатым опытом и страстью к созданию игровых миров, мы проводили множество мероприятий для корпоративных вечеринок, частных встреч и фестивалей. Мы гордимся нашим портфолио и рады делиться нашим опытом и искусством с нашими клиентами.'
 	},
 	{
-		bigText: 'Lorem Ipsum',
+		bigText: 'Наша миссия',
 		cardType: 'dark',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Наша цель - не просто создавать игры, а дарить людям возможность погрузиться в атмосферу загадок и сюжетных поворотов. Мы стремимся вдохновлять, удивлять и развлекать, оставляя за собой след в сердцах и воспоминаниях наших участников.'
 	}
 ]

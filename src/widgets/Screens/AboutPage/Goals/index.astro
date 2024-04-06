@@ -1,6 +1,7 @@
 ---
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import AboutCards from '@entities/Card_Components/AboutCard/index.astro'
+import { aboutCardsData } from '@shared/lib/content/aboutCardsContent'
 
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
@@ -13,31 +14,16 @@ import '@shared/styles/global.scss'
 			<Paragraph
 				paragraphType="white"
 				align="text-right"
-				width="35%"
-				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+				width="25%"
+				text="Мы являемся одной из крупнейших маф-комьюнити в мире, и ведущей организацией в Казахстане"
 			/>
 		</div>
 		<div class="mt-16 flex items-center justify-evenly gap-10">
-			<AboutCards
-				bigText="Lorem Ipsum"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-				cardType="white"
-			/>
-			<AboutCards
-				bigText="Lorem Ipsum"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-				cardType="white"
-			/>
-			<AboutCards
-				bigText="Lorem Ipsum"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-				cardType="white"
-			/>
-			<AboutCards
-				bigText="Lorem Ipsum"
-				paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-				cardType="white"
-			/>
+			{
+				aboutCardsData.map((card) => (
+					<AboutCards bigText={card.bigText} paragraph={card.paragraph} cardType={card.cardType} />
+				))
+			}
 		</div>
 	</div>
 </section>
@@ -49,25 +35,17 @@ import '@shared/styles/global.scss'
 			margin="mt-4"
 			paragraphType="white"
 			width="75%"
-			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
+			text="Мы являемся одной из крупнейших маф-комьюнити в мире, и ведущей организацией в Казахстане"
 		/>
-		<AboutCards
-			bigText="Lorem Ipsum"
-			paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-			cardType="white"
-			margin="mt-8"
-		/>
-		<AboutCards
-			bigText="Lorem Ipsum"
-			paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-			cardType="white"
-			margin="mt-8"
-		/>
-		<AboutCards
-			bigText="Lorem Ipsum"
-			paragraph="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua."
-			cardType="white"
-			margin="mt-8"
-		/>
+		{
+			aboutCardsData.map((card) => (
+				<AboutCards
+					bigText={card.bigText}
+					paragraph={card.paragraph}
+					cardType={card.cardType}
+					margin="mt-8"
+				/>
+			))
+		}
 	</div>
 </section>

@@ -15,13 +15,21 @@ import styles from './style.module.scss'
 			>Подпишитесь на рассылку для вас</span
 		>
 		<Paragraph
-			width="60%"
+			width="75%"
 			align="text-left"
 			paragraphType="dark"
 			margin="mt-4"
-			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, "
+			text="Подпишитесь на нашу рассылку, чтобы быть в курсе всех событий! Получайте свежие новости, анонсы предстоящих турниров, информацию о тематических вечерах и расписание будущих игр."
 		/>
-		<div class="justify-left flex items-center gap-10">
+
+		<Paragraph
+			width="70%"
+			align="text-left"
+			paragraphType="dark"
+			text="Будьте в центре мафиозной активности и не пропустите ни одного увлекательного момента!"
+			margin="mt-2"
+		/>
+		<div class="justify-left mb-4 flex items-center gap-10">
 			<Input
 				client:load
 				placeholder="Введите вашу электронную почту"
@@ -34,8 +42,8 @@ import styles from './style.module.scss'
 		</div>
 	</div>
 </section>
-<section class=`${"flex bg-primary-light"} ${styles.container_mob}`>
-	<div class="items-right m-auto flex w-[80%] flex-col">
+<section class=`${"flex bg-primary-light "} ${styles.container_mob}`>
+	<div class="items-right m-auto mt-5 flex w-[80%] flex-col">
 		<span class="overflow-y-hidden pb-4 font-killbill text-3xl text-primary-red"
 			>Подпишитесь на рассылку для вас</span
 		>
@@ -44,7 +52,15 @@ import styles from './style.module.scss'
 			align="text-left"
 			paragraphType="red"
 			margin="m-auto"
-			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, "
+			text="Подпишитесь на нашу рассылку, чтобы быть в курсе всех событий! Получайте свежие новости, анонсы предстоящих турниров, информацию о тематических вечерах и расписание будущих игр."
+		/>
+
+		<Paragraph
+			width="100%"
+			align="text-left"
+			paragraphType="red"
+			text="Будьте в центре мафиозной активности и не пропустите ни одного увлекательного момента!"
+			margin="mt-2"
 		/>
 		<Input
 			client:load
@@ -58,7 +74,7 @@ import styles from './style.module.scss'
 			text="Отправить"
 			buttonType="transparent"
 			type="submit"
-			margin="mt-4"
+			margin="mt-4 mb-4"
 			{...Astro.props}
 		/>
 	</div>

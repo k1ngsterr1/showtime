@@ -7,9 +7,11 @@ import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
 import styles from '../styles/History/styles.module.scss'
+
+import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Вакансии">
+<Layout title="Вакансии" image={Logo}>
 	<Cursor client:load />
 	<main class={styles.main}>
 		<Vacancie client:load />
