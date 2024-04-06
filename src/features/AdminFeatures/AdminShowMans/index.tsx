@@ -1,17 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.scss'
 import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import Fedora from '@assets/logo/fedora.svg'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
+import { useAddShowman } from '@shared/lib/hooks/Admin/Add/useAddShowman'
 
 const PhotoUploadComponent: React.FC = () => {
 	const { previewUrl, handleFileChange } = useFileUpload()
+	const { addShowman } = useAddShowman()
+	const [image, setImage] = useState<any>()
+	const [showmanName, setShowmanName] = useState<string>()
+	const [sign, setSign] = useState<string>()
+	const [email, setEmail] = useState<string>()
+
+	const handleSubmit = async (event: React.FormEvent) => {
+		event.preventDefault()
+
+		const formData = {
+			name: showmanName,
+			sign: sign,
+			email: email,
+			image: image
+		}
+
+		await addShowman(formData)
+	}
 
 	return (
 		<div className={styles.container}>
-			<form className="flex flex-col items-center justify-center">
+			<form className="flex flex-col items-center justify-center" onSubmit={handleSubmit}>
 				{previewUrl ? (
 					<img src={previewUrl} alt="Preview" className={styles.previewImage} />
 				) : (
