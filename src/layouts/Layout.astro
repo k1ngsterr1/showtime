@@ -2,9 +2,10 @@
 interface Props {
 	title: string
 	description?: string
+	image: ImageMetadata
 }
 
-const { title, description } = Astro.props
+const { title, description, image } = Astro.props
 ---
 
 <!doctype html>
@@ -17,6 +18,7 @@ const { title, description } = Astro.props
 		<meta name="robots" content="index,follow" />
 		<link rel="canonical" href="https://samigroup.kz/" />
 		<meta property="og:title" content={title} />
+		<meta property="og:image" content={image.src} />
 		<meta property="og:description" content={description} />
 		<meta name="robots" content="index,follow" />
 		<meta property="og:url" content="https://samigroup.kz/" /><meta
