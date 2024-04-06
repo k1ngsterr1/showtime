@@ -2,8 +2,6 @@ import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
-import AddButton from '@shared/ui/AddButton'
-import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import PhotoUploadComponent from '@features/AdminFeatures/AdminShowMans/index'
 
 import '@shared/styles/global.scss'
@@ -31,10 +29,6 @@ export const ShowMans = () => {
 					</div>
 					<div className={styles.client__main__functional__showmans}>
 						<PhotoUploadComponent />
-						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Добавить" />
-							<LinkButton buttonType="filled" href="showmans-list" text="Смотреть все" />
-						</div>
 					</div>
 				</div>
 			</div>

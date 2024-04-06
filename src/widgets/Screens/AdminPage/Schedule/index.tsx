@@ -31,7 +31,7 @@ export const Schedule = () => {
 					</div>
 					<div className={styles.client__main__functional__schedule}>
 						<ScheduleCard time="Время" name="Название места" address="Адресс" price="Цена" />
-						<AddButton buttonType="filled" text="Добавить" margin="mt-12" />
+						<AddButton buttonType="filled" text="Добавить" margin="mt-12" type="submit" />
 						<LinkButton
 							buttonType="filled"
 							href="schedule-list"

@@ -5,22 +5,43 @@ import { useGetRooms } from '@shared/lib/hooks/useGetRooms'
 import { useCheckUserRoom } from '@shared/lib/hooks/useCheckUserRoom'
 import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 import { socket } from '@shared/lib/socket/socketService'
+import { useStartGame } from '@shared/lib/hooks/useStartGame'
+import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 
 import styles from './styles.module.scss'
-import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
 	const { rooms, userRoom } = useGetRooms(userData.id)
-	const { joinRoom, players } = useConnectPlayer(userRoom || {}, userRoom?.id)
+	const { joinRoom, players, generalRoomId } = useConnectPlayer(userRoom || {}, userRoom?.id)
+
+	const { startGame } = useStartGame()
 
 	const [showStartGameButton, setShowStartGameButton] = useState(false)
 
-	// Update button visibility based on conditions
 	useEffect(() => {
 		const shouldShowButton = userData.role === 'showman' && userRoom?.currentPlayers === 11
+		const id = userRoom === undefined ? localStorage.getItem('roomId') : userRoom.id
+
 		setShowStartGameButton(shouldShowButton)
-	}, [userRoom, userData.role])
+
+		const handleGameStarting = () => {
+			window.location.href = `/webroom/${id}`
+			console.log('Тут стартует игра на сокетах')
+		}
+
+		socket.on('gameStarting', handleGameStarting)
+
+		return () => {
+			socket.off('gameStarting', handleGameStarting)
+		}
+	}, [userRoom, userData.role, socket])
+
+	const handleStartGame = (roomId: any) => {
+		startGame(roomId)
+		socket.emit('startGame', { roomId })
+		console.log('emitting startGame to the server')
+	}
 
 	return (
 		<section className={styles.lobbies}>
@@ -39,7 +60,12 @@ export const LobbiesBoard = () => {
 					/>
 				)}
 				{showStartGameButton && (
-					<ReactButton text="Запустить игру" buttonType="filled" margin="m-auto mt-4" />
+					<ReactButton
+						text="Запустить игру"
+						buttonType="filled"
+						margin="m-auto mt-4"
+						onClick={() => handleStartGame(userRoom.id)}
+					/>
 				)}
 				{rooms
 					.filter((room) => room.creatorId !== userData.id)
