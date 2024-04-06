@@ -9,7 +9,7 @@ const PhotoUploadComponent: React.FC = () => {
 
 	return (
 		<div className={styles.container}>
-			<form>
+			<form className="flex flex-col items-center justify-center">
 				{previewUrl ? (
 					<img src={previewUrl} alt="Preview" className={styles.previewImage} />
 				) : (
