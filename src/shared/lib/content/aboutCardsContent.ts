@@ -1,26 +1,23 @@
 export const aboutCardsData = [
 	{
-		bigText: 'Lorem Ipsum',
+		bigText: 'SEO Компании',
 		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			'Основатель ShowTime Аз-Нур Айбатыров. Компания открыла свои двери 25 декабря 2020 декабря',
 		cardType: 'white'
 	},
 	{
-		bigText: 'Lorem Ipsum',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		bigText: 'Ведущий',
+		paragraph: 'ФИО НИКНЕЙМ ФОТО',
 		cardType: 'white'
 	},
 	{
-		bigText: 'Lorem Ipsum',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		bigText: 'Ведущий',
+		paragraph: 'ФИО НИКНЕЙМ ФОТО',
 		cardType: 'white'
 	},
 	{
-		bigText: 'Lorem Ipsum',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		bigText: 'Ведущий',
+		paragraph: 'ФИО НИКНЕЙМ ФОТО',
 		cardType: 'white'
 	}
 ]

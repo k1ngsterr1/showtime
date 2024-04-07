@@ -12,23 +12,23 @@ import ShowMan from '../../../assets/ShowMans/showman.webp'
 export const showmans = [
 	{
 		photo: ShowMan,
-		name: 'Ruslan Pricol',
-		position: 'Обычный Смертный'
-	},
-	{
-		photo: ShowMan,
-		name: 'Gaidar Lord',
+		name: 'Г-н Алибек',
 		position: 'Хороший Ведущий'
 	},
 	{
 		photo: ShowMan,
-		name: 'Artyom Andre',
-		position: 'Мафия Алматы'
+		name: 'Г-жа Мария',
+		position: 'Хороший Ведущий'
 	},
 	{
 		photo: ShowMan,
-		name: 'Zain Ihsan',
-		position: 'Грязнокровка'
+		name: 'Г-н Улан',
+		position: 'Хороший Ведущий'
+	},
+	{
+		photo: ShowMan,
+		name: 'Г-н Жандос',
+		position: 'Хороший Ведущий'
 	},
 	{
 		photo: ShowMan,

@@ -1,11 +1,12 @@
 .card {
 	position: relative;
 	width: clamp(229.5px, 23.90472vw, 918px);
-	height: clamp(224.5px, 23.38392vw, 898px);
+	height: clamp(250px, 26.04vw, 1000px);
 	background-color: #f0e7be;
 	@apply p-8;
 	margin-bottom: clamp(8px, 0.83328vw, 32px);
 	box-shadow: 16px 16px 0px 0px #bf2316;
+	overflow: hidden;
 
 	&__number {
 		font-size: clamp(32px, 3.33312vw, 128px);

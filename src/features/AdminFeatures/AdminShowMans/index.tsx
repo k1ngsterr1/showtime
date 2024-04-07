@@ -8,7 +8,7 @@ import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import { useAddShowman } from '@shared/lib/hooks/Admin/Add/useAddShowman'
 
 const PhotoUploadComponent: React.FC = () => {
-	const { previewUrl, handleFileChange } = useFileUpload()
+	const { previewUrl, handleFileChange, selectedFile } = useFileUpload()
 	const { addShowman } = useAddShowman()
 	const [image, setImage] = useState<any>()
 	const [showmanName, setShowmanName] = useState<string>()
@@ -18,14 +18,17 @@ const PhotoUploadComponent: React.FC = () => {
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
 
-		const formData = {
-			name: showmanName,
-			sign: sign,
-			email: email,
-			image: image
-		}
+		if (showmanName && sign && email && selectedFile) {
+			const formData = new FormData()
+			formData.append('pictureName', selectedFile)
+			formData.append('name', showmanName)
+			formData.append('text', sign)
+			formData.append('email', email)
 
-		await addShowman(formData)
+			await addShowman(formData)
+		} else {
+			console.log('All fields are required')
+		}
 	}
 
 	return (
@@ -52,6 +55,8 @@ const PhotoUploadComponent: React.FC = () => {
 					placeholder="Имя сотрудника"
 					margin="mt-4"
 					textAlign="center"
+					value={showmanName}
+					onChange={(e) => setShowmanName(e.target.value)}
 				/>
 				<Input
 					inputType="default-white"
@@ -59,6 +64,8 @@ const PhotoUploadComponent: React.FC = () => {
 					placeholder="Подпись"
 					margin="mt-2"
 					textAlign="center"
+					value={sign}
+					onChange={(e) => setSign(e.target.value)}
 				/>
 				<Input
 					inputType="default-white"
@@ -66,6 +73,8 @@ const PhotoUploadComponent: React.FC = () => {
 					placeholder="Email"
 					margin="mt-2"
 					textAlign="center"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<div className="mt-8 flex flex-row gap-10">
 					<AddButton buttonType="filled" text="Добавить" type="submit" />
