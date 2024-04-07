@@ -1,8 +1,7 @@
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import { ScheduleCard } from '@entities/AdminEntities/ScheduleCard/index'
-import AddButton from '@shared/ui/AddButton'
-import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
+
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 
@@ -31,13 +30,6 @@ export const Schedule = () => {
 					</div>
 					<div className={styles.client__main__functional__schedule}>
 						<ScheduleCard time="Время" name="Название места" address="Адресс" price="Цена" />
-						<AddButton buttonType="filled" text="Добавить" margin="mt-12" type="submit" />
-						<LinkButton
-							buttonType="filled"
-							href="schedule-list"
-							text="Смотреть все"
-							margin="mt-6"
-						/>
 					</div>
 				</div>
 			</div>
