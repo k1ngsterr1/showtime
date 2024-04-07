@@ -15,9 +15,8 @@ export function useGetRooms(userId: number) {
 
 				if (isMounted) {
 					setRooms(response.data.rooms)
-					const foundUserRoom = response.data.rooms.find((room) => room.creatorId === userId)
+					const foundUserRoom = response.data.rooms.find((room: any) => room.creatorId === userId)
 					setUserRoom(foundUserRoom)
-					setRoomId(foundUserRoom.id)
 				}
 			} catch (error) {
 				console.error('There was an error fetching the rooms:', error)
