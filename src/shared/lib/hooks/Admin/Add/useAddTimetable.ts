@@ -11,10 +11,10 @@ export function useAddTimetable() {
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.post('http://localhost:4200/api/admin/add-timetable', data, {
-				withCredentials: true
-				// headers: {
-				// 	'Content-Type': 'multipart/form-data'
-				// }
+				withCredentials: true,
+				headers: {
+					'Content-Type': 'application/json'
+				}
 			})
 			console.log('here is my data:', data, response.data)
 

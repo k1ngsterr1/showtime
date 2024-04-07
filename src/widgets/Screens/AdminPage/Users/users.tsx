@@ -1,8 +1,6 @@
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
-import AddButton from '@shared/ui/AddButton'
-import Button from '@shared/ui/Buttons/DefaultReactButton/index'
 import UsersCard from '@entities/AdminEntities/AdminUsersCard/index'
 
 import '@shared/styles/global.scss'
@@ -26,10 +24,6 @@ export const Users = () => {
 					</div>
 					<div className={styles.client__main__functional__users}>
 						<UsersCard photo={ShowMan} name="Erlan Erlanov" />
-						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Подтвердить" type="submit" />
-							<Button buttonType="users" text="Отклонить" />
-						</div>
 					</div>
 				</div>
 			</div>
