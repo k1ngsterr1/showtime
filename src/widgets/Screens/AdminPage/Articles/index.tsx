@@ -2,9 +2,8 @@ import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
-import AddButton from '@shared/ui/AddButton'
-import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
-import { NewsArticleCard } from '@features/AdminFeatures/AdminNewsArticles'
+
+import { AdminArticles } from '@features/AdminArticles/index'
 
 import '@shared/styles/global.scss'
 
@@ -30,16 +29,7 @@ export const Articles = () => {
 						/>
 					</div>
 					<div className={styles.client__main__functional__news}>
-						<NewsArticleCard />
-						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Добавить" margin="mt-3" type="submit" />
-							<LinkButton
-								buttonType="filled"
-								href="articles-list"
-								text="Смотреть все"
-								margin="mt-3"
-							/>
-						</div>
+						<AdminArticles />
 					</div>
 				</div>
 			</div>
