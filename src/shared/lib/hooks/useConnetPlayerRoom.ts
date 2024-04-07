@@ -4,20 +4,23 @@ import type { PlayerItem } from '@entities/Tab_Components/YourGameTab/index'
 
 import axios from 'axios'
 
-export const useConnectPlayer = (userRoom: any, roomId?: any) => {
+export const useConnectPlayer = (roomId?: any) => {
 	const [generalRoomId, setGeneralRoomId] = useState<any>()
 	const [players, setPlayers] = useState<PlayerItem[]>(
 		JSON.parse(localStorage.getItem('players') || '[]')
 	)
 
-	const [isInGameRoom, setIsInGameRoom] = useState(false)
+	console.log('use connect players is loading,', roomId)
 
 	const getPlayers = useCallback(async () => {
 		if (!roomId) return
 
+		console.log('get players are working')
+
 		try {
 			const response = await axios.get(`https://showtime.up.railway.app/api/rooms/${roomId}/users`)
 			setPlayers(response.data.users)
+			console.log(players)
 		} catch (error) {
 			console.error('There was an error fetching players!')
 		}
@@ -37,9 +40,10 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 				console.log('joining room here')
 			})
 
-			setIsInGameRoom(true)
 			console.log('now your room is:', roomId)
 			localStorage.setItem('roomId', roomId)
+			localStorage.setItem('roomName', response.data.room.roomName)
+			localStorage.setItem('inRoom', 'true')
 		} catch (error) {
 			console.error('Error with connecting to the room')
 		}
@@ -47,9 +51,9 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 
 	const leaveRoom = async (roomId: string, userId: any) => {
 		try {
-			await axios.post(`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/add`)
+			await axios.post(`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/remove`)
 			socket.emit('leaveRoom', { roomId, userId })
-			setIsInGameRoom(false)
+			localStorage.setItem('inRoom', 'false')
 		} catch (error) {
 			console.error('Error with leaving the room')
 		}
@@ -88,5 +92,5 @@ export const useConnectPlayer = (userRoom: any, roomId?: any) => {
 		}
 	}, [socket])
 
-	return { players, joinRoom, leaveRoom, isInGameRoom, generalRoomId }
+	return { players, joinRoom, leaveRoom, generalRoomId }
 }

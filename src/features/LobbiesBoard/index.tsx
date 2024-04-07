@@ -12,16 +12,23 @@ import styles from './styles.module.scss'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
+
 	const { rooms, userRoom } = useGetRooms(userData.id)
-	const { joinRoom, players, generalRoomId } = useConnectPlayer(userRoom || {}, userRoom?.id)
+	const stateId = userRoom === undefined ? localStorage.getItem('roomId') : userRoom.id
 
+	const { joinRoom, players } = useConnectPlayer(userRoom?.id || stateId)
 	const { startGame } = useStartGame()
-
 	const [showStartGameButton, setShowStartGameButton] = useState(false)
+
+	// Local Storage Items
+	const storageRoomName = localStorage.getItem('roomName')
+	const isInRoom = localStorage.getItem('inRoom')
 
 	useEffect(() => {
 		const shouldShowButton = userData.role === 'showman' && userRoom?.currentPlayers === 11
 		const id = userRoom === undefined ? localStorage.getItem('roomId') : userRoom.id
+
+		console.log(stateId)
 
 		setShowStartGameButton(shouldShowButton)
 
@@ -51,6 +58,14 @@ export const LobbiesBoard = () => {
 				<span className={styles.lobbies__upper_line__text}>Кол-во игроков</span>
 			</div>
 			<div className={styles.lobbies__tabs}>
+				{isInRoom == 'true' && (
+					<YourGameTab
+						gameName={storageRoomName}
+						key={'Проверка'}
+						userId={userData.id}
+						players={players}
+					/>
+				)}
 				{userRoom && (
 					<YourGameTab
 						gameName={userRoom.roomName}
@@ -68,7 +83,7 @@ export const LobbiesBoard = () => {
 					/>
 				)}
 				{rooms
-					.filter((room) => room.creatorId !== userData.id)
+					.filter((room) => room.creatorId !== userData.id && room.id != stateId)
 					.map((room) => (
 						<LobbyTab
 							onClick={() => joinRoom(room.id, userData.id, userData)}
