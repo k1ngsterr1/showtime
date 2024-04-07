@@ -13,7 +13,7 @@ export function useAddVacancy() {
 			const response = await axios.post('http://localhost:4200/api/admin/add-vacancy', data, {
 				withCredentials: true,
 				headers: {
-					'Content-Type': 'multipart/form-data'
+					'Content-Type': 'application/json'
 				}
 			})
 			console.log('here is my data:', data, response.data)

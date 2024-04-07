@@ -2,8 +2,6 @@ import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
-import AddButton from '@shared/ui/AddButton'
-import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import AdminProducts from '@features/AdminFeatures/AdminProducts/index'
 
 import '@shared/styles/global.scss'
@@ -31,15 +29,6 @@ export const Products = () => {
 					</div>
 					<div className={styles.client__main__functional__showmans}>
 						<AdminProducts />
-						<div className={styles.client__main__functional__buttons}>
-							<AddButton buttonType="filled" text="Добавить" margin="mt-4" type="submit" />
-							<LinkButton
-								buttonType="filled"
-								href="products-list"
-								text="Смотреть все"
-								margin="mt-4"
-							/>
-						</div>
 					</div>
 				</div>
 			</div>

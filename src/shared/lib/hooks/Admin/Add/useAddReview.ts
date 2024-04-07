@@ -10,16 +10,13 @@ export function useAddReview() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post(
-				'https://showtime.up.railway.app/api/admin/add-review',
-				formData,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data' // Set the content type header for multipart form data
-					}
+			const response = await axios.post('http://localhost:4200/api/admin/add-review', data, {
+				withCredentials: true,
+				headers: {
+					'Content-Type': 'application/json'
 				}
-			)
-
+			})
+			console.log('here is my data:', data, response.data)
 			setReviewData(response.data)
 		} catch (error) {
 			console.error('There was an error with review adding')
