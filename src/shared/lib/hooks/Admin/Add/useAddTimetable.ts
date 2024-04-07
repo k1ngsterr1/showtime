@@ -10,15 +10,13 @@ export function useAddTimetable() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post(
-				'https://showtime.up.railway.app/api/admin/add-timetable',
-				formData,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data'
-					}
-				}
-			)
+			const response = await axios.post('http://localhost:4200/api/admin/add-timetable', data, {
+				withCredentials: true
+				// headers: {
+				// 	'Content-Type': 'multipart/form-data'
+				// }
+			})
+			console.log('here is my data:', data, response.data)
 
 			setTimetableData(response.data)
 		} catch (error) {

@@ -13,6 +13,7 @@ export const RegistrationForm = () => {
 	const [formData, setFormData] = useState({
 		username: '',
 		email: '',
+		phone: '',
 		password: '',
 		passwordConfirmation: ''
 	})
@@ -64,6 +65,16 @@ export const RegistrationForm = () => {
 							type="email"
 							required
 							value={formData.email}
+							onChange={handleInputChange}
+						/>
+						<Input
+							placeholder="Номер телефона"
+							name="phone"
+							inputType="default"
+							margin="mt-4"
+							type="phone"
+							required
+							value={formData.phone}
 							onChange={handleInputChange}
 						/>
 						<PasswordInput
