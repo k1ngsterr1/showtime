@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import ButtonMore from '@shared/ui/Buttons/DefaultReactButton/index'
 import { DetailsPopup } from '@features/Popup_Components/OrdersDetailsPopup/index'
+import { useGetOrders } from '@shared/lib/hooks/Admin/Get/useGetOrders'
 
 import styles from './styles.module.scss'
 
@@ -20,6 +22,29 @@ interface Props {
 export const AdminTableService: React.FC<Props> = ({ services }) => {
 	const [isPopupOpen, setPopupOpen] = useState(false)
 	const [selectedService, setSelectedService] = useState<Service | null>(null)
+	const [orders, setOrders] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
+	const { getOrders } = useGetOrders()
+
+	useEffect(() => {
+		setIsLoading(true)
+		getOrders()
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setOrders(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setOrders([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
 
 	const handleClick = (service: Service) => {
 		setSelectedService(service)
