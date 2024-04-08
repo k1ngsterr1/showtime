@@ -10,15 +10,11 @@ export function useUpdateShowman() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.patch(
-				'https://showtime.up.railway.app/api/admin/add-showman',
-				formData,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data'
-					}
+			const response = await axios.patch('http://localhost:4200/api/admin/add-showman', {
+				headers: {
+					'Content-Type': 'multipart/form-data'
 				}
-			)
+			})
 
 			setShowmanData(response.data)
 		} catch (error) {
