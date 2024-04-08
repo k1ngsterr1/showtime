@@ -1,5 +1,7 @@
 import ShowMansCard from '@entities/Card_Components/ShowMansCard/index'
 import { showmans } from '@features/Swiper_Components/ShowMansSwiper/index'
+import { useGetShowmans } from '@shared/lib/hooks/Admin/Get/useGetShowmans'
+
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 
@@ -7,8 +9,16 @@ import Logo from '@assets/logo/showtime_logo.svg'
 
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
+import { useEffect, useState } from 'react'
 
 export const ShowmansList = () => {
+	const [showmans, setShowmans] = useState<any[]>([])
+	const { getShowmans } = useGetShowmans()
+
+	useEffect(() => {
+		getShowmans()
+	}, [showmans])
+
 	return (
 		<main className={styles.services}>
 			<div className={styles.services__content}>

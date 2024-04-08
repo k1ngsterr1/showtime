@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { VideoCams } from '@shared/ui/VideoCams'
 
 import styles from '@widgets/Screens/WebRoom/styles.module.scss'
@@ -16,6 +16,16 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 	handleCameraClick,
 	onCameraContextMenu
 }) => {
+	const [localStream, setLocalStream] = useState<MediaStream | null>(null)
+	const [remoteStreams, setRemoteStreams] = useState<any>({})
+
+	useEffect(() => {
+		navigator.mediaDevices
+			.getUserMedia({ video: true, audio: true })
+			.then((stream) => setLocalStream(stream))
+			.catch(console.error)
+	})
+
 	return (
 		<div className={styles.webcam_grid}>
 			{players.map((player) => (
