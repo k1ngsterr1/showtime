@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { PlayerAvatar } from '@entities/Game_Components/PlayerAvatar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDoorOpen } from '@fortawesome/free-solid-svg-icons'
+import { useConnectPlayer } from '@shared/lib/hooks/useConnetPlayerRoom'
 
 export interface PlayerItem {
 	photo: ImageMetadata
@@ -10,12 +13,14 @@ export interface PlayerItem {
 
 interface YourGameTabProps {
 	gameName: string
+	roomId: string | number
 	userId: string | number
 	players: PlayerItem[]
 }
 
-export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, userId, players }) => {
+export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, userId, roomId, players }) => {
 	const displayedPlayers = players.slice(0, 5)
+	const { leaveRoom } = useConnectPlayer(roomId)
 	const additionalPlayersCount = players.length - displayedPlayers.length
 
 	return (
@@ -25,7 +30,14 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, userId, play
 					<span className={styles.game_tab__text}>{gameName}</span>
 					<span className={styles.game_tab__type}>Классическая</span>
 				</div>
-				<span className={styles.game_tab__text}> {players.length} / 11</span>
+				<div className="flex items-center gap-5">
+					<span className={styles.game_tab__text}> {players.length} / 11</span>
+					<FontAwesomeIcon
+						icon={faDoorOpen}
+						className={styles.game_tab__icon}
+						onClick={() => leaveRoom(roomId, userId)}
+					/>
+				</div>
 			</div>
 			<hr className={styles.game_tab__separator} />
 			<div className="mt-4 flex items-start gap-8">

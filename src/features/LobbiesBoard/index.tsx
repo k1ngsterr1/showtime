@@ -12,23 +12,20 @@ import styles from './styles.module.scss'
 
 export const LobbiesBoard = () => {
 	const userData = JSON.parse(localStorage.getItem('userData'))
-
 	const { rooms, userRoom } = useGetRooms(userData.id)
 	const stateId = userRoom === undefined ? localStorage.getItem('roomId') : userRoom.id
-
 	const { joinRoom, players } = useConnectPlayer(userRoom?.id || stateId)
 	const { startGame } = useStartGame()
 	const [showStartGameButton, setShowStartGameButton] = useState(false)
 
-	// Local Storage Items
 	const storageRoomName = localStorage.getItem('roomName')
 	const isInRoom = localStorage.getItem('inRoom')
+
+	console.log(stateId)
 
 	useEffect(() => {
 		const shouldShowButton = userData.role === 'showman' && userRoom?.currentPlayers === 11
 		const id = userRoom === undefined ? localStorage.getItem('roomId') : userRoom.id
-
-		console.log(stateId)
 
 		setShowStartGameButton(shouldShowButton)
 
@@ -61,7 +58,7 @@ export const LobbiesBoard = () => {
 				{isInRoom == 'true' && (
 					<YourGameTab
 						gameName={storageRoomName}
-						key={'Проверка'}
+						roomId={stateId}
 						userId={userData.id}
 						players={players}
 					/>
@@ -69,7 +66,7 @@ export const LobbiesBoard = () => {
 				{userRoom && (
 					<YourGameTab
 						gameName={userRoom.roomName}
-						key={userRoom.id}
+						roomId={userRoom.id}
 						userId={userData.id}
 						players={players}
 					/>

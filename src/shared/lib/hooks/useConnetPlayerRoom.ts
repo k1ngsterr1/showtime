@@ -10,17 +10,12 @@ export const useConnectPlayer = (roomId?: any) => {
 		JSON.parse(localStorage.getItem('players') || '[]')
 	)
 
-	console.log('use connect players is loading,', roomId)
-
 	const getPlayers = useCallback(async () => {
 		if (!roomId) return
-
-		console.log('get players are working')
 
 		try {
 			const response = await axios.get(`https://showtime.up.railway.app/api/rooms/${roomId}/users`)
 			setPlayers(response.data.users)
-			console.log(players)
 		} catch (error) {
 			console.error('There was an error fetching players!')
 		}
@@ -40,7 +35,6 @@ export const useConnectPlayer = (roomId?: any) => {
 				console.log('joining room here')
 			})
 
-			console.log('now your room is:', roomId)
 			localStorage.setItem('roomId', roomId)
 			localStorage.setItem('roomName', response.data.room.roomName)
 			localStorage.setItem('inRoom', 'true')
@@ -49,10 +43,12 @@ export const useConnectPlayer = (roomId?: any) => {
 		}
 	}
 
-	const leaveRoom = async (roomId: string, userId: any) => {
+	const leaveRoom = async (roomId: string | number, userId: any) => {
 		try {
 			await axios.post(`https://showtime.up.railway.app/api/rooms/${roomId}/users/${userId}/remove`)
-			socket.emit('leaveRoom', { roomId, userId })
+			socket.emit('leaveRoom', { roomId, userId }, () => {
+				console.log('Гарри рубленное мясо!')
+			})
 			localStorage.setItem('inRoom', 'false')
 		} catch (error) {
 			console.error('Error with leaving the room')
@@ -64,14 +60,16 @@ export const useConnectPlayer = (roomId?: any) => {
 			console.log('Connected to socket server in useConnectPlayerRoom')
 		})
 
-		socket.on('join', (roomWithUsers) => {
-			console.log('Updated room with users after joining:', roomWithUsers.users)
-			setPlayers(roomWithUsers.users || [])
+		socket.on('joinRoom', (roomWithUsers) => {
+			console.log('Updated room with users after join')
+		})
+
+		socket.on('leaveRoom', (roomWithUsers) => {
+			console.log('Updated room with users after leave')
 		})
 
 		socket.on('roomUsersUpdated', (roomWithUsers) => {
-			// console.log(roomWithUsers)
-			// console.log('Updated room with users:', roomWithUsers.users)
+			console.log('room users updated is working from sockets!')
 			setPlayers(roomWithUsers.users || [])
 		})
 
@@ -85,6 +83,7 @@ export const useConnectPlayer = (roomId?: any) => {
 
 		return () => {
 			socket.off('join')
+			socket.off('leaveRoom')
 			socket.off('roomUsersUpdated')
 			socket.off('playerJoined')
 			socket.off('playerLeft')
