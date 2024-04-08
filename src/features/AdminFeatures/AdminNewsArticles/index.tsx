@@ -2,6 +2,8 @@ import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import CalendarComponent from '@features/Calendar/reviewcalendar'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import { TextArea } from '@shared/ui/TexrArea'
+import AddButton from '@shared/ui/AddButton'
+import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 
 import styles from './styles.module.scss'
 
@@ -11,8 +13,8 @@ export const NewsArticleCard = () => {
 	const { previewUrl, handleFileChange } = useFileUpload()
 
 	return (
-		<div className={styles.card}>
-			<form>
+		<form>
+			<div className={styles.card}>
 				<div className={styles.card__content}>
 					{previewUrl ? (
 						<img src={previewUrl} alt="Preview" className={styles.card__content__previewImage} />
@@ -34,7 +36,11 @@ export const NewsArticleCard = () => {
 						<TextArea textareaType="articles" placeholder="Текст" margin="mt-3" />
 					</div>
 				</div>
-			</form>
-		</div>
+			</div>
+			<div className={styles.client__main__functional__buttons}>
+				<AddButton buttonType="filled" text="Добавить" margin="mt-3" type="submit" />
+				<LinkButton buttonType="filled" href="news-list" text="Смотреть все" margin="mt-3" />
+			</div>
+		</form>
 	)
 }

@@ -7,7 +7,7 @@ import { Input } from '@shared/ui/Inputs/DefaultInput'
 
 interface CalendarProps {
 	marginClass?: string
-	onDateChange: (date: Date) => void
+	onDateChange: (date: string) => void
 }
 
 const CalendarComponent: React.FC<CalendarProps> = ({ marginClass, onDateChange }) => {
@@ -16,9 +16,9 @@ const CalendarComponent: React.FC<CalendarProps> = ({ marginClass, onDateChange 
 
 	const toggleDate = () => setIsOpen(!isOpen)
 
-	const handleDateChange = (date: Date) => {
-		setDate(date)
-		onDateChange(date)
+	const handleDateChange = (newDate: Date) => {
+		setDate(newDate)
+		onDateChange(format(newDate, 'yyyy-MM-dd'))
 	}
 
 	return (
