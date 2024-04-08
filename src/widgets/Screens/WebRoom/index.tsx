@@ -5,7 +5,6 @@ import { WebcamGrid } from '@features/WebcamGrid'
 import { TimeTable } from '@shared/ui/TimeTable'
 import { useGetPlayers } from '@shared/lib/hooks/useGetPlayers'
 import { fetchPlayer } from '@shared/lib/hooks/useFetchPlayer'
-
 import styles from './styles.module.scss'
 
 export default function VideoRoom({ roomId }) {
@@ -13,15 +12,14 @@ export default function VideoRoom({ roomId }) {
 	const { cameraStates, toggleCamera, toggleMicrophone } = useCameraStates(players)
 	const [tabType, setTabType] = useState<string>('')
 
-	const [peerConnections, setPeerConnections] = useState({})
-	const [localStream, setLocalStream] = useState(null)
-	const [remoteStreams, setRemoteStreams] = useState({})
+	const userData = JSON.parse(localStorage.getItem('userData'))
 
 	useEffect(() => {
-		console.log('roomID:', roomId)
 		const showman = players.find((player) => player.role === 'showman')
-		const showmanIsActive = showman ? true : false
-		setTabType(showmanIsActive ? 'showman' : 'user')
+		if (showman && userData) {
+			const showmanIsActive = showman.id === userData.id ? true : false
+			setTabType(showmanIsActive ? 'showman' : 'user')
+		}
 	}, [cameraStates])
 
 	return (
@@ -31,7 +29,12 @@ export default function VideoRoom({ roomId }) {
 				{!players || players.length === 0 ? (
 					<div>Loading</div>
 				) : (
-					<WebcamGrid players={players} cameraStates={cameraStates} />
+					<WebcamGrid
+						players={players}
+						cameraStates={cameraStates}
+						roomId={roomId}
+						userId={userData.id}
+					/>
 				)}
 				<ControlPanel
 					players={players}

@@ -27,6 +27,8 @@ export const LobbiesBoard = () => {
 		const shouldShowButton = userData.role === 'showman' && userRoom?.currentPlayers === 11
 		const id = userRoom === undefined ? localStorage.getItem('roomId') : userRoom.id
 
+		console.log(shouldShowButton)
+
 		setShowStartGameButton(shouldShowButton)
 
 		const handleGameStarting = () => {
