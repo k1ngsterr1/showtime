@@ -4,17 +4,9 @@ import { useState } from 'react'
 export function useGetShowmans() {
 	const [showmansData, setShowmansData] = useState<any>()
 
-	const getShowmans = async (data: any) => {
+	const getShowmans = async () => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-showmans', {
-				headers: {
-					'Content-Type': 'multipart/form-data'
-				}
-			})
+			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-showmans')
 
 			setShowmansData(response.data)
 		} catch (error) {

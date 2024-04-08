@@ -13,6 +13,10 @@ export default function VideoRoom({ roomId }) {
 	const { cameraStates, toggleCamera, toggleMicrophone } = useCameraStates(players)
 	const [tabType, setTabType] = useState<string>('')
 
+	const [peerConnections, setPeerConnections] = useState({})
+	const [localStream, setLocalStream] = useState(null)
+	const [remoteStreams, setRemoteStreams] = useState({})
+
 	useEffect(() => {
 		console.log('roomID:', roomId)
 		const showman = players.find((player) => player.role === 'showman')
