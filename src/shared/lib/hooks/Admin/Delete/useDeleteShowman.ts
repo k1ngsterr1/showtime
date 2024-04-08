@@ -6,18 +6,12 @@ export function useDeleteShowman() {
 
 	const deleteShowman = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.delete(
-				'https://showtime.up.railway.app/api/admin/delete-showman',
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data'
-					}
+			const response = await axios.delete('http://localhost:4200/api/admin/delete-showman', {
+				withCredentials: true,
+				headers: {
+					'Content-Type': 'application/json'
 				}
-			)
+			})
 
 			setShowmanData(response.data)
 		} catch (error) {

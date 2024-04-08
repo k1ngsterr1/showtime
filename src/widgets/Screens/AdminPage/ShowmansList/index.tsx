@@ -1,22 +1,62 @@
+import React, { useEffect, useState } from 'react'
 import ShowMansCard from '@entities/Card_Components/ShowMansCard/index'
-import { useEffect, useState } from 'react'
 import { useGetShowmans } from '@shared/lib/hooks/Admin/Get/useGetShowmans'
-
+import { useDeleteShowman } from '@shared/lib/hooks/Admin/Delete/useDeleteShowman'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
+import { Loader } from '@shared/ui/Loader'
 
 import Logo from '@assets/logo/showtime_logo.svg'
-
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
 
 export const ShowmansList = () => {
 	const [showmans, setShowmans] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
 	const { getShowmans } = useGetShowmans()
+	const { deleteShowman } = useDeleteShowman()
 
 	useEffect(() => {
+		setIsLoading(true)
 		getShowmans()
-	}, [showmans])
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setShowmans(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setShowmans([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
+
+	const handleDeleteShowman = (showmanId: string) => {
+		deleteShowman({ id: showmanId })
+			.then(() => {
+				// Handle success, e.g., refresh the list of showmans
+				getShowmans()
+					.then((data) => {
+						if (Array.isArray(data)) {
+							setShowmans(data)
+						} else {
+							console.error('Data is not an array:', data)
+							setShowmans([])
+						}
+					})
+					.catch((error) => {
+						console.error('Failed to fetch showmans:', error)
+					})
+			})
+			.catch((error) => {
+				console.error('Failed to delete showman:', error)
+			})
+	}
 
 	return (
 		<main className={styles.services}>
@@ -26,19 +66,31 @@ export const ShowmansList = () => {
 				</div>
 				<h1 className="text-primary-red">Ведущие</h1>
 				<div className={styles.services__content_cards}>
-					<div className={styles.services__content_card}>
-						{showmans.map((showman) => (
-							<div className={`${styles.card} mt-12`}>
-								<ShowMansCard
-									photo={showman.photo}
-									name={showman.name}
-									position={showman.position}
-								/>
-								<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
-								<Buttons buttonType="filled" text="Удалить" margin="mt-4" />
-							</div>
-						))}
-					</div>
+					{isLoading ? (
+						<div className="flex items-center justify-center">
+							<Loader />
+						</div>
+					) : (
+						<div className={styles.services__content_card}>
+							{showmans.map((showman) => (
+								<div key={showman.id} className={`${styles.card} mt-12`}>
+									<ShowMansCard
+										showmanId={showman.id}
+										image={showman.image}
+										name={showman.name}
+										text={showman.text}
+									/>
+									<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
+									<Buttons
+										buttonType="filled"
+										text="Удалить"
+										margin="mt-4"
+										onClick={() => handleDeleteShowman(showman.id)}
+									/>
+								</div>
+							))}
+						</div>
+					)}
 				</div>
 				<LinkButton buttonType="filled" href="showmans" text="Назад" margin="mt-16" />
 			</div>
