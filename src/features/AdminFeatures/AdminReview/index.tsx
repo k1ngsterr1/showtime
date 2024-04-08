@@ -6,6 +6,7 @@ import { StarRating } from '@shared/ui/StarRating/index'
 import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import { useAddReview } from '@shared/lib/hooks/Admin/Add/useAddReview'
+import { useGetReviews } from '@shared/lib/hooks/Admin/Get/useGetReviews'
 
 import Fedora from '@assets/logo/fedora.svg'
 import styles from './styles.module.scss'

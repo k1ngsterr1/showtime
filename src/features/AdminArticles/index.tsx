@@ -22,7 +22,6 @@ export const AdminArticles = () => {
 
 		if (articleTitle && articleText && selectedFile) {
 			const formData = new FormData()
-			// Ensure selectedFile is a File object and correctly append it
 			formData.append('pictureName', selectedFile, selectedFile.name)
 			formData.append('heading', articleTitle)
 			formData.append('description', articleText)
