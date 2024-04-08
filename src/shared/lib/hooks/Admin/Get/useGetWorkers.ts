@@ -4,19 +4,14 @@ import { useState } from 'react'
 export function useGetWorkers() {
 	const [workersData, setWorkersData] = useState<any>()
 
-	const getWorkers = async (data: any) => {
+	const getWorkers = async () => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-workers', {
-				headers: {
-					'Content-Type': 'multipart/form-data'
-				}
+			const response = await axios.get('http://localhost:4200/api/admin/get-workers', {
+				withCredentials: true
 			})
-
-			setWorkersData(response.data)
+			const users = response.data
+			console.log('here is my data:', response.data)
+			return response.data['workers']
 		} catch (error) {
 			console.error('There was an error with getting the workers data')
 		}

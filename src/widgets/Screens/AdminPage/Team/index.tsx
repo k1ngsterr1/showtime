@@ -3,7 +3,6 @@ import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AddButton from '../../../../shared/ui/AddButton/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import AdminTeam from '@features/AdminFeatures/AdminTeam/index'
-import { users } from '@features/AdminFeatures/AdminTeam/index'
 import { useState } from 'react'
 import { AddPopup } from '@features/Popup_Components/AddTeamPopup/index'
 
@@ -39,7 +38,7 @@ export const Team = () => {
 						{isPopupOpen && <AddPopup onClick={handleClose} popupState />}
 					</div>
 					<div className={styles.client__main__functional__teammates}>
-						<AdminTeam users={users} />
+						<AdminTeam />
 					</div>
 				</div>
 			</div>

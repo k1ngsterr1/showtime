@@ -6,15 +6,12 @@ export function useDeleteWorker() {
 
 	const deleteWorker = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
 			const response = await axios.delete(
-				'https://showtime.up.railway.app/api/admin/delete-worker',
+				`http://localhost:4200/api/admin/delete-worker/${data.workerId}`,
 				{
+					withCredentials: true,
 					headers: {
-						'Content-Type': 'multipart/form-data'
+						'Content-Type': 'application/json'
 					}
 				}
 			)

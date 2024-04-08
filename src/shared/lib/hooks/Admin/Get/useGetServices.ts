@@ -4,17 +4,14 @@ import { useState } from 'react'
 export function useGetServices() {
 	const [servicesData, setServicesData] = useState<any>()
 
-	const getServices = async (data: any) => {
+	const getServices = async () => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-services', {
-				headers: {
-					'Content-Type': 'multipart/form-data'
-				}
+			const response = await axios.get('http://localhost:4200/api/admin/get-services', {
+				withCredentials: true
 			})
+			const services = response.data
+			console.log('here is my data:', response.data)
+			return response.data['services']
 
 			setServicesData(response.data)
 		} catch (error) {
