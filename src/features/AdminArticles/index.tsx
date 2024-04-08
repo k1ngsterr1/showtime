@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import CalendarComponent from '@features/Calendar/reviewcalendar'
-import { TextArea } from '@shared/ui/TexrArea'
+import { TextArea } from '@shared/ui/TexrArea/index' // Ensure correct import path
 import AddButton from '@shared/ui/AddButton'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
@@ -15,17 +15,18 @@ export const AdminArticles = () => {
 	const [articleTitle, setArticleTitle] = useState('')
 	const [articleText, setArticleText] = useState('')
 	const { addArticle } = useAddArticle()
-	const [reviewDate, setReviewDate] = useState(new Date())
+	const [reviewDate, setReviewDate] = useState('')
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
 
 		if (articleTitle && articleText && selectedFile) {
 			const formData = new FormData()
-			formData.append('pictureName', selectedFile)
+			// Ensure selectedFile is a File object and correctly append it
+			formData.append('pictureName', selectedFile, selectedFile.name)
 			formData.append('heading', articleTitle)
 			formData.append('description', articleText)
-			formData.append('date', reviewDate.toISOString())
+			formData.append('date', reviewDate) // Directly use the formatted string
 
 			await addArticle(formData)
 		} else {
@@ -73,7 +74,7 @@ export const AdminArticles = () => {
 				</div>
 			</div>
 			<div className="flex flex-row gap-10">
-				<AddButton buttonType="filled" text="Добавить" type="Submit" />
+				<AddButton buttonType="filled" text="Добавить" type="submit" />
 				<LinkButton href="articles-list" text="Смотреть все" buttonType="filled" />
 			</div>
 		</form>

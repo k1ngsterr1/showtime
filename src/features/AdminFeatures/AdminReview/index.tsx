@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
-import { TextArea } from '@shared/ui/TexrArea/index' // Make sure the import path is correct
+import { TextArea } from '@shared/ui/TexrArea/index' // Corrected import path
 import CalendarComponent from '@features/Calendar/reviewcalendar'
 import { StarRating } from '@shared/ui/StarRating/index'
 import AddButton from '@shared/ui/AddButton'
@@ -19,18 +19,18 @@ export const ReviewCard: React.FC<ICardProps> = ({ name }) => {
 	const [reviewName, setReviewName] = useState('')
 	const [reviewText, setReviewText] = useState('')
 	const [rating, setRating] = useState<number | null>(null)
-	const [reviewDate, setReviewDate] = useState(new Date())
+	const [selectedDate, setSelectedDate] = useState<string>('')
 	const { addReview } = useAddReview()
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
 
-		if (reviewName && reviewText && rating !== null) {
+		if (reviewName && reviewText && rating !== null && selectedDate) {
 			const formData = new FormData()
 			formData.append('name', reviewName)
 			formData.append('text', reviewText)
 			formData.append('rating', rating.toString())
-			formData.append('date', reviewDate.toISOString())
+			formData.append('date', selectedDate)
 
 			await addReview(formData)
 		} else {
@@ -42,7 +42,7 @@ export const ReviewCard: React.FC<ICardProps> = ({ name }) => {
 		<>
 			<form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
 				<div className={styles.card}>
-					<CalendarComponent marginClass="mt-3" onDateChange={setReviewDate} />
+					<CalendarComponent marginClass="mt-3" onDateChange={setSelectedDate} />
 					<div className={`${styles.card__client} mt-4`}>
 						<div className={styles.card__client_circle}>
 							<img src={Fedora.src} alt="Fedora" className={styles.card__client_fedora} />
