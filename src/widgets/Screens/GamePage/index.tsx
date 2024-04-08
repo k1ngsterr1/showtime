@@ -15,8 +15,6 @@ export const GameScreen = () => {
 	const userData = useUserData()
 	const { scoreData } = useGetScore()
 
-	console.log('trying vercel')
-
 	return (
 		<>
 			{userData === null || scoreData === null ? (

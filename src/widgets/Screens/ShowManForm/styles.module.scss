@@ -1,6 +1,6 @@
 .form {
 	width: 100vw;
-	height: 41vw;
+	// height: 41vw;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -11,6 +11,7 @@
 	@apply p-16;
 	&__items {
 		display: flex;
+		align-items: center;
 	}
 	&__heading {
 		@apply text-primary-red;

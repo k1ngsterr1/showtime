@@ -4,7 +4,7 @@ import { useState } from 'react'
 export function useDeleteShowman() {
 	const [showmanData, setShowmanData] = useState<any>()
 
-	const deleteShowman = async (data: any) => {
+	const deleteShowman = async (shomanId: any) => {
 		try {
 			const response = await axios.delete(
 				`http://localhost:4200/api/admin/delete-showman/${data.showmanId}`,

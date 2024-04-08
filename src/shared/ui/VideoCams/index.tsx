@@ -9,6 +9,7 @@ interface VideoProps {
 	id: string
 	cameraPlayerNumber: string
 	type?: string
+	stream: any
 	videoType: 'default' | 'showman'
 	onContextMenu: any
 	onCameraClick: (cameraPlayerNumber: string) => void
@@ -18,11 +19,12 @@ export const VideoCams: React.FC<VideoProps> = ({
 	cameraPlayerNumber,
 	number,
 	name,
+	stream,
 	onContextMenu,
 	videoType,
 	onCameraClick
 }) => {
-	const [stream, setStream] = useState(null)
+	// const [stream, setStream] = useState(null)
 	const userVideoRef = useRef()
 	const videoClass = `${styles.button} ${styles[videoType]}`
 
@@ -33,26 +35,11 @@ export const VideoCams: React.FC<VideoProps> = ({
 	})
 
 	useEffect(() => {
-		navigator.mediaDevices
-			.getUserMedia({ video: true, audio: true })
-			.then((currentStream) => {
-				setStream(currentStream)
-				if (userVideoRef.current) {
-					userVideoRef.current.srcObject = currentStream
-				}
-			})
-			.catch((error) => {
-				console.error('Error accessing the webcam', error)
-			})
-
-		return () => {
-			if (stream) {
-				stream.getTracks().forEach((track) => {
-					track.stop()
-				})
-			}
+		console.log('stream is here:', stream)
+		if (userVideoRef.current && stream) {
+			userVideoRef.current.srcObject = stream
 		}
-	}, [])
+	}, [stream]) // Re-run effect if stream changes
 
 	const handleCameraContextMenu = (event, cameraPlayerNumber) => {
 		event.preventDefault()

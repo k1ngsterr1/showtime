@@ -1,6 +1,6 @@
 .review_card {
 	width: clamp(405px, 42.1848vw, 1620px);
-	height: clamp(189px, 19.68624vw, 756px);
+	height: clamp(225px, 23.436vw, 900px);
 	@apply bg-primary-light text-primary-red;
 	font-weight: 600;
 	background-position: center center;
@@ -14,7 +14,7 @@ span {
 	@apply text-primary-red;
 }
 .paragraph {
-	width: 60%;
+	width: 80%;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {

@@ -21,12 +21,12 @@ import Logo from '@assets/logo/logo.png'
 	title="Форма для вакансий"
 	description="Присоединяйтесь к команде Showtime! Мы всегда открыты для талантливых и амбициозных людей, которые готовы внести свой вклад в нашу динамичную компанию. Заполните форму вакансий ниже, чтобы подать заявку на интересующую вас позицию. Мы ценим ваше стремление к успеху и готовы рассмотреть вас в качестве потенциального члена нашей команды. Начните свою карьеру в индустрии развлечений и азарта с Showtime!"
 >
-	<Loader client:load />
+	<!-- <Loader client:load /> -->
 	<Cursor client:load />
 	<Menu client:load />
 	<main class={styles.main} id="vacancieform">
 		<Header client:load />
-		<VacancieForm />
+		<VacancieForm client:load />
 	</main>
 	<Footer to="vacancieform" />
 </Layout>

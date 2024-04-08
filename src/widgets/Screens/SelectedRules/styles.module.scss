@@ -1,0 +1,25 @@
+.span {
+	margin-left: auto;
+	@apply font-killbill;
+	@apply text-primary-red;
+	font-size: clamp(16px, 1.66656vw, 64px);
+	@apply mb-4;
+	&__special_roles {
+		margin-right: auto;
+		@apply font-killbill;
+		@apply text-primary-red;
+		font-size: clamp(16px, 1.66656vw, 64px);
+		@apply mb-4;
+	}
+	&__paragraph {
+		display: flex;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.span {
+		&__paragraph {
+			display: none;
+		}
+	}
+}
