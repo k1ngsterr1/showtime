@@ -25,6 +25,7 @@ const CalendarComponent: React.FC<CalendarProps> = ({ marginClass, onDateChange 
 		<div className={marginClass} onClick={toggleDate}>
 			<Input
 				type="onlyread"
+				name="date"
 				inputType="calendar-small"
 				placeholder="Выберите дату"
 				value={format(date, 'dd MMM yyyy', { locale: ru })}

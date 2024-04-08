@@ -17,17 +17,26 @@ interface ICardProps {
 	price: string
 }
 
-export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time, price }) => {
+interface IFormData {
+	name: string
+	address: string
+	place: string
+	price: string
+	timestamp: string
+}
+
+export const ScheduleCard: React.FC<ICardProps> = ({ time, name, address, price }) => {
 	const { addTimetable } = useAddTimetable()
-	const [formData, setFormData] = useState({
+	const [formData, setFormData] = useState<IFormData>({
 		timestamp: '',
 		name: '',
 		address: '',
 		place: '',
 		price: ''
 	})
+	const [selectedDate, setSelectedDate] = useState<string>('')
 
-	const handleInputChange = (e: any) => {
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target
 		setFormData((prevState) => ({
 			...prevState,
@@ -35,16 +44,16 @@ export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time, price 
 		}))
 	}
 
-	const handleSubmit = async (event: React.FormEvent) => {
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
-		const { timestamp, name, address, place, price } = formData
-		if (timestamp && name && address && place && price) {
-			console.log('Submitting:', formData)
-			// Here, you would call addTimetable or any other method to submit the form data
-			await addTimetable(formData)
-		} else {
-			console.log('All fields are required')
-		}
+		const dataToSend = new FormData()
+		Object.entries(formData).forEach(([key, value]) => {
+			dataToSend.append(key, value)
+		})
+		dataToSend.append('date', selectedDate)
+
+		console.log('Submitting:', Object.fromEntries(dataToSend.entries()))
+		await addTimetable(dataToSend)
 	}
 
 	return (
@@ -53,7 +62,7 @@ export const ScheduleCard: React.FC<ICardProps> = ({ address, name, time, price 
 				<div className={styles.card}>
 					<div className={styles.card__upper}>
 						<span className={styles.card__upper__date}>
-							<CalendarComponent />
+							<CalendarComponent onDateChange={setSelectedDate} />
 						</span>
 						<span className={styles.card__upper_time}>
 							<Input

@@ -19,7 +19,7 @@ export const ReviewCard: React.FC<ICardProps> = ({ name }) => {
 	const [reviewName, setReviewName] = useState('')
 	const [reviewText, setReviewText] = useState('')
 	const [rating, setRating] = useState<number | null>(null)
-	const [reviewDate, setReviewDate] = useState(new Date()) // Состояние для хранения выбранной даты
+	const [reviewDate, setReviewDate] = useState(new Date())
 	const { addReview } = useAddReview()
 
 	const handleSubmit = async (event: React.FormEvent) => {

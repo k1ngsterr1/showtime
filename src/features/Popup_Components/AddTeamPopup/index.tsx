@@ -25,13 +25,15 @@ export const AddPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupState 
 					<h1 className={styles.popup__heading}>Добавление сотрдуника</h1>
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
-				<AdminTeamAdding
-					name="Email сотрудника"
-					position="Позиция"
-					userTabType="users"
-					userPhotoType="users"
-					userTextType="users"
-				/>
+				<div className="flex items-center justify-center">
+					<AdminTeamAdding
+						name="Email сотрудника"
+						position="Позиция"
+						userTabType="users"
+						userPhotoType="users"
+						userTextType="users"
+					/>
+				</div>
 			</section>
 		</div>
 	)
