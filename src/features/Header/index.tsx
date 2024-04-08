@@ -18,7 +18,7 @@ export const Header = () => {
 					<img src={Logo.src} alt="Logo" className={styles.header__logo} />
 					<nav className={styles.header__content__links}>
 						<LinkText text="О нас" to="about" href="/" />
-						<LinkText text="Ивенты" to="services" href="" />
+						<LinkText text="Events" to="services" href="" />
 						<LinkText text="Расписание" to="timetable" href="/" />
 						<LinkText text="Правила" to="rulesgame" href="/" />
 						<LinkText text="Рейтинг" to="rating" href="/" />

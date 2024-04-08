@@ -35,3 +35,11 @@
 		left: 0;
 	}
 }
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.fileUpload {
+		font-size: clamp(9px, 4.20552vw, 36px) !important;
+		width: clamp(162.5px, 75.93299999999999vw, 650px);
+		height: clamp(25px, 11.681999999999999vw, 100px) !important;
+	}
+}

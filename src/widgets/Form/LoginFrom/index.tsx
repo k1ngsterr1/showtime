@@ -43,8 +43,9 @@ export const LoginForm = () => {
 					<div className={styles.registration__logo}></div>
 					<h1 className={styles.registration__heading}>Войдите в аккаунт</h1>
 					<p className={styles.registration__paragraph}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua.{' '}
+						Входите в свой аккаунт и погружайтесь в непредсказуемый мир игры "Мафия", где каждая
+						роль, каждое решение и каждый ход может изменить исход партии. Здесь вы найдете не
+						только захватывающие игры, но и новых друзей, единомышленников и, возможно, соперников.
 					</p>
 					<form className={styles.registration__form} onSubmit={handleSubmit}>
 						<Input

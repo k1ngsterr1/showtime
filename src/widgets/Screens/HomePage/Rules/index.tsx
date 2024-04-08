@@ -27,12 +27,12 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 					<div className={styles.rules_screen__container__upper}>
 						<div className="flex flex-col items-start">
 							<h5 className="text-primary-red">Правила игры</h5>
-							<ParagraphReact
+							{/* <ParagraphReact
 								paragraphType="white"
 								width="40%"
 								margin="mt-4"
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-							/>
+								text="Игра Мафия — это захватывающая ролевая игра, погружающая игроков в мир интриг, обмана и психологической борьбы."
+							/> */}
 						</div>
 						<div className="flex items-center gap-8">
 							<ReactButton
@@ -57,13 +57,13 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 					<div className={styles.rules_mob_screen__container__upper}>
 						<div className="flex flex-col items-center">
 							<h5 className="w-[50%] text-center text-primary-red">Правила игры</h5>
-							<ParagraphReact
+							{/* <ParagraphReact
 								align="text-center"
 								paragraphType="white"
 								width="60%"
 								margin="mt-4"
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-							/>
+								text="Игра Мафия — это захватывающая ролевая игра, погружающая игроков в мир интриг, обмана и психологической борьбы."
+							/> */}
 						</div>
 						<div className="flex flex-col items-center gap-6">
 							<ReactButton
@@ -75,7 +75,7 @@ const RulesScreen: React.FC<RulesScreenProps> = () => {
 							<ReactButton
 								text="Общие правила"
 								buttonType="transparent"
-								onClick={() => setRulesType('rulesmob')}
+								onClick={() => setRulesType('rulesMob')}
 							/>
 						</div>
 						<RulesContent cards={cards} rulesType={rulesType} />

@@ -39,8 +39,9 @@ export const PasswordForm = () => {
 				<div className={styles.registration__content}>
 					<h1 className={styles.registration__heading}>Смените пароль</h1>
 					<p className={styles.registration__paragraph}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua.{' '}
+						Забота о безопасности вашего аккаунта — ключевой аспект обеспечения непрерывного доступа
+						к миру игры "Мафия" и вашему участию в захватывающих партиях. Смена пароля поможет
+						защитить вашу личную информацию и сохранить доступ к игре только для вас.
 					</p>
 					<form action="" className={styles.registration__form}>
 						{' '}
