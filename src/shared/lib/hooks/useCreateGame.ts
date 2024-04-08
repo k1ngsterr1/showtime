@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { socket } from '../socket/socketService'
-import { io } from 'socket.io-client'
 
 interface ICreateGameProps {
 	gameType: 'Город' | 'Бункер' | 'Классика'
