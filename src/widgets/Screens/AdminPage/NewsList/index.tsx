@@ -1,7 +1,10 @@
-import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import PhotoCard from '@entities/Card_Components/PhotoCard/index'
+import { useGetNews } from '@shared/lib/hooks/Admin/Get/useGetNews'
+import { useDeleteNews } from '@shared/lib/hooks/Admin/Delete/useDeleteNews'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 import photo from '@assets/About/image-30.webp'
@@ -9,38 +12,53 @@ import photo from '@assets/About/image-30.webp'
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
 
-export const newsData = [
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
-	},
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
-	},
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
-	},
-	{
-		img: photo,
-		time: '22.01.23',
-		heading: 'Erlan HB',
-		paragraph:
-			'Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua.  Lorem ipsum dolor  sit amet, consectetur adipiscing elit, '
-	}
-]
+const NewsList = () => {
+	const [news, setNews] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
+	const { getNews } = useGetNews()
+	const { deleteNews } = useDeleteNews()
 
-const NewsList = ({}) => {
+	useEffect(() => {
+		setIsLoading(true)
+		getNews()
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setNews(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setNews([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
+
+	const handleDeleteNews = (newsId: string) => {
+		deleteNews({ newsId: newsId })
+			.then(() => {
+				getNews()
+					.then((data) => {
+						if (Array.isArray(data)) {
+							setNews(data)
+						} else {
+							console.error('Data is not an array:', data)
+							setNews([])
+						}
+					})
+					.catch((error) => {
+						console.error('Failed to fetch showmans:', error)
+					})
+			})
+			.catch((error) => {
+				console.error('Failed to delete showman:', error)
+			})
+	}
+
 	return (
 		<main className={styles.services}>
 			<div className={styles.services__content}>
@@ -50,16 +68,22 @@ const NewsList = ({}) => {
 				<h1 className="text-primary-red">Список новостей</h1>
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_card}>
-						{newsData.map((newsItem) => (
+						{news.map((newsData) => (
 							<div className={`${styles.card} mt-12`}>
 								<PhotoCard
-									time={newsItem.time}
-									img={newsItem.img}
-									heading={newsItem.heading}
-									paragraph={newsItem.paragraph}
+									date={newsData.date}
+									key={newsData.id}
+									image={newsData.image}
+									heading={newsData.heading}
+									description={newsData.description}
 								/>
-								<Buttons buttonType="filled" text="Удалить" margin="mt-10" />
 								<Buttons buttonType="filled" text="Редактировать" margin="mt-5" />
+								<Buttons
+									buttonType="filled"
+									text="Удалить"
+									margin="mt-10"
+									onClick={() => handleDeleteNews(newsData.id)}
+								/>
 							</div>
 						))}
 					</div>

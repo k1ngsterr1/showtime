@@ -6,16 +6,15 @@ export function useDeleteNews() {
 
 	const deleteNews = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.delete('https://showtime.up.railway.app/api/admin/delete-news', {
-				headers: {
-					'Content-Type': 'multipart/form-data'
+			const response = await axios.delete(
+				`http://localhost:4200/api/admin/delete-news/${data.newsId}`,
+				{
+					withCredentials: true,
+					headers: {
+						'Content-Type': 'application/json'
+					}
 				}
-			})
-
+			)
 			setNewsData(response.data)
 		} catch (error) {
 			console.error('There was an error with deleting news')

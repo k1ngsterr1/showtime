@@ -6,14 +6,15 @@ export function useGetOrders() {
 
 	const getOrders = async () => {
 		try {
-			const response = await axios.get('https://localhost:4200/api/admin/get-orders', {
+			const response = await axios.get('http://localhost:4200/api/admin/get-orders', {
+				withCredentials: true,
 				headers: {
-					'Content-Type': 'multipart/form-data'
+					'Content-Type': 'application/json'
 				}
 			})
-			// const orders = response.data['orders']
-			// console.log('here is my data:', response.data)
-			// return response.data['orders']
+			const orders = response.data['orders']
+			console.log('here is my data:', response.data)
+			return response.data['orders']
 			setOrdersData(response.data)
 		} catch (error) {
 			console.error('There was an error with getting orders')
