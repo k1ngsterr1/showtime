@@ -116,6 +116,44 @@
 	}
 }
 
+.fileUpload {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	width: clamp(175px, 18.228vw, 700px);
+	height: clamp(27.5px, 2.8644000000000003vw, 110px);
+	text-align: left;
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	border: 2px rgba(191, 35, 22, 0.65) solid;
+	transition: 0.3s ease;
+	outline: none;
+	@apply pl-4;
+	@apply text-primary-light;
+	@apply font-neo;
+	overflow: hidden;
+}
+
+.fileUpload::placeholder {
+	font-size: clamp(9px, 0.93744vw, 36px);
+	@apply font-neoregular;
+	@apply text-primary-light;
+}
+.fileLoad {
+	width: 250px;
+	height: 100px;
+	background: #ffffff;
+}
+
+.fileDetails {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+}
+.customFileUpload {
+	@apply text-primary-red;
+}
+
 @media (min-width: 375px) and (max-width: 600px) {
 	.registration {
 		height: 100vh;
@@ -142,5 +180,11 @@
 		font-size: clamp(9px, 4.20552vw, 36px);
 		@apply text-primary-light;
 		@apply mt-4;
+	}
+
+	.fileUpload {
+		font-size: clamp(9px, 4.20552vw, 36px) !important;
+		width: clamp(162.5px, 75.93299999999999vw, 650px);
+		height: clamp(25px, 11.681999999999999vw, 100px) !important;
 	}
 }

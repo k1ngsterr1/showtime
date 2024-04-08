@@ -7,8 +7,16 @@ export function useDeleteShowman() {
 	const deleteShowman = async (shomanId: any) => {
 		try {
 			const response = await axios.delete(
-				'https://showtime.up.railway.app/api/admin/delete-showman'
+				`http://localhost:4200/api/admin/delete-showman/${data.showmanId}`,
+				{
+					withCredentials: true,
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				}
 			)
+
+			console.log(response.data)
 
 			setShowmanData(response.data)
 		} catch (error) {

@@ -2,7 +2,7 @@
 import Paragraph from '../../../shared/ui/Paragraph/index.astro'
 import HistoryCard from '@entities/Card_Components/HistoryCard/index'
 import SwiperHistory from '../../../shared/ui/HistoryCard/index'
-import { history } from '@shared/lib/content/historyContent'
+import { history, historyMob } from '@shared/lib/content/historyContent'
 
 import '@shared/styles/global.scss'
 
@@ -14,8 +14,8 @@ import styles from '../ClientsPage/styles.module.scss'
 		<h1 class="mt-32 text-primary-red">История</h1>
 		<Paragraph
 			paragraphType="white"
-			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-			width="22%"
+			text="Игра Мафия родилась в середине 1980-х годов в среде студентов Московского государственного университета. Её создателем является Дмитрий Давыдов, который вдохновился комплексом социально-психологических экспериментов и решил превратить их в игру. Изначально Мафия была задумана как инструмент для исследования взаимодействия и влияния в малых группах, но очень скоро стала популярным развлечением среди студентов."
+			width="40%"
 		/>
 		<div class={styles.client__content__history_cards}>
 			<SwiperHistory history={history} client:load />
@@ -29,15 +29,15 @@ import styles from '../ClientsPage/styles.module.scss'
 		<div class="flex items-center justify-center">
 			<Paragraph
 				paragraphType="white"
-				text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
-				width="75%"
+				text="Игра Мафия родилась в середине 1980-х годов в среде студентов Московского государственного университета. Её создателем является Дмитрий Давыдов, который вдохновился комплексом социально-психологических экспериментов и решил превратить их в игру. Изначально Мафия была задумана как инструмент для исследования взаимодействия и влияния в малых группах, но очень скоро стала популярным развлечением среди студентов."
+				width="85%"
 				align="center"
 				margin="mt-4 mb-4"
 			/>
 		</div>
 		<div class={styles.client_mob__cards}>
 			{
-				history.map((card) => (
+				historyMob.map((card) => (
 					<HistoryCard name={card.name} data={card.data} paragraph={card.paragraph} client:load />
 				))
 			}

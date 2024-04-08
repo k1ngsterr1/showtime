@@ -44,8 +44,10 @@ export const RegistrationForm = () => {
 				<div className={styles.registration__content}>
 					<h1 className={styles.registration__heading}>Пройдите регистрацию</h1>
 					<p className={styles.registration__paragraph}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua.{' '}
+						Добро пожаловать в сообщество, где каждый вечер превращается в незабываемое приключение,
+						полное интриг и загадок. Регистрация открывает дверь в мир, где ваша хитрость, стратегия
+						и способность читать людей ставятся на испытание. Вступите в наше растущее сообщество
+						игроков, готовых принять вызов и окунуться в захватывающие игры Мафии.
 					</p>
 					<form className={styles.registration__form} onSubmit={handleSubmit}>
 						<Input

@@ -6,7 +6,7 @@ import { createAccount } from '@shared/lib/hooks/useCreateAccount'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import { VacanciePopup } from '@features/Popup_Components/VacanciePopup/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
+import { faPaperclip, faCheck } from '@fortawesome/free-solid-svg-icons'
 import styles from '../styles/styles.module.scss'
 
 interface FormData {
@@ -56,8 +56,11 @@ export const VacancieForm = () => {
 					<div className={styles.registration__logo}></div>
 					<h2 className={styles.registration__heading}>Форма для вакансий</h2>
 					<p className={styles.registration__paragraph}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua.
+						В нашем мире каждый день - это новая игра, где интрига, стратегия и человеческое
+						взаимодействие создают неповторимую атмосферу. Мы - компания, организующая концепт-игры
+						Мафия, и мы ищем талантливых и креативных людей, чтобы присоединиться к нашей уникальной
+						команде. Если вы готовы стать частью чего-то захватывающего и динамичного, у нас есть
+						место для вас!
 					</p>
 					<form className={styles.registration__form} onSubmit={handleSubmit}>
 						<Input
@@ -68,14 +71,16 @@ export const VacancieForm = () => {
 							value={formData.username}
 							onChange={handleInputChange}
 						/>
-						<Input
-							type="phone"
-							inputType="default"
-							name="phone"
-							placeholder="Номер телефона"
-							value={formData.phone}
-							onChange={handleInputChange}
-						/>
+						<div className="mb-4 mt-4">
+							<Input
+								type="phone"
+								inputType="default"
+								name="phone"
+								placeholder="Номер телефона"
+								value={formData.phone}
+								onChange={handleInputChange}
+							/>
+						</div>
 						<div className={styles.fileUpload}>
 							<input
 								type="file"
@@ -84,15 +89,25 @@ export const VacancieForm = () => {
 								onChange={handleFileChange}
 								accept=".pdf, .doc, .docx, .jpg, .png"
 							/>
-							<label htmlFor="resumeUpload" className={styles.customFileUpload}>
-								<FontAwesomeIcon icon={faPaperclip} /> Attach Resume
+							<label
+								htmlFor="resumeUpload"
+								className={styles.customFileUpload}
+								style={{ display: resumeName ? 'none' : 'inline-block' }}
+							>
+								<FontAwesomeIcon icon={faPaperclip} /> Выбрать Файл
 							</label>
 							{resumeName && (
-								<div className={styles.fileDetails}>Файл прикреплен: {resumeName}</div>
+								<div className={styles.fileDetails}>
+									Ваше резюме прикреплено <FontAwesomeIcon icon={faCheck} />
+								</div>
 							)}
 						</div>
-						<ReactButton buttonType="filled" text="Отправить" onClick={() => handleSubmit} />
-						{/* {isPopupOpen && <VacanciePopup onClose={handleClose} />} */}
+						<ReactButton
+							margin="mt-4"
+							buttonType="filled"
+							text="Отправить"
+							onClick={() => handleSubmit}
+						/>
 					</form>
 				</div>
 			</section>

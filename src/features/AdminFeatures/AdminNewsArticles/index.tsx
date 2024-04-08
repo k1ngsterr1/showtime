@@ -1,19 +1,40 @@
+import React, { useState } from 'react'
 import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import CalendarComponent from '@features/Calendar/reviewcalendar'
-import { Input } from '@shared/ui/Inputs/DefaultInput/index'
-import { TextArea } from '@shared/ui/TexrArea'
+import { TextArea } from '@shared/ui/TexrArea/index'
 import AddButton from '@shared/ui/AddButton'
+import { Input } from '@shared/ui/Inputs/DefaultInput/index'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
-
-import styles from './styles.module.scss'
+import { useAddNews } from '@shared/lib/hooks/Admin/Add/useAddNews'
 
 import Fedora from '@assets/logo/fedora.svg'
+import styles from './styles.module.scss'
 
 export const NewsArticleCard = () => {
-	const { previewUrl, handleFileChange } = useFileUpload()
+	const { previewUrl, handleFileChange, selectedFile } = useFileUpload()
+	const [newsTitle, setNewsTitle] = useState('')
+	const [newsText, setNewsText] = useState('')
+	const [reviewDate, setReviewDate] = useState('')
+	const { addNews } = useAddNews()
+
+	const handleSubmit = async (event: React.FormEvent) => {
+		event.preventDefault()
+
+		if (newsTitle && newsText && selectedFile) {
+			const formData = new FormData()
+			formData.append('pictureName', selectedFile, selectedFile.name)
+			formData.append('heading', newsTitle)
+			formData.append('description', newsText)
+			formData.append('date', reviewDate)
+
+			await addNews(formData)
+		} else {
+			console.log('All fields are required')
+		}
+	}
 
 	return (
-		<form>
+		<form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
 			<div className={styles.card}>
 				<div className={styles.card__content}>
 					{previewUrl ? (
@@ -27,17 +48,32 @@ export const NewsArticleCard = () => {
 								type="file"
 								style={{ display: 'none' }}
 								onChange={handleFileChange}
+								name="pictureName"
 							/>
 						</label>
 					)}
 					<div className="ml-auto flex w-[95%] flex-col">
-						<CalendarComponent />
-						<Input inputType="newsheading" type="text" placeholder="Заголовoк" />
-						<TextArea textareaType="articles" placeholder="Текст" margin="mt-3" />
+						<CalendarComponent onDateChange={setReviewDate} />
+						<Input
+							inputType="newsheading"
+							type="text"
+							placeholder="Заголовок"
+							value={newsTitle}
+							name="heading"
+							onChange={(e) => setNewsTitle(e.target.value)}
+						/>
+						<TextArea
+							textareaType="articles"
+							placeholder="Текст"
+							margin="mt-3"
+							value={newsText}
+							name="description"
+							onChange={(e) => setNewsText(e.target.value)}
+						/>
 					</div>
 				</div>
 			</div>
-			<div className={styles.client__main__functional__buttons}>
+			<div className="mt-8 flex flex-row items-center justify-center gap-10">
 				<AddButton buttonType="filled" text="Добавить" margin="mt-3" type="submit" />
 				<LinkButton buttonType="filled" href="news-list" text="Смотреть все" margin="mt-3" />
 			</div>

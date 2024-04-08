@@ -25,8 +25,9 @@ export const Auth = () => {
 					<div className={styles.registration__logo}></div>
 					<h2 className={styles.registration__heading}>Пройдите аутентификацию</h2>
 					<p className={styles.registration__paragraph}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua.
+						Мир интриг, загадок и непредсказуемых поворотов судьбы ждёт вас. Войдите в свой аккаунт,
+						чтобы продолжить путешествие в захватывающем мире игры "Мафия", где каждый ваш выбор
+						может изменить исход игры.
 					</p>
 					<div className={styles.container}>
 						{previewUrl ? (
