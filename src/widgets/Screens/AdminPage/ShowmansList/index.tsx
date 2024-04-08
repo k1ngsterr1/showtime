@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ShowMansCard from '@entities/Card_Components/ShowMansCard/index'
 import { useGetShowmans } from '@shared/lib/hooks/Admin/Get/useGetShowmans'
 import { useDeleteShowman } from '@shared/lib/hooks/Admin/Delete/useDeleteShowman'
+import { useUpdateShowman } from '@shared/lib/hooks/Admin/Update/useUpdateShowman'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import { Loader } from '@shared/ui/Loader'
@@ -15,6 +16,7 @@ export const ShowmansList = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const { getShowmans } = useGetShowmans()
 	const { deleteShowman } = useDeleteShowman()
+	const { updateShowman } = useUpdateShowman()
 
 	useEffect(() => {
 		setIsLoading(true)
@@ -37,9 +39,8 @@ export const ShowmansList = () => {
 	}, [])
 
 	const handleDeleteShowman = (showmanId: string) => {
-		deleteShowman({ id: showmanId })
+		deleteShowman({ showmanId: showmanId })
 			.then(() => {
-				// Handle success, e.g., refresh the list of showmans
 				getShowmans()
 					.then((data) => {
 						if (Array.isArray(data)) {
@@ -74,12 +75,7 @@ export const ShowmansList = () => {
 						<div className={styles.services__content_card}>
 							{showmans.map((showman) => (
 								<div key={showman.id} className={`${styles.card} mt-12`}>
-									<ShowMansCard
-										showmanId={showman.id}
-										image={showman.image}
-										name={showman.name}
-										text={showman.text}
-									/>
+									<ShowMansCard image={showman.image} name={showman.name} text={showman.text} />
 									<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
 									<Buttons
 										buttonType="filled"

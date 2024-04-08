@@ -6,12 +6,17 @@ export function useDeleteShowman() {
 
 	const deleteShowman = async (data: any) => {
 		try {
-			const response = await axios.delete('http://localhost:4200/api/admin/delete-showman', {
-				withCredentials: true,
-				headers: {
-					'Content-Type': 'application/json'
+			const response = await axios.delete(
+				`http://localhost:4200/api/admin/delete-showman/${data.showmanId}`,
+				{
+					withCredentials: true,
+					headers: {
+						'Content-Type': 'application/json'
+					}
 				}
-			})
+			)
+
+			console.log(response.data)
 
 			setShowmanData(response.data)
 		} catch (error) {

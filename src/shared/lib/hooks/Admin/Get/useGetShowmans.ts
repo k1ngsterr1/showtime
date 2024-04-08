@@ -7,7 +7,8 @@ export function useGetShowmans() {
 			const response = await axios.get('http://localhost:4200/api/admin/get-showmans', {
 				withCredentials: true
 			})
-
+			const showmans = response.data['showmans']
+			// console.log(showmans.map((showman) => showman.id))
 			console.log('here is my data:', response.data)
 			return response.data['showmans']
 		} catch (error) {
