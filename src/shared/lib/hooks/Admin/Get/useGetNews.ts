@@ -4,18 +4,17 @@ import { useState } from 'react'
 export function useGetNews() {
 	const [newsData, setNewsData] = useState<any>()
 
-	const getNews = async (data: any) => {
+	const getNews = async () => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-news', {
+			const response = await axios.get('http://localhost:4200/api/admin/get-news', {
+				withCredentials: true,
 				headers: {
-					'Content-Type': 'multipart/form-data'
+					'Content-Type': 'application/json'
 				}
 			})
-
+			const news = response.data['news']
+			console.log('here is my data:', response.data)
+			return response.data['news']
 			setNewsData(response.data)
 		} catch (error) {
 			console.error('There was an error with getting news')

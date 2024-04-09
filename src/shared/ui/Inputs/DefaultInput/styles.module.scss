@@ -167,6 +167,10 @@
 }
 
 .input--product {
+	@apply pl-9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: clamp(16px, 1.66656vw, 64px);
 	text-align: center;
 	background-color: transparent;

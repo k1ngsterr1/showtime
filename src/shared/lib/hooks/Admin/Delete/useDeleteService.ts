@@ -6,16 +6,12 @@ export function useDeleteService() {
 
 	const deleteService = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.post(
-				'https://showtime.up.railway.app/api/admin/delete-service',
-				formData,
+			const response = await axios.delete(
+				`http://localhost:4200/api/admin/delete-service/${data.serviceId}`,
 				{
+					withCredentials: true,
 					headers: {
-						'Content-Type': 'multipart/form-data'
+						'Content-Type': 'application/json'
 					}
 				}
 			)

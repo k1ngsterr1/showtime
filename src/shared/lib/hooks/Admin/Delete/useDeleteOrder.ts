@@ -1,20 +1,17 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-export function useDeleteOrders() {
+export function useDeleteOrder() {
 	const [ordersData, setOrdersData] = useState<any>()
 
-	const deleteOrders = async (data: any) => {
+	const deleteOrder = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
 			const response = await axios.delete(
-				'https://showtime.up.railway.app/api/admin/delete-orders',
+				`http://localhost:4200/api/admin/delete-order/${data.orderId}`,
 				{
+					withCredentials: true,
 					headers: {
-						'Content-Type': 'multipart/form-data'
+						'Content-Type': 'application/json'
 					}
 				}
 			)
@@ -25,5 +22,5 @@ export function useDeleteOrders() {
 		}
 	}
 
-	return { deleteOrders, ordersData }
+	return { deleteOrder, ordersData }
 }

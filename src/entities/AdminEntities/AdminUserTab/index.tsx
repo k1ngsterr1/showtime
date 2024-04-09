@@ -5,23 +5,25 @@ import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 import styles from './style.module.scss'
 
 interface UserTab {
-	name: string
+	email: string
 	position: string
 	margin?: string
-	photo: ImageMetadata
+	image: ImageMetadata
 	userTabType?: string | 'users'
 	userPhotoType?: string | 'users'
 	userTextType?: string | 'users'
+	onDelete?: () => void
 }
 
 export const AdminUserTab: React.FC<UserTab> = ({
-	name,
+	email,
 	margin,
 	position,
-	photo,
+	image,
 	userTabType,
 	userPhotoType,
-	userTextType
+	userTextType,
+	onDelete
 }) => {
 	const [isMenuVisible, setIsMenuVisible] = useState(false)
 	const userTabClass = `${styles.usertab} ${styles[`usertab--${userTabType}`]} ${margin ? margin : ''}`
@@ -41,14 +43,16 @@ export const AdminUserTab: React.FC<UserTab> = ({
 				{isMenuVisible && (
 					<div className={styles.menu}>
 						<button className={styles.menu_btn}>Редактировать</button>
-						<button className={styles.menu_btn}>Удалить</button>
+						<button className={styles.menu_btn} onClick={onDelete}>
+							Удалить
+						</button>
 					</div>
 				)}
 				<div className={userPhotoClass}>
-					<img src={photo.src} alt="photo" />
+					<img src={image.src} alt="photo" />
 				</div>
 				<div className={userTextClass}>
-					<span className={styles.usertab__text_name}>{name}</span>
+					<span className={styles.usertab__text_name}>{email}</span>
 					<span className={styles.usertab__text_position}>{position}</span>
 				</div>
 			</div>

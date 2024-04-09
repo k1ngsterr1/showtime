@@ -8,12 +8,11 @@ export function useGetShowmans() {
 				withCredentials: true
 			})
 			const showmans = response.data['showmans']
-			// console.log(showmans.map((showman) => showman.id))
 			console.log('here is my data:', response.data)
 			return response.data['showmans']
 		} catch (error) {
 			console.error('There was an error with getting showmans')
-			return null // Return null or appropriate error handling
+			return null
 		}
 	}
 
