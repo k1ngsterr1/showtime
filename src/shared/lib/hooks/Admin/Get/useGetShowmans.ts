@@ -8,7 +8,9 @@ export function useGetShowmans() {
 				withCredentials: true
 			})
 			const showmans = response.data['showmans']
-			console.log('here is my data:', response.data)
+			for(const showman of showmans){
+				console.log(showman.url);
+			}
 			return response.data['showmans']
 		} catch (error) {
 			console.error('There was an error with getting showmans')

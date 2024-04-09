@@ -9,7 +9,7 @@ interface ILoginData {
 
 export async function loginAccount(loginData: ILoginData) {
 	try {
-		const response = await axios.post('http://localhost:4000/api/auth/login', loginData)
+		const response = await axios.post('http://localhost:4200/api/auth/login', loginData)
 
 		const data = response.data.user
 		const tokenData = response.data
