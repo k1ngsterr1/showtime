@@ -4,15 +4,15 @@ import ReactButton from '@shared/ui/Buttons/DefaultReactButton/index'
 import styles from './styles.module.scss'
 
 interface Props {
-	image: ImageMetadata
+	url: string
 	name: string
 	description: string
 	price: string
 }
-export const ProductCard: React.FC<Props> = ({ image, name, description, price }) => {
+export const ProductCard: React.FC<Props> = ({ url, name, description, price }) => {
 	return (
 		<div className={styles.card}>
-			<img src={image.src} alt="product" />
+			<img src={url} alt="product" />
 			<span className={styles.card__heading}>{name}</span>
 			<span className={styles.card__paragraph}>{description}</span>
 			<span className="mt-4 font-killbill text-2xl">{price}</span>

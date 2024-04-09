@@ -72,7 +72,7 @@ const NewsList = () => {
 							<div key={newsData.id} className={`${styles.card} mt-12`}>
 								<PhotoCard
 									date={newsData.date}
-									image={newsData.image}
+									url={newsData.url}
 									heading={newsData.heading}
 									description={newsData.description}
 								/>

@@ -6,13 +6,13 @@ interface Props {
 	date: string
 	heading: string
 	description: string
-	image: ImageMetadata
+	url: string;
 }
 
-const NewsCard: React.FC<Props> = ({ date, heading, description, image }) => {
+const NewsCard: React.FC<Props> = ({ date, heading, description, url }) => {
 	return (
 		<div className={styles.card}>
-			<img src={image.src} alt="News" />
+			<img src={url} alt="News" />
 			<div className="ml-auto mt-3 flex w-[95%] flex-col">
 				<span className="font-katana text-xl">{date}</span>
 				<span className="mt-2 overflow-hidden font-katana text-4xl">{heading}</span>
