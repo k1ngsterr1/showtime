@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import {
 	setupWebRTC,
 	initializeSocketListeners,
@@ -36,30 +36,29 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 	useEffect(() => {
 		console.log('use effect is working...')
 
-		console.log('remoteStreams:', remoteStreams)
-
 		if (!socket) {
 			console.log('there is no socket :(')
 			return
 		}
 
-		console.log('Emitting playerJoining event...')
 		socket.emit('playerJoining', { roomId, userId })
 
 		socket.on('playerJoined', (data: any) => {
 			const { player, connectedPlayersByRoom } = data
-			console.log('there is my data from useEffect?', data)
 			console.log(player, connectedPlayersByRoom)
 			localStorage.setItem('connectedPlayers', JSON.stringify(data.connectedPlayers))
 			setConnectedPlayers(data.connectedPlayers)
-			console.log('there is my data from useEffect?', data)
 		})
 
 		return () => {
-			console.log('Cleaning up listener for playerJoined event...')
 			socket.off('playerJoined')
 		}
 	}, [socket])
+
+	useEffect(() => {
+		console.log('remote streams are here:', remoteStreams)
+		console.log('local streams are here:', localStream)
+	}, [remoteStreams])
 
 	console.log('connectedPlayers:', JSON.parse(localStorage.getItem('connectedPlayers')))
 
@@ -68,9 +67,10 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 		navigator.mediaDevices
 			.getUserMedia({ video: true, audio: true })
 			.then((stream) => {
+				console.log('fucking stream is here:', stream)
 				setLocalStream(stream)
-				setupWebRTC(connectedPlayers, setRemoteStreams, stream)
-				console.log('remoteStreams:', remoteStreams)
+				console.log('localStream:', localStream)
+				setupWebRTC(connectedPlayers, setRemoteStreams, stream, userId)
 				initializeSocketListeners()
 			})
 			.catch(console.error)
@@ -83,6 +83,14 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 			}
 		}
 	}, [connectedPlayers])
+
+	useEffect(() => {
+		console.log(
+			'something wrong... I can feel it:',
+			console.log(remoteStreams),
+			console.log(players.map((player) => remoteStreams[player.id]))
+		)
+	})
 
 	return (
 		<div className={styles.webcam_grid}>
@@ -98,7 +106,7 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 							videoType={
 								player.cameraPlayerNumber === 6 || player.role === 'showman' ? 'showman' : 'default'
 							}
-							stream={remoteStreams[player.id]}
+							stream={remoteStreams[5]}
 							onCameraClick={() => handleCameraClick(player.cameraPlayerNumber)}
 							onContextMenu={(e: any) => onCameraContextMenu(e, player.cameraPlayerNumber)}
 						/>
@@ -113,6 +121,8 @@ export const WebcamGrid: React.FC<IWebcamGrid> = ({
 					)}
 				</div>
 			))}
+			{/* <video playsInline muted autoPlay ref={userVideoRef}></video> */}
+
 			{/* {localStream && (
 				<VideoCams
 					cameraPlayerNumber="local"

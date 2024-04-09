@@ -2,14 +2,10 @@ import { socket } from '../socket/socketService'
 
 let peerConnections = {}
 
-export const setupWebRTC = (players, setRemoteStreams, localStream) => {
-	console.log('web rtc is working!')
+const userData = JSON.parse(localStorage.getItem('userData'))
 
-	console.log('these are my peerConnections:', peerConnections)
-
-	console.log('localStreams:', localStream, 'players:', players)
-
-	const userData = JSON.parse(localStorage.getItem('userData'))
+export const setupWebRTC = (players, setRemoteStreams, localStream, userId) => {
+	console.log('Initial peer connections state:', peerConnections)
 
 	players.forEach((player) => {
 		let pc
@@ -37,51 +33,93 @@ export const setupWebRTC = (players, setRemoteStreams, localStream) => {
 
 		if (pc) {
 			pc.onicecandidate = (event) => {
-				console.log('onicecandidate is working too!')
 				if (event.candidate) {
-					socket.emit('iceCandidate', { to: player.id, candidate: event.candidate })
+					// ! ADDED SOCKET ID INSTEAD OF PLAYER ID HERE!
+					console.log(`ICE candidate for player ${player.id}:`, event.candidate)
+
+					console.log(
+						'\x1b[36m%s\x1b[0m',
+						'Data in socket.emit iceCandidate:',
+						'to:',
+						player.id,
+						'event candidate:',
+						event.candidate,
+						'playerID:',
+						userId
+					)
+
+					socket.emit('iceCandidate', {
+						to: player.id,
+						candidate: event.candidate,
+						playerID: userId
+					})
 				}
 			}
 
 			pc.ontrack = (event) => {
-				console.log('\x1b[36m%s\x1b[0m', 'I hope that ontrack will work, God please help me...')
-				console.log(`Received new stream from player ${player.id}`)
+				console.log(`Received track event:`, event)
+				console.log(`Stream received from player ${player.id}:`, event.streams[0])
 
 				setRemoteStreams((prevStreams) => ({
 					...prevStreams,
 					[player.id]: event.streams[0]
 				}))
 
-				console.log('set remote streams:', setRemoteStreams)
+				console.log('set remote streams:', event.streams[0])
 			}
+
+			// ! ADDED SOCKET ID INSTEAD OF PLAYER ID HERE!
 
 			peerConnections[player.id] = pc
 
 			pc.oniceconnectionstatechange = (event) => {
-				console.log(`ICE state: ${pc.iceConnectionState}`)
+				console.log(`ICE connection state change for player ${player.id}: ${pc.iceConnectionState}`)
 				if (pc.iceConnectionState === 'connected') {
 					console.log('ICE connection established with player:', player.id)
 				}
 			}
 
 			pc.onsignalingstatechange = () => {
-				console.log(`Signaling state changed to ${pc.signalingState}`)
+				console.log(`Signaling state change for player ${player.id}: ${pc.signalingState}`)
 			}
 		}
 	})
 
 	players.forEach((player) => {
 		if (player.id !== userData.id) {
+			// ! ADDED SOCKET ID INSTEAD OF PLAYER ID HERE!
+
 			const pc = peerConnections[player.id]
 
-			console.log('pc is working here! yoyyo', pc)
+			console.log('peerConnections set by player ids:', pc)
+
+			console.log('pc.createOffer()', pc.createOffer())
 
 			if (pc) {
-				console.log('there should be peer Offer?')
 				pc.createOffer()
-					.then((offer) => pc.setLocalDescription(offer))
+					.then((offer) => {
+						console.log(`Local description set for player ${player.id}`, pc.localDescription)
+						return pc.setLocalDescription(offer)
+					})
 					.then(() => {
-						socket.emit('offer', { to: player.id, offer: pc.localDescription })
+						console.log(
+							'\x1b[36m%s\x1b[0m',
+							'Data in socket.emit offer:',
+							'to:',
+							player.id,
+							'offer:',
+							pc.localDescription,
+							'playerID:',
+							userId
+						)
+						// if (pc.localDescription) {
+						socket.emit(
+							'offer',
+							{ to: player.id, offer: pc.localDescription, playerID: userId },
+							(response) => {
+								console.log('offer socket emit response is here:', response)
+							}
+						)
 					})
 					.catch(console.error)
 			}
@@ -90,7 +128,11 @@ export const setupWebRTC = (players, setRemoteStreams, localStream) => {
 }
 
 export const cleanUpPeers = () => {
-	Object.values(peerConnections).forEach((pc) => pc.close())
+	console.log('Closing peer connections...')
+	Object.values(peerConnections).forEach((pc: any, index) => {
+		console.log(`Closing peer connection ${index} with state: ${pc.iceConnectionState}`)
+		pc.close()
+	})
 	peerConnections = {}
 
 	socket.off('iceCandidate')
@@ -99,14 +141,20 @@ export const cleanUpPeers = () => {
 }
 
 export const initializeSocketListeners = () => {
-	console.log('socket listeners are working!')
-
 	socket.on('connect', () => {
-		console.log('Socket is connecting to the room:')
+		console.log('initialize socket listeners are working!')
 	})
 
 	socket.on('iceCandidate', ({ from, candidate }) => {
-		console.log('ice Candidate socket is working!')
+		console.log(
+			'\x1b[36m%s\x1b[0m',
+			'Data in socket.on iceCandidate:',
+			'from:',
+			from,
+			'candidate:',
+			candidate
+		)
+
 		const pc = peerConnections[from]
 
 		if (pc) {
@@ -114,23 +162,49 @@ export const initializeSocketListeners = () => {
 		}
 	})
 
-	socket.on('offer', ({ from, offer }) => {
-		console.log('offer socket is working!')
+	socket.on('offer', ({ from, offer, playerId }) => {
+		console.log(
+			'\x1b[36m%s\x1b[0m',
+			'Data in socket.on offer:',
+			'from:',
+			from,
+			'offer:',
+			offer,
+			'playerID:',
+			playerId
+		)
+
 		const pc = peerConnections[from]
+
+		console.log(`Offer received from player ${from}:`, offer)
+
+		console.log('Peer Connections in offer socket:', peerConnections)
+
 		if (pc) {
+			console.log('there should be setRemoteDescription')
 			pc.setRemoteDescription(new RTCSessionDescription(offer))
 				.then(() => pc.createAnswer())
 				.then((answer) => pc.setLocalDescription(answer))
 				.then(() => {
-					socket.emit('answer', { to: from, answer: pc.localDescription })
+					console.log(
+						'\x1b[36m%s\x1b[0m',
+						'Data in socket.emit answer:',
+						'to:',
+						from,
+						'answer:',
+						pc.localDescription,
+						'playerID:'
+					)
+					socket.emit('answer', { to: from, answer: pc.localDescription, playerID: userData.id })
 				})
 				.catch(console.error)
 		}
 	})
 
 	socket.on('answer', ({ from, answer }) => {
-		console.log('answer socket is working!')
 		const pc = peerConnections[from]
+		console.log('\x1b[36m%s\x1b[0m', 'Data in socket.on answer:', 'from:', from, 'answer:', answer)
+
 		if (pc) {
 			pc.setRemoteDescription(new RTCSessionDescription(answer)).catch(console.error)
 		}
