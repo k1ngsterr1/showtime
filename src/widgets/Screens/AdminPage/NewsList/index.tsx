@@ -69,19 +69,18 @@ const NewsList = () => {
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_card}>
 						{news.map((newsData) => (
-							<div className={`${styles.card} mt-12`}>
+							<div key={newsData.id} className={`${styles.card} mt-12`}>
 								<PhotoCard
 									date={newsData.date}
-									key={newsData.id}
 									image={newsData.image}
 									heading={newsData.heading}
 									description={newsData.description}
 								/>
-								<Buttons buttonType="filled" text="Редактировать" margin="mt-5" />
+								<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
 								<Buttons
 									buttonType="filled"
 									text="Удалить"
-									margin="mt-10"
+									margin="mt-5"
 									onClick={() => handleDeleteNews(newsData.id)}
 								/>
 							</div>

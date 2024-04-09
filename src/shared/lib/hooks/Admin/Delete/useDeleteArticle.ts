@@ -6,18 +6,17 @@ export function useDeleteArticle() {
 
 	const deleteArticle = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
 			const response = await axios.delete(
-				'https://showtime.up.railway.app/api/admin/delete-article',
+				`http://localhost:4200/api/admin/delete-article/${data.articleId}`,
 				{
+					withCredentials: true,
 					headers: {
-						'Content-Type': 'multipart/form-data'
+						'Content-Type': 'application/json'
 					}
 				}
 			)
+
+			console.log(response.data)
 
 			setArticleData(response.data)
 		} catch (error) {

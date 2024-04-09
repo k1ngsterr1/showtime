@@ -72,7 +72,7 @@ export const AdminArticles = () => {
 					</div>
 				</div>
 			</div>
-			<div className="flex flex-row gap-10">
+			<div className="mt-10 flex flex-row gap-10">
 				<AddButton buttonType="filled" text="Добавить" type="submit" />
 				<LinkButton href="articles-list" text="Смотреть все" buttonType="filled" />
 			</div>

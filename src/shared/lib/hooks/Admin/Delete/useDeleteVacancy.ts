@@ -6,15 +6,12 @@ export function useDeleteVacancy() {
 
 	const deleteVacancy = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
 			const response = await axios.delete(
-				'https://showtime.up.railway.app/api/admin/delete-vacancy',
+				`http://localhost:4200/api/admin/delete-vacancy/${data.vacancyId}`,
 				{
+					withCredentials: true,
 					headers: {
-						'Content-Type': 'multipart/form-data'
+						'Content-Type': 'application/json'
 					}
 				}
 			)

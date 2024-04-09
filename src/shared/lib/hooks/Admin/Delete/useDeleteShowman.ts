@@ -7,7 +7,7 @@ export function useDeleteShowman() {
 	const deleteShowman = async (data: any) => {
 		try {
 			const response = await axios.delete(
-				`http://localhost:4200/api/admin/delete-article/${data.articleId}`,
+				`http://localhost:4200/api/admin/delete-showman/${data.showmanId}`,
 				{
 					withCredentials: true,
 					headers: {

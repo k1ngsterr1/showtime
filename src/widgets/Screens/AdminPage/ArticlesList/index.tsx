@@ -10,7 +10,6 @@ import Logo from '@assets/logo/showtime_logo.svg'
 
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
-import { idText } from 'typescript'
 
 export const ArticlesList = () => {
 	const [articles, setArticles] = useState<any[]>([])
@@ -69,9 +68,8 @@ export const ArticlesList = () => {
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_card}>
 						{articles.map((article) => (
-							<div className={`${styles.card} mt-12`}>
+							<div key={article.id} className={`${styles.card} mt-12`}>
 								<ArticleCard
-									key={article.id}
 									date={article.date}
 									image={article.image}
 									heading={article.heading}
