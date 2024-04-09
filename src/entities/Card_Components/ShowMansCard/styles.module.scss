@@ -19,8 +19,8 @@
 	}
 
 	&_picture {
-		width: 200px;
-		height: 200px;
+		width: clamp(196px, 20.41536vw, 784px);
+		height: clamp(180.5px, 18.80088vw, 722px);
 		@apply mb-3;
 	}
 }

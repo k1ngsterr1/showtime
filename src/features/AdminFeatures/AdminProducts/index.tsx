@@ -59,34 +59,34 @@ const AdminProducts: React.FC = () => {
 							/>
 						</label>
 					)}
-					<div className="flex flex-col items-center justify-center">
-						<Input
-							inputType="product"
-							type="text"
-							placeholder="Название продукта"
-							margin="mt-8"
-							name="name"
-							value={productName}
-							onChange={(e) => setProductName(e.target.value)}
-						/>
-						<TextArea
-							placeholder="Описание продкута"
-							textareaType="product-desc"
-							margin="mt-4"
-							name="description"
-							value={productDescription}
-							onChange={(e) => setProductDescription(e.target.value)}
-						/>
-						<Input
-							inputType="product"
-							type="text"
-							placeholder="Цена"
-							margin="mt-5 mb-5"
-							name="price"
-							value={productPrice}
-							onChange={(e) => setProductPrice(e.target.value)}
-						/>
-					</div>
+					<Input
+						inputType="product"
+						type="text"
+						placeholder="Название продукта"
+						margin="mt-8"
+						name="name"
+						value={productName}
+						textAlign="center"
+						onChange={(e) => setProductName(e.target.value)}
+					/>
+					<TextArea
+						placeholder="Описание продкута"
+						textareaType="product-desc"
+						margin="mt-4"
+						name="description"
+						value={productDescription}
+						onChange={(e) => setProductDescription(e.target.value)}
+					/>
+					<Input
+						inputType="product"
+						type="text"
+						placeholder="Цена"
+						margin="mt-5 mb-5"
+						name="price"
+						textAlign="center"
+						value={productPrice}
+						onChange={(e) => setProductPrice(e.target.value)}
+					/>
 					<Button buttonType="transparent" text="Купить" />
 				</div>
 			</div>
