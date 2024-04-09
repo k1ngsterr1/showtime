@@ -81,7 +81,7 @@ export const AdminTableService: React.FC<Service> = () => {
 					<th className={styles.table__header__item}>ID</th>
 					<th className={styles.table__header__item}>Услуга</th>
 					<th className={styles.table__header__item}>Цена</th>
-					{/* <th className={styles.table__header__item}>Товар</th> */}
+					<th className={styles.table__header__item}>Товар</th>
 					<th className={styles.table__header__item}>Дата</th>
 				</tr>
 			</thead>
@@ -91,7 +91,7 @@ export const AdminTableService: React.FC<Service> = () => {
 						<td className={styles.table__content_item}>{order.id}</td>
 						<td className={styles.table__content_item}>{order.service}</td>
 						<td className={styles.table__content_item}>{order.price}</td>
-						{/* <td className={styles.table__content_item}>{service.product}</td> */}
+						<td className={styles.table__content_item}>{order.product}</td>
 						<td className={styles.table__content_item}>
 							{order.time}
 							<div className={styles.table__content_buttons}>
