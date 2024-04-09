@@ -56,4 +56,12 @@
 			font-size: clamp(9px, 4.20552vw, 36px) !important;
 		}
 	}
+	.show_password {
+		@apply top-8;
+		left: clamp(147.5px, 68.9238vw, 590px);
+	}
+	.icon {
+		width: clamp(9px, 4.20552vw, 36px);
+		height: clamp(9px, 4.20552vw, 36px);
+	}
 }
