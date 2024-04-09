@@ -14,6 +14,8 @@ export default function VideoRoom({ roomId }) {
 
 	const userData = JSON.parse(localStorage.getItem('userData'))
 
+	// const connectedPlayers = JSON.parse(localStorage.getItem('connectedPlayers'))
+
 	useEffect(() => {
 		const showman = players.find((player) => player.role === 'showman')
 		if (showman && userData) {
