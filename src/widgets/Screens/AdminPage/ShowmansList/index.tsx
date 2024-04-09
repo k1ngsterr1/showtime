@@ -75,7 +75,7 @@ export const ShowmansList = () => {
 						<div className={`${styles.services__content_card} flex flex-wrap gap-12`}>
 							{showmans.map((showman) => (
 								<div key={showman.id} className={`${styles.card} mt-12`}>
-									<ShowMansCard image={showman.image} name={showman.name} text={showman.text} />
+									<ShowMansCard url={showman.url} name={showman.name} text={showman.text} />
 									<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
 									<Buttons
 										buttonType="filled"
