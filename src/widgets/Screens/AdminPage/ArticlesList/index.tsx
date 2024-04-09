@@ -71,7 +71,7 @@ export const ArticlesList = () => {
 							<div key={article.id} className={`${styles.card} mt-12`}>
 								<ArticleCard
 									date={article.date}
-									image={article.image}
+									url={article.url}
 									heading={article.heading}
 									description={article.description}
 								/>

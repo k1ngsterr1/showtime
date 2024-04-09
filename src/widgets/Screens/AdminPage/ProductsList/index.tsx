@@ -71,7 +71,7 @@ export const ProductsList = () => {
 							<div className={`${styles.card} mt-12`}>
 								<ProductCard
 									key={product.id}
-									image={product.image}
+									url={product.url}
 									name={product.name}
 									description={product.description}
 									price={product.price}

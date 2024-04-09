@@ -8,7 +8,7 @@ interface UserTab {
 	email: string
 	position: string
 	margin?: string
-	image: ImageMetadata
+	url: string;
 	userTabType?: string | 'users'
 	userPhotoType?: string | 'users'
 	userTextType?: string | 'users'
@@ -19,7 +19,7 @@ export const AdminUserTab: React.FC<UserTab> = ({
 	email,
 	margin,
 	position,
-	image,
+	url,
 	userTabType,
 	userPhotoType,
 	userTextType,
@@ -49,7 +49,7 @@ export const AdminUserTab: React.FC<UserTab> = ({
 					</div>
 				)}
 				<div className={userPhotoClass}>
-					<img src={image.src} alt="photo" />
+					<img src={url} alt="photo" />
 				</div>
 				<div className={userTextClass}>
 					<span className={styles.usertab__text_name}>{email}</span>
