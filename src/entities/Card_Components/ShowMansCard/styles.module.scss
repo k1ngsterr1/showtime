@@ -19,14 +19,14 @@
 	}
 
 	&_picture {
+		width: 200px;
+		height: 200px;
 		@apply mb-3;
 	}
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.card {
-		// width: 300px;
-		// height: 500px;
 		&__name {
 			font-size: clamp(25px, 11.681999999999999vw, 100px);
 		}
