@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 
 interface Props {
-	url: ImageMetadata
+	url: string
 	text: string
 	name: string
 }

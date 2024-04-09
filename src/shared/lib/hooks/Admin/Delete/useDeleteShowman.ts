@@ -4,10 +4,10 @@ import { useState } from 'react'
 export function useDeleteShowman() {
 	const [showmanData, setShowmanData] = useState<any>()
 
-	const deleteShowman = async (data:any) => {
+	const deleteShowman = async (data: any) => {
 		try {
 			const response = await axios.delete(
-				`http://localhost:4200/api/admin/delete-showman/${data.showmanId}`,
+				`http://localhost:4200/api/admin/delete-article/${data.articleId}`,
 				{
 					withCredentials: true,
 					headers: {

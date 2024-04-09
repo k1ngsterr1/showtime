@@ -8,7 +8,6 @@ export function useGetArticles() {
 		try {
 			const response = await axios.get('http://localhost:4200/api/admin/get-articles', {
 				withCredentials: true
-				
 			})
 			const articles = response.data['articles']
 			console.log('here is my data:', response.data)
