@@ -66,7 +66,7 @@ export const ArticlesList = () => {
 				</div>
 				<h1 className="text-primary-red">Список статей</h1>
 				<div className={styles.services__content_cards}>
-					<div className={styles.services__content_card}>
+					<div className={`${styles.services__content_card} gap-10`}>
 						{articles.map((article) => (
 							<div key={article.id} className={`${styles.card} mt-12`}>
 								<ArticleCard
