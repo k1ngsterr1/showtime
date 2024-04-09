@@ -11,7 +11,7 @@ interface Service {
 	id: string
 	service: string
 	price: string
-	// product: string
+	product: string
 	time: string
 	text: string
 }
@@ -64,8 +64,8 @@ export const AdminTableService: React.FC<Service> = () => {
 			})
 	}
 
-	const handleClick = (service: Service) => {
-		setSelectedService(service)
+	const handleClick = (order: Service) => {
+		setSelectedService(order)
 		setPopupOpen(true)
 	}
 
@@ -111,7 +111,7 @@ export const AdminTableService: React.FC<Service> = () => {
 				))}
 			</tbody>
 			{isPopupOpen && selectedService && (
-				<DetailsPopup onClick={handleClose} popupState services={[selectedService]} />
+				<DetailsPopup onClick={handleClose} popupState orders={[selectedService]} />
 			)}
 		</table>
 	)
