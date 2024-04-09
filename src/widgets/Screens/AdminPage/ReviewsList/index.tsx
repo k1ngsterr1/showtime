@@ -1,6 +1,10 @@
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import { ReviewCard } from '@entities/Card_Components/ReviewCard'
+import { useGetReviews } from '@shared/lib/hooks/Admin/Get/useGetReviews'
+import { useDeleteReview } from '@shared/lib/hooks/Admin/Delete/useDeleteReviews'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
@@ -9,6 +13,31 @@ import '@shared/styles/global.scss'
 import { reviews } from '@shared/lib/content/reviewContent'
 
 export const ReviewsList = () => {
+	const [reviews, setReviews] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
+	const { getReviews } = useGetReviews()
+	const { deleteReview } = useDeleteReview()
+
+	useEffect(() => {
+		setIsLoading(true)
+		getReviews()
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setReviews(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setReviews([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
+
 	return (
 		<main className={styles.services}>
 			<div className={styles.services__content}>
@@ -20,7 +49,14 @@ export const ReviewsList = () => {
 					<div className={styles.services__content_card}>
 						{reviews.map((review) => (
 							<div className={`${styles.card} mt-12`}>
-								<ReviewCard time={review.time} paragraph={review.paragraph} name={review.name} />
+								<ReviewCard
+									key={review.id}
+									date={review.date}
+									text={review.text}
+									name={review.name}
+									rating={review.rating}
+								/>
+
 								<Buttons buttonType="filled" text="Удалить" margin="mt-10" />
 								<Buttons buttonType="filled" text="Редактировать" margin="mt-5" />
 							</div>

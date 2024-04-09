@@ -1,45 +1,63 @@
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import { ProductCard } from '@entities/Card_Components/ProductsCard'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useDeleteProduct } from '@shared/lib/hooks/Admin/Delete/useDeleteProduct'
+import { useGetProducts } from '@shared/lib/hooks/Admin/Get/useGetProducts'
 
 import Logo from '@assets/logo/showtime_logo.svg'
-import photo from '@assets/About/shlyapa.webp'
 
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
 
-export const products = [
-	{
-		photo: photo,
-		heading: 'Шляпа мафиози',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '15000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Шляпа мафиози',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '7000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Шляпа мафиози',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '7000 тг'
-	},
-	{
-		photo: photo,
-		heading: 'Шляпа мафиози',
-		paragraph:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		price: '7000 тг'
-	}
-]
-
 export const ProductsList = () => {
+	const [products, setProducts] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
+	const { getProducts } = useGetProducts()
+	const { deleteProduct } = useDeleteProduct()
+
+	useEffect(() => {
+		setIsLoading(true)
+		getProducts()
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setProducts(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setProducts([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
+
+	const handleDeleteProduct = (productId: string) => {
+		deleteProduct({ productId: productId })
+			.then(() => {
+				getProducts()
+					.then((data) => {
+						if (Array.isArray(data)) {
+							setProducts(data)
+						} else {
+							console.error('Data is not an array:', data)
+							setProducts([])
+						}
+					})
+					.catch((error) => {
+						console.error('Failed to fetch showmans:', error)
+					})
+			})
+			.catch((error) => {
+				console.error('Failed to delete showman:', error)
+			})
+	}
+
 	return (
 		<main className={styles.services}>
 			<div className={styles.services__content}>
@@ -52,13 +70,19 @@ export const ProductsList = () => {
 						{products.map((product) => (
 							<div className={`${styles.card} mt-12`}>
 								<ProductCard
-									photo={product.photo}
-									heading={product.heading}
-									paragraph={product.paragraph}
+									key={product.id}
+									image={product.image}
+									name={product.name}
+									description={product.description}
 									price={product.price}
 								/>
-								<Buttons buttonType="filled" text="Удалить" margin="mt-10" />
 								<Buttons buttonType="filled" text="Редактировать" margin="mt-5" />
+								<Buttons
+									buttonType="filled"
+									text="Удалить"
+									margin="mt-10"
+									onClick={() => handleDeleteProduct(product.id)}
+								/>
 							</div>
 						))}
 					</div>

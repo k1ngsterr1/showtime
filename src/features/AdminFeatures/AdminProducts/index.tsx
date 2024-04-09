@@ -7,6 +7,7 @@ import { TextArea } from '@shared/ui/TexrArea/index'
 import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import { useAddProduct } from '@shared/lib/hooks/Admin/Add/useAddProduct'
+import Button from '@shared/ui/Buttons/DefaultReactButton/index'
 
 const AdminProducts: React.FC = () => {
 	const { previewUrl, handleFileChange, selectedFile } = useFileUpload()
@@ -34,7 +35,7 @@ const AdminProducts: React.FC = () => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<div className={styles.container}>
-				<div className={styles.container__content}>
+				<div className={`${styles.container__content} flex flex-col items-center justify-center`}>
 					{previewUrl ? (
 						<img
 							src={previewUrl}
@@ -58,32 +59,35 @@ const AdminProducts: React.FC = () => {
 							/>
 						</label>
 					)}
-					<Input
-						inputType="product"
-						type="text"
-						placeholder="Название продукта"
-						margin="mt-8"
-						name="name"
-						value={productName}
-						onChange={(e) => setProductName(e.target.value)}
-					/>
-					<TextArea
-						placeholder="Описание продкута"
-						textareaType="product-desc"
-						margin="mt-4"
-						name="description"
-						value={productDescription}
-						onChange={(e) => setProductDescription(e.target.value)}
-					/>
-					<Input
-						inputType="product"
-						type="text"
-						placeholder="Цена"
-						margin="mt-5"
-						name="price"
-						value={productPrice}
-						onChange={(e) => setProductPrice(e.target.value)}
-					/>
+					<div className="flex flex-col items-center justify-center">
+						<Input
+							inputType="product"
+							type="text"
+							placeholder="Название продукта"
+							margin="mt-8"
+							name="name"
+							value={productName}
+							onChange={(e) => setProductName(e.target.value)}
+						/>
+						<TextArea
+							placeholder="Описание продкута"
+							textareaType="product-desc"
+							margin="mt-4"
+							name="description"
+							value={productDescription}
+							onChange={(e) => setProductDescription(e.target.value)}
+						/>
+						<Input
+							inputType="product"
+							type="text"
+							placeholder="Цена"
+							margin="mt-5 mb-5"
+							name="price"
+							value={productPrice}
+							onChange={(e) => setProductPrice(e.target.value)}
+						/>
+					</div>
+					<Button buttonType="transparent" text="Купить" />
 				</div>
 			</div>
 			<div className="mt-12 flex flex-row gap-10">

@@ -12,7 +12,7 @@ export function useGetShowmans() {
 			return response.data['showmans']
 		} catch (error) {
 			console.error('There was an error with getting showmans')
-			return null // Return null or appropriate error handling
+			return null
 		}
 	}
 

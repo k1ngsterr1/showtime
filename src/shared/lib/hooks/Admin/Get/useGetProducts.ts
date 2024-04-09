@@ -4,18 +4,14 @@ import { useState } from 'react'
 export function useGetProducts() {
 	const [productsData, setProductsData] = useState<any>()
 
-	const getProducts = async (data: any) => {
+	const getProducts = async () => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-products', {
-				headers: {
-					'Content-Type': 'multipart/form-data'
-				}
+			const response = await axios.get('http://localhost:4200/api/admin/get-products', {
+				withCredentials: true
 			})
-
+			const products = response.data['products']
+			console.log('here is my data:', response.data)
+			return response.data['products']
 			setProductsData(response.data)
 		} catch (error) {
 			console.error('There was an error with getting products')

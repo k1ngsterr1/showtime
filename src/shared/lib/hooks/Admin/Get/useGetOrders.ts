@@ -7,10 +7,7 @@ export function useGetOrders() {
 	const getOrders = async () => {
 		try {
 			const response = await axios.get('http://localhost:4200/api/admin/get-orders', {
-				withCredentials: true,
-				headers: {
-					'Content-Type': 'application/json'
-				}
+				withCredentials: true
 			})
 			const orders = response.data['orders']
 			console.log('here is my data:', response.data)

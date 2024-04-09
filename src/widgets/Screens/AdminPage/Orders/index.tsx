@@ -22,7 +22,7 @@ export const Orders = () => {
 						<h1 className={styles.client__main__functional__header_heading}>Заказы</h1>
 					</div>
 					<div className={styles.client__main__functional__orders}>
-						<AdminTableService services={services} />
+						<AdminTableService />
 					</div>
 				</div>
 			</div>

@@ -16,11 +16,7 @@ interface Service {
 	text: string
 }
 
-interface Props {
-	services: Service[]
-}
-
-export const AdminTableService: React.FC<Props> = ({ services }) => {
+export const AdminTableService: React.FC<Service> = () => {
 	const [isPopupOpen, setPopupOpen] = useState(false)
 	const [selectedService, setSelectedService] = useState<Service | null>(null)
 	const [orders, setOrders] = useState<any[]>([])
@@ -36,7 +32,6 @@ export const AdminTableService: React.FC<Props> = ({ services }) => {
 					setOrders(data)
 				} else {
 					console.error('Data is not an array:', data)
-
 					setOrders([])
 				}
 			})
@@ -91,7 +86,7 @@ export const AdminTableService: React.FC<Props> = ({ services }) => {
 				</tr>
 			</thead>
 			<tbody className={styles.table__content}>
-				{orders.map((order, index) => (
+				{orders.map((order) => (
 					<tr key={order.id} className={styles.table__content_row}>
 						<td className={styles.table__content_item}>{order.id}</td>
 						<td className={styles.table__content_item}>{order.service}</td>

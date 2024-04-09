@@ -72,7 +72,7 @@ export const ShowmansList = () => {
 							<Loader />
 						</div>
 					) : (
-						<div className={styles.services__content_card}>
+						<div className={`${styles.services__content_card} flex flex-wrap gap-12`}>
 							{showmans.map((showman) => (
 								<div key={showman.id} className={`${styles.card} mt-12`}>
 									<ShowMansCard image={showman.image} name={showman.name} text={showman.text} />
