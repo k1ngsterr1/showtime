@@ -24,6 +24,25 @@
 		@apply mb-3;
 	}
 }
+.upload {
+	@apply gap-4;
+	border: 4px solid #bf2316;
+	width: clamp(196px, 20.41536vw, 784px);
+	height: clamp(180.5px, 18.80088vw, 722px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	.fedora {
+		width: clamp(75px, 7.812vw, 300px);
+	}
+}
+
+.previewImage {
+	width: clamp(196px, 20.41536vw, 784px);
+	height: clamp(180.5px, 18.80088vw, 722px);
+}
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.card {

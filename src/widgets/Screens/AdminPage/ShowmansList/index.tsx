@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ShowMansCard from '@entities/Card_Components/ShowMansCard/index'
+import { ShowMansCard } from '@entities/Card_Components/ShowMansCard/index'
 import { useGetShowmans } from '@shared/lib/hooks/Admin/Get/useGetShowmans'
 import { useDeleteShowman } from '@shared/lib/hooks/Admin/Delete/useDeleteShowman'
 import { useUpdateShowman } from '@shared/lib/hooks/Admin/Update/useUpdateShowman'
@@ -12,6 +12,14 @@ import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
 
 export const ShowmansList = () => {
+	const [editState, setEditState] = useState<Record<string, boolean>>({})
+	const toggleEdit = (id: string) => {
+		setEditState((prevState) => ({
+			...prevState,
+			[id]: !prevState[id]
+		}))
+	}
+
 	const [showmans, setShowmans] = useState<any[]>([])
 	const [isLoading, setIsLoading] = useState(true)
 	const { getShowmans } = useGetShowmans()
@@ -75,14 +83,25 @@ export const ShowmansList = () => {
 						<div className={`${styles.services__content_card} flex flex-wrap gap-12`}>
 							{showmans.map((showman) => (
 								<div key={showman.id} className={`${styles.card} mt-12`}>
-									<ShowMansCard url={showman.url} name={showman.name} text={showman.text} />
-									<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
+									<ShowMansCard
+										url={showman.url}
+										name={showman.name}
+										text={showman.text}
+										editing={editState[showman.id]}
+									/>
+									<Buttons
+										buttonType="filled"
+										text="Редактировать"
+										margin="mt-8"
+										onClick={() => toggleEdit(showman.id)}
+									/>
 									<Buttons
 										buttonType="filled"
 										text="Удалить"
 										margin="mt-4"
 										onClick={() => handleDeleteShowman(showman.id)}
 									/>
+									<Buttons buttonType="filled" text="Сохранить" margin="mt-4" />
 								</div>
 							))}
 						</div>

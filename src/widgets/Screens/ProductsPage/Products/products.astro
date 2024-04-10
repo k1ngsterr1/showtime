@@ -1,6 +1,7 @@
 ---
 import { CardSwiper } from '@features/Swiper_Components/CardSwiper'
-import { products } from '@shared/lib/content/ShopContents'
+import React, { useEffect, useState } from 'react'
+// import { products } from '@shared/lib/content/ShopContents'
 import { ProductCard } from '@entities/Card_Components/ProductsCard/index'
 import { specials } from '@shared/lib/content/ShopContents'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
@@ -10,15 +11,30 @@ import photo from '@assets/About/card_product.webp'
 import shlyapa from '@assets/About/shlyapa.webp'
 
 import '@shared/styles/global.scss'
+
+const fetchProducts = async () => {
+	try {
+		const response = await fetch('http://localhost:4200/api/admin/get-products')
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`)
+		}
+		return await response.json()
+	} catch (error) {
+		console.error('Failed to fetch products:', error)
+		return []
+	}
+}
+
+const products = await fetchProducts()
 ---
 
 <main class={styles.products}>
 	<div class={styles.products__content}>
 		<div class={styles.products__content_cards}>
 			<div class={styles.products__content_card}>
-				<CardSwiper products={products} client:load />
+				<CardSwiper client:load />
 			</div>
-			<SpecialsSwiper specials={specials} client:load />
+			<!-- <SpecialsSwiper specials={specials} client:load /> -->
 		</div>
 	</div>
 </main>
@@ -33,24 +49,23 @@ import '@shared/styles/global.scss'
 			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 		/>
 		<div class="mt-8">
-			<ProductCard
-				photo={photo}
-				heading="Шляпа мафиози"
-				paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-				,
-				price="15000 тг"
-			/>
-			<div class="mt-12">
-				<ProductCard
-					photo={photo}
-					heading="Шляпа мафиози"
-					paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-					,
-					price="15000 тг"
-				/>
-			</div>
+			{
+				products.map((product: any) => (
+					<div class="mt-12">
+						<ProductCard
+							url={product.url}
+							name={product.name}
+							description={product.description}
+							price={product.price}
+						/>
+					</div>
+				))
+			}
 		</div>
-		<h1 class="mt-16 text-center text-primary-red">Акции</h1>
+	</div>
+</main>
+
+<!-- <h1 class="mt-16 text-center text-primary-red">Акции</h1>
 		<Paragraph
 			align="text-center"
 			paragraphType="white"
@@ -62,7 +77,6 @@ import '@shared/styles/global.scss'
 				photo={shlyapa}
 				heading="Шляпа мафиози"
 				paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-				,
 				price="7000 тг"
 			/>
 			<div class="mt-12">
@@ -70,10 +84,6 @@ import '@shared/styles/global.scss'
 					photo={shlyapa}
 					heading="Шляпа мафиози"
 					paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-					,
 					price="7000 тг"
 				/>
-			</div>
-		</div>
-	</div>
-</main>
+			</div> -->

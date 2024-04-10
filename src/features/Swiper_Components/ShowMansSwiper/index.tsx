@@ -1,56 +1,13 @@
-import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import ShowMansCard from '@entities/Card_Components/ShowMansCard/index'
+import { ShowMansCard } from '@entities/Card_Components/ShowMansCard/index'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
-
+import React, { useEffect, useState } from 'react'
+import { useGetShowmans } from '@shared/lib/hooks/Admin/Get/useGetShowmans'
 import 'swiper/css'
 import styles from './styles.module.scss'
 
 import ShowMan from '../../../assets/ShowMans/showman.webp'
-
-export const showmans = [
-	{
-		photo: ShowMan,
-		name: 'Г-н Алибек',
-		position: 'Хороший Ведущий'
-	},
-	{
-		photo: ShowMan,
-		name: 'Г-жа Мария',
-		position: 'Хороший Ведущий'
-	},
-	{
-		photo: ShowMan,
-		name: 'Г-н Улан',
-		position: 'Хороший Ведущий'
-	},
-	{
-		photo: ShowMan,
-		name: 'Г-н Жандос',
-		position: 'Хороший Ведущий'
-	},
-	{
-		photo: ShowMan,
-		name: 'Erlan Erlanov',
-		position: 'Сотрудник'
-	},
-	{
-		photo: ShowMan,
-		name: 'Nurmukhamed Bafome',
-		position: 'Сотрудник'
-	},
-	{
-		photo: ShowMan,
-		name: 'Aslanchik',
-		position: 'Сотрудник'
-	},
-	{
-		photo: ShowMan,
-		name: 'Dauren Pidor',
-		position: 'Сотрудник'
-	}
-]
 
 interface ShowMansSwiperProps {
 	showmans: Array<{
@@ -62,8 +19,31 @@ interface ShowMansSwiperProps {
 
 type Swiper = any
 
-export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
+export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = () => {
+	const [showmans, setShowmans] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
+	const { getShowmans } = useGetShowmans()
 	const swiperRef = React.useRef<Swiper | null>(null)
+
+	useEffect(() => {
+		setIsLoading(true)
+		getShowmans()
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setShowmans(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setShowmans([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
 
 	const { handlePrev, handleNext } = useCustomSwiper(swiperRef)
 
@@ -89,7 +69,7 @@ export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
 				>
 					{showmans.map((showman, index) => (
 						<SwiperSlide key={index} className={styles.slide}>
-							<ShowMansCard photo={showman.photo} name={showman.name} position={showman.position} />
+							<ShowMansCard url={showman.url} name={showman.name} text={showman.text} />
 						</SwiperSlide>
 					))}
 				</Swiper>
@@ -106,11 +86,7 @@ export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = ({ showmans }) => {
 					{showmans.map((showman, index) => (
 						<SwiperSlide key={index}>
 							<div className="flex">
-								<ShowMansCard
-									photo={showman.photo}
-									name={showman.name}
-									position={showman.position}
-								/>
+								<ShowMansCard url={showman.url} name={showman.name} text={showman.text} />
 							</div>
 						</SwiperSlide>
 					))}

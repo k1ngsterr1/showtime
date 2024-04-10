@@ -8,6 +8,12 @@
 	@apply bg-primary-light p-4 text-primary-red;
 	font-weight: 600;
 	box-shadow: 16px 16px 0px 0px #bf2316;
+
+	&__image {
+		@apply mt-10;
+		width: clamp(136px, 14.16576vw, 544px);
+		height: clamp(125px, 13.02vw, 500px);
+	}
 	&__paragraph {
 		@apply mt-4 text-center text-center;
 	}

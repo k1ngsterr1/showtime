@@ -2,23 +2,41 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ReviewCard } from '@entities/Card_Components/ReviewCard/index'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
+import { useGetReviews } from '@shared/lib/hooks/Admin/Get/useGetReviews'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
 import styles from './styles.module.scss'
 
 import 'swiper/css'
 
-interface SwiperReviewProps {
-	reviews: Array<{
-		time: string
-		name: string
-		paragraph: string
-	}>
-}
-
 type Swiper = any
 
-export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
+export const SwiperReview = () => {
 	const swiperRef = React.useRef<Swiper | null>(null)
+	const [reviews, setReviews] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
+	const { getReviews } = useGetReviews()
+
+	useEffect(() => {
+		setIsLoading(true)
+		getReviews()
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setReviews(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setReviews([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
 
 	const { handlePrev, handleNext } = useCustomSwiper(swiperRef)
 
@@ -46,7 +64,12 @@ export const SwiperReview: React.FC<SwiperReviewProps> = ({ reviews }) => {
 				{reviews.map((review, index) => (
 					<SwiperSlide key={index}>
 						<div className="flex">
-							<ReviewCard time={review.time} name={review.name} paragraph={review.paragraph} />
+							<ReviewCard
+								date={review.date}
+								text={review.text}
+								name={review.name}
+								rating={review.rating}
+							/>
 						</div>
 					</SwiperSlide>
 				))}

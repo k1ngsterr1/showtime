@@ -3,24 +3,41 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { ProductCard } from '@entities/Card_Components/ProductsCard/index'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useGetProducts } from '@shared/lib/hooks/Admin/Get/useGetProducts'
 
 import styles from './styles.module.scss'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-interface SwiperProductsProps {
-	products: Array<{
-		photo: ImageMetadata
-		heading: string
-		paragraph: string
-		price: string
-	}>
-}
-
 type Swiper = any
 
-export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
+export const CardSwiper = () => {
 	const swiperRef = React.useRef<Swiper | null>(null)
+	const [products, setProducts] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState(true)
+	const { getProducts } = useGetProducts()
+
+	useEffect(() => {
+		setIsLoading(true)
+		getProducts()
+			.then((data) => {
+				if (Array.isArray(data)) {
+					setProducts(data)
+				} else {
+					console.error('Data is not an array:', data)
+
+					setProducts([])
+				}
+			})
+			.catch((error) => {
+				console.error('Failed to fetch showmans:', error)
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
+	}, [])
 
 	const { handlePrev, handleNext } = useCustomSwiper(swiperRef)
 
@@ -48,9 +65,9 @@ export const CardSwiper: React.FC<SwiperProductsProps> = ({ products }) => {
 				{products.map((product, index) => (
 					<SwiperSlide key={index}>
 						<ProductCard
-							photo={product.photo}
-							heading={product.heading}
-							paragraph={product.paragraph}
+							url={product.url}
+							name={product.name}
+							description={product.description}
 							price={product.price}
 						/>
 					</SwiperSlide>
