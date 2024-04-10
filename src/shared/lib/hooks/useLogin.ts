@@ -25,6 +25,7 @@ export async function loginAccount(loginData: ILoginData) {
 		}
 
 		localStorage.setItem('userData', JSON.stringify(userData))
+		Cookies.set('userData', JSON.stringify(userData))
 		Cookies.set('refreshToken', tokenData.refreshToken, { expires: 7, path: '' })
 
 		console.log(userData)
