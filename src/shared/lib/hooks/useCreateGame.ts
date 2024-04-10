@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { socket } from '../socket/socketService'
+import Cookies from 'js-cookie'
 
 interface ICreateGameProps {
 	gameType: 'Город' | 'Бункер' | 'Классика'
@@ -15,7 +16,9 @@ export async function createRoom(roomData: ICreateGameProps, userId: number) {
 			roomData
 		)
 
-		const createdRoomId = response.data.id
+		const createdRoomId = response.data.room.id
+
+		Cookies.set('roomId', JSON.stringify(createdRoomId))
 
 		socket.on('connect', () => {
 			console.log('Connected to socket server')

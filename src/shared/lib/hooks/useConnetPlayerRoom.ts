@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import { socket } from '../socket/socketService'
 import type { PlayerItem } from '@entities/Tab_Components/YourGameTab/index'
-
+import Cookies from 'js-cookie'
 import axios from 'axios'
 
 export const useConnectPlayer = (roomId?: any) => {
@@ -35,6 +35,7 @@ export const useConnectPlayer = (roomId?: any) => {
 				console.log('joining room here')
 			})
 
+			Cookies.set('roomId', JSON.stringify(roomId))
 			localStorage.setItem('roomId', roomId)
 			localStorage.setItem('roomName', response.data.room.roomName)
 			localStorage.setItem('inRoom', 'true')
