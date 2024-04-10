@@ -5,6 +5,7 @@ import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import { useGetServices } from '@shared/lib/hooks/Admin/Get/useGetServices'
 import { useDeleteService } from '@shared/lib/hooks/Admin/Delete/useDeleteService'
+import { useUpdateService } from '@shared/lib/hooks/Admin/Update/useUpdateService'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
@@ -16,6 +17,7 @@ export const ServicesList = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const { getServices } = useGetServices()
 	const { deleteService } = useDeleteService()
+	const { updateService } = useUpdateService()
 
 	useEffect(() => {
 		setIsLoading(true)
@@ -72,13 +74,14 @@ export const ServicesList = () => {
 						{services.map((service) => (
 							<div key={service.id} className={`${styles.services__content_card} flex flex-col`}>
 								<Card number={service.number} service={service.service} text={service.text} />
-								<Buttons buttonType="filled" text="Редактировать" margin="mt-8" />
+								<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
 								<Buttons
 									buttonType="filled"
 									text="Удалить"
 									margin="mt-5"
 									onClick={() => handleDeleteService(service.id)}
 								/>
+								<Buttons buttonType="filled" text="Сохранить" margin="mt-5" />
 							</div>
 						))}
 					</div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ShowMansCard } from '@entities/Card_Components/ShowMansCard/index'
 import { useGetShowmans } from '@shared/lib/hooks/Admin/Get/useGetShowmans'
 import { useDeleteShowman } from '@shared/lib/hooks/Admin/Delete/useDeleteShowman'
-import { useUpdateShowman } from '@shared/lib/hooks/Admin/Update/useUpdateShowman'
+// import { useUpdateShowman } from '@shared/lib/hooks/Admin/Update/useUpdateShowman'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import { Loader } from '@shared/ui/Loader'
@@ -24,7 +24,6 @@ export const ShowmansList = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const { getShowmans } = useGetShowmans()
 	const { deleteShowman } = useDeleteShowman()
-	const { updateShowman } = useUpdateShowman()
 
 	useEffect(() => {
 		setIsLoading(true)
@@ -84,6 +83,7 @@ export const ShowmansList = () => {
 							{showmans.map((showman) => (
 								<div key={showman.id} className={`${styles.card} mt-12`}>
 									<ShowMansCard
+										showmanId={showman.id}
 										url={showman.url}
 										name={showman.name}
 										text={showman.text}
@@ -92,16 +92,15 @@ export const ShowmansList = () => {
 									<Buttons
 										buttonType="filled"
 										text="Редактировать"
-										margin="mt-8"
+										margin="mt-5"
 										onClick={() => toggleEdit(showman.id)}
 									/>
 									<Buttons
 										buttonType="filled"
 										text="Удалить"
-										margin="mt-4"
+										margin="mt-5"
 										onClick={() => handleDeleteShowman(showman.id)}
 									/>
-									<Buttons buttonType="filled" text="Сохранить" margin="mt-4" />
 								</div>
 							))}
 						</div>

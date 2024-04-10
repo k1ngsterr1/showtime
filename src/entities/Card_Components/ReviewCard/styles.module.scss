@@ -8,6 +8,10 @@
 	box-shadow: 16px 16px 0px 0px #bf2316;
 	overflow: hidden;
 
+	span {
+		font-size: clamp(12px, 1.24992vw, 48px);
+	}
+
 	&__text {
 		overflow: hidden;
 		@apply ml-1.5;

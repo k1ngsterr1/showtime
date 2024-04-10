@@ -56,14 +56,14 @@ button:hover {
 		&_name {
 			@apply font-katana;
 			@apply text-primary-light;
-			@apply text-2xl;
+			font-size: clamp(9.5px, 0.9895200000000001vw, 38px);
 			font-weight: 500;
 		}
 
 		&_position {
 			@apply font-katana;
 			@apply text-primary-light;
-			@apply text-lg;
+			@apply text-base;
 			text-transform: uppercase;
 		}
 	}

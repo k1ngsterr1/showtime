@@ -56,9 +56,7 @@ const TeamCard = () => {
 	return (
 		<div className={styles.adminCard}>
 			{isLoading ? (
-				<div className="flex items-center justify-center">
-					<Loader />
-				</div>
+				<div className="flex items-center justify-center">{/* <Loader /> */}</div>
 			) : (
 				workers.map((worker) => (
 					<AdminUserTab
