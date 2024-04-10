@@ -5,7 +5,7 @@ export function useStartGame() {
 	const startGame = async (roomId: number) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:4000/api/game/start-game/${roomId}`,
+				`http://localhost:4200/api/game/start-game/${roomId}`,
 				null,
 				{
 					withCredentials: true
