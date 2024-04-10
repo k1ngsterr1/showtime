@@ -10,7 +10,6 @@ import { useAddShowman } from '@shared/lib/hooks/Admin/Add/useAddShowman'
 const PhotoUploadComponent: React.FC = () => {
 	const { previewUrl, handleFileChange, selectedFile } = useFileUpload()
 	const { addShowman } = useAddShowman()
-	const [image, setImage] = useState<any>()
 	const [showmanName, setShowmanName] = useState<string>()
 	const [sign, setSign] = useState<string>()
 	const [email, setEmail] = useState<string>()
