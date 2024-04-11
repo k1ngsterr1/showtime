@@ -29,24 +29,24 @@ export const Auth = () => {
 		setPopupOpen(false)
 	}
 	return (
-		<form onSubmit={handleClick}>
-			<div>
-				<section className={styles.registration}>
-					<div className={styles.registration__content}>
-						<div className={styles.registration__logo}></div>
-						<h2 className={styles.registration__heading}>Пройдите аутентификацию</h2>
-						<p className={styles.registration__paragraph}>
-							Мир интриг, загадок и непредсказуемых поворотов судьбы ждёт вас. Войдите в свой
-							аккаунт, чтобы продолжить путешествие в захватывающем мире игры "Мафия", где каждый
-							ваш выбор может изменить исход игры.
-						</p>
+		<div>
+			<section className={styles.registration}>
+				<div className={styles.registration__content}>
+					<div className={styles.registration__logo}></div>
+					<h2 className={styles.registration__heading}>Пройдите аутентификацию</h2>
+					<p className={styles.registration__paragraph}>
+						Мир интриг, загадок и непредсказуемых поворотов судьбы ждёт вас. Войдите в свой аккаунт,
+						чтобы продолжить путешествие в захватывающем мире игры "Мафия", где каждый ваш выбор
+						может изменить исход игры.
+					</p>
+					<form onSubmit={handleClick}>
 						<div className={styles.container}>
 							{previewUrl ? (
 								<img src={previewUrl} alt="Preview" className={styles.previewImage} />
 							) : (
 								<label htmlFor="file-upload" className={styles.container__upload}>
 									<img src={Fedora.src} alt="Fedora" className={styles.container__upload_fedora} />
-									<p className="font-neoregular text-xl text-primary-light">Добавить фото</p>
+									<p className="font-neoregular text-xl text-primary-light">Сделайте</p>
 									<input
 										id="file-upload"
 										type="file"
@@ -67,9 +67,9 @@ export const Auth = () => {
 							/>
 							{isPopupOpen && <BiometryPopup onClick={handleClose} />}
 						</div>
-					</div>
-				</section>
-			</div>
-		</form>
+					</form>
+				</div>
+			</section>
+		</div>
 	)
 }
