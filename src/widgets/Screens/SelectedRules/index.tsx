@@ -32,7 +32,7 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 							width="42%"
 							margin="mr-auto"
 							align="text-left"
-							text="Игра Мафия погружает участников в интригующий мир, где каждый вечер может стать последним для одного из жителей города. Взаимодействие между игроками, стратегическое мышление и умение убеждать остальных в своей правоте или невиновности становятся ключевыми для победы. Давайте более подробно рассмотрим ночные и дневные фазы игры."
+							text="Игрa Мафия погружает участников в интригующий мир, где каждый вечер может стать последним для одного из жителей города. Взаимодействие между игроками, стратегическое мышление и умение убеждать остальных в своей правоте или невиновности становятся ключевыми для победы. Давайте более подробно рассмотрим ночные и дневные фазы игры."
 							paragraphType={'white'}
 						/>
 						<span className={styles2.span}>Ночная фаза: Мафия просыпается</span>
@@ -132,14 +132,13 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 								</p>
 							</div>
 						</div>
-						<div className="mt-8 flex flex-col">
+						<div className="flex flex-col">
 							<div className={styles2.paragraph_mob}>
 								<ParagraphReact
 									paragraphType="white"
 									width="75%"
 									margin="m-auto pb-8"
 									align="text-center"
-									text="Игра Мафия — это захватывающая ролевая игра, погружающая игроков в мир интриг, обмана и психологической борьбы."
 								/>
 							</div>
 							<Swiper
