@@ -15,7 +15,9 @@ export const Header = () => {
 		<>
 			<header className={styles.header}>
 				<div className={styles.header__content}>
-					<img src={Logo.src} alt="Logo" className={styles.header__logo} />
+					<a href="/">
+						<img src={Logo.src} alt="Logo" className={styles.header__logo} />
+					</a>
 					<nav className={styles.header__content__links}>
 						<LinkText text="О нас" to="about" href="/" />
 						<LinkText text="Events" to="services" href="" />
