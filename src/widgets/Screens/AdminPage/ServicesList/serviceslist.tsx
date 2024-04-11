@@ -73,15 +73,18 @@ export const ServicesList = () => {
 					>
 						{services.map((service) => (
 							<div key={service.id} className={`${styles.services__content_card} flex flex-col`}>
-								<Card number={service.number} service={service.service} text={service.text} />
-								<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
+								<Card
+									number={service.number}
+									service={service.service}
+									text={service.text}
+									serviceId={service.id}
+								/>
 								<Buttons
 									buttonType="filled"
 									text="Удалить"
 									margin="mt-5"
 									onClick={() => handleDeleteService(service.id)}
 								/>
-								<Buttons buttonType="filled" text="Сохранить" margin="mt-5" />
 							</div>
 						))}
 					</div>
