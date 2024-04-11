@@ -6,14 +6,15 @@ export function useGetNews() {
 
 	const getNews = async () => {
 		try {
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
+			console.log(refreshToken)
 			const response = await axios.get('http://localhost:4200/api/admin/get-news', {
-				withCredentials: true,
 				headers: {
-					'Content-Type': 'application/json'
+					Authorization: `Bearer ${refreshToken}`
 				}
 			})
-			const news = response.data['news']
-			console.log('here is my data:', response.data)
 			return response.data['news']
 			setNewsData(response.data)
 		} catch (error) {

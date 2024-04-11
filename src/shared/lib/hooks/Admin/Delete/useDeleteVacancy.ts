@@ -17,7 +17,6 @@ export function useDeleteVacancy() {
 					}
 				}
 			)
-			setVacancyData(response.data)
 		} catch (error) {
 			console.error('There was an error with deleting vacancy')
 		}

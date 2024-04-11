@@ -25,7 +25,7 @@ const VacancyCard: React.FC<IVacancyCardProps> = ({ number, position, text, vaca
 
 		if (editedPosition && editedText) {
 			const formData = new FormData()
-			formData.append('service', editedPosition)
+			formData.append('position', editedPosition)
 			formData.append('text', editedText)
 			formData.append('vacancyId', vacancyId.toString())
 
@@ -36,23 +36,24 @@ const VacancyCard: React.FC<IVacancyCardProps> = ({ number, position, text, vaca
 	}
 
 	return (
-		<form className="flex flex-col items-center justify-center">
+		<form className="flex flex-col items-center justify-center" onSubmit={handleUpdate}>
 			<div className={styles.card}>
 				<div className={styles.card__number}>{number}</div>
 				{isEditing ? (
 					<>
 						<Input
-							inputType="default"
+							inputType="default-red-big"
+							placeholder="Кого ищем"
 							type="text"
-							placeholder="Позиция"
 							name="position"
 							value={editedPosition}
 							onChange={(e) => setEditedPosition(e.target.value)}
 						/>
 						<TextArea
+							placeholder="Текст"
+							textareaType="vacancie"
+							margin="mt-8"
 							name="text"
-							textareaType="default"
-							placeholder="Описание"
 							value={editedText}
 							onChange={(e) => setEditedText(e.target.value)}
 						/>
@@ -73,7 +74,12 @@ const VacancyCard: React.FC<IVacancyCardProps> = ({ number, position, text, vaca
 			{isEditing ? (
 				<Buttons buttonType="filled" text="Сохранить" type="submit" margin="mt-10" />
 			) : (
-				<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
+				<Buttons
+					buttonType="filled"
+					text="Редактировать"
+					margin="mt-10"
+					onClick={() => setIsEditing(true)}
+				/>
 			)}
 		</form>
 	)
