@@ -26,7 +26,7 @@ const Card: React.FC<ICardProps> = ({ number, service, text, serviceId }) => {
 			const formData = new FormData()
 			formData.append('service', serviceEdit)
 			formData.append('text', editedText)
-			formData.append('vacancyId', serviceId.toString())
+			formData.append('serviceId', serviceId.toString())
 
 			await updateService(formData)
 		} else {
