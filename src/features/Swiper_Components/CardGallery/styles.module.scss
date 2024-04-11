@@ -3,17 +3,18 @@
 	width: clamp(465px, 48.434400000000004vw, 1860px);
 	height: clamp(301px, 31.35216vw, 1204px);
 	position: relative;
-	// top: clamp(185px, 19.2696vw, 740px);
+	@apply mt-8;
+	// top: 10px;
 	// left: clamp(-135px, -14.0616vw, -540px);
 	// top: clamp(16px, 1.66656vw, 64px);
 	// left: clamp(-600px, -62.496vw, -2400px);
-	right: clamp(150px, 70.092vw, 600px);
+	right: clamp(200px, 20.832vw, 800px);
 }
 
 .text_container {
 	position: absolute;
-	top: 400px;
-	left: 1000px;
+	top: clamp(200px, 20.832vw, 800px);
+	left: clamp(600px, 62.496vw, 2400px);
 	@apply mt-32;
 
 	&__heading {
