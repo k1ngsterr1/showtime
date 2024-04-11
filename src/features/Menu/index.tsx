@@ -128,9 +128,16 @@ export const Menu = () => {
 						</div>
 					</div>
 					<div className="flex flex-col items-center">
-						<UserTab name="Руслан Махматов" margin="mt-8" />
-						<SearchBar />
-
+						{userData && (
+							<div className="flex items-center gap-8">
+								<UserTab name={userData.username} margin="mt-8" />
+								<FontAwesomeIcon
+									onClick={logOut}
+									icon={faRightFromBracket}
+									className="mt-8 text-4xl text-primary-red transition-all hover:text-primary-light"
+								/>
+							</div>
+						)}
 						<div className="mb-4 mt-8 flex items-center gap-8">
 							<FontAwesomeIcon
 								icon={faInstagram}
