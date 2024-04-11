@@ -1,5 +1,5 @@
 .dropdown {
-	width: clamp(175px, 18.228vw, 700px);
+	width: clamp(150px, 15.624vw, 600px);
 	max-height: clamp(75px, 7.812vw, 300px);
 	position: absolute;
 	z-index: 1000;
@@ -20,7 +20,7 @@
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.dropdown {
-		width: 76%;
-		left: clamp(26px, 12.14928vw, 104px);
+		width: clamp(147.5px, 68.9238vw, 590px);
+		left: clamp(33.5px, 15.65388vw, 134px);
 	}
 }

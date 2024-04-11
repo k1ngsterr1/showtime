@@ -12,20 +12,20 @@ import shlyapa from '@assets/About/shlyapa.webp'
 
 import '@shared/styles/global.scss'
 
-const fetchProducts = async () => {
-	try {
-		const response = await fetch('http://localhost:4200/api/admin/get-products')
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`)
-		}
-		return await response.json()
-	} catch (error) {
-		console.error('Failed to fetch products:', error)
-		return []
-	}
-}
+// const fetchProducts = async () => {
+// 	try {
+// 		const response = await fetch('http://localhost:4200/api/admin/get-products')
+// 		if (!response.ok) {
+// 			throw new Error(`HTTP error! status: ${response.status}`)
+// 		}
+// 		return await response.json()
+// 	} catch (error) {
+// 		console.error('Failed to fetch products:', error)
+// 		return []
+// 	}
+// }
 
-const products = await fetchProducts()
+// const products = await fetchProducts()
 ---
 
 <main class={styles.products}>
@@ -49,7 +49,7 @@ const products = await fetchProducts()
 			text="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. "
 		/>
 		<div class="mt-8">
-			{
+			<!-- {
 				products.map((product: any) => (
 					<div class="mt-12">
 						<ProductCard
@@ -60,7 +60,7 @@ const products = await fetchProducts()
 						/>
 					</div>
 				))
-			}
+			} -->
 		</div>
 	</div>
 </main>

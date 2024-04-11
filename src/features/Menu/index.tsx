@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import { MenuButton } from '@shared/ui/Icons/MenuButton'
 import { UserTab } from '@entities/User_Components/UserTab'
 import { faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'
@@ -114,7 +115,7 @@ export const Menu = () => {
 								</a>
 							))}
 						</div>
-						<div className="mt-6 flex flex-col items-end ">
+						<div className="mt-16 flex flex-col items-end ">
 							{links_second_mob.map((link, index) => (
 								<a
 									key={index}

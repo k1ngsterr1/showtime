@@ -80,7 +80,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									placeholder="Выберите товар"
 									selectedValue={selectedRole}
 									onChange={setSelectedRole}
-									items={['Шляпа Мафиози', 'Набор карт', 'Кувшин', 'Малафья руслана']}
+									items={['Шляпа Мафиози', 'Набор карт']}
 								/>
 								<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" />
 							</div>
