@@ -10,10 +10,13 @@ export function useUpdateShowman() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
 			const response = await axios.patch('http://localhost:4200/api/admin/update-showman', data, {
-				withCredentials: true,
 				headers: {
-					'Content-Type': 'multipart/form-data'
+					// 'Content-Type': 'multipart/form-data',
+					Authorization: `Bearer ${refreshToken}`
 				}
 			})
 			console.log('here is my data:', data, response.data)

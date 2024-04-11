@@ -1,3 +1,4 @@
+import { services } from './../../../content/servicesListContent'
 import axios from 'axios'
 import { useState } from 'react'
 
@@ -6,12 +7,14 @@ export function useDeleteService() {
 
 	const deleteService = async (data: any) => {
 		try {
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
 			const response = await axios.delete(
 				`http://localhost:4200/api/admin/delete-service/${data.serviceId}`,
 				{
-					withCredentials: true,
 					headers: {
-						'Content-Type': 'application/json'
+						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)

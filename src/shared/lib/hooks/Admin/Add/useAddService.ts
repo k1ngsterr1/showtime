@@ -10,10 +10,13 @@ export function useAddService() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
 			const response = await axios.post('http://localhost:4200/api/admin/add-service', data, {
-				withCredentials: true,
 				headers: {
-					'Content-Type': 'application/json'
+					'Content-Type': 'application/json',
+					Authorization: `Bearer ${refreshToken}`
 				}
 			})
 			console.log('here is my data:', data, response.data)
