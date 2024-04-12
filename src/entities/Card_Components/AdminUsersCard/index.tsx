@@ -4,12 +4,12 @@ import styles from './styles.module.scss'
 import { useAddVerifiedAdminUser } from '@shared/lib/hooks/Admin/Users/useVerifyAdminUser'
 
 interface Props {
-	url: string
+	verificationPhoto: string
 	username: string
 	userID: number
 }
 
-const UsersCard: React.FC<Props> = ({ userID, url, username }) => {
+const UsersCard: React.FC<Props> = ({ userID, verificationPhoto, username }) => {
 	const { addAdminVerifyUser } = useAddVerifiedAdminUser()
 	const [isVerified, setIsVerified] = useState<boolean>()
 
@@ -35,7 +35,7 @@ const UsersCard: React.FC<Props> = ({ userID, url, username }) => {
 		>
 			<div className={styles.card}>
 				<div className="flex flex-col items-center justify-center">
-					<img src={url} alt={username} className={styles.card_picture} />
+					<img src={verificationPhoto} alt={username} className={styles.card_picture} />
 					<span className={styles.card__name}>{username}</span>
 				</div>
 			</div>
