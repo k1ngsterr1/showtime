@@ -68,9 +68,8 @@ export const ProductsList = () => {
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_card}>
 						{products.map((product) => (
-							<div className={`${styles.card} mt-12`}>
+							<div className={`${styles.card} mt-12`} key={product.id}>
 								<ProductCard
-									key={product.id}
 									url={product.url}
 									name={product.name}
 									description={product.description}

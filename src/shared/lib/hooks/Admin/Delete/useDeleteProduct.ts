@@ -12,12 +12,13 @@ export function useDeleteProduct() {
 			const response = await axios.delete(
 				`http://localhost:4200/api/admin/delete-product/${data.productId}`,
 				{
-					withCredentials: true,
 					headers: {
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)
+
+			console.log(response.data)
 
 			setProductData(response.data)
 		} catch (error) {

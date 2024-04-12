@@ -12,7 +12,6 @@ export function useAddProduct() {
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.post('http://localhost:4200/api/admin/add-product', data, {
-				withCredentials: true,
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${refreshToken}`
