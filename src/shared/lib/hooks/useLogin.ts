@@ -9,8 +9,11 @@ interface ILoginData {
 
 export async function loginAccount(loginData: ILoginData) {
 	try {
-		const response = await axios.post('http://localhost:4200/api/auth/login', loginData)
-
+		const response = await axios.post('https://showtime.up.railway.app/api/auth/login', loginData)
+		// let videoChatWindow = window.open(
+		// 	'https://recursing-saha.185-98-5-231.plesk.page',
+		// 	'VideoChatWindow'
+		// )
 		const data = response.data.user
 		const tokenData = response.data
 
@@ -28,9 +31,18 @@ export async function loginAccount(loginData: ILoginData) {
 		Cookies.set('userData', JSON.stringify(userData))
 		Cookies.set('refreshToken', tokenData.refreshToken, { expires: 7, path: '' })
 
-		console.log(userData)
+		console.log('Sending data to video chat:', {
+			refreshToken: tokenData.refreshToken,
+			userData: userData
+		})
 
-		window.location.href = '/user'
+		videoChatWindow!.postMessage(
+			{ refreshToken: tokenData.refreshToken, userData: JSON.stringify(userData) },
+			'https://recursing-saha.185-98-5-231.plesk.page'
+		)
+		console.log('Data sent.')
+
+		window.location.href = '/auth'
 	} catch (error: any) {
 		console.log(loginData)
 		console.error('Failed to login:', error.response ? error.response.data : error)
