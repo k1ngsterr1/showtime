@@ -1,0 +1,37 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__name {
+		@apply font-katana;
+		@apply text-primary-light;
+		font-size: clamp(24px, 2.49984vw, 96px);
+		font-weight: 700;
+	}
+
+	&__position {
+		@apply font-katana;
+		color: #f0e7be;
+		font-size: clamp(16px, 1.66656vw, 64px);
+		font-weight: 700;
+	}
+
+	&_picture {
+		width: clamp(195.5px, 20.36328vw, 782px);
+		height: clamp(212px, 22.08192vw, 848px);
+		@apply mb-3;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.card {
+		&__name {
+			font-size: clamp(25px, 11.681999999999999vw, 100px);
+		}
+		&__position {
+			font-size: clamp(14px, 6.541919999999999vw, 56px);
+		}
+	}
+}

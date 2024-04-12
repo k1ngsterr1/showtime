@@ -6,7 +6,7 @@
 
 	&__name {
 		@apply font-katana;
-		@apply text-primary-red;
+		@apply text-primary-light;
 		font-size: clamp(24px, 2.49984vw, 96px);
 		font-weight: 700;
 	}
@@ -19,6 +19,8 @@
 	}
 
 	&_picture {
+		width: clamp(195.5px, 20.36328vw, 782px);
+		height: clamp(212px, 22.08192vw, 848px);
 		@apply mb-3;
 	}
 }
