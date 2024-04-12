@@ -6,8 +6,10 @@ export function useDeleteTimetable() {
 
 	const updateTimetable = async (data: any) => {
 		try {
-			const formData = new FormData()
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
 
+			const formData = new FormData()
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch(
@@ -15,7 +17,8 @@ export function useDeleteTimetable() {
 				formData,
 				{
 					headers: {
-						'Content-Type': 'multipart/form-data'
+						'Content-Type': 'multipart/form-data',
+						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)

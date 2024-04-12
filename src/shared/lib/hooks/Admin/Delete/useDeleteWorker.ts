@@ -5,13 +5,16 @@ export function useDeleteWorker() {
 	const [workerData, setWorkerData] = useState<any>()
 
 	const deleteWorker = async (data: any) => {
+		const userData = JSON.parse(localStorage.getItem('userData'))
+		const refreshToken = userData.refresh
+
 		try {
 			const response = await axios.delete(
 				`http://localhost:4200/api/admin/delete-worker/${data.workerId}`,
 				{
 					withCredentials: true,
 					headers: {
-						'Content-Type': 'application/json'
+						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)

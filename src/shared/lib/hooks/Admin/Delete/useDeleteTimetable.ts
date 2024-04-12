@@ -6,12 +6,15 @@ export function useDeleteTimetable() {
 
 	const deleteTimetable = async (data: any) => {
 		try {
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
 			const response = await axios.delete(
 				`http://localhost:4200/api/admin/delete-timetable/${data.timetableId}`,
 				{
 					withCredentials: true,
 					headers: {
-						'Content-Type': 'application/json'
+						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)
