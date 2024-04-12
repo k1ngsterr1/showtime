@@ -41,6 +41,13 @@
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.money_tab {
-		height: clamp(90px, 42.0552vw, 360px);
+		height: clamp(110px, 51.4008vw, 440px);
+		overflow: hidden;
+		&__heading {
+			height: clamp(25px, 11.681999999999999vw, 100px);
+		}
+		&__balance {
+			height: clamp(35px, 16.354799999999997vw, 140px);
+		}
 	}
 }

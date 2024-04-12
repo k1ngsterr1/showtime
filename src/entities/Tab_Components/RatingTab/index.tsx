@@ -1,4 +1,5 @@
 import { RatingHeader } from '@shared/ui/RatingHeader'
+
 import styles from './styles.module.scss'
 
 interface RatingItem {
@@ -9,6 +10,10 @@ interface RatingItem {
 	name: string
 	number: string
 	games: string
+	id: string
+	score: string
+	trophy: string
+	loses: string
 }
 
 interface RatingTabProps {
@@ -22,13 +27,17 @@ const RatingTab: React.FC<RatingTabProps> = ({ rating }) => {
 				{rating.map((item, index) => (
 					<RatingHeader
 						key={index}
+						id={item.id}
 						kfc={item.kfc}
+						trophy={item.trophy}
+						score={item.score}
 						wins={item.wins}
 						icon={item.icon}
 						margin={item.margin}
 						name={item.name}
 						number={item.number}
 						games={item.games}
+						loses={item.loses}
 					/>
 				))}
 			</div>

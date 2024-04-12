@@ -1,13 +1,24 @@
 import axios from 'axios'
 
 export function useChangeRank() {
-	const changeRank = async (email: string) => {
+	const changeRank = async (data: any) => {
 		try {
-			const response = await axios.patch(
-				`https://showtime.up.railway.app/api/admin/change-rank/${email}`
-			)
+			const formData = new FormData()
 
-			console.log(response)
+			Object.keys(data).forEach((key) => formData.append(key, data[key]))
+
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
+			const response = await axios.patch(`http://localhost:4200/api/admin/change-rank/`, data, {
+				withCredentials: true,
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `Bearer ${refreshToken}`
+				}
+			})
+
+			console.log(response.data)
 		} catch (error) {
 			console.error('There was an error with rank editting')
 		}

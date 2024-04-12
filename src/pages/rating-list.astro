@@ -9,6 +9,7 @@ import RatingTab from '@entities/Tab_Components/RatingTab/index'
 import Layout from '../layouts/Layout.astro'
 import Footer from '@features/Footer/index.astro'
 import { rating } from '@shared/lib/content/ratingContent'
+import { RatingHeading } from '@shared/ui/RatingHeadings/index'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -23,13 +24,14 @@ import Logo from '@assets/logo/logo.png'
 	title="Рейтинг"
 	description='"Добро пожаловать на страницу рейтинга игроков Showtime! Здесь вы можете увидеть список лучших игроков нашего сообщества и сравнить свои достижения с другими участниками. Наш рейтинг обновляется регулярно, чтобы отображать актуальную информацию о вашем мастерстве и успехах в наших играх. Поднимитесь на вершину рейтинга, добивайтесь новых рекордов и покажите свои мафиозные навыки миру! Присоединяйтесь к нам на Showtime и покажите, что вы достойны места в нашем зале славы!"'
 >
-	<Loader client:load />
+	<!-- <Loader client:load /> -->
 	<Cursor client:load />
 	<Menu client:load />
 	<main class={styles.main} id="rating-list">
 		<Header client:load />
 		<section class={styles.rating_screen} id="timetable">
 			<h6 class="m-auto pt-8 text-primary-red">Рейтинг</h6>
+			<RatingHeading />
 			<RatingTab rating={rating} />
 		</section>
 	</main>
