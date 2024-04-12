@@ -1,0 +1,31 @@
+.container {
+	margin: auto;
+	z-index: 1000;
+	width: 85%;
+	display: flex;
+	justify-content: space-between;
+	// @apply gap-2;
+	&__items {
+		@apply font-killbill;
+		@apply text-primary-red;
+		font-size: clamp(12.5px, 1.302vw, 50px);
+	}
+	&__items2 {
+		@apply font-killbill;
+		@apply text-primary-red;
+		font-size: clamp(12.5px, 1.302vw, 50px);
+		@apply ml-10;
+	}
+	&__items3 {
+		@apply font-killbill;
+		@apply text-primary-red;
+		font-size: clamp(12.5px, 1.302vw, 50px);
+		@apply ml-10;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.container {
+		display: none;
+	}
+}

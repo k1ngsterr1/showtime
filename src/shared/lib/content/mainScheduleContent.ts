@@ -85,5 +85,17 @@ export const cardsMob = [
 		place: 'Smart.point',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Пятница',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Пятница',
+		place: 'Smart.point',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
 	}
 ]

@@ -19,6 +19,7 @@ export const Auth = () => {
 		if (selectedFile) {
 			const formData = new FormData()
 			formData.append('pictureName', selectedFile)
+			formData.append('userId', JSON.parse(localStorage.getItem('userId')))
 			await addVerifyUser(formData)
 		} else {
 			console.log('All fields are required')

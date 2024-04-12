@@ -14,6 +14,7 @@
 		/* display: flex;
 		justify-content: center;
 		align-items: center; */
+		overflow: hidden;
 		width: clamp(180px, 84.1104vw, 720px);
 		height: clamp(270px, 126.1656vw, 1080px);
 		margin: auto;

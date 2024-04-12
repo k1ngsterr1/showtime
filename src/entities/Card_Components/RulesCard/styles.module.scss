@@ -30,8 +30,9 @@
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.card {
+		margin: auto;
 		height: clamp(212.5px, 99.297vw, 850px);
-		width: clamp(150px, 70.092vw, 600px);
+		width: 76%;
 		@apply mb-16 mt-12;
 
 		&__number {
