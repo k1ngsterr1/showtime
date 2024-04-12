@@ -3,7 +3,7 @@ export const links = [
 	{ path: '/about', name: 'О компании' },
 	{ path: '/products', name: 'Онлайн магазин' },
 	{ path: '/services', name: 'Услуги' },
-	{ path: '/rules', name: 'Правила работы' },
+	{ path: '/rules', name: 'Правила SHOWTIME' },
 	{ path: '/partners', name: 'Партнеры' }
 ]
 

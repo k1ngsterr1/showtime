@@ -12,20 +12,20 @@ import shlyapa from '@assets/About/shlyapa.webp'
 
 import '@shared/styles/global.scss'
 
-const fetchProducts = async () => {
-	try {
-		const response = await fetch('http://localhost:4200/api/admin/get-products')
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`)
-		}
-		return await response.json()
-	} catch (error) {
-		console.error('Failed to fetch products:', error)
-		return []
-	}
-}
+// const fetchProducts = async () => {
+// 	try {
+// 		const response = await fetch('http://localhost:4200/api/admin/get-products')
+// 		if (!response.ok) {
+// 			throw new Error(`HTTP error! status: ${response.status}`)
+// 		}
+// 		return await response.json()
+// 	} catch (error) {
+// 		console.error('Failed to fetch products:', error)
+// 		return []
+// 	}
+// }
 
-const products = await fetchProducts()
+// const products = await fetchProducts()
 ---
 
 <main class={styles.products}>
@@ -50,7 +50,7 @@ const products = await fetchProducts()
 			text="Наш онлайн магазин предлагает широкий ассортимент товаров, специально подобранных для организации и проведения игр в Мафию. Здесь вы найдете всё необходимое, чтобы сделать ваш игровой вечер по-настоящему незабываемым: от эксклюзивных наборов карт и атрибутов для игры до тематических аксессуаров и декораций, создающих атмосферу таинственности и интриги."
 		/>
 		<div class="mt-8">
-			{
+			<!-- {
 				products.map((product: any) => (
 					<div class="mt-12">
 						<ProductCard
@@ -61,7 +61,7 @@ const products = await fetchProducts()
 						/>
 					</div>
 				))
-			}
+			} -->
 		</div>
 	</div>
 </main>

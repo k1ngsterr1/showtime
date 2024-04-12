@@ -6,14 +6,16 @@ export function useGetServices() {
 
 	const getServices = async () => {
 		try {
-			const response = await axios.get('http://localhost:4200/api/admin/get-services', {
-				withCredentials: true
-			})
-			const services = response.data
-			console.log('here is my data:', response.data)
-			return response.data['services']
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
 
-			setServicesData(response.data)
+			console.log(refreshToken)
+			const response = await axios.get('http://localhost:4200/api/admin/get-services', {
+				headers: {
+					Authorization: `Bearer ${refreshToken}`
+				}
+			})
+			return response.data['services']
 		} catch (error) {
 			console.error('There was an error with getting services')
 		}

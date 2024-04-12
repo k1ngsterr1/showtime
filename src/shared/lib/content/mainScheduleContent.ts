@@ -1,11 +1,5 @@
 export const cards = [
 	{
-		day: 'Понедельник',
-		place: '',
-		price: '5.000 тг',
-		time: 'с 20:00 по 02:00'
-	},
-	{
 		day: 'Вторник',
 		place: '',
 		price: '10.000 тг',
@@ -14,13 +8,7 @@ export const cards = [
 	{
 		day: 'Среда',
 		place: 'Онлайн Турнир',
-		price: '5.000 тг',
-		time: 'с 20:00 по 02:00'
-	},
-	{
-		day: 'Четверг',
-		place: '',
-		price: '5.000 тг',
+		price: '10.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
@@ -34,16 +22,16 @@ export const cards = [
 		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
+	},
+	{
+		day: 'Воскресенье',
+		place: '',
+		price: '5.000 тг',
+		time: 'с 20:00 по 02:00'
 	}
 ]
 
 export const cardsMob = [
-	{
-		day: 'Понедельник',
-		place: '',
-		price: '5.000 тг',
-		time: 'с 20:00 по 02:00'
-	},
 	{
 		day: 'Вторник',
 		place: '',
@@ -53,12 +41,6 @@ export const cardsMob = [
 	{
 		day: 'Среда',
 		рlace: 'Онлайн Турнир',
-		price: '5.000 тг',
-		time: 'с 20:00 по 02:00'
-	},
-	{
-		day: 'Четверг',
-		place: '',
 		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},

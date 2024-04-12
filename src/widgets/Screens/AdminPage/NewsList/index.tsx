@@ -76,11 +76,10 @@ const NewsList = () => {
 									heading={newsData.heading}
 									description={newsData.description}
 								/>
-								<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
 								<Buttons
 									buttonType="filled"
 									text="Удалить"
-									margin="mt-5"
+									margin="mt-10"
 									onClick={() => handleDeleteNews(newsData.id)}
 								/>
 							</div>

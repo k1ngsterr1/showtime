@@ -7,8 +7,8 @@ import icon from 'astro-icon'
 import mdx from '@astrojs/mdx'
 
 export default defineConfig({
-	output: 'hybrid',
-	adapter: vercel(),
+	output: 'static',
+	// adapter: vercel(),
 	devToolbar: {
 		enabled: false
 	},

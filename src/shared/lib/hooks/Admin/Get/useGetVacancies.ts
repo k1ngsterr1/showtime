@@ -6,10 +6,15 @@ export function useGetVacancies() {
 
 	const getVacancies = async () => {
 		try {
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
+			console.log(refreshToken)
 			const response = await axios.get('http://localhost:4200/api/admin/get-vacancies', {
-				withCredentials: true
+				headers: {
+					Authorization: `Bearer ${refreshToken}`
+				}
 			})
-			const vacancies = response.data['vacancies']
 			return response.data['vacancies']
 		} catch (error) {
 			console.error('There was an error with getting vacancies')

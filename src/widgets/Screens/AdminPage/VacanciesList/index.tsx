@@ -73,9 +73,9 @@ export const VacanciesList = () => {
 									number={vacancy.number}
 									position={vacancy.position}
 									text={vacancy.text}
+									vacancyId={vacancy.id}
 								/>
-								<div className="mt-10 flex flex-col items-center justify-center">
-									<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
+								<div className="flex items-center justify-center">
 									<Buttons
 										buttonType="filled"
 										text="Удалить"

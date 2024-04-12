@@ -16,10 +16,10 @@ export function useAddShowman() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			console.log(refreshToken)
-			const response = await axios.post('http://localhost:4200/api/admin/add-showman', formData, {
+			// console.log(refreshToken)
+			const response = await axios.post('http://localhost:4200/api/admin/add-showman', data, {
 				headers: {
-					'Content-Type': 'application/json',
+					// 'Content-Type': 'multipart/form-data',
 					Authorization: `Bearer ${refreshToken}`
 				}
 			})

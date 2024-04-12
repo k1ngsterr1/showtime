@@ -2,6 +2,7 @@
 import Paragraph from '@shared/ui/Paragraph/index.astro'
 import RatingTab from '@entities/Tab_Components/RatingTab/index'
 import { rating } from '@shared/lib/content/ratingContent'
+import { dates } from '@shared/lib/content/ratingContent'
 
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
@@ -17,7 +18,7 @@ import '@shared/styles/global.scss'
 			margin="mt-8"
 		/>
 		<div class={styles.client__content_tournaments}>
-			<RatingTab rating={rating} />
+			<RatingTab rating={dates} />
 		</div>
 	</div>
 </main>

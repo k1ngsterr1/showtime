@@ -15,7 +15,7 @@ interface Card {
 }
 
 interface RulesScreenProps {
-	cards: Card[]
+	cards?: Card[]
 }
 
 const RulesScreen: React.FC<RulesScreenProps> = () => {
