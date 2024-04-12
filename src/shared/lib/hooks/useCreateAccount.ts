@@ -13,7 +13,7 @@ export async function createAccount(accountData: IAccountData) {
 			'https://showtime.up.railway.app/api/auth/register',
 			accountData
 		)
-
+		localStorage.setItem('userId', response.data['user'].id)
 		window.location.href = '/auth'
 	} catch (error: any) {
 		console.error('Failed to create account:', error)

@@ -7,17 +7,16 @@ export function useAddVerifiedUser() {
 	const addVerifyUser = async (data: any) => {
 		try {
 			const formData = new FormData()
-
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
+			formData.append('userId', JSON.parse(localStorage.getItem('userId')))
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
-
 			const response = await axios.post('http://localhost:4200/api/user/unverified-user', data, {
 				headers: {
 					Authorization: `Bearer ${refreshToken}`
 				}
 			})
+
 			console.log('here is my data:', data, response.data)
 
 			setVerifyUserData(response.data)
