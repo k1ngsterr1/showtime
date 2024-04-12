@@ -23,6 +23,7 @@ export function useAddShowman() {
 					Authorization: `Bearer ${refreshToken}`
 				}
 			})
+
 			console.log('here is my data:', data, response.data)
 			setShowmanData(response.data)
 		} catch (error) {
