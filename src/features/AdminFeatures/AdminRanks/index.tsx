@@ -8,17 +8,30 @@ import AddButton from '@shared/ui/AddButton'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import { useAddProduct } from '@shared/lib/hooks/Admin/Add/useAddProduct'
 import Button from '@shared/ui/Buttons/DefaultReactButton/index'
+import { useChangeRank } from '@shared/lib/hooks/useChangeRank'
 
 const AdminRanks: React.FC = () => {
-	const [productName, setProductName] = useState('')
-	const [productDescription, setProductDescription] = useState('')
-	const [productPrice, setProductPrice] = useState('')
-	const { addProduct } = useAddProduct()
+	const [email, setEmail] = useState<string>()
+	const [rank, setRank] = useState<string>()
+	const { changeRank } = useChangeRank()
+
+	const handleSubmit = async (event: React.FormEvent) => {
+		event.preventDefault()
+
+		if (email && rank !== null) {
+			const formData = new FormData()
+			formData.append('email', email)
+		}
+	}
 
 	return (
 		<form>
 			<div className={styles.container}>
 				<div className={`${styles.container__content} flex flex-col items-center justify-center`}>
+					<p className="mb-8 text-center  font-neoregular text-primary-light">
+						Напиши email пользователя, чьё звание вы хотите поменять, а также укажите новое звание
+						для него.
+					</p>
 					<form className="flex flex-col items-center">
 						<Input
 							type="text"
@@ -26,6 +39,7 @@ const AdminRanks: React.FC = () => {
 							placeholder="Почта пользователя"
 							inputType="default"
 							required
+							onChange={(e) => setEmail(e.value)}
 						/>
 						<Input
 							type="text"

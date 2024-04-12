@@ -36,10 +36,10 @@ export async function loginAccount(loginData: ILoginData) {
 			userData: userData
 		})
 
-		videoChatWindow!.postMessage(
-			{ refreshToken: tokenData.refreshToken, userData: JSON.stringify(userData) },
-			'https://recursing-saha.185-98-5-231.plesk.page'
-		)
+		// videoChatWindow!.postMessage(
+		// 	{ refreshToken: tokenData.refreshToken, userData: JSON.stringify(userData) },
+		// 	'https://recursing-saha.185-98-5-231.plesk.page'
+		// )
 		console.log('Data sent.')
 
 		window.location.href = '/auth'

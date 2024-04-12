@@ -14,7 +14,9 @@ export async function createAccount(accountData: IAccountData) {
 			accountData
 		)
 
-		window.href = '/registration'
+		console.log(response.data)
+
+		window.location.href = '/login'
 	} catch (error: any) {
 		console.error('Failed to create account:', error)
 		return error.response.data.message
