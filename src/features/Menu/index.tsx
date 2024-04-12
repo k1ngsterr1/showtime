@@ -57,9 +57,7 @@ export const Menu = () => {
 								<FontAwesomeIcon
 									icon={faTiktok}
 									className={styles.menu__container__inner__icon}
-									onClick={() =>
-										window.open('https://www.tiktok.com/@showtime_almaty', '_blank')
-									}
+									onClick={() => window.open('https://www.tiktok.com/@showtime_almaty', '_blank')}
 								/>
 							</div>
 							<div className="flex flex-col items-start overflow-hidden">
@@ -121,7 +119,7 @@ export const Menu = () => {
 								</a>
 							))}
 						</div>
-						<div className="mt-16 flex flex-col items-end ">
+						<div className="flex flex-col items-end ">
 							{links_second_mob.map((link, index) => (
 								<a
 									key={index}
