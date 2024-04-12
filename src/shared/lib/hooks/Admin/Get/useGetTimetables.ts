@@ -6,8 +6,14 @@ export function useGetTimetables() {
 
 	const getTimetables = async () => {
 		try {
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
+			console.log(refreshToken)
 			const response = await axios.get('http://localhost:4200/api/admin/get-timetables', {
-				withCredentials: true
+				headers: {
+					Authorization: `Bearer ${refreshToken}`
+				}
 			})
 			const timetables = response.data['timetables']
 			console.log('here is my data:', response.data)

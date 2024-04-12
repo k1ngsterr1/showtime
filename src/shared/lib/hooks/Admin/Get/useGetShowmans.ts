@@ -8,11 +8,7 @@ export function useGetShowmans() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('http://localhost:4200/api/admin/get-showmans', {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
-				}
-			})
+			const response = await axios.get('http://localhost:4200/api/admin/get-showmans', {})
 			return response.data['showmans']
 		} catch (error) {
 			console.error('There was an error with getting showmans')

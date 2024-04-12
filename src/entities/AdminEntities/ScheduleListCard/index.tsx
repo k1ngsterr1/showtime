@@ -31,7 +31,9 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({
 			<div className={styles.card__down}>
 				<div className="">
 					<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
-					<a className={styles.card__link}>{place}</a>
+					<a className={styles.card__link} href={place}>
+						Место на карте
+					</a>
 				</div>
 				<div>
 					<span className={styles.card__down__price}>{price}</span>
