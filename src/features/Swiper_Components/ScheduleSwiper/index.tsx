@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import TimetableCard from '@entities/Card_Components/TimetableCard'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
+import { useGetTimetables } from '@shared/lib/hooks/Admin/Get/useGetTimetables'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -18,6 +19,13 @@ interface IShowProps {
 
 export const TimeSwiper: React.FC<IShowProps> = ({ cards, slides }) => {
 	const swiperRef = React.useRef<Swiper | null>(null)
+	const [data, setData] = useState()
+	const { getTimetables, timetablesData } = useGetTimetables()
+
+	useEffect(() => {
+		getTimetables()
+		setData(timetablesData)
+	}, [])
 
 	const { handlePrev, handleNext } = useCustomSwiper(swiperRef)
 
@@ -40,16 +48,20 @@ export const TimeSwiper: React.FC<IShowProps> = ({ cards, slides }) => {
 						swiperRef.current = swiperInstance
 					}}
 				>
-					{cards.map((card, index) => (
-						<SwiperSlide key={index} className={styles.slide}>
-							<TimetableCard
-								day={card.day}
-								place={card.place}
-								price={card.price}
-								time={card.time}
-							/>
-						</SwiperSlide>
-					))}
+					{data && (
+						<>
+							{data.map((card, index) => (
+								<SwiperSlide key={index} className={styles.slide}>
+									<TimetableCard
+										day={card.day}
+										place={card.place}
+										price={card.price}
+										time={card.time}
+									/>
+								</SwiperSlide>
+							))}
+						</>
+					)}
 				</Swiper>
 			</div>
 		</>

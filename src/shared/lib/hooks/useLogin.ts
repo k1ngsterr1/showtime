@@ -10,10 +10,7 @@ interface ILoginData {
 export async function loginAccount(loginData: ILoginData) {
 	try {
 		const response = await axios.post('https://showtime.up.railway.app/api/auth/login', loginData)
-		// let videoChatWindow = window.open(
-		// 	'https://recursing-saha.185-98-5-231.plesk.page',
-		// 	'VideoChatWindow'
-		// )
+		let videoChatWindow = window.open('http://localhost:3000/', 'VideoChatWindow')
 		const data = response.data.user
 		const tokenData = response.data
 
@@ -36,10 +33,11 @@ export async function loginAccount(loginData: ILoginData) {
 			userData: userData
 		})
 
-		// videoChatWindow!.postMessage(
-		// 	{ refreshToken: tokenData.refreshToken, userData: JSON.stringify(userData) },
-		// 	'https://recursing-saha.185-98-5-231.plesk.page'
-		// )
+		videoChatWindow!.postMessage(
+			{ refreshToken: tokenData.refreshToken, userData: JSON.stringify(userData) },
+			'http://localhost:3000/'
+		)
+
 		console.log('Data sent.')
 
 		window.location.href = '/auth'
