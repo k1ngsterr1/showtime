@@ -5,6 +5,7 @@ import { useDeleteTimetable } from '@shared/lib/hooks/Admin/Delete/useDeleteTime
 import { ScheduleListCard } from '@entities/AdminEntities/ScheduleListCard/index'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
+import fedora from '@assets/logo/fedora.svg'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 

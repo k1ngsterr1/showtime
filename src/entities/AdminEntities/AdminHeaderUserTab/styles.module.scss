@@ -7,6 +7,9 @@
 	&__photo {
 		width: clamp(45px, 4.6872vw, 180px);
 		height: clamp(45px, 4.6872vw, 180px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		border-radius: 50%;
 		overflow: hidden;
 	}
@@ -50,6 +53,9 @@
 		display: flex;
 		width: clamp(40px, 4.1664vw, 160px);
 		height: clamp(40px, 4.1664vw, 160px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		border-radius: 50%;
 		overflow: hidden;
 	}

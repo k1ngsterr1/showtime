@@ -5,15 +5,17 @@ import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import AdminTeam from '@features/AdminFeatures/AdminTeam/index'
 import { useState } from 'react'
 import { AddPopup } from '@features/Popup_Components/AddTeamPopup/index'
+import { useUserData } from '@shared/lib/hooks/useGetUserData'
 
 import '@shared/styles/global.scss'
 
 import styles from './styles.module.scss'
 
-import Oleg from '@assets/Admin/oleg.webp'
+import fedora from '@assets/logo/fedora.svg'
 
 export const Team = () => {
 	const [isPopupOpen, setPopupOpen] = useState(false)
+	const userData = useUserData()
 
 	const handleClick = () => {
 		setPopupOpen(true)
@@ -22,13 +24,18 @@ export const Team = () => {
 	const handleClose = () => {
 		setPopupOpen(false)
 	}
+
 	return (
 		<main className={styles.client}>
 			<div className={styles.client__left}>
 				<AdminPanel adminpanel={adminpanel} />
 			</div>
 			<div className={styles.client__main}>
-				<AdminHeader name="Bafomet Nurmukhamed" position="God" photo={Oleg} />
+				{userData && (
+					<>
+						<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
+					</>
+				)}
 				<div className={styles.client__main__functional}>
 					<div className={styles.client__main__functional__header}>
 						<h1 className={styles.client__main__functional__header_heading}>

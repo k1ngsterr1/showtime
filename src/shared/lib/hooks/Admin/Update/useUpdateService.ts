@@ -6,12 +6,10 @@ export function useUpdateService() {
 
 	const updateService = async (data: any) => {
 		try {
-			const formData = new FormData()
-
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
+			const formData = new FormData()
+			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch('http://localhost:4200/api/admin/update-service', data, {
 				headers: {
