@@ -54,7 +54,13 @@ export const Menu = () => {
 									}
 									className={styles.menu__container__inner__icon}
 								/>
-								<FontAwesomeIcon icon={faTiktok} className={styles.menu__container__inner__icon} />
+								<FontAwesomeIcon
+									icon={faTiktok}
+									className={styles.menu__container__inner__icon}
+									onClick={() =>
+										window.open('https://www.tiktok.com/@showtime_almaty', '_blank')
+									}
+								/>
 							</div>
 							<div className="flex flex-col items-start overflow-hidden">
 								<a

@@ -16,6 +16,11 @@
 		align-items: flex-start;
 		@apply mt-8;
 
+		&__mafia {
+			font-size: clamp(40px, 4.1664vw, 160px);
+			@apply font-katana;
+			@apply text-primary-red;
+		}
 		&__heading {
 			font-size: clamp(75px, 7.812vw, 300px);
 			@apply font-killbill;

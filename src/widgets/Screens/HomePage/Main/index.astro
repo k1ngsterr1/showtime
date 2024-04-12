@@ -7,10 +7,10 @@ import styles from '@pages/styles/home/styles.module.scss'
 ---
 
 <div class={styles.main__container}>
-	<h1 class={styles.main__container__heading}>
+	<h1 class={`${styles.main__container__heading} text-primary-light`}>
 		SHOWTIME<br />
-		<span class="font-katana text-primary-light">MAFIA CLUB</span>
 	</h1>
+	<span class={styles.main__container__mafia}>MAFIA CLUB</span>
 	<div class={styles.main__container__paragraphs}>
 		<Paragraph
 			paragraphType="white"

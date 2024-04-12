@@ -1,0 +1,5 @@
+.main__container__mafia {
+	@apply font-katana;
+	@apply text-primary-light;
+	font-size: clamp(30px, 3.1248vw, 120px);
+}

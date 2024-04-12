@@ -1,16 +1,16 @@
 const statsConfig = [
 	{
-		title: 'Total Games Played',
+		title: 'Тотал',
 		value: '100'
 		// any other properties you want to pass
 	},
 	{
-		title: 'Total Wins',
+		title: 'Победы',
 		value: '70'
 		// any other properties you want to pass
 	},
 	{
-		title: 'Total Losses',
+		title: 'Проигрыши',
 		value: '30'
 		// any other properties you want to pass
 	}
