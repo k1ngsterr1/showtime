@@ -34,7 +34,11 @@ const AdminUsers: React.FC = () => {
 			<div>
 				{users.map((user) => (
 					<div key={user.id}>
-						<UsersCard userID={user.id} url={user.url} username={user.username} />
+						<UsersCard
+							userID={user.id}
+							verificationPhoto={user.verificationPhoto}
+							username={user.username}
+						/>
 					</div>
 				))}
 			</div>
