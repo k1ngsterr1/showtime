@@ -8,7 +8,6 @@ export function useAddVerifiedUser() {
 		try {
 			const formData = new FormData()
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
-			formData.append('userId', JSON.parse(localStorage.getItem('userId')))
 			const response = await axios.post(
 				'http://localhost:4200/api/user/unverified-user',
 				formData,
