@@ -7,12 +7,15 @@ export function useAddTimetable() {
 	const addTimetable = async (data: any) => {
 		try {
 			const formData = new FormData()
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.post('http://localhost:4200/api/admin/add-timetable', data, {
 				withCredentials: true,
 				headers: {
+					Authorization: `Bearer ${refreshToken}`,
 					'Content-Type': 'application/json'
 				}
 			})
