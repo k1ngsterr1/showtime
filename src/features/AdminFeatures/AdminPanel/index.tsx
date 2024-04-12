@@ -17,6 +17,7 @@ import {
 	faBriefcase,
 	faUsers,
 	faNewspaper,
+	faTrophy,
 	faPenToSquare
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -50,6 +51,11 @@ export const adminpanel = [
 		icon: faBriefcase,
 		tab: 'Вакансии',
 		href: 'vacancies'
+	},
+	{
+		icon: faTrophy,
+		tab: 'Звания',
+		href: 'ranks'
 	},
 	{
 		icon: faNewspaper,
@@ -98,7 +104,7 @@ export const AdminPanel: React.FC<IPanel> = ({ adminpanel }) => {
 		<main className={styles.panel}>
 			<div className={styles.panel__content}>
 				<div className={styles.panel__content_logo}>
-					<img src={Logo.src} alt="Logo" />
+					<img src={Logo.src} alt="Logo" onClick={() => window.open('/')} />
 				</div>
 				<div className={styles.panel__content_card}>
 					{adminpanel.map((item, index) => (
