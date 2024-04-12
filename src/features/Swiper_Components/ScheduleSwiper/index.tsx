@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import TimetableCard from '@entities/Card_Components/TimetableCard'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
+import { cards } from '@shared/lib/content/cardContent'
 
 import 'swiper/css'
 import 'swiper/css/navigation'

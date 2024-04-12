@@ -52,6 +52,8 @@ export const ScheduleCard: React.FC<ICardProps> = ({ time, name, address, price 
 		})
 		dataToSend.append('date', selectedDate)
 
+		console.log(dataToSend)
+
 		console.log('Submitting:', Object.fromEntries(dataToSend.entries()))
 		await addTimetable(dataToSend)
 	}
