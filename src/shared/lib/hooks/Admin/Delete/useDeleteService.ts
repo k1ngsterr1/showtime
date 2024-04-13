@@ -11,7 +11,7 @@ export function useDeleteService() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`http://localhost:4200/api/admin/delete-service/${data.serviceId}`,
+				`https://showtime.up.railway.app/api/admin/delete-service/${data.serviceId}`,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`

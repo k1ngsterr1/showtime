@@ -13,7 +13,7 @@ export function useUpdateShowman() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.patch('http://localhost:4200/api/admin/update-showman', data, {
+			const response = await axios.patch('https://showtime.up.railway.app/api/admin/update-showman', data, {
 				headers: {
 					// 'Content-Type': 'multipart/form-data',
 					Authorization: `Bearer ${refreshToken}`

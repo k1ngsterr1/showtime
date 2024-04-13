@@ -8,7 +8,7 @@ export function useGetShowmans() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('http://localhost:4200/api/admin/get-showmans', {
+			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-showmans', {
 				headers: {
 					Authorization: `Bearer ${refreshToken}`
 				}

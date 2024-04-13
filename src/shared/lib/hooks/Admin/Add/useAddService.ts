@@ -13,7 +13,7 @@ export function useAddService() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.post('http://localhost:4200/api/admin/add-service', data, {
+			const response = await axios.post('https://showtime.up.railway.app/api/admin/add-service', data, {
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${refreshToken}`
