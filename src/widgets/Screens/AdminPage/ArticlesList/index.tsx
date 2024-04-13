@@ -71,12 +71,12 @@ export const ArticlesList = () => {
 						{articles.map((article) => (
 							<div key={article.id} className={`${styles.card} mt-12`}>
 								<ArticleCard
+									articleId={article.id}
 									date={article.date}
 									url={article.url}
 									heading={article.heading}
 									description={article.description}
 								/>
-								<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
 								<Buttons
 									buttonType="filled"
 									text="Удалить"

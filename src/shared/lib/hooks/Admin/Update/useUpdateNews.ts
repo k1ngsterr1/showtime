@@ -15,7 +15,7 @@ export function useUpdateNews() {
 
 			const response = await axios.patch(
 				'https://showtime.up.railway.app/api/admin/update-news',
-				formData,
+				data,
 				{
 					headers: {
 						// 'Content-Type': 'multipart/form-data',
