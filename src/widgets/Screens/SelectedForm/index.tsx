@@ -27,17 +27,19 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 	const [name, setName] = useState<string>('')
 	const [phoneNumber, setPhoneNumber] = useState<string>('')
 	const [description, setDescription] = useState<string>('')
-
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
 
 		if (name && phoneNumber && selectedRole && description) {
-			// Make sure selectedRole is also checked
 			const formData = new FormData()
 			formData.append('name', name)
 			formData.append('phoneNumber', phoneNumber)
-			formData.append('service', selectedRole) // Add the selected service to FormData
+			formData.append('service', selectedRole)
 			formData.append('description', description)
+
+			for (let [key, value] of formData.entries()) {
+				console.log(`${key}: ${value}`)
+			}
 
 			try {
 				await addOrder(formData)

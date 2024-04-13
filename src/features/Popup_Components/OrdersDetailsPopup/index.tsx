@@ -32,9 +32,9 @@ export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupSt
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
 				{orders.map((order, index) => (
-					<div key={index}>
-						<span className={styles.span}>{order.name}</span>
-						<span className={styles.span}>{order.phoneNumber}</span>
+					<div key={index} className="mt-5 flex flex-col">
+						<span className={styles.span}>Имя: {order.name}</span>
+						<span className="mt-2">Номер телефона: {order.phoneNumber}</span>
 						<Paragraph margin="mt-12" paragraphType="red" text={order.description} />
 					</div>
 				))}

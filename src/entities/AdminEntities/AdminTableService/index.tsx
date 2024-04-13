@@ -12,7 +12,7 @@ interface Service {
 	service: string
 	price: string
 	product: string
-	time: string
+	formattedCreatedAt: string
 	text: string
 }
 
@@ -89,7 +89,7 @@ export const AdminTableService: React.FC<Service> = () => {
 						<td className={styles.table__content_item}>{order.id}</td>
 						<td className={styles.table__content_item}>{order.service}</td>
 						<td className={styles.table__content_item}>
-							{order.time}
+							{order.formattedCreatedAt}
 							<div className={styles.table__content_buttons}>
 								<ButtonMore
 									buttonType="filled-small"

@@ -6,8 +6,14 @@ export function useGetOrders() {
 
 	const getOrders = async () => {
 		try {
-			const response = await axios.get('http://localhost:4200/api/admin/get-orders', {
-				withCredentials: true
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
+			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-orders', {
+				headers: {
+					Authorization: `Bearer ${refreshToken}`,
+					'Content-Type': 'application/json'
+				}
 			})
 			console.log('here is my data:', response.data)
 			return response.data['orders']

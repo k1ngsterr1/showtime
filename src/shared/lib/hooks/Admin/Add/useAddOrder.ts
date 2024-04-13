@@ -21,7 +21,8 @@ export function useAddOrder() {
 				data,
 				{
 					headers: {
-						Authorization: `Bearer ${refreshToken}`
+						Authorization: `Bearer ${refreshToken}`,
+						'Content-Type': 'application/json'
 					}
 				}
 			)
