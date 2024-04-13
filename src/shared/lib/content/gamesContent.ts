@@ -45,7 +45,7 @@ export const nearGameCards: NearGameCardData[] = [
 ]
 
 import photo from '@assets/logo/fedora.svg'
-import photo2 from '@assets/Events/photo_5451727234810368413_y.webp'
+import photo2 from '@assets/ShowMans/mainmafia.png'
 
 interface ShopCardData {
 	heading: string

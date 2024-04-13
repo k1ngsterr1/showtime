@@ -5,7 +5,7 @@ import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { useGetProducts } from '@shared/lib/hooks/Admin/Get/useGetProducts'
+import { useGetProducts } from '@shared/lib/hooks/Admin/Get/useGetProductsClient'
 
 import styles from './styles.module.scss'
 import 'swiper/css'

@@ -19,7 +19,7 @@ export const UserAside = () => {
 								Подробнее
 							</a>
 						</div>
-						<NearestGameSwiper cards={nearGameCards} />
+						<NearestGameSwiper />
 					</div>
 					<div className={styles.user_screen__column_container__achievements}>
 						<div className="flex w-full items-center justify-between">
@@ -51,7 +51,7 @@ export const UserAside = () => {
 							<span className={styles.user_screen__column_container__games__heading}>
 								Ближайшие игры
 							</span>
-							<NearestGameSwiper cards={nearGameCards} />
+							<NearestGameSwiper />
 						</div>
 					</div>
 				</div>

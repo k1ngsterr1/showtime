@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { ShowMansCard } from '@entities/Card_Components/ShowMansCard/index'
+import { ShowMansCard } from '@entities/Card_Components/ShowMansCard/client'
 import { RevolverButton } from '@shared/ui/Buttons/RevolverButton/index'
 import { useCustomSwiper } from '@shared/lib/hooks/useCustomSwipes'
 import React, { useEffect, useState } from 'react'
