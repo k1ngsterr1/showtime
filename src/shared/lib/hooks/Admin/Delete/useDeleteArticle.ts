@@ -10,11 +10,9 @@ export function useDeleteArticle() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`http://localhost:4200/api/admin/delete-article/${data.articleId}`,
+				`https://showtime.up.railway.app/api/admin/delete-article/${data.articleId}`,
 				{
-					withCredentials: true,
 					headers: {
-						'Content-Type': 'application/json',
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}

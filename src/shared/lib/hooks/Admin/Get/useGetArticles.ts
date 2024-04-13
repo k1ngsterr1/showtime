@@ -6,9 +6,7 @@ export function useGetArticles() {
 
 	const getArticles = async () => {
 		try {
-			const response = await axios.get('http://localhost:4200/api/admin/get-articles', {
-				withCredentials: true
-			})
+			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-articles')
 			const articles = response.data['articles']
 			console.log('here is my data:', response.data)
 			return response.data['articles']

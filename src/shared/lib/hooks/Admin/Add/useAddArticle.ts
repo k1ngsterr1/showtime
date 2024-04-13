@@ -11,13 +11,15 @@ export function useAddArticle() {
 			const refreshToken = userData.refresh
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post('http://localhost:4200/api/admin/add-article', data, {
-				withCredentials: true,
-				headers: {
-					'Content-Type': 'multipart/form-data',
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.post(
+				'https://showtime.up.railway.app/api/admin/add-article',
+				data,
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			console.log('here is my data:', data, response.data)
 			setArticleData(response.data)
 		} catch (error) {

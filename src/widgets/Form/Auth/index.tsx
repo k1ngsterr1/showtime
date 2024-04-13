@@ -46,7 +46,7 @@ export const Auth = () => {
 							) : (
 								<label htmlFor="file-upload" className={styles.container__upload}>
 									<img src={Fedora.src} alt="Fedora" className={styles.container__upload_fedora} />
-									<p className="font-neoregular text-xl text-primary-light">Сделайте</p>
+									<p className="font-neoregular text-xl text-primary-light">Сделайте фото лица</p>
 									<input
 										id="file-upload"
 										type="file"
