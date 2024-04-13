@@ -12,7 +12,7 @@ export function useAddWorker() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post('http://localhost:4200/api/admin/add-worker', data, {
+			const response = await axios.post('https://showtime.up.railway.app/api/admin/add-worker', data, {
 				withCredentials: true,
 				headers: {
 					'Content-Type': 'multipart/form-data',

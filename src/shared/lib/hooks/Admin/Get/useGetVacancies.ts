@@ -10,7 +10,7 @@ export function useGetVacancies() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('http://localhost:4200/api/admin/get-vacancies', {
+			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-vacancies', {
 				headers: {
 					Authorization: `Bearer ${refreshToken}`
 				}

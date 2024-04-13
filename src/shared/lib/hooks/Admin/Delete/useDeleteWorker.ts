@@ -10,7 +10,7 @@ export function useDeleteWorker() {
 
 		try {
 			const response = await axios.delete(
-				`http://localhost:4200/api/admin/delete-worker/${data.workerId}`,
+				`https://showtime.up.railway.app/api/admin/delete-worker/${data.workerId}`,
 				{
 					withCredentials: true,
 					headers: {

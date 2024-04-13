@@ -10,7 +10,7 @@ export function useDeleteVacancy() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`http://localhost:4200/api/admin/delete-vacancy/${data.vacancyId}`,
+				`https://showtime.up.railway.app/api/admin/delete-vacancy/${data.vacancyId}`,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`
