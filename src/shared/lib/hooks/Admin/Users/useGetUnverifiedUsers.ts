@@ -7,7 +7,7 @@ export function useGetUnverifiedUsers() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 			const response = await axios.get(
-				'http://localhost:4200/api/admin/unverified/users',
+				'https://showtime.up.railway.app/api/admin/unverified/users',
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`
