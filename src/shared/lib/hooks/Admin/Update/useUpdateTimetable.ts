@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-export function useDeleteTimetable() {
+export function useUpdateTimetable() {
 	const [timetableData, setTimetableData] = useState<any>()
 
 	const updateTimetable = async (data: any) => {
@@ -14,10 +14,9 @@ export function useDeleteTimetable() {
 
 			const response = await axios.patch(
 				'https://showtime.up.railway.app/api/admin/update-timetable',
-				formData,
+				data,
 				{
 					headers: {
-						'Content-Type': 'multipart/form-data',
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}
