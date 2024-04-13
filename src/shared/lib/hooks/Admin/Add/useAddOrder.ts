@@ -16,11 +16,15 @@ export function useAddOrder() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.post('http://localhost:4200/api/user/add-order', data, {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.post(
+				'https://showtime.up.railway.app/api/user/add-order',
+				data,
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 
 			console.log('here is my data:', data, response.data)
 			setOrderData(response.data)

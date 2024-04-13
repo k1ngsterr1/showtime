@@ -26,20 +26,25 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 	const { addOrder } = useAddOrder()
 	const [name, setName] = useState<string>('')
 	const [phoneNumber, setPhoneNumber] = useState<string>('')
-	// const [service, setService] = useState<string>('')
 	const [description, setDescription] = useState<string>('')
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
 
-		if (name && phoneNumber && description) {
+		if (name && phoneNumber && selectedRole && description) {
+			// Make sure selectedRole is also checked
 			const formData = new FormData()
 			formData.append('name', name)
 			formData.append('phoneNumber', phoneNumber)
-			// formData.append('service', service)
+			formData.append('service', selectedRole) // Add the selected service to FormData
 			formData.append('description', description)
 
-			await addOrder(formData)
+			try {
+				await addOrder(formData)
+				console.log('Order submitted successfully.')
+			} catch (error) {
+				console.error('Failed to update verification status:', error)
+			}
 		} else {
 			console.log('All fields are required')
 		}
@@ -77,11 +82,12 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									onChange={(e) => setPhoneNumber(e.target.value)}
 								/>
 								<Selector
-									placeholder="Услуга"
+									placeholder="Выберите услугу"
 									selectedValue={selectedRole}
 									onChange={setSelectedRole}
-									items={['Вечерняя Игра', 'Вечерняя Игра', 'Вечерняя Игра', 'Вечерняя Игра']}
+									items={['Вечерняя Игра', 'Корпоративная Игра', 'Тематическая Встреча', 'Другое']}
 								/>
+
 								<TextArea
 									placeholder="Описание"
 									textareaType="form"
