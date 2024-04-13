@@ -12,7 +12,6 @@ export function useDeleteWorker() {
 			const response = await axios.delete(
 				`https://showtime.up.railway.app/api/admin/delete-worker/${data.workerId}`,
 				{
-					withCredentials: true,
 					headers: {
 						Authorization: `Bearer ${refreshToken}`
 					}

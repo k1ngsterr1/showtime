@@ -10,7 +10,7 @@ export function useGetProducts() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('http://localhost:4200/api/admin/get-products', {
+			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-products', {
 				headers: {
 					Authorization: `Bearer ${refreshToken}`
 				}

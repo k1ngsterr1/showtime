@@ -11,12 +11,15 @@ export function useAddProduct() {
 			const refreshToken = userData.refresh
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post('http://localhost:4200/api/admin/add-product', data, {
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.post(
+				'https://showtime.up.railway.app/api/admin/add-product',
+				data,
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			console.log('here is my data:', data, response.data)
 			setProductData(response.data)
 		} catch (error) {

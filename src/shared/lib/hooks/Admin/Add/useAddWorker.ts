@@ -12,13 +12,15 @@ export function useAddWorker() {
 
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post('https://showtime.up.railway.app/api/admin/add-worker', data, {
-				withCredentials: true,
-				headers: {
-					'Content-Type': 'multipart/form-data',
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.post(
+				'https://showtime.up.railway.app/api/admin/add-worker',
+				data,
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			console.log('here is my data:', data, response.data)
 			setWorkerData(response.data)
 		} catch (error) {

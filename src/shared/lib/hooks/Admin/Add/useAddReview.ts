@@ -11,13 +11,16 @@ export function useAddReview() {
 			const refreshToken = userData.refresh
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.post('http://localhost:4200/api/admin/add-review', data, {
-				withCredentials: true,
-				headers: {
-					Authorization: `Bearer ${refreshToken}`,
-					'Content-Type': 'application/json'
+			const response = await axios.post(
+				'https://showtime.up.railway.app/api/admin/add-review',
+				data,
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`,
+						'Content-Type': 'application/json'
+					}
 				}
-			})
+			)
 			console.log('here is my data:', data, response.data)
 			setReviewData(response.data)
 		} catch (error) {

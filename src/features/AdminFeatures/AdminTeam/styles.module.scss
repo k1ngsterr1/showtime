@@ -1,8 +1,6 @@
 .adminCard {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	flex-wrap: wrap;
-	width: 90%;
-	gap: clamp(30px, 3.1248vw, 120px);
+	@apply gap-40;
 }
