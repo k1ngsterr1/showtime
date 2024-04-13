@@ -7,6 +7,8 @@ import styles from '../CreateGamePopup/styles.module.scss'
 
 interface IService {
 	description: string
+	phoneNumber: string
+	name: string
 }
 
 interface ICreateGamePopupProps {
@@ -30,7 +32,11 @@ export const DetailsPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupSt
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
 				{orders.map((order, index) => (
-					<Paragraph key={index} margin="mt-12" paragraphType="red" text={order.description} />
+					<div key={index}>
+						<span className={styles.span}>{order.name}</span>
+						<span className={styles.span}>{order.phoneNumber}</span>
+						<Paragraph margin="mt-12" paragraphType="red" text={order.description} />
+					</div>
 				))}
 			</section>
 		</div>

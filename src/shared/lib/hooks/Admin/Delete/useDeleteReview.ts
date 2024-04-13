@@ -6,12 +6,15 @@ export function useDeleteReview() {
 
 	const deleteReview = async (data: any) => {
 		try {
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
 			const response = await axios.delete(
 				`http://localhost:4200/api/admin/delete-review/${data.reviewId}`,
 				{
 					withCredentials: true,
 					headers: {
-						'Content-Type': 'application/json'
+						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)

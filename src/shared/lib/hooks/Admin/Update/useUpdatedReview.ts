@@ -5,7 +5,8 @@ export function useUpdateReview() {
 	const updateReview = async (data: any) => {
 		try {
 			const formData = new FormData()
-
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch(
@@ -13,7 +14,8 @@ export function useUpdateReview() {
 				formData,
 				{
 					headers: {
-						'Content-Type': 'multipart/form-data' // Set the content type header for multipart form data
+						'Content-Type': 'multipart/form-data',
+						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)

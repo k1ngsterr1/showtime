@@ -6,6 +6,7 @@ import { ru } from 'date-fns/locale'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import { useAddOrder } from '@shared/lib/hooks/Admin/Add/useAddOrder'
 
 import styles from '../ContactForm/styles.module.scss'
 import { TextArea } from '@shared/ui/TexrArea'
@@ -22,6 +23,8 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 	const [selectedRole, setSelectedRole] = useState<string>('')
 	const [value, setValue] = useState(new Date())
 	const [isOpen, setIsOpen] = useState<boolean>(false)
+	const { addOrder } = useAddOrder()
+	const [showmanName, setShowmanName] = useState<string>
 
 	const toggleDate = () => {
 		setIsOpen(!isOpen)
@@ -39,7 +42,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 					<div>
 						<form className={styles.form_screen_mob__form}>
 							<div className="mt-12 flex flex-col items-start">
-								<Input type="text" inputType="default-red" placeholder="Ваше имя" />
+								<Input type="text" inputType="default-red" placeholder="Ваше имя" name="" />
 								<Input
 									type="phone"
 									inputType="default-red"
@@ -54,7 +57,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 								/>
 								<TextArea placeholder="Описание" textareaType="form" margin="mt-8" />
 							</div>
-							<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" />
+							<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" type="submit" />
 						</form>
 					</div>
 				)

@@ -5,6 +5,7 @@ import { useDeleteTimetable } from '@shared/lib/hooks/Admin/Delete/useDeleteTime
 import { ScheduleListCard } from '@entities/AdminEntities/ScheduleListCard/index'
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
+import fedora from '@assets/logo/fedora.svg'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
@@ -68,9 +69,8 @@ export const ScheduleList = () => {
 				<div className={styles.services__content_cards}>
 					<div className={styles.services__content_schedulecard}>
 						{timetables.map((scheduleItem) => (
-							<div className="flex flex-col items-center justify-center">
+							<div className="flex flex-col items-center justify-center" key={scheduleItem.id}>
 								<ScheduleListCard
-									key={scheduleItem.id}
 									time={scheduleItem.timestamp}
 									place={scheduleItem.place}
 									address={scheduleItem.address}

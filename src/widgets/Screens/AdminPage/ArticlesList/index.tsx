@@ -5,6 +5,7 @@ import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import ArticleCard from '@entities/Card_Components/ArticleCard/index'
 import { useGetArticles } from '@shared/lib/hooks/Admin/Get/useGetArticles'
 import { useDeleteArticle } from '@shared/lib/hooks/Admin/Delete/useDeleteArticle'
+import fedora from '@assets/logo/fedora.svg'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 

@@ -3,14 +3,15 @@ import ParagraphReact from '@shared/ui/ParagraphReact/index'
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
-import AdminUsers from '@entities/AdminEntities/AdminUsers' // Make sure this import matches the exported component
-import '@shared/styles/global.scss'
+import AdminUsers from '@entities/AdminEntities/AdminUsers'
+import { useUserData } from '@shared/lib/hooks/useGetUserData'
 
 import Oleg from '@assets/Admin/oleg.webp'
 import fedora from '@assets/logo/fedora.svg'
 
+import '@shared/styles/global.scss'
+
 import styles from '../Team/styles.module.scss'
-import { useUserData } from '@shared/lib/hooks/useGetUserData'
 
 export const Users = () => {
 	const userData = useUserData()

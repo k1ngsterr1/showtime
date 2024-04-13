@@ -6,8 +6,14 @@ export function useGetProducts() {
 
 	const getProducts = async () => {
 		try {
+			const userData = JSON.parse(localStorage.getItem('userData'))
+			const refreshToken = userData.refresh
+
+			console.log(refreshToken)
 			const response = await axios.get('http://localhost:4200/api/admin/get-products', {
-				withCredentials: true
+				headers: {
+					Authorization: `Bearer ${refreshToken}`
+				}
 			})
 			const products = response.data['products']
 			console.log('here is my data:', response.data)
