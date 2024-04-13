@@ -21,7 +21,7 @@ export const UserAside = () => {
 						</div>
 						<NearestGameSwiper />
 					</div>
-					<div className={styles.user_screen__column_container__achievements}>
+					{/* <div className={styles.user_screen__column_container__achievements}>
 						<div className="flex w-full items-center justify-between">
 							<span className={styles.user_screen__column_container__achievements__heading}>
 								Достижения
@@ -31,7 +31,7 @@ export const UserAside = () => {
 							</a>
 						</div>
 						<AchievementGallery achievements={achievements} />
-					</div>
+					</div> */}
 					{/* <div className={styles.user_screen__column_container__achievements}>
 						<div className="flex w-full items-center justify-between">
 							<span className={styles.user_screen__column_container__achievements__heading}>

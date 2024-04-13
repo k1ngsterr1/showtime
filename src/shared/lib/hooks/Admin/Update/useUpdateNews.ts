@@ -13,12 +13,16 @@ export function useUpdateNews() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.patch('https://showtime.up.railway.app/api/admin/update-news', data, {
-				headers: {
-					'Content-Type': 'multipart/form-data',
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.patch(
+				'https://showtime.up.railway.app/api/admin/update-news',
+				formData,
+				{
+					headers: {
+						// 'Content-Type': 'multipart/form-data',
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			console.log('here is my data:', data, response.data)
 			setNewsData(response.data)
 		} catch (error) {

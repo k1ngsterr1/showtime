@@ -9,9 +9,35 @@
 	box-shadow: 16px 16px 0px 0px #bf2316;
 	margin: 0px 16px 16px;
 	overflow: hidden;
-	&__img {
-		height: clamp(60px, 6.2496vw, 240px);
-		width: clamp(60px, 6.2496vw, 240px);
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&__upload {
+			@apply gap-4;
+			width: clamp(190px, 19.7904vw, 760px);
+			height: clamp(122px, 12.70752vw, 488px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+			&_fedora {
+				width: clamp(45px, 4.6872vw, 180px);
+			}
+		}
+		&__previewImage {
+			width: clamp(200px, 20.832vw, 800px);
+			height: clamp(122px, 12.70752vw, 488px);
+		}
+
+		&__img {
+			height: clamp(60px, 6.2496vw, 240px);
+			width: clamp(60px, 6.2496vw, 240px);
+		}
 	}
 }
 

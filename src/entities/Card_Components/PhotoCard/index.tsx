@@ -3,55 +3,51 @@ import useFileUpload from '@shared/lib/hooks/useFileUpload'
 import { useUpdateNews } from '@shared/lib/hooks/Admin/Update/useUpdateNews'
 import CalendarComponent from '@features/Calendar/reviewcalendar'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
-import { TextArea } from '@shared/ui/TexrArea/index' // Ensure correct import path
+import { TextArea } from '@shared/ui/TexrArea/index'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
-import Fedora from '@assets/logo/fedora.svg' // Ensure Fedora logo import works as expected, might need adjustment
+import Fedora from '@assets/logo/fedora.svg'
 import styles from './styles.module.scss'
+import Paragraph from '@shared/ui/ParagraphReact'
 
 interface Props {
 	date: string
 	heading: string
 	description: string
 	url: string
-	editing: boolean
 	newsId: number
 }
 
-const NewsCard: React.FC<Props> = ({ date, heading, description, url, editing }) => {
+const NewsCard: React.FC<Props> = ({ date, heading, description, url, newsId }) => {
 	const [isEditing, setIsEditing] = useState(false)
 	const { previewUrl, handleFileChange, selectedFile } = useFileUpload()
-	const [newsTitle, setNewsTitle] = useState(heading)
-	const [newsText, setNewsText] = useState(description)
-	const [selectedDate, setSelectedDate] = useState(date)
+	const [newsTitle, setNewsTitle] = useState('')
+	const [newsText, setNewsText] = useState('')
+	const [reviewDate, setReviewDate] = useState('')
 	const { updateNews } = useUpdateNews()
 
 	const handleUpdate = async (e: React.FormEvent) => {
 		e.preventDefault()
 
-		// Check if the title and text are provided. Do not require a new file to proceed.
-		if (!newsTitle || !newsText) {
-			console.log('Title and text fields are required.')
-			return // Prevents the form from submitting if these fields are empty.
-		}
-
-		const formData = new FormData()
-		if (selectedFile) {
-			// Append file only if it's selected.
+		if (newsTitle && newsText && selectedFile) {
+			const formData = new FormData()
 			formData.append('pictureName', selectedFile, selectedFile.name)
-		}
-		formData.append('heading', newsTitle)
-		formData.append('description', newsText)
-		formData.append('date', selectedDate)
+			formData.append('heading', newsTitle)
+			formData.append('description', newsText)
+			formData.append('date', reviewDate)
+			formData.append('newsId', newsId.toString())
 
-		await updateNews(formData)
+			await updateNews(formData)
+		} else {
+			console
+		}
 	}
 
 	return (
 		<form onSubmit={handleUpdate} className="flex flex-col items-center justify-center">
 			<div className={styles.card}>
-				{editing ? (
-					<div className={styles.card__content}>
-						<label htmlFor="file-upload" className={styles.card__content__upload}>
+				{isEditing ? (
+					<>
+						<div className={styles.card__content}>
 							{previewUrl ? (
 								<img
 									src={previewUrl}
@@ -59,55 +55,55 @@ const NewsCard: React.FC<Props> = ({ date, heading, description, url, editing })
 									className={styles.card__content__previewImage}
 								/>
 							) : (
-								<>
+								<label htmlFor="file-upload" className={styles.card__content__upload}>
 									<img
 										src={Fedora.src}
 										alt="Fedora"
 										className={styles.card__content__upload_fedora}
 									/>
 									<p className="font-neoregular text-xl text-primary-red">Добавить фото</p>
-								</>
+									<input
+										id="file-upload"
+										type="file"
+										style={{ display: 'none' }}
+										onChange={handleFileChange}
+										name="pictureName"
+									/>
+								</label>
 							)}
-							<input
-								id="file-upload"
-								type="file"
-								style={{ display: 'none' }}
-								onChange={handleFileChange}
-								name="pictureName"
-							/>
-						</label>
-						<CalendarComponent onDateChange={setSelectedDate} />
-						<Input
-							inputType="newsheading"
-							type="text"
-							placeholder="Заголовок"
-							value={newsTitle}
-							name="heading"
-							onChange={(e) => setNewsTitle(e.target.value)}
-						/>
-						<TextArea
-							textareaType="articles"
-							placeholder="Текст"
-							margin="mt-3"
-							value={newsText}
-							name="description"
-							onChange={(e) => setNewsText(e.target.value)}
-						/>
-					</div>
+							<div className="ml-auto flex w-[95%] flex-col">
+								<CalendarComponent onDateChange={setReviewDate} />
+								<Input
+									inputType="newsheading"
+									type="text"
+									placeholder="Заголовок"
+									value={newsTitle}
+									name="heading"
+									onChange={(e) => setNewsTitle(e.target.value)}
+								/>
+								<TextArea
+									textareaType="articles"
+									placeholder="Текст"
+									margin="mt-3"
+									value={newsText}
+									name="description"
+									onChange={(e) => setNewsText(e.target.value)}
+								/>
+							</div>
+						</div>
+					</>
 				) : (
 					<>
 						<img src={url} alt="News" className={styles.card_image} />
 						<div className="ml-auto mt-3 flex w-[95%] flex-col">
 							<span className="font-katana text-xl">{date}</span>
 							<span className="mt-2 overflow-hidden font-katana text-4xl">{heading}</span>
-							<div className={`${styles.paragraph} paragraphType="dark" margin="mt-4" width="80%"`}>
-								{description}
-							</div>
+							<Paragraph text={description} paragraphType="dark" margin="mt-4" width="80%" />
 						</div>
 					</>
 				)}
 			</div>
-			{editing ? (
+			{isEditing ? (
 				<Buttons buttonType="filled" text="Сохранить" type="submit" margin="mt-10" />
 			) : (
 				<Buttons

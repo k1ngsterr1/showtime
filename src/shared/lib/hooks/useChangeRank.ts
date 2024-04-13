@@ -10,14 +10,16 @@ export function useChangeRank() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.patch(`http://localhost:4200/api/admin/change-rank/`, data, {
-				withCredentials: true,
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.patch(
+				`https://showtime.up.railway.app/api/admin/change-rank`,
+				data,
+				{
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
-
+			)
 			console.log(response.data)
 		} catch (error) {
 			console.error('There was an error with rank editting')

@@ -71,6 +71,7 @@ const NewsList = () => {
 						{news.map((newsData) => (
 							<div key={newsData.id} className={`${styles.card} mt-12`}>
 								<PhotoCard
+									newsId={newsData.id}
 									date={newsData.date}
 									url={newsData.url}
 									heading={newsData.heading}
@@ -79,7 +80,7 @@ const NewsList = () => {
 								<Buttons
 									buttonType="filled"
 									text="Удалить"
-									margin="mt-10"
+									margin="mt-5"
 									onClick={() => handleDeleteNews(newsData.id)}
 								/>
 							</div>
