@@ -24,7 +24,26 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 	const [value, setValue] = useState(new Date())
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 	const { addOrder } = useAddOrder()
-	const [showmanName, setShowmanName] = useState<string>
+	const [name, setName] = useState<string>('')
+	const [phoneNumber, setPhoneNumber] = useState<string>('')
+	// const [service, setService] = useState<string>('')
+	const [description, setDescription] = useState<string>('')
+
+	const handleSubmit = async (event: React.FormEvent) => {
+		event.preventDefault()
+
+		if (name && phoneNumber && description) {
+			const formData = new FormData()
+			formData.append('name', name)
+			formData.append('phoneNumber', phoneNumber)
+			// formData.append('service', service)
+			formData.append('description', description)
+
+			await addOrder(formData)
+		} else {
+			console.log('All fields are required')
+		}
+	}
 
 	const toggleDate = () => {
 		setIsOpen(!isOpen)
@@ -40,14 +59,22 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			case 'production':
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form}>
+						<form className={styles.form_screen_mob__form} onSubmit={handleSubmit}>
 							<div className="mt-12 flex flex-col items-start">
-								<Input type="text" inputType="default-red" placeholder="Ваше имя" name="" />
+								<Input
+									type="text"
+									inputType="default-red"
+									placeholder="Ваше имя"
+									name="name"
+									onChange={(e) => setName(e.target.value)}
+								/>
 								<Input
 									type="phone"
 									inputType="default-red"
 									placeholder="Номер телефона"
 									margin="mt-8"
+									name="phoneNumber"
+									onChange={(e) => setPhoneNumber(e.target.value)}
 								/>
 								<Selector
 									placeholder="Услуга"
@@ -55,7 +82,13 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									onChange={setSelectedRole}
 									items={['Вечерняя Игра', 'Вечерняя Игра', 'Вечерняя Игра', 'Вечерняя Игра']}
 								/>
-								<TextArea placeholder="Описание" textareaType="form" margin="mt-8" />
+								<TextArea
+									placeholder="Описание"
+									textareaType="form"
+									margin="mt-8"
+									name="description"
+									onChange={(e) => setDescription(e.target.value)}
+								/>
 							</div>
 							<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" type="submit" />
 						</form>
