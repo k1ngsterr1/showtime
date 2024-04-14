@@ -8,7 +8,9 @@ export function useGetProducts() {
 		try {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-products')
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-products'
+			)
 			const products = response.data['products']
 			console.log('here is my data:', response.data)
 			return response.data['products']

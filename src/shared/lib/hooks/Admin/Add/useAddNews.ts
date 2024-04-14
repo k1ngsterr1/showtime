@@ -12,7 +12,7 @@ export function useAddNews() {
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.post(
-				'https://showtime.up.railway.app/api/admin/add-news',
+				'https://showtimeserver-production.up.railway.app/api/admin/add-news',
 				data,
 				{
 					headers: {

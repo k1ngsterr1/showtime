@@ -10,7 +10,7 @@ export function useDeleteWorker() {
 
 		try {
 			const response = await axios.delete(
-				`https://showtime.up.railway.app/api/admin/delete-worker/${data.workerId}`,
+				`https://showtimeserver-production.up.railway.app/api/admin/delete-worker/${data.workerId}`,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`

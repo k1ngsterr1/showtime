@@ -14,7 +14,7 @@ export function useUpdateArticle() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.patch(
-				'https://showtime.up.railway.app/api/admin/update-article',
+				'https://showtimeserver-production.up.railway.app/api/admin/update-article',
 				data,
 				{
 					headers: {

@@ -12,7 +12,7 @@ export function useUpdateProduct() {
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch(
-				'https://showtime.up.railway.app/api/admin/update-product',
+				'https://showtimeserver-production.up.railway.app/api/admin/update-product',
 				formData,
 				{
 					headers: {

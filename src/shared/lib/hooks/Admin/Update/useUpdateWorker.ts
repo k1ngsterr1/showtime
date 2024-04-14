@@ -12,7 +12,7 @@ export function useUpdateWorker() {
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch(
-				'https://showtime.up.railway.app/api/admin/update-worker',
+				'https://showtimeserver-production.up.railway.app/api/admin/update-worker',
 				formData,
 				{
 					headers: {

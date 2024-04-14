@@ -11,12 +11,16 @@ export function useUpdateService() {
 			const formData = new FormData()
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
-			const response = await axios.patch('https://showtime.up.railway.app/api/admin/update-service', data, {
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.patch(
+				'https://showtimeserver-production.up.railway.app/api/admin/update-service',
+				data,
+				{
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 
 			setServiceData(response.data)
 		} catch (error) {

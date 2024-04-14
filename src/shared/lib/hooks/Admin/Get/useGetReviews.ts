@@ -6,7 +6,9 @@ export function useGetReviews() {
 
 	const getReviews = async () => {
 		try {
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-reviews')
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-reviews'
+			)
 			const reviews = response.data['reviews']
 			console.log('here is my data:', response.data)
 			return response.data['reviews']

@@ -10,7 +10,7 @@ export function useDeleteOrder() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`https://showtime.up.railway.app/api/admin/delete-order/${data.orderId}`,
+				`https://showtimeserver-production.up.railway.app/api/admin/delete-order/${data.orderId}`,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`,

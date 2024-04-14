@@ -10,7 +10,7 @@ export function useDeleteReview() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`https://showtime.up.railway.app/api/admin/delete-review/${data.reviewId}`,
+				`https://showtimeserver-production.up.railway.app/api/admin/delete-review/${data.reviewId}`,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`

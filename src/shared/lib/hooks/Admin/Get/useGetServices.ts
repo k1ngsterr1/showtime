@@ -10,11 +10,14 @@ export function useGetServices() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('http://localhost:4200/api/admin/get-services', {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-services',
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			return response.data['services']
 		} catch (error) {
 			console.error('There was an error with getting services')
