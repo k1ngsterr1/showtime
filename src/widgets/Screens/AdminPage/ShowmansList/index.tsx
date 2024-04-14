@@ -91,12 +91,6 @@ export const ShowmansList = () => {
 									/>
 									<Buttons
 										buttonType="filled"
-										text="Редактировать"
-										margin="mt-5"
-										onClick={() => toggleEdit(showman.id)}
-									/>
-									<Buttons
-										buttonType="filled"
 										text="Удалить"
 										margin="mt-5"
 										onClick={() => handleDeleteShowman(showman.id)}

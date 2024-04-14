@@ -27,6 +27,7 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({
 }) => {
 	const { updateTimetable } = useUpdateTimetable()
 	const [isEditing, setIsEditing] = useState(false)
+	const [selectedDate, setSelectedDate] = useState<string>('')
 
 	const [formData, setFormData] = useState<IScheduleListCard>({
 		date,
@@ -57,80 +58,87 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({
 
 	return (
 		<form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
-			<div className={styles.card}>
-				{isEditing ? (
-					<div className={styles.card}>
-						<div className={styles.card__upper}>
-							<CalendarComponent
-								onDateChange={(newDate) => setFormData((prev) => ({ ...prev, date: newDate }))}
-							/>
-							<Input
-								type="text"
-								inputType="default-red-small"
-								placeholder="Time"
-								name="time"
-								value={formData.time}
-								onChange={handleInputChange}
-							/>
+			{isEditing ? (
+				<>
+					<div className={styles.change}>
+						<div className={styles.change__upper}>
+							<span className={styles.change__upper__date}>
+								<CalendarComponent onDateChange={setSelectedDate} />
+							</span>
+							<div className="pl-56">
+								<Input
+									type="text"
+									inputType="default-red-small"
+									placeholder="Время"
+									name="timestamp"
+									onChange={handleInputChange}
+								/>
+							</div>
 						</div>
 						<Input
 							inputType="default-red-big"
 							type="text"
-							placeholder="Name"
+							placeholder="Название"
+							margin="mt-12 ml-4"
 							name="name"
-							value={formData.name}
 							onChange={handleInputChange}
 						/>
 						<TextArea
 							textareaType="schedule"
-							placeholder="Address"
+							placeholder="Адрес"
+							margin="mt-8"
 							name="address"
-							value={formData.address}
 							onChange={handleInputChange}
 						/>
-						<div className={styles.card__down}>
-							<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
-							<Input
-								placeholder="Place on map"
-								inputType="default-red-medium"
-								type="text"
-								name="place"
-								value={formData.place}
-								onChange={handleInputChange}
-							/>
-							<Input
-								type="text"
-								inputType="default-red-small"
-								placeholder="Price"
-								name="price"
-								value={formData.price}
-								onChange={handleInputChange}
-							/>
+						<div className={styles.change__down}>
+							<div className=" mb-2 flex items-center overflow-hidden text-2xl">
+								<FontAwesomeIcon icon={faLocationDot} className={styles.change__icon} />
+								<a
+									className={styles.change__link}
+									href="https://www.google.com/maps/@43.2570368,76.906496,12z?entry=ttu"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<Input
+										placeholder="Укажите место на карте"
+										inputType="default-red-medium"
+										type="text"
+										name="place"
+										onChange={handleInputChange}
+									/>
+								</a>
+							</div>
+							<div>
+								<Input
+									type="text"
+									inputType="default-red-small"
+									placeholder="Цена"
+									name="price"
+									onChange={handleInputChange}
+								/>
+							</div>
 						</div>
 					</div>
-				) : (
-					<>
+				</>
+			) : (
+				<>
+					<div className={styles.card}>
 						<div className={styles.card__upper}>
-							<span className={styles.card__upper__date}>{formData.date}</span>
-							<span className={styles.card__upper__time}>{formData.time}</span>
+							<span className={styles.card__upper__date}>{date}</span>
+							<span className={styles.card__upper__time}>{time}</span>
 						</div>
-						<span className={styles.card__heading}>{formData.name}</span>
-						<address className={styles.card__address}>{formData.address}</address>
+						<span className={styles.card__heading}>{name}</span>
+						<address className={styles.card__address}>{address}</address>
 						<div className={styles.card__down}>
 							<FontAwesomeIcon icon={faLocationDot} className={styles.card__icon} />
-							<a
-								className={styles.card__link}
-								href={formData.place}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Place on map
+							<a className={styles.card__link} href={place}>
+								Место на карте
 							</a>
-							<span className={styles.card__down__price}>{formData.price}</span>
+							<span className={styles.card__down__price}>{price}</span>
 						</div>
-					</>
-				)}
-			</div>
+					</div>
+				</>
+			)}
 			{isEditing ? (
 				<Buttons buttonType="filled" text="Сохранить" type="submit" margin="mt-10" />
 			) : (

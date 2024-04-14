@@ -9,69 +9,6 @@
 	box-shadow: 16px 16px 0px 0px #bf2316;
 	@apply bg-primary-light;
 
-	.card {
-		width: clamp(300px, 31.248vw, 1200px);
-		height: clamp(200px, 20.832vw, 800px);
-		display: flex;
-		flex-direction: column;
-		overflow: hidden;
-		align-items: flex-start;
-		@apply p-4;
-		box-shadow: 16px 16px 0px 0px #bf2316;
-		@apply bg-primary-light;
-
-		&__upper {
-			width: 140%;
-			display: flex;
-			overflow: hidden;
-			align-items: center;
-			justify-content: space-between;
-
-			&_time {
-				@apply mt-4;
-			}
-		}
-		&__down {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-			width: 142%;
-		}
-
-		&__heading {
-			@apply text-4xl;
-			overflow: hidden;
-			@apply font-killbill;
-			@apply text-primary-red;
-			@apply mt-4;
-		}
-
-		&__address {
-			@apply text-2xl;
-			@apply mt-4;
-			@apply font-neo;
-			@apply text-primary-red;
-		}
-
-		&__icon {
-			@apply text-primary-red;
-			@apply text-4xl;
-			@apply p-4;
-		}
-
-		&__link {
-			overflow: hidden;
-			@apply underline;
-			@apply text-primary-red;
-			@apply font-neo;
-			transition: 0.3s all;
-			&:hover {
-				@apply text-red-600;
-			}
-		}
-	}
-
 	&__down {
 		display: flex;
 		flex-direction: row;
@@ -89,6 +26,7 @@
 			outline: none;
 			@apply text-primary-red;
 			@apply font-katana;
+			overflow: hidden;
 		}
 	}
 
@@ -140,10 +78,72 @@
 		@apply text-primary-red;
 		@apply text-3xl;
 		@apply pl-4;
-		@apply pr-4;
 	}
 
 	&__link {
+		@apply pr-56;
+		@apply underline;
+		@apply text-primary-red;
+		@apply font-neo;
+		transition: 0.3s all;
+		&:hover {
+			@apply text-red-600;
+		}
+	}
+}
+
+.change {
+	width: clamp(300px, 31.248vw, 1200px);
+	height: clamp(200px, 20.832vw, 800px);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	@apply p-4;
+	box-shadow: 16px 16px 0px 0px #bf2316;
+	@apply bg-primary-light;
+
+	&__upper {
+		@apply mt-6;
+		display: flex;
+		overflow: hidden;
+		align-items: center;
+		justify-content: space-between;
+
+		&_time {
+		}
+	}
+	&__down {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		overflow: hidden;
+		width: 142%;
+	}
+
+	&__heading {
+		@apply text-4xl;
+		overflow: hidden;
+		@apply font-killbill;
+		@apply text-primary-red;
+		@apply mt-4;
+	}
+
+	&__address {
+		@apply text-2xl;
+		@apply mt-4;
+		@apply font-neo;
+		@apply text-primary-red;
+	}
+
+	&__icon {
+		@apply text-primary-red;
+		@apply text-4xl;
+		@apply p-4;
+	}
+
+	&__link {
+		overflow: hidden;
 		@apply underline;
 		@apply text-primary-red;
 		@apply font-neo;
