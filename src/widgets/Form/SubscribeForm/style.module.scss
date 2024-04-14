@@ -7,7 +7,7 @@
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.container {
-		display: none;
+		display: none !important;
 	}
 
 	.container_mob {

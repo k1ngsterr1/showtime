@@ -41,7 +41,7 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 							margin="ml-auto"
 							align="text-right"
 							text="Ведущий тихо просит мафию открыть глаза и выбрать жертву. Мафиози молча договариваются, указывая жестами на того, кого они хотят устранить этой ночью. Важно, чтобы они действовали слаженно и не выдавали себя звуками или резкими движениями.
-После выбора жертвы мафия закрывает глаза."
+							После выбора жертвы мафия закрывает глаза."
 							paragraphType={'white'}
 						/>
 						<span className={styles2.span__special_roles}>
@@ -52,8 +52,8 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 							margin="mr-auto"
 							align="text-left"
 							text="Доктор может выбрать одного игрока для лечения этой ночью, возможно даже себя. Если доктор выбрал того же игрока, что и мафия, его действие отменяет убийство.
-Детектив имеет право проверить любого игрока на принадлежность к мафии. Ведущий кивком или жестом сообщает детективу, мафия ли его выбор.
-Другие специальные роли, такие как путана, террорист, маньяк и т.д., выполняют свои действия согласно правилам."
+							Детектив имеет право проверить любого игрока на принадлежность к мафии. Ведущий кивком или жестом сообщает детективу, мафия ли его выбор.
+							Другие специальные роли, такие как путана, террорист, маньяк и т.д., выполняют свои действия согласно правилам."
 							paragraphType={'white'}
 						/>
 						<span className={styles2.span}>Дневная Фаза: Объявление результатов ночи</span>
@@ -87,7 +87,7 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 			default:
 				return (
 					<>
-						<div className="mt-8">
+						{/* <div className="mt-8">
 							<div className={styles2.span__paragraph}>
 								<ParagraphReact
 									paragraphType="white"
@@ -131,7 +131,7 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 									{cards[activeCardIndex].paragraph}
 								</p>
 							</div>
-						</div>
+						</div> */}
 						<div className="flex flex-col">
 							<div className={styles2.paragraph_mob}>
 								<ParagraphReact

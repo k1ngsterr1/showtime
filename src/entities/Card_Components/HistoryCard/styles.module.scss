@@ -1,6 +1,9 @@
 .review_card {
 	width: clamp(405px, 42.1848vw, 1620px);
 	height: clamp(225px, 23.436vw, 900px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	@apply bg-primary-light text-primary-red;
 	font-weight: 600;
 	background-position: center center;
