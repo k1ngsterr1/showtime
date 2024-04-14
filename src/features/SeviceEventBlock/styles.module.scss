@@ -44,6 +44,7 @@
 		background-image: url('../../../../assets/Main/concrete-texture.webp');
 		background-position: center center;
 		background-size: cover;
+		@apply mt-16;
 		@apply bg-primary-light pb-12;
 	}
 	.heading {

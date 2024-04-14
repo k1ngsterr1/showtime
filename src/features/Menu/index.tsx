@@ -154,15 +154,12 @@ export const Menu = () => {
 						</div>
 						<a
 							href="tel:+77017812956"
-							className={`${styles.menu_mob__container__inner__contact} mt-0`}
+							className={`${styles.menu_mob__container__inner__contact} mt-2`}
 						>
 							+7 701 781 29 56
 						</a>
 						<span className={`${styles.menu_mob__container__inner__contact} mt-4`}>
-							ул.Маметова 54, 4 этаж
-						</span>
-						<span className={`${styles.menu_mob__container__inner__contact} mt-4`}>
-							Время работы: с 08:00 до 17:00 <br /> Выходные: суббота, воскресенье
+							ул.Бухар Жирау, 280
 						</span>
 					</div>
 				</div>
