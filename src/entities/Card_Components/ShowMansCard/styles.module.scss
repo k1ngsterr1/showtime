@@ -46,6 +46,11 @@
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.card {
+		&_picture {
+			width: clamp(196px, 91.58688vw, 784px);
+			height: clamp(180.5px, 84.34403999999999vw, 722px);
+			@apply mb-3;
+		}
 		&__name {
 			font-size: clamp(25px, 11.681999999999999vw, 100px);
 		}
