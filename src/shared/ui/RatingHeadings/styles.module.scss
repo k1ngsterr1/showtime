@@ -1,10 +1,8 @@
 .container {
 	margin: auto;
-	z-index: 1000;
 	width: 85%;
 	display: flex;
 	justify-content: space-between;
-	// @apply gap-2;
 	&__items {
 		@apply font-killbill;
 		@apply text-primary-red;

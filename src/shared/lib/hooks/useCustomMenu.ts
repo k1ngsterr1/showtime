@@ -26,7 +26,7 @@ export const useCustomMenu = () => {
 
 	const onClose = () => {
 		gsap.to('#menu', {
-			top: -1000,
+			top: -2000,
 			duration: 0.3,
 			ease: 'power3.out'
 		})
