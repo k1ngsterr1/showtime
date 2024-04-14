@@ -10,7 +10,7 @@ export function useUpdateReview() {
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch(
-				'https://showtime.up.railway.app/api/admin/update-review',
+				'https://showtimeserver-production.up.railway.app/api/admin/update-review',
 				formData,
 				{
 					headers: {

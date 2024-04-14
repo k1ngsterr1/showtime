@@ -9,12 +9,15 @@ export function useGetOrders() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-orders', {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`,
-					'Content-Type': 'application/json'
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-orders',
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`,
+						'Content-Type': 'application/json'
+					}
 				}
-			})
+			)
 			console.log('here is my data:', response.data)
 			return response.data['orders']
 		} catch (error) {

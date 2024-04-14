@@ -10,7 +10,7 @@ interface IAccountData {
 export async function createAccount(accountData: IAccountData) {
 	try {
 		const response = await axios.post(
-			'https://showtime.up.railway.app/api/auth/register',
+			'https://showtimeserver-production.up.railway.app/api/auth/register',
 			accountData
 		)
 

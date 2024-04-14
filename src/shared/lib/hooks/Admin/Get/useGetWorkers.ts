@@ -6,7 +6,9 @@ export function useGetWorkers() {
 
 	const getWorkers = async () => {
 		try {
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-workers')
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-workers'
+			)
 			const users = response.data
 			console.log('here is my data:', response.data)
 			return response.data['workers']

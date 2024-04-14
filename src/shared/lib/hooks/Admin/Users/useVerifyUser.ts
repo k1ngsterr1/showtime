@@ -13,11 +13,15 @@ export function useAddVerifiedUser() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.post('https://showtime.up.railway.app/api/user/unverified-user', data, {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.post(
+				'https://showtimeserver-production.up.railway.app/api/user/unverified-user',
+				data,
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 
 			console.log('here is my data:', data, response.data)
 

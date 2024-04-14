@@ -12,7 +12,7 @@ export function useAddReview() {
 			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.post(
-				'https://showtime.up.railway.app/api/admin/add-review',
+				'https://showtimeserver-production.up.railway.app/api/admin/add-review',
 				data,
 				{
 					headers: {

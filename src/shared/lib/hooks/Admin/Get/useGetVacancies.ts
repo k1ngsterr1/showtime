@@ -10,11 +10,14 @@ export function useGetVacancies() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-vacancies', {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-vacancies',
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			return response.data['vacancies']
 		} catch (error) {
 			console.error('There was an error with getting vacancies')

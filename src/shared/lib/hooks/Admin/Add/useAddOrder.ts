@@ -17,7 +17,7 @@ export function useAddOrder() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.post(
-				'https://showtime.up.railway.app/api/user/add-order',
+				'https://showtimeserver-production.up.railway.app/api/user/add-order',
 				data,
 				{
 					headers: {

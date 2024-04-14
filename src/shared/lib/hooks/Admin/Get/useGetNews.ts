@@ -10,11 +10,14 @@ export function useGetNews() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-news', {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-news',
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			return response.data['news']
 			setNewsData(response.data)
 		} catch (error) {

@@ -8,7 +8,9 @@ export function useGetShowmans() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-showmans')
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-showmans'
+			)
 			return response.data['showmans']
 		} catch (error) {
 			console.error('There was an error with getting showmans')

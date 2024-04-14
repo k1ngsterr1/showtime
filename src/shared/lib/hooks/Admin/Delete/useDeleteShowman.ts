@@ -10,7 +10,7 @@ export function useDeleteShowman() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`https://showtime.up.railway.app/api/admin/delete-showman/${data.showmanId}`,
+				`https://showtimeserver-production.up.railway.app/api/admin/delete-showman/${data.showmanId}`,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`

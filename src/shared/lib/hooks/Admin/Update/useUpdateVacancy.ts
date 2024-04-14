@@ -13,12 +13,16 @@ export function useUpdateVacancy() {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
 
-			const response = await axios.patch('https://showtime.up.railway.app/api/admin/update-vacancy', data, {
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.patch(
+				'https://showtimeserver-production.up.railway.app/api/admin/update-vacancy',
+				data,
+				{
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 
 			setVacancyData(response.data)
 		} catch (error) {

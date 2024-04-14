@@ -10,7 +10,7 @@ export function useDeleteNews() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`https://showtime.up.railway.app/api/admin/delete-news/${data.newsId}`,
+				`https://showtimeserver-production.up.railway.app/api/admin/delete-news/${data.newsId}`,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`

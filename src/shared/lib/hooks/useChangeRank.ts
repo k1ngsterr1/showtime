@@ -11,7 +11,7 @@ export function useChangeRank() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.patch(
-				`https://showtime.up.railway.app/api/admin/change-rank`,
+				`https://showtimeserver-production.up.railway.app/api/admin/change-rank`,
 				data,
 				{
 					headers: {

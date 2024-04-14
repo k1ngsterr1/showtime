@@ -10,11 +10,14 @@ export function useGetTimetables() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-timetables', {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-timetables',
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 
 			console.log('here is my data:', response.data)
 

@@ -10,11 +10,14 @@ export function useGetProducts() {
 			const refreshToken = userData.refresh
 
 			console.log(refreshToken)
-			const response = await axios.get('https://showtime.up.railway.app/api/admin/get-products', {
-				headers: {
-					Authorization: `Bearer ${refreshToken}`
+			const response = await axios.get(
+				'https://showtimeserver-production.up.railway.app/api/admin/get-products',
+				{
+					headers: {
+						Authorization: `Bearer ${refreshToken}`
+					}
 				}
-			})
+			)
 			const products = response.data['products']
 			console.log('here is my data:', response.data)
 			return response.data['products']
