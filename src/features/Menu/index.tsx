@@ -145,21 +145,23 @@ export const Menu = () => {
 						<div className="mb-4 mt-8 flex items-center gap-8">
 							<FontAwesomeIcon
 								icon={faInstagram}
+								onClick={() => window.open('https://www.instagram.com/mafiashowtime.kz/', '_blank')}
 								className={styles.menu_mob__container__inner__icon}
 							/>
 							<FontAwesomeIcon
 								icon={faTiktok}
+								onClick={() => window.open('https://www.tiktok.com/@showtime_almaty', '_blank')}
 								className={styles.menu_mob__container__inner__icon}
 							/>
 						</div>
 						<a
-							href="tel:+77017812956"
+							href="tel:+77471794939"
 							className={`${styles.menu_mob__container__inner__contact} mt-2`}
 						>
-							+7 701 781 29 56
+							+7 747 179 49 39
 						</a>
 						<span className={`${styles.menu_mob__container__inner__contact} mt-4`}>
-							ул.Бухар Жирау, 280
+							ул.Бухар Жирау, 37
 						</span>
 					</div>
 				</div>
