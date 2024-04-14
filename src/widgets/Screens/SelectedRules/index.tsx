@@ -62,7 +62,7 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 							margin="ml-auto"
 							align="text-right"
 							text="Ведущий сообщает, кто был убит этой ночью, или объявляет, что никто не погиб, если действия специальных ролей предотвратили убийство.
-Обсуждение:
+						Обсуждение:
 
 Все игроки обсуждают события прошлой ночи и пытаются выявить мафию. Обвинения, доказательства, предположения и личные впечатления играют важную роль в этом процессе.
 Голосование:
@@ -87,7 +87,7 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 			default:
 				return (
 					<>
-						{/* <div className="mt-8">
+						<div className="mt-8 max-[640px]:hidden ">
 							<div className={styles2.span__paragraph}>
 								<ParagraphReact
 									paragraphType="white"
@@ -131,7 +131,7 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 									{cards[activeCardIndex].paragraph}
 								</p>
 							</div>
-						</div> */}
+						</div>
 						<div className="flex flex-col">
 							<div className={styles2.paragraph_mob}>
 								<ParagraphReact

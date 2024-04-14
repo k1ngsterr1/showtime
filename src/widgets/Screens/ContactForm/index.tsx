@@ -47,16 +47,16 @@ export const Form = () => {
 					</form>
 					<div className="flex flex-col items-center">
 						<a
-							href="mailto:showtime@mafia.kz"
+							href="mailto:info@mafshow.kz"
 							className={`${styles.form_screen__container__form__link} mt-5`}
 						>
-							showtime@mafia.kz
+							info@mafshow.kz
 						</a>
 						<a
-							href="tel:+77003333826"
+							href="tel:+77471794939"
 							className={`${styles.form_screen__container__form__link} mt-5`}
 						>
-							+77003333826
+							+7-747-179-4939
 						</a>
 					</div>
 					<Map />

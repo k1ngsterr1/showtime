@@ -62,13 +62,13 @@ export const Menu = () => {
 							</div>
 							<div className="flex flex-col items-start overflow-hidden">
 								<a
-									href="tel:+77017812956"
+									href="tel:+77471794939"
 									className={`${styles.menu__container__inner__contact} mt-8`}
 								>
 									+7 747 179 49 39
 								</a>
 								<span className={`${styles.menu__container__inner__contact} mt-4`}>
-									Байзакова 280
+									Ул. Бухар-жырау 37
 								</span>
 							</div>
 						</div>
