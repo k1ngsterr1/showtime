@@ -40,6 +40,10 @@ export const TimeSwiper: React.FC<IShowProps> = ({ cards, slides }) => {
 					onSwiper={(swiperInstance) => {
 						swiperRef.current = swiperInstance
 					}}
+					onSlideChange={(swiperInstance) => {
+						// Disable swiping to the next slide if the active index is 3 or greater
+						swiperInstance.allowSlideNext = swiperInstance.activeIndex < 3
+					}}
 				>
 					{cards.map((card, index) => (
 						<SwiperSlide key={index} className={styles.slide}>
