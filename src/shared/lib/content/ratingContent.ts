@@ -35,7 +35,7 @@ export const rating = [
 		trophy: '14',
 		icon: Cub.src,
 		margin: 'mt-8',
-		name: 'Имя',
+		name: 'имя',
 		number: '3',
 		games: '100',
 		loses: '0'

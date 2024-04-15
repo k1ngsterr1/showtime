@@ -4,6 +4,7 @@
 	@apply text-primary-red;
 	font-size: clamp(16px, 1.66656vw, 64px);
 	@apply mb-4;
+
 	&__special_roles {
 		margin-right: auto;
 		@apply font-killbill;
@@ -11,9 +12,16 @@
 		font-size: clamp(16px, 1.66656vw, 64px);
 		@apply mb-4;
 	}
+
 	&__paragraph {
 		display: flex;
 	}
+}
+
+.swiper_pc_adaptive {}
+
+.swiper_mob_adaptive {
+	display: none;
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
@@ -21,5 +29,13 @@
 		&__paragraph {
 			display: none;
 		}
+	}
+
+	.swiper_pc_adaptive {
+		display: none;
+	}
+
+	.swiper_mob_adaptive {
+		display: block;
 	}
 }

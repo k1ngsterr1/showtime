@@ -87,93 +87,97 @@ export const RulesContent: React.FC<IFormContentProps> = ({ rulesType, cards }) 
 			default:
 				return (
 					<>
-						<div className="mt-8 max-[640px]:hidden ">
-							<div className={styles2.span__paragraph}>
-								<ParagraphReact
-									paragraphType="white"
-									width="20%"
-									margin="mb-6"
-									text="Игра Мафия — это захватывающая ролевая игра, погружающая игроков в мир интриг, обмана и психологической борьбы."
-								/>
-							</div>
-							<Swiper
-								className={styles.swiper}
-								modules={[EffectCards]}
-								effect={'cards'}
-								onSwiper={(swiperInstance) => {
-									swiperRef.current = swiperInstance
-								}}
-								onSlideChange={(swiper) => {
-									setActiveCardIndex(swiper.activeIndex)
-								}}
-							>
-								{cards.map((card, index) => (
-									<SwiperSlide key={index} className="overflow-hidden">
-										<div className="flex items-center justify-center">
-											<Card
-												name={card.name}
-												paragraph={card.paragraph}
-												iconType={card.iconType.src}
-												icon={card.icon.src}
-											/>
-										</div>
-									</SwiperSlide>
-								))}
-							</Swiper>
-							<div className={styles.text_container}>
-								<div className="flex items-center gap-8">
-									<span className={styles.text_container__heading}>
-										{cards[activeCardIndex].name}
-									</span>
-									<SelectedBar text="Тип игрока" />
+						<div className={styles2.swiper_pc_adaptive}>
+							<div className="mt-8 max-[640px]:hidden">
+								<div className={styles2.span__paragraph}>
+									<ParagraphReact
+										paragraphType="white"
+										width="20%"
+										margin="mb-6"
+										text="Игра Мафия — это захватывающая ролевая игра, погружающая игроков в мир интриг, обмана и психологической борьбы."
+									/>
 								</div>
-								<p className={`${styles.text_container__paragraph} mt-4 w-[40%]`}>
-									{cards[activeCardIndex].paragraph}
-								</p>
-							</div>
-						</div>
-						<div className="flex flex-col">
-							<div className={styles2.paragraph_mob}>
-								<ParagraphReact
-									paragraphType="white"
-									width="75%"
-									margin="m-auto pb-8"
-									align="text-center"
-								/>
-							</div>
-							<Swiper
-								className={styles.swiper_mob}
-								modules={[EffectCards]}
-								effect={'cards'}
-								onSwiper={(swiperInstance) => {
-									swiperRef.current = swiperInstance
-								}}
-								onSlideChange={(swiper) => {
-									setActiveCardIndex(swiper.activeIndex)
-								}}
-							>
-								{cards.map((card, index) => (
-									<SwiperSlide key={index}>
-										<div className="flex justify-center">
-											<Card
-												name={card.name}
-												paragraph={card.paragraph}
-												iconType={card.iconType.src}
-												icon={card.icon.src}
-											/>
-										</div>
-									</SwiperSlide>
-								))}
-							</Swiper>
-							<div className={styles.text_container_mob}>
-								<div className="mt-8 flex flex-col items-center">
-									<span className={styles.text_container_mob__heading}>
-										{cards[activeCardIndex].name}
-									</span>
-									<SelectedBar text="Тип игрока" />
-									<p className={`${styles.text_container_mob__paragraph} mt-6 w-[75%] text-center`}>
+								<Swiper
+									className={styles.swiper}
+									modules={[EffectCards]}
+									effect={'cards'}
+									onSwiper={(swiperInstance) => {
+										swiperRef.current = swiperInstance
+									}}
+									onSlideChange={(swiper) => {
+										setActiveCardIndex(swiper.activeIndex)
+									}}
+								>
+									{cards.map((card, index) => (
+										<SwiperSlide key={index} className="overflow-hidden">
+											<div className="flex items-center justify-center">
+												<Card
+													name={card.name}
+													paragraph={card.paragraph}
+													iconType={card.iconType.src}
+													icon={card.icon.src}
+												/>
+											</div>
+										</SwiperSlide>
+									))}
+								</Swiper >
+								<div className={styles.text_container}>
+									<div className="flex items-center gap-8">
+										<span className={styles.text_container__heading}>
+											{cards[activeCardIndex].name}
+										</span>
+										<SelectedBar text="Тип игрока" />
+									</div>
+									<p className={`${styles.text_container__paragraph} mt-4 w-[40%]`}>
 										{cards[activeCardIndex].paragraph}
 									</p>
+								</div>
+							</div>
+						</div>
+						<div className={styles2.swiper_mob_adaptive}>
+							<div className="flex flex-col">
+								<div className={styles2.paragraph_mob}>
+									<ParagraphReact
+										paragraphType="white"
+										width="75%"
+										margin="m-auto pb-8"
+										align="text-center"
+									/>
+								</div>
+								<Swiper
+									className={styles.swiper_mob}
+									modules={[EffectCards]}
+									effect={'cards'}
+									onSwiper={(swiperInstance) => {
+										swiperRef.current = swiperInstance
+									}}
+									onSlideChange={(swiper) => {
+										setActiveCardIndex(swiper.activeIndex)
+									}}
+								>
+									{cards.map((card, index) => (
+										<SwiperSlide key={index}>
+											<div className="flex justify-center">
+												<Card
+													name={card.name}
+													paragraph={card.paragraph}
+													iconType={card.iconType.src}
+													icon={card.icon.src}
+												/>
+											</div>
+										</SwiperSlide>
+									))}
+								</Swiper>
+								<div className={styles.text_container_mob}>
+									<div className="mt-8 flex flex-col items-center">
+										<span className={styles.text_container_mob__heading}>
+											{cards[activeCardIndex].name}
+										</span>
+										<SelectedBar text="Тип игрока" />
+										<p className={`${styles.text_container_mob__paragraph} mt-6 w-[75%] text-center`}>
+											{cards[activeCardIndex].paragraph}
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -3,15 +3,17 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	@apply gap-28;
+	@apply gap-10;
 	width: auto;
 	@apply bg-primary-light text-primary-red;
 	@apply font-killbill;
 	font-size: clamp(16px, 1.66656vw, 64px);
+
 	&__cub {
 		width: clamp(23px, 2.39568vw, 92px);
 		height: clamp(23px, 2.39568vw, 92px);
 	}
+
 	&__number {
 		@apply bg-primary-red text-primary-light;
 		width: clamp(32.5px, 3.3852vw, 130px);
@@ -21,6 +23,7 @@
 		justify-content: center;
 		border-radius: 400px;
 	}
+
 	&__wins {
 		display: flex;
 		justify-content: space-evenly;
@@ -29,15 +32,18 @@
 	}
 }
 
+
 @media (min-width: 375px) and (max-width: 600px) {
 	.container {
-		font-size: clamp(11.5px, 5.37372vw, 46px);
+		font-size: clamp(10px, 4.6728vw, 40px);
 		width: clamp(200px, 93.45599999999999vw, 800px);
-		@apply p-3 pb-6 pt-6;
+		// @apply pb-6 pt-6;
 		gap: 0;
+
 		&__none {
 			display: none;
 		}
+
 		&__number {
 			width: clamp(22.5px, 10.5138vw, 90px);
 			height: clamp(22.5px, 10.5138vw, 90px);

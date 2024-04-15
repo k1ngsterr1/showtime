@@ -35,17 +35,17 @@ export const RatingHeader: React.FC<RatingHeaderProps> = ({
 		<div className={ClassHeader}>
 			<div className={styles.container}>
 				<span className={styles.container__number}>{number}</span>
-				<span className={styles.container__text}>{id}</span>
+				<span className={styles.container__none}>Id: {id}</span>
 				<span className={styles.container__text}>{name}</span>
-				<span className={styles.container__text}>{score}</span>
-				<span className={styles.container__none}>{kfc}</span>
+				<span className={styles.container__text}>Очки: {score}</span>
+				<span className={styles.container__none}>Коэфф: {kfc}</span>
 				<div className={styles.container__wins}>
 					<img src={icon} alt="cup" className={styles.container__cub} />
 					<span className={styles.container__text}>{trophy}</span>
 				</div>
-				<span className={styles.container__none}>{games}</span>
-				<p>{wins}</p>
-				<span className={styles.container__none}>{loses}</span>
+				<span className={styles.container__none}>Игр: {games}</span>
+				<p className={styles.container__none}>Выигрышей: {wins}</p>
+				<span className={styles.container__none}>Проигрышей: {loses}</span>
 			</div>
 		</div>
 	)

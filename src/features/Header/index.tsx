@@ -39,7 +39,9 @@ export const Header = () => {
 			</header>
 			<header className={styles.header_mob}>
 				<div className="mt-6 flex w-full items-center justify-between">
-					<img src={ShowMob.src} alt="" className={styles.show} />
+					<a href="/">
+						<img src={ShowMob.src} alt="" className={styles.show} />
+					</a>
 					<span className="overflow-hidden" onClick={onOpen}>
 						<img src={LogoMob.src} alt="logo" onClick={onOpen} className={styles.logo} />
 					</span>

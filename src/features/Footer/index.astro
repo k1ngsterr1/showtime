@@ -16,7 +16,7 @@ const { to } = Astro.props
 
 <footer class={styles.footer}>
 	<div class={styles.footer__content}>
-		<Link to="" href="/" smooth>
+		<Link to="main" href="/" smooth>
 			<img src={Logo.src} alt="Logo" class={styles.footer__content__logo} />
 		</Link>
 		<nav class={styles.footer__content__navigation}>
@@ -43,7 +43,7 @@ const { to } = Astro.props
 </footer>
 <footer class={styles.footer_mob}>
 	<div class="flex flex-col items-center">
-		<Link to="/" href="" smooth>
+		<Link to="main" href="/" smooth>
 			<img src={logoMob.src} alt="Logo" />
 		</Link>
 		<nav class="flex flex-col text-center">
@@ -54,12 +54,15 @@ const { to } = Astro.props
 			<LinkText text="Рейтинг" to="rating_mob" href="/" client:load />
 			<LinkText text="Контакты" to="contacts_mob" href="" client:load />
 		</nav>
-		<a href="tel:+77471794939" class={`${styles.link} mt-4 transition-all hover:text-primary-light`}
+		<a
+			href="tel:+77471794939"
+			class={`${styles.link} mt-4 transition-all hover:text-primary-light`}
 			>+7 (747) 179-49-39</a
 		>
 		<a
 			href="mailto:showtime@mafia.kz"
-			class={`${styles.link} mt-2 mb-4 transition-all hover:text-primary-light`}>info@mafshow.kz</a
+			class={`${styles.link} mt-2 mb-4 transition-all hover:text-primary-light`}
+			>info@mafshow.kz</a
 		>
 		<LinkButton margin="mt-3 mb-8" text="Вверх" buttonType="filled" to="main" client:visible />
 		<a href="https://sparkstudio.kz/home" target="_blank">
