@@ -1,8 +1,11 @@
 .container {
 	width: clamp(611px, 63.641760000000005vw, 2444px);
 }
+@media (min-width: 1024px){
+
 .container_mob {
-	display: none;
+	display: none !important;
+}
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
@@ -15,7 +18,7 @@
 		justify-content: center;
 		align-items: center; */
 		overflow: hidden;
-		width: clamp(180px, 84.1104vw, 720px);
+		width:clamp(200px,93.45599999999999vw,800px);
 		height: clamp(270px, 126.1656vw, 1080px);
 		margin: auto;
 		display: flex;

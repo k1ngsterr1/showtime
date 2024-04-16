@@ -10,7 +10,7 @@ interface ILoginData {
 export async function loginAccount(loginData: ILoginData) {
 	try {
 		const response = await axios.post(
-			'https://showtimeserver-production.up.railway.app/api/auth/login',
+			'http://localhost:4200/api/auth/login',
 			loginData
 		)
 		// let videoChatWindow = window.open(
