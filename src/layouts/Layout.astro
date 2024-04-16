@@ -5,6 +5,8 @@ interface Props {
 	// image: ImageMetadata
 }
 
+import image from '@assets/logo/fedora.svg'
+
 const { title, description } = Astro.props
 ---
 
@@ -13,21 +15,18 @@ const { title, description } = Astro.props
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="fedora.svg" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="robots" content="index,follow" />
-		<link rel="canonical" href="https://samigroup.kz/" />
 		<meta property="og:title" content={title} />
-		<!-- <meta property="og:image" content={image.src} /> -->
+		<meta property="og:image" content={image.src} />
 		<meta property="og:image:type" content="image/png" />
 		<meta property="og:image:alt" content="Logo" />
+
 		<meta property="og:description" content={description} />
 		<meta name="robots" content="index,follow" />
-		<meta property="og:url" content="https://samigroup.kz/" /><meta
-			property="og:type"
-			content="website"
-		/></head
-	>
+	</head>
 	<body class="overflow-x-hidden">
 		<slot />
 	</body>

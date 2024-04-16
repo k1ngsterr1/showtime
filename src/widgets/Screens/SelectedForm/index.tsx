@@ -7,9 +7,10 @@ import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import { useAddOrder } from '@shared/lib/hooks/Admin/Add/useAddOrder'
-
-import styles from '../ContactForm/styles.module.scss'
 import { TextArea } from '@shared/ui/TexrArea'
+import { useSendEmail } from '@shared/lib/hooks/useSendEmail'
+import emailjs from '@emailjs/browser'
+import styles from '../ContactForm/styles.module.scss'
 
 interface IFormContentProps {
 	gameType: string
@@ -27,6 +28,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 	const [name, setName] = useState<string>('')
 	const [phoneNumber, setPhoneNumber] = useState<string>('')
 	const [description, setDescription] = useState<string>('')
+
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
 
@@ -51,6 +53,8 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			console.log('All fields are required')
 		}
 	}
+
+	const { handleProductSubmit, handleBookSubmit } = useSendEmail()
 
 	const toggleDate = () => {
 		setIsOpen(!isOpen)
@@ -104,18 +108,28 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 				)
 			case 'delivery':
 				return (
-					<div>
-						<form className={styles.form_screen_mob__form}>
+					<>
+						<form
+							className={styles.form_screen_mob__form}
+							onSubmit={() => handleProductSubmit(event)}
+						>
 							<div className="mt-12 flex flex-col items-start">
-								<Input type="text" inputType="default-red" placeholder="Введите ваше имя" />
+								<Input
+									type="text"
+									name="name"
+									inputType="default-red"
+									placeholder="Введите ваше имя"
+								/>
 								<Input
 									type="email"
+									name="email"
 									inputType="default-red"
 									placeholder="Ваша почта"
 									margin="mt-8"
 								/>
 								<Input
 									type="phone"
+									name="phone_number"
 									inputType="default-red"
 									placeholder="Номер телефона"
 									margin="mt-8"
@@ -126,25 +140,37 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									onChange={setSelectedRole}
 									items={['Шляпа Мафиози', 'Набор карт']}
 								/>
-								<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" />
+								<ReactButton
+									text="Отправить"
+									buttonType="filled"
+									type="submit"
+									margin="mt-8 ml-6"
+								/>
 							</div>
 						</form>
-					</div>
+					</>
 				)
 			case 'book':
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form}>
+						<form className={styles.form_screen_mob__form} onSubmit={() => handleBookSubmit(event)}>
 							<div className="mt-12 flex flex-col items-start">
-								<Input type="text" inputType="default-red" placeholder="Введите ваше имя" />
+								<Input
+									type="text"
+									name="name"
+									inputType="default-red"
+									placeholder="Введите ваше имя"
+								/>
 								<Input
 									type="email"
+									name="email"
 									inputType="default-red"
 									placeholder="Ваша почта"
 									margin="mt-8"
 								/>
 								<Input
 									type="phone"
+									name="phone"
 									inputType="default-red"
 									placeholder="Номер телефона"
 									margin="mt-8"
@@ -152,6 +178,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 								<div className="" onClick={toggleDate}>
 									<Input
 										type="onlyread"
+										name="date"
 										inputType="default-red"
 										placeholder="Выберите дату"
 										margin="mt-8"
@@ -161,7 +188,12 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 										{isOpen && <Calendar onChange={onChange} value={value} />}
 									</div>
 								</div>
-								<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" />
+								<ReactButton
+									text="Отправить"
+									type="submit"
+									buttonType="filled"
+									margin="mt-8 ml-6"
+								/>
 							</div>
 						</form>
 					</div>
@@ -194,7 +226,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 					<div>
 						<form className={styles.form_screen_mob__form}>
 							<div className="mt-12 flex flex-col items-start">
-								<Input type="text" inputType="default-red" placeholder="Ваше имя" />
+								<Input type="text" name="name" inputType="default-red" placeholder="Ваше имя" />
 								<Input
 									type="phone"
 									inputType="default-red"
@@ -207,7 +239,12 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									placeholder="Укажите имя ведущего"
 									margin="mt-8"
 								/>
-								<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" />
+								<ReactButton
+									text="Отправить"
+									type="submit"
+									buttonType="filled"
+									margin="mt-8 ml-6"
+								/>
 							</div>
 						</form>
 					</div>

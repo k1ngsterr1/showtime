@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import { Map } from '@shared/ui/Map/index'
 import { FormContent } from '@widgets/Screens/SelectedForm/index'
+import { useSendEmail } from '@shared/lib/hooks/useSendEmail'
 
 import styles from './styles.module.scss'
 

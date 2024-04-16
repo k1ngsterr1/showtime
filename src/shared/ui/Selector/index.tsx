@@ -46,7 +46,7 @@ export const Selector = <T extends string | number>({
 					placeholder={placeholder}
 					value={selectedValue}
 					inputType="default-red"
-					name="service"
+					name="product"
 				/>
 				<FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} className={styles.icon} />
 			</div>
