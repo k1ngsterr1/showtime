@@ -1,12 +1,10 @@
+@media (min-width: 1024px){
 
-@media (min-width: 1024px) {
 	.container_mob {
-		display: flex;
+		display: none !important;
 	}
-	.container {
-		display: none;
 	}
-}
+
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.container {
