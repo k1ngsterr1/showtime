@@ -9,6 +9,7 @@ import '@shared/styles/global.scss'
 
 import styles from '../Team/styles.module.scss'
 import fedora from '@assets/logo/fedora.svg'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
 export const Services = () => {
 	const userData = useUserData()

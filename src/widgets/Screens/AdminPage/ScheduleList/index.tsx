@@ -12,6 +12,7 @@ import Logo from '@assets/logo/showtime_logo.svg'
 import styles from '../../AdminPage/ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
 import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
+import { useUserData } from '@shared/lib/hooks/useGetUserData'
 
 export const ScheduleList = () => {
 	const userData = useUserData()
