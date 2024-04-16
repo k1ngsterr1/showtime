@@ -53,14 +53,14 @@ button:hover {
 		flex-direction: column;
 		justify-content: center;
 
-		&_name {
+		&_name_1 {
 			@apply font-katana;
 			@apply text-primary-light;
 			font-size: clamp(9.5px, 0.9895200000000001vw, 38px);
 			font-weight: 500;
 		}
 
-		&_position {
+		&_position_1 {
 			@apply font-katana;
 			@apply text-primary-light;
 			@apply text-base;
@@ -99,6 +99,41 @@ button:hover {
 		&_name {
 			@apply font-katana;
 			@apply text-primary-light;
+			font-size: clamp(9.5px, 0.9895200000000001vw, 38px);
+			font-weight: 500;
+		}
+
+		&_position {
+			@apply font-katana;
+			@apply text-primary-light;
+			@apply text-base;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.usertab {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	&__photo {
+		width: clamp(45px, 4.6872vw, 180px);
+		height: clamp(45px, 4.6872vw, 180px);
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__text {
+		@apply ml-5;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&_name {
+			@apply font-katana;
+			@apply text-primary-light;
 			@apply text-2xl;
 			font-weight: 500;
 		}
@@ -109,5 +144,47 @@ button:hover {
 			@apply text-lg;
 			text-transform: uppercase;
 		}
+	}
+}
+
+.usertab--users {
+	position: relative;
+	flex-wrap: wrap;
+	width: clamp(200px, 20.832vw, 800px);
+	height: clamp(65px, 6.7704vw, 260px);
+	border-radius: clamp(7.5px, 0.7812vw, 30px);
+	justify-content: space-between;
+	overflow: hidden;
+	background-color: #333333;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	.upload {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: clamp(40px, 4.1664vw, 160px);
+		height: clamp(40px, 4.1664vw, 160px);
+		border-radius: 50%;
+		overflow: hidden;
+		border: 2px solid #bf2316;
+
+		&__fedora {
+			width: 50%;
+		}
+	}
+
+	.card__content__previewImage {
+		width: clamp(40px, 4.1664vw, 160px);
+		height: clamp(40px, 4.1664vw, 160px);
+		border-radius: 50%;
+	}
+
+	.usertab__text--users {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-basis: 60%;
 	}
 }
