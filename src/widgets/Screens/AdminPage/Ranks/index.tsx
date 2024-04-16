@@ -10,30 +10,40 @@ import '@shared/styles/global.scss'
 import styles from '../Team/styles.module.scss'
 
 import fedora from '@assets/logo/fedora.svg'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
 export const Ranks = () => {
 	const userData = useUserData()
 
 	return (
 		<main className={styles.client}>
-			<div className={styles.client__left}>
-				<AdminPanel adminpanel={adminpanel} />
-			</div>
-			<div className={styles.client__main}>
-				{userData && (
-					<>
-						<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
-					</>
-				)}
-				<div className={styles.client__main__functional}>
-					<div className={styles.client__main__functional__header_service}>
-						<h1 className={styles.client__main__functional__header_heading}>Звания</h1>
+			{userData?.role !== 'admin' ? (
+				<>
+					<AdminErrorScreen />
+				</>
+			) : (
+				<>
+					{' '}
+					<div className={styles.client__left}>
+						<AdminPanel adminpanel={adminpanel} />
 					</div>
-					<div className={styles.client__main__functional__showmans}>
-						<AdminRanks />
+					<div className={styles.client__main}>
+						{userData && (
+							<>
+								<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
+							</>
+						)}
+						<div className={styles.client__main__functional}>
+							<div className={styles.client__main__functional__header_service}>
+								<h1 className={styles.client__main__functional__header_heading}>Звания</h1>
+							</div>
+							<div className={styles.client__main__functional__showmans}>
+								<AdminRanks />
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				</>
+			)}
 		</main>
 	)
 }

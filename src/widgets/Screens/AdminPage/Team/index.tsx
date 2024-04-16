@@ -12,6 +12,7 @@ import '@shared/styles/global.scss'
 import styles from './styles.module.scss'
 
 import fedora from '@assets/logo/fedora.svg'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
 export const Team = () => {
 	const [isPopupOpen, setPopupOpen] = useState(false)
@@ -27,28 +28,37 @@ export const Team = () => {
 
 	return (
 		<main className={styles.client}>
-			<div className={styles.client__left}>
-				<AdminPanel adminpanel={adminpanel} />
-			</div>
-			<div className={styles.client__main}>
-				{userData && (
-					<>
-						<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
-					</>
-				)}
-				<div className={styles.client__main__functional}>
-					<div className={styles.client__main__functional__header}>
-						<h1 className={styles.client__main__functional__header_heading}>
-							Управление сотрудниками
-						</h1>
-						<AddButton buttonType="filled" text="Добавить" onClick={handleClick} />
-						{isPopupOpen && <AddPopup onClick={handleClose} popupState />}
+			{userData?.role !== 'admin' ? (
+				<>
+					<AdminErrorScreen />
+				</>
+			) : (
+				<>
+					{' '}
+					<div className={styles.client__left}>
+						<AdminPanel adminpanel={adminpanel} />
 					</div>
-					<div className={styles.client__main__functional__teammates}>
-						<AdminTeam />
+					<div className={styles.client__main}>
+						{userData && (
+							<>
+								<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
+							</>
+						)}
+						<div className={styles.client__main__functional}>
+							<div className={styles.client__main__functional__header}>
+								<h1 className={styles.client__main__functional__header_heading}>
+									Управление сотрудниками
+								</h1>
+								<AddButton buttonType="filled" text="Добавить" onClick={handleClick} />
+								{isPopupOpen && <AddPopup onClick={handleClose} popupState />}
+							</div>
+							<div className={styles.client__main__functional__teammates}>
+								<AdminTeam />
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				</>
+			)}
 		</main>
 	)
 }

@@ -15,29 +15,38 @@ export const Services = () => {
 
 	return (
 		<main className={styles.client}>
-			<div className={styles.client__left}>
-				<AdminPanel adminpanel={adminpanel} />
-			</div>
-			<div className={styles.client__main}>
-				{userData && (
-					<>
-						<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
-					</>
-				)}
-				<div className={styles.client__main__functional}>
-					<div className={styles.client__main__functional__header_service}>
-						<h1 className={styles.client__main__functional__header_heading}>Услуги</h1>
-						<ParagraphReact
-							text="Заполните все поля формы чтобы добавить новую услугу"
-							paragraphType="white"
-							margin="mt-2"
-						/>
+			{userData?.role !== 'admin' ? (
+				<>
+					<AdminErrorScreen />
+				</>
+			) : (
+				<>
+					{' '}
+					<div className={styles.client__left}>
+						<AdminPanel adminpanel={adminpanel} />
 					</div>
-					<div className={styles.client__main__functional__services}>
-						<ServiceCard number="01" />
+					<div className={styles.client__main}>
+						{userData && (
+							<>
+								<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
+							</>
+						)}
+						<div className={styles.client__main__functional}>
+							<div className={styles.client__main__functional__header_service}>
+								<h1 className={styles.client__main__functional__header_heading}>Услуги</h1>
+								<ParagraphReact
+									text="Заполните все поля формы чтобы добавить новую услугу"
+									paragraphType="white"
+									margin="mt-2"
+								/>
+							</div>
+							<div className={styles.client__main__functional__services}>
+								<ServiceCard number="01" />
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				</>
+			)}
 		</main>
 	)
 }

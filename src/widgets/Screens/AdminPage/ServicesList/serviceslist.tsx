@@ -6,13 +6,16 @@ import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
 import { useGetServices } from '@shared/lib/hooks/Admin/Get/useGetServices'
 import { useDeleteService } from '@shared/lib/hooks/Admin/Delete/useDeleteService'
 import { useUpdateService } from '@shared/lib/hooks/Admin/Update/useUpdateService'
+import { useUserData } from '@shared/lib/hooks/useGetUserData'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
 import styles from './styles.module.scss'
 import '@shared/styles/global.scss'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
 export const ServicesList = () => {
+	const userData = useUserData()
 	const [services, setServices] = useState<any[]>([])
 	const [isLoading, setIsLoading] = useState(true)
 	const { getServices } = useGetServices()
@@ -62,35 +65,47 @@ export const ServicesList = () => {
 
 	return (
 		<main className={styles.services}>
-			<div className={styles.services__content}>
-				<div className={styles.services__content_logo}>
-					<img src={Logo.src} alt="Logo" />
-				</div>
-				<h1 className="text-primary-red">Список услуг</h1>
-				<div className={styles.services__content_cards}>
-					<div
-						className={`${styles.services__content_cards} flex flex-row flex-wrap items-center justify-center gap-10`}
-					>
-						{services.map((service) => (
-							<div key={service.id} className={`${styles.services__content_card} flex flex-col`}>
-								<Card
-									number={service.number}
-									service={service.service}
-									text={service.text}
-									serviceId={service.id}
-								/>
-								<Buttons
-									buttonType="filled"
-									text="Удалить"
-									margin="mt-5"
-									onClick={() => handleDeleteService(service.id)}
-								/>
+			{userData?.role !== 'admin' ? (
+				<>
+					<AdminErrorScreen />
+				</>
+			) : (
+				<>
+					{' '}
+					<div className={styles.services__content}>
+						<div className={styles.services__content_logo}>
+							<img src={Logo.src} alt="Logo" />
+						</div>
+						<h1 className="text-primary-red">Список услуг</h1>
+						<div className={styles.services__content_cards}>
+							<div
+								className={`${styles.services__content_cards} flex flex-row flex-wrap items-center justify-center gap-10`}
+							>
+								{services.map((service) => (
+									<div
+										key={service.id}
+										className={`${styles.services__content_card} flex flex-col`}
+									>
+										<Card
+											number={service.number}
+											service={service.service}
+											text={service.text}
+											serviceId={service.id}
+										/>
+										<Buttons
+											buttonType="filled"
+											text="Удалить"
+											margin="mt-5"
+											onClick={() => handleDeleteService(service.id)}
+										/>
+									</div>
+								))}
 							</div>
-						))}
+						</div>
+						<LinkButton buttonType="filled" href="services" text="Назад" margin="mt-8" />
 					</div>
-				</div>
-				<LinkButton buttonType="filled" href="services" text="Назад" margin="mt-8" />
-			</div>
+				</>
+			)}
 		</main>
 	)
 }

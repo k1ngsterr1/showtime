@@ -10,35 +10,45 @@ import '@shared/styles/global.scss'
 import styles from '../Team/styles.module.scss'
 
 import fedora from '@assets/logo/fedora.svg'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
 export const Reviews = () => {
 	const userData = useUserData()
 
 	return (
 		<main className={styles.client}>
-			<div className={styles.client__left}>
-				<AdminPanel adminpanel={adminpanel} />
-			</div>
-			<div className={styles.client__main}>
-				{userData && (
-					<>
-						<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
-					</>
-				)}
-				<div className={styles.client__main__functional}>
-					<div className={styles.client__main__functional__header_service}>
-						<h1 className={styles.client__main__functional__header_heading}>Отзывы</h1>
-						<ParagraphReact
-							text="Заполните все поля формы чтобы добавить новый отзыв"
-							paragraphType="white"
-							margin="mt-2"
-						/>
+			{userData?.role !== 'admin' ? (
+				<>
+					<AdminErrorScreen />
+				</>
+			) : (
+				<>
+					{' '}
+					<div className={styles.client__left}>
+						<AdminPanel adminpanel={adminpanel} />
 					</div>
-					<div className={`${styles.client__main__functional__showmans} mt-12`}>
-						<ReviewCard name="Имя клиента" />
+					<div className={styles.client__main}>
+						{userData && (
+							<>
+								<AdminHeader name={userData.username} position={userData.role} photo={fedora} />
+							</>
+						)}
+						<div className={styles.client__main__functional}>
+							<div className={styles.client__main__functional__header_service}>
+								<h1 className={styles.client__main__functional__header_heading}>Отзывы</h1>
+								<ParagraphReact
+									text="Заполните все поля формы чтобы добавить новый отзыв"
+									paragraphType="white"
+									margin="mt-2"
+								/>
+							</div>
+							<div className={`${styles.client__main__functional__showmans} mt-12`}>
+								<ReviewCard name="Имя клиента" />
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				</>
+			)}
 		</main>
 	)
 }

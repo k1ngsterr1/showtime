@@ -10,8 +10,11 @@ import Logo from '@assets/logo/showtime_logo.svg'
 
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
+import { useUserData } from '@shared/lib/hooks/useGetUserData'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
 export const VacanciesList = () => {
+	const userData = useUserData()
 	const [vacancies, setVacancies] = useState<any[]>([])
 	const [isLoading, setIsLoading] = useState(true)
 	const { getVacancies } = useGetVacancies()
@@ -60,35 +63,44 @@ export const VacanciesList = () => {
 
 	return (
 		<main className={styles.services}>
-			<div className={styles.services__content}>
-				<div className={styles.services__content_logo}>
-					<img src={Logo.src} alt="Logo" />
-				</div>
-				<h1 className="text-primary-red">Вакансии</h1>
-				<div className={styles.services__content_cards}>
-					<div className={`${styles.services__content_card} flex flex-wrap gap-10`}>
-						{vacancies.map((vacancy) => (
-							<div key={vacancy.number}>
-								<VacancyCard
-									number={vacancy.number}
-									position={vacancy.position}
-									text={vacancy.text}
-									vacancyId={vacancy.id}
-								/>
-								<div className="flex items-center justify-center">
-									<Buttons
-										buttonType="filled"
-										text="Удалить"
-										margin="mt-5"
-										onClick={() => handleDeleteVacancy(vacancy.id)}
-									/>
-								</div>
+			{userData?.role !== 'admin' ? (
+				<>
+					<AdminErrorScreen />
+				</>
+			) : (
+				<>
+					{' '}
+					<div className={styles.services__content}>
+						<div className={styles.services__content_logo}>
+							<img src={Logo.src} alt="Logo" />
+						</div>
+						<h1 className="text-primary-red">Вакансии</h1>
+						<div className={styles.services__content_cards}>
+							<div className={`${styles.services__content_card} flex flex-wrap gap-10`}>
+								{vacancies.map((vacancy) => (
+									<div key={vacancy.number}>
+										<VacancyCard
+											number={vacancy.number}
+											position={vacancy.position}
+											text={vacancy.text}
+											vacancyId={vacancy.id}
+										/>
+										<div className="flex items-center justify-center">
+											<Buttons
+												buttonType="filled"
+												text="Удалить"
+												margin="mt-5"
+												onClick={() => handleDeleteVacancy(vacancy.id)}
+											/>
+										</div>
+									</div>
+								))}
 							</div>
-						))}
+						</div>
+						<LinkButton buttonType="filled" href="vacancies" text="Назад" margin="mt-8" />
 					</div>
-				</div>
-				<LinkButton buttonType="filled" href="vacancies" text="Назад" margin="mt-8" />
-			</div>
+				</>
+			)}
 		</main>
 	)
 }

@@ -5,13 +5,17 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDeleteProduct } from '@shared/lib/hooks/Admin/Delete/useDeleteProduct'
 import { useGetProducts } from '@shared/lib/hooks/Admin/Get/useGetProducts'
+import { useUserData } from '@shared/lib/hooks/useGetUserData'
 
 import Logo from '@assets/logo/showtime_logo.svg'
 
 import styles from '../ServicesList/styles.module.scss'
 import '@shared/styles/global.scss'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
 export const ProductsList = () => {
+	const userData = useUserData()
+
 	const [products, setProducts] = useState<any[]>([])
 	const [isLoading, setIsLoading] = useState(true)
 	const { getProducts } = useGetProducts()
@@ -60,34 +64,42 @@ export const ProductsList = () => {
 
 	return (
 		<main className={styles.services}>
-			<div className={styles.services__content}>
-				<div className={styles.services__content_logo}>
-					<img src={Logo.src} alt="Logo" />
-				</div>
-				<h1 className="text-primary-red">Список продуктов</h1>
-				<div className={styles.services__content_cards}>
-					<div className={styles.services__content_card}>
-						{products.map((product) => (
-							<div className={`${styles.card} mt-12`} key={product.id}>
-								<ProductCard
-									url={product.url}
-									name={product.name}
-									description={product.description}
-									price={product.price}
-								/>
-								<Buttons buttonType="filled" text="Редактировать" margin="mt-5" />
-								<Buttons
-									buttonType="filled"
-									text="Удалить"
-									margin="mt-10"
-									onClick={() => handleDeleteProduct(product.id)}
-								/>
+			{userData?.role !== 'admin' ? (
+				<>
+					<AdminErrorScreen />
+				</>
+			) : (
+				<>
+					<div className={styles.services__content}>
+						<div className={styles.services__content_logo}>
+							<img src={Logo.src} alt="Logo" />
+						</div>
+						<h1 className="text-primary-red">Список продуктов</h1>
+						<div className={styles.services__content_cards}>
+							<div className={styles.services__content_card}>
+								{products.map((product) => (
+									<div className={`${styles.card} mt-12`} key={product.id}>
+										<ProductCard
+											url={product.url}
+											name={product.name}
+											description={product.description}
+											price={product.price}
+										/>
+										<Buttons buttonType="filled" text="Редактировать" margin="mt-5" />
+										<Buttons
+											buttonType="filled"
+											text="Удалить"
+											margin="mt-10"
+											onClick={() => handleDeleteProduct(product.id)}
+										/>
+									</div>
+								))}
 							</div>
-						))}
+						</div>
+						<LinkButton buttonType="filled" href="products" text="Назад" margin="mt-16" />
 					</div>
-				</div>
-				<LinkButton buttonType="filled" href="products" text="Назад" margin="mt-16" />
-			</div>
+				</>
+			)}
 		</main>
 	)
 }
