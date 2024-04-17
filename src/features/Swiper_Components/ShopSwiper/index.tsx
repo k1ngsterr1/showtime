@@ -11,16 +11,18 @@ type Swiper = any
 
 interface IShowProps {
 	cards: IShopCard[]
+	slidesPerView: number
+	spaceBetween: number
 }
 
-export const ShopSwiper: React.FC<IShowProps> = ({ cards }) => {
+export const ShopSwiper: React.FC<IShowProps> = ({ cards, slidesPerView, spaceBetween }) => {
 	const swiperRef = React.useRef<Swiper | null>(null)
 
 	return (
 		<>
 			<Swiper
-				slidesPerView={3}
-				spaceBetween={32}
+				slidesPerView={slidesPerView}
+				spaceBetween={spaceBetween}
 				className={styles.swiper}
 				onSwiper={(swiperInstance) => {
 					swiperRef.current = swiperInstance
