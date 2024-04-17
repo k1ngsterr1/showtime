@@ -18,7 +18,7 @@ export function useAddShowman() {
 
 			// console.log(refreshToken)
 			const response = await axios.post(
-				'http://localhost:4200/api/admin/add-showman',
+				'https://showtimeserver-production.up.railway.app/api/admin/add-showman',
 				data,
 				{
 					headers: {

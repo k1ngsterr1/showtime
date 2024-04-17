@@ -9,7 +9,7 @@ export function useGetShowmans() {
 
 			console.log(refreshToken)
 			const response = await axios.get(
-				'http://localhost:4200/api/admin/get-showmans'
+				'https://showtimeserver-production.up.railway.app/api/admin/get-showmans'
 			)
 			return response.data['showmans']
 		} catch (error) {
