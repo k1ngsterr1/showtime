@@ -1,8 +1,7 @@
 ---
 import { Cursor } from '@shared/ui/Cursor/index'
-import { Loader } from '@shared/ui/Loader/index'
-import Layout from '../../layouts/Layout.astro'
-import { Orders } from '@widgets/Screens/AdminPage/Orders/index'
+import Layout from '../../../layouts/Layout.astro'
+import { News } from '@widgets/Screens/AdminPage/News'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -12,9 +11,9 @@ import styles from '../styles/History/styles.module.scss'
 import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Заказы" image={Logo}>
+<Layout title="Новости">
 	<Cursor client:load />
 	<main class={styles.main}>
-		<Orders client:load />
+		<News client:load />
 	</main>
 </Layout>

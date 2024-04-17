@@ -1,7 +1,7 @@
 ---
 import { Cursor } from '@shared/ui/Cursor/index'
-import Layout from '../../layouts/Layout.astro'
-import { VacanciesList } from '@widgets/Screens/AdminPage/VacanciesList/index'
+import Layout from '../../../layouts/Layout.astro'
+import { Users } from '@widgets/Screens/AdminPage/Users/users'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -11,9 +11,9 @@ import styles from '../styles/History/styles.module.scss'
 import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Список вакансий" image={Logo}>
+<Layout title="Пользователи">
 	<Cursor client:load />
 	<main class={styles.main}>
-		<VacanciesList client:load />
+		<Users client:load />
 	</main>
 </Layout>
