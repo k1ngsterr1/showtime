@@ -5,6 +5,7 @@
 	border: 4px solid;
 	background-image: url(../../assets/Main/mafia_shadow.webp);
 	background-position: center center;
+	overflow-y: hidden;
 	background-position: cover;
 	@apply p-8;
 	@apply border-primary-red;
@@ -38,5 +39,52 @@
 		font-size: clamp(20px, 2.0832vw, 80px);
 		@apply text-primary-light;
 		@apply font-killbill;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	.card {
+		position: relative;
+		width: clamp(160px, 74.7648vw, 640px);
+		height: clamp(200px, 93.45599999999999vw, 800px);
+		border: 4px solid;
+		background-image: url(../../assets/Main/mafia_shadow.webp);
+		background-position: center center;
+		overflow-y: hidden;
+		background-position: cover;
+		@apply p-8;
+		@apply border-primary-red;
+		@apply bg-primary-dark;
+		@apply rounded-lg;
+
+		&__heading {
+			font-size: clamp(20px, 9.3456vw, 80px);
+			@apply text-primary-red;
+			@apply font-killbill;
+		}
+
+		&__paragraph {
+			font-size: clamp(9px, 4.20552vw, 36px);
+			@apply text-primary-light;
+			@apply font-neoregular;
+			width: 75%;
+			@apply mt-3;
+		}
+
+		&__icon_type {
+			position: absolute;
+			top: -23px;
+			right: -23px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			@apply bg-primary-red;
+			border-radius: 100%;
+			width: clamp(75px, 7.812vw, 300px);
+			height: clamp(75px, 7.812vw, 300px);
+			font-size: clamp(20px, 2.0832vw, 80px);
+			@apply text-primary-light;
+			@apply font-killbill;
+		}
 	}
 }

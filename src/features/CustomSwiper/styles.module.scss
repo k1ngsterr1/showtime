@@ -1,0 +1,15 @@
+.swiperContainer {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.swiper {
+	display: flex;
+	width: 100%;
+}
+
+.swipeItem {
+	flex: 0 0 auto;
+	transition: transform 0.3s ease-out;
+}

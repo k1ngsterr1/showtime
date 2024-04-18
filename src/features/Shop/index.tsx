@@ -20,8 +20,11 @@ export const Shop = () => {
 					<FontAwesomeIcon icon={faClose} className={styles.shop__upper__icon} />
 				</div>
 			</div>
-			<div className="sticky ml-32 flex w-[86.6%] flex-col">
-				<ShopSwiper cards={ShopCards} />
+			<div className="sticky ml-32  flex w-[86.6%] flex-col  min-[375px]:hidden">
+				<ShopSwiper cards={ShopCards} spaceBetween={32} slidesPerView={3} />
+			</div>
+			<div className="max-[600px]:hidden: sticky m-auto flex w-[90%] flex-col">
+				<ShopSwiper cards={ShopCards} spaceBetween={128} slidesPerView={1} />
 			</div>
 			<div className="mb-12 mt-8 flex items-center justify-center">
 				<ReactButton buttonType="filled" text="Купить" />
