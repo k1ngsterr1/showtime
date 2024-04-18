@@ -14,19 +14,21 @@ const UsersCard: React.FC<Props> = ({ userID, verificationPhoto, username }) => 
 	const [isVerified, setIsVerified] = useState<boolean>()
 
 	const handleVerification = async (verified: boolean) => {
-		setIsVerified(verified)
-
-		const formData = new FormData()
-		formData.append('userID', userID.toString())
-		formData.append('isVerified', verified.toString())
-
+		setIsVerified(verified);
+	
+		const formData = new FormData();
+		formData.append('userID', userID.toString());
+		formData.append('isVerified', verified.toString());
+	
 		try {
-			await addAdminVerifyUser(formData)
-			console.log('Verification status updated:', verified)
+			await addAdminVerifyUser(formData);
+			console.log('Verification status updated:', verified);
+			window.location.reload();
 		} catch (error) {
-			console.error('Failed to update verification status:', error)
+			console.error('Failed to update verification status:', error);
 		}
 	}
+	
 
 	return (
 		<form

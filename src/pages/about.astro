@@ -7,7 +7,7 @@ import { Menu } from '@features/Menu'
 import Layout from '../layouts/Layout.astro'
 import Main from '@widgets/Screens/AboutPage/Main/main.astro'
 import Goals from '@widgets/Screens/AboutPage/Goals/index.astro'
-import News from '@widgets/Screens/AboutPage/News/index.astro'
+import News from '@widgets/Screens/AboutPage/News'
 import Articles from '@widgets/Screens/AboutPage/Articles/index.astro'
 import Subscribe from '@widgets/Screens/AboutPage/Subscribe/index.astro'
 import Contacts from '@widgets/Screens/AboutPage/Contacts/index.astro'
@@ -16,6 +16,7 @@ import Footer from '@features/Footer/index.astro'
 import styles from '@pages/styles/About/styles.module.scss'
 
 import Logo from '@assets/logo/logo.png'
+import NewsSection from '@widgets/Screens/AboutPage/News'
 ---
 
 <Layout
@@ -32,7 +33,7 @@ import Logo from '@assets/logo/logo.png'
 	</div>
 	<Goals />
 	<!-- <Articles /> -->
-	<News />
+	<NewsSection client:load />
 	<Subscribe />
 	<Contacts />
 	<Footer to="main" />
