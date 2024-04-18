@@ -1,12 +1,11 @@
 import React from 'react';
 import DefaultButton from '@shared/ui/Buttons/DefaultReactButton';
 import Paragraph from '@shared/ui/ParagraphReact';
-import PhotoCard from '@entities/Card_Components/PhotoCard';
+import NewsMainCard from '@entities/Card_Components/NewsMainCard';
 import { useGetNews } from '@shared/lib/hooks/Admin/Get/useGetNews'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-// import { articles } from '@shared/lib/content/newsArticlesContent';
 
 import styles from './styles.module.scss';
 import '@shared/styles/global.scss';
@@ -61,7 +60,7 @@ const NewsSection: React.FC = () => {
                     <div className="m-auto flex w-full justify-between pt-16">
                     {news.map((newsData) => (
 									<div key={newsData.id} className={`${styles.card} mt-12`}>
-										<PhotoCard
+										<NewsMainCard
 											newsId={newsData.id}
 											date={newsData.date}
 											url={newsData.url}
@@ -80,7 +79,7 @@ const NewsSection: React.FC = () => {
                     <div className="mt-8 flex flex-col items-center gap-10">
                     {news.map((newsData) => (
 									<div key={newsData.id} className={`${styles.card} mt-12`}>
-										<PhotoCard
+										<NewsMainCard
 											newsId={newsData.id}
 											date={newsData.date}
 											url={newsData.url}

@@ -6,7 +6,7 @@ import { Menu } from '@features/Menu/index'
 import { Form } from '@widgets/Screens/ContactForm/index'
 import Layout from '../layouts/Layout.astro'
 import Footer from '@features/Footer/index.astro'
-import VacanciesPage from '../widgets/Screens/VacanciesPage/index.astro'
+import VacanciesPage from '../widgets/Screens/VacanciesPage'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -25,8 +25,9 @@ import Logo from '@assets/logo/logo.png'
 	<Menu client:load />
 	<main class={styles.main} id="main">
 		<Header client:load />
-		<VacanciesPage />
+		<VacanciesPage client:load />
 	</main>
 	<Form client:visible />
 	<Footer to="main" />
 </Layout>
+../widgets/Screens/VacanciesPage/index.tsx
