@@ -1,18 +1,18 @@
 ---
 import { Cursor } from '@shared/ui/Cursor/index'
 import { Loader } from '@shared/ui/Loader/index'
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../../layouts/Layout.astro'
 import { ShowmansList } from '@widgets/Screens/AdminPage/ShowmansList'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
-import styles from '../styles/History/styles.module.scss'
+import styles from '../../styles/History/styles.module.scss'
 
 import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Список ведущих" image={Logo}>
+<Layout title="Список ведущих">
 	<Cursor client:load />
 	<main class={styles.main}>
 		<ShowmansList client:load />

@@ -1,17 +1,17 @@
 ---
 import { Cursor } from '@shared/ui/Cursor/index'
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../../layouts/Layout.astro'
 import { Schedule } from '@widgets/Screens/AdminPage/Schedule/index'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
-import styles from '../styles/History/styles.module.scss'
+import styles from '../../styles/History/styles.module.scss'
 
 import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Расписание" image={Logo}>
+<Layout title="Расписание">
 	<Cursor client:load />
 	<main class={styles.main}>
 		<Schedule client:load />

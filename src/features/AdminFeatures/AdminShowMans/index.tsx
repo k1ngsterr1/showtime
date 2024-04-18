@@ -77,7 +77,7 @@ const PhotoUploadComponent: React.FC = () => {
 				/>
 				<div className="mt-8 flex flex-row gap-10">
 					<AddButton buttonType="filled" text="Добавить" type="submit" />
-					<LinkButton buttonType="filled" href="showmans-list" text="Смотреть все" />
+					<LinkButton buttonType="filled" href="/admin/showmans-list" text="Смотреть все" />
 				</div>
 			</form>
 		</div>

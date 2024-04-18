@@ -10,7 +10,7 @@ import { UserAside } from '@features/UserAside'
 import { useCustomShop } from '@shared/lib/hooks/useCustomShop'
 import { useUserData } from '@shared/lib/hooks/useGetUserData'
 import bgImage from '@assets/Main/mafia_shadow.webp'
-import revolver from '@assets/logo/revolver.svg'
+import revolver from '@assets/logo/another_revolver.svg'
 
 import styles from './styles.module.scss'
 
@@ -36,7 +36,7 @@ export const UserScreen = () => {
 							<img
 								onClick={handleGoBack}
 								src={revolver.src}
-								className={`${styles.user_screen__upper__icon} scale-x-[-1]`}
+								className={`${styles.user_screen__upper__icon}`}
 								alt="revolver"
 							/>
 							<h2 className={styles.user_screen__upper__heading}>Личный кабинет</h2>
@@ -77,7 +77,7 @@ export const UserScreen = () => {
 								<img
 									onClick={handleGoBack}
 									src={revolver.src}
-									className={`${styles.user_mob_screen__upper__icon} scale-x-[-1]`}
+									className={`${styles.user_mob_screen__upper__icon}`}
 									alt="revolver"
 								/>
 								<div className="flex items-center gap-8 overflow-hidden">
