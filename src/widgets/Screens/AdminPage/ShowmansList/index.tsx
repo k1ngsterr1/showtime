@@ -111,7 +111,7 @@ export const ShowmansList = () => {
 								</div>
 							)}
 						</div>
-						<LinkButton buttonType="filled" href="showmans" text="Назад" margin="mt-16" />
+						<LinkButton buttonType="filled" href="/admin/showmans" text="Назад" margin="mt-16" />
 					</div>
 				</>
 			)}

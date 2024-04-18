@@ -41,7 +41,7 @@ export const Vacancie = () => {
 								/>
 							</div>
 							<div className={styles.client__main__functional__vacancies}>
-								<ServiceCard number="01" placeholder="Кого ищем" href="vacancies-list" />
+								<ServiceCard number="01" placeholder="Кого ищем" href="/admin/vacancies-list" />
 							</div>
 						</div>
 					</div>

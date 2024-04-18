@@ -92,7 +92,7 @@ const AdminProducts: React.FC = () => {
 			</div>
 			<div className="mt-12 flex flex-row gap-10">
 				<AddButton buttonType="filled" text="Добавить" type="submit" />
-				<LinkButton buttonType="filled" href="products-list" text="Смотреть все" />
+				<LinkButton buttonType="filled" href="/admin/products-list" text="Смотреть все" />
 			</div>
 		</form>
 	)

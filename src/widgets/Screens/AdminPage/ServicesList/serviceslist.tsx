@@ -102,7 +102,7 @@ export const ServicesList = () => {
 								))}
 							</div>
 						</div>
-						<LinkButton buttonType="filled" href="services" text="Назад" margin="mt-8" />
+						<LinkButton buttonType="filled" href="/admin/services" text="Назад" margin="mt-8" />
 					</div>
 				</>
 			)}

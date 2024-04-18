@@ -75,7 +75,12 @@ export const AdminArticles = () => {
 			</div>
 			<div className="mt-8 flex flex-row items-center justify-center gap-10">
 				<AddButton buttonType="filled" text="Добавить" margin="mt-3" type="submit" />
-				<LinkButton buttonType="filled" href="articles-list" text="Смотреть все" margin="mt-3" />
+				<LinkButton
+					buttonType="filled"
+					href="/admin/articles-list"
+					text="Смотреть все"
+					margin="mt-3"
+				/>
 			</div>
 		</form>
 	)
