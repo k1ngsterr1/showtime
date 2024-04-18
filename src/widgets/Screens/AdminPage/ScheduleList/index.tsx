@@ -88,7 +88,6 @@ export const ScheduleList = () => {
 											price={scheduleItem.price}
 											name={scheduleItem.name}
 										/>
-										<Buttons buttonType="filled" text="Редактировать" margin="mt-12" />
 										<Buttons
 											buttonType="filled"
 											text="Удалить"
