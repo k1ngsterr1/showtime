@@ -59,7 +59,7 @@ export const UserScreen = () => {
 					</div>
 				</div>
 				<section className={styles.user_screen__container}>
-					<div className="sticky top-0 z-10 flex w-[35%] flex-col ">
+					<div className="sticky top-0 z-10 flex w-[30%] flex-col ">
 						<UserProfile name={userData?.username} rank={userData?.rank} />
 						<MoneyTab money={0} />
 						<HorizontalSeparator />

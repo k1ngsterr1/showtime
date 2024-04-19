@@ -8,16 +8,13 @@ import styles from '@widgets/Screens/UserPage/styles.module.scss'
 export const UserAside = () => {
 	return (
 		<>
-			<section>
+			<section className="flex justify-end">
 				<div className={styles.user_screen__column_container}>
 					<div className={styles.user_screen__column_container__games}>
-						<div className="flex w-full items-center justify-between">
+						<div className="] flex w-full items-center justify-between">
 							<span className={styles.user_screen__column_container__games__heading}>
 								Ближайшие игры
 							</span>
-							<a className={styles.user_screen__column_container__games__link} href="/all">
-								Подробнее
-							</a>
 						</div>
 						<NearestGameSwiper />
 					</div>
