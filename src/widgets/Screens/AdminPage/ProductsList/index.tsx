@@ -80,6 +80,7 @@ export const ProductsList = () => {
 								{products.map((product) => (
 									<div className={`${styles.card} mt-12`} key={product.id}>
 										<ProductCard
+											productId={product.id}
 											url={product.url}
 											name={product.name}
 											description={product.description}

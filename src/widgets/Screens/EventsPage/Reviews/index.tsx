@@ -46,7 +46,7 @@ const ReviewSection: React.FC = () => {
                 </div>
             </section>
             <section className={`${styles.bgPrimaryDark} ${styles.container_mob} bg-primary-dark`}>
-                <div className="mb-10 flex flex-col items-center ">
+                <div className="mb-10 mt-12 flex flex-col items-center ">
                     <h3 className="text-primary-red">Отзывы</h3>
                     <Paragraph
                         align="text-center"
