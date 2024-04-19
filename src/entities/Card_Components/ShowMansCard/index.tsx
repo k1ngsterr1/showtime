@@ -35,7 +35,7 @@ export const ShowMansCard: React.FC<Props> = ({ url, text, name, showmanId, edit
             formData.append('showmanId', showmanId.toString())
 
             await updateShowman(formData)
-            setEditing(false) // Turn off editing mode after saving
+            setEditing(false) 
         } else {
             console.log('All fields are required')
         }

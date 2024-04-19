@@ -78,9 +78,9 @@ export const ReviewsList = () => {
 						<div className={styles.services__content_cards}>
 							<div className={styles.services__content_card}>
 								{reviews.map((review) => (
-									<div className={`${styles.card} mt-12`}>
+									<div className={`${styles.card} mt-12`}key={review.id}
+									>
 										<ReviewCard
-											key={review.id}
 											date={review.date}
 											text={review.text}
 											name={review.name}

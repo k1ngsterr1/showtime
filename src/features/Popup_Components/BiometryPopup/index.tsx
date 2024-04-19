@@ -26,13 +26,13 @@ export const BiometryPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupS
 					{/* <h1 className={styles.popup__heading}>Аутнетификация</h1> */}
 					<FontAwesomeIcon className={styles.popup__icon} icon={faClose} onClick={onClick} />
 				</div>
-				<div className="mt-8 flex flex-col items-center justify-center">
+				<div className="mt-8 flex flex-col items-center justify-center overflow-hidden">
 					<Paragraph
-						paragraphType="red-center"
+						paragraphType="red-center-mob"
 						text="Спасибо! Ваш профиль будет подтвержден или отклонен в течении 24 часов "
-						width="60%"
+						width="70%"
 					/>
-					<LinkReactButton buttonType="filled" href="/" text="На главную" margin="mt-5" />
+					<LinkReactButton buttonType="filled_mob" href="/" text="На главную" margin="mt-5" />
 				</div>
 			</section>
 		</div>

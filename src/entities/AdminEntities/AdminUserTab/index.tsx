@@ -5,6 +5,7 @@ import styles from './style.module.scss';
 import Fedora from '@assets/logo/fedora.svg';
 import useFileUpload from '@shared/lib/hooks/useFileUpload';
 import { Input } from '@shared/ui/Inputs/DefaultInput';
+import { useUpdateWorker } from '@shared/lib/hooks/Admin/Update/useUpdateWorker';
 
 interface UserTab {
   email: string;
@@ -29,9 +30,29 @@ export const AdminUserTab: React.FC<UserTab> = ({
 }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
-  const [editableEmail, setEditableEmail] = useState(email);
-  const [editablePosition, setEditablePosition] = useState(position);
-  const { previewUrl, handleFileChange } = useFileUpload();
+  const { previewUrl, handleFileChange, selectedFile } = useFileUpload()
+	const [workerName, setWorkerName] = useState('')
+	const [workerPosition, setWorkerPosition] = useState('')
+  const { updateWorker } = useUpdateWorker()
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault()
+
+		if (selectedFile && workerName && workerPosition) {
+			const formData = new FormData()
+			formData.append('pictureName', selectedFile)
+			formData.append('email', workerName)
+			formData.append('position', workerPosition)
+
+			try {
+				await updateWorker(formData)
+			} catch (error) {
+				console.error('Error adding worker:', error)
+			}
+		} else {
+			console.log('All fields are required')
+		}
+	}
 
   const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
   const toggleEdit = () => setIsEditMode(!isEditMode);
@@ -41,6 +62,7 @@ export const AdminUserTab: React.FC<UserTab> = ({
   const userTextClass = `${styles.usertab__text} ${styles[`usertab__text--${userTextType}`]}`;
 
   return (
+    <form onSubmit={handleSubmit}>
     <div className={userTabClass}>
       <div className={styles['kebab-menu']} onClick={toggleMenu}>
         <FontAwesomeIcon icon={faEllipsisV}className="text-3xl" />
@@ -48,7 +70,7 @@ export const AdminUserTab: React.FC<UserTab> = ({
       {isMenuVisible && (
         <div className={styles.menu}>
           {isEditMode ? (
-            <button className={styles.menu_btn} onClick={toggleEdit}>Сохранить</button>
+            <button className={styles.menu_btn} type="submit" onClick={toggleEdit}>Сохранить</button>
           ) : (
             <button className={styles.menu_btn} onClick={toggleEdit}>Редактировать</button>
           )}
@@ -78,17 +100,17 @@ export const AdminUserTab: React.FC<UserTab> = ({
 				  inputType="teamname"
 				  placeholder="Email"
 				  type="text"
-				//   value={workerName}
-				//   onChange={(e) => setWorkerName(e.target.value)}
-				  name="email"
+          value={workerName}
+					onChange={(e) => setWorkerName(e.target.value)}
+					name="email"
 			  />
 			  <Input
 				  inputType="teamposition"
 				  placeholder="Должность"
 				  type="text"
-				//   value={workerPosition}
-				//   onChange={(e) => setWorkerPosition(e.target.value)}
-				  name="position"
+				  value={workerPosition}
+					onChange={(e) => setWorkerPosition(e.target.value)}
+					name="position"
 			  />
 		  </div>
         </div>
@@ -104,5 +126,6 @@ export const AdminUserTab: React.FC<UserTab> = ({
         </>
       )}
     </div>
+    </form>
   );
 };

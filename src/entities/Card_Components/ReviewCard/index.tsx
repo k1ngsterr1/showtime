@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import ReactButton from '@shared/ui/Buttons/DefaultReactButton/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useUpdateReview } from '@shared/lib/hooks/Admin/Update/useUpdatedReview';
-import { Input } from '@shared/ui/Inputs/DefaultInput/index'
-import { TextArea } from '@shared/ui/TexrArea/index' // Corrected import path
-import CalendarComponent from '@features/Calendar/reviewcalendar'
-import { StarRating } from '@shared/ui/StarRating/index'
+import { Input } from '@shared/ui/Inputs/DefaultInput/index';
+import { TextArea } from '@shared/ui/TexrArea';
+import CalendarComponent from '@features/Calendar/reviewcalendar';
+import { StarRating } from '@shared/ui/StarRating/index';
 import RounderHat from '@shared/ui/Icons/RounderHat';
-import Fedora from '@assets/logo/fedora.svg'; 
-import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
+import Buttons from '@shared/ui/Buttons/DefaultReactButton/index';
+import Fedora from '@assets/logo/fedora.svg'
 
 
 import styles from './styles.module.scss';
@@ -20,43 +19,39 @@ export interface Props {
     name: string;
     rating: number;
     reviewId: number;
+    editing: boolean;
 }
 
-export const ReviewCard: React.FC<Props> = ({ text, date, name, rating, reviewId }) => {
-    const [editing, setEditing] = useState(false);
+export const ReviewCard: React.FC<Props> = ({ text, date, name, rating, reviewId, editing: initialEditing }) => {
+    const [editing, setEditing] = useState(initialEditing);
     const [reviewName, setReviewName] = useState(name);
     const [reviewText, setReviewText] = useState(text);
-    const [ratingReview, setRatingReview] = useState<number | null>(rating);
+    const [ratingReview, setRating] = useState<number | null>(rating);
     const [selectedDate, setSelectedDate] = useState<string>(date);
     const { updateReview } = useUpdateReview();
 
-    const handleSubmit = async (event: React.FormEvent) => {
-        event.preventDefault();
-
+    const handleUpdate = async () => {
         if (reviewName && reviewText && ratingReview !== null && selectedDate) {
             const formData = new FormData();
             formData.append('name', reviewName);
             formData.append('text', reviewText);
-            formData.append('rating', ratingReview.toString());
+            formData.append('ratingReview', setRating.toString());
             formData.append('date', selectedDate);
             formData.append('reviewId', reviewId.toString());
 
             await updateReview(formData);
+            setEditing(false); 
         } else {
             console.log('All fields including rating are required');
         }
     };
 
-    const handleEditToggle = () => {
-        setEditing(!editing);
-    };
-
     return (
-        <form className='flex flex-col justify-center items-center' onSubmit={handleSubmit}>
+        <div className='flex flex-col justify-center items-center'>
             <div className={styles.review}>
                 {editing ? (
                     <>
-					<div className={styles.card}>
+                    <div className={styles.card}>
 					<CalendarComponent marginClass="mt-3" onDateChange={setSelectedDate} />
 					<div className={`${styles.card__client} mt-4`}>
 						<div className={styles.card__client_circle}>
@@ -71,10 +66,10 @@ export const ReviewCard: React.FC<Props> = ({ text, date, name, rating, reviewId
 							name="name"
 						/>
 					</div>
-						<div className="mt-2">
-							<StarRating onRatingChange={(rating) => setRatingReview(rating)} />
-						</div>
-                        <div className={styles.card__review}>
+					<div className="mt-2">
+						<StarRating onRatingChange={(ratingReview) => setRating(ratingReview)} />
+					</div>
+					<div className={styles.card__review}>
 						<TextArea
 							textareaType="review"
 							placeholder="Текст отзыва"
@@ -83,7 +78,7 @@ export const ReviewCard: React.FC<Props> = ({ text, date, name, rating, reviewId
 							onChange={(e) => setReviewText(e.target.value)}
 						/>
 					</div>
-					</div>
+                    </div>
                     </>
                 ) : (
                     <>
@@ -109,7 +104,11 @@ export const ReviewCard: React.FC<Props> = ({ text, date, name, rating, reviewId
                     </>
                 )}
             </div>
-            <Buttons buttonType={editing ? "filled" : "filled"} text={editing ? "Сохранить" : "Редактировать"} margin="mt-10" onClick={handleEditToggle} />
-        </form>
+            {editing ? (
+                <Buttons buttonType="filled" text="Сохранить" margin="mt-10" onClick={handleUpdate} />
+            ) : (
+                <Buttons buttonType="filled" text="Редактировать" margin="mt-10" onClick={() => setEditing(true)} />
+            )}
+        </div>
     );
 };
