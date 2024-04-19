@@ -5,12 +5,13 @@ import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 
 import styles from '../styles/styles.module.scss'
 import { Input } from '@shared/ui/Inputs/DefaultInput'
+import { useChangePassword } from '@shared/lib/hooks/useChangePassword'
 
 export const PasswordForm = () => {
 	const [formData, setFormData] = useState({
 		email: '',
 		newPassword: '',
-		newPasswordConfirm: ''
+		newConfirmPassword: ''
 	})
 
 	const handleInputChange = (e: any) => {
@@ -22,16 +23,14 @@ export const PasswordForm = () => {
 		}))
 	}
 
-	// const handleSubmit = async (event: any) => {
-	// 	event.preventDefault()
-	// 	try {
-	// 		const error = await createAccount(formData)
-	// 		setLoginError(error)
-	// 		console.log(loginError)
-	// 	} catch (error) {
-	// 		console.error('Account creation failed:', error)
-	// 	}
-	// }
+	const handleSubmit = async (event: any) => {
+		event.preventDefault()
+		try {
+			const error = await useChangePassword(formData)
+		} catch (error) {
+			console.error('Account creation failed:', error)
+		}
+	}
 
 	return (
 		<div>
@@ -43,8 +42,7 @@ export const PasswordForm = () => {
 						к миру игры "Мафия" и вашему участию в захватывающих партиях. Смена пароля поможет
 						защитить вашу личную информацию и сохранить доступ к игре только для вас.
 					</p>
-					<form action="" className={styles.registration__form}>
-						{' '}
+					<form action="" className={styles.registration__form} onSubmit={handleSubmit}>
 						<Input
 							placeholder="Электронная почта"
 							name="email"
@@ -66,11 +64,11 @@ export const PasswordForm = () => {
 						/>
 						<PasswordInput
 							placeholder="Подтвердите новый пароль"
-							name="newPasswordConfirm"
+							name="newConfirmPassword"
 							margin="mt-4"
 							type="password"
 							required
-							value={formData.oldPassword}
+							value={formData.newConfirmPassword}
 							onChange={handleInputChange}
 						/>
 						<ReactButton
