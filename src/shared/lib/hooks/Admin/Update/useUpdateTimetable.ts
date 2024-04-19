@@ -24,7 +24,7 @@ export function useUpdateTimetable() {
 
 			setTimetableData(response.data)
 		} catch (error) {
-			console.error('There was an error with deleting timetable')
+			console.error('There was an error with updating timetable')
 		}
 	}
 

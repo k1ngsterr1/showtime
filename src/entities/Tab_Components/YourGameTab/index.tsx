@@ -28,7 +28,7 @@ export const YourGameTab: React.FC<YourGameTabProps> = ({ gameName, userId, room
 			<div className="flex w-full items-center justify-between">
 				<div className="flex flex-col items-start">
 					<span className={styles.game_tab__text}>{gameName}</span>
-					<span className={styles.game_tab__text}>{roomId}</span>
+					<span className={styles.game_tab__text}>id: {roomId}</span>
 					<span className={styles.game_tab__type}>Классическая</span>
 				</div>
 				<div className="flex items-center gap-5">
