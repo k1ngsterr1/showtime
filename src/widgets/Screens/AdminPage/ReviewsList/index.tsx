@@ -85,8 +85,8 @@ export const ReviewsList = () => {
 											text={review.text}
 											name={review.name}
 											rating={review.rating}
+											reviewId={review.id}
 										/>
-										<Buttons buttonType="filled" text="Редактировать" margin="mt-10" />
 										<Buttons
 											buttonType="filled"
 											text="Удалить"
