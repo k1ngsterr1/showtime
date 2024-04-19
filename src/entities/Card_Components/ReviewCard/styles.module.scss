@@ -41,10 +41,19 @@
 			width: clamp(130px, 60.746399999999994vw, 520px);
 			height: clamp(75px, 35.046vw, 300px);
 		}
+
+		span {
+			font-size: clamp(10px,4.6728vw,40px);
+		}
 	}
 	.paragraph {
-		font-size: clamp(9px, 4.20552vw, 36px);
+		font-size: clamp(7px,3.2709599999999996vw,28px);
 		line-height: clamp(11.5px, 5.37372vw, 46px);
 		color: #232323;
 	}
+
+	.stars {
+		font-size: clamp(12px,5.60736vw,48px);
+	}
 }
+
