@@ -63,11 +63,11 @@ export const adminpanel = [
     href: "/admin/news",
   },
 
-  {
-    icon: faPenToSquare,
-    tab: "Статьи",
-    href: "/admin/articles",
-  },
+  // {
+  //   icon: faPenToSquare,
+  //   tab: "Статьи",
+  //   href: "/admin/articles",
+  // },
 
   {
     icon: faCalendarDays,

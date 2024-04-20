@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro'
 import { Form } from '@widgets/Screens/ContactForm/index'
 import Mans from '@widgets/Screens/EventsPage/mans.astro'
 import { ShowForm } from '@widgets/Screens/ShowManForm/index'
-import Reviews from '@widgets/Screens/EventsPage/Reviews/index.astro'
+import Reviews from '@widgets/Screens/EventsPage/Reviews'
 
 import styles from './styles/Events/styles.module.scss'
 import '@shared/styles/scrollbar.scss'
@@ -30,7 +30,7 @@ import Logo from '@assets/logo/logo.png'
 		<EventsPage />
 	</main>
 	<Mans />
-	<Reviews />
+	<Reviews client:load/>
 	<ShowForm />
 	<Footer to="main" />
 </Layout>

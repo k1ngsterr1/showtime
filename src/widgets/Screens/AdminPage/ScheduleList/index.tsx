@@ -81,6 +81,7 @@ export const ScheduleList = () => {
 								{timetables.map((scheduleItem) => (
 									<div className="flex flex-col items-center justify-center" key={scheduleItem.id}>
 										<ScheduleListCard
+											timetableId={scheduleItem.id}
 											time={scheduleItem.timestamp}
 											place={scheduleItem.place}
 											address={scheduleItem.address}
@@ -88,7 +89,6 @@ export const ScheduleList = () => {
 											price={scheduleItem.price}
 											name={scheduleItem.name}
 										/>
-										<Buttons buttonType="filled" text="Редактировать" margin="mt-12" />
 										<Buttons
 											buttonType="filled"
 											text="Удалить"

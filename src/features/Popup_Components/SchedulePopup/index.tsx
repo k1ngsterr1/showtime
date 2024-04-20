@@ -11,6 +11,8 @@ import { ru } from 'date-fns/locale'
 import ReactButton from '@shared/ui/Buttons/DefaultReactButton'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import { useSendEmail } from '@shared/lib/hooks/useSendEmail'
+import emailjs from '@emailjs/browser'
 
 import styles from './styles.module.scss'
 
@@ -38,6 +40,8 @@ export const SchedulePopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupS
 		setIsOpen(!isOpen)
 	}
 
+	const { handleProductSubmit, handleBookSubmit } = useSendEmail()
+
 	return (
 		<div className={styles.overlay} onClick={handleOverlayClick}>
 			<section className={styles.popup} onClick={(e) => e.stopPropagation()}>
@@ -46,7 +50,7 @@ export const SchedulePopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupS
 				</div>
 				<div className="mt-8 flex flex-col items-center justify-center">
 					<div>
-						<form className={styles.form_screen_mob__form}>
+						<form className={styles.form_screen_mob__form} onSubmit={() => handleBookSubmit(event)}>
 							<div className="mt-12 flex flex-col items-center">
 								<Input type="text" inputType="default-red" placeholder="Введите ваше имя" />
 								<Input

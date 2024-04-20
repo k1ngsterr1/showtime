@@ -1,69 +1,71 @@
-import React, { useState } from 'react'
-import { useUpdateTimetable } from '@shared/lib/hooks/Admin/Update/useUpdateTimetable'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import styles from './styles.module.scss'
-import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
-import { Input } from '@shared/ui/Inputs/DefaultInput/index'
-import { TextArea } from '@shared/ui/TexrArea'
-import CalendarComponent from '@features/Calendar/index'
+import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import styles from './styles.module.scss';
+import Buttons from '@shared/ui/Buttons/DefaultReactButton/index';
+import { Input } from '@shared/ui/Inputs/DefaultInput/index';
+import { TextArea } from '@shared/ui/TexrArea';
+import CalendarComponent from '@features/Calendar/index';
+import { useUpdateTimetable } from '@shared/lib/hooks/Admin/Update/useUpdateTimetable';
 
-export interface IScheduleListCard {
-	date: string
-	time: string
-	place: string
-	address: string
-	price: string
-	name: string
+interface IScheduleListCard {
+    date: string;
+    time: string;
+    place: string;
+    address: string;
+    price: string;
+    name: string;
+    timetableId: number;
 }
 
+
+
 export const ScheduleListCard: React.FC<IScheduleListCard> = ({
-	date,
-	time,
-	place,
-	address,
-	price,
-	name
+    date,
+    time,
+    place,
+    address,
+    price,
+    name,
+    timetableId,
 }) => {
-	const { updateTimetable } = useUpdateTimetable()
 	const [isEditing, setIsEditing] = useState(false)
-	const [selectedDate, setSelectedDate] = useState<string>('')
+	const [timeSchedule, setTimeSchedule] = useState('')
+	const [reviewDate, setReviewDate] = useState('')
+	const [placeSchedule, setPlaceSchedule] = useState('')
+	const [addressSchedule, setAddressSchedule] = useState('')
+	const [priceSchedule, setPriceSchedule] = useState('')
+	const [nameSchedule, setNameSchedule] = useState('')
 
-	const [formData, setFormData] = useState<IScheduleListCard>({
-		date,
-		time,
-		place,
-		address,
-		price,
-		name
-	})
+	const { updateTimetable } = useUpdateTimetable()
 
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		const { name, value } = e.target
-		setFormData((prevState) => ({
-			...prevState,
-			[name]: value
-		}))
-	}
+	const handleUpdate = async (e: React.FormEvent) => {
+		e.preventDefault()
 
-	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault()
-		const dataToSend = new FormData()
-		Object.entries(formData).forEach(([key, value]) => {
-			dataToSend.append(key, value)
-		})
+		if (timeSchedule && reviewDate && placeSchedule && priceSchedule && nameSchedule && addressSchedule) {
+			const formData = new FormData()
+			formData.append('timestamp', timeSchedule)
+			formData.append('place', placeSchedule)
+			formData.append('date', reviewDate)
+			formData.append('price', priceSchedule)
+			formData.append('name', nameSchedule)
+			formData.append('address', addressSchedule)
+			formData.append('timetableId', timetableId.toString())
 
-		await updateTimetable(dataToSend)
+			await updateTimetable(formData)
+		} else {
+			console.log('All fields are required')
+		}
 	}
 
 	return (
-		<form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
+		<form onSubmit={handleUpdate} className="flex flex-col items-center justify-center">
 			{isEditing ? (
 				<>
 					<div className={styles.change}>
 						<div className={styles.change__upper}>
 							<span className={styles.change__upper__date}>
-								<CalendarComponent onDateChange={setSelectedDate} />
+								<CalendarComponent onDateChange={setReviewDate} />
 							</span>
 							<div className="pl-56">
 								<Input
@@ -71,8 +73,7 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({
 									inputType="default-red-small"
 									placeholder="Время"
 									name="timestamp"
-									onChange={handleInputChange}
-								/>
+									onChange={(e) => setTimeSchedule(e.target.value)}								/>
 							</div>
 						</div>
 						<Input
@@ -81,15 +82,14 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({
 							placeholder="Название"
 							margin="mt-12 ml-4"
 							name="name"
-							onChange={handleInputChange}
-						/>
+							onChange={(e) => setNameSchedule(e.target.value)}								/>
 						<TextArea
 							textareaType="schedule"
 							placeholder="Адрес"
 							margin="mt-8"
 							name="address"
-							onChange={handleInputChange}
-						/>
+							onChange={(e) => setAddressSchedule(e.target.value)}		
+													/>							
 						<div className={styles.change__down}>
 							<div className=" mb-2 flex items-center overflow-hidden text-2xl">
 								<FontAwesomeIcon icon={faLocationDot} className={styles.change__icon} />
@@ -104,8 +104,7 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({
 										inputType="default-red-medium"
 										type="text"
 										name="place"
-										onChange={handleInputChange}
-									/>
+										onChange={(e) => setPlaceSchedule(e.target.value)}								/>
 								</a>
 							</div>
 							<div>
@@ -114,8 +113,7 @@ export const ScheduleListCard: React.FC<IScheduleListCard> = ({
 									inputType="default-red-small"
 									placeholder="Цена"
 									name="price"
-									onChange={handleInputChange}
-								/>
+									onChange={(e) => setPriceSchedule(e.target.value)}								/>
 							</div>
 						</div>
 					</div>

@@ -22,6 +22,20 @@
 	}
 }
 
+.filled_mob {
+	@apply font-neoregular;
+	font-weight: 100;
+	cursor: none;
+	font-size: clamp(10px, 4.6728vw, 40px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: clamp(100px,46.727999999999994vw,400px);
+	height: clamp(50px,23.363999999999997vw,200px);
+	@apply text-primary-light;
+	background-color: #af1306;
+}
+
 .buttonIcon {
 	@apply text-2xl;
 	@apply text-primary-light;

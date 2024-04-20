@@ -1,6 +1,6 @@
 import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import Buttons from '@shared/ui/Buttons/DefaultReactButton/index'
-import { ProductCard } from '@entities/Card_Components/ProductsCard'
+import { ProductCard } from '@entities/Card_Components/ProductsCard/admin'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDeleteProduct } from '@shared/lib/hooks/Admin/Delete/useDeleteProduct'
@@ -80,16 +80,16 @@ export const ProductsList = () => {
 								{products.map((product) => (
 									<div className={`${styles.card} mt-12`} key={product.id}>
 										<ProductCard
+											productId={product.id}
 											url={product.url}
 											name={product.name}
 											description={product.description}
 											price={product.price}
 										/>
-										<Buttons buttonType="filled" text="Редактировать" margin="mt-5" />
 										<Buttons
 											buttonType="filled"
 											text="Удалить"
-											margin="mt-10"
+											margin="mt-5"
 											onClick={() => handleDeleteProduct(product.id)}
 										/>
 									</div>

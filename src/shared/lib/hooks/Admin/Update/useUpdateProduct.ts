@@ -8,22 +8,20 @@ export function useUpdateProduct() {
 		try {
 			const userData = JSON.parse(localStorage.getItem('userData'))
 			const refreshToken = userData.refresh
-			const formData = new FormData()
-			Object.keys(data).forEach((key) => formData.append(key, data[key]))
 
 			const response = await axios.patch(
 				'https://showtimeserver-production.up.railway.app/api/admin/update-product',
-				formData,
+				data,
 				{
 					headers: {
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}
 			)
-
+			console.log('here is my data:', data, response.data)
 			setProductData(response.data)
 		} catch (error) {
-			console.error('There was an error with updating product')
+			console.error('There was an error with updating showman')
 		}
 	}
 

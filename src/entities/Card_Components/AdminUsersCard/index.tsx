@@ -7,9 +7,11 @@ interface Props {
 	verificationPhoto: string
 	username: string
 	userID: number
+	email: string
+	phoneNumber: string
 }
 
-const UsersCard: React.FC<Props> = ({ userID, verificationPhoto, username }) => {
+const UsersCard: React.FC<Props> = ({ userID, verificationPhoto, username, phoneNumber,email}) => {
 	const { addAdminVerifyUser } = useAddVerifiedAdminUser()
 	const [isVerified, setIsVerified] = useState<boolean>()
 
@@ -39,6 +41,9 @@ const UsersCard: React.FC<Props> = ({ userID, verificationPhoto, username }) => 
 				<div className="flex flex-col items-center justify-center">
 					<img src={verificationPhoto} alt={username} className={styles.card_picture} />
 					<span className={styles.card__name}>{username}</span>
+					<span className={styles.card__name}>{phoneNumber}</span>
+					<span className={styles.card__name}>{email}</span>
+
 				</div>
 			</div>
 			<div className="mt-8 flex flex-row gap-10">

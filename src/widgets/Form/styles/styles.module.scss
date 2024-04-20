@@ -74,7 +74,7 @@
 	}
 
 	&__heading {
-		font-size: clamp(50px, 5.208vw, 200px);
+		font-size: clamp(47.5px,4.9476vw,190px);
 		@apply font-killbill;
 		@apply text-primary-red;
 	}
@@ -170,6 +170,8 @@
 	.registration__heading {
 		text-align: center;
 		width: 80%;
+		font-size: clamp(24px,11.21472vw,96px)
+;
 	}
 
 	.registration__paragraph {

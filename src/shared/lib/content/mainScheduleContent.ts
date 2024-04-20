@@ -2,7 +2,7 @@ export const cards = [
 	{
 		day: 'Вторник',
 		place: '',
-		price: '10.000 тг',
+		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{
@@ -35,7 +35,7 @@ export const cardsMob = [
 	{
 		day: 'Вторник',
 		place: '',
-		price: '10.000 тг',
+		price: '5.000 тг',
 		time: 'с 20:00 по 02:00'
 	},
 	{

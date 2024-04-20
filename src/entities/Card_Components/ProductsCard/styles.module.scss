@@ -9,6 +9,10 @@
 	font-weight: 600;
 	box-shadow: 16px 16px 0px 0px #bf2316;
 
+	
+
+	
+
 	&__image {
 		@apply mt-10;
 		width: clamp(136px, 14.16576vw, 544px);
@@ -20,7 +24,29 @@
 	&__heading {
 		@apply mt-4 font-killbill text-2xl;
 	}
+
+	.container__content__upload {
+		@apply mt-12;
+		@apply gap-4;
+		border: 4px solid #bf2316;
+		width: clamp(136px, 14.16576vw, 544px);
+		height: clamp(125px, 13.02vw, 500px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		&_fedora {
+			width: clamp(45px, 4.6872vw, 180px);
+		}
+	}
+	.container__content__previewImage {
+		@apply mt-12;
+		width: clamp(136px, 14.16576vw, 544px);
+		height: clamp(125px, 13.02vw, 500px);
+	}
 }
+
 
 @media (min-width: 375px) and (max-width: 600px) {
 	.card {

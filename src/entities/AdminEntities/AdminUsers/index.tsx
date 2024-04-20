@@ -38,6 +38,8 @@ const AdminUsers: React.FC = () => {
 							userID={user.id}
 							verificationPhoto={user.verificationPhoto}
 							username={user.username}
+							email={user.email}
+							phoneNumber={user.phoneNumber}
 						/>
 					</div>
 				))}

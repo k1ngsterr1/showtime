@@ -16,7 +16,7 @@ interface ICardProps {
 	name: string
 }
 
-export const ReviewCard: React.FC<ICardProps> = ({ name }) => {
+export const ReviewCard: React.FC<ICardProps> = () => {
 	const [reviewName, setReviewName] = useState('')
 	const [reviewText, setReviewText] = useState('')
 	const [rating, setRating] = useState<number | null>(null)
