@@ -6,6 +6,7 @@ import Fedora from '@assets/logo/fedora.svg';
 import useFileUpload from '@shared/lib/hooks/useFileUpload';
 import { Input } from '@shared/ui/Inputs/DefaultInput';
 import { useUpdateWorker } from '@shared/lib/hooks/Admin/Update/useUpdateWorker';
+import { isReadonlyKeywordOrPlusOrMinusToken } from 'typescript';
 
 interface UserTab {
   email: string;
@@ -40,9 +41,9 @@ export const AdminUserTab: React.FC<UserTab> = ({
 
 		if (selectedFile && workerName && workerPosition) {
 			const formData = new FormData()
-			formData.append('pictureName', selectedFile)
-			formData.append('email', workerName)
-			formData.append('position', workerPosition)
+      formData.append('pictureName', selectedFile)
+      formData.append('email', workerName)
+      formData.append('position', workerPosition)
 
 			try {
 				await updateWorker(formData)
@@ -70,7 +71,7 @@ export const AdminUserTab: React.FC<UserTab> = ({
       {isMenuVisible && (
         <div className={styles.menu}>
           {isEditMode ? (
-            <button className={styles.menu_btn} type="submit" onClick={toggleEdit}>Сохранить</button>
+            <button className={styles.menu_btn} type="submit" >Сохранить</button>
           ) : (
             <button className={styles.menu_btn} onClick={toggleEdit}>Редактировать</button>
           )}
@@ -129,3 +130,5 @@ export const AdminUserTab: React.FC<UserTab> = ({
     </form>
   );
 };
+
+
