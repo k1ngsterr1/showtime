@@ -60,3 +60,10 @@
 }
 
 
+@media (min-width: 375px) and (max-width: 600px) {
+	.popup {
+		width: clamp(185px,86.4468vw,740px);
+		height: clamp(150px,70.092vw,600px);
+		overflow: hidden;
+	}
+}
