@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser'
+import { useState } from 'react'
 
 export interface SendFormData {
 	name: string
@@ -14,9 +15,9 @@ export interface BookFormData {
 	date: string
 }
 
-export function useSendEmail() {
-	const onSubmit = (event?: React.BaseSyntheticEvent) => {
-		if (event) {
+export function useSendEmail(setPopupOpen: (isOpen: boolean) => void) {
+    const onSubmit = async (event?: React.BaseSyntheticEvent) => {
+        if (event) {
 			event.preventDefault()
 
 			emailjs
@@ -24,15 +25,17 @@ export function useSendEmail() {
 				.then(
 					(result) => {
 						console.log('Email successfully sent!', result.text)
+						setPopupOpen(true); 
 					},
 					(error) => {
 						console.error('Failed to send email:', error.text)
+						setPopupOpen(false); 
 					}
 				)
 		}
 	}
 
-	const onBookSubmit = (event?: React.BaseSyntheticEvent) => {
+    const onBookSubmit = async (event?: React.BaseSyntheticEvent) => {
 		if (event) {
 			event.preventDefault()
 
@@ -41,16 +44,15 @@ export function useSendEmail() {
 				.then(
 					(result) => {
 						console.log('Email successfully sent!', result.text)
+						setPopupOpen(true); 
 					},
 					(error) => {
 						console.error('Failed to send email:', error.text)
+						setPopupOpen(true); 
 					}
 				)
 		}
 	}
 
-	return {
-		handleProductSubmit: onSubmit,
-		handleBookSubmit: onBookSubmit
-	}
+    return { handleProductSubmit: onSubmit, handleBookSubmit: onBookSubmit };
 }

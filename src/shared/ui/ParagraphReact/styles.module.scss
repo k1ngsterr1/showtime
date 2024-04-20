@@ -6,14 +6,13 @@
 	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
 }
 
-.paragraph--red-center-mob {
+.paragraph--red-center {
 	@apply text-primary-red;
 	@apply font-neoregular;
-	font-size: clamp(8px,3.73824vw,32px);
+	font-size: clamp(12px,1.24992vw,48px);
 	font-weight: 400;
 	line-height: clamp(13.52px, 1.4082432vw, 54.08px);
 	text-align: center;
-	line-height: 24px;
 }
 
 .paragraph--white {
