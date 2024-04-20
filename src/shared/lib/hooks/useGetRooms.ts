@@ -11,7 +11,9 @@ export function useGetRooms(userId: number) {
 
 		const fetchRooms = async () => {
 			try {
-				const response = await axios.get('https://showtime.up.railway.app/api/rooms/get-rooms')
+				const response = await axios.get(
+					'https://showtimeserver-production.up.railway.app/api/rooms/get-rooms'
+				)
 
 				if (isMounted) {
 					setRooms(response.data.rooms)

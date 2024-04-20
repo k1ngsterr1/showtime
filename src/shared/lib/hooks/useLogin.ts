@@ -22,6 +22,7 @@ export async function loginAccount(loginData: ILoginData) {
 
 		const userData = {
 			id: data.id,
+			isVerified: data.isVerified,
 			username: data.username,
 			email: data.email,
 			role: data.role,

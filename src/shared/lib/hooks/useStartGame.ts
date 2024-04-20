@@ -14,7 +14,7 @@ export function useStartGame() {
 			}
 
 			const response = await axios.post(
-				`http://localhost:4000/api/game/start-game/${roomId}`,
+				`https://showtimeserver-production.up.railway.app/api/game/start-game/${roomId}`,
 				{},
 				config
 			)
