@@ -17,8 +17,13 @@ export interface BookFormData {
 
 export function useSendEmail(setPopupOpen: (isOpen: boolean) => void) {
     const onSubmit = async (event?: React.BaseSyntheticEvent) => {
+
+		console.log('event is here:', event)
+
         if (event) {
 			event.preventDefault()
+
+
 
 			emailjs
 				.sendForm('service_dd4uss8', 'template_4jzmmtl', event.target, 'rx3w3xxnueyg_N0Mp')

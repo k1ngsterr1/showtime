@@ -6,7 +6,6 @@ import Fedora from '@assets/logo/fedora.svg';
 import useFileUpload from '@shared/lib/hooks/useFileUpload';
 import { Input } from '@shared/ui/Inputs/DefaultInput';
 import { useUpdateWorker } from '@shared/lib/hooks/Admin/Update/useUpdateWorker';
-import { isReadonlyKeywordOrPlusOrMinusToken } from 'typescript';
 
 interface UserTab {
   email: string;

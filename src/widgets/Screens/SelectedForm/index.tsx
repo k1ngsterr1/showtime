@@ -122,10 +122,10 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			case 'delivery':
 				return (
 					<>
-						<form
-							className={styles.form_screen_mob__form}
-							onSubmit={() => handleProductSubmit(event)}
-						>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleProductSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input
 									type="text"
@@ -167,7 +167,10 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			case 'book':
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form} onSubmit={() => handleBookSubmit(event)}>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleBookSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input
 									type="text"
@@ -216,7 +219,10 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			case 'question':
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form}>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleBookSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input type="text" inputType="default-red" placeholder="Введите ваше имя" />
 								<Input
@@ -239,7 +245,10 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			default:
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form}>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleBookSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input type="text" name="name" inputType="default-red" placeholder="Ваше имя" />
 								<Input

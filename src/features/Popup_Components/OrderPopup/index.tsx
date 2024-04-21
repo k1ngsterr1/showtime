@@ -29,7 +29,7 @@ export const OrderPopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupStat
 					<Paragraph
 						paragraphType="red-center"
 						text={text}
-						width="60%"
+						width="80%"
                         margin='mb-8'
 					/>
 				</div>
