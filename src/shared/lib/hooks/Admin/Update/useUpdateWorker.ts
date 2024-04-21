@@ -13,9 +13,10 @@ export function useUpdateWorker() {
 
 			const response = await axios.patch(
 				'https://showtimeserver-production.up.railway.app/api/admin/update-worker',
-				formData,
+				data,
 				{
 					headers: {
+						'Content-Type': 'multipart/form-data',
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}

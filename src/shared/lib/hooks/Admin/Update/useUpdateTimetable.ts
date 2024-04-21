@@ -17,6 +17,7 @@ export function useUpdateTimetable() {
 				data,
 				{
 					headers: {
+						'Content-Type': 'application/json',
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}

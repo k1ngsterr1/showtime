@@ -32,10 +32,11 @@ export const ReviewCard: React.FC<Props> = ({ text, date, name, rating, reviewId
 
     const handleUpdate = async () => {
         if (reviewName && reviewText && ratingReview !== null && selectedDate) {
+            console.log(rating);
             const formData = new FormData();
             formData.append('name', reviewName);
             formData.append('text', reviewText);
-            formData.append('ratingReview', setRating.toString());
+            formData.append('ratingReview', rating.toString());
             formData.append('date', selectedDate);
             formData.append('reviewId', reviewId.toString());
 

@@ -11,10 +11,10 @@ export function useUpdateReview() {
 
 			const response = await axios.patch(
 				'https://showtimeserver-production.up.railway.app/api/admin/update-review',
-				formData,
+				data,
 				{
 					headers: {
-						'Content-Type': 'multipart/form-data',
+						'Content-Type': 'application/json',
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}

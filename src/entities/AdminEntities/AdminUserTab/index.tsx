@@ -16,6 +16,7 @@ interface UserTab {
   userPhotoType?: string | 'users';
   userTextType?: string | 'users';
   onDelete?: () => void;
+  workerId?: number;
 }
 
 export const AdminUserTab: React.FC<UserTab> = ({
@@ -26,7 +27,8 @@ export const AdminUserTab: React.FC<UserTab> = ({
   userTabType = 'users',
   userPhotoType = 'users',
   userTextType = 'users',
-  onDelete
+  onDelete,
+  workerId
 }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
@@ -38,11 +40,13 @@ export const AdminUserTab: React.FC<UserTab> = ({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
-		if (selectedFile && workerName && workerPosition) {
+		if (selectedFile && workerName && workerPosition && workerId) {
 			const formData = new FormData()
 			formData.append('pictureName', selectedFile)
 			formData.append('email', workerName)
 			formData.append('position', workerPosition)
+      formData.append('workerId', workerId.toString())
+
 
 			try {
 				await updateWorker(formData)
