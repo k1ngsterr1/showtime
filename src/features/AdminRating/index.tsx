@@ -1,18 +1,41 @@
-import React, { useState } from 'react'
-import useFileUpload from '@shared/lib/hooks/useFileUpload' // Ensure this path is correct
-import CalendarComponent from '@features/Calendar/reviewcalendar' // Ensure this path is correct
-import { TextArea } from '@shared/ui/TexrArea/index' // Fixed typo in the path
-import AddButton from '@shared/ui/AddButton' // Ensure this path is correct
 import { Input } from '@shared/ui/Inputs/DefaultInput/index' // Ensure this path is correct
 import Button from '@shared/ui/Buttons/DefaultReactButton/index'
-import { useAddArticle } from '@shared/lib/hooks/Admin/Add/useAddArticle' // Ensure this path is correct
+import { useAddStat } from '@shared/lib/hooks/Admin/Add/useAddRating'
+import { useState } from 'react'
 
-import Fedora from '@assets/logo/fedora.svg' // Ensure this path is correct. Consider how you import SVG in your project setup
 import styles from '../AdminFeatures/AdminNewsArticles/styles.module.scss' // Ensure this path is correct
 
 export const AdminRating = () => {
+	const { addStat } = useAddStat()
+	const [email, setEmail] = useState<string>()
+	const [points, setPoints] = useState<string>()
+	const [total, setTotal] = useState<string>()
+	const [wins, setWins] = useState<string>()
+	const [loss, setLoss] = useState<string>()
+
+
+	const handleSubmit = async (event: React.FormEvent) => {
+		event.preventDefault()
+
+		if (email && points && email && total && wins && loss) {
+			const formData = new FormData()
+			formData.append('points', points)
+			formData.append('total', total)
+			formData.append('wins', wins)
+			formData.append('email', email)
+			formData.append('loss', loss)
+
+
+			await addStat(formData)
+		} else {
+			console.log('All fields are required')
+		}
+	}
+
+
+
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} onSubmit={handleSubmit}>
 			<div className={`${styles.container__content} flex flex-col items-center justify-center`}>
 				<p className="mb-8 text-center font-neoregular text-primary-light">
 					Напиши email пользователя, чей рейтинг вы хотите поменять, редактировать, удалить.
@@ -24,43 +47,43 @@ export const AdminRating = () => {
 						placeholder="Почта пользователя"
 						inputType="default"
 						required
-						// onChange={(e) => setEmail(e.target.value)}
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 						<Input
 						type="text"
-						name="rank"
+						name="points"
 						placeholder="Очки"
 						inputType="default"
 						margin="mt-4"
 						required
-						// onChange={(e) => setRank(e.target.value)}
+						onChange={(e) => setPoints(e.target.value)}
 					/>
 						<Input
 						type="text"
-						name="rank"
+						name="total"
 						placeholder="Игры"
 						inputType="default"
 						margin="mt-4"
 						required
-						// onChange={(e) => setRank(e.target.value)}
+						onChange={(e) => setTotal(e.target.value)}
 					/>
 						<Input
 						type="text"
-						name="rank"
+						name="wins"
 						placeholder="Победы"
 						inputType="default"
 						margin="mt-4"
 						required
-						// onChange={(e) => setRank(e.target.value)}
+						onChange={(e) => setWins(e.target.value)}
 					/>
 						<Input
-						type="text"
+						type="loss"
 						name="rank"
 						placeholder="Поражения"
 						inputType="default"
 						margin="mt-4"
 						required
-						// onChange={(e) => setRank(e.target.value)}
+						onChange={(e) => setLoss(e.target.value)}
 					/>
 					<Button type="submit" text="Добавить рейтинг" buttonType="filled" margin="mt-4" />
 				</form>
