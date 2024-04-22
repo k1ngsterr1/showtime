@@ -9,9 +9,11 @@ import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
 import { useAddProduct } from '@shared/lib/hooks/Admin/Add/useAddProduct'
 import Button from '@shared/ui/Buttons/DefaultReactButton/index'
 import { useChangeRank } from '@shared/lib/hooks/useChangeRank'
+import { useDeleteOnlineRating } from '@shared/lib/hooks/Admin/Delete/useDeleteOnlineRating'
 
 const AdminDeleteOnlineRating: React.FC = () => {
 	const [email, setEmail] = useState<string>()
+	const { deleteOnlineRating } = useDeleteOnlineRating()
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
@@ -19,6 +21,7 @@ const AdminDeleteOnlineRating: React.FC = () => {
 		if (email !== null) {
 			const formData = new FormData()
 			formData.append('email', email)
+			await deleteOnlineRating(email)
 		} else {
 			console.log('All fields including email and rank are required!')
 		}

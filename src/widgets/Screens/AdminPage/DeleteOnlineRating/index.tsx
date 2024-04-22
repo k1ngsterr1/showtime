@@ -1,17 +1,15 @@
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
-import ParagraphReact from '@shared/ui/ParagraphReact/index'
-import AdminRanks from '@features/AdminFeatures/AdminRanks/index'
 import { useUserData } from '@shared/lib/hooks/useGetUserData'
-
-import '@shared/styles/global.scss'
-
-import styles from '../Team/styles.module.scss'
-
 import fedora from '@assets/logo/fedora.svg'
 import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 import AdminDeleteRating from '@features/AdminFeatures/AdminDeleteRating'
+
+import '@shared/styles/global.scss'
+import styles from '../Team/styles.module.scss'
+import { useDeleteOnlineRating } from '@shared/lib/hooks/Admin/Delete/useDeleteOnlineRating'
+import AdminDeleteOnlineRating from '@features/AdminFeatures/AdminDeleteOnlineRating'
 
 export const DeleteOnlineRating = () => {
 	const userData = useUserData()
@@ -40,7 +38,7 @@ export const DeleteOnlineRating = () => {
 								</h1>
 							</div>
 							<div className={styles.client__main__functional__showmans}>
-								<AdminDeleteRating />
+								<AdminDeleteOnlineRating />
 							</div>
 						</div>
 					</div>

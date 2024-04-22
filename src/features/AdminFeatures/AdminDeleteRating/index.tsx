@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import styles from './styles.module.scss'
-import useFileUpload from '@shared/lib/hooks/useFileUpload'
-import Fedora from '@assets/logo/fedora.svg'
 import { Input } from '@shared/ui/Inputs/DefaultInput/index'
-import { TextArea } from '@shared/ui/TexrArea/index'
-import AddButton from '@shared/ui/AddButton'
-import LinkButton from '@shared/ui/Buttons/LinkReactButton/index'
-import { useAddProduct } from '@shared/lib/hooks/Admin/Add/useAddProduct'
+import { useDeleteRating } from '@shared/lib/hooks/Admin/Delete/useDeleteRating'
 import Button from '@shared/ui/Buttons/DefaultReactButton/index'
-import { useChangeRank } from '@shared/lib/hooks/useChangeRank'
 
 const AdminDeleteRating: React.FC = () => {
 	const [email, setEmail] = useState<string>()
+
+	const { deleteRating } = useDeleteRating()
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
@@ -19,6 +15,7 @@ const AdminDeleteRating: React.FC = () => {
 		if (email !== null) {
 			const formData = new FormData()
 			formData.append('email', email)
+			await deleteRating(email)
 		} else {
 			console.log('All fields including email and rank are required!')
 		}
@@ -39,7 +36,6 @@ const AdminDeleteRating: React.FC = () => {
 						required
 						onChange={(e) => setEmail(e.target.value)}
 					/>
-
 					<Button type="submit" text="Удалить" buttonType="filled" margin="mt-4" />
 				</form>
 			</div>
