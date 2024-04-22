@@ -1,0 +1,19 @@
+---
+import { Cursor } from '@shared/ui/Cursor/index'
+import { Ranks } from '@widgets/Screens/AdminPage/Ranks/index'
+import Layout from '../../../layouts/Layout.astro'
+
+import '@shared/styles/global.scss'
+import '@shared/styles/scrollbar.scss'
+
+import styles from '../../styles/History/styles.module.scss'
+
+import { DeleteOnlineRating } from '@widgets/Screens/AdminPage/DeleteOnlineRating'
+---
+
+<Layout title="Удаление онлайн рейтинга">
+	<Cursor client:load />
+	<main class={styles.main}>
+		<DeleteOnlineRating client:load />
+	</main>
+</Layout>
