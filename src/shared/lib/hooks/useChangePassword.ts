@@ -3,7 +3,7 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 
 interface IPasswordData {
-	email: string
+	code: string
 	newPassword: string
 	newConfirmPassword: string
 }

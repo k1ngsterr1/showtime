@@ -9,7 +9,7 @@ import { useChangePassword } from '@shared/lib/hooks/useChangePassword'
 
 export const PasswordForm = () => {
 	const [formData, setFormData] = useState({
-		email: '',
+		code: '',
 		newPassword: '',
 		newConfirmPassword: ''
 	})
@@ -44,13 +44,13 @@ export const PasswordForm = () => {
 					</p>
 					<form action="" className={styles.registration__form} onSubmit={handleSubmit}>
 						<Input
-							placeholder="Электронная почта"
-							name="email"
+							placeholder="Код из почты"
+							name="code"
 							inputType="default"
 							margin="mt-4"
 							type="email"
 							required
-							value={formData.email}
+							value={formData.code}
 							onChange={handleInputChange}
 						/>
 						<PasswordInput

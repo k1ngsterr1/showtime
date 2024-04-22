@@ -15,12 +15,14 @@ import revolver from '@assets/logo/another_revolver.svg'
 
 import styles from './styles.module.scss'
 import { useEffect } from 'react'
+import { useGetScore } from '@shared/lib/hooks/useGetScore'
 
 export const UserScreen = () => {
 	const { onOpen } = useCustomMenu()
 	const userData = useUserData()
 	const { onShopOpen } = useCustomShop()
 	const { fetchedData } = useFetchUserData()
+	const { scoreData } = useGetScore()
 
 	const handleGoBack = () => {
 		window.location.href = '/'

@@ -1,0 +1,20 @@
+---
+import { Cursor } from '@shared/ui/Cursor/index'
+import { Ranks } from '@widgets/Screens/AdminPage/Ranks/index'
+import Layout from '../../../layouts/Layout.astro'
+
+import '@shared/styles/global.scss'
+import '@shared/styles/scrollbar.scss'
+
+import styles from '../../styles/History/styles.module.scss'
+
+import Logo from '@assets/logo/logo.png'
+import { DeleteRating } from '@widgets/Screens/AdminPage/DeleteRating'
+---
+
+<Layout title="Ранги">
+	<Cursor client:load />
+	<main class={styles.main}>
+		<DeleteRating client:load />
+	</main>
+</Layout>

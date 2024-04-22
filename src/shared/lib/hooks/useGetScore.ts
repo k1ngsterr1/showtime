@@ -15,7 +15,7 @@ export const useGetScore = () => {
 					`https://showtimeserver-production.up.railway.app/api/score/${userData.id}`
 				)
 				console.log('response from fetchScoreData:', response.data.score)
-
+					
 				setScoreData(response.data.score)
 			} catch (err) {
 				console.error('Failed to fetch score data:', err)
