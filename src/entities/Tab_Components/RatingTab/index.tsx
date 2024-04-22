@@ -12,7 +12,6 @@ interface RatingItem {
 	games: string
 	id: string
 	score: string
-	trophy: string
 	loses: string
 }
 
@@ -29,7 +28,6 @@ const RatingTab: React.FC<RatingTabProps> = ({ rating }) => {
 						key={index}
 						id={item.id}
 						kfc={item.kfc}
-						trophy={item.trophy}
 						score={item.score}
 						wins={item.wins}
 						icon={item.icon}

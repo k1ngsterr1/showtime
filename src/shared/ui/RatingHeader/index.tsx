@@ -12,7 +12,6 @@ interface RatingHeaderProps {
 	games: string
 	id: string
 	score: string
-	trophy: string
 	loses: string
 }
 
@@ -26,7 +25,6 @@ export const RatingHeader: React.FC<RatingHeaderProps> = ({
 	games,
 	id,
 	score,
-	trophy,
 	loses
 }) => {
 	const ClassHeader = `${styles.marquee} ${margin ? margin : ''}`
@@ -41,7 +39,6 @@ export const RatingHeader: React.FC<RatingHeaderProps> = ({
 				<span className={styles.container__none}>Коэфф: {kfc}</span>
 				<div className={styles.container__wins}>
 					<img src={icon} alt="cup" className={styles.container__cub} />
-					<span className={styles.container__text}>{trophy}</span>
 				</div>
 				<span className={styles.container__none}>Игр: {games}</span>
 				<p className={styles.container__none}>Выигрышей: {wins}</p>

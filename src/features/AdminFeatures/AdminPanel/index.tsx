@@ -18,7 +18,8 @@ import {
   faUsers,
   faNewspaper,
   faTrophy,
-  faPenToSquare,
+  faStar,
+  faGlobe 
 } from "@fortawesome/free-solid-svg-icons";
 
 export const adminpanel = [
@@ -63,11 +64,16 @@ export const adminpanel = [
     href: "/admin/news",
   },
 
-  // {
-  //   icon: faPenToSquare,
-  //   tab: "Статьи",
-  //   href: "/admin/articles",
-  // },
+  {
+    icon: faStar,
+    tab: "Рейтинг",
+    href: "/admin/rating",
+  },
+  {
+    icon: faGlobe ,
+    tab: "Online Рейтинг",
+    href: "/admin/online-rating",
+  },
 
   {
     icon: faCalendarDays,
