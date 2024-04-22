@@ -39,7 +39,7 @@ const RatingTab: React.FC<RatingTabProps> = () => {
 						score={item.points}
 						wins={item.wins}
 						icon={item.icon}
-						margin={item.margin}
+						margin="mt-8"
 						name={item.username}
 						number={index + 1}
 						games={item.total}
