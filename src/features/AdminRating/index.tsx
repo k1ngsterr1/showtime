@@ -9,21 +9,19 @@ export const AdminRating = () => {
 	const { addStat } = useAddStat()
 	const [email, setEmail] = useState<string>()
 	const [points, setPoints] = useState<string>()
-	const [total, setTotal] = useState<string>()
-	const [wins, setWins] = useState<string>()
-	const [loss, setLoss] = useState<string>()
+	const [win, setWin] = useState<string>()
+	const [lose, setLose] = useState<string>()
 
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
 
-		if (email && points && email && total && wins && loss) {
+		if (email && points && email  && win && lose) {
 			const formData = new FormData()
 			formData.append('points', points)
-			formData.append('total', total)
-			formData.append('wins', wins)
+			formData.append('win', win)
 			formData.append('email', email)
-			formData.append('loss', loss)
+			formData.append('loss', lose)
 
 
 			await addStat(formData)
@@ -60,21 +58,12 @@ export const AdminRating = () => {
 					/>
 						<Input
 						type="text"
-						name="total"
-						placeholder="Игры"
-						inputType="default"
-						margin="mt-4"
-						required
-						onChange={(e) => setTotal(e.target.value)}
-					/>
-						<Input
-						type="text"
 						name="wins"
 						placeholder="Победы"
 						inputType="default"
 						margin="mt-4"
 						required
-						onChange={(e) => setWins(e.target.value)}
+						onChange={(e) => setWin(e.target.value)}
 					/>
 						<Input
 						type="loss"
@@ -83,7 +72,7 @@ export const AdminRating = () => {
 						inputType="default"
 						margin="mt-4"
 						required
-						onChange={(e) => setLoss(e.target.value)}
+						onChange={(e) => setLose(e.target.value)}
 					/>
 					<Button type="submit" text="Добавить рейтинг" buttonType="filled" margin="mt-4" />
 				</form>

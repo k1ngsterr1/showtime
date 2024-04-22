@@ -16,6 +16,7 @@ export function useAddStat() {
 				data,
 				{
 					headers: {
+						'Content-Type':'application/json',
 						Authorization: `Bearer ${refreshToken}`
 					}
 				}
