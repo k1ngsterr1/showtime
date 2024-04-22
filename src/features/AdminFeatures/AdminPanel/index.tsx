@@ -6,6 +6,21 @@ import Logo from '@assets/logo/showtime_logo.svg'
 import styles from './styles.module.scss'
 
 import {
+  faUser,
+  faCartShopping,
+  faFileLines,
+  faSignOutAlt,
+  faCalendarDays,
+  faShop,
+  faPerson,
+  faCommentDots,
+  faBriefcase,
+  faUsers,
+  faNewspaper,
+  faTrophy,
+  faStar,
+  faGlobe 
+} from "@fortawesome/free-solid-svg-icons";
 	faUser,
 	faCartShopping,
 	faFileLines,
@@ -64,6 +79,16 @@ export const adminpanel = [
 		href: '/admin/news'
 	},
 
+  {
+    icon: faStar,
+    tab: "Рейтинг",
+    href: "/admin/rating",
+  },
+  {
+    icon: faGlobe ,
+    tab: "Online Рейтинг",
+    href: "/admin/online-rating",
+  },
 	// {
 	//   icon: faPenToSquare,
 	//   tab: "Статьи",

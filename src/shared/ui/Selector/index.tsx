@@ -35,7 +35,6 @@ export const Selector = <T extends string | number>({
 		setSelectedItem(selectedOption)
 		onChange(selectedOption)
 		setIsOpen(false)
-		console.log(selectedItem)
 	}
 
 	return (

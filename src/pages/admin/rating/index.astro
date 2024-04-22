@@ -1,7 +1,7 @@
 ---
 import { Cursor } from '@shared/ui/Cursor/index'
 import Layout from '../../../layouts/Layout.astro'
-import { ArticlesList } from '@widgets/Screens/AdminPage/ArticlesList'
+import { Rating } from '../../../widgets/Screens/AdminPage/Rating/index'
 
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
@@ -11,9 +11,9 @@ import styles from '../../styles/History/styles.module.scss'
 import Logo from '@assets/logo/logo.png'
 ---
 
-<Layout title="Список вакансий">
+<Layout title="Рейтинг">
 	<Cursor client:load />
 	<main class={styles.main}>
-		<ArticlesList client:load />
+		<Rating client:load />
 	</main>
 </Layout>

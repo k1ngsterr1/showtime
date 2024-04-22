@@ -12,6 +12,9 @@ import { useSendEmail } from '@shared/lib/hooks/useSendEmail'
 import emailjs from '@emailjs/browser'
 import styles from '../ContactForm/styles.module.scss'
 
+import { OrderPopup } from '@features/Popup_Components/OrderPopup'
+
+
 interface IFormContentProps {
 	gameType: string
 }
@@ -28,9 +31,12 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 	const [name, setName] = useState<string>('')
 	const [phoneNumber, setPhoneNumber] = useState<string>('')
 	const [description, setDescription] = useState<string>('')
+	const [isPopupOpen, setPopupOpen] = useState(false)
+
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault()
+		setPopupOpen(true)
 
 		if (name && phoneNumber && selectedRole && description) {
 			const formData = new FormData()
@@ -54,7 +60,13 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 		}
 	}
 
-	const { handleProductSubmit, handleBookSubmit } = useSendEmail()
+
+	const handleClose = () => {
+		setPopupOpen(false)
+	}
+
+	const { handleProductSubmit, handleBookSubmit } = useSendEmail(setPopupOpen);
+
 
 	const toggleDate = () => {
 		setIsOpen(!isOpen)
@@ -103,16 +115,17 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 								/>
 							</div>
 							<ReactButton text="Отправить" buttonType="filled" margin="mt-8 ml-6" type="submit" />
+							{isPopupOpen && <OrderPopup onClick={handleClose} popupState text='Спасибо! Ваше обращение будет обработано в течении 24 часов'/>}
 						</form>
 					</div>
 				)
 			case 'delivery':
 				return (
 					<>
-						<form
-							className={styles.form_screen_mob__form}
-							onSubmit={() => handleProductSubmit(event)}
-						>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleProductSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input
 									type="text"
@@ -146,6 +159,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									type="submit"
 									margin="mt-8 ml-6"
 								/>
+								{isPopupOpen && <OrderPopup onClick={handleClose} popupState text='Спасибо! Ваше обращение будет обработано в течении 24 часов'/>}
 							</div>
 						</form>
 					</>
@@ -153,7 +167,10 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			case 'book':
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form} onSubmit={() => handleBookSubmit(event)}>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleBookSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input
 									type="text"
@@ -194,6 +211,7 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 									buttonType="filled"
 									margin="mt-8 ml-6"
 								/>
+								{isPopupOpen && <OrderPopup onClick={handleClose} popupState text='Спасибо! Ваше обращение будет обработано в течении 24 часов'/>}
 							</div>
 						</form>
 					</div>
@@ -201,7 +219,10 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			case 'question':
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form}>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleBookSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input type="text" inputType="default-red" placeholder="Введите ваше имя" />
 								<Input
@@ -224,7 +245,10 @@ export const FormContent: React.FC<IFormContentProps> = ({ gameType }) => {
 			default:
 				return (
 					<div>
-						<form className={styles.form_screen_mob__form}>
+						<form className={styles.form_screen_mob__form} onSubmit={(event) => {
+    event.preventDefault();
+    handleBookSubmit(event);
+}}>
 							<div className="mt-12 flex flex-col items-start">
 								<Input type="text" name="name" inputType="default-red" placeholder="Ваше имя" />
 								<Input

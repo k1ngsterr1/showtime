@@ -3,7 +3,7 @@ import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
 import { useUserData } from '@shared/lib/hooks/useGetUserData'
-import { AdminArticles } from '@features/AdminArticles/index'
+import { AdminRating } from '@features/AdminRating/index'
 
 import '@shared/styles/global.scss'
 
@@ -14,7 +14,7 @@ import { ErrorScreen } from '@widgets/Screens/Error'
 import { useEffect } from 'react'
 import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
 
-export const Articles = () => {
+export const Rating = () => {
 	const userData = useUserData()
 
 	return (
@@ -37,15 +37,15 @@ export const Articles = () => {
 						)}
 						<div className={styles.client__main__functional}>
 							<div className={styles.client__main__functional__header_service}>
-								<h1 className={styles.client__main__functional__header_heading}>Статьи</h1>
+								<h1 className={styles.client__main__functional__header_heading}>Рейтинг</h1>
 								<ParagraphReact
-									text="Заполните все поля формы чтобы добавить новую статью"
+									text="Заполните все поля, чтобы добавить новый рейтинг"
 									paragraphType="white"
 									margin="mt-2"
 								/>
 							</div>
 							<div className={styles.client__main__functional__news}>
-								<AdminArticles />
+								<AdminRating />
 							</div>
 						</div>
 					</div>
