@@ -95,7 +95,7 @@ const NewsList = () => {
 								))}
 							</div>
 						</div>
-						<LinkButton buttonType="filled" href="news" text="Назад" margin="mt-16" />
+						<LinkButton buttonType="filled" href="/admin/news" text="Назад" margin="mt-16" />
 					</div>
 				</>
 			)}

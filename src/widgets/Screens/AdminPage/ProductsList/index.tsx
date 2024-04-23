@@ -96,7 +96,7 @@ export const ProductsList = () => {
 								))}
 							</div>
 						</div>
-						<LinkButton buttonType="filled" href="products" text="Назад" margin="mt-16" />
+						<LinkButton buttonType="filled" href="/admin/products" text="Назад" margin="mt-16" />
 					</div>
 				</>
 			)}

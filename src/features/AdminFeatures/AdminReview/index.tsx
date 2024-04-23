@@ -72,7 +72,12 @@ export const ReviewCard: React.FC<ICardProps> = () => {
 				</div>
 				<div className="mt-8 flex flex-row gap-10">
 					<AddButton buttonType="filled" text="Добавить" margin="mt-4" type="submit" />
-					<LinkButton buttonType="filled" href="reviews-list" text="Смотреть все" margin="mt-4" />
+					<LinkButton
+						buttonType="filled"
+						href="/admin/reviews-list"
+						text="Смотреть все"
+						margin="mt-4"
+					/>
 				</div>
 			</form>
 		</>

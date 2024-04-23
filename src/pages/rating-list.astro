@@ -12,7 +12,6 @@ import { rating } from '@shared/lib/content/ratingContent'
 import { RatingHeading } from '@shared/ui/RatingHeadings/index'
 import DefaultButton from '@shared/ui/Buttons/LinkReactButton/index'
 
-
 import '@shared/styles/global.scss'
 import '@shared/styles/scrollbar.scss'
 
@@ -29,18 +28,18 @@ import Logo from '@assets/logo/logo.png'
 	<Cursor client:load />
 	<Menu client:load />
 	<main class={styles.main} id="rating-list">
-		<Header client:load /> 
+		<Header client:load />
 		<section class={styles.rating_screen} id="timetable">
 			<h6 class="m-auto pt-8 text-primary-red">Рейтинг</h6>
 			<DefaultButton
-		buttonType="filled"
-		text="Online Рейтинг"
-		href="online-rating"
-		margin='mt-8 mb-16'
-		client:load
-	/>
+				buttonType="filled"
+				text="Online Рейтинг"
+				href="online-rating"
+				margin="mt-8 mb-16"
+				client:load
+			/>
 			<RatingHeading />
-			<RatingTab rating={rating} />
+			<RatingTab client:load />
 		</section>
 	</main>
 	<Form client:visible />

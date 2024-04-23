@@ -9,7 +9,7 @@ export function useGetPlayers(roomId: number) {
 		const fetchPlayers = async () => {
 			try {
 				const response = await axios.get(
-					`https://showtime.up.railway.app/api/rooms/${roomId}/users`
+					`https://showtimeserver-production.up.railway.app/api/rooms/${roomId}/users`
 				)
 				setPlayers(response.data.users)
 			} catch (error) {

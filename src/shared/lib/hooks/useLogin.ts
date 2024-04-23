@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import { useFetchUserData } from './useFetchUserData'
 
 interface ILoginData {
 	email: string
@@ -8,6 +9,8 @@ interface ILoginData {
 }
 
 export async function loginAccount(loginData: ILoginData) {
+	// const { fetchedData } = useFetchUserData()
+
 	try {
 		const response = await axios.post(
 			'https://showtimeserver-production.up.railway.app/api/auth/login',
@@ -22,6 +25,7 @@ export async function loginAccount(loginData: ILoginData) {
 
 		const userData = {
 			id: data.id,
+			isVerified: data.isVerified,
 			username: data.username,
 			email: data.email,
 			role: data.role,
@@ -46,7 +50,7 @@ export async function loginAccount(loginData: ILoginData) {
 
 		console.log('Data sent.')
 
-		window.location.href = '/auth'
+		window.location.href = userData.isVerified === false ? '/auth' : '/'
 	} catch (error: any) {
 		console.log(loginData)
 		console.error('Failed to login:', error.response ? error.response.data : error)

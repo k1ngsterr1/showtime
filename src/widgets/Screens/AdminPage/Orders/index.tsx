@@ -16,7 +16,7 @@ export const Orders = () => {
 
 	return (
 		<main className={styles.client}>
-			{userData?.role !== 'admin' ? (
+			{userData?.role != 'admin' ? (
 				<>
 					<AdminErrorScreen />
 				</>

@@ -97,7 +97,7 @@ export const ReviewsList = () => {
 								))}
 							</div>
 						</div>
-						<LinkButton buttonType="filled" href="reviews" text="Назад" margin="mt-16" />
+						<LinkButton buttonType="filled" href="/admin/reviews" text="Назад" margin="mt-16" />
 					</div>
 				</>
 			)}

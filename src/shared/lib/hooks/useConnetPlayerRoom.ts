@@ -14,7 +14,9 @@ export const useConnectPlayer = (roomId?: any) => {
 		if (!roomId) return
 
 		try {
-			const response = await axios.get(`https://showtime.up.railway.app/api/rooms/${roomId}/users`)
+			const response = await axios.get(
+				`https://showtimeserver-production.up.railway.app/api/rooms/${roomId}/users`
+			)
 			setPlayers(response.data.users)
 		} catch (error) {
 			console.error('There was an error fetching players!')

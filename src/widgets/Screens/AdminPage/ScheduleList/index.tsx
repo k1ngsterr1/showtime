@@ -99,7 +99,7 @@ export const ScheduleList = () => {
 								))}
 							</div>
 						</div>
-						<LinkButton buttonType="filled" href="schedule" text="Назад" margin="mt-8" />
+						<LinkButton buttonType="filled" href="/admin/schedule" text="Назад" margin="mt-8" />
 					</div>
 				</>
 			)}

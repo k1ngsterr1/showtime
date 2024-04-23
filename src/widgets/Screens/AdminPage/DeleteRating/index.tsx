@@ -1,16 +1,19 @@
 import { AdminPanel } from '@features/AdminFeatures/AdminPanel/index'
 import { adminpanel } from '@features/AdminFeatures/AdminPanel/index'
-import { ServiceCard } from '@entities/AdminEntities/AdminServicesCard'
 import AdminHeader from '@features/AdminFeatures/AdminHeader/index'
 import ParagraphReact from '@shared/ui/ParagraphReact/index'
-import '@shared/styles/global.scss'
-import styles from '../Team/styles.module.scss'
-import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
+import AdminRanks from '@features/AdminFeatures/AdminRanks/index'
 import { useUserData } from '@shared/lib/hooks/useGetUserData'
 
-import fedora from '@assets/logo/fedora.svg'
+import '@shared/styles/global.scss'
 
-export const Vacancie = () => {
+import styles from '../Team/styles.module.scss'
+
+import fedora from '@assets/logo/fedora.svg'
+import { AdminErrorScreen } from '@widgets/Screens/AdminErrorScreen'
+import AdminDeleteRating from '@features/AdminFeatures/AdminDeleteRating'
+
+export const DeleteRating = () => {
 	const userData = useUserData()
 
 	return (
@@ -21,7 +24,6 @@ export const Vacancie = () => {
 				</>
 			) : (
 				<>
-					{' '}
 					<div className={styles.client__left}>
 						<AdminPanel adminpanel={adminpanel} />
 					</div>
@@ -33,15 +35,12 @@ export const Vacancie = () => {
 						)}
 						<div className={styles.client__main__functional}>
 							<div className={styles.client__main__functional__header_service}>
-								<h1 className={styles.client__main__functional__header_heading}>Вакансии</h1>
-								<ParagraphReact
-									text="Заполните все поля формы чтобы добавить новую вакансию"
-									paragraphType="white"
-									margin="mt-2"
-								/>
+								<h1 className={styles.client__main__functional__header_heading}>
+									Удаление рейтинга
+								</h1>
 							</div>
-							<div className={styles.client__main__functional__vacancies}>
-								<ServiceCard number="01" placeholder="Кого ищем" href="/admin/vacancies-list" />
+							<div className={styles.client__main__functional__showmans}>
+								<AdminDeleteRating />
 							</div>
 						</div>
 					</div>

@@ -1,9 +1,10 @@
 import { RatingHeader } from '@shared/ui/RatingHeader'
-
+import { useGetOffStats } from '@shared/lib/hooks/Admin/Get/useGetOffStats'
 import styles from './styles.module.scss'
+import { useEffect } from 'react'
 
 interface RatingItem {
-	kfc: string
+	winrate: string
 	wins: string
 	icon: string
 	margin: string
@@ -19,11 +20,17 @@ interface RatingTabProps {
 	rating: RatingItem[]
 }
 
-const RatingTab: React.FC<RatingTabProps> = ({ rating }) => {
+const RatingTab: React.FC<RatingTabProps> = () => {
+	const { getStats, statData } = useGetOffStats()
+
+	useEffect(() => {
+		getStats()
+	}, [])
+
 	return (
 		<div className={styles.container}>
 			<div className="">
-				{rating.map((item, index) => (
+				{statData?.map((item, index) => (
 					<RatingHeader
 						key={index}
 						id={item.id}
@@ -31,11 +38,11 @@ const RatingTab: React.FC<RatingTabProps> = ({ rating }) => {
 						score={item.score}
 						wins={item.wins}
 						icon={item.icon}
-						margin={item.margin}
-						name={item.name}
-						number={item.number}
-						games={item.games}
-						loses={item.loses}
+						margin="mt-8"
+						name={item.username}
+						number={index + 1}
+						games={item.total}
+						loses={item.loss}
 					/>
 				))}
 			</div>

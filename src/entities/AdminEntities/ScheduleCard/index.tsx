@@ -127,7 +127,12 @@ export const ScheduleCard: React.FC<ICardProps> = ({ time, name, address, price 
 				</div>
 				<div className="flex flex-col items-center justify-center">
 					<AddButton buttonType="filled" text="Добавить" margin="mt-12" type="submit" />
-					<LinkButton buttonType="filled" href="schedule-list" text="Смотреть все" margin="mt-6" />
+					<LinkButton
+						buttonType="filled"
+						href="/admin/schedule-list"
+						text="Смотреть все"
+						margin="mt-6"
+					/>
 				</div>
 			</form>
 		</>

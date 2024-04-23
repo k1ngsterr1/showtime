@@ -97,7 +97,7 @@ export const VacanciesList = () => {
 								))}
 							</div>
 						</div>
-						<LinkButton buttonType="filled" href="vacancies" text="Назад" margin="mt-8" />
+						<LinkButton buttonType="filled" href="/admin/vacancies" text="Назад" margin="mt-8" />
 					</div>
 				</>
 			)}

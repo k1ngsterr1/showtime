@@ -67,6 +67,7 @@ const TeamCard = () => {
 						email={worker.email}
 						position={worker.position}
 						url={worker.url}
+						workerId={worker.id}
 						onDelete={() => handleDeleteShowman(worker.id)}
 					/>
 				))

@@ -1,0 +1,21 @@
+---
+import { Cursor } from '@shared/ui/Cursor'
+import { Loader } from '@shared/ui/Loader'
+import { CodeForm } from '@widgets/Form/CodeForm'
+
+import Layout from '../layouts/Layout.astro'
+
+import '@shared/styles/global.scss'
+import '../pages/styles/registration/styles.scss'
+
+import Logo from '@assets/logo/logo.png'
+---
+
+<Layout
+	title="Письмо для смены пароля | Showtime Мафия Алматы"
+	description="Добро пожаловать на страницу изменения пароля Showtime! Здесь вы можете обновить свой пароль для безопасного доступа к вашему аккаунту. Просто следуйте простым инструкциям ниже, чтобы сделать это быстро и легко. Ваша безопасность и защита данных - наш главный приоритет. Если у вас возникли какие-либо вопросы или трудности, не стесняйтесь связаться с нашей службой поддержки, и мы с удовольствием поможем вам. Давайте обеспечим безопасность вашего аккаунта вместе на Showtime!"
+>
+	<Cursor client:load />
+	<Loader client:load />
+	<CodeForm client:load />
+</Layout>
