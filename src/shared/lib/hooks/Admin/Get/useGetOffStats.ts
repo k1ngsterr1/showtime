@@ -15,8 +15,6 @@ export function useGetOffStats() {
 				}
 			)
 
-			console.log('zhopa is working here:', response.data.stats)
-
 			setStatData(response.data.stats)
 			return statData
 		} catch (error) {
