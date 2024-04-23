@@ -5,64 +5,81 @@ import { TextArea } from '@shared/ui/TexrArea/index' // Fixed typo in the path
 import AddButton from '@shared/ui/AddButton' // Ensure this path is correct
 import { Input } from '@shared/ui/Inputs/DefaultInput/index' // Ensure this path is correct
 import Button from '@shared/ui/Buttons/DefaultReactButton/index'
-import { useAddArticle } from '@shared/lib/hooks/Admin/Add/useAddArticle' // Ensure this path is correct
+import { useUpdateOnlineStat } from '@shared/lib/hooks/Admin/Update/useUpdateOnlineRating' // Ensure this path is correct
 
 import Fedora from '@assets/logo/fedora.svg' // Ensure this path is correct. Consider how you import SVG in your project setup
 import styles from '../AdminFeatures/AdminNewsArticles/styles.module.scss' // Ensure this path is correct
 
 export const AdminOnlineRating = () => {
+	const { updateOnlineStat } = useUpdateOnlineStat()
+
+	const [email, setEmail] = useState<string>()
+	const [points, setPoints] = useState<string>()
+	const [win, setWin] = useState<string>()
+	const [lose, setLose] = useState<string>()
+
+
+	const handleSubmit = async (event: React.FormEvent) => {
+		event.preventDefault()
+
+		if (email && points && email  && win && lose) {
+			const formData = new FormData()
+			formData.append('points', points)
+			formData.append('win', win)
+			formData.append('email', email)
+			formData.append('loss', lose)
+
+
+			await updateOnlineStat(formData)
+		} else {
+			console.log('All fields are required')
+		}
+	}
+
+
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} onSubmit={handleSubmit}>
 			<div className={`${styles.container__content} flex flex-col items-center justify-center`}>
 				<p className="mb-8 text-center font-neoregular text-primary-light">
-					Напиши email пользователя, чей рейтинг вы хотите поменять, редактировать, удалить.
+					Напиши email пользователя, чей рейтинг вы хотите добавить.
 				</p>
 				<form className="flex flex-col items-center" >
-					<Input
+				<Input
 						type="text"
 						name="email"
 						placeholder="Почта пользователя"
 						inputType="default"
 						required
-						// onChange={(e) => setEmail(e.target.value)}
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 						<Input
 						type="text"
-						name="rank"
+						name="points"
 						placeholder="Очки"
 						inputType="default"
 						margin="mt-4"
 						required
-						// onChange={(e) => setRank(e.target.value)}
+						onChange={(e) => setPoints(e.target.value)}
 					/>
 						<Input
 						type="text"
-						name="rank"
-						placeholder="Игры"
-						inputType="default"
-						margin="mt-4"
-						required
-						// onChange={(e) => setRank(e.target.value)}
-					/>
-						<Input
-						type="text"
-						name="rank"
+						name="wins"
 						placeholder="Победы"
 						inputType="default"
 						margin="mt-4"
 						required
-						// onChange={(e) => setRank(e.target.value)}
+						onChange={(e) => setWin(e.target.value)}
 					/>
 						<Input
-						type="text"
+						type="loss"
 						name="rank"
 						placeholder="Поражения"
 						inputType="default"
 						margin="mt-4"
 						required
-						// onChange={(e) => setRank(e.target.value)}
+						onChange={(e) => setLose(e.target.value)}
 					/>
-					<Button type="submit" text="Редактировать рейтинг" buttonType="filled" margin="mt-4" />
+					<Button type="submit" text="Добавить рейтинг" buttonType="filled" margin="mt-4" />
 				</form>
 			</div>
 		</div>
