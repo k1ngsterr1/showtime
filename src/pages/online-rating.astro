@@ -5,10 +5,9 @@ import { Loader } from '@shared/ui/Loader/index'
 import { Menu } from '@features/Menu/index'
 import { Form } from '@widgets/Screens/ContactForm/index'
 import Paragraph from '@shared/ui/Paragraph/index.astro'
-import RatingTab from '@entities/Tab_Components/RatingTab/index'
+import RatingTab from '@entities/Tab_Components/RatingTab/online'
 import Layout from '../layouts/Layout.astro'
 import Footer from '@features/Footer/index.astro'
-import { rating } from '@shared/lib/content/ratingContent'
 import { RatingHeading } from '@shared/ui/RatingHeadings/index'
 import DefaultButton from '@shared/ui/Buttons/LinkReactButton/index'
 
@@ -32,7 +31,7 @@ import Logo from '@assets/logo/logo.png'
 		<section class={styles.rating_screen} id="timetable">
 			<h6 class="m-auto pt-8 text-primary-red mb-8">Online Рейтинг</h6>
 			<RatingHeading />
-			<RatingTab rating={rating} />
+			<RatingTab client:load />
 		</section>
 	</main>
 	<Form client:visible />

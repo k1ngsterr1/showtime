@@ -15,7 +15,7 @@ export function useGetOnlineStats() {
 				}
 			)
 
-			console.log('zhopa is working here:', response.data.stats)
+			console.log('zhopa is working here:', response.data['stats'])
 
 			setStatData(response.data.stats)
 			return statData

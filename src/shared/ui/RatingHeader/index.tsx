@@ -10,7 +10,6 @@ interface RatingHeaderProps {
 	kfc: string
 	number: string
 	games: string
-	id: string
 	score: string
 	loses: string
 }
@@ -23,7 +22,6 @@ export const RatingHeader: React.FC<RatingHeaderProps> = ({
 	kfc,
 	number,
 	games,
-	id,
 	score,
 	loses
 }) => {
@@ -33,7 +31,7 @@ export const RatingHeader: React.FC<RatingHeaderProps> = ({
 		<div className={ClassHeader}>
 			<div className={styles.container}>
 				<span className={styles.container__number}>{number}</span>
-				<span className={styles.container__none}>Id: {id}</span>
+				{/* <span className={styles.container__none}>Id: {id}</span> */}
 				<span className={styles.container__text}>{name}</span>
 				<span className={styles.container__text}>Очки: {score}</span>
 				<span className={styles.container__none}>Коэфф: {kfc}</span>

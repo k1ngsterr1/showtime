@@ -1,12 +1,12 @@
 import { Input } from '@shared/ui/Inputs/DefaultInput/index' // Ensure this path is correct
 import Button from '@shared/ui/Buttons/DefaultReactButton/index'
-import { useAddStat } from '@shared/lib/hooks/Admin/Add/useAddRating'
+import { useUpdateOffStat } from '@shared/lib/hooks/Admin/Update/useUpdateOffRating'
 import { useState } from 'react'
 
 import styles from '../AdminFeatures/AdminNewsArticles/styles.module.scss' // Ensure this path is correct
 
 export const AdminRating = () => {
-	const { addStat } = useAddStat()
+	const { updateOffStat } = useUpdateOffStat()
 	const [email, setEmail] = useState<string>()
 	const [points, setPoints] = useState<string>()
 	const [win, setWin] = useState<string>()
@@ -24,7 +24,7 @@ export const AdminRating = () => {
 			formData.append('loss', lose)
 
 
-			await addStat(formData)
+			await updateOffStat(formData)
 		} else {
 			console.log('All fields are required')
 		}

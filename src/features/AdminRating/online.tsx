@@ -27,7 +27,7 @@ export const AdminOnlineRating = () => {
 			formData.append('points', points)
 			formData.append('win', win)
 			formData.append('email', email)
-			formData.append('loss', lose)
+			formData.append('lose', lose)
 
 
 			await updateOnlineStat(formData)
@@ -71,15 +71,15 @@ export const AdminOnlineRating = () => {
 						onChange={(e) => setWin(e.target.value)}
 					/>
 						<Input
-						type="loss"
-						name="rank"
+						name="lose"
+						type='text'
 						placeholder="Поражения"
 						inputType="default"
 						margin="mt-4"
 						required
 						onChange={(e) => setLose(e.target.value)}
 					/>
-					<Button type="submit" text="Добавить рейтинг" buttonType="filled" margin="mt-4" />
+					<Button type="submit" text="Добавить online рейтинг" buttonType="filled" margin="mt-4" />
 				</form>
 			</div>
 		</div>
