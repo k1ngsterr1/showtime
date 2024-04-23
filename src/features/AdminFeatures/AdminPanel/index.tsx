@@ -21,7 +21,7 @@ import {
   faStar,
   faGlobe,
   faPenToSquare,
-	faDeleteLeft 
+faDeleteLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -70,7 +70,13 @@ export const adminpanel = [
 {
     icon: faStar,
     tab: "Рейтинг",
-    href: "/admin/rating",  },
+    href: "/admin/rating"
+},
+{
+    icon: faPenToSquare,
+    tab: "Изменить рейтинг",
+    href: "/admin/rating-edit",  
+},
 {
     icon: faGlobe ,
     tab: "Online Рейтинг",
