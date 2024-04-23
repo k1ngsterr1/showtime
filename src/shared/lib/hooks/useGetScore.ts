@@ -10,6 +10,12 @@ export const useGetScore = () => {
 			try {
 				const userData = JSON.parse(localStorage.getItem('userData'))
 				if (!userData) return
+				
+
+				// const response = await axios.get(`https://showtimeserver-production.up.railway.app/api/score/${userData.id}`)
+				// console.log('response from fetchScoreData:', response.data.score)
+
+				// console.log(scoreData)
 
 				const response = await axios.get(
 					`https://showtimeserver-production.up.railway.app/api/score/${userData.id}`

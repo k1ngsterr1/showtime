@@ -13,6 +13,8 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import { useSendEmail } from '@shared/lib/hooks/useSendEmail'
 import emailjs from '@emailjs/browser'
+import { OrderPopup } from '@features/Popup_Components/OrderPopup'
+
 
 import styles from './styles.module.scss'
 
@@ -31,6 +33,8 @@ export const SchedulePopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupS
 	const [selectedRole, setSelectedRole] = useState<string>('')
 	const [value, setValue] = useState(new Date())
 	const [isOpen, setIsOpen] = useState<boolean>(false)
+	const [isPopupOpen, setPopupOpen] = useState(false)
+
 	const onChange = (newValue: React.SetStateAction<Date>) => {
 		setValue(newValue)
 		setIsOpen(false)
@@ -40,7 +44,11 @@ export const SchedulePopup: React.FC<ICreateGamePopupProps> = ({ onClick, popupS
 		setIsOpen(!isOpen)
 	}
 
-	const { handleProductSubmit, handleBookSubmit } = useSendEmail()
+	const handleClose = () => {
+		setPopupOpen(false)
+	}
+
+	const { handleProductSubmit, handleBookSubmit } = useSendEmail(setPopupOpen);
 
 	return (
 		<div className={styles.overlay} onClick={handleOverlayClick}>

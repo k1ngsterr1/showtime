@@ -30,14 +30,7 @@ import Logo from '@assets/logo/logo.png'
 	<main class={styles.main} id="rating-list">
 		<Header client:load />
 		<section class={styles.rating_screen} id="timetable">
-			<h6 class="m-auto pt-8 text-primary-red">Рейтинг</h6>
-			<DefaultButton
-				buttonType="filled"
-				text="Online Рейтинг"
-				href="online-rating"
-				margin="mt-8 mb-16"
-				client:load
-			/>
+			<h6 class="m-auto pt-8 text-primary-red mb-8">Рейтинг</h6>
 			<RatingHeading />
 			<RatingTab client:load />
 		</section>

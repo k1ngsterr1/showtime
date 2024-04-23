@@ -42,7 +42,7 @@ export const AdminUserTab: React.FC<UserTab> = ({
 
 		if (selectedFile && workerName && workerPosition && workerId) {
 			const formData = new FormData()
-			formData.append('pictureName', selectedFile)
+      formData.append('pictureName', selectedFile)
 			formData.append('email', workerName)
 			formData.append('position', workerPosition)
       formData.append('workerId', workerId.toString())
@@ -74,7 +74,7 @@ export const AdminUserTab: React.FC<UserTab> = ({
       {isMenuVisible && (
         <div className={styles.menu}>
           {isEditMode ? (
-            <button className={styles.menu_btn} type="submit" onClick={toggleEdit}>Сохранить</button>
+            <button className={styles.menu_btn} type="submit" >Сохранить</button>
           ) : (
             <button className={styles.menu_btn} onClick={toggleEdit}>Редактировать</button>
           )}
@@ -133,3 +133,5 @@ export const AdminUserTab: React.FC<UserTab> = ({
     </form>
   );
 };
+
+

@@ -1,13 +1,13 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-export function useGetOffStats() {
+export function useGetOnlineStats() {
 	const [statData, setStatData] = useState<any>()
 
-	const getStats = async () => {
+	const getOnlineStats = async () => {
 		try {
 			const response = await axios.get(
-				'https://showtimeserver-production.up.railway.app/api/admin/get-stat/1',
+				'https://showtimeserver-production.up.railway.app/api/admin/online/get-stat/1',
 				{
 					headers: {
 						'Content-Type': 'application/json'
@@ -24,5 +24,5 @@ export function useGetOffStats() {
 		}
 	}
 
-	return { getStats, statData }
+	return { getOnlineStats, statData }
 }

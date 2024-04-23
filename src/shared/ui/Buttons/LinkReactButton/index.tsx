@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 
-type ButtonType = 'filled' | 'outline' | 'transparent' | 'filled_mob'
+type ButtonType = 'filled' | 'outline' | 'transparent' 
 
 interface Props {
 	buttonType: ButtonType

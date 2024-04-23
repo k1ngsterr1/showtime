@@ -41,11 +41,11 @@ export const Form = () => {
 							onClick={() => setFormType('question')}
 						/>
 					</div>
-					<form className={styles.form_screen_mob__form}>
+					{/* <form className={styles.form_screen_mob__form}> */}
 						<div className="flex flex-col items-center">
 							<FormContent gameType={formType} />
 						</div>
-					</form>
+					{/* </form> */}
 					<div className="flex flex-col items-center">
 						<a
 							href="mailto:info@mafshow.kz"

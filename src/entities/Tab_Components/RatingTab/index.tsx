@@ -12,8 +12,7 @@ interface RatingItem {
 	number: string
 	games: string
 	id: string
-	score: string
-	trophy: string
+	points: string
 	loses: string
 }
 

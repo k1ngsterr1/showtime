@@ -4,7 +4,8 @@ export const links = [
 	{ path: '/products', name: 'Онлайн магазин' },
 	{ path: '/services', name: 'Мероприятия' },
 	{ path: '/rules', name: 'Правила SHOWTIME' },
-	{ path: '/partners', name: 'Партнеры' }
+	{ path: '/partners', name: 'Партнеры' },
+	{ path: '/online-rating', name: 'Online рейтинг' }
 ]
 
 export const links_second = [
