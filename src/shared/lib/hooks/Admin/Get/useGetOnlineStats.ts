@@ -14,10 +14,11 @@ export function useGetOnlineStats() {
 					}
 				}
 			)
+			const statsArray = Object.values(response.data.stats);
 
-			console.log('zhopa is working here:', response.data['stats'])
+			console.log('zhopa is working here:', statsArray)
 
-			setStatData(response.data.stats)
+			setStatData(statsArray)
 			return statData
 		} catch (error) {
 			console.error('There was an error with getting orders')
