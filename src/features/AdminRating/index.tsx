@@ -21,7 +21,7 @@ export const AdminRating = () => {
 			formData.append('points', points)
 			formData.append('win', win)
 			formData.append('email', email)
-			formData.append('loss', lose)
+			formData.append('lose', lose)
 
 
 			await addStat(formData)
@@ -66,8 +66,8 @@ export const AdminRating = () => {
 						onChange={(e) => setWin(e.target.value)}
 					/>
 						<Input
-						type="loss"
-						name="rank"
+						type='text'
+						name="lose"
 						placeholder="Поражения"
 						inputType="default"
 						margin="mt-4"
