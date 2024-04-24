@@ -4,7 +4,6 @@ export const RatingHeading = () => {
 	return (
 		<div className={styles.container}>
 			<span className={styles.container__items}>№</span>
-			<span className={styles.container__items2}>Id</span>
 			<span className={styles.container__items2}>Имя</span>
 			<span className={styles.container__items2}>Очки</span>
 			<span className={styles.container__items2}>Коэфф.</span>

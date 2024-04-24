@@ -1,5 +1,5 @@
 import { RatingHeader } from '@shared/ui/RatingHeader'
-import { useGetOffStats } from '@shared/lib/hooks/Admin/Get/useGetOffStats'
+import { useGetOnlineStats } from '@shared/lib/hooks/Admin/Get/useGetOnlineStats'
 import styles from './styles.module.scss'
 import { useEffect } from 'react'
 
@@ -21,10 +21,10 @@ interface RatingTabProps {
 }
 
 const RatingTab: React.FC<RatingTabProps> = () => {
-	const { getStats, statData } = useGetOffStats()
+	const { getOnlineStats, statData } = useGetOnlineStats()
 
 	useEffect(() => {
-		getStats()
+		getOnlineStats()
 	}, [])
 
 	return (
@@ -38,10 +38,10 @@ const RatingTab: React.FC<RatingTabProps> = () => {
 						wins={item.wins}
 						icon={item.icon}
 						margin="mt-8"
-						name={item.username}
+						name={item.user.username}
 						number={index + 1}
 						games={item.total}
-						loses={item.loss}
+						loses={item.losses}
 					/>
 				))}
 			</div>

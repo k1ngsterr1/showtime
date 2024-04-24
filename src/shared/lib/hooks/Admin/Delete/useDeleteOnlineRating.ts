@@ -8,7 +8,7 @@ export function useDeleteOnlineRating() {
 			const refreshToken = userData.refresh
 
 			const response = await axios.delete(
-				`https://showtimeserver-production.up.railway.app/api/admin/delete-stat/${encodeURIComponent(email)}`,
+				`https://showtimeserver-production.up.railway.app/api/admin/online/delete-stat/${encodeURIComponent(email)}`,
 				{
 					headers: {
 						'Content-Type': 'application/json',

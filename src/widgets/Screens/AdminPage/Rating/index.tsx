@@ -41,7 +41,7 @@ export const Rating = () => {
 								<ParagraphReact
 									text="Заполните все поля, чтобы добавить новый рейтинг"
 									paragraphType="white"
-									margin="mt-2"
+									margin="mt-2 mr-8"
 								/>
 							</div>
 							<div className={styles.client__main__functional__news}>
