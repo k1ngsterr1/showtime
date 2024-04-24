@@ -33,7 +33,6 @@ const RatingTab: React.FC<RatingTabProps> = () => {
 				{statData?.map((item, index) => (
 					<RatingHeader
 						key={index}
-						id={item.id}
 						kfc={item.winrate}
 						score={item.points}
 						wins={item.wins}
