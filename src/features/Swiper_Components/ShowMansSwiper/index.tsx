@@ -50,15 +50,6 @@ export const ShowMansSwiper: React.FC<ShowMansSwiperProps> = () => {
 	return (
 		<>
 			<div className={styles.client}>
-				{/* <div className={`${'mb-12 flex items-center justify-end'} ${styles.buttons}`}>
-					<div className="m-auto w-full"></div>
-					<div className="flex w-[10%] justify-between">
-						<RevolverButton buttonType="gallery" direction="previous" onClick={handlePrev} />
-						<div className="scale-x-[-1]">
-							<RevolverButton buttonType="gallery" direction="next" onClick={handleNext} />
-						</div>
-					</div>
-				</div> */}
 				<Swiper
 					slidesPerView={6}
 					spaceBetween={64}

@@ -18,7 +18,11 @@ export const ShowMansCard: React.FC<Props> = ({ url, text, name }) => {
 			<form className="flex flex-col items-center justify-center">
 				<div className={styles.card}>
 					<div className="flex flex-col items-center justify-center">
-						<img src={url} alt={name} className={styles.card_picture} />
+						<img
+							src={'https://showtimeserver-production.up.railway.app/' + url}
+							alt={name}
+							className={styles.card_picture}
+						/>
 						<span className={styles.card__name}>{name}</span>
 						<span className={styles.card__position}>{text}</span>
 					</div>
