@@ -1,4 +1,5 @@
 .reviews_screen {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -9,18 +10,25 @@
 		width: 100%;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		// justify-content: space-between;
 	}
 
 	&__buttons {
 		display: flex;
-		justify-content: space-between;
-		width: 10%;
-		margin-left: auto;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		gap: 32px;
+		margin: auto;
 	}
 }
 
 .swiper {
-	width: 200%;
+	width: 100%;
 	@apply ml-10;
+
+	&__slide {
+		width: clamp(225px, 450 / 1920 * 100vw, 900px) !important;
+	}
 }

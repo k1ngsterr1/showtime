@@ -1,6 +1,5 @@
 .container_mob {
 	display: none;
-	
 }
 
 @media (min-width: 375px) and (max-width: 600px) {
@@ -11,4 +10,9 @@
 	.container_mob {
 		display: flex;
 	}
+}
+
+.container {
+	width: 100%;
+	@apply bg-primary-dark;
 }

@@ -62,8 +62,8 @@ export const SwiperReview = () => {
 				}}
 			>
 				{reviews.map((review, index) => (
-					<SwiperSlide key={index}>
-						<div className="flex">
+					<SwiperSlide key={index} className={styles.swiper__slide}>
+						<div className="flex w-full">
 							<ReviewCard
 								date={review.date}
 								text={review.text}
